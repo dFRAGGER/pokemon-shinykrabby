@@ -1,0 +1,20 @@
+{
+  "id": "MAP_AUTUMN_RUINS",
+  "name": "AutumnRuins",
+  "layout": "LAYOUT_AUTUMN_RUINS",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "requires_flash": false,
+  "weather": "WEATHER_DROUGHT",
+  "map_type": "MAP_TYPE_UNKNOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

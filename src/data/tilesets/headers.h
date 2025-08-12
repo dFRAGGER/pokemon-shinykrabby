@@ -841,3 +841,25 @@ const struct Tileset gTileset_NewPokeCenter =
     .metatileAttributes = gMetatileAttributes_NewPokeCenter,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_newsmalltownlab =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_newsmalltownlab,
+    .palettes = gTilesetPalettes_newsmalltownlab,
+    .metatiles = gMetatiles_newsmalltownlab,
+    .metatileAttributes = gMetatileAttributes_newsmalltownlab,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AutumnRuins =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AutumnRuins,
+    .palettes = gTilesetPalettes_AutumnRuins,
+    .metatiles = gMetatiles_AutumnRuins,
+    .metatileAttributes = gMetatileAttributes_AutumnRuins,
+    .callback = NULL,
+};

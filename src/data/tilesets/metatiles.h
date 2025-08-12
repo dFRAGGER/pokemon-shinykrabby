@@ -210,3 +210,9 @@ const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/
 
 const u16 gMetatiles_NewPokeCenter[] = INCBIN_U16("data/tilesets/secondary/new_poke_center/metatiles.bin");
 const u16 gMetatileAttributes_NewPokeCenter[] = INCBIN_U16("data/tilesets/secondary/new_poke_center/metatile_attributes.bin");
+
+const u16 gMetatiles_newsmalltownlab[] = INCBIN_U16("data/tilesets/secondary/newsmalltownlab/metatiles.bin");
+const u16 gMetatileAttributes_newsmalltownlab[] = INCBIN_U16("data/tilesets/secondary/newsmalltownlab/metatile_attributes.bin");
+
+const u16 gMetatiles_AutumnRuins[] = INCBIN_U16("data/tilesets/secondary/autumn_ruins/metatiles.bin");
+const u16 gMetatileAttributes_AutumnRuins[] = INCBIN_U16("data/tilesets/secondary/autumn_ruins/metatile_attributes.bin");

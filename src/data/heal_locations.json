@@ -131,6 +131,18 @@
       "map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
       "x": 3,
       "y": 52
+    },
+    {
+      "id": "HEAL_LOCATION_ERPUS_CITY",
+      "map": "MAP_ERPUS_CITY",
+      "x": 10,
+      "y": 11
+    },
+    {
+      "id": "HEAL_LOCATION_LITTLEROOT_TOWN",
+      "map": "MAP_LITTLEROOT_TOWN",
+      "x": 10,
+      "y": 10
     }
   ]
 }
