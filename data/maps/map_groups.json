@@ -101,7 +101,8 @@
     "LittlerootTown_BrendansHouse_2F",
     "LittlerootTown_MaysHouse_1F",
     "LittlerootTown_MaysHouse_2F",
-    "LittlerootTown_ProfessorBirchsLab"
+    "LittlerootTown_ProfessorBirchsLab",
+    "ErpusCity_PlayerHouse_1F"
   ],
   "gMapGroup_IndoorOldale": [
     "OldaleTown_House1",
@@ -634,6 +635,8 @@
     "LabJariIndoorStorage",
     "LabJariIndoorBasementStairs1",
     "CaveCorridor",
-    "CaveHallwayJari"
+    "CaveHallwayJari",
+    "ErpusCity_PlayersHouse_1F",
+    "ErpusCity_PlayersHouse_2F"
   ]
 }

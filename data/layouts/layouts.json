@@ -642,8 +642,8 @@
       "name": "LittlerootTown_BrendansHouse_1F_Layout",
       "width": 11,
       "height": 9,
-      "border_width": 0,
-      "border_height": 0,
+      "border_width": 2,
+      "border_height": 2,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/border.bin",
@@ -5400,6 +5400,42 @@
       "secondary_tileset": "gTileset_Lab",
       "border_filepath": "data/layouts/LabJariIndoorStorage/border.bin",
       "blockdata_filepath": "data/layouts/LabJariIndoorStorage/map.bin"
+    },
+    {
+      "id": "LAYOUT_ERPUS_CITY_PLAYERS_HOUSE_1F",
+      "name": "ErpusCity_PlayersHouse_1F_Layout",
+      "width": 11,
+      "height": 9,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/ErpusCity_PlayersHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/ErpusCity_PlayersHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ERPUS_CITY_PLAYERS_HOUSE_2F",
+      "name": "ErpusCity_PlayersHouse_2F_Layout",
+      "width": 9,
+      "height": 8,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/ErpusCity_PlayersHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ErpusCity_PlayersHouse_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ERPUS_CITY_PLAYER_HOUSE_1F",
+      "name": "ErpusCity_PlayerHouse_1F_Layout",
+      "width": 11,
+      "height": 9,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/ErpusCity_PlayerHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/ErpusCity_PlayerHouse_1F/map.bin"
     }
   ]
 }
