@@ -666,8 +666,8 @@
       "name": "LittlerootTown_MaysHouse_1F_Layout",
       "width": 11,
       "height": 9,
-      "border_width": 0,
-      "border_height": 0,
+      "border_width": 2,
+      "border_height": 2,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/LittlerootTown_MaysHouse_1F/border.bin",
@@ -678,8 +678,8 @@
       "name": "LittlerootTown_MaysHouse_2F_Layout",
       "width": 9,
       "height": 8,
-      "border_width": 0,
-      "border_height": 0,
+      "border_width": 2,
+      "border_height": 2,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/LittlerootTown_MaysHouse_2F/border.bin",
@@ -5402,40 +5402,52 @@
       "blockdata_filepath": "data/layouts/LabJariIndoorStorage/map.bin"
     },
     {
-      "id": "LAYOUT_ERPUS_CITY_PLAYERS_HOUSE_1F",
-      "name": "ErpusCity_PlayersHouse_1F_Layout",
+      "id": "LAYOUT_ERPUS_CITY_BARRY_HOUSE_1F",
+      "name": "ErpusCity_BarryHouse_1F_Layout",
       "width": 11,
       "height": 9,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/ErpusCity_PlayersHouse_1F/border.bin",
-      "blockdata_filepath": "data/layouts/ErpusCity_PlayersHouse_1F/map.bin"
+      "border_filepath": "data/layouts/ErpusCity_BarryHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/ErpusCity_BarryHouse_1F/map.bin"
     },
     {
-      "id": "LAYOUT_ERPUS_CITY_PLAYERS_HOUSE_2F",
-      "name": "ErpusCity_PlayersHouse_2F_Layout",
+      "id": "LAYOUT_ERPUS_CITY_START_HOUSE_1F",
+      "name": "ErpusCity_StartHouse_1F_Layout",
+      "width": 11,
+      "height": 9,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/ErpusCity_StartHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/ErpusCity_StartHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ERPUS_CITY_START_HOUSE_2F",
+      "name": "ErpusCity_StartHouse_2F_Layout",
       "width": 9,
       "height": 8,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/ErpusCity_PlayersHouse_2F/border.bin",
-      "blockdata_filepath": "data/layouts/ErpusCity_PlayersHouse_2F/map.bin"
+      "border_filepath": "data/layouts/ErpusCity_StartHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ErpusCity_StartHouse_2F/map.bin"
     },
     {
-      "id": "LAYOUT_ERPUS_CITY_PLAYER_HOUSE_1F",
-      "name": "ErpusCity_PlayerHouse_1F_Layout",
-      "width": 11,
-      "height": 9,
+      "id": "LAYOUT_ERPUS_CITY_BARRY_HOUSE_2F",
+      "name": "ErpusCity_BarryHouse_2F_Layout",
+      "width": 9,
+      "height": 8,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/ErpusCity_PlayerHouse_1F/border.bin",
-      "blockdata_filepath": "data/layouts/ErpusCity_PlayerHouse_1F/map.bin"
+      "border_filepath": "data/layouts/ErpusCity_BarryHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ErpusCity_BarryHouse_2F/map.bin"
     }
   ]
 }

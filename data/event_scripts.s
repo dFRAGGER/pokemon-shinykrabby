@@ -1176,8 +1176,10 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/CaveHallwayJari/scripts.inc"
 
-	.include "data/maps/ErpusCity_PlayerHouse_1F/scripts.inc"
+	.include "data/maps/ErpusCity_BarryHouse_1F/scripts.inc"
 
-	.include "data/maps/ErpusCity_PlayersHouse_1F/scripts.inc"
+	.include "data/maps/ErpusCity_StartHouse_2F/scripts.inc"
 
-	.include "data/maps/ErpusCity_PlayersHouse_2F/scripts.inc"
+	.include "data/maps/ErpusCity_StartHouse_1F/scripts.inc"
+
+	.include "data/maps/ErpusCity_BarryHouse_2F/scripts.inc"

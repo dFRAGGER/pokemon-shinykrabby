@@ -1,9 +1,9 @@
 {
-  "id": "MAP_LAB_JARI_INDOOR_BASEMENT_STAIRS1",
-  "name": "LabJariIndoorBasementStairs1",
-  "layout": "LAYOUT_LAB_JARI_INDOOR_BASEMENT_STAIRS1",
-  "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "id": "MAP_ERPUS_CITY_BARRY_HOUSE_1F",
+  "name": "ErpusCity_BarryHouse_1F",
+  "layout": "LAYOUT_ERPUS_CITY_BARRY_HOUSE_1F",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -16,18 +16,25 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 19,
-      "y": 23,
+      "x": 1,
+      "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_CAVE_HALLWAY_JARI",
+      "dest_map": "MAP_ERPUS_CITY",
       "dest_warp_id": "2"
     },
     {
-      "x": 20,
-      "y": 23,
+      "x": 2,
+      "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_CAVE_HALLWAY_JARI",
+      "dest_map": "MAP_ERPUS_CITY",
       "dest_warp_id": "2"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ERPUS_CITY_BARRY_HOUSE_2F",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

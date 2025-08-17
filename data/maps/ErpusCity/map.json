@@ -43,11 +43,18 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 17,
+      "x": 19,
       "y": 27,
       "elevation": 0,
-      "dest_map": "MAP_ERPUS_CITY_PLAYERS_HOUSE_1F",
-      "dest_warp_id": "1"
+      "dest_map": "MAP_ERPUS_CITY_START_HOUSE_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 34,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_ERPUS_CITY_BARRY_HOUSE_1F",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
