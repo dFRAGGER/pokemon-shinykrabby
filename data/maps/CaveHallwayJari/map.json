@@ -1,0 +1,35 @@
+{
+  "id": "MAP_CAVE_HALLWAY_JARI",
+  "name": "CaveHallwayJari",
+  "layout": "LAYOUT_CAVE_HALLWAY_JARI",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 9,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_CAVE_CORRIDOR",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 26,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_LAB_JARI_INDOOR_F0",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

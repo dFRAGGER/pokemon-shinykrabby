@@ -1,0 +1,35 @@
+{
+  "id": "MAP_CAVE_CORRIDOR",
+  "name": "CaveCorridor",
+  "layout": "LAYOUT_CAVE_CORRIDOR",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_CAVE_HALLWAY_JARI",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 13,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_LAB_JARI_INDOOR_STORAGE",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

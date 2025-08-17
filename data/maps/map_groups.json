@@ -34,7 +34,8 @@
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124",
-    "gMapGroup_TownsAndRoutesSK"
+    "gMapGroup_TownsAndRoutesSK",
+    "gMapGroup_IndooErpusCity"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -624,6 +625,15 @@
   ],
   "gMapGroup_TownsAndRoutesSK": [
     "ErpusCity",
-    "AutumnRuins"
+    "AutumnRuins",
+    "Route01"
+  ],
+  "gMapGroup_IndooErpusCity": [
+    "LabJariIndoor",
+    "LabJariIndoorF0",
+    "LabJariIndoorStorage",
+    "LabJariIndoorBasementStairs1",
+    "CaveCorridor",
+    "CaveHallwayJari"
   ]
 }

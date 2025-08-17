@@ -1161,3 +1161,17 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ErpusCity/scripts.inc"
 
 	.include "data/maps/AutumnRuins/scripts.inc"
+
+	.include "data/maps/Route01/scripts.inc"
+
+	.include "data/maps/LabJariIndoor/scripts.inc"
+
+	.include "data/maps/LabJariIndoorF0/scripts.inc"
+
+	.include "data/maps/CaveCorridor/scripts.inc"
+
+	.include "data/maps/LabJariIndoorStorage/scripts.inc"
+
+	.include "data/maps/LabJariIndoorBasementStairs1/scripts.inc"
+
+	.include "data/maps/CaveHallwayJari/scripts.inc"
