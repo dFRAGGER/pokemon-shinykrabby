@@ -3,7 +3,7 @@
   "name": "CaveHallwayJari",
   "layout": "LAYOUT_CAVE_HALLWAY_JARI",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_ERPUS_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

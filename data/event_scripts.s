@@ -579,6 +579,19 @@ gStdScripts_End::
 	.include "data/maps/Route119_WeatherInstitute_2F/scripts.inc"
 	.include "data/maps/Route119_House/scripts.inc"
 	.include "data/maps/Route124_DivingTreasureHuntersHouse/scripts.inc"
+	.include "data/maps/AutumnRuins/scripts.inc"
+	.include "data/maps/Route01/scripts.inc"
+	.include "data/maps/LabJariIndoor/scripts.inc"
+	.include "data/maps/LabJariIndoorF0/scripts.inc"
+	.include "data/maps/CaveCorridor/scripts.inc"
+	.include "data/maps/LabJariIndoorStorage/scripts.inc"
+	.include "data/maps/LabJariIndoorBasementStairs1/scripts.inc"
+	.include "data/maps/CaveHallwayJari/scripts.inc"
+	.include "data/maps/ErpusCity_BarryHouse_1F/scripts.inc"
+	.include "data/maps/ErpusCity_StartHouse_2F/scripts.inc"
+	.include "data/maps/ErpusCity_StartHouse_1F/scripts.inc"
+	.include "data/maps/ErpusCity_BarryHouse_2F/scripts.inc"
+	.include "data/maps/ErpusCity_House3_1F/scripts.inc"
 
 	.include "data/scripts/std_msgbox.inc"
 	.include "data/scripts/trainer_battle.inc"
@@ -1158,28 +1171,6 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
 
-	.include "data/maps/ErpusCity/scripts.inc"
+	
 
-	.include "data/maps/AutumnRuins/scripts.inc"
-
-	.include "data/maps/Route01/scripts.inc"
-
-	.include "data/maps/LabJariIndoor/scripts.inc"
-
-	.include "data/maps/LabJariIndoorF0/scripts.inc"
-
-	.include "data/maps/CaveCorridor/scripts.inc"
-
-	.include "data/maps/LabJariIndoorStorage/scripts.inc"
-
-	.include "data/maps/LabJariIndoorBasementStairs1/scripts.inc"
-
-	.include "data/maps/CaveHallwayJari/scripts.inc"
-
-	.include "data/maps/ErpusCity_BarryHouse_1F/scripts.inc"
-
-	.include "data/maps/ErpusCity_StartHouse_2F/scripts.inc"
-
-	.include "data/maps/ErpusCity_StartHouse_1F/scripts.inc"
-
-	.include "data/maps/ErpusCity_BarryHouse_2F/scripts.inc"
+	.include "data/maps/ErpCity/scripts.inc"

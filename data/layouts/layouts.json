@@ -5294,18 +5294,6 @@
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
     },
     {
-      "id": "LAYOUT_ERPUS_CITY",
-      "name": "ErpusCity_Layout",
-      "width": 63,
-      "height": 40,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_newsmalltownlab",
-      "border_filepath": "data/layouts/ErpusCity/border.bin",
-      "blockdata_filepath": "data/layouts/ErpusCity/map.bin"
-    },
-    {
       "id": "LAYOUT_AUTUMN_RUINS",
       "name": "AutumnRuins_Layout",
       "width": 60,
@@ -5325,7 +5313,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Lilycove",
+      "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Route01/border.bin",
       "blockdata_filepath": "data/layouts/Route01/map.bin"
     },
@@ -5448,6 +5436,30 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/ErpusCity_BarryHouse_2F/border.bin",
       "blockdata_filepath": "data/layouts/ErpusCity_BarryHouse_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ERPUS_CITY_HOUSE3_1F",
+      "name": "ErpusCity_House3_1F_Layout",
+      "width": 12,
+      "height": 10,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/ErpusCity_House3_1F/border.bin",
+      "blockdata_filepath": "data/layouts/ErpusCity_House3_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ERP_CITY",
+      "name": "ErpCity_Layout",
+      "width": 63,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_newsmalltownlab",
+      "border_filepath": "data/layouts/ErpCity/border.bin",
+      "blockdata_filepath": "data/layouts/ErpCity/map.bin"
     }
   ]
 }

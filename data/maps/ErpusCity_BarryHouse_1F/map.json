@@ -3,7 +3,7 @@
   "name": "ErpusCity_BarryHouse_1F",
   "layout": "LAYOUT_ERPUS_CITY_BARRY_HOUSE_1F",
   "music": "MUS_LITTLEROOT",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_ERPUS_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -19,14 +19,14 @@
       "x": 1,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_ERPUS_CITY",
+      "dest_map": "MAP_ERP_CITY",
       "dest_warp_id": "2"
     },
     {
       "x": 2,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_ERPUS_CITY",
+      "dest_map": "MAP_ERP_CITY",
       "dest_warp_id": "2"
     },
     {
