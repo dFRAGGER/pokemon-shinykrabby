@@ -53,8 +53,8 @@
 #define FLAG_RECEIVED_STARTER_TREECKO    0x27 // Unused Flag
 #define FLAG_RECEIVED_STARTER_MUDKIP   0x28 // Unused Flag
 #define FLAG_RECEIVED_STARTER_CHOICE    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
+#define FLAG_PROFESSOR_BIRDS_DISCOVERY    0x2A // Unused Flag
+#define FLAG_KICKED_OUT_LAB_CONVO    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag

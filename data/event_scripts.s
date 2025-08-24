@@ -1174,3 +1174,5 @@ EventScript_VsSeekerChargingDone::
 	
 
 	.include "data/maps/ErpCity/scripts.inc"
+
+	.include "data/maps/IndoorBernrodeGeneral/scripts.inc"

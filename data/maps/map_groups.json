@@ -35,7 +35,8 @@
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124",
     "gMapGroup_TownsAndRoutesSK",
-    "gMapGroup_IndooErpusCity"
+    "gMapGroup_IndooErpusCity",
+    "gMapGroup_IndoorBernrode"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -640,5 +641,8 @@
     "ErpusCity_BarryHouse_1F",
     "ErpusCity_BarryHouse_2F",
     "ErpusCity_House3_1F"
+  ],
+  "gMapGroup_IndoorBernrode": [
+    "IndoorBernrodeGeneral"
   ]
 }

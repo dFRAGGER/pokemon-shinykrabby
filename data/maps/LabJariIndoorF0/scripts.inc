@@ -1,551 +1,885 @@
 LabJariIndoorF0_MapScripts::
+# 2 "data/maps/LabJariIndoorF0/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, LabJariIndoorF0_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+LabJariIndoorF0_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 3 "data/maps/LabJariIndoorF0/scripts.pory"
+	setflag FLAG_PROFESSOR_BIRDS_DISCOVERY
+# 4 "data/maps/LabJariIndoorF0/scripts.pory"
+	setvar VAR_RECIEVED_STARTER_POKEMON, 1
+	return
 
 
 ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection::
-# 6 "data/maps/LabJariIndoorF0/scripts.pory"
+# 9 "data/maps/LabJariIndoorF0/scripts.pory"
 	lockall
-# 7 "data/maps/LabJariIndoorF0/scripts.pory"
+# 10 "data/maps/LabJariIndoorF0/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_2
-# 27 "data/maps/LabJariIndoorF0/scripts.pory"
+# 32 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
 ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_1:
-# 29 "data/maps/LabJariIndoorF0/scripts.pory"
+# 34 "data/maps/LabJariIndoorF0/scripts.pory"
 	releaseall
 	return
 
 ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_2:
-# 8 "data/maps/LabJariIndoorF0/scripts.pory"
+# 11 "data/maps/LabJariIndoorF0/scripts.pory"
 	showmonpic SPECIES_CHARMANDER, 10, 3
-# 9 "data/maps/LabJariIndoorF0/scripts.pory"
+# 12 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_0, MSGBOX_YESNO
-# 10 "data/maps/LabJariIndoorF0/scripts.pory"
+# 13 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_6
 ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_5:
-# 13 "data/maps/LabJariIndoorF0/scripts.pory"
+# 16 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_9
 ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_8:
-# 24 "data/maps/LabJariIndoorF0/scripts.pory"
+# 29 "data/maps/LabJariIndoorF0/scripts.pory"
 	hidemonpic
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_1
 
 ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_6:
-# 11 "data/maps/LabJariIndoorF0/scripts.pory"
+# 14 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_9:
-# 14 "data/maps/LabJariIndoorF0/scripts.pory"
-	givemon SPECIES_CHARMANDER, 5
-# 15 "data/maps/LabJariIndoorF0/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 16 "data/maps/LabJariIndoorF0/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
 # 17 "data/maps/LabJariIndoorF0/scripts.pory"
-	setflag FLAG_RECEIVED_STARTER_CHARMANDER
+	givemon SPECIES_CHARMANDER, 5
 # 18 "data/maps/LabJariIndoorF0/scripts.pory"
-	removeobject 9
+	playfanfare MUS_OBTAIN_ITEM
 # 19 "data/maps/LabJariIndoorF0/scripts.pory"
-	setflag FLAG_RECEIVED_STARTER_CHOICE
+	setflag FLAG_SYS_POKEMON_GET
 # 20 "data/maps/LabJariIndoorF0/scripts.pory"
-	bufferspeciesname STR_VAR_2, SPECIES_CHARMANDER
+	setflag FLAG_RECEIVED_STARTER_CHARMANDER
 # 21 "data/maps/LabJariIndoorF0/scripts.pory"
-	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
+	removeobject 9
 # 22 "data/maps/LabJariIndoorF0/scripts.pory"
+	setflag FLAG_RECEIVED_STARTER_CHOICE
+# 23 "data/maps/LabJariIndoorF0/scripts.pory"
+	bufferspeciesname STR_VAR_2, SPECIES_CHARMANDER
+# 24 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
+# 25 "data/maps/LabJariIndoorF0/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_11:
+# 26 "data/maps/LabJariIndoorF0/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_8
 
 
 ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection::
-# 34 "data/maps/LabJariIndoorF0/scripts.pory"
+# 39 "data/maps/LabJariIndoorF0/scripts.pory"
 	lockall
-# 35 "data/maps/LabJariIndoorF0/scripts.pory"
+# 40 "data/maps/LabJariIndoorF0/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_2
-# 56 "data/maps/LabJariIndoorF0/scripts.pory"
+# 63 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
 ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_1:
-# 58 "data/maps/LabJariIndoorF0/scripts.pory"
+# 65 "data/maps/LabJariIndoorF0/scripts.pory"
 	releaseall
 	return
 
 ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_2:
-# 36 "data/maps/LabJariIndoorF0/scripts.pory"
+# 41 "data/maps/LabJariIndoorF0/scripts.pory"
 	showmonpic SPECIES_BULBASAUR, 10, 3
-# 37 "data/maps/LabJariIndoorF0/scripts.pory"
+# 42 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_Text_0, MSGBOX_YESNO
-# 38 "data/maps/LabJariIndoorF0/scripts.pory"
+# 43 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_6
 ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_5:
-# 41 "data/maps/LabJariIndoorF0/scripts.pory"
+# 46 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_9
 ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_8:
-# 53 "data/maps/LabJariIndoorF0/scripts.pory"
+# 60 "data/maps/LabJariIndoorF0/scripts.pory"
 	hidemonpic
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_1
 
 ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_6:
-# 39 "data/maps/LabJariIndoorF0/scripts.pory"
+# 44 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_9:
-# 42 "data/maps/LabJariIndoorF0/scripts.pory"
-	givemon SPECIES_BULBASAUR, 5
-# 43 "data/maps/LabJariIndoorF0/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 44 "data/maps/LabJariIndoorF0/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 45 "data/maps/LabJariIndoorF0/scripts.pory"
-	setflag FLAG_RECEIVED_STARTER_BULBASAUR
-# 46 "data/maps/LabJariIndoorF0/scripts.pory"
-	removeobject 8
 # 47 "data/maps/LabJariIndoorF0/scripts.pory"
-	setflag FLAG_RECEIVED_STARTER_CHOICE
+	givemon SPECIES_BULBASAUR, 5
 # 48 "data/maps/LabJariIndoorF0/scripts.pory"
-	bufferspeciesname STR_VAR_2, SPECIES_BULBASAUR
+	playfanfare MUS_OBTAIN_ITEM
 # 49 "data/maps/LabJariIndoorF0/scripts.pory"
-	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
+	setflag FLAG_SYS_POKEMON_GET
 # 50 "data/maps/LabJariIndoorF0/scripts.pory"
+	setflag FLAG_RECEIVED_STARTER_BULBASAUR
+# 51 "data/maps/LabJariIndoorF0/scripts.pory"
+	removeobject 8
+# 52 "data/maps/LabJariIndoorF0/scripts.pory"
+	setflag FLAG_RECEIVED_STARTER_CHOICE
+# 53 "data/maps/LabJariIndoorF0/scripts.pory"
+	bufferspeciesname STR_VAR_2, SPECIES_BULBASAUR
+# 54 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
+# 55 "data/maps/LabJariIndoorF0/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_11:
+# 56 "data/maps/LabJariIndoorF0/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_8
 
 
 ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection::
-# 63 "data/maps/LabJariIndoorF0/scripts.pory"
+# 70 "data/maps/LabJariIndoorF0/scripts.pory"
 	lockall
-# 64 "data/maps/LabJariIndoorF0/scripts.pory"
+# 71 "data/maps/LabJariIndoorF0/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_2
-# 85 "data/maps/LabJariIndoorF0/scripts.pory"
+# 93 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
 ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_1:
-# 87 "data/maps/LabJariIndoorF0/scripts.pory"
+# 95 "data/maps/LabJariIndoorF0/scripts.pory"
 	releaseall
 	return
 
 ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_2:
-# 65 "data/maps/LabJariIndoorF0/scripts.pory"
+# 72 "data/maps/LabJariIndoorF0/scripts.pory"
 	showmonpic SPECIES_SQUIRTLE, 10, 3
-# 66 "data/maps/LabJariIndoorF0/scripts.pory"
+# 73 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_Text_0, MSGBOX_YESNO
-# 67 "data/maps/LabJariIndoorF0/scripts.pory"
+# 74 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_6
 ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_5:
-# 70 "data/maps/LabJariIndoorF0/scripts.pory"
+# 77 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_9
 ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_8:
-# 82 "data/maps/LabJariIndoorF0/scripts.pory"
+# 90 "data/maps/LabJariIndoorF0/scripts.pory"
 	hidemonpic
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_1
 
 ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_6:
-# 68 "data/maps/LabJariIndoorF0/scripts.pory"
+# 75 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_9:
-# 71 "data/maps/LabJariIndoorF0/scripts.pory"
-	givemon SPECIES_SQUIRTLE, 5
-# 72 "data/maps/LabJariIndoorF0/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 73 "data/maps/LabJariIndoorF0/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 74 "data/maps/LabJariIndoorF0/scripts.pory"
-	setflag FLAG_RECEIVED_STARTER_SQUIRTLE
-# 75 "data/maps/LabJariIndoorF0/scripts.pory"
-	removeobject 7
-# 76 "data/maps/LabJariIndoorF0/scripts.pory"
-	setflag FLAG_RECEIVED_STARTER_CHOICE
-# 77 "data/maps/LabJariIndoorF0/scripts.pory"
-	bufferspeciesname STR_VAR_2, SPECIES_SQUIRTLE
 # 78 "data/maps/LabJariIndoorF0/scripts.pory"
-	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
+	givemon SPECIES_SQUIRTLE, 5
 # 79 "data/maps/LabJariIndoorF0/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 80 "data/maps/LabJariIndoorF0/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 81 "data/maps/LabJariIndoorF0/scripts.pory"
+	setflag FLAG_RECEIVED_STARTER_SQUIRTLE
+# 82 "data/maps/LabJariIndoorF0/scripts.pory"
+	removeobject 7
+# 83 "data/maps/LabJariIndoorF0/scripts.pory"
+	setflag FLAG_RECEIVED_STARTER_CHOICE
+# 84 "data/maps/LabJariIndoorF0/scripts.pory"
+	bufferspeciesname STR_VAR_2, SPECIES_SQUIRTLE
+# 85 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
+# 86 "data/maps/LabJariIndoorF0/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_11:
+# 87 "data/maps/LabJariIndoorF0/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_8
 
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection::
-# 93 "data/maps/LabJariIndoorF0/scripts.pory"
+# 101 "data/maps/LabJariIndoorF0/scripts.pory"
 	lockall
-# 94 "data/maps/LabJariIndoorF0/scripts.pory"
+# 102 "data/maps/LabJariIndoorF0/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_2
-# 115 "data/maps/LabJariIndoorF0/scripts.pory"
+# 125 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
 ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_1:
-# 117 "data/maps/LabJariIndoorF0/scripts.pory"
+# 127 "data/maps/LabJariIndoorF0/scripts.pory"
 	releaseall
 	return
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_2:
-# 95 "data/maps/LabJariIndoorF0/scripts.pory"
+# 103 "data/maps/LabJariIndoorF0/scripts.pory"
 	showmonpic SPECIES_CYNDAQUIL, 10, 3
-# 96 "data/maps/LabJariIndoorF0/scripts.pory"
+# 104 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_Text_0, MSGBOX_YESNO
-# 97 "data/maps/LabJariIndoorF0/scripts.pory"
+# 105 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_6
 ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_5:
-# 100 "data/maps/LabJariIndoorF0/scripts.pory"
+# 108 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_9
 ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_8:
-# 112 "data/maps/LabJariIndoorF0/scripts.pory"
+# 122 "data/maps/LabJariIndoorF0/scripts.pory"
 	hidemonpic
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_1
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_6:
-# 98 "data/maps/LabJariIndoorF0/scripts.pory"
+# 106 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_9:
-# 101 "data/maps/LabJariIndoorF0/scripts.pory"
-	givemon SPECIES_CYNDAQUIL, 5
-# 102 "data/maps/LabJariIndoorF0/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 103 "data/maps/LabJariIndoorF0/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 104 "data/maps/LabJariIndoorF0/scripts.pory"
-	setflag FLAG_RECEIVED_STARTER_CYNDAQUIL
-# 105 "data/maps/LabJariIndoorF0/scripts.pory"
-	removeobject 6
-# 106 "data/maps/LabJariIndoorF0/scripts.pory"
-	setflag FLAG_RECEIVED_STARTER_CHOICE
-# 107 "data/maps/LabJariIndoorF0/scripts.pory"
-	bufferspeciesname STR_VAR_2, SPECIES_CYNDAQUIL
-# 108 "data/maps/LabJariIndoorF0/scripts.pory"
-	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
 # 109 "data/maps/LabJariIndoorF0/scripts.pory"
+	givemon SPECIES_CYNDAQUIL, 5
+# 110 "data/maps/LabJariIndoorF0/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 111 "data/maps/LabJariIndoorF0/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 112 "data/maps/LabJariIndoorF0/scripts.pory"
+	setflag FLAG_RECEIVED_STARTER_CYNDAQUIL
+# 113 "data/maps/LabJariIndoorF0/scripts.pory"
+	removeobject 6
+# 114 "data/maps/LabJariIndoorF0/scripts.pory"
+	setflag FLAG_RECEIVED_STARTER_CHOICE
+# 115 "data/maps/LabJariIndoorF0/scripts.pory"
+	bufferspeciesname STR_VAR_2, SPECIES_CYNDAQUIL
+# 116 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
+# 117 "data/maps/LabJariIndoorF0/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_11:
+# 118 "data/maps/LabJariIndoorF0/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_8
 
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection::
-# 122 "data/maps/LabJariIndoorF0/scripts.pory"
+# 132 "data/maps/LabJariIndoorF0/scripts.pory"
 	lockall
-# 123 "data/maps/LabJariIndoorF0/scripts.pory"
+# 133 "data/maps/LabJariIndoorF0/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_2
-# 144 "data/maps/LabJariIndoorF0/scripts.pory"
+# 156 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
 ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_1:
-# 146 "data/maps/LabJariIndoorF0/scripts.pory"
+# 158 "data/maps/LabJariIndoorF0/scripts.pory"
 	releaseall
 	return
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_2:
-# 124 "data/maps/LabJariIndoorF0/scripts.pory"
+# 134 "data/maps/LabJariIndoorF0/scripts.pory"
 	showmonpic SPECIES_CHIKORITA, 10, 3
-# 125 "data/maps/LabJariIndoorF0/scripts.pory"
+# 135 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_Text_0, MSGBOX_YESNO
-# 126 "data/maps/LabJariIndoorF0/scripts.pory"
+# 136 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_6
 ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_5:
-# 129 "data/maps/LabJariIndoorF0/scripts.pory"
+# 139 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_9
 ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_8:
-# 141 "data/maps/LabJariIndoorF0/scripts.pory"
+# 153 "data/maps/LabJariIndoorF0/scripts.pory"
 	hidemonpic
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_1
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_6:
-# 127 "data/maps/LabJariIndoorF0/scripts.pory"
+# 137 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_9:
-# 130 "data/maps/LabJariIndoorF0/scripts.pory"
+# 140 "data/maps/LabJariIndoorF0/scripts.pory"
 	givemon SPECIES_CHIKORITA, 5
-# 131 "data/maps/LabJariIndoorF0/scripts.pory"
+# 141 "data/maps/LabJariIndoorF0/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 132 "data/maps/LabJariIndoorF0/scripts.pory"
+# 142 "data/maps/LabJariIndoorF0/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 133 "data/maps/LabJariIndoorF0/scripts.pory"
+# 143 "data/maps/LabJariIndoorF0/scripts.pory"
 	setflag FLAG_RECEIVED_STARTER_CHIKORITA
-# 134 "data/maps/LabJariIndoorF0/scripts.pory"
+# 144 "data/maps/LabJariIndoorF0/scripts.pory"
 	removeobject 5
-# 135 "data/maps/LabJariIndoorF0/scripts.pory"
+# 145 "data/maps/LabJariIndoorF0/scripts.pory"
 	setflag FLAG_RECEIVED_STARTER_CHOICE
-# 136 "data/maps/LabJariIndoorF0/scripts.pory"
+# 146 "data/maps/LabJariIndoorF0/scripts.pory"
 	bufferspeciesname STR_VAR_2, SPECIES_CHIKORITA
-# 137 "data/maps/LabJariIndoorF0/scripts.pory"
+# 147 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
-# 138 "data/maps/LabJariIndoorF0/scripts.pory"
+# 148 "data/maps/LabJariIndoorF0/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_11:
+# 149 "data/maps/LabJariIndoorF0/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_8
 
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection::
-# 151 "data/maps/LabJariIndoorF0/scripts.pory"
+# 163 "data/maps/LabJariIndoorF0/scripts.pory"
 	lockall
-# 152 "data/maps/LabJariIndoorF0/scripts.pory"
+# 164 "data/maps/LabJariIndoorF0/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_2
-# 173 "data/maps/LabJariIndoorF0/scripts.pory"
+# 187 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
 ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_1:
-# 175 "data/maps/LabJariIndoorF0/scripts.pory"
+# 189 "data/maps/LabJariIndoorF0/scripts.pory"
 	releaseall
 	return
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_2:
-# 153 "data/maps/LabJariIndoorF0/scripts.pory"
+# 165 "data/maps/LabJariIndoorF0/scripts.pory"
 	showmonpic SPECIES_TOTODILE, 10, 3
-# 154 "data/maps/LabJariIndoorF0/scripts.pory"
+# 166 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_Text_0, MSGBOX_YESNO
-# 155 "data/maps/LabJariIndoorF0/scripts.pory"
+# 167 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_6
 ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_5:
-# 158 "data/maps/LabJariIndoorF0/scripts.pory"
+# 170 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_9
 ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_8:
-# 170 "data/maps/LabJariIndoorF0/scripts.pory"
+# 184 "data/maps/LabJariIndoorF0/scripts.pory"
 	hidemonpic
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_1
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_6:
-# 156 "data/maps/LabJariIndoorF0/scripts.pory"
+# 168 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_9:
-# 159 "data/maps/LabJariIndoorF0/scripts.pory"
+# 171 "data/maps/LabJariIndoorF0/scripts.pory"
 	givemon SPECIES_TOTODILE, 5
-# 160 "data/maps/LabJariIndoorF0/scripts.pory"
+# 172 "data/maps/LabJariIndoorF0/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 161 "data/maps/LabJariIndoorF0/scripts.pory"
+# 173 "data/maps/LabJariIndoorF0/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 162 "data/maps/LabJariIndoorF0/scripts.pory"
+# 174 "data/maps/LabJariIndoorF0/scripts.pory"
 	setflag FLAG_RECEIVED_STARTER_TOTODILE
-# 163 "data/maps/LabJariIndoorF0/scripts.pory"
+# 175 "data/maps/LabJariIndoorF0/scripts.pory"
 	removeobject 4
-# 164 "data/maps/LabJariIndoorF0/scripts.pory"
+# 176 "data/maps/LabJariIndoorF0/scripts.pory"
 	setflag FLAG_RECEIVED_STARTER_CHOICE
-# 165 "data/maps/LabJariIndoorF0/scripts.pory"
+# 177 "data/maps/LabJariIndoorF0/scripts.pory"
 	bufferspeciesname STR_VAR_2, SPECIES_TOTODILE
-# 166 "data/maps/LabJariIndoorF0/scripts.pory"
+# 178 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
-# 167 "data/maps/LabJariIndoorF0/scripts.pory"
+# 179 "data/maps/LabJariIndoorF0/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_11:
+# 180 "data/maps/LabJariIndoorF0/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_8
 
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection::
-# 180 "data/maps/LabJariIndoorF0/scripts.pory"
+# 194 "data/maps/LabJariIndoorF0/scripts.pory"
 	lockall
-# 181 "data/maps/LabJariIndoorF0/scripts.pory"
+# 195 "data/maps/LabJariIndoorF0/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_2
-# 202 "data/maps/LabJariIndoorF0/scripts.pory"
+# 218 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
 ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_1:
-# 204 "data/maps/LabJariIndoorF0/scripts.pory"
+# 220 "data/maps/LabJariIndoorF0/scripts.pory"
 	releaseall
 	return
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_2:
-# 182 "data/maps/LabJariIndoorF0/scripts.pory"
+# 196 "data/maps/LabJariIndoorF0/scripts.pory"
 	showmonpic SPECIES_TORCHIC, 10, 3
-# 183 "data/maps/LabJariIndoorF0/scripts.pory"
+# 197 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_Text_0, MSGBOX_YESNO
-# 184 "data/maps/LabJariIndoorF0/scripts.pory"
+# 198 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_6
 ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_5:
-# 187 "data/maps/LabJariIndoorF0/scripts.pory"
+# 201 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_9
 ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_8:
-# 199 "data/maps/LabJariIndoorF0/scripts.pory"
+# 215 "data/maps/LabJariIndoorF0/scripts.pory"
 	hidemonpic
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_1
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_6:
-# 185 "data/maps/LabJariIndoorF0/scripts.pory"
+# 199 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_9:
-# 188 "data/maps/LabJariIndoorF0/scripts.pory"
+# 202 "data/maps/LabJariIndoorF0/scripts.pory"
 	givemon SPECIES_TORCHIC, 5
-# 189 "data/maps/LabJariIndoorF0/scripts.pory"
+# 203 "data/maps/LabJariIndoorF0/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 190 "data/maps/LabJariIndoorF0/scripts.pory"
+# 204 "data/maps/LabJariIndoorF0/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 191 "data/maps/LabJariIndoorF0/scripts.pory"
+# 205 "data/maps/LabJariIndoorF0/scripts.pory"
 	setflag FLAG_RECEIVED_STARTER_TORCHIC
-# 192 "data/maps/LabJariIndoorF0/scripts.pory"
+# 206 "data/maps/LabJariIndoorF0/scripts.pory"
 	removeobject 3
-# 193 "data/maps/LabJariIndoorF0/scripts.pory"
+# 207 "data/maps/LabJariIndoorF0/scripts.pory"
 	setflag FLAG_RECEIVED_STARTER_CHOICE
-# 194 "data/maps/LabJariIndoorF0/scripts.pory"
+# 208 "data/maps/LabJariIndoorF0/scripts.pory"
 	bufferspeciesname STR_VAR_2, SPECIES_TORCHIC
-# 195 "data/maps/LabJariIndoorF0/scripts.pory"
+# 209 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
-# 196 "data/maps/LabJariIndoorF0/scripts.pory"
+# 210 "data/maps/LabJariIndoorF0/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_11:
+# 211 "data/maps/LabJariIndoorF0/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_8
 
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection::
-# 209 "data/maps/LabJariIndoorF0/scripts.pory"
+# 225 "data/maps/LabJariIndoorF0/scripts.pory"
 	lockall
-# 210 "data/maps/LabJariIndoorF0/scripts.pory"
+# 226 "data/maps/LabJariIndoorF0/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_2
-# 231 "data/maps/LabJariIndoorF0/scripts.pory"
+# 249 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
 ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_1:
-# 233 "data/maps/LabJariIndoorF0/scripts.pory"
+# 251 "data/maps/LabJariIndoorF0/scripts.pory"
 	releaseall
 	return
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_2:
-# 211 "data/maps/LabJariIndoorF0/scripts.pory"
+# 227 "data/maps/LabJariIndoorF0/scripts.pory"
 	showmonpic SPECIES_TREECKO, 10, 3
-# 212 "data/maps/LabJariIndoorF0/scripts.pory"
+# 228 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_Text_0, MSGBOX_YESNO
-# 213 "data/maps/LabJariIndoorF0/scripts.pory"
+# 229 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_6
 ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_5:
-# 216 "data/maps/LabJariIndoorF0/scripts.pory"
+# 232 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_9
 ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_8:
-# 228 "data/maps/LabJariIndoorF0/scripts.pory"
+# 246 "data/maps/LabJariIndoorF0/scripts.pory"
 	hidemonpic
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_1
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_6:
-# 214 "data/maps/LabJariIndoorF0/scripts.pory"
+# 230 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_9:
-# 217 "data/maps/LabJariIndoorF0/scripts.pory"
+# 233 "data/maps/LabJariIndoorF0/scripts.pory"
 	givemon SPECIES_TREECKO, 5
-# 218 "data/maps/LabJariIndoorF0/scripts.pory"
+# 234 "data/maps/LabJariIndoorF0/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 219 "data/maps/LabJariIndoorF0/scripts.pory"
+# 235 "data/maps/LabJariIndoorF0/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 220 "data/maps/LabJariIndoorF0/scripts.pory"
+# 236 "data/maps/LabJariIndoorF0/scripts.pory"
 	setflag FLAG_RECEIVED_STARTER_TREECKO
-# 221 "data/maps/LabJariIndoorF0/scripts.pory"
+# 237 "data/maps/LabJariIndoorF0/scripts.pory"
 	removeobject 2
-# 222 "data/maps/LabJariIndoorF0/scripts.pory"
+# 238 "data/maps/LabJariIndoorF0/scripts.pory"
 	setflag FLAG_RECEIVED_STARTER_CHOICE
-# 223 "data/maps/LabJariIndoorF0/scripts.pory"
+# 239 "data/maps/LabJariIndoorF0/scripts.pory"
 	bufferspeciesname STR_VAR_2, SPECIES_TREECKO
-# 224 "data/maps/LabJariIndoorF0/scripts.pory"
+# 240 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
-# 225 "data/maps/LabJariIndoorF0/scripts.pory"
+# 241 "data/maps/LabJariIndoorF0/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_11:
+# 242 "data/maps/LabJariIndoorF0/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_8
 
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection::
-# 238 "data/maps/LabJariIndoorF0/scripts.pory"
+# 256 "data/maps/LabJariIndoorF0/scripts.pory"
 	lockall
-# 239 "data/maps/LabJariIndoorF0/scripts.pory"
+# 257 "data/maps/LabJariIndoorF0/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_2
-# 260 "data/maps/LabJariIndoorF0/scripts.pory"
+# 279 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
 ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_1:
-# 262 "data/maps/LabJariIndoorF0/scripts.pory"
+# 281 "data/maps/LabJariIndoorF0/scripts.pory"
 	releaseall
 	return
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_2:
-# 240 "data/maps/LabJariIndoorF0/scripts.pory"
+# 258 "data/maps/LabJariIndoorF0/scripts.pory"
 	showmonpic SPECIES_MUDKIP, 10, 3
-# 241 "data/maps/LabJariIndoorF0/scripts.pory"
+# 259 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_Text_0, MSGBOX_YESNO
-# 242 "data/maps/LabJariIndoorF0/scripts.pory"
+# 260 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_6
 ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_5:
-# 245 "data/maps/LabJariIndoorF0/scripts.pory"
+# 263 "data/maps/LabJariIndoorF0/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_9
 ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_8:
-# 257 "data/maps/LabJariIndoorF0/scripts.pory"
+# 276 "data/maps/LabJariIndoorF0/scripts.pory"
 	hidemonpic
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_1
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_6:
-# 243 "data/maps/LabJariIndoorF0/scripts.pory"
+# 261 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_9:
-# 246 "data/maps/LabJariIndoorF0/scripts.pory"
+# 264 "data/maps/LabJariIndoorF0/scripts.pory"
 	givemon SPECIES_MUDKIP, 5
-# 247 "data/maps/LabJariIndoorF0/scripts.pory"
+# 265 "data/maps/LabJariIndoorF0/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 248 "data/maps/LabJariIndoorF0/scripts.pory"
+# 266 "data/maps/LabJariIndoorF0/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 249 "data/maps/LabJariIndoorF0/scripts.pory"
+# 267 "data/maps/LabJariIndoorF0/scripts.pory"
 	setflag FLAG_RECEIVED_STARTER_MUDKIP
-# 250 "data/maps/LabJariIndoorF0/scripts.pory"
+# 268 "data/maps/LabJariIndoorF0/scripts.pory"
 	removeobject 1
-# 251 "data/maps/LabJariIndoorF0/scripts.pory"
+# 269 "data/maps/LabJariIndoorF0/scripts.pory"
 	setflag FLAG_RECEIVED_STARTER_CHOICE
-# 252 "data/maps/LabJariIndoorF0/scripts.pory"
+# 270 "data/maps/LabJariIndoorF0/scripts.pory"
 	bufferspeciesname STR_VAR_2, SPECIES_MUDKIP
-# 253 "data/maps/LabJariIndoorF0/scripts.pory"
+# 271 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
-# 254 "data/maps/LabJariIndoorF0/scripts.pory"
+# 272 "data/maps/LabJariIndoorF0/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_11:
+# 273 "data/maps/LabJariIndoorF0/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_8
 
 
+ErpusCity_ProfessorBirdsLab_Eventscript_Kanto_Sign::
+# 286 "data/maps/LabJariIndoorF0/scripts.pory"
+	lockall
+# 287 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_Kanto_Sign_Text_0
+# 288 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmessage
+# 289 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_Kanto_Sign_Text_1
+# 290 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmessage
+# 291 "data/maps/LabJariIndoorF0/scripts.pory"
+	releaseall
+	return
+
+
+ErpusCity_ProfessorBirdsLab_Eventscript_Johto_Sign::
+# 295 "data/maps/LabJariIndoorF0/scripts.pory"
+	lockall
+# 296 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_Kanto_Sign_Text_0
+# 297 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmessage
+# 298 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_Johto_Sign_Text_0
+# 299 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmessage
+# 300 "data/maps/LabJariIndoorF0/scripts.pory"
+	releaseall
+	return
+
+
+ErpusCity_ProfessorBirdsLab_Eventscript_Hoenn_Sign::
+# 304 "data/maps/LabJariIndoorF0/scripts.pory"
+	lockall
+# 305 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_Kanto_Sign_Text_0
+# 306 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmessage
+# 307 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_Hoenn_Sign_Text_0
+# 308 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmessage
+# 309 "data/maps/LabJariIndoorF0/scripts.pory"
+	releaseall
+	return
+
+
+ErpusCity_ProfessorBirdsLab_Eventscript_TaylorSwift_Sign::
+# 313 "data/maps/LabJariIndoorF0/scripts.pory"
+	lockall
+# 314 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_Kanto_Sign_Text_0
+# 315 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmessage
+# 316 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_TaylorSwift_Sign_Text_0
+# 317 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmessage
+# 318 "data/maps/LabJariIndoorF0/scripts.pory"
+	releaseall
+	return
+
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit::
+# 322 "data/maps/LabJariIndoorF0/scripts.pory"
+	lockall
+# 323 "data/maps/LabJariIndoorF0/scripts.pory"
+	goto_if_set FLAG_RECEIVED_STARTER_CHOICE, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_2
+# 343 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_3
+# 344 "data/maps/LabJariIndoorF0/scripts.pory"
+	applymovement LOCALID_PLAYER, stopplayer
+# 345 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmovement 0
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_1:
+# 348 "data/maps/LabJariIndoorF0/scripts.pory"
+	releaseall
+	return
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_2:
+# 324 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_0
+# 325 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmessage
+# 326 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_1
+# 327 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmessage
+# 328 "data/maps/LabJariIndoorF0/scripts.pory"
+	applymovement LOCALID_PLAYER, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Movement_0
+# 329 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmovement
+# 330 "data/maps/LabJariIndoorF0/scripts.pory"
+	clearflag FLAG_PROFESSOR_BIRDS_DISCOVERY
+# 331 "data/maps/LabJariIndoorF0/scripts.pory"
+	addobject 10
+# 332 "data/maps/LabJariIndoorF0/scripts.pory"
+	applymovement 10, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Movement_1
+# 333 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmovement
+# 334 "data/maps/LabJariIndoorF0/scripts.pory"
+	applymovement LOCALID_PLAYER, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Movement_2
+# 335 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_2
+# 336 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmessage
+# 337 "data/maps/LabJariIndoorF0/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 338 "data/maps/LabJariIndoorF0/scripts.pory"
+	setflag FLAG_PROFESSOR_BIRDS_DISCOVERY
+# 339 "data/maps/LabJariIndoorF0/scripts.pory"
+	warpsilent MAP_ERP_CITY, 0
+# 340 "data/maps/LabJariIndoorF0/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+	goto LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_1
+
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit::
+# 352 "data/maps/LabJariIndoorF0/scripts.pory"
+	lockall
+# 353 "data/maps/LabJariIndoorF0/scripts.pory"
+	goto_if_set FLAG_RECEIVED_STARTER_CHOICE, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_2
+# 373 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_3
+# 374 "data/maps/LabJariIndoorF0/scripts.pory"
+	applymovement LOCALID_PLAYER, stopplayer
+# 375 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmovement 0
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_1:
+# 377 "data/maps/LabJariIndoorF0/scripts.pory"
+	releaseall
+	return
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_2:
+# 354 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_0
+# 355 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmessage
+# 356 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_1
+# 357 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmessage
+# 358 "data/maps/LabJariIndoorF0/scripts.pory"
+	applymovement LOCALID_PLAYER, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Movement_0
+# 359 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmovement
+# 360 "data/maps/LabJariIndoorF0/scripts.pory"
+	clearflag FLAG_PROFESSOR_BIRDS_DISCOVERY
+# 361 "data/maps/LabJariIndoorF0/scripts.pory"
+	addobject 10
+# 362 "data/maps/LabJariIndoorF0/scripts.pory"
+	applymovement 10, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_Movement_0
+# 363 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmovement
+# 364 "data/maps/LabJariIndoorF0/scripts.pory"
+	applymovement LOCALID_PLAYER, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_Movement_1
+# 365 "data/maps/LabJariIndoorF0/scripts.pory"
+	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_2
+# 366 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmessage
+# 367 "data/maps/LabJariIndoorF0/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 368 "data/maps/LabJariIndoorF0/scripts.pory"
+	setflag FLAG_PROFESSOR_BIRDS_DISCOVERY
+# 369 "data/maps/LabJariIndoorF0/scripts.pory"
+	warpsilent MAP_ERP_CITY, 0
+# 370 "data/maps/LabJariIndoorF0/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+	goto LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_1
+
+
+# 380 "data/maps/LabJariIndoorF0/scripts.pory"
+stopplayer:
+# 381 "data/maps/LabJariIndoorF0/scripts.pory"
+	walk_down
+	step_end
+
+# 328 "data/maps/LabJariIndoorF0/scripts.pory"
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Movement_0:
+# 328 "data/maps/LabJariIndoorF0/scripts.pory"
+	emote_exclamation_mark
+	step_end
+
+# 332 "data/maps/LabJariIndoorF0/scripts.pory"
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Movement_1:
+# 332 "data/maps/LabJariIndoorF0/scripts.pory"
+	walk_fast_right
+# 332 "data/maps/LabJariIndoorF0/scripts.pory"
+	walk_fast_down
+# 332 "data/maps/LabJariIndoorF0/scripts.pory"
+	face_left
+	step_end
+
+# 334 "data/maps/LabJariIndoorF0/scripts.pory"
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Movement_2:
+# 334 "data/maps/LabJariIndoorF0/scripts.pory"
+	face_right
+	step_end
+
+# 362 "data/maps/LabJariIndoorF0/scripts.pory"
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_Movement_0:
+# 362 "data/maps/LabJariIndoorF0/scripts.pory"
+	walk_fast_down
+# 362 "data/maps/LabJariIndoorF0/scripts.pory"
+	face_right
+	step_end
+
+# 364 "data/maps/LabJariIndoorF0/scripts.pory"
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_Movement_1:
+# 364 "data/maps/LabJariIndoorF0/scripts.pory"
+	face_left
+	step_end
+
 ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_0:
-# 9 "data/maps/LabJariIndoorF0/scripts.pory"
-	.string "Do you want to select Charmander?$"
+# 12 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "This pokeball seems to contain\n"
+	.string "Charmander, want to slide the pokeball\l"
+	.string "in your pocket?$"
 
 ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1:
-# 11 "data/maps/LabJariIndoorF0/scripts.pory"
+# 14 "data/maps/LabJariIndoorF0/scripts.pory"
 	.string "Lets see what is in the other pokeballs.$"
 
 ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2:
-# 27 "data/maps/LabJariIndoorF0/scripts.pory"
+# 32 "data/maps/LabJariIndoorF0/scripts.pory"
 	.string "Better leave quickly..$"
 
 ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_Text_0:
-# 37 "data/maps/LabJariIndoorF0/scripts.pory"
-	.string "Do you want to select Bulbasaur?$"
+# 42 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "This pokeball seems to contain\n"
+	.string "Bulbasaur, want to slide the pokeball in\l"
+	.string "your pocket?$"
 
 ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_Text_0:
-# 66 "data/maps/LabJariIndoorF0/scripts.pory"
-	.string "Do you want to select Squirtle?$"
+# 73 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "This pokeball seems to contain\n"
+	.string "Squirtle, want to slide the pokeball in\l"
+	.string "your pocket?$"
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_Text_0:
-# 96 "data/maps/LabJariIndoorF0/scripts.pory"
-	.string "Do you want to select Cyndaquil?$"
+# 104 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "This pokeball seems to contain\n"
+	.string "Cyndaquil, want to slide the pokeball in\l"
+	.string "your pocket?$"
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_Text_0:
-# 125 "data/maps/LabJariIndoorF0/scripts.pory"
-	.string "Do you want to select Chikorita?$"
+# 135 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "This pokeball seems to contain\n"
+	.string "Chikorita, want to slide the pokeball in\l"
+	.string "your pocket?$"
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_Text_0:
-# 154 "data/maps/LabJariIndoorF0/scripts.pory"
-	.string "Do you want to select Totodile?$"
+# 166 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "This pokeball seems to contain\n"
+	.string "Totodile, want to slide the pokeball in\l"
+	.string "your pocket?$"
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_Text_0:
-# 183 "data/maps/LabJariIndoorF0/scripts.pory"
-	.string "Do you want to select Torchic?$"
+# 197 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "This pokeball seems to contain Torchic,\n"
+	.string "want to slide the pokeball in your\l"
+	.string "pocket?$"
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_Text_0:
-# 212 "data/maps/LabJariIndoorF0/scripts.pory"
-	.string "Do you want to select Treecko?$"
+# 228 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "This pokeball seems to contain Treecko,\n"
+	.string "want to slide the pokeball in your\l"
+	.string "pocket?$"
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_Text_0:
-# 241 "data/maps/LabJariIndoorF0/scripts.pory"
-	.string "Do you want to select Mudkip?$"
+# 259 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "This pokeball seems to contain Mudkip,\n"
+	.string "want to slide the pokeball in your\l"
+	.string "pocket?$"
+
+ErpusCity_ProfessorBirdsLab_Eventscript_Kanto_Sign_Text_0:
+# 287 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "There seems to be something written on\n"
+	.string "this paper:$"
+
+ErpusCity_ProfessorBirdsLab_Eventscript_Kanto_Sign_Text_1:
+# 289 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "KANTOOOO!!?$"
+
+ErpusCity_ProfessorBirdsLab_Eventscript_Johto_Sign_Text_0:
+# 298 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "JOHTOO?!$"
+
+ErpusCity_ProfessorBirdsLab_Eventscript_Hoenn_Sign_Text_0:
+# 307 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "HOEENN??$"
+
+ErpusCity_ProfessorBirdsLab_Eventscript_TaylorSwift_Sign_Text_0:
+# 316 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "I LOVEEEEE TAYLOR SWIFT$"
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_0:
+# 324 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "HEY..........$"
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_1:
+# 326 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "WHAT ARE YOU DOING IN MY LAB??!$"
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_2:
+# 335 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "GET THE FUCK OUT!!$"
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_3:
+# 343 "data/maps/LabJariIndoorF0/scripts.pory"
+	.string "Hmmmm, those pokeballs look shiny.\n"
+	.string "Nobody will notice when I take one\l"
+	.string "right?$"

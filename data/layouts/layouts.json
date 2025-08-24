@@ -5453,13 +5453,25 @@
       "id": "LAYOUT_ERP_CITY",
       "name": "ErpCity_Layout",
       "width": 63,
-      "height": 40,
+      "height": 35,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_newsmalltownlab",
       "border_filepath": "data/layouts/ErpCity/border.bin",
       "blockdata_filepath": "data/layouts/ErpCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_INDOOR_BERNRODE_GENERAL",
+      "name": "IndoorBernrodeGeneral_Layout",
+      "width": 70,
+      "height": 50,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/IndoorBernrodeGeneral/border.bin",
+      "blockdata_filepath": "data/layouts/IndoorBernrodeGeneral/map.bin"
     }
   ]
 }
