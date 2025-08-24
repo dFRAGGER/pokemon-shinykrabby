@@ -638,14 +638,14 @@ LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit::
 	lockall
 # 323 "data/maps/LabJariIndoorF0/scripts.pory"
 	goto_if_set FLAG_RECEIVED_STARTER_CHOICE, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_2
-# 343 "data/maps/LabJariIndoorF0/scripts.pory"
+# 342 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_3
-# 344 "data/maps/LabJariIndoorF0/scripts.pory"
+# 343 "data/maps/LabJariIndoorF0/scripts.pory"
 	applymovement LOCALID_PLAYER, stopplayer
-# 345 "data/maps/LabJariIndoorF0/scripts.pory"
+# 344 "data/maps/LabJariIndoorF0/scripts.pory"
 	waitmovement 0
 LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_1:
-# 348 "data/maps/LabJariIndoorF0/scripts.pory"
+# 347 "data/maps/LabJariIndoorF0/scripts.pory"
 	releaseall
 	return
 
@@ -679,71 +679,67 @@ LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_2:
 # 337 "data/maps/LabJariIndoorF0/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 338 "data/maps/LabJariIndoorF0/scripts.pory"
-	setflag FLAG_PROFESSOR_BIRDS_DISCOVERY
-# 339 "data/maps/LabJariIndoorF0/scripts.pory"
 	warpsilent MAP_ERP_CITY, 0
-# 340 "data/maps/LabJariIndoorF0/scripts.pory"
+# 339 "data/maps/LabJariIndoorF0/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 	goto LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_1
 
 
 LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit::
-# 352 "data/maps/LabJariIndoorF0/scripts.pory"
+# 351 "data/maps/LabJariIndoorF0/scripts.pory"
 	lockall
-# 353 "data/maps/LabJariIndoorF0/scripts.pory"
+# 352 "data/maps/LabJariIndoorF0/scripts.pory"
 	goto_if_set FLAG_RECEIVED_STARTER_CHOICE, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_2
-# 373 "data/maps/LabJariIndoorF0/scripts.pory"
+# 371 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_3
-# 374 "data/maps/LabJariIndoorF0/scripts.pory"
+# 372 "data/maps/LabJariIndoorF0/scripts.pory"
 	applymovement LOCALID_PLAYER, stopplayer
-# 375 "data/maps/LabJariIndoorF0/scripts.pory"
+# 373 "data/maps/LabJariIndoorF0/scripts.pory"
 	waitmovement 0
 LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_1:
-# 377 "data/maps/LabJariIndoorF0/scripts.pory"
+# 375 "data/maps/LabJariIndoorF0/scripts.pory"
 	releaseall
 	return
 
 LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_2:
-# 354 "data/maps/LabJariIndoorF0/scripts.pory"
+# 353 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_0
+# 354 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmessage
 # 355 "data/maps/LabJariIndoorF0/scripts.pory"
-	waitmessage
-# 356 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_1
+# 356 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmessage
 # 357 "data/maps/LabJariIndoorF0/scripts.pory"
-	waitmessage
-# 358 "data/maps/LabJariIndoorF0/scripts.pory"
 	applymovement LOCALID_PLAYER, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Movement_0
+# 358 "data/maps/LabJariIndoorF0/scripts.pory"
+	waitmovement
 # 359 "data/maps/LabJariIndoorF0/scripts.pory"
-	waitmovement
-# 360 "data/maps/LabJariIndoorF0/scripts.pory"
 	clearflag FLAG_PROFESSOR_BIRDS_DISCOVERY
-# 361 "data/maps/LabJariIndoorF0/scripts.pory"
+# 360 "data/maps/LabJariIndoorF0/scripts.pory"
 	addobject 10
-# 362 "data/maps/LabJariIndoorF0/scripts.pory"
+# 361 "data/maps/LabJariIndoorF0/scripts.pory"
 	applymovement 10, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_Movement_0
-# 363 "data/maps/LabJariIndoorF0/scripts.pory"
+# 362 "data/maps/LabJariIndoorF0/scripts.pory"
 	waitmovement
-# 364 "data/maps/LabJariIndoorF0/scripts.pory"
+# 363 "data/maps/LabJariIndoorF0/scripts.pory"
 	applymovement LOCALID_PLAYER, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_Movement_1
-# 365 "data/maps/LabJariIndoorF0/scripts.pory"
+# 364 "data/maps/LabJariIndoorF0/scripts.pory"
 	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_2
-# 366 "data/maps/LabJariIndoorF0/scripts.pory"
+# 365 "data/maps/LabJariIndoorF0/scripts.pory"
 	waitmessage
-# 367 "data/maps/LabJariIndoorF0/scripts.pory"
+# 366 "data/maps/LabJariIndoorF0/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 368 "data/maps/LabJariIndoorF0/scripts.pory"
-	setflag FLAG_PROFESSOR_BIRDS_DISCOVERY
-# 369 "data/maps/LabJariIndoorF0/scripts.pory"
+# 367 "data/maps/LabJariIndoorF0/scripts.pory"
 	warpsilent MAP_ERP_CITY, 0
-# 370 "data/maps/LabJariIndoorF0/scripts.pory"
+# 368 "data/maps/LabJariIndoorF0/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 	goto LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_1
 
 
-# 380 "data/maps/LabJariIndoorF0/scripts.pory"
+# 378 "data/maps/LabJariIndoorF0/scripts.pory"
 stopplayer:
-# 381 "data/maps/LabJariIndoorF0/scripts.pory"
+# 379 "data/maps/LabJariIndoorF0/scripts.pory"
 	walk_down
 	step_end
 
@@ -769,17 +765,17 @@ LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Movement_2:
 	face_right
 	step_end
 
-# 362 "data/maps/LabJariIndoorF0/scripts.pory"
+# 361 "data/maps/LabJariIndoorF0/scripts.pory"
 LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_Movement_0:
-# 362 "data/maps/LabJariIndoorF0/scripts.pory"
+# 361 "data/maps/LabJariIndoorF0/scripts.pory"
 	walk_fast_down
-# 362 "data/maps/LabJariIndoorF0/scripts.pory"
+# 361 "data/maps/LabJariIndoorF0/scripts.pory"
 	face_right
 	step_end
 
-# 364 "data/maps/LabJariIndoorF0/scripts.pory"
+# 363 "data/maps/LabJariIndoorF0/scripts.pory"
 LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_Movement_1:
-# 364 "data/maps/LabJariIndoorF0/scripts.pory"
+# 363 "data/maps/LabJariIndoorF0/scripts.pory"
 	face_left
 	step_end
 
@@ -879,7 +875,7 @@ LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_2:
 	.string "GET THE FUCK OUT!!$"
 
 LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_3:
-# 343 "data/maps/LabJariIndoorF0/scripts.pory"
+# 342 "data/maps/LabJariIndoorF0/scripts.pory"
 	.string "Hmmmm, those pokeballs look shiny.\n"
 	.string "Nobody will notice when I take one\l"
 	.string "right?$"

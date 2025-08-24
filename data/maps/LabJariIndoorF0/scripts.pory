@@ -335,7 +335,6 @@ script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit {
         msgbox(format("GET THE FUCK OUT!!"))
         waitmessage
         fadescreen(FADE_TO_BLACK)
-        setflag (FLAG_PROFESSOR_BIRDS_DISCOVERY)
         warpsilent (MAP_ERP_CITY, 0)
         fadescreen (FADE_FROM_BLACK)
         }
@@ -365,7 +364,6 @@ script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit {
         msgbox(format("GET THE FUCK OUT!!"))
         waitmessage
         fadescreen(FADE_TO_BLACK)
-        setflag (FLAG_PROFESSOR_BIRDS_DISCOVERY)
         warpsilent (MAP_ERP_CITY, 0)
         fadescreen (FADE_FROM_BLACK)
         }

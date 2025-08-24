@@ -1,240 +1,365 @@
 ErpCity_MapScripts::
 # 2 "data/maps/ErpCity/scripts.pory"
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
+	map_script MAP_SCRIPT_ON_TRANSITION, ErpCity_MapScripts_MAP_SCRIPT_ON_TRANSITION
+# 5 "data/maps/ErpCity/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, ErpCity_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+ErpCity_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/ErpCity/scripts.pory"
-	goto_if_set FLAG_PROFESSOR_BIRDS_DISCOVERY, ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_1
+	setflag FLAG_KICKED_OUT_LAB_CONVO
 	return
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_1:
-# 4 "data/maps/ErpCity/scripts.pory"
-	lockall
-# 5 "data/maps/ErpCity/scripts.pory"
-	applymovement LOCALID_PLAYER, ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Movement_0
+ErpCity_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 6 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_0
-# 7 "data/maps/ErpCity/scripts.pory"
-	waitmessage
-# 8 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_1
-# 9 "data/maps/ErpCity/scripts.pory"
-	waitmessage
-# 10 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_2
-# 11 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	map_script_2 VAR_RECIEVED_STARTER_POKEMON, 1, ErpCity_ProfessorBirds_Speech_Pokedex
+	.2byte 0
+
+
+ErpCity_ProfessorBirds_Speech_Pokedex::
 # 12 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_3
+	lockall
 # 13 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_0
 # 14 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_4
+	clearflag FLAG_KICKED_OUT_LAB_CONVO
 # 15 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	addobject 4
 # 16 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_5
-# 17 "data/maps/ErpCity/scripts.pory"
-	waitmessage
-# 18 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_6
+	applymovement 4, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_1
 # 19 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_0
 # 20 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_7
+	waitmessage
 # 21 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_1
+# 22 "data/maps/ErpCity/scripts.pory"
 	waitmessage
 # 23 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_8
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_2
 # 24 "data/maps/ErpCity/scripts.pory"
 	waitmessage
 # 25 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_9
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_3
 # 26 "data/maps/ErpCity/scripts.pory"
 	waitmessage
 # 27 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_10
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_4
 # 28 "data/maps/ErpCity/scripts.pory"
 	waitmessage
 # 29 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_11
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_5
 # 30 "data/maps/ErpCity/scripts.pory"
 	waitmessage
 # 31 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_12
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_6
 # 32 "data/maps/ErpCity/scripts.pory"
 	waitmessage
 # 33 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_13
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_7
 # 34 "data/maps/ErpCity/scripts.pory"
 	waitmessage
 # 35 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_14
+	applymovement 4, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_2
 # 36 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_8
 # 37 "data/maps/ErpCity/scripts.pory"
-	setflag FLAG_ADVENTURE_STARTED
+	waitmessage
 # 38 "data/maps/ErpCity/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_9
 # 39 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_15
+	waitmessage
 # 40 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_10
 # 41 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_16
-# 42 "data/maps/ErpCity/scripts.pory"
 	waitmessage
+# 42 "data/maps/ErpCity/scripts.pory"
+	applymovement 4, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_3
 # 43 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_17
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_11
 # 44 "data/maps/ErpCity/scripts.pory"
 	waitmessage
 # 45 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_18
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_12
 # 46 "data/maps/ErpCity/scripts.pory"
-	setflag FLAG_KICKED_OUT_LAB_CONVO
+	waitmessage
 # 47 "data/maps/ErpCity/scripts.pory"
-	clearflag FLAG_PROFESSOR_BIRDS_DISCOVERY
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_13
 # 48 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 49 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_14
+# 50 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 51 "data/maps/ErpCity/scripts.pory"
+	setflag FLAG_SYS_POKEDEX_GET
+# 52 "data/maps/ErpCity/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 53 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_15
+# 54 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 55 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_16
+# 56 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 57 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_17
+# 58 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 59 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_18
+# 60 "data/maps/ErpCity/scripts.pory"
+	setflag FLAG_KICKED_OUT_LAB_CONVO
+# 61 "data/maps/ErpCity/scripts.pory"
+	setvar VAR_RECIEVED_STARTER_POKEMON, 2
+# 62 "data/maps/ErpCity/scripts.pory"
+	releaseall
+	return
+
+
+ErpCity_ProfessorBirds_After_Speech::
+# 66 "data/maps/ErpCity/scripts.pory"
+	lockall
+# 67 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_ProfessorBirds_After_Speech_Text_0
+# 68 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 69 "data/maps/ErpCity/scripts.pory"
 	releaseall
 	return
 
 
 ErpCity_Mispoes_Miauw::
-# 57 "data/maps/ErpCity/scripts.pory"
+# 73 "data/maps/ErpCity/scripts.pory"
 	lockall
-# 58 "data/maps/ErpCity/scripts.pory"
+# 74 "data/maps/ErpCity/scripts.pory"
 	msgbox ErpCity_Mispoes_Miauw_Text_0
-# 59 "data/maps/ErpCity/scripts.pory"
+# 75 "data/maps/ErpCity/scripts.pory"
 	waitmessage
-# 60 "data/maps/ErpCity/scripts.pory"
+# 76 "data/maps/ErpCity/scripts.pory"
 	releaseall
 	return
 
 
 ErpCity_Lab_Sign::
-# 64 "data/maps/ErpCity/scripts.pory"
+# 80 "data/maps/ErpCity/scripts.pory"
 	lockall
-# 65 "data/maps/ErpCity/scripts.pory"
+# 81 "data/maps/ErpCity/scripts.pory"
 	msgbox ErpCity_Lab_Sign_Text_0
-# 66 "data/maps/ErpCity/scripts.pory"
+# 82 "data/maps/ErpCity/scripts.pory"
 	waitmessage
-# 67 "data/maps/ErpCity/scripts.pory"
+# 83 "data/maps/ErpCity/scripts.pory"
 	releaseall
 	return
 
 
-# 5 "data/maps/ErpCity/scripts.pory"
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Movement_0:
-# 5 "data/maps/ErpCity/scripts.pory"
-	jump_special_left
-# 5 "data/maps/ErpCity/scripts.pory"
+ErpCity_Hiker_Cave::
+# 87 "data/maps/ErpCity/scripts.pory"
+	lockall
+# 88 "data/maps/ErpCity/scripts.pory"
+	applymovement 5, ErpCity_Hiker_Cave_Movement_0
+# 90 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_Hiker_Cave_Text_0
+# 91 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 92 "data/maps/ErpCity/scripts.pory"
+	releaseall
+	return
+
+
+ErpCity_Cave_Sign::
+# 96 "data/maps/ErpCity/scripts.pory"
+	lockall
+# 97 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_Cave_Sign_Text_0
+# 98 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 99 "data/maps/ErpCity/scripts.pory"
+	releaseall
+	return
+
+
+ErpCity_Trigger_Stopplayer::
+# 103 "data/maps/ErpCity/scripts.pory"
+	lockall
+# 104 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_Trigger_Stopplayer_Text_0
+# 105 "data/maps/ErpCity/scripts.pory"
+	applymovement LOCALID_PLAYER, ErpCity_Move_Stopplayer
+# 106 "data/maps/ErpCity/scripts.pory"
+	waitmovement 0
+# 107 "data/maps/ErpCity/scripts.pory"
+	releaseall
+	return
+
+
+# 110 "data/maps/ErpCity/scripts.pory"
+ErpCity_Move_Stopplayer:
+# 111 "data/maps/ErpCity/scripts.pory"
+	walk_right
+	step_end
+
+# 13 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Movement_0:
+# 13 "data/maps/ErpCity/scripts.pory"
+	jump_left
+# 13 "data/maps/ErpCity/scripts.pory"
 	face_right
 	step_end
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_0:
-# 6 "data/maps/ErpCity/scripts.pory"
+# 16 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Movement_1:
+# 16 "data/maps/ErpCity/scripts.pory"
+	walk_fast_down
+# 16 "data/maps/ErpCity/scripts.pory"
+	face_left
+	step_end
+
+# 35 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Movement_2:
+# 35 "data/maps/ErpCity/scripts.pory"
+	emote_question_mark
+	step_end
+
+# 42 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Movement_3:
+# 42 "data/maps/ErpCity/scripts.pory"
+	emote_exclamation_mark
+	step_end
+
+# 88 "data/maps/ErpCity/scripts.pory"
+ErpCity_Hiker_Cave_Movement_0:
+# 88 "data/maps/ErpCity/scripts.pory"
+	face_player
+	step_end
+
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_0:
+# 19 "data/maps/ErpCity/scripts.pory"
 	.string "WHO DO YOU THINK YOU ARE? TAYLOR SWIFT\n"
 	.string "OR SOMETHING?$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_1:
-# 8 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_1:
+# 21 "data/maps/ErpCity/scripts.pory"
 	.string "Actually.... I love Taylor Swift hehe..\n"
 	.string "ANYWAYS!!$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_2:
-# 10 "data/maps/ErpCity/scripts.pory"
-	.string "WHAT WERE YOU DOING, WONDERING AROUND\n"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_2:
+# 23 "data/maps/ErpCity/scripts.pory"
+	.string "WHAT WERE YOU DOING, WANDERING AROUND\n"
 	.string "IN MY SECRET LA..... I MEAN STORAGE\l"
 	.string "ROOM?$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_3:
-# 12 "data/maps/ErpCity/scripts.pory"
-	.string "..... YOU ARE INTRESTED IN POKEMON??\n"
-	.string "WELL, GET IN LINE HAHAHA.$"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_3:
+# 25 "data/maps/ErpCity/scripts.pory"
+	.string "..... YOU ARE INTERESTED IN POKEMON??\n"
+	.string "WELL, GET IN LINE! HAHAHA.$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_4:
-# 14 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_4:
+# 27 "data/maps/ErpCity/scripts.pory"
 	.string "MY NAME IS PROFESSOR BIRDS, I RESEARCH\n"
 	.string "POKEMON FOR A LIVING!!$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_5:
-# 16 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_5:
+# 29 "data/maps/ErpCity/scripts.pory"
 	.string "BESIDES THAT, I ALSO DEVELOP SECRET\n"
-	.string "TECHNOLOGY IN MY SECRET LA..... I MEAN\l"
-	.string "SENSORS FOR PIG FARMS.$"
+	.string "TECHNOL... I MEAN SENSORS FOR PIG\l"
+	.string "FARMS.$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_6:
-# 18 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_6:
+# 31 "data/maps/ErpCity/scripts.pory"
 	.string "SO YOU WANT TO BECOME A POKEMON\n"
 	.string "MASTER?$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_7:
-# 20 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_7:
+# 33 "data/maps/ErpCity/scripts.pory"
 	.string "MUAAHAHAHAH, YOU!!? A POKEMON\n"
 	.string "MASTER???$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_8:
-# 23 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_8:
+# 36 "data/maps/ErpCity/scripts.pory"
 	.string ".....wait a second....$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_9:
-# 25 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_9:
+# 38 "data/maps/ErpCity/scripts.pory"
 	.string ".....maybe this little slob can help me to\n"
 	.string "get some data....$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_10:
-# 27 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_10:
+# 40 "data/maps/ErpCity/scripts.pory"
 	.string ".....yes a very good idea Jari, very\n"
 	.string "smart....$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_11:
-# 29 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_11:
+# 43 "data/maps/ErpCity/scripts.pory"
 	.string ".....DID I SAY THAT OUT LOUD? ARGH\n"
 	.string "ANYWAYS, HOW ABOUT YOU BECOME MY\l"
 	.string "LITTLE INTERN...$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_12:
-# 31 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_12:
+# 45 "data/maps/ErpCity/scripts.pory"
 	.string "I MEAN MY FELLOW RESEARCHER OFCOURSE!\n"
 	.string "MY BELOVED PARTNER!$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_13:
-# 33 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_13:
+# 47 "data/maps/ErpCity/scripts.pory"
 	.string "TO BECOME A REAL POKEMON MASTER WE... I\n"
 	.string "MEAN YOU... NEED TO CATCH EVERY POKEMON$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_14:
-# 35 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_14:
+# 49 "data/maps/ErpCity/scripts.pory"
 	.string "AND SCAN THEM WITH THIS LITTLE\n"
 	.string "DEVICE....$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_15:
-# 39 "data/maps/ErpCity/scripts.pory"
-	.string "You have recieved the Pokédex.$"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_15:
+# 53 "data/maps/ErpCity/scripts.pory"
+	.string "You have received the Pokédex.$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_16:
-# 41 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_16:
+# 55 "data/maps/ErpCity/scripts.pory"
 	.string "WITH THIS DEVICE ALL THE DATA WILL BE\n"
 	.string "TRANSFERRED TO ME..... AND YOU\l"
 	.string "OFCOURSE.....$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_17:
-# 43 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_17:
+# 57 "data/maps/ErpCity/scripts.pory"
 	.string "AND THIS WAY I WILL EXTRACT ALL\n"
 	.string "INFORMATION FOR MY BELOVED SECRET\l"
 	.string "TECHNOLO.... SENSORS FOR RESPONSIBLE\l"
 	.string "PIG FARMING.$"
 
-ErpCity_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_Text_18:
-# 45 "data/maps/ErpCity/scripts.pory"
+ErpCity_ProfessorBirds_Speech_Pokedex_Text_18:
+# 59 "data/maps/ErpCity/scripts.pory"
 	.string "NOW GO, AND DON'T COME BACK BEFORE YOU\n"
 	.string "HAVE CAUGHT 10 POKEMONS.$"
 
+ErpCity_ProfessorBirds_After_Speech_Text_0:
+# 67 "data/maps/ErpCity/scripts.pory"
+	.string "WELL, WHAT ARE YOU WAITING FOR? GET\n"
+	.string "THAT DATA FOR ME... I MEAN US.$"
+
 ErpCity_Mispoes_Miauw_Text_0:
-# 58 "data/maps/ErpCity/scripts.pory"
-	.string "Mispoes:'Miaaaauw... KSSSSJSJJGGGG'$"
+# 74 "data/maps/ErpCity/scripts.pory"
+	.string "Mispoes: Miaaaauw... KSSSSJSJJGGGG$"
 
 ErpCity_Lab_Sign_Text_0:
-# 65 "data/maps/ErpCity/scripts.pory"
-	.string "'Professor Birds Lab'$"
+# 81 "data/maps/ErpCity/scripts.pory"
+	.string "Professor Birds Lab$"
+
+ErpCity_Hiker_Cave_Text_0:
+# 90 "data/maps/ErpCity/scripts.pory"
+	.string "The cave is not accessible at this time.\n"
+	.string "Recent tremors from a unknown source\l"
+	.string "have caused massive rock slides. The\l"
+	.string "path is to dangerous.$"
+
+ErpCity_Cave_Sign_Text_0:
+# 97 "data/maps/ErpCity/scripts.pory"
+	.string "A large map with a labyrint of routes\n"
+	.string "going through the cave. Most of them\l"
+	.string "are crossed out.$"
+
+ErpCity_Trigger_Stopplayer_Text_0:
+# 104 "data/maps/ErpCity/scripts.pory"
+	.string "Wandering without any pokemon might be\n"
+	.string "dangerous....$"

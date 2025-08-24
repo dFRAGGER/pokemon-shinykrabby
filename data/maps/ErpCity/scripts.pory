@@ -1,69 +1,112 @@
 mapscripts ErpCity_MapScripts {
-    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE {
-        if(flag(FLAG_PROFESSOR_BIRDS_DISCOVERY)) {
-            lockall
-            fadescreen(FADE_FROM_BLACK)
-            applymovement (LOCALID_PLAYER, moves(jump_special_left face_right))
-            msgbox(format("WHO DO YOU THINK YOU ARE? TAYLOR SWIFT OR SOMETHING?"))
-            waitmessage
-            msgbox(format("Actually.... I love Taylor Swift hehe.. ANYWAYS!!"))
-            waitmessage
-            msgbox(format("WHAT WERE YOU DOING, WONDERING AROUND IN MY SECRET LA..... I MEAN STORAGE ROOM?"))
-            waitmessage
-            msgbox(format("..... YOU ARE INTRESTED IN POKEMON?? WELL, GET IN LINE HAHAHA."))
-            waitmessage
-            msgbox(format("MY NAME IS PROFESSOR BIRDS, I RESEARCH POKEMON FOR A LIVING!!"))
-            waitmessage
-            msgbox(format("BESIDES THAT, I ALSO DEVELOP SECRET TECHNOLOGY IN MY SECRET LA..... I MEAN SENSORS FOR PIG FARMS."))
-            waitmessage
-            msgbox(format("SO YOU WANT TO BECOME A POKEMON MASTER?"))
-            waitmessage
-            msgbox(format("MUAAHAHAHAH, YOU!!? A POKEMON MASTER???"))
-            waitmessage
-            //exclamation mark on jari head
-            msgbox(format(".....wait a second...."))
-            waitmessage
-            msgbox(format(".....maybe this little slob can help me to get some data...."))
-            waitmessage
-            msgbox(format(".....yes a very good idea Jari, very smart...."))
-            waitmessage
-            msgbox(format(".....DID I SAY THAT OUT LOUD? ARGH ANYWAYS, HOW ABOUT YOU BECOME MY LITTLE INTERN..."))
-            waitmessage
-            msgbox(format("I MEAN MY FELLOW RESEARCHER OFCOURSE! MY BELOVED PARTNER!"))
-            waitmessage
-            msgbox(format("TO BECOME A REAL POKEMON MASTER WE... I MEAN YOU... NEED TO CATCH EVERY POKEMON"))
-            waitmessage
-            msgbox(format("AND SCAN THEM WITH THIS LITTLE DEVICE...."))
-            waitmessage
-            setflag(FLAG_ADVENTURE_STARTED)
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox(format("You have recieved the Pokédex."))
-            waitmessage
-            msgbox(format("WITH THIS DEVICE ALL THE DATA WILL BE TRANSFERRED TO ME..... AND YOU OFCOURSE....."))
-            waitmessage
-            msgbox(format("AND THIS WAY I WILL EXTRACT ALL INFORMATION FOR MY BELOVED SECRET TECHNOLO.... SENSORS FOR RESPONSIBLE PIG FARMING."))
-            waitmessage
-            msgbox(format("NOW GO, AND DON'T COME BACK BEFORE YOU HAVE CAUGHT 10 POKEMONS."))
-            setflag (FLAG_KICKED_OUT_LAB_CONVO)
-            clearflag (FLAG_PROFESSOR_BIRDS_DISCOVERY)
-            releaseall
-            
-        }
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_KICKED_OUT_LAB_CONVO)
     }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_RECIEVED_STARTER_POKEMON, 1: ErpCity_ProfessorBirds_Speech_Pokedex
+    ]
+    
 }
 
+script ErpCity_ProfessorBirds_Speech_Pokedex {
+    lockall
+    applymovement (LOCALID_PLAYER, moves(jump_left face_right))
+    clearflag(FLAG_KICKED_OUT_LAB_CONVO)
+    addobject(4)
+    applymovement(4, moves(walk_fast_down face_left)
+       
+    )
+    msgbox(format("WHO DO YOU THINK YOU ARE? TAYLOR SWIFT OR SOMETHING?"))
+    waitmessage
+    msgbox(format("Actually.... I love Taylor Swift hehe.. ANYWAYS!!"))
+    waitmessage
+    msgbox(format("WHAT WERE YOU DOING, WANDERING AROUND IN MY SECRET LA..... I MEAN STORAGE ROOM?"))
+    waitmessage
+    msgbox(format("..... YOU ARE INTERESTED IN POKEMON?? WELL, GET IN LINE! HAHAHA."))
+    waitmessage
+    msgbox(format("MY NAME IS PROFESSOR BIRDS, I RESEARCH POKEMON FOR A LIVING!!"))
+    waitmessage
+    msgbox(format("BESIDES THAT, I ALSO DEVELOP SECRET TECHNOL... I MEAN SENSORS FOR PIG FARMS."))
+    waitmessage
+    msgbox(format("SO YOU WANT TO BECOME A POKEMON MASTER?"))
+    waitmessage
+    msgbox(format("MUAAHAHAHAH, YOU!!? A POKEMON MASTER???"))
+    waitmessage
+    applymovement(4, moves(emote_question_mark))
+    msgbox(format(".....wait a second...."))
+    waitmessage
+    msgbox(format(".....maybe this little slob can help me to get some data...."))
+    waitmessage
+    msgbox(format(".....yes a very good idea Jari, very smart...."))
+    waitmessage
+    applymovement (4, moves(emote_exclamation_mark))
+    msgbox(format(".....DID I SAY THAT OUT LOUD? ARGH ANYWAYS, HOW ABOUT YOU BECOME MY LITTLE INTERN..."))
+    waitmessage
+    msgbox(format("I MEAN MY FELLOW RESEARCHER OFCOURSE! MY BELOVED PARTNER!"))
+    waitmessage
+    msgbox(format("TO BECOME A REAL POKEMON MASTER WE... I MEAN YOU... NEED TO CATCH EVERY POKEMON"))
+    waitmessage
+    msgbox(format("AND SCAN THEM WITH THIS LITTLE DEVICE...."))
+    waitmessage
+    setflag(FLAG_SYS_POKEDEX_GET)
+    playfanfare(MUS_OBTAIN_ITEM)
+    msgbox(format("You have received the Pokédex."))
+    waitmessage
+    msgbox(format("WITH THIS DEVICE ALL THE DATA WILL BE TRANSFERRED TO ME..... AND YOU OFCOURSE....."))
+    waitmessage
+    msgbox(format("AND THIS WAY I WILL EXTRACT ALL INFORMATION FOR MY BELOVED SECRET TECHNOLO.... SENSORS FOR RESPONSIBLE PIG FARMING."))
+    waitmessage
+    msgbox(format("NOW GO, AND DON'T COME BACK BEFORE YOU HAVE CAUGHT 10 POKEMONS."))
+    setflag (FLAG_KICKED_OUT_LAB_CONVO)
+    setvar(VAR_RECIEVED_STARTER_POKEMON, 2)
+    releaseall
+}
 
+script ErpCity_ProfessorBirds_After_Speech {
+    lockall
+    msgbox(format("WELL, WHAT ARE YOU WAITING FOR? GET THAT DATA FOR ME... I MEAN US."))
+    waitmessage
+    releaseall
+}
 
 script ErpCity_Mispoes_Miauw {
     lockall
-    msgbox(format("Mispoes:'Miaaaauw... KSSSSJSJJGGGG'"))
+    msgbox(format("Mispoes: Miaaaauw... KSSSSJSJJGGGG"))
     waitmessage
     releaseall
 }
 
 script ErpCity_Lab_Sign {
     lockall
-    msgbox(format("'Professor Birds Lab'"))
+    msgbox(format("Professor Birds Lab"))
     waitmessage
     releaseall
+}
+
+script ErpCity_Hiker_Cave {
+    lockall
+    applymovement(5, moves(face_player)    
+    )
+    msgbox(format("The cave is not accessible at this time. Recent tremors from a unknown source have caused massive rock slides. The path is to dangerous."))
+    waitmessage
+    releaseall
+}
+
+script ErpCity_Cave_Sign {
+    lockall
+    msgbox(format("A large map with a labyrint of routes going through the cave. Most of them are crossed out."))
+    waitmessage
+    releaseall
+}
+
+script ErpCity_Trigger_Stopplayer {
+    lockall
+    msgbox(format("Wandering without any pokemon might be dangerous...."))
+    applymovement(LOCALID_PLAYER, ErpCity_Move_Stopplayer)
+    waitmovement(0)
+    releaseall
+}
+
+movement ErpCity_Move_Stopplayer {
+    walk_right
 }
