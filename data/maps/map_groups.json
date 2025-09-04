@@ -36,7 +36,8 @@
     "gMapGroup_IndoorRoute124",
     "gMapGroup_TownsAndRoutesSK",
     "gMapGroup_IndooErpusCity",
-    "gMapGroup_IndoorBernrode"
+    "gMapGroup_IndoorBernrode",
+    "gMapGroup_IndoorMaasje"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -627,7 +628,10 @@
   "gMapGroup_TownsAndRoutesSK": [
     "AutumnRuins",
     "Route01",
-    "ErpCity"
+    "ErpCity",
+    "Maasje",
+    "Route02",
+    "MistCity"
   ],
   "gMapGroup_IndooErpusCity": [
     "LabJariIndoor",
@@ -644,5 +648,17 @@
   ],
   "gMapGroup_IndoorBernrode": [
     "IndoorBernrodeGeneral"
+  ],
+  "gMapGroup_IndoorMaasje": [
+    "CrabhillEntrance",
+    "Indoor_Maasje_Jakub_Home",
+    "Indoor_Maasje_Beekeeper_Geurts",
+    "Indoor_Maasje_Home1",
+    "Indoor_Maasje_Home2",
+    "Maasje_Mart",
+    "Maasje_PokemonCenter_1F",
+    "Maasje_PokemonCenter_2F",
+    "Maasje_Gym",
+    "Maasje_Gym_Basement"
   ]
 }

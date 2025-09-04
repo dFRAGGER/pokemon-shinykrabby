@@ -55,9 +55,9 @@
 #define FLAG_RECEIVED_STARTER_CHOICE    0x29 // Unused Flag
 #define FLAG_PROFESSOR_BIRDS_DISCOVERY    0x2A // Unused Flag
 #define FLAG_KICKED_OUT_LAB_CONVO    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
+#define FLAG_HIDE_INTERN_BIRDS_LAB   0x2C // Unused Flag
+#define FLAG_HIDE_MOM_SHOES   0x2D // Unused Flag
+#define FLAG_SHINY_KRABBY_ENCOUNTER    0x2E // Unused Flag
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag

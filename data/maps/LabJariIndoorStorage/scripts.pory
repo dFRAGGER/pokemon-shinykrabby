@@ -1,0 +1,24 @@
+mapscripts LabJariIndoorStorage_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if(var(VAR_RECIEVED_STARTER_POKEMON) == 2) {
+            clearflag(FLAG_HIDE_INTERN_BIRDS_LAB)}
+        else {
+        setflag(FLAG_HIDE_INTERN_BIRDS_LAB)
+        }
+    }
+}
+
+script LabJariIndoorStorage_Eventscript_Intern_Cave {
+    lockall
+    if(var(VAR_TEMP_0) == 0) {
+    applymovement(1, moves(reveal_trainer emote_exclamation_mark jump_in_place_down))
+    waitmovement
+    msgbox (format("Uhm... I'm just an intern... just putting up this big poster of this beautifull rock formation.... A hole in the wall??? Not sure what you are talking about? Nothing to see here..."))
+    waitmessage
+    setvar(VAR_TEMP_0, 1)}
+    else {
+        msgbox(format("Like I said, nothing to see here..... just a regular rock wall... with a few dents here and there..."))
+    }
+    releaseall
+}
+

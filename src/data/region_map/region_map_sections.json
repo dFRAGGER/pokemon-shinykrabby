@@ -490,7 +490,7 @@
     },
     {
       "id": "MAPSEC_ABANDONED_SHIP",
-      "name": "Bernrode",
+      "name": "Mist City",
       "x": 6,
       "y": 14,
       "width": 1,
@@ -1233,9 +1233,41 @@
     },
     {
       "id": "MAPSEC_ERPUS_CITY",
-      "name": "ERPUS CITY",
+      "name": "Erpus City",
+      "x": 9,
+      "y": 10,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ROUTE_01",
+      "name": "Route 1",
       "x": 8,
-      "y": 4,
+      "y": 10,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_MAASJE",
+      "name": "Maasje",
+      "x": 7,
+      "y": 9,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ROUTE_02",
+      "name": "Route 2",
+      "x": 7,
+      "y": 8,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_MIST_CITY",
+      "name": "Mist City",
+      "x": 7,
+      "y": 6,
       "width": 1,
       "height": 1
     }

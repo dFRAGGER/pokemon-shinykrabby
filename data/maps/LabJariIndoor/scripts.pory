@@ -1,0 +1,16 @@
+mapscripts LabJariIndoor_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if(var(VAR_RECIEVED_STARTER_POKEMON) == 2) {
+            clearflag(FLAG_HIDE_INTERN_BIRDS_LAB)}
+        else {
+        setflag(FLAG_HIDE_INTERN_BIRDS_LAB)
+        }
+    }
+}
+
+script LabJariIndoor_Eventscript_Birds_Pokemon_Check {
+    lockall
+    msgbox(format("...WHY ARE YOU STILL HERE? BETTER GET TO THAT SCRUB OF A FRIEND CALLED JAKUB IN THE NEXT TOWN! HE PROBABLY KNOWS HOW TO CATCH SOME POKEMON!"))
+    waitmessage
+    releaseall
+}

@@ -2,7 +2,7 @@
   "id": "MAP_LAB_JARI_INDOOR_F0",
   "name": "LabJariIndoorF0",
   "layout": "LAYOUT_LAB_JARI_INDOOR_F0",
-  "music": "MUS_RG_OAK_LAB",
+  "music": "MUS_PETALBURG_WOODS",
   "region_map_section": "MAPSEC_ERPUS_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

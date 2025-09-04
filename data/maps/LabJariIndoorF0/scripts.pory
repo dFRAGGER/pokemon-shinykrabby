@@ -336,6 +336,7 @@ script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit {
         waitmessage
         fadescreen(FADE_TO_BLACK)
         warpsilent (MAP_ERP_CITY, 0)
+        waitstate
         fadescreen (FADE_FROM_BLACK)
         }
         else {
@@ -365,6 +366,7 @@ script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit {
         waitmessage
         fadescreen(FADE_TO_BLACK)
         warpsilent (MAP_ERP_CITY, 0)
+        waitstate
         fadescreen (FADE_FROM_BLACK)
         }
         else {

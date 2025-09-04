@@ -3,7 +3,7 @@
   "name": "IndoorBernrodeGeneral",
   "layout": "LAYOUT_INDOOR_BERNRODE_GENERAL",
   "music": "MUS_CAVE_OF_ORIGIN",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_NONE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

@@ -2,7 +2,7 @@
   "id": "MAP_ERPUS_CITY_HOUSE3_1F",
   "name": "ErpusCity_House3_1F",
   "layout": "LAYOUT_ERPUS_CITY_HOUSE3_1F",
-  "music": "MUS_DUMMY",
+  "music": "MUS_LITTLEROOT",
   "region_map_section": "MAPSEC_ERPUS_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -1,0 +1,21 @@
+mapscripts Maasje_Gym_MapScripts {}
+
+script Maasje_Gym_Introduction {
+    lock
+    msgbox(format("Hi, welcome to the Maasje Pokemon Gym. The gym leader and trainers use sand & ground pokemon. Grass pokemon seem to have an edge, while electric pokemon are not recommended. The gym leader is called Pete Longfellow, he ues to be a geography teacher. He has been training pokemon for a long time but he can be stubborn and emotional. Stay cool and calm and you should be good. Good luck!"))
+    waitmessage
+    release
+}
+
+script Maasje_Gym_Leader_Pete_Longfellow {
+    lockall
+    msgbox(format("Well, well. Look who we got here. Let me learn you something about tectonic plates and the glorious power of erosion!"))
+    waitmessage
+    msgbox(format("I might be getting to old for this. Maybe my skills have finally eroded with the wind. Let me give you this:"))
+    waitmessage
+    giveitem(ITEM_TM37)
+    waitstate
+    msgbox(format("This Technical Machine is called Sandstorm. It creates a sandstorm on the battlefield that last 5 turns with additional effects.... which I forgot..\n You might have been lucky against me, but the rest of The Factulty will ruin your life."))
+    waitmessage
+    releaseall
+}

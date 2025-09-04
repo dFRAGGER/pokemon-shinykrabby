@@ -1,0 +1,54 @@
+mapscripts CrabhillEntrance_MapScripts {}
+
+script Crabhill_Eventscript_ShinykrabbyEncounter {
+    lockall
+    setflag(FLAG_SHINY_KRABBY_ENCOUNTER)
+    playmoncry(SPECIES_KRABBY, CRY_MODE_ENCOUNTER)
+    delay(40)
+    waitmoncry
+    createmon(1, 0, SPECIES_KRABBY, 10, ,,,,,,,,,,,,,,,,,,,,,1)
+    dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+        call(Won_or_Caught)
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_WON){
+        call(Won_or_Caught)
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_RAN){
+        call(RanAway)
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
+        call(RanAway)
+    }
+    waitmessage
+    releaseall
+}
+
+script Won_or_Caught{
+    fadescreen(FADE_TO_BLACK)
+    removeobject(1)
+    fadescreen(FADE_FROM_BLACK)
+    msgbox(format("The Krabby's seem to have snapped out of their hypnosis."))
+    return
+}
+
+script RanAway {
+    playmoncry(SPECIES_KRABBY, CRY_MODE_ENCOUNTER)
+    msgbox(format("KRGHJEJRJAERAHG"), MSGBOX_AUTOCLOSE)
+    fadescreen(FADE_TO_BLACK)
+    removeobject(1)
+    fadescreen(FADE_FROM_BLACK)
+    msgbox(format("The shiny Krabby fled through a crack in the wall, the Krabby's seem to have snapped out of their hypnosis."))
+    return
+}
+
+script Crabhill_Krabby_Cry {
+    playmoncry(SPECIES_KRABBY, CRY_MODE_NORMAL)
+}
+
+script Crabhill_Wall_Carving {
+    lock
+    msgbox(format("Carved into the damp cave wall, glistening with moisture: \n When stone weeps and the tide is low, a claw of gold shall start to glow. Its light awaits the destined hand, who will soon command the land."))
+    release
+}

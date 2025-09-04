@@ -1691,3 +1691,22 @@ const u16 gTilesetPalettes_AutumnRuins[][16] =
 };
 
 const u32 gTilesetTiles_AutumnRuins[] = INCBIN_U32("data/tilesets/secondary/autumn_ruins/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_PrimaryTest[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/primary_test/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/primary_test/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/primary_test/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/primary_test/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/primary_test/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/primary_test/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/primary_test/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/primary_test/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/primary_test/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/primary_test/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/primary_test/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/primary_test/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/primary_test/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_PrimaryTest[] = INCBIN_U32("data/tilesets/primary/primary_test/tiles.4bpp.lz");

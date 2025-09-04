@@ -2,7 +2,7 @@
   "id": "MAP_LAB_JARI_INDOOR",
   "name": "LabJariIndoor",
   "layout": "LAYOUT_LAB_JARI_INDOOR",
-  "music": "MUS_RG_OAK_LAB",
+  "music": "MUS_PETALBURG_WOODS",
   "region_map_section": "MAPSEC_ERPUS_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -24,8 +24,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "LabJariIndoor_Eventscript_Birds_Pokemon_Check",
+      "flag": "FLAG_HIDE_INTERN_BIRDS_LAB"
     }
   ],
   "warp_events": [

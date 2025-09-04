@@ -863,3 +863,14 @@ const struct Tileset gTileset_AutumnRuins =
     .metatileAttributes = gMetatileAttributes_AutumnRuins,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_PrimaryTest =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_PrimaryTest,
+    .palettes = gTilesetPalettes_PrimaryTest,
+    .metatiles = gMetatiles_PrimaryTest,
+    .metatileAttributes = gMetatileAttributes_PrimaryTest,
+    .callback = NULL,
+};

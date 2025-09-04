@@ -1,0 +1,60 @@
+mapscripts Maasje_MapScripts {}
+
+script Maasje_Sign_Welcome {
+    lock
+    msgbox(format("Welcome to Maasje!"))
+    waitmessage
+    release
+}
+
+script Maasje_Sign_Jakub_Home {
+    lock
+    msgbox(format("Jakub's House"))
+    waitmessage
+    release
+}
+
+script Maasje_Sign_Gym {
+    lock
+    msgbox(format("Maasje Gym:\n Where sand rules the world."))
+    waitmessage
+    release
+}
+
+script Maasje_Sign_Hill {
+    lock
+    msgbox(format("Uphill: PokeGym\n Downhill: The beach"))
+    waitmessage
+    release
+}
+
+script Maasje_Sign_Beekeeper {
+    lock
+    msgbox(format("Beekeeper Geurts's House"))
+    waitmessage
+    release
+}
+
+script Maasje_Sign_CrabHill {
+    lock
+    msgbox(format("Crab Hill:\n WARNING! EASY TO GET LOST! TAKE CARE!"))
+    waitmessage
+    release
+}
+
+script Maasje_Sign_NextRoute {
+    lock
+    msgbox(format("The Cloud Forest:\n Enter on own risk, or with a guide."))
+    waitmessage
+    release
+}
+
+script Maasje_Krabby_Cry {
+    playmoncry(SPECIES_KRABBY, CRY_MODE_NORMAL)
+}
+
+script Maasje_Collect_Honey_BeeHives {
+    lock
+    msgbox(format("You have collected honey from the beehive."))
+    release
+}

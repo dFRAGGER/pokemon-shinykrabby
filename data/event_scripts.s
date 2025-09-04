@@ -1176,3 +1176,29 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ErpCity/scripts.inc"
 
 	.include "data/maps/IndoorBernrodeGeneral/scripts.inc"
+
+	.include "data/maps/Maasje/scripts.inc"
+
+	.include "data/maps/CrabhillEntrance/scripts.inc"
+
+	.include "data/maps/Indoor_Maasje_Jakub_Home/scripts.inc"
+
+	.include "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.inc"
+
+	.include "data/maps/Indoor_Maasje_Home1/scripts.inc"
+
+	.include "data/maps/Maasje_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/Maasje_Mart/scripts.inc"
+
+	.include "data/maps/Indoor_Maasje_Home2/scripts.inc"
+
+	.include "data/maps/Maasje_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/Maasje_Gym/scripts.inc"
+
+	.include "data/maps/Maasje_Gym_Basement/scripts.inc"
+
+	.include "data/maps/Route02/scripts.inc"
+
+	.include "data/maps/MistCity/scripts.inc"

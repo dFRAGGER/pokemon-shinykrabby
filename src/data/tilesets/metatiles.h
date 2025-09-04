@@ -216,3 +216,6 @@ const u16 gMetatileAttributes_newsmalltownlab[] = INCBIN_U16("data/tilesets/seco
 
 const u16 gMetatiles_AutumnRuins[] = INCBIN_U16("data/tilesets/secondary/autumn_ruins/metatiles.bin");
 const u16 gMetatileAttributes_AutumnRuins[] = INCBIN_U16("data/tilesets/secondary/autumn_ruins/metatile_attributes.bin");
+
+const u16 gMetatiles_PrimaryTest[] = INCBIN_U16("data/tilesets/primary/primary_test/metatiles.bin");
+const u16 gMetatileAttributes_PrimaryTest[] = INCBIN_U16("data/tilesets/primary/primary_test/metatile_attributes.bin");

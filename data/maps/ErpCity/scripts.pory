@@ -1,6 +1,7 @@
 mapscripts ErpCity_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_KICKED_OUT_LAB_CONVO)
+        setflag(FLAG_HIDE_MOM_SHOES)
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_RECIEVED_STARTER_POKEMON, 1: ErpCity_ProfessorBirds_Speech_Pokedex
@@ -12,10 +13,9 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     lockall
     applymovement (LOCALID_PLAYER, moves(jump_left face_right))
     clearflag(FLAG_KICKED_OUT_LAB_CONVO)
-    addobject(4)
-    applymovement(4, moves(walk_fast_down face_left)
-       
-    )
+    addobject(2)
+    applymovement(2, moves(walk_fast_down face_left))
+    waitmovement
     msgbox(format("WHO DO YOU THINK YOU ARE? TAYLOR SWIFT OR SOMETHING?"))
     waitmessage
     msgbox(format("Actually.... I love Taylor Swift hehe.. ANYWAYS!!"))
@@ -32,14 +32,14 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     waitmessage
     msgbox(format("MUAAHAHAHAH, YOU!!? A POKEMON MASTER???"))
     waitmessage
-    applymovement(4, moves(emote_question_mark))
+    applymovement(2, moves(emote_question_mark))
     msgbox(format(".....wait a second...."))
     waitmessage
     msgbox(format(".....maybe this little slob can help me to get some data...."))
     waitmessage
     msgbox(format(".....yes a very good idea Jari, very smart...."))
     waitmessage
-    applymovement (4, moves(emote_exclamation_mark))
+    applymovement (2, moves(emote_exclamation_mark))
     msgbox(format(".....DID I SAY THAT OUT LOUD? ARGH ANYWAYS, HOW ABOUT YOU BECOME MY LITTLE INTERN..."))
     waitmessage
     msgbox(format("I MEAN MY FELLOW RESEARCHER OFCOURSE! MY BELOVED PARTNER!"))
@@ -49,14 +49,28 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     msgbox(format("AND SCAN THEM WITH THIS LITTLE DEVICE...."))
     waitmessage
     setflag(FLAG_SYS_POKEDEX_GET)
-    playfanfare(MUS_OBTAIN_ITEM)
     msgbox(format("You have received the Pokédex."))
+    playfanfare(MUS_OBTAIN_ITEM)
+    waitfanfare
     waitmessage
     msgbox(format("WITH THIS DEVICE ALL THE DATA WILL BE TRANSFERRED TO ME..... AND YOU OFCOURSE....."))
     waitmessage
     msgbox(format("AND THIS WAY I WILL EXTRACT ALL INFORMATION FOR MY BELOVED SECRET TECHNOLO.... SENSORS FOR RESPONSIBLE PIG FARMING."))
     waitmessage
     msgbox(format("NOW GO, AND DON'T COME BACK BEFORE YOU HAVE CAUGHT 10 POKEMONS."))
+    waitmessage
+    msgbox(format("WHAT DO YOU MEAN... HOW? JUST USE POKEBALLS.... A POKEMON MASTER HAHAHA... YOU GOT TO BE JOKING"))
+    waitmessage
+    giveitem(ITEM_POKE_BALL, 5)
+    waitmessage
+    msgbox(format("THROW THESE MOTHERFUCKERS, AND THE WORLD WILL BE MINE... I MEAN OURS"))
+    waitmessage
+    msgbox(format("OH BY THE WAY... I HAVE AN OLD FRIEND IN THE NEXT TOWN WHO COULD HELP YOU CATCH A WONDERFULL SPECIE..."))
+    waitmessage
+    msgbox(format("HIS NAME IS JAKUB... HE USED TO LIVE IN THIS TOWN... BUT THE TRAITOR MOVED TO MAASJE..."))
+    waitmessage
+    msgbox(format("NOW WHAT ARE YOU WAITING FOR.... YOU IDIOT... AND STAY AWAY FROM MISPOES... HE DOESN'T LIKE YOU... "))
+    applymovement(LOCALID_PLAYER, moves(jump_left face_left))
     setflag (FLAG_KICKED_OUT_LAB_CONVO)
     setvar(VAR_RECIEVED_STARTER_POKEMON, 2)
     releaseall
@@ -109,4 +123,29 @@ script ErpCity_Trigger_Stopplayer {
 
 movement ErpCity_Move_Stopplayer {
     walk_right
+}
+
+script ErpCity_Receive_Running_Shoes {
+    lockall
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark face_up))
+    waitmovement
+    clearflag(FLAG_HIDE_MOM_SHOES)
+    addobject(4)
+    applymovement(4, moves(walk_down face_player))
+    waitmovement
+    msgbox(format("Honey, what did I tell you? Always wear good shoes outside, you never know what adventure will bring you!"))
+    waitmessage
+    setflag(FLAG_RECEIVED_RUNNING_SHOES)
+    msgbox(format("You have received running shoes from mom."))
+    playfanfare(MUS_OBTAIN_ITEM)
+    waitfanfare
+    waitmessage
+    msgbox(format("I heard that the local professor was looking for an intern, maybe you should visit him? This way you can get some experience under your belt before you start university next year! The lab is north of our house I think. Have fun!"))
+    waitmessage
+    applymovement(4, moves(walk_up))
+    waitmovement
+    setflag(FLAG_HIDE_MOM_SHOES)
+    setflag(FLAG_SYS_B_DASH)
+    removeobject(4)
+    releaseall
 }
