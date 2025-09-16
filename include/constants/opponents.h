@@ -5,8 +5,8 @@
 
 #define TRAINER_NONE                          0
 #define TRAINER_SAWYER_1                      1
-#define TRAINER_GRUNT_AQUA_HIDEOUT_1          2
-#define TRAINER_GRUNT_AQUA_HIDEOUT_2          3
+#define TRAINER_GRUNT_FACULTY_1               2     //Original define was TRAINER_GRUNT_AQUA_HIDEOUT_1
+#define TRAINER_GRUNT_FACULTY_2               3     //Original define was TRAINER_GRUNT_AQUA_HIDEOUT_2
 #define TRAINER_GRUNT_AQUA_HIDEOUT_3          4
 #define TRAINER_GRUNT_AQUA_HIDEOUT_4          5
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_1       6
@@ -204,11 +204,11 @@
 #define TRAINER_DALTON_3                    198
 #define TRAINER_DALTON_4                    199
 #define TRAINER_DALTON_5                    200
-#define TRAINER_COLE                        201
+#define TRAINER_BRAM                        201     //TRAINER_COLE OG
 #define TRAINER_JEFF                        202
-#define TRAINER_AXLE                        203
+#define TRAINER_ROB                         203     //TRAINER_AXLE OG
 #define TRAINER_JACE                        204
-#define TRAINER_KEEGAN                      205
+#define TRAINER_ADDY                        205     //TRAINER_KEEGAN OG
 #define TRAINER_BERNIE_1                    206
 #define TRAINER_BERNIE_2                    207
 #define TRAINER_BERNIE_3                    208
@@ -271,7 +271,7 @@
 #define TRAINER_ROXANNE_1                   265
 #define TRAINER_BRAWLY_1                    266
 #define TRAINER_WATTSON_1                   267
-#define TRAINER_FLANNERY_1                  268
+#define TRAINER_PETELONGFELLOW                  268     //TRAINER_FLANNERY_1 OG
 #define TRAINER_NORMAN_1                    269
 #define TRAINER_WINONA_1                    270
 #define TRAINER_TATE_AND_LIZA_1             271
@@ -651,7 +651,7 @@
 #define TRAINER_KIRA_AND_DAN_4              645
 #define TRAINER_KIRA_AND_DAN_5              646
 #define TRAINER_JOHANNA                     647
-#define TRAINER_GERALD                      648
+#define TRAINER_MART                        648     //TRAINER_GERALD OG
 #define TRAINER_VIVIAN                      649
 #define TRAINER_DANIELLE                    650
 #define TRAINER_HIDEO                       651

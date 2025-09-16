@@ -13,8 +13,108 @@
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_GYM",
   "connections": null,
-  "object_events": [],
-  "warp_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_MART",
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_BURIED",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "Maasje_Gym_Basement_Eventscript_Mart",
+      "flag": "FLAG_HIDE_PETELONGFELLOW"
+    },
+    {
+      "local_id": "LOCALID_ADDY",
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "x": 13,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_BURIED",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "Maasje_Gym_Basement_Eventscript_Addy",
+      "flag": "FLAG_HIDE_PETELONGFELLOW"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 10,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_MAASJE_GYM",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 13,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_MAASJE_GYM",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 12,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_MAASJE_GYM",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 8,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_MAASJE_GYM",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_MAASJE_GYM",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_MAASJE_GYM",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_MAASJE_GYM",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_MAASJE_GYM",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_MAASJE_GYM",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_MAASJE_GYM",
+      "dest_warp_id": "8"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

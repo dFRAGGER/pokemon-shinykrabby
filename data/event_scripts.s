@@ -1202,3 +1202,13 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route02/scripts.inc"
 
 	.include "data/maps/MistCity/scripts.inc"
+
+	.include "data/maps/Maasje_Coastal_Cave1/scripts.inc"
+
+	.include "data/maps/Maasje_Coastal_Cave2/scripts.inc"
+
+	.include "data/maps/Maasje_Coastal_Cave3/scripts.inc"
+
+	.include "data/maps/Mistcity_Research_Center/scripts.inc"
+
+	.include "data/maps/Mistcity_Research_Center_Entrance/scripts.inc"

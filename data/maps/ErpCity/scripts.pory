@@ -2,11 +2,16 @@ mapscripts ErpCity_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_KICKED_OUT_LAB_CONVO)
         setflag(FLAG_HIDE_MOM_SHOES)
+        call (ErpCity_Visited)
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_RECIEVED_STARTER_POKEMON, 1: ErpCity_ProfessorBirds_Speech_Pokedex
     ]
     
+}
+
+script ErpCity_Visited {
+    setflag(FLAG_VISITED_ERP_CITY)
 }
 
 script ErpCity_ProfessorBirds_Speech_Pokedex {
@@ -32,6 +37,7 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     waitmessage
     msgbox(format("MUAAHAHAHAH, YOU!!? A POKEMON MASTER???"))
     waitmessage
+    playse(SE_PIN)
     applymovement(2, moves(emote_question_mark))
     msgbox(format(".....wait a second...."))
     waitmessage
@@ -39,6 +45,7 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     waitmessage
     msgbox(format(".....yes a very good idea Jari, very smart...."))
     waitmessage
+    playse(SE_PIN)
     applymovement (2, moves(emote_exclamation_mark))
     msgbox(format(".....DID I SAY THAT OUT LOUD? ARGH ANYWAYS, HOW ABOUT YOU BECOME MY LITTLE INTERN..."))
     waitmessage
@@ -49,6 +56,7 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     msgbox(format("AND SCAN THEM WITH THIS LITTLE DEVICE...."))
     waitmessage
     setflag(FLAG_SYS_POKEDEX_GET)
+    setflag(FLAG_SYS_NATIONAL_DEX)
     msgbox(format("You have received the Pokédex."))
     playfanfare(MUS_OBTAIN_ITEM)
     waitfanfare

@@ -1,1 +1,29 @@
 mapscripts Indoor_Maasje_Home2_MapScripts {}
+
+script Indoor_Maasje_Home2_Sailor {
+    lock
+    faceplayer
+    if(flag(FLAG_RECEIVED_OLD_ROD)== FALSE){
+    msgbox(format("I learned the ways of the sea from my mother.\p She loves telling stories of all her journeys, but sometimes the stories are too crazy to be true.\p Nowadays she just sit at home reminiscing about the past.\p Here you can have this:"))
+    waitmessage
+    giveitem(ITEM_OLD_ROD)
+    waitmessage
+    msgbox(format("This rod used to be hers, but she doesn't use it anymore.\p Maybe you can catch some fish with it. "))
+    waitmessage
+    setflag(FLAG_RECEIVED_OLD_ROD)
+    }
+    else{
+    msgbox(format("Well?\p Did you already catch any fish?"))
+    waitmessage
+    }
+    release
+
+}
+
+script Indoor_Maasje_Home2_WomanSailor {
+    lock
+    faceplayer
+    msgbox(format("My son worries about his grandmother a lot.\p That is why he is always by her side."))
+    waitmessage
+    release
+}

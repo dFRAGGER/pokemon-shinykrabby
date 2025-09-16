@@ -1,1 +1,9 @@
 mapscripts Maasje_PokemonCenter_2F_MapScripts {}
+
+script Maasje_PokemonCenter_2F_Red {
+    lock
+    faceplayer
+    msgbox(format("Hi there, I'm the maker of the game.\p Hope you are enjoying it so far!\p This game, all the characters, the maps, the plot, are based on a real life friends group.\p Although lots of stories and plotlines are based on real events, everything has to be taken with a grain of salt.\p I took the freedom to let my imagination go in the game I loved since I was a childhood.\p Have fun!"))
+    waitmessage
+    release
+}

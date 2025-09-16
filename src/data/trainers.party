@@ -94,34 +94,28 @@ Geodude
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_GRUNT_FACULTY_1 ===
+Name: TON CROSS
+Class: Gentleman
+Pic: Gentleman
 Gender: Male
-Music: Aqua
+Music: Rich
 Double Battle: No
-AI: Check Bad Move
 
-Poochyena
-Level: 32
+Pidgey
+Level: 2
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_GRUNT_FACULTY_2 ===
+Name: AD DICE
+Class: Gentleman
+Pic: Gentleman
 Gender: Male
-Music: Aqua
+Music: Rich
 Double Battle: No
-AI: Check Bad Move
 
-Zubat
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Carvanha
-Level: 31
+Wurmple
+Level: 2
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
@@ -3543,18 +3537,18 @@ Magneton
 Level: 34
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-=== TRAINER_COLE ===
-Name: COLE
-Class: Kindler
-Pic: Kindler
+=== TRAINER_BRAM ===
+Name: BRAM
+Class: Gentleman
+Pic: Gentleman
 Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Numel
-Level: 23
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Sandshrew
+Level: 8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JEFF ===
 Name: JEFF
@@ -3573,18 +3567,22 @@ Slugma
 Level: 22
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_AXLE ===
-Name: AXLE
-Class: Kindler
-Pic: Kindler
+=== TRAINER_ROB ===
+Name: ROB
+Class: Gentleman
+Pic: Gentleman
 Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Numel
-Level: 23
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Diglett
+Level: 8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Diglett
+Level: 8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JACE ===
 Name: JACE
@@ -3595,22 +3593,22 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
-Level: 23
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Phanpy
+Level: 10
+IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-=== TRAINER_KEEGAN ===
-Name: KEEGAN
-Class: Kindler
-Pic: Kindler
+=== TRAINER_ADDY ===
+Name: ADDY
+Class: Gentleman
+Pic: Gentleman
 Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
-Level: 23
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+Phanpy
+Level: 10
+IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_BERNIE_1 ===
 Name: BERNIE
@@ -4898,47 +4896,39 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Shock Wave
 - Howl
 
-=== TRAINER_FLANNERY_1 ===
-Name: FLANNERY
+=== TRAINER_PETELONGFELLOW ===
+Name: PETE
 Class: Leader
-Pic: Leader Flannery
-Gender: Female
-Music: Female
-Items: Hyper Potion / Hyper Potion
+Pic: Expert M
+Gender: Male
+Music: Male
+Items: Potion / Potion
 Double Battle: No
 AI: Basic Trainer
 
-Numel
-Level: 24
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Overheat
-- Take Down
-- Magnitude
-- Sunny Day
+Sandshrew
+Level: 12
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Sandstorm
+- Sand Attack
+- Defense Curl
+- Rollout
 
-Slugma
-Level: 24
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Overheat
-- Smog
-- Light Screen
-- Sunny Day
+Diglett
+Level: 12
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Sandstorm
+- Mud Slap
+- Astonish
+- Scratch
 
-Camerupt
-Level: 26
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Overheat
-- Tackle
-- Sunny Day
-- Attract
-
-Torkoal @ White Herb
-Level: 29
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Overheat
-- Sunny Day
-- Body Slam
-- Attract
+Donphan @ Oran Berry
+Level: 15 
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Sandstorm
+- Rollout
+- Bulldoze
+- Defense Curl
 
 === TRAINER_NORMAN_1 ===
 Name: NORMAN
@@ -11859,23 +11849,19 @@ Goldeen
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GERALD ===
-Name: GERALD
-Class: Cooltrainer
-Pic: Cooltrainer M
+=== TRAINER_MART ===
+Name: MART
+Class: Gentleman
+Pic: Gentleman
 Gender: Male
-Music: Cool
-Items: Hyper Potion
+Music: Hiker
 Double Battle: No
 AI: Basic Trainer
 
-Kecleon
-Level: 23
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Flamethrower
-- Fury Swipes
-- Feint Attack
-- Bind
+Wooper
+Level: 9
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
 
 === TRAINER_VIVIAN ===
 Name: VIVIAN

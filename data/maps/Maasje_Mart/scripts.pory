@@ -1,1 +1,42 @@
-mapscripts Maasje_Mart_MapScripts {}
+mapscripts Maasje_Mart_MapScripts {
+
+}
+
+script Maasje_Mart_Employer {
+    lock
+	faceplayer
+	message(gText_HowMayIServeYou) 
+	waitmessage
+	pokemart(Maasje_Mart_Items)
+	msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+	release
+	end
+    
+}
+
+mart Maasje_Mart_Items {
+    ITEM_POTION
+    ITEM_POKE_BALL
+    ITEM_ANTIDOTE
+    ITEM_PARALYZE_HEAL
+	ITEM_AWAKENING
+}
+
+script Maasje_Mart_Fat_Man {
+    lock
+    faceplayer
+    msgbox(format("I'm looking for pink cookies, but I can't find them anywhere."))
+    waitmessage
+    release
+    end
+}
+
+script Maasje_Mart_Bug_Catcher {
+    lock
+    faceplayer
+    msgbox(format("I was attacked by two Bee Pokemons, I needed some antidote.\p I have never seen those here before, but apparently they belong together.\p My dad says they are called Volbeat and Illumise."))
+    waitmessage
+    release
+    end
+}
+    

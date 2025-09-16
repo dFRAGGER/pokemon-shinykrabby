@@ -37,7 +37,8 @@
     "gMapGroup_TownsAndRoutesSK",
     "gMapGroup_IndooErpusCity",
     "gMapGroup_IndoorBernrode",
-    "gMapGroup_IndoorMaasje"
+    "gMapGroup_IndoorMaasje",
+    "gMapGroup_IndoorMistCity"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -659,6 +660,13 @@
     "Maasje_PokemonCenter_1F",
     "Maasje_PokemonCenter_2F",
     "Maasje_Gym",
-    "Maasje_Gym_Basement"
+    "Maasje_Gym_Basement",
+    "Maasje_Coastal_Cave1",
+    "Maasje_Coastal_Cave2",
+    "Maasje_Coastal_Cave3"
+  ],
+  "gMapGroup_IndoorMistCity": [
+    "Mistcity_Research_Center",
+    "Mistcity_Research_Center_Entrance"
   ]
 }

@@ -1,21 +1,100 @@
-mapscripts Maasje_Gym_MapScripts {}
+mapscripts Maasje_Gym_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+        call(Maasje_Gym_Check_Buried)
+    }
+}
 
 script Maasje_Gym_Introduction {
     lock
-    msgbox(format("Hi, welcome to the Maasje Pokemon Gym. The gym leader and trainers use sand & ground pokemon. Grass pokemon seem to have an edge, while electric pokemon are not recommended. The gym leader is called Pete Longfellow, he ues to be a geography teacher. He has been training pokemon for a long time but he can be stubborn and emotional. Stay cool and calm and you should be good. Good luck!"))
+    if(flag(FLAG_ITEM_FRESH_WATER_GYM1) == FALSE){
+            msgbox(format("Hi, welcome to the Maasje Pokemon Gym.\p The gym leader and trainers use sand & ground pokemon.\p Grass pokemon seem to have an edge, while electric pokemon are not recommended.\p The gym leader is called Pete Longfellow, he used to be a geography teacher.\p He has been training pokemon for a long time but he can be stubborn and emotional.\p Stay cool and calm and you should be good.\p Also have this:"))
+            waitmessage
+            giveitem(ITEM_FRESH_WATER)
+            waitmessage
+            msgbox(format("Good luck!!"))
+            waitmessage
+            release
+    }
+    else{
+        msgbox(format("Congrats on getting your badge!\p Pete looked mad, I don't think he is coming back."))
+    }
+}
+script Maasje_Gym_Leader_Pete_Longfellow {
+    trainerbattle_single(TRAINER_PETELONGFELLOW, Maasje_Gym_PeteLongfellow_Introtext, Maasje_Gym_PeteLongfellow_Defeattext, Maasje_Gym_PeteLongfellow_Defeated, NO_MUSIC)
+    release
+    end
+}
+
+script Maasje_Gym_PeteLongfellow_Defeated {
+    msgbox(format("In geography we call this fulgurite, just pure luck.\p Only regirous order and obedience will help you against The Faculty.\p Nothing else beats it.\p This move I used during battle was too random as well, you can have it:"))
+    playfanfare(MUS_OBTAIN_ITEM)
+    giveitem(ITEM_TM37)
+    msgbox(format("This Technical Machine is called Sandstorm.\p It creates a sandstorm on the battlefield that last 5 turns with additional effects....\p which I forgot..\p You might have been lucky against me, but the rest of The Factulty will ruin your life.\p Running this gym has been fun, but the grand mission of The Faculty calls.\p Don't let me see you again, you punk!"), MSGBOX_AUTOCLOSE)
+    setflag(FLAG_HIDE_PETELONGFELLOW)
+    getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
+    if(var(VAR_TEMP_0)== 13 && var(VAR_TEMP_1 == 3)){
+        applymovement(1, moves(walk_right walk_down*7))     
+    }
+    else{
+        applymovement(1, moves(walk_down*7))
+    }
+    waitmovement
+    removeobject(1)
+    removeobject(3)
+    removeobject(4)
+    call(Maasje_Gym_Set_Gym_Trainers)
+    msgbox(format("Pete seems to have dropped something.\p It seems to be the Sand Badge!"))
     waitmessage
+    call(Common_EventScript_PlayGymBadgeFanfare)
+    setflag(FLAG_BADGE01_GET)
+    msgbox(format("On the back it says: 'This badge gives you the permission to cut down trees with the move Cut.'"), MSGBOX_AUTOCLOSE)
     release
 }
 
-script Maasje_Gym_Leader_Pete_Longfellow {
-    lockall
-    msgbox(format("Well, well. Look who we got here. Let me learn you something about tectonic plates and the glorious power of erosion!"))
-    waitmessage
-    msgbox(format("I might be getting to old for this. Maybe my skills have finally eroded with the wind. Let me give you this:"))
-    waitmessage
-    giveitem(ITEM_TM37)
-    waitstate
-    msgbox(format("This Technical Machine is called Sandstorm. It creates a sandstorm on the battlefield that last 5 turns with additional effects.... which I forgot..\n You might have been lucky against me, but the rest of The Factulty will ruin your life."))
-    waitmessage
-    releaseall
+text Maasje_Gym_PeteLongfellow_Introtext {
+    format("Well, well.\p Look who we got here.\p Let me learn you something about tectonic plates and the glorious power of erosion!!")
+}
+
+text Maasje_Gym_PeteLongfellow_Defeattext {
+    format("I might be getting to old for this.\p Maybe my skills have finally eroded with the wind.")
+}
+
+script Maasje_Gym_Set_Gym_Trainers {
+    settrainerflag (TRAINER_BRAM)
+    settrainerflag (TRAINER_ROB)
+    settrainerflag (TRAINER_ADDY)
+    settrainerflag (TRAINER_MART)
+}
+
+script Maasje_Gym_Check_Buried {
+    setobjectmovementtype(3, MOVEMENT_TYPE_BURIED)
+    setobjectmovementtype(4, MOVEMENT_TYPE_BURIED)
+}
+
+script Maasje_Gym_Eventscript_Bram {
+    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_BRAM, TRAINER_BRAM, Maasje_Gym_Introtext_Trainer_Bram, Maasje_Gym_Losetext_Trainer_Bram, NULL, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE )
+    msgbox(format("The faculty is a strong faction, almost as strong as those chemical bonds I used to create back in the day."), MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Maasje_Gym_Introtext_Trainer_Bram {
+    format("Everybody calls me an assistant.\nI call myself a TOA!!")
+}
+
+text Maasje_Gym_Losetext_Trainer_Bram {
+    format("Maybe I'm just an assitant afterall.")
+}
+
+script Maasje_Gym_Eventscript_Rob {
+    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_ROB, TRAINER_ROB, Maasje_Gym_Introtext_Trainer_Rob, Maasje_Gym_Losetext_Trainer_Rob, NULL, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE )
+    msgbox(format("The faculty is all about structure, just like the computers I used to fix at my old job."), MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Maasje_Gym_Introtext_Trainer_Rob {
+    format("I used to be a boring IT guy.\n Now I am the bug in the system!!")
+}
+
+text Maasje_Gym_Losetext_Trainer_Rob {
+    format("It seems like my strategy got hacked.")
 }

@@ -325,6 +325,7 @@ script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit {
         waitmessage
         msgbox(format("WHAT ARE YOU DOING IN MY LAB??!"))
         waitmessage
+        playse(SE_PIN)
         applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark))
         waitmovement
         clearflag (FLAG_PROFESSOR_BIRDS_DISCOVERY)
@@ -355,6 +356,7 @@ script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit {
         waitmessage
         msgbox(format("WHAT ARE YOU DOING IN MY LAB??!"))
         waitmessage
+        playse(SE_PIN)
         applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark))
         waitmovement
         clearflag (FLAG_PROFESSOR_BIRDS_DISCOVERY)

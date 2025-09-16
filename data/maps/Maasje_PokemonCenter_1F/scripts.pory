@@ -1,1 +1,106 @@
-mapscripts Maasje_PokemonCenter_1F_MapScripts {}
+mapscripts Maasje_PokemonCenter_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+        call(Maasje_PokemonCenter_1F_OnTransition)
+    }
+    MAP_SCRIPT_ON_RESUME{
+        call(CableClub_OnResume)
+    }
+}
+
+script Maasje_PokemonCenter_1F_OnTransition {
+    setrespawn(HEAL_LOCATION_MAASJE)
+    end
+}
+
+script Maasje_PokemonCenter_1F_EventScript_Nurse {
+	setvar(VAR_0x800B, LOCALID_MAASJE_NURSE) 
+	call (Common_EventScript_PkmnCenterNurse)
+	waitmessage
+    waitbuttonpress
+    release
+    end
+	
+}
+
+script Maasje_PokemonCenter_1F_Second_Nurse {
+    lock
+    applymovement(2, moves(face_player))
+    msgbox(format("We found this Krabby on the beach a couple of days ago.\p He was very confused and kept making strange noises.\p He is getting better now."))
+    waitmessage
+    applymovement(2, moves(face_left))
+    release
+}
+
+script Maasje_Krabby_Cry_1F_Pokecenter {
+    playmoncry(SPECIES_KRABBY, CRY_MODE_NORMAL)
+}
+
+script Maasje_PokemonCenter_1F_Bryan_Trigger0 {
+    lock
+    setvar(VAR_BRYAN_POSITION, 1)
+    clearflag(FLAG_DISABLE_FOLLOWER_POKEMON)
+    playse(SE_PIN)
+    applymovement(2, moves(emote_exclamation_mark))
+    delay(60)
+    applymovement(2, moves(walk_fast_left * 4 walk_fast_down))
+    msgbox(format("Hi, my name is Bryan.\p I'd like to film everything, absolutely everything.\p Can I film your journey towards becoming a pokemon master?\p ..... What? No?\p Just don't mind me, act like you don't see me.\p"))
+    waitmessage
+    release
+}
+
+script Maasje_PokemonCenter_1F_Bryan_Trigger1 {
+    lock
+    setvar(VAR_BRYAN_POSITION, 1)
+    clearflag(FLAG_DISABLE_FOLLOWER_POKEMON)
+    playse(SE_PIN)
+    applymovement(2, moves(emote_exclamation_mark))
+    delay(60)
+    applymovement(2, moves(walk_fast_left * 3 face_down))
+    msgbox(format("Hi, my name is Bryan.\p I'd like to film everything, absolutely everything.\p Can I film your journey towards becoming a pokemon master?\p ..... What? No?\p Just don't mind me, act like you don't see me.\p"))
+    waitmessage
+    release
+}
+
+script Maasje_PokemonCenter_1F_Bryan_Trigger2 {
+    lock
+    setvar(VAR_BRYAN_POSITION, 1)
+    clearflag(FLAG_DISABLE_FOLLOWER_POKEMON)
+    playse(SE_PIN)
+    applymovement(2, moves(emote_exclamation_mark))
+    delay(60)
+    applymovement(2, moves(walk_fast_left face_down))
+    msgbox(format("Hi, my name is Bryan.\p I'd like to film everything, absolutely everything.\p Can I film your journey towards becoming a pokemon master?\p ..... What? No?\p Just don't mind me, act like you don't see me.\p"))
+    waitmessage
+    release
+}
+
+script Maasje_PokemonCenter_1F_Bryan_Trigger3 {
+    lock
+    setvar(VAR_BRYAN_POSITION, 1)
+    clearflag(FLAG_DISABLE_FOLLOWER_POKEMON)
+    playse(SE_PIN)
+    applymovement(2, moves(emote_exclamation_mark))
+    delay(60)
+    applymovement(2, moves(walk_fast_down))
+    msgbox(format("Hi, my name is Bryan.\p I'd like to film everything, absolutely everything.\p Can I film your journey towards becoming a pokemon master?\p ..... What? No?\p Just don't mind me, act like you don't see me.\p"))
+    waitmessage
+    release
+}
+
+script Maasje_PokemonCenter_1F_Bryan_Following {
+    lock
+    playse(SE_PIN)
+    applymovement(2, moves(emote_question_mark face_player))
+    delay(40)
+    msgbox(format("Are you talking to me?\p I'm not even here, don't worry!\p I'll send you the footage on DVD!"))
+    waitmessage
+    release
+}
+
+script Maasje_PokemonCenter_1F_Man {
+    lock
+    faceplayer
+    msgbox(format("Back in the day the gym leader, Pete Longfellow, was my geography teacher.\p He quit his old job because one of students started to imitate his quirks.\p I forgot the real name of the student, but everybody called him J.T.B.."))
+    waitmessage
+    release
+}

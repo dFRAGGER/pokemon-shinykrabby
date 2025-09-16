@@ -1,4 +1,12 @@
-mapscripts Maasje_MapScripts {}
+mapscripts Maasje_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        call(Maasje_On_Transition)
+    }
+}
+
+script Maasje_On_Transition {
+    setflag (FLAG_VISITED_MAASJE)
+}
 
 script Maasje_Sign_Welcome {
     lock
@@ -30,7 +38,7 @@ script Maasje_Sign_Hill {
 
 script Maasje_Sign_Beekeeper {
     lock
-    msgbox(format("Beekeeper Geurts's House"))
+    msgbox(format("Beekeeper Smells's House"))
     waitmessage
     release
 }
@@ -57,4 +65,254 @@ script Maasje_Collect_Honey_BeeHives {
     lock
     msgbox(format("You have collected honey from the beehive."))
     release
+}
+
+script Maasje_Advice_Fisher_Crabhill {
+    lock
+    applymovement(60, moves(face_player))
+    if(flag(FLAG_RECEIVED_ESCAPE_ROPE) == FALSE){
+    msgbox(format("Whoa there, planning on going in?\pThat place can be a tricky maze. Here, take this with you, just in case."))
+    giveitem(ITEM_ESCAPE_ROPE)
+    setflag(FLAG_RECEIVED_ESCAPE_ROPE)
+    msgbox(format("It's an Escape Rope. A real lifesaver if you ever feel hopelessly lost!"))
+    waitmessage
+    }
+    else {
+        msgbox(format("Can you believe this whole place was once an underwater reef?\p Thanks to the tireless work of crabs, the reef grew over time, creating this safe haven for Pokémon."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Flag_Follower_Prep {
+    setflag(FLAG_DISABLE_FOLLOWER_POKEMON)
+}
+
+script Maasje_Beehive_01 {
+    lock
+    if(flag(FLAG_START_COLLECTING_HONEY) == TRUE){
+    if(flag(FLAG_CLEAR_BEEHIVE_01) == FALSE){
+        msgbox(format("This beehive seems full of honey, do you want to collect it?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{PLAYER} collected the honey."))
+            addvar(VAR_BEEKEEPER_GEURTS, 1)
+            setflag(FLAG_CLEAR_BEEHIVE_01)
+            waitmessage
+        }
+    }
+    else{
+        msgbox(format("The beehive is empty. Better look for another hive."))
+        waitmessage
+    }
+    }
+    else{
+        msgbox(format("It's a beehive, better not touch it."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Beehive_02 {
+    lock
+    if(flag(FLAG_START_COLLECTING_HONEY) == TRUE){
+    if(flag(FLAG_CLEAR_BEEHIVE_02) == FALSE){
+        msgbox(format("This beehive seems full of honey, do you want to collect it?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{PLAYER} collected the honey."))
+            addvar(VAR_BEEKEEPER_GEURTS, 1)
+            setflag(FLAG_CLEAR_BEEHIVE_02)
+            waitmessage
+        }
+    }
+    else{
+        msgbox(format("The beehive is empty. Better look for another hive."))
+        waitmessage
+    }
+    }
+    else{
+        msgbox(format("It's a beehive, better not touch it."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Beehive_03 {
+    lock
+    if(flag(FLAG_START_COLLECTING_HONEY) == TRUE){
+    if(flag(FLAG_CLEAR_BEEHIVE_03) == FALSE){
+        msgbox(format("This beehive seems full of honey, do you want to collect it?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{PLAYER} collected the honey."))
+            addvar(VAR_BEEKEEPER_GEURTS, 1)
+            setflag(FLAG_CLEAR_BEEHIVE_03)
+            waitmessage
+        }
+    }
+    else{
+        msgbox(format("The beehive is empty. Better look for another hive."))
+        waitmessage
+    }
+    }
+    else{
+        msgbox(format("It's a beehive, better not touch it."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Beehive_04 {
+    lock
+    if(flag(FLAG_START_COLLECTING_HONEY) == TRUE){
+    if(flag(FLAG_CLEAR_BEEHIVE_04) == FALSE){
+        msgbox(format("This beehive seems full of honey, do you want to collect it?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{PLAYER} collected the honey."))
+            addvar(VAR_BEEKEEPER_GEURTS, 1)
+            setflag(FLAG_CLEAR_BEEHIVE_04)
+            waitmessage
+        }
+    }
+    else{
+        msgbox(format("The beehive is empty. Better look for another hive."))
+        waitmessage
+    }
+    }
+    else{
+        msgbox(format("It's a beehive, better not touch it."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Beehive_05 {
+    lock
+    if(flag(FLAG_START_COLLECTING_HONEY) == TRUE){
+    if(flag(FLAG_CLEAR_BEEHIVE_05) == FALSE){
+        msgbox(format("This beehive seems full of honey, do you want to collect it?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{PLAYER} collected the honey."))
+            addvar(VAR_BEEKEEPER_GEURTS, 1)
+            setflag(FLAG_CLEAR_BEEHIVE_05)
+            waitmessage
+        }
+    }
+    else{
+        msgbox(format("The beehive is empty. Better look for another hive."))
+        waitmessage
+    }
+    }
+    else{
+        msgbox(format("It's a beehive, better not touch it."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Beehive_06 {
+    lock
+    if(flag(FLAG_START_COLLECTING_HONEY) == TRUE){
+    if(flag(FLAG_CLEAR_BEEHIVE_06) == FALSE){
+        msgbox(format("This beehive seems full of honey, do you want to collect it?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{PLAYER} collected the honey."))
+            addvar(VAR_BEEKEEPER_GEURTS, 1)
+            setflag(FLAG_CLEAR_BEEHIVE_06)
+            waitmessage
+            playmoncry(SPECIES_VOLBEAT, CRY_MODE_ENCOUNTER)
+            msgbox(format("......BZZZZZZZZZZZZZZ"))
+            waitmessage
+            waitmoncry
+            createmon(1,0,SPECIES_VOLBEAT,8)
+            dowildbattle
+        }
+    }
+    else{
+        msgbox(format("The beehive is empty. Better look for another hive."))
+        waitmessage
+    }
+    }
+    else{
+        msgbox(format("It's a beehive, better not touch it."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Beehive_07 {
+    lock
+    if(flag(FLAG_START_COLLECTING_HONEY) == TRUE){
+    if(flag(FLAG_CLEAR_BEEHIVE_07) == FALSE){
+        msgbox(format("This beehive seems full of honey, do you want to collect it?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{PLAYER} collected the honey."))
+            addvar(VAR_BEEKEEPER_GEURTS, 1)
+            setflag(FLAG_CLEAR_BEEHIVE_07)
+            waitmessage
+        }
+    }
+    else{
+        msgbox(format("The beehive is empty. Better look for another hive."))
+        waitmessage
+    }
+    }
+    else{
+        msgbox(format("It's a beehive, better not touch it."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Beehive_08 {
+    lock
+    if(flag(FLAG_START_COLLECTING_HONEY) == TRUE){
+    if(flag(FLAG_CLEAR_BEEHIVE_08) == FALSE){
+        msgbox(format("This beehive seems full of honey, do you want to collect it?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{PLAYER} collected the honey."))
+            addvar(VAR_BEEKEEPER_GEURTS, 1)
+            setflag(FLAG_CLEAR_BEEHIVE_08)
+            waitmessage
+            playmoncry(SPECIES_ILLUMISE, CRY_MODE_ENCOUNTER)
+            msgbox(format("......BZZZZZZZZZZZZZZ"))
+            waitmessage
+            waitmoncry
+            createmon(1,0,SPECIES_ILLUMISE,8)
+            dowildbattle
+        }
+    }
+    else{
+        msgbox(format("The beehive is empty. Better look for another hive."))
+        waitmessage
+    }
+    }
+    else{
+        msgbox(format("It's a beehive, better not touch it."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Joris_UpToTheWhiteLight {
+    lock
+    faceplayer
+    setflag(FLAG_UP_TO_THE_WHITELIGHT_MAASJE)
+    getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
+    msgbox(format("..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(2, moves(walk_in_place_fast_down))
+    delay(40)
+    msgbox(format("UP TO THE WHITELIGHT!!!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER,moves(emote_question_mark))
+    delay(40)
+    if(var(VAR_TEMP_0)== 49 && var(VAR_TEMP_1)== 34){
+        applymovement(2, moves(walk_fast_left walk_fast_down*7 walk_fast_left walk_fast_down*2))
+    }
+    else{
+        applymovement(2, moves(walk_fast_down*7 walk_fast_left*2 walk_fast_down*2))
+    }
+    waitmovement
+    removeobject(2)
+    release
+    
 }

@@ -14,13 +14,13 @@ LavaridgeTown_Gym_1F_EventScript_SetTrainerTempVars::
 	setvar VAR_TEMP_D, 0
 	setvar VAR_TEMP_E, 0
 	setvar VAR_TEMP_F, 0
-	goto_if_defeated TRAINER_COLE, LavaridgeTown_Gym_1F_EventScript_SetGeraldTempVar
+	goto_if_defeated TRAINER_BRAM, LavaridgeTown_Gym_1F_EventScript_SetMartTempVar
 	setvar VAR_TEMP_B, 1
-LavaridgeTown_Gym_1F_EventScript_SetGeraldTempVar::
-	goto_if_defeated TRAINER_GERALD, LavaridgeTown_Gym_1F_EventScript_SetAxleTempVar
+LavaridgeTown_Gym_1F_EventScript_SetMartTempVar::
+	goto_if_defeated TRAINER_MART, LavaridgeTown_Gym_1F_EventScript_SetAxleTempVar
 	setvar VAR_TEMP_C, 1
 LavaridgeTown_Gym_1F_EventScript_SetAxleTempVar::
-	goto_if_defeated TRAINER_AXLE, LavaridgeTown_Gym_1F_EventScript_SetDanielleTempVar
+	goto_if_defeated TRAINER_ROB, LavaridgeTown_Gym_1F_EventScript_SetDanielleTempVar
 	setvar VAR_TEMP_D, 1
 LavaridgeTown_Gym_1F_EventScript_SetDanielleTempVar::
 	goto_if_defeated TRAINER_DANIELLE, LavaridgeTown_Gym_1F_EventScript_EndSetTrainerTempVars
@@ -29,14 +29,14 @@ LavaridgeTown_Gym_1F_EventScript_EndSetTrainerTempVars::
 	return
 
 LavaridgeTown_Gym_1F_EventScript_CheckBuryTrainers::
-	goto_if_defeated TRAINER_COLE, LavaridgeTown_Gym_1F_EventScript_CheckBuryGerald
+	goto_if_defeated TRAINER_BRAM, LavaridgeTown_Gym_1F_EventScript_CheckBuryMart
 	setobjectmovementtype LOCALID_COLE, MOVEMENT_TYPE_BURIED
-LavaridgeTown_Gym_1F_EventScript_CheckBuryGerald::
-	goto_if_defeated TRAINER_GERALD, LavaridgeTown_Gym_1F_EventScript_CheckBuryAxle
-	setobjectmovementtype LOCALID_GERALD, MOVEMENT_TYPE_BURIED
+LavaridgeTown_Gym_1F_EventScript_CheckBuryMart::
+	goto_if_defeated TRAINER_MART, LavaridgeTown_Gym_1F_EventScript_CheckBuryAxle
+	setobjectmovementtype LOCALID_MART, MOVEMENT_TYPE_BURIED
 LavaridgeTown_Gym_1F_EventScript_CheckBuryAxle::
-	goto_if_defeated TRAINER_AXLE, LavaridgeTown_Gym_1F_EventScript_CheckBuryDanielle
-	setobjectmovementtype LOCALID_AXLE, MOVEMENT_TYPE_BURIED
+	goto_if_defeated TRAINER_ROB, LavaridgeTown_Gym_1F_EventScript_CheckBuryDanielle
+	setobjectmovementtype LOCALID_ROB, MOVEMENT_TYPE_BURIED
 LavaridgeTown_Gym_1F_EventScript_CheckBuryDanielle::
 	goto_if_defeated TRAINER_DANIELLE, LavaridgeTown_Gym_1F_EventScript_EndCheckBuryTrainers
 	setobjectmovementtype LOCALID_DANIELLE, MOVEMENT_TYPE_BURIED
@@ -44,7 +44,7 @@ LavaridgeTown_Gym_1F_EventScript_EndCheckBuryTrainers::
 	return
 
 LavaridgeTown_Gym_1F_EventScript_Flannery::
-	trainerbattle_single TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryIntro, LavaridgeTown_Gym_1F_Text_FlanneryDefeat, LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_PETELONGFELLOW, LavaridgeTown_Gym_1F_Text_FlanneryIntro, LavaridgeTown_Gym_1F_Text_FlanneryDefeat, LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, LavaridgeTown_Gym_1F_EventScript_FlanneryRematch
 	goto_if_unset FLAG_RECEIVED_TM_OVERHEAT, LavaridgeTown_Gym_1F_EventScript_GiveOverheat2
@@ -94,12 +94,12 @@ LavaridgeTown_Gym_1F_EventScript_GiveOverheat::
 	return
 
 LavaridgeTown_Gym_1F_EventScript_FlanneryRematch::
-	trainerbattle_rematch_double TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryPreRematch, LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat, LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons
+	trainerbattle_rematch_double TRAINER_PETELONGFELLOW, LavaridgeTown_Gym_1F_Text_FlanneryPreRematch, LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat, LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons
 	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 LavaridgeTown_Gym_1F_EventScript_Cole::
-	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_COLE, TRAINER_COLE, LavaridgeTown_Gym_1F_Text_ColeIntro, LavaridgeTown_Gym_1F_Text_ColeDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_COLE, TRAINER_BRAM, LavaridgeTown_Gym_1F_Text_ColeIntro, LavaridgeTown_Gym_1F_Text_ColeDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
 	msgbox LavaridgeTown_Gym_1F_Text_ColePostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -111,13 +111,13 @@ LavaridgeTown_Gym_EventScript_CheckTrainerScript::
 	end
 
 LavaridgeTown_Gym_1F_EventScript_Axle::
-	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_AXLE, TRAINER_AXLE, LavaridgeTown_Gym_1F_Text_AxleIntro, LavaridgeTown_Gym_1F_Text_AxleDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_ROB, TRAINER_ROB, LavaridgeTown_Gym_1F_Text_AxleIntro, LavaridgeTown_Gym_1F_Text_AxleDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
 	msgbox LavaridgeTown_Gym_1F_Text_AxlePostBattle, MSGBOX_AUTOCLOSE
 	end
 
-LavaridgeTown_Gym_B1F_EventScript_Keegan::
-	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_KEEGAN, TRAINER_KEEGAN, LavaridgeTown_Gym_B1F_Text_KeeganIntro, LavaridgeTown_Gym_B1F_Text_KeeganDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
-	msgbox LavaridgeTown_Gym_B1F_Text_KeeganPostBattle, MSGBOX_AUTOCLOSE
+LavaridgeTown_Gym_B1F_EventScript_ADDY::
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_ADDY, TRAINER_ADDY, LavaridgeTown_Gym_B1F_Text_AddyIntro, LavaridgeTown_Gym_B1F_Text_AddyDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
+	msgbox LavaridgeTown_Gym_B1F_Text_AddyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 LavaridgeTown_Gym_1F_EventScript_Danielle::
@@ -125,9 +125,9 @@ LavaridgeTown_Gym_1F_EventScript_Danielle::
 	msgbox LavaridgeTown_Gym_1F_Text_DaniellePostBattle, MSGBOX_AUTOCLOSE
 	end
 
-LavaridgeTown_Gym_1F_EventScript_Gerald::
-	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_GERALD, TRAINER_GERALD, LavaridgeTown_Gym_1F_Text_GeraldIntro, LavaridgeTown_Gym_1F_Text_GeraldDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
-	msgbox LavaridgeTown_Gym_1F_Text_GeraldPostBattle, MSGBOX_AUTOCLOSE
+LavaridgeTown_Gym_1F_EventScript_Mart::
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_MART, TRAINER_MART, LavaridgeTown_Gym_1F_Text_MartIntro, LavaridgeTown_Gym_1F_Text_MartDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
+	msgbox LavaridgeTown_Gym_1F_Text_MartPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 LavaridgeTown_Gym_B1F_EventScript_Jace::
@@ -219,7 +219,7 @@ LavaridgeTown_Gym_1F_Text_AxlePostBattle:
 	.string "If you spend too much time buried in\n"
 	.string "hot sand, it tuckers you out…$"
 
-LavaridgeTown_Gym_B1F_Text_KeeganIntro:
+LavaridgeTown_Gym_B1F_Text_AddyIntro:
 	.string "You must be getting tired by now.\n"
 	.string "You'd like to rest in the hot sand,\l"
 	.string "wouldn't you?\p"
@@ -227,23 +227,23 @@ LavaridgeTown_Gym_B1F_Text_KeeganIntro:
 	.string "your willpower is an important ability\l"
 	.string "for all TRAINERS.$"
 
-LavaridgeTown_Gym_B1F_Text_KeeganDefeat:
+LavaridgeTown_Gym_B1F_Text_AddyDefeat:
 	.string "Play with fire, and be burned…$"
 
-LavaridgeTown_Gym_B1F_Text_KeeganPostBattle:
+LavaridgeTown_Gym_B1F_Text_AddyPostBattle:
 	.string "Your skill is real…\n"
 	.string "But our LEADER FLANNERY is strong.\p"
 	.string "If you don't watch yourself, you'll be\n"
 	.string "burned seriously.$"
 
-LavaridgeTown_Gym_1F_Text_GeraldIntro:
+LavaridgeTown_Gym_1F_Text_MartIntro:
 	.string "Can your POKéMON withstand\n"
 	.string "392-degree heat?$"
 
-LavaridgeTown_Gym_1F_Text_GeraldDefeat:
+LavaridgeTown_Gym_1F_Text_MartDefeat:
 	.string "It didn't burn hotly enough…$"
 
-LavaridgeTown_Gym_1F_Text_GeraldPostBattle:
+LavaridgeTown_Gym_1F_Text_MartPostBattle:
 	.string "The temperature of magma is\n"
 	.string "392 degrees.\p"
 	.string "Your POKéMON beat me, so they should\n"

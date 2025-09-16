@@ -1,0 +1,36 @@
+mapscripts Maasje_Coastal_Cave2_MapScripts {}
+
+script Maasje_Coastal_Cave2_Hiker {
+    lock
+    faceplayer
+    if(flag(FLAG_ITEM_TRADED_DOME_FOSSIL)==FALSE){
+    msgbox(format("I'm looking for fossils, if you happen to find one please tell me!"))
+    waitmessage
+    checkitem(ITEM_HELIX_FOSSIL)
+    if(var(VAR_RESULT)==TRUE){
+        msgbox(format("...\pWow that HELIX fossil looks amazing!\p Do you want to trade it for my DOME fossil?"),MSGBOX_YESNO)
+        waitmessage
+        if(var(VAR_RESULT)==TRUE){
+            removeitem(ITEM_HELIX_FOSSIL)
+            msgbox(format("{PLAYER} handed over the HELIX fossil."))
+            waitmessage
+            giveitem(ITEM_DOME_FOSSIL)
+            msgbox(format("Thank you, my collection is complete now!"))
+            setflag(FLAG_ITEM_TRADED_DOME_FOSSIL)
+        }
+        else{
+            msgbox(format("Too bad, come back when you ever change your mind!"))
+        }
+    }
+    else{
+    waitmessage
+    release
+    end
+    }
+    }
+    else{
+        msgbox(format("Thanks for trading, my collection is complete now!"))
+    }
+    release
+    end
+}

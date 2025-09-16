@@ -34,10 +34,10 @@ MauvilleCity_Gym_SetGymTrainers::
 	return
 
 LavaridgeTown_Gym_SetGymTrainers::
-	settrainerflag TRAINER_COLE
-	settrainerflag TRAINER_AXLE
-	settrainerflag TRAINER_KEEGAN
-	settrainerflag TRAINER_GERALD
+	settrainerflag TRAINER_BRAM
+	settrainerflag TRAINER_ROB
+	settrainerflag TRAINER_ADDY
+	settrainerflag TRAINER_MART
 	settrainerflag TRAINER_DANIELLE
 	settrainerflag TRAINER_JACE
 	settrainerflag TRAINER_JEFF

@@ -1,1 +1,41 @@
 mapscripts Indoor_Maasje_Beekeeper_Geurts_MapScripts {}
+
+script Maasje_Indoor_Beekeeper_Geurts_Assignment {
+    lock
+    faceplayer
+    if(var(VAR_BEEKEEPER_GEURTS) == 0){
+        msgbox(format("Hi there!\n My Name is Steven Smells.\p I recently retired as a biology teacher, and now am a full time beekeper.\p I love honey! It is my favorite substance.\p Can you help me collect my honey from my beehives outside?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+            msgbox(format("Thank you so much, my body is becoming to brittle to climb the cliffs.\p There should be 8 beehives along the coast.\p Come back when you have collected all the honey.\p I might have a small reward for you."), MSGBOX_AUTOCLOSE)
+            waitmessage
+            setflag(FLAG_START_COLLECTING_HONEY)
+            setvar(VAR_BEEKEEPER_GEURTS, 1)
+            delay(40)
+            end
+        }
+        else{
+            msgbox(format("Too bad! Hopefully someone else will come by soon, I'm not sure I can do it myself anymore."))
+        }
+    }
+    if(var(VAR_BEEKEEPER_GEURTS) == 1) {
+        msgbox(format("The beehives should be along the coastal area's.\p If you could collect the honey, I might have a little surprise for you."))
+    }
+    if(var(VAR_BEEKEEPER_GEURTS) > 1 && var(VAR_BEEKEEPER_GEURTS) < 9){
+        msgbox(format("Keep going! I still need some more honey to fill up my storage.\p Once my storage is full, I can begin processing orders across the region.\p With the profits I can protect the rare bee species along this coast."))
+    }
+    if(var(VAR_BEEKEEPER_GEURTS) == 9) {
+        msgbox(format("Thank you so much! This will be enough for all the orders this season.\p All of the profit will go directly into the protection of the bee species across this coast.\p As a reward, I give you this:"))
+        giveitem(ITEM_HM01)
+        setflag(FLAG_RECEIVED_HM_CUT)
+        waitmessage
+        msgbox(format("When I was young I tried to keep the coast clear of invasive species.\p With this move, my Pokémons could cut down small trees and bushes that did not belong on the coast.\p To actually use the move you still have to get permission from the Gym Leader of this town.\p They are very strict nowadays."))
+        setvar(VAR_BEEKEEPER_GEURTS, 10)
+        clearflag(FLAG_START_COLLECTING_HONEY)
+    }
+    else {
+       msgbox(format("Thanks for helping me out! If I ever need help again I know where to find ya!"))     
+    }
+    waitmessage
+    release
+    
+}

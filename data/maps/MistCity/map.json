@@ -109,8 +109,8 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 83,
-      "y": 25,
+      "x": 85,
+      "y": 20,
       "elevation": 0,
       "dest_map": "MAP_MIST_CITY",
       "dest_warp_id": "0"
@@ -170,6 +170,13 @@
       "elevation": 0,
       "dest_map": "MAP_MIST_CITY",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 86,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_MIST_CITY",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
@@ -192,7 +199,7 @@
     },
     {
       "type": "sign",
-      "x": 77,
+      "x": 82,
       "y": 25,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -210,6 +217,22 @@
       "type": "sign",
       "x": 5,
       "y": 29,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 53,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 31,
+      "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NULL"

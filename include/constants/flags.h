@@ -58,13 +58,13 @@
 #define FLAG_HIDE_INTERN_BIRDS_LAB   0x2C // Unused Flag
 #define FLAG_HIDE_MOM_SHOES   0x2D // Unused Flag
 #define FLAG_SHINY_KRABBY_ENCOUNTER    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
+#define FLAG_FACULTY_GRUNTS_ROUT01    0x2F // Unused Flag
+#define FLAG_RECEIVED_ESCAPE_ROPE   0x30 // Unused Flag
+#define FLAG_DISABLE_FOLLOWER_POKEMON    0x31 // Unused Flag
+#define FLAG_HIDE_PETELONGFELLOW    0x32 // Unused Flag
+#define FLAG_JAKUB_CONVO            0x33 // Unused Flag
+#define FLAG_JAKUB_CONVO_2    0x34 // Unused Flag
+#define FLAG_UP_TO_THE_WHITELIGHT_MAASJE    0x35 // Unused Flag
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
@@ -654,17 +654,17 @@
 #define FLAG_HIDDEN_ITEM_SAFARI_ZONE_SOUTH_EAST_PP_UP        (FLAG_HIDDEN_ITEMS_START + 0x6C)
 #define FLAG_HIDDEN_ITEM_NAVEL_ROCK_TOP_SACRED_ASH           (FLAG_HIDDEN_ITEMS_START + 0x6D)
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
-#define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
+#define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F) //used in Maasje_Cooastal_Cave3
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
+#define FLAG_CLEAR_BEEHIVE_01  0x264 // Unused Flag
+#define FLAG_CLEAR_BEEHIVE_02 0x265 // Unused Flag
+#define FLAG_CLEAR_BEEHIVE_03 0x266 // Unused Flag
+#define FLAG_CLEAR_BEEHIVE_04  0x267 // Unused Flag
+#define FLAG_CLEAR_BEEHIVE_05 0x268 // Unused Flag
+#define FLAG_CLEAR_BEEHIVE_06 0x269 // Unused Flag
+#define FLAG_CLEAR_BEEHIVE_07  0x26A // Unused Flag
+#define FLAG_CLEAR_BEEHIVE_08  0x26B // Unused Flag
+#define FLAG_START_COLLECTING_HONEY  0x26C // Unused Flag
 #define FLAG_UNUSED_0x26D  0x26D // Unused Flag
 #define FLAG_UNUSED_0x26E  0x26E // Unused Flag
 #define FLAG_UNUSED_0x26F  0x26F // Unused Flag
@@ -1222,9 +1222,9 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
+#define FLAG_ITEM_MAASJE_COASTAL_CAVE1                              0x493 // Unused Flag
+#define FLAG_ITEM_FRESH_WATER_GYM1                                  0x494 // Unused Flag
+#define FLAG_ITEM_TRADED_DOME_FOSSIL                                          0x495 // Unused Flag
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
@@ -1507,8 +1507,9 @@
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
-#define FLAG_UNUSED_0x8E5                           (SYSTEM_FLAGS + 0x85) // Unused Flag
-#define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
+//Towns visited
+#define FLAG_VISITED_ERP_CITY                       (SYSTEM_FLAGS + 0x85) // Unused Flag
+#define FLAG_VISITED_MAASJE                         (SYSTEM_FLAGS + 0x86) // Unused Flag
 #define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
 #define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
 #define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag

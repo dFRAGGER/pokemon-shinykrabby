@@ -23,39 +23,41 @@ LabJariIndoorStorage_Eventscript_Intern_Cave::
 # 13 "data/maps/LabJariIndoorStorage/scripts.pory"
 	compare VAR_TEMP_0, 0
 	goto_if_eq LabJariIndoorStorage_Eventscript_Intern_Cave_2
-# 20 "data/maps/LabJariIndoorStorage/scripts.pory"
+# 21 "data/maps/LabJariIndoorStorage/scripts.pory"
 	msgbox LabJariIndoorStorage_Eventscript_Intern_Cave_Text_1
 LabJariIndoorStorage_Eventscript_Intern_Cave_1:
-# 22 "data/maps/LabJariIndoorStorage/scripts.pory"
+# 23 "data/maps/LabJariIndoorStorage/scripts.pory"
 	releaseall
 	return
 
 LabJariIndoorStorage_Eventscript_Intern_Cave_2:
 # 14 "data/maps/LabJariIndoorStorage/scripts.pory"
-	applymovement 1, LabJariIndoorStorage_Eventscript_Intern_Cave_Movement_0
+	playse SE_PIN
 # 15 "data/maps/LabJariIndoorStorage/scripts.pory"
-	waitmovement
+	applymovement 1, LabJariIndoorStorage_Eventscript_Intern_Cave_Movement_0
 # 16 "data/maps/LabJariIndoorStorage/scripts.pory"
-	msgbox LabJariIndoorStorage_Eventscript_Intern_Cave_Text_0
+	waitmovement
 # 17 "data/maps/LabJariIndoorStorage/scripts.pory"
-	waitmessage
+	msgbox LabJariIndoorStorage_Eventscript_Intern_Cave_Text_0
 # 18 "data/maps/LabJariIndoorStorage/scripts.pory"
+	waitmessage
+# 19 "data/maps/LabJariIndoorStorage/scripts.pory"
 	setvar VAR_TEMP_0, 1
 	goto LabJariIndoorStorage_Eventscript_Intern_Cave_1
 
 
-# 14 "data/maps/LabJariIndoorStorage/scripts.pory"
+# 15 "data/maps/LabJariIndoorStorage/scripts.pory"
 LabJariIndoorStorage_Eventscript_Intern_Cave_Movement_0:
-# 14 "data/maps/LabJariIndoorStorage/scripts.pory"
+# 15 "data/maps/LabJariIndoorStorage/scripts.pory"
 	reveal_trainer
-# 14 "data/maps/LabJariIndoorStorage/scripts.pory"
+# 15 "data/maps/LabJariIndoorStorage/scripts.pory"
 	emote_exclamation_mark
-# 14 "data/maps/LabJariIndoorStorage/scripts.pory"
+# 15 "data/maps/LabJariIndoorStorage/scripts.pory"
 	jump_in_place_down
 	step_end
 
 LabJariIndoorStorage_Eventscript_Intern_Cave_Text_0:
-# 16 "data/maps/LabJariIndoorStorage/scripts.pory"
+# 17 "data/maps/LabJariIndoorStorage/scripts.pory"
 	.string "Uhm... I'm just an intern... just putting\n"
 	.string "up this big poster of this beautifull\l"
 	.string "rock formation.... A hole in the wall???\l"
@@ -63,7 +65,7 @@ LabJariIndoorStorage_Eventscript_Intern_Cave_Text_0:
 	.string "Nothing to see here...$"
 
 LabJariIndoorStorage_Eventscript_Intern_Cave_Text_1:
-# 20 "data/maps/LabJariIndoorStorage/scripts.pory"
+# 21 "data/maps/LabJariIndoorStorage/scripts.pory"
 	.string "Like I said, nothing to see here..... just\n"
 	.string "a regular rock wall... with a few dents\l"
 	.string "here and there...$"
