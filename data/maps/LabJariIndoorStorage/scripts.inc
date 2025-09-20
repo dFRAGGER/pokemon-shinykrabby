@@ -46,6 +46,22 @@ LabJariIndoorStorage_Eventscript_Intern_Cave_2:
 	goto LabJariIndoorStorage_Eventscript_Intern_Cave_1
 
 
+LabJariIndoorStorage_Eventscript_BoxesAssignment::
+# 27 "data/maps/LabJariIndoorStorage/scripts.pory"
+	lock
+# 28 "data/maps/LabJariIndoorStorage/scripts.pory"
+	msgbox LabJariIndoorStorage_Eventscript_BoxesAssignment_Text_0
+# 29 "data/maps/LabJariIndoorStorage/scripts.pory"
+	waitmessage
+# 30 "data/maps/LabJariIndoorStorage/scripts.pory"
+	applymovement LOCALID_PLAYER, LabJariIndoorStorage_Eventscript_BoxesAssignment_Movement_0
+# 31 "data/maps/LabJariIndoorStorage/scripts.pory"
+	waitmovement
+# 32 "data/maps/LabJariIndoorStorage/scripts.pory"
+	release
+	return
+
+
 # 15 "data/maps/LabJariIndoorStorage/scripts.pory"
 LabJariIndoorStorage_Eventscript_Intern_Cave_Movement_0:
 # 15 "data/maps/LabJariIndoorStorage/scripts.pory"
@@ -54,6 +70,12 @@ LabJariIndoorStorage_Eventscript_Intern_Cave_Movement_0:
 	emote_exclamation_mark
 # 15 "data/maps/LabJariIndoorStorage/scripts.pory"
 	jump_in_place_down
+	step_end
+
+# 30 "data/maps/LabJariIndoorStorage/scripts.pory"
+LabJariIndoorStorage_Eventscript_BoxesAssignment_Movement_0:
+# 30 "data/maps/LabJariIndoorStorage/scripts.pory"
+	walk_up
 	step_end
 
 LabJariIndoorStorage_Eventscript_Intern_Cave_Text_0:
@@ -69,3 +91,9 @@ LabJariIndoorStorage_Eventscript_Intern_Cave_Text_1:
 	.string "Like I said, nothing to see here..... just\n"
 	.string "a regular rock wall... with a few dents\l"
 	.string "here and there...$"
+
+LabJariIndoorStorage_Eventscript_BoxesAssignment_Text_0:
+# 28 "data/maps/LabJariIndoorStorage/scripts.pory"
+	.string "Hmm.... those boxes should be here\n"
+	.string "somewhere...\p"
+	.string "Better not return empty handed...$"

@@ -23,3 +23,12 @@ script LabJariIndoorStorage_Eventscript_Intern_Cave {
     releaseall
 }
 
+script LabJariIndoorStorage_Eventscript_BoxesAssignment {
+    lock
+    msgbox(format("Hmm.... those boxes should be here somewhere...\pBetter not return empty handed..."))
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(walk_up))
+    waitmovement
+    release
+}
+

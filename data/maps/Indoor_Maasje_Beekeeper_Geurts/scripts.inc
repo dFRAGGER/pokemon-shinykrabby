@@ -22,12 +22,13 @@ Maasje_Indoor_Beekeeper_Geurts_Assignment_10:
 # 26 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
 	compare VAR_BEEKEEPER_GEURTS, 9
 	goto_if_eq Maasje_Indoor_Beekeeper_Geurts_Assignment_16
-# 36 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
-	msgbox Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_7
-Maasje_Indoor_Beekeeper_Geurts_Assignment_15:
 # 38 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
+	compare VAR_BEEKEEPER_GEURTS, 10
+	goto_if_eq Maasje_Indoor_Beekeeper_Geurts_Assignment_19
+Maasje_Indoor_Beekeeper_Geurts_Assignment_18:
+# 41 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
 	waitmessage
-# 39 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
+# 42 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
 	release
 	return
 
@@ -80,12 +81,21 @@ Maasje_Indoor_Beekeeper_Geurts_Assignment_16:
 # 30 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
 	waitmessage
 # 31 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
-	msgbox Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_6
+	msgbox Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_6, MSGBOX_AUTOCLOSE
 # 32 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
 	setvar VAR_BEEKEEPER_GEURTS, 10
 # 33 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
 	clearflag FLAG_START_COLLECTING_HONEY
-	goto Maasje_Indoor_Beekeeper_Geurts_Assignment_15
+# 34 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
+	waitmessage
+# 35 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
+	release
+	end
+
+Maasje_Indoor_Beekeeper_Geurts_Assignment_19:
+# 39 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
+	msgbox Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_7
+	goto Maasje_Indoor_Beekeeper_Geurts_Assignment_18
 
 
 Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_0:
@@ -153,6 +163,6 @@ Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_6:
 	.string "They are very strict nowadays.$"
 
 Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_7:
-# 36 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
+# 39 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
 	.string "Thanks for helping me out! If I ever\n"
 	.string "need help again I know where to find ya!$"

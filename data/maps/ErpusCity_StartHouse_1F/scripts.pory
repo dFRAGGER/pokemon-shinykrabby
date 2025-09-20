@@ -2,9 +2,90 @@ mapscripts ErpusCity_StartHouse_1F_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
         call(ErpusCity_Heal_Location)
     }
+    
 }
 
 script ErpusCity_Heal_Location {
     setrespawn(HEAL_LOCATION_ERP_CITY)
     end
+}
+
+script Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech {
+    lock
+    if(flag(FLAG_INTRO_SPEECH_MOM_FINISHED)==FALSE){
+    getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
+    applymovement(LOCALID_PLAYER, moves(face_down))
+    waitmovement
+    if(var(VAR_TEMP_0)== 7 && var(VAR_TEMP_1)== 3) {
+        applymovement(LOCALID_PLAYER, moves(walk_down*3 walk_left*2))
+    }
+    if(var(VAR_TEMP_0)== 8 && var(VAR_TEMP_1)== 4) {
+        applymovement(LOCALID_PLAYER, moves(walk_down*2 walk_left*3))
+    }
+    if(var(VAR_TEMP_0)== 9 && var(VAR_TEMP_1)== 3) {
+        applymovement(LOCALID_PLAYER, moves(walk_down*3 walk_left*4))
+    }
+    msgbox(format("There you are! Finally awake.\p Getting up so early for the move must have completely exhausted you.\p You've slept through the whole morning.\p"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    msgbox(format("Here, I've got some breakfast for you. That should fix you right up!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    msgbox(format("See? You already have some color back in your face.\p While you were resting, we unpacked almost everything, and the movers are just finishing up.\pDon't worry about the last few boxes; we're nearly finished.\pI think it's the perfect time for you to get out and explore our new hometown!\p Actually, I have an idea for your first destination.\p I heard the local professor is looking for an intern for his lab, which is just north of here.\p It would be a great way to get some experience under your belt before university next year.\p I met our neighbors this morning, and they told me their son, Barry, just started working there.\p Maybe you should walk over and check it out."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    msgbox(format("Come on, don't look so sad.\p It's gonna be a fun experience, and you can't sit at home all summer playing on your gamecube!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    msgbox(format("On you go!"))
+    applymovement(LOCALID_PLAYER,moves(walk_right))
+    waitmovement
+    setflag(FLAG_INTRO_SPEECH_MOM_FINISHED)
+    release
+    end
+    }
+    else{
+        playse(SE_PIN)
+        applymovement(LOCALID_PLAYER,moves(emote_exclamation_mark))
+        waitmovement        
+        msgbox(format("{PLAYER} I won't say it again, come on, the lab will be fun for you!"),MSGBOX_AUTOCLOSE)
+        waitmessage
+        applymovement(LOCALID_PLAYER, moves(walk_down))
+        waitmovement
+        release
+        end
+    }
+    
+}
+
+script Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech {
+    lock
+    faceplayer
+    if(flag(FLAG_SYS_NATIONAL_DEX)==FALSE){
+    msgbox(format("Well, what are you waiting for my boy.\p I'll see you at dinner!"))
+    waitmessage
+    }
+    else {
+        msgbox(format("So, you are going on an adventure?\pI knew you had it in you, dad would have been proud!\pLet me know if you ever need rest!"))
+        waitmessage
+        msgbox(format("Do you need rest right now?"),MSGBOX_YESNO)
+        waitmessage
+        if(var(VAR_RESULT)==YES){
+            msgbox(format("Let me take care of you."),MSGBOX_AUTOCLOSE)
+            waitmessage
+            fadescreen(FADE_TO_BLACK)
+            playse(MUS_HEAL)
+            waitse
+            special(HealPlayerParty)
+            delay(40)
+            fadescreen(FADE_FROM_BLACK)
+            msgbox(format("There you go! Good luck on your adventure!"),MSGBOX_AUTOCLOSE)
+            waitmessage
+        }
+        else{
+            msgbox(format("You can come back any time you want!"))
+            waitmessage
+        }
+
+    }
+    release
 }

@@ -1,0 +1,18 @@
+mapscripts ErpusCity_StartHouse_2F_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_STARTHOUSE_ERP_CITY, 0: ErpCity_Starthouse1F_Mom_Calling
+    ]
+}
+
+script ErpCity_Starthouse1F_Mom_Calling {
+    lock
+    setvar(VAR_STARTHOUSE_ERP_CITY,1)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER,moves(emote_exclamation_mark))
+    waitmovement
+    msgbox(format("HONEY!!\pWAKE UP!!\pI NEED YOU DOWNSTAIRS!!"))
+    waitmessage
+    release
+    end
+      
+}

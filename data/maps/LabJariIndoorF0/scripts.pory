@@ -1,8 +1,19 @@
 mapscripts LabJariIndoorF0_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_PROFESSOR_BIRDS_DISCOVERY)
-        setvar(VAR_RECIEVED_STARTER_POKEMON, 1)
+        setflag(FLAG_DISABLE_FOLLOWER_POKEMON)
     }
+        MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_RECIEVED_STARTER_POKEMON, 0: LabJarinIndoorF0_Eventscript_Entrance
+    ]
+}
+
+script LabJarinIndoorF0_Eventscript_Entrance {
+    lock
+    setvar(VAR_RECIEVED_STARTER_POKEMON, 1)
+    msgbox(format("HOLY MOLY!!\p Look at all those Pokeballs!\p What would be in them?"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
 }
 
 script ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection {
@@ -323,17 +334,18 @@ script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit {
         if(flag(FLAG_RECEIVED_STARTER_CHOICE)) {
         msgbox(format("HEY.........."))
         waitmessage
-        msgbox(format("WHAT ARE YOU DOING IN MY LAB??!"))
+        msgbox(format("WHAT ARE YOU DOING HERE??!!"))
         waitmessage
         playse(SE_PIN)
         applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark))
         waitmovement
         clearflag (FLAG_PROFESSOR_BIRDS_DISCOVERY)
+        clearflag(FLAG_DISABLE_FOLLOWER_POKEMON)
         addobject (10)
         applymovement (10, moves(walk_fast_right walk_fast_down face_left))
         waitmovement
         applymovement(LOCALID_PLAYER, moves(face_right))
-        msgbox(format("GET THE FUCK OUT!!"))
+        msgbox(format("I TOLD YOU TO GET SOME BOXES!!\pNOT WANDER AROUND IN MY SECRET LA.. I MEAN STORAGE ROOM!!\pGET THE FUCK OUT!!"))
         waitmessage
         fadescreen(FADE_TO_BLACK)
         warpsilent (MAP_ERP_CITY, 0)
@@ -341,7 +353,7 @@ script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit {
         fadescreen (FADE_FROM_BLACK)
         }
         else {
-            msgbox(format("Hmmmm, those pokeballs look shiny. Nobody will notice when I take one right?"))
+            msgbox(format("Hmmmm, those pokeballs look shiny...\p Nobody will notice when I take one right?"))
             applymovement(LOCALID_PLAYER, stopplayer)
             waitmovement(0)
         }
@@ -352,19 +364,20 @@ script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit {
 script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit {
         lockall
         if(flag(FLAG_RECEIVED_STARTER_CHOICE)) {
-        msgbox(format("HEY.........."))
-        waitmessage
-        msgbox(format("WHAT ARE YOU DOING IN MY LAB??!"))
-        waitmessage
         playse(SE_PIN)
         applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark))
         waitmovement
+        msgbox(format("HEY.........."))
+        waitmessage
+        msgbox(format("WHAT ARE YOU DOING HERE??!!"))
+        waitmessage
         clearflag (FLAG_PROFESSOR_BIRDS_DISCOVERY)
+        clearflag(FLAG_DISABLE_FOLLOWER_POKEMON)
         addobject (10)
         applymovement (10, moves(walk_fast_down face_right))
         waitmovement
         applymovement(LOCALID_PLAYER, moves(face_left))
-        msgbox(format("GET THE FUCK OUT!!"))
+        msgbox(format("I TOLD YOU TO GET SOME BOXES!!\pNOT WANDER AROUND IN MY SECRET LA.. I MEAN STORAGE ROOM!!\pGET THE FUCK OUT!!"))
         waitmessage
         fadescreen(FADE_TO_BLACK)
         warpsilent (MAP_ERP_CITY, 0)
@@ -372,7 +385,7 @@ script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit {
         fadescreen (FADE_FROM_BLACK)
         }
         else {
-            msgbox(format("Hmmmm, those pokeballs look shiny. Nobody will notice when I take one right?"))
+            msgbox(format("Hmmmm, those pokeballs look shiny...\p Nobody will notice when I take one right?"))
             applymovement(LOCALID_PLAYER, stopplayer)
             waitmovement(0)
         }

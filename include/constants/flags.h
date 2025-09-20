@@ -65,10 +65,10 @@
 #define FLAG_JAKUB_CONVO            0x33 // Unused Flag
 #define FLAG_JAKUB_CONVO_2    0x34 // Unused Flag
 #define FLAG_UP_TO_THE_WHITELIGHT_MAASJE    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
+#define FLAG_INTERN_BOXES_ASSIGNMENT    0x36 // Unused Flag
+#define FLAG_ENTRANCE_JARI_POKEBAL_LAB  0x37 // Unused Flag
+#define FLAG_MOM_CALLING_UPSTAIRS    0x38 // Unused Flag
+#define FLAG_INTRO_SPEECH_MOM_FINISHED    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag

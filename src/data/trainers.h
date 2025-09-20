@@ -6176,7 +6176,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 2524
-            .species = SPECIES_ZIGZAGOON,
+            .species = SPECIES_NINCADA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2524
             .heldItem = ITEM_NUGGET,
@@ -15382,7 +15382,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 6212
-            .species = SPECIES_TAILLOW,
+            .species = SPECIES_PIDGEY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6214
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),

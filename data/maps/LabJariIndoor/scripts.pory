@@ -1,11 +1,5 @@
 mapscripts LabJariIndoor_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION {
-        if(var(VAR_RECIEVED_STARTER_POKEMON) == 2) {
-            clearflag(FLAG_HIDE_INTERN_BIRDS_LAB)}
-        else {
-        setflag(FLAG_HIDE_INTERN_BIRDS_LAB)
-        }
-    }
+
 }
 
 script LabJariIndoor_Eventscript_Birds_Pokemon_Check {
@@ -13,4 +7,117 @@ script LabJariIndoor_Eventscript_Birds_Pokemon_Check {
     msgbox(format("...WHY ARE YOU STILL HERE? BETTER GET TO THAT SCRUB OF A FRIEND CALLED JAKUB IN THE NEXT TOWN! HE PROBABLY KNOWS HOW TO CATCH SOME POKEMON!"))
     waitmessage
     releaseall
+}
+
+script LabJariIndoor_Eventscript_Barry_Birds {
+    lock
+    if(flag(FLAG_INTERN_BOXES_ASSIGNMENT)==FALSE){
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    delay(10)
+    playse(SE_PIN)
+    applymovement(3, moves(face_down emote_exclamation_mark))
+    delay(30)
+    playse(SE_PIN)
+    applymovement(2, moves(face_down emote_question_mark))
+    waitmovement
+    if(var(VAR_TEMP_0)== 3 && var(VAR_TEMP_1)== 14) {
+        applymovement(3, moves(walk_down*2))
+        applymovement(LOCALID_PLAYER, moves(face_up))
+    }
+    if(var(VAR_TEMP_0)== 4 && var(VAR_TEMP_1)== 13) {
+        applymovement(3, moves(walk_right walk_down))
+    }
+    if(var(VAR_TEMP_0)== 5 && var(VAR_TEMP_1)== 13) {
+        applymovement(3, moves(walk_right*2 walk_down))
+    }
+    if(var(VAR_TEMP_0)== 6 && var(VAR_TEMP_1)== 14) {
+        applymovement(3, moves(walk_right*3 walk_down*2))
+        applymovement(LOCALID_PLAYER, moves(face_up))
+    }
+    waitmovement
+    msgbox(format("SO WHO ARE YOU?\p ...\pYOU WANT TO BECOME MY INTERN?\p WELL TOO LATE BOY!!\p BARRY WAS HERE FIRST!!\p ISN'T THAT RIGHT BARRY?"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(3, moves(face_left))
+    playse(SE_PIN)
+    applymovement(2, moves(emote_question_mark))
+    waitmovement
+    msgbox(format("YES BARRY, YOU ARE MY INTERN\p ...NO, I'M NOT PAYING YOU A FULL SALARY\p...NO, THE GOVERNMENT SUBSIDIES ARE NOT ENOUGH!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(3, moves(face_down))
+    delay(40)
+    applymovement(3, moves(face_left))
+    delay(40)
+    applymovement(3, moves(face_down))
+    delay(40)
+    applymovement(3, moves(face_left))
+    delay(40)
+    applymovement(3, moves(face_down))
+    delay(60)
+    playse(SE_PIN)
+    applymovement(3, moves(emote_exclamation_mark))
+    waitmovement
+    msgbox(format("....wait a second....\pI JUST LOOKED AT THE NEW SUBSIDIES AND...\pOUR BUDGET STILL ALLOWS AN EXTRA INTERN!!\pYOU ARE HIRED!!\p...SALARY?? AT THE END OF THE MONTH OFCOURSE...\pMAYBE...\pWHO KNOWS!!"))
+    release
+    waitmessage
+    playse(SE_PIN)
+    applymovement(2,moves(emote_exclamation_mark))
+    waitmovement
+    applymovement(3, moves(face_left))
+    msgbox(format("DON'T COMPLAIN BARRY!!\pSHUT U....I MEAN WE WILL TALK ABOUT THIS LATER!"))
+    waitmessage
+    applymovement(3, moves(face_down))
+    msgbox(format("AND YOU ARE... {PLAYER}??\p...AND {PLAYER} IS INTERESTED IN POKEMON??\p WELL, GET IN LINE! HAHAHA.\p MY NAME IS PROFESSOR BIRDS!\p I RESEARCH POKEMON FOR A LIVING!!\pBESIDES THAT, I ALSO DEVELOP SECRET TECHNOL... I MEAN SENSORS FOR PIG FARMS.\p...SO YOU WANT TO BECOME A POKEMON MASTER?\pMUAAHAHAHAH, YOU!!? A POKEMON MASTER???\p YOUR FIRST TASK AS AN INTERN IS TO GET SOME BOXES OUT OF MY STORAGE ROOM.\pEVERYBODY WHO WANTS TO BECOME A POKEMON MASTER HAS TO START SOMEWHERE!!\pI WARN YOU, DO NOT SNIFF AROUND OR I'LL FIRE YOU IMMEDIATELY!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    if(var(VAR_TEMP_0)== 3 && var(VAR_TEMP_1)== 14) {
+        applymovement(3, moves(walk_up*2))
+    }
+    if(var(VAR_TEMP_0)== 4 && var(VAR_TEMP_1)== 13) {
+        applymovement(3, moves(walk_up walk_left face_up))
+    }
+    if(var(VAR_TEMP_0)== 5 && var(VAR_TEMP_1)== 13) {
+        applymovement(3, moves(walk_up walk_left*2 face_up))
+    }
+    if(var(VAR_TEMP_0)== 6 && var(VAR_TEMP_1)== 14) {
+        applymovement(3, moves(walk_up*2 walk_left*3 face_up))
+    }
+    applymovement(2, moves(face_up))
+    waitmovement
+    delay(40)
+    applymovement(3, moves(face_down))
+    waitmovement
+    msgbox(format("THE BOXES ARE IN THE BACK YOU IDIO... LOVELY LITTLE INTERN!!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(walk_up))
+    waitmovement
+    applymovement(3, moves(face_up))
+    msgbox(format("WELL, WHERE WERE WE BARRY??"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    setflag(FLAG_INTERN_BOXES_ASSIGNMENT)
+    release
+    end
+    }
+    else {
+        playse(SE_PIN)
+        applymovement(3, moves(emote_exclamation_mark face_down))
+        msgbox(format("WHERE DO YOU THINK YOU ARE GOING?\p GET TO THE BACK AND GET THOSE BOXES HERE!!"),MSGBOX_AUTOCLOSE)
+        waitmessage
+        applymovement(LOCALID_PLAYER, moves(walk_up))
+        applymovement(3, moves(face_up))
+        waitmovement
+        release
+        end
+    }
+    
+}
+
+script LabJariIndoor_Eventscript_Birds_Convo {
+    lock
+    playse(SE_PIN)
+    applymovement(3, moves(emote_exclamation_mark))
+    faceplayer
+    msgbox(format("DON'T BOTHER US, I'M EXPLAINING TO BARRY HOW IMPORTANT DNA SAMPL... PIG SENSORS ARE!!\p GET THOSE BOXES OUT OF THE BACK OF THE STORAGE ROOM!!"))
+    waitmessage
+    applymovement(3, moves(face_up))
+    waitmovement
+    release
 }

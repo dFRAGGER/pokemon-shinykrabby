@@ -1,0 +1,36 @@
+mapscripts CaveHallwayJari_MapScripts {
+    
+
+}
+
+script CaveHallwayJari_Mapscripts1 {
+    lock
+    msgbox(format("There seems to be a light coming out of that staircase up there...\pMaybe the boxes are over there?"))
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(walk_up))
+    waitmovement
+    release
+}
+
+script CaveHallwayJari_Mapscripts2 {
+    lock
+    msgbox(format("This place is so weird...\pWhat is all this stuff?"))
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(walk_down))
+    waitmovement
+    release
+}
+
+script CaveHallwayJari_PlexServer {
+    lock
+    msgbox(format("This seems to be giant computer server, on the screen it says:\p 'PLEX SERVER RUNNING: BITCOIN MINING THROUGH STREAMING IN FULL FORCE'"))
+    waitmessage
+    release
+}
+
+script CaveHallway_Jari_LaptopScreen {
+    lock
+    msgbox(format("The screen shows a rotating double-helix DNA.\p A text window is open on the side:\pLOG ENTRY 734.\n RESEARCHER: J. BIRDS.\pPROJECT: ANCESTOR\p'The regional genomic data is still too fragmented. Every sample analyzed shows incredible diversity, but the point of convergence... the 'source code'... remains elusive. It's like trying to rebuild a tree by looking at a million different leaves.'\p'All evidence continues to point to the theoretical progenitor:\n Genesis Specimen M.\p Its genetic signature is everywhere, yet nowhere at once. An echo in every strand of DNA I analyze.'\p'Direct observation is impossible. Triangulation is the only path forward. The new field scanner prototype is ready. I just need an agent to deploy it... someone mobile, persistent, and unaware of the true scope of this project. The final calculations depend on it.'"))
+    waitmessage
+    release
+}

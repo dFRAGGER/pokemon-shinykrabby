@@ -571,6 +571,61 @@ Maasje_Joris_UpToTheWhiteLight_4:
 	goto Maasje_Joris_UpToTheWhiteLight_3
 
 
+Maasje_Evenscript_Rick::
+# 321 "data/maps/Maasje/scripts.pory"
+	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated
+# 322 "data/maps/Maasje/scripts.pory"
+	msgbox Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
+Maasje_Evenscript_Allen::
+# 327 "data/maps/Maasje/scripts.pory"
+	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated
+# 328 "data/maps/Maasje/scripts.pory"
+	msgbox Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
+Maasje_Eventscript_Ivan::
+# 333 "data/maps/Maasje/scripts.pory"
+	trainerbattle_single TRAINER_IVAN, Route104_Text_IvanIntro, Route104_Text_IvanDefeat
+# 334 "data/maps/Maasje/scripts.pory"
+	msgbox Route104_Text_IvanPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
+Maasje_Eventscript_Winston::
+# 339 "data/maps/Maasje/scripts.pory"
+	trainerbattle_single TRAINER_WINSTON_1, Route104_Text_WinstonIntro, Route104_Text_WinstonDefeat
+# 340 "data/maps/Maasje/scripts.pory"
+	msgbox Route104_Text_WinstonPostBattle, MSGBOX_DEFAULT
+# 341 "data/maps/Maasje/scripts.pory"
+	release
+	end
+
+
+Maasje_Eventscript_Maniac::
+# 346 "data/maps/Maasje/scripts.pory"
+	lock
+# 347 "data/maps/Maasje/scripts.pory"
+	faceplayer
+# 348 "data/maps/Maasje/scripts.pory"
+	goto_if_unset FLAG_SHINY_KRABBY_ENCOUNTER, Maasje_Eventscript_Maniac_1
+# 354 "data/maps/Maasje/scripts.pory"
+	msgbox Maasje_Eventscript_Maniac_Text_1
+# 355 "data/maps/Maasje/scripts.pory"
+	release
+	end
+
+Maasje_Eventscript_Maniac_1:
+# 349 "data/maps/Maasje/scripts.pory"
+	msgbox Maasje_Eventscript_Maniac_Text_0
+# 350 "data/maps/Maasje/scripts.pory"
+	release
+	end
+
+
 # 72 "data/maps/Maasje/scripts.pory"
 Maasje_Advice_Fisher_Crabhill_Movement_0:
 # 72 "data/maps/Maasje/scripts.pory"
@@ -726,3 +781,16 @@ Maasje_Joris_UpToTheWhiteLight_Text_0:
 Maasje_Joris_UpToTheWhiteLight_Text_1:
 # 304 "data/maps/Maasje/scripts.pory"
 	.string "UP TO THE WHITELIGHT!!!$"
+
+Maasje_Eventscript_Maniac_Text_0:
+# 349 "data/maps/Maasje/scripts.pory"
+	.string "This town is overrun by Krabby's,\n"
+	.string "everybody is scared to go outside!$"
+
+Maasje_Eventscript_Maniac_Text_1:
+# 354 "data/maps/Maasje/scripts.pory"
+	.string "Everybody is still shook by the\n"
+	.string "infestation by those Krabby's.\p"
+	.string "You won't seem them outside very often.\p"
+	.string "Hopefully one day everyting will be\n"
+	.string "back to normal.$"

@@ -25,8 +25,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PlayersHouse_1F_EventScript_Mom",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM"
+      "script": "Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech",
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY",
@@ -39,7 +39,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PlayersHouse_1F_EventScript_Vigoroth1",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_1"
+      "flag": "FLAG_RECEIVED_STARTER_CHOICE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX",
@@ -52,20 +52,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PlayersHouse_1F_EventScript_Vigoroth2",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_2"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
-      "x": 1,
-      "y": 5,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "RivalsHouse_1F_EventScript_RivalSibling",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_SIBLING"
+      "flag": "FLAG_RECEIVED_STARTER_CHOICE"
     }
   ],
   "warp_events": [
@@ -94,21 +81,30 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 8,
-      "y": 8,
+      "x": 7,
+      "y": 3,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_RECIEVED_STARTER_POKEMON",
       "var_value": "0",
-      "script": "NULL"
+      "script": "Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_RECIEVED_STARTER_POKEMON",
+      "var_value": "0",
+      "script": "Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech"
     },
     {
       "type": "trigger",
       "x": 9,
-      "y": 8,
+      "y": 3,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_RECIEVED_STARTER_POKEMON",
       "var_value": "0",
-      "script": "NULL"
+      "script": "Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech"
     }
   ],
   "bg_events": []

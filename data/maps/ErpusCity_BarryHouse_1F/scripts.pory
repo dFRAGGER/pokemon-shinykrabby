@@ -1,0 +1,19 @@
+mapscripts ErpusCity_BarryHouse_1F_MapScripts {
+    
+}
+
+script ErpusCity_Barryhouse_1F_Mother {
+    lock
+    faceplayer
+    msgbox(format("Oh, hello... You're the new intern for Professor Birds, aren't you?\p It's lovely to meet you\p....Wouter? Oh, don't you worry about him. He was a bit... disappointed, yes.\p He came home in quite a huff with that splashing little Magikarp.\p But my Wouter is resilient! He's always been so determined to prove himself.\pIn fact, he's already found a new opportunity.\p A private tutor from the city reached out to him.\p Someone from a very prestigious... well, a 'faculty' of educators, I believe they called it.\p They said they saw his 'true potential' and that their structured methods are far superior to that messy, eccentric professor.\pHe packed his bag and left immediately.\p I'm sure he'll be the talk of the Pokémon League in no time.\p He just needs the right kind of guidance, you know?"))
+    waitmessage
+    release
+}
+
+script ErpusCity_Barryhouse_1F_Father {
+    lock
+    faceplayer
+    msgbox(format("So, you're the one who got the spot. Hm.\pDon't mind the boy. If he couldn't secure a simple internship, he didn't deserve it.\p Life isn't about luck; it's about results.\pCoddling and 'believing in yourself' is for children.\pWhat matters is discipline. Power. A clear path to victory.\pHe came home complaining, with some useless fish flapping at his feet.\pI told him to stop whining and find someone who could teach him what it really takes to be strong.\pLooks like he finally listened for once.\pThis new group he's with... they understand. No nonsense. No chaos. Just the cold, hard logic of winning.\pLet's see if they can finally make something of him."))
+    waitmessage
+    release
+}

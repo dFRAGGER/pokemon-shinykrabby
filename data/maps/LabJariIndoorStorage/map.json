@@ -51,6 +51,25 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_RECIEVED_STARTER_POKEMON",
+      "var_value": "0",
+      "script": "LabJariIndoorStorage_Eventscript_BoxesAssignment"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_RECIEVED_STARTER_POKEMON",
+      "var_value": "0",
+      "script": "LabJariIndoorStorage_Eventscript_BoxesAssignment"
+    }
+  ],
   "bg_events": []
 }

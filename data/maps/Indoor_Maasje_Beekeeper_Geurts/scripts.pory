@@ -28,11 +28,14 @@ script Maasje_Indoor_Beekeeper_Geurts_Assignment {
         giveitem(ITEM_HM01)
         setflag(FLAG_RECEIVED_HM_CUT)
         waitmessage
-        msgbox(format("When I was young I tried to keep the coast clear of invasive species.\p With this move, my Pokémons could cut down small trees and bushes that did not belong on the coast.\p To actually use the move you still have to get permission from the Gym Leader of this town.\p They are very strict nowadays."))
+        msgbox(format("When I was young I tried to keep the coast clear of invasive species.\p With this move, my Pokémons could cut down small trees and bushes that did not belong on the coast.\p To actually use the move you still have to get permission from the Gym Leader of this town.\p They are very strict nowadays."),MSGBOX_AUTOCLOSE)
         setvar(VAR_BEEKEEPER_GEURTS, 10)
         clearflag(FLAG_START_COLLECTING_HONEY)
+        waitmessage
+        release
+        end
     }
-    else {
+    if(var(VAR_BEEKEEPER_GEURTS) == 10) {
        msgbox(format("Thanks for helping me out! If I ever need help again I know where to find ya!"))     
     }
     waitmessage
