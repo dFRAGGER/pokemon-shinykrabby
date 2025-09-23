@@ -230,7 +230,7 @@
       "y": 28,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "ErpCity_Sign_Mailbox_BarryHouse"
     },
     {
       "type": "sign",
@@ -238,7 +238,23 @@
       "y": 27,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "ErpCity_Sign_Mailbox_Starthouse"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 19,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ErpCity_Sign_Mailbox_ProfBirds"
+    },
+    {
+      "type": "sign",
+      "x": 41,
+      "y": 23,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ErpCity_Sign_Mailbox_JanVogels"
     }
   ]
 }

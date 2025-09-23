@@ -52,3 +52,11 @@ script Crabhill_Wall_Carving {
     msgbox(format("Carved into the damp cave wall, glistening with moisture: \p When stone weeps and the tide is low, a claw of gold shall start to glow. Its light awaits the destined hand, who will soon command the land."))
     release
 }
+
+script Crabhill_Hiker_Hint {
+    lock
+    faceplayer
+    msgbox(format("I have been in this cave for hours.\pThe more time I spend in here the more I realize going backwards might be going forward, and the other way around.\p If you know what I mean."))
+    waitmessage
+    release
+}

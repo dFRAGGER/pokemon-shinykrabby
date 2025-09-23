@@ -1212,3 +1212,21 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Mistcity_Research_Center/scripts.inc"
 
 	.include "data/maps/Mistcity_Research_Center_Entrance/scripts.inc"
+
+	.include "data/maps/Mistcity_Indoor_Old_Storyteller_Cabin/scripts.inc"
+
+	.include "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.inc"
+
+	.include "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.inc"
+
+	.include "data/maps/Mistcity_Indoor_Woodwork_Shop/scripts.inc"
+
+	.include "data/maps/Mistcity_Indoor_MushroomShop/scripts.inc"
+
+	.include "data/maps/Mistcity_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/Mistcity_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/Mistcity_Mart/scripts.inc"
+
+	.include "data/maps/TheShadowLands/scripts.inc"

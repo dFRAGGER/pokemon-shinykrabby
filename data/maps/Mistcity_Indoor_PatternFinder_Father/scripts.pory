@@ -1,0 +1,15 @@
+mapscripts Mistcity_Indoor_PatternFinder_Father_MapScripts {}
+
+script Mistcity_Indoor_PatternFinder_Father {
+    lock
+    faceplayer
+    if(!flag(FLAG_HELPED_DAN_BEAT_FACULTY)){
+    msgbox(format("Oh, hello. My name is Mr. Heartfield.\p Welcome.\pSorry for all the ladders and climbing to get to here.\p My child is very sensitive to loud noises, but high in the canopy is an oasis of tranquility.\pNature brings his mind to ease.\pMy child... they see the world in a special way.\pNot many people understand.\pThey don't talk much, but they see everything.\pAll the little patterns and connections that the rest of us miss.\pIt's a beautiful, intricate map that only they can read.\pI'm so glad my son David has found a place at the Ranger Station where his mind is appreciated."))
+    waitmessage
+    }
+    if(flag(FLAG_HELPED_DAN_BEAT_FACULTY)){
+    msgbox(format("It's you.\nThank you.\pMy son David came home yesterday... he seemed so happy. So alive.\pHe was excitedly drawing these complex patterns in his notebook like dots on a stone, marks on a map, strange symbols.\pThey said they were 'solving the puzzle' and that you understood.\pYou showed them that their gift is important.\pMore than that, that it's a strength.\p I... thank you.\pYou've given them a confidence I haven't seen before."))
+    }
+    release
+    end
+}

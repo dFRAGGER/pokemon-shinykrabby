@@ -6,7 +6,8 @@ mapscripts Maasje_Gym_MapScripts {
 
 script Maasje_Gym_Introduction {
     lock
-    if(flag(FLAG_ITEM_FRESH_WATER_GYM1) == FALSE){
+    if(flag(FLAG_ITEM_FRESH_WATER_GYM1) == FALSE&&flag(FLAG_BADGE01_GET)==FALSE){
+            setflag(FLAG_ITEM_FRESH_WATER_GYM1)
             msgbox(format("Hi, welcome to the Maasje Pokemon Gym.\p The gym leader and trainers use sand & ground pokemon.\p Grass pokemon seem to have an edge, while electric pokemon are not recommended.\p The gym leader is called Pete Longfellow, he used to be a geography teacher.\p He has been training pokemon for a long time but he can be stubborn and emotional.\p Stay cool and calm and you should be good.\p Also have this:"))
             waitmessage
             giveitem(ITEM_FRESH_WATER)
@@ -15,8 +16,15 @@ script Maasje_Gym_Introduction {
             waitmessage
             release
     }
-    else{
+    if(flag(FLAG_ITEM_FRESH_WATER_GYM1) == TRUE&&flag(FLAG_BADGE01_GET)==FALSE){
+        msgbox(format("Hi, welcome to the Maasje Pokemon Gym.\p The gym leader and trainers use sand & ground pokemon.\p Grass pokemon seem to have an edge, while electric pokemon are not recommended.\p The gym leader is called Pete Longfellow, he used to be a geography teacher.\p He has been training pokemon for a long time but he can be stubborn and emotional.\p Stay cool and calm and you should be good."))
+        waitmessage
+        release
+    }
+    if(flag(FLAG_ITEM_FRESH_WATER_GYM1) == TRUE&&flag(FLAG_BADGE01_GET)==TRUE){
         msgbox(format("Congrats on getting your badge!\p Pete looked mad, I don't think he is coming back."))
+        waitmessage
+        release
     }
 }
 script Maasje_Gym_Leader_Pete_Longfellow {

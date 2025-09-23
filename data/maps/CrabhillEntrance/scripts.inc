@@ -103,6 +103,20 @@ Crabhill_Wall_Carving::
 	return
 
 
+Crabhill_Hiker_Hint::
+# 57 "data/maps/CrabhillEntrance/scripts.pory"
+	lock
+# 58 "data/maps/CrabhillEntrance/scripts.pory"
+	faceplayer
+# 59 "data/maps/CrabhillEntrance/scripts.pory"
+	msgbox Crabhill_Hiker_Hint_Text_0
+# 60 "data/maps/CrabhillEntrance/scripts.pory"
+	waitmessage
+# 61 "data/maps/CrabhillEntrance/scripts.pory"
+	release
+	return
+
+
 Won_or_Caught_Text_0:
 # 31 "data/maps/CrabhillEntrance/scripts.pory"
 	.string "The Krabby's seem to have snapped out\n"
@@ -126,3 +140,11 @@ Crabhill_Wall_Carving_Text_0:
 	.string "claw of gold shall start to glow. Its\l"
 	.string "light awaits the destined hand, who will\l"
 	.string "soon command the land.$"
+
+Crabhill_Hiker_Hint_Text_0:
+# 59 "data/maps/CrabhillEntrance/scripts.pory"
+	.string "I have been in this cave for hours.\p"
+	.string "The more time I spend in here the more I\n"
+	.string "realize going backwards might be going\l"
+	.string "forward, and the other way around.\p"
+	.string "If you know what I mean.$"

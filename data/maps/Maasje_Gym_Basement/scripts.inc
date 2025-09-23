@@ -55,7 +55,7 @@ Maasje_Gym_Losetext_Trainer_Addy::
 
 Maasje_Gym_Introtext_Trainer_Mart::
 # 32 "data/maps/Maasje_Gym_Basement/scripts.pory"
-	.string "I was to smart to be a teacher anyway.\n"
+	.string "I was too smart to be a teacher anyway.\n"
 	.string "Lets put this brain to the test!!$"
 
 Maasje_Gym_Losetext_Trainer_Mart::

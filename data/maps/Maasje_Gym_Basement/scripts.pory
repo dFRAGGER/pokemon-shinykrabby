@@ -30,7 +30,7 @@ script Maasje_Gym_Basement_Eventscript_Mart {
 }
 
 text Maasje_Gym_Introtext_Trainer_Mart {
-    format("I was to smart to be a teacher anyway.\nLets put this brain to the test!!")
+    format("I was too smart to be a teacher anyway.\nLets put this brain to the test!!")
 }
 
 text Maasje_Gym_Losetext_Trainer_Mart {

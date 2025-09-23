@@ -98,7 +98,7 @@ Maasje_PokemonCenter_1F_Bryan_Trigger1::
 # 58 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
 	applymovement 2, Maasje_PokemonCenter_1F_Bryan_Trigger1_Movement_0
 # 59 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
-	msgbox Maasje_PokemonCenter_1F_Bryan_Trigger0_Text_0
+	msgbox Maasje_PokemonCenter_1F_Bryan_Trigger1_Text_0
 # 60 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
 	waitmessage
 # 61 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
@@ -122,7 +122,7 @@ Maasje_PokemonCenter_1F_Bryan_Trigger2::
 # 71 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
 	applymovement 2, Maasje_PokemonCenter_1F_Bryan_Trigger2_Movement_0
 # 72 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
-	msgbox Maasje_PokemonCenter_1F_Bryan_Trigger0_Text_0
+	msgbox Maasje_PokemonCenter_1F_Bryan_Trigger1_Text_0
 # 73 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
 	waitmessage
 # 74 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
@@ -146,7 +146,7 @@ Maasje_PokemonCenter_1F_Bryan_Trigger3::
 # 84 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
 	applymovement 2, Maasje_PokemonCenter_1F_Bryan_Trigger3_Movement_0
 # 85 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
-	msgbox Maasje_PokemonCenter_1F_Bryan_Trigger0_Text_0
+	msgbox Maasje_PokemonCenter_1F_Bryan_Trigger1_Text_0
 # 86 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
 	waitmessage
 # 87 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
@@ -262,6 +262,17 @@ Maasje_PokemonCenter_1F_Second_Nurse_Text_0:
 
 Maasje_PokemonCenter_1F_Bryan_Trigger0_Text_0:
 # 46 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
+	.string "Hi, my name is Bryan.\p"
+	.string "I'd like to film everything, absolutely\n"
+	.string "everything.\p"
+	.string "Can I film your journey towards\n"
+	.string "becoming a pokemon master?\p"
+	.string "..... What? No?\p"
+	.string "Just don't mind me, act like you don't\n"
+	.string "see me.$"
+
+Maasje_PokemonCenter_1F_Bryan_Trigger1_Text_0:
+# 59 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
 	.string "Hi, my name is Bryan.\p"
 	.string "I'd like to film everything, absolutely\n"
 	.string "everything.\p"

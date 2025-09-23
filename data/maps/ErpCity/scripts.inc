@@ -76,307 +76,357 @@ ErpCity_ProfessorBirds_Speech_Pokedex::
 # 41 "data/maps/ErpCity/scripts.pory"
 	setflag FLAG_SYS_POKEDEX_GET
 # 42 "data/maps/ErpCity/scripts.pory"
-	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
 # 43 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_3
+	setflag FLAG_SYS_NATIONAL_DEX
 # 44 "data/maps/ErpCity/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_3
 # 45 "data/maps/ErpCity/scripts.pory"
-	waitfanfare
+	playfanfare MUS_OBTAIN_ITEM
 # 46 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	waitfanfare
 # 47 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_4
+	waitmessage
 # 48 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_4
 # 49 "data/maps/ErpCity/scripts.pory"
-	giveitem ITEM_POKE_BALL, 5
+	waitmessage
 # 50 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	giveitem ITEM_POKE_BALL, 5
 # 51 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_5
+	waitmessage
 # 52 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_5
 # 53 "data/maps/ErpCity/scripts.pory"
-	playse SE_PIN
+	waitmessage
 # 54 "data/maps/ErpCity/scripts.pory"
-	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_3
-# 55 "data/maps/ErpCity/scripts.pory"
-	applymovement 2, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_3
-# 56 "data/maps/ErpCity/scripts.pory"
-	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_5
-# 57 "data/maps/ErpCity/scripts.pory"
-	applymovement 2, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_5
-# 58 "data/maps/ErpCity/scripts.pory"
-	waitmovement
-# 59 "data/maps/ErpCity/scripts.pory"
-	delay 40
-# 60 "data/maps/ErpCity/scripts.pory"
-	applymovement 5, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_6
-# 61 "data/maps/ErpCity/scripts.pory"
-	applymovement 2, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_7
-# 62 "data/maps/ErpCity/scripts.pory"
-	waitmovement
-# 63 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_6
-# 64 "data/maps/ErpCity/scripts.pory"
-	waitmessage
-# 65 "data/maps/ErpCity/scripts.pory"
-	applymovement 5, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_6
-# 66 "data/maps/ErpCity/scripts.pory"
-	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_7
-# 67 "data/maps/ErpCity/scripts.pory"
-	waitmovement
-# 68 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_7
-# 69 "data/maps/ErpCity/scripts.pory"
-	waitmessage
-# 70 "data/maps/ErpCity/scripts.pory"
 	playse SE_PIN
-# 71 "data/maps/ErpCity/scripts.pory"
-	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_8
-# 72 "data/maps/ErpCity/scripts.pory"
-	applymovement 2, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_9
-# 73 "data/maps/ErpCity/scripts.pory"
-	applymovement 5, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_10
-# 74 "data/maps/ErpCity/scripts.pory"
+# 55 "data/maps/ErpCity/scripts.pory"
+	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_3
+# 56 "data/maps/ErpCity/scripts.pory"
+	applymovement 2, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_3
+# 57 "data/maps/ErpCity/scripts.pory"
+	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_5
+# 58 "data/maps/ErpCity/scripts.pory"
+	applymovement 2, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_5
+# 59 "data/maps/ErpCity/scripts.pory"
 	waitmovement
-# 75 "data/maps/ErpCity/scripts.pory"
-	removeobject 5
-# 76 "data/maps/ErpCity/scripts.pory"
-	setflag FLAG_KICKED_OUT_LAB_CONVO
-# 77 "data/maps/ErpCity/scripts.pory"
-	setvar VAR_RECIEVED_STARTER_POKEMON, 2
-# 78 "data/maps/ErpCity/scripts.pory"
-	clearflag FLAG_HIDE_INTERN_BIRDS_LAB
-# 79 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_8, MSGBOX_AUTOCLOSE
-# 80 "data/maps/ErpCity/scripts.pory"
-	waitmessage
-# 81 "data/maps/ErpCity/scripts.pory"
+# 60 "data/maps/ErpCity/scripts.pory"
 	delay 40
-# 82 "data/maps/ErpCity/scripts.pory"
-	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_5
-# 83 "data/maps/ErpCity/scripts.pory"
+# 61 "data/maps/ErpCity/scripts.pory"
+	applymovement 5, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_6
+# 62 "data/maps/ErpCity/scripts.pory"
+	applymovement 2, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_7
+# 63 "data/maps/ErpCity/scripts.pory"
 	waitmovement
-# 84 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_9, MSGBOX_AUTOCLOSE
-# 85 "data/maps/ErpCity/scripts.pory"
+# 64 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_6
+# 65 "data/maps/ErpCity/scripts.pory"
 	waitmessage
-# 86 "data/maps/ErpCity/scripts.pory"
-	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_11
-# 87 "data/maps/ErpCity/scripts.pory"
-	waitmovement
-# 88 "data/maps/ErpCity/scripts.pory"
-	applymovement 2, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_12
-# 89 "data/maps/ErpCity/scripts.pory"
-	waitmovement
-# 90 "data/maps/ErpCity/scripts.pory"
-	removeobject 2
-# 91 "data/maps/ErpCity/scripts.pory"
-	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_5
-# 92 "data/maps/ErpCity/scripts.pory"
-	waitmovement
-# 93 "data/maps/ErpCity/scripts.pory"
-	delay 60
-# 94 "data/maps/ErpCity/scripts.pory"
+# 66 "data/maps/ErpCity/scripts.pory"
+	applymovement 5, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_6
+# 67 "data/maps/ErpCity/scripts.pory"
 	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_7
+# 68 "data/maps/ErpCity/scripts.pory"
+	waitmovement
+# 69 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_7
+# 70 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 71 "data/maps/ErpCity/scripts.pory"
+	playse SE_PIN
+# 72 "data/maps/ErpCity/scripts.pory"
+	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_8
+# 73 "data/maps/ErpCity/scripts.pory"
+	applymovement 2, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_9
+# 74 "data/maps/ErpCity/scripts.pory"
+	applymovement 5, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_10
+# 75 "data/maps/ErpCity/scripts.pory"
+	waitmovement
+# 76 "data/maps/ErpCity/scripts.pory"
+	removeobject 5
+# 77 "data/maps/ErpCity/scripts.pory"
+	setflag FLAG_KICKED_OUT_LAB_CONVO
+# 78 "data/maps/ErpCity/scripts.pory"
+	setvar VAR_RECIEVED_STARTER_POKEMON, 2
+# 79 "data/maps/ErpCity/scripts.pory"
+	clearflag FLAG_HIDE_INTERN_BIRDS_LAB
+# 80 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_8, MSGBOX_AUTOCLOSE
+# 81 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 82 "data/maps/ErpCity/scripts.pory"
+	delay 40
+# 83 "data/maps/ErpCity/scripts.pory"
+	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_5
+# 84 "data/maps/ErpCity/scripts.pory"
+	waitmovement
+# 85 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_9, MSGBOX_AUTOCLOSE
+# 86 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 87 "data/maps/ErpCity/scripts.pory"
+	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_11
+# 88 "data/maps/ErpCity/scripts.pory"
+	waitmovement
+# 89 "data/maps/ErpCity/scripts.pory"
+	applymovement 2, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_12
+# 90 "data/maps/ErpCity/scripts.pory"
+	waitmovement
+# 91 "data/maps/ErpCity/scripts.pory"
+	removeobject 2
+# 92 "data/maps/ErpCity/scripts.pory"
+	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_5
+# 93 "data/maps/ErpCity/scripts.pory"
+	waitmovement
+# 94 "data/maps/ErpCity/scripts.pory"
+	delay 60
 # 95 "data/maps/ErpCity/scripts.pory"
-	waitmovement
+	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_7
 # 96 "data/maps/ErpCity/scripts.pory"
-	delay 60
-# 97 "data/maps/ErpCity/scripts.pory"
-	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_9
-# 98 "data/maps/ErpCity/scripts.pory"
 	waitmovement
-# 99 "data/maps/ErpCity/scripts.pory"
+# 97 "data/maps/ErpCity/scripts.pory"
 	delay 60
+# 98 "data/maps/ErpCity/scripts.pory"
+	applymovement LOCALID_PLAYER, ErpCity_ProfessorBirds_Speech_Pokedex_Movement_9
+# 99 "data/maps/ErpCity/scripts.pory"
+	waitmovement
 # 100 "data/maps/ErpCity/scripts.pory"
-	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	delay 60
 # 101 "data/maps/ErpCity/scripts.pory"
-	special BufferMonNickname
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
 # 102 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_10, MSGBOX_AUTOCLOSE
+	special BufferMonNickname
 # 103 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_ProfessorBirds_Speech_Pokedex_Text_10, MSGBOX_AUTOCLOSE
+# 104 "data/maps/ErpCity/scripts.pory"
 	releaseall
 	return
 
 
 ErpCity_ProfessorBirds_After_Speech::
-# 107 "data/maps/ErpCity/scripts.pory"
-	lockall
 # 108 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_ProfessorBirds_After_Speech_Text_0
+	lockall
 # 109 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	msgbox ErpCity_ProfessorBirds_After_Speech_Text_0
 # 110 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 111 "data/maps/ErpCity/scripts.pory"
 	releaseall
 	return
 
 
 ErpCity_Mispoes_Miauw::
-# 114 "data/maps/ErpCity/scripts.pory"
-	lockall
 # 115 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_Mispoes_Miauw_Text_0
+	lockall
 # 116 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	msgbox ErpCity_Mispoes_Miauw_Text_0
 # 117 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 118 "data/maps/ErpCity/scripts.pory"
 	releaseall
 	return
 
 
 ErpCity_Lab_Sign::
-# 121 "data/maps/ErpCity/scripts.pory"
-	lockall
 # 122 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_Lab_Sign_Text_0
+	lockall
 # 123 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	msgbox ErpCity_Lab_Sign_Text_0
 # 124 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 125 "data/maps/ErpCity/scripts.pory"
 	releaseall
 	return
 
 
 ErpCity_Hiker_Cave::
-# 128 "data/maps/ErpCity/scripts.pory"
-	lockall
 # 129 "data/maps/ErpCity/scripts.pory"
+	lockall
+# 130 "data/maps/ErpCity/scripts.pory"
 	applymovement 5, ErpCity_Hiker_Cave_Movement_0
-# 131 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_Hiker_Cave_Text_0
 # 132 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	msgbox ErpCity_Hiker_Cave_Text_0
 # 133 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 134 "data/maps/ErpCity/scripts.pory"
 	releaseall
 	return
 
 
 ErpCity_Cave_Sign::
-# 137 "data/maps/ErpCity/scripts.pory"
-	lockall
 # 138 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_Cave_Sign_Text_0
+	lockall
 # 139 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	msgbox ErpCity_Cave_Sign_Text_0
 # 140 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 141 "data/maps/ErpCity/scripts.pory"
 	releaseall
 	return
 
 
 ErpCity_Trigger_Stopplayer::
-# 144 "data/maps/ErpCity/scripts.pory"
-	lockall
 # 145 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_Trigger_Stopplayer_Text_0
+	lockall
 # 146 "data/maps/ErpCity/scripts.pory"
-	applymovement LOCALID_PLAYER, ErpCity_Move_Stopplayer
+	msgbox ErpCity_Trigger_Stopplayer_Text_0
 # 147 "data/maps/ErpCity/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, ErpCity_Move_Stopplayer
 # 148 "data/maps/ErpCity/scripts.pory"
+	waitmovement 0
+# 149 "data/maps/ErpCity/scripts.pory"
 	releaseall
 	return
 
 
-# 151 "data/maps/ErpCity/scripts.pory"
-ErpCity_Move_Stopplayer:
 # 152 "data/maps/ErpCity/scripts.pory"
+ErpCity_Move_Stopplayer:
+# 153 "data/maps/ErpCity/scripts.pory"
 	walk_right
 	step_end
 
 ErpCity_Trigger_Stopplayer2::
-# 156 "data/maps/ErpCity/scripts.pory"
-	lockall
 # 157 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_Trigger_Stopplayer2_Text_0
+	lockall
 # 158 "data/maps/ErpCity/scripts.pory"
-	applymovement LOCALID_PLAYER, ErpCity_Trigger_Stopplayer2_Movement_0
+	msgbox ErpCity_Trigger_Stopplayer2_Text_0
 # 159 "data/maps/ErpCity/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, ErpCity_Trigger_Stopplayer2_Movement_0
 # 160 "data/maps/ErpCity/scripts.pory"
+	waitmovement 0
+# 161 "data/maps/ErpCity/scripts.pory"
 	releaseall
 	return
 
 
 ErpCity_Receive_Running_Shoes::
-# 164 "data/maps/ErpCity/scripts.pory"
-	lockall
 # 165 "data/maps/ErpCity/scripts.pory"
+	lockall
+# 166 "data/maps/ErpCity/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_RUNNING_SHOES, ErpCity_Receive_Running_Shoes_1
-# 199 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_Receive_Running_Shoes_Text_5
 # 200 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	msgbox ErpCity_Receive_Running_Shoes_Text_5
 # 201 "data/maps/ErpCity/scripts.pory"
-	applymovement LOCALID_PLAYER, ErpCity_Receive_Running_Shoes_Movement_2
+	waitmessage
 # 202 "data/maps/ErpCity/scripts.pory"
-	waitmovement
+	applymovement LOCALID_PLAYER, ErpCity_Receive_Running_Shoes_Movement_2
 # 203 "data/maps/ErpCity/scripts.pory"
+	waitmovement
+# 204 "data/maps/ErpCity/scripts.pory"
 	releaseall
 	end
 
 ErpCity_Receive_Running_Shoes_1:
-# 166 "data/maps/ErpCity/scripts.pory"
-	applymovement LOCALID_PLAYER, ErpCity_Receive_Running_Shoes_Movement_0
 # 167 "data/maps/ErpCity/scripts.pory"
-	waitmovement
+	playse SE_PIN
 # 168 "data/maps/ErpCity/scripts.pory"
-	clearflag FLAG_HIDE_MOM_SHOES
+	applymovement LOCALID_PLAYER, ErpCity_Receive_Running_Shoes_Movement_0
 # 169 "data/maps/ErpCity/scripts.pory"
-	addobject 4
+	waitmovement
 # 170 "data/maps/ErpCity/scripts.pory"
-	applymovement 4, ErpCity_Receive_Running_Shoes_Movement_1
+	clearflag FLAG_HIDE_MOM_SHOES
 # 171 "data/maps/ErpCity/scripts.pory"
-	waitmovement
+	addobject 4
 # 172 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_Receive_Running_Shoes_Text_0
+	applymovement 4, ErpCity_Receive_Running_Shoes_Movement_1
 # 173 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	waitmovement
 # 174 "data/maps/ErpCity/scripts.pory"
-	setflag FLAG_RECEIVED_RUNNING_SHOES
+	msgbox ErpCity_Receive_Running_Shoes_Text_0
 # 175 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_Receive_Running_Shoes_Text_1
+	waitmessage
 # 176 "data/maps/ErpCity/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	setflag FLAG_RECEIVED_RUNNING_SHOES
 # 177 "data/maps/ErpCity/scripts.pory"
-	waitfanfare
+	playfanfare MUS_OBTAIN_ITEM
 # 178 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	msgbox ErpCity_Receive_Running_Shoes_Text_1
 # 179 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_Receive_Running_Shoes_Text_2, MSGBOX_AUTOCLOSE
+	waitmessage
 # 180 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	msgbox ErpCity_Receive_Running_Shoes_Text_2, MSGBOX_AUTOCLOSE
 # 181 "data/maps/ErpCity/scripts.pory"
-	delay 60
+	waitmessage
 # 182 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_Receive_Running_Shoes_Text_3, MSGBOX_AUTOCLOSE
+	delay 60
 # 183 "data/maps/ErpCity/scripts.pory"
-	waitmessage
+	msgbox ErpCity_Receive_Running_Shoes_Text_3, MSGBOX_AUTOCLOSE
 # 184 "data/maps/ErpCity/scripts.pory"
-	delay 40
-# 185 "data/maps/ErpCity/scripts.pory"
-	applymovement LOCALID_PLAYER, ErpCity_Receive_Running_Shoes_Movement_2
-# 186 "data/maps/ErpCity/scripts.pory"
-	waitmovement
-# 187 "data/maps/ErpCity/scripts.pory"
-	msgbox ErpCity_Receive_Running_Shoes_Text_4
-# 188 "data/maps/ErpCity/scripts.pory"
 	waitmessage
-# 189 "data/maps/ErpCity/scripts.pory"
-	applymovement 4, ErpCity_Receive_Running_Shoes_Movement_3
-# 190 "data/maps/ErpCity/scripts.pory"
+# 185 "data/maps/ErpCity/scripts.pory"
+	delay 40
+# 186 "data/maps/ErpCity/scripts.pory"
+	applymovement LOCALID_PLAYER, ErpCity_Receive_Running_Shoes_Movement_2
+# 187 "data/maps/ErpCity/scripts.pory"
 	waitmovement
+# 188 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_Receive_Running_Shoes_Text_4
+# 189 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 190 "data/maps/ErpCity/scripts.pory"
+	applymovement 4, ErpCity_Receive_Running_Shoes_Movement_3
 # 191 "data/maps/ErpCity/scripts.pory"
-	setflag FLAG_HIDE_MOM_SHOES
+	waitmovement
 # 192 "data/maps/ErpCity/scripts.pory"
-	setflag FLAG_SYS_B_DASH
+	setflag FLAG_HIDE_MOM_SHOES
 # 193 "data/maps/ErpCity/scripts.pory"
-	setflag FLAG_HIDE_INTERN_BIRDS_LAB
+	setflag FLAG_SYS_B_DASH
 # 194 "data/maps/ErpCity/scripts.pory"
-	removeobject 4
+	setflag FLAG_HIDE_INTERN_BIRDS_LAB
 # 195 "data/maps/ErpCity/scripts.pory"
+	removeobject 4
+# 196 "data/maps/ErpCity/scripts.pory"
 	releaseall
 	end
+
+
+ErpCity_Sign_Mailbox_ProfBirds::
+# 210 "data/maps/ErpCity/scripts.pory"
+	lock
+# 211 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_Sign_Mailbox_ProfBirds_Text_0
+# 212 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 213 "data/maps/ErpCity/scripts.pory"
+	release
+	return
+
+
+ErpCity_Sign_Mailbox_Starthouse::
+# 217 "data/maps/ErpCity/scripts.pory"
+	lock
+# 218 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_Sign_Mailbox_Starthouse_Text_0
+# 219 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 220 "data/maps/ErpCity/scripts.pory"
+	release
+	return
+
+
+ErpCity_Sign_Mailbox_BarryHouse::
+# 224 "data/maps/ErpCity/scripts.pory"
+	lock
+# 225 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_Sign_Mailbox_BarryHouse_Text_0
+# 226 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 227 "data/maps/ErpCity/scripts.pory"
+	release
+	return
+
+
+ErpCity_Sign_Mailbox_JanVogels::
+# 231 "data/maps/ErpCity/scripts.pory"
+	lock
+# 232 "data/maps/ErpCity/scripts.pory"
+	msgbox ErpCity_Sign_Mailbox_JanVogels_Text_0
+# 233 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 234 "data/maps/ErpCity/scripts.pory"
+	release
+	return
 
 
 # 19 "data/maps/ErpCity/scripts.pory"
@@ -419,113 +469,113 @@ ErpCity_ProfessorBirds_Speech_Pokedex_Movement_4:
 	emote_exclamation_mark
 	step_end
 
-# 56 "data/maps/ErpCity/scripts.pory"
+# 57 "data/maps/ErpCity/scripts.pory"
 ErpCity_ProfessorBirds_Speech_Pokedex_Movement_5:
-# 56 "data/maps/ErpCity/scripts.pory"
+# 57 "data/maps/ErpCity/scripts.pory"
 	face_right
 	step_end
 
-# 60 "data/maps/ErpCity/scripts.pory"
+# 61 "data/maps/ErpCity/scripts.pory"
 ErpCity_ProfessorBirds_Speech_Pokedex_Movement_6:
-# 60 "data/maps/ErpCity/scripts.pory"
+# 61 "data/maps/ErpCity/scripts.pory"
 	walk_fast_left
-# 60 "data/maps/ErpCity/scripts.pory"
+# 61 "data/maps/ErpCity/scripts.pory"
 	face_up
 	step_end
 
-# 61 "data/maps/ErpCity/scripts.pory"
+# 62 "data/maps/ErpCity/scripts.pory"
 ErpCity_ProfessorBirds_Speech_Pokedex_Movement_7:
-# 61 "data/maps/ErpCity/scripts.pory"
+# 62 "data/maps/ErpCity/scripts.pory"
 	face_down
 	step_end
 
-# 71 "data/maps/ErpCity/scripts.pory"
+# 72 "data/maps/ErpCity/scripts.pory"
 ErpCity_ProfessorBirds_Speech_Pokedex_Movement_8:
-# 71 "data/maps/ErpCity/scripts.pory"
+# 72 "data/maps/ErpCity/scripts.pory"
 	emote_question_mark
-# 71 "data/maps/ErpCity/scripts.pory"
+# 72 "data/maps/ErpCity/scripts.pory"
 	face_left
 	step_end
 
-# 72 "data/maps/ErpCity/scripts.pory"
+# 73 "data/maps/ErpCity/scripts.pory"
 ErpCity_ProfessorBirds_Speech_Pokedex_Movement_9:
-# 72 "data/maps/ErpCity/scripts.pory"
+# 73 "data/maps/ErpCity/scripts.pory"
 	face_left
 	step_end
 
-# 73 "data/maps/ErpCity/scripts.pory"
+# 74 "data/maps/ErpCity/scripts.pory"
 ErpCity_ProfessorBirds_Speech_Pokedex_Movement_10:
-# 73 "data/maps/ErpCity/scripts.pory"
+# 74 "data/maps/ErpCity/scripts.pory"
 	walk_fast_left
-# 73 "data/maps/ErpCity/scripts.pory"
+# 74 "data/maps/ErpCity/scripts.pory"
 	walk_fast_left
-# 73 "data/maps/ErpCity/scripts.pory"
+# 74 "data/maps/ErpCity/scripts.pory"
 	walk_fast_left
-# 73 "data/maps/ErpCity/scripts.pory"
+# 74 "data/maps/ErpCity/scripts.pory"
 	walk_fast_left
-# 73 "data/maps/ErpCity/scripts.pory"
+# 74 "data/maps/ErpCity/scripts.pory"
 	walk_fast_left
-# 73 "data/maps/ErpCity/scripts.pory"
+# 74 "data/maps/ErpCity/scripts.pory"
 	walk_fast_left
-# 73 "data/maps/ErpCity/scripts.pory"
+# 74 "data/maps/ErpCity/scripts.pory"
 	walk_fast_left
-# 73 "data/maps/ErpCity/scripts.pory"
+# 74 "data/maps/ErpCity/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 86 "data/maps/ErpCity/scripts.pory"
+# 87 "data/maps/ErpCity/scripts.pory"
 ErpCity_ProfessorBirds_Speech_Pokedex_Movement_11:
-# 86 "data/maps/ErpCity/scripts.pory"
+# 87 "data/maps/ErpCity/scripts.pory"
 	jump_left
-# 86 "data/maps/ErpCity/scripts.pory"
+# 87 "data/maps/ErpCity/scripts.pory"
 	face_left
 	step_end
 
-# 88 "data/maps/ErpCity/scripts.pory"
+# 89 "data/maps/ErpCity/scripts.pory"
 ErpCity_ProfessorBirds_Speech_Pokedex_Movement_12:
-# 88 "data/maps/ErpCity/scripts.pory"
+# 89 "data/maps/ErpCity/scripts.pory"
 	walk_right
-# 88 "data/maps/ErpCity/scripts.pory"
+# 89 "data/maps/ErpCity/scripts.pory"
 	walk_up
 	step_end
 
-# 129 "data/maps/ErpCity/scripts.pory"
+# 130 "data/maps/ErpCity/scripts.pory"
 ErpCity_Hiker_Cave_Movement_0:
-# 129 "data/maps/ErpCity/scripts.pory"
+# 130 "data/maps/ErpCity/scripts.pory"
 	face_player
 	step_end
 
-# 158 "data/maps/ErpCity/scripts.pory"
+# 159 "data/maps/ErpCity/scripts.pory"
 ErpCity_Trigger_Stopplayer2_Movement_0:
-# 158 "data/maps/ErpCity/scripts.pory"
+# 159 "data/maps/ErpCity/scripts.pory"
 	walk_left
 	step_end
 
-# 166 "data/maps/ErpCity/scripts.pory"
+# 168 "data/maps/ErpCity/scripts.pory"
 ErpCity_Receive_Running_Shoes_Movement_0:
-# 166 "data/maps/ErpCity/scripts.pory"
+# 168 "data/maps/ErpCity/scripts.pory"
 	emote_exclamation_mark
-# 166 "data/maps/ErpCity/scripts.pory"
+# 168 "data/maps/ErpCity/scripts.pory"
 	face_up
 	step_end
 
-# 170 "data/maps/ErpCity/scripts.pory"
+# 172 "data/maps/ErpCity/scripts.pory"
 ErpCity_Receive_Running_Shoes_Movement_1:
-# 170 "data/maps/ErpCity/scripts.pory"
+# 172 "data/maps/ErpCity/scripts.pory"
 	walk_down
-# 170 "data/maps/ErpCity/scripts.pory"
+# 172 "data/maps/ErpCity/scripts.pory"
 	face_player
 	step_end
 
-# 185 "data/maps/ErpCity/scripts.pory"
+# 186 "data/maps/ErpCity/scripts.pory"
 ErpCity_Receive_Running_Shoes_Movement_2:
-# 185 "data/maps/ErpCity/scripts.pory"
+# 186 "data/maps/ErpCity/scripts.pory"
 	walk_down
 	step_end
 
-# 189 "data/maps/ErpCity/scripts.pory"
+# 190 "data/maps/ErpCity/scripts.pory"
 ErpCity_Receive_Running_Shoes_Movement_3:
-# 189 "data/maps/ErpCity/scripts.pory"
+# 190 "data/maps/ErpCity/scripts.pory"
 	walk_up
 	step_end
 
@@ -566,11 +616,11 @@ ErpCity_ProfessorBirds_Speech_Pokedex_Text_2:
 	.string "DEVICE....$"
 
 ErpCity_ProfessorBirds_Speech_Pokedex_Text_3:
-# 43 "data/maps/ErpCity/scripts.pory"
+# 44 "data/maps/ErpCity/scripts.pory"
 	.string "You have received the Pokédex.$"
 
 ErpCity_ProfessorBirds_Speech_Pokedex_Text_4:
-# 47 "data/maps/ErpCity/scripts.pory"
+# 48 "data/maps/ErpCity/scripts.pory"
 	.string "THIS DEVICE CAN COLLECT VITAL DATA ON\n"
 	.string "POKEMON HABITATS, MIGRATION PATTERNS\l"
 	.string "AND ...uh...\p"
@@ -589,12 +639,12 @@ ErpCity_ProfessorBirds_Speech_Pokedex_Text_4:
 	.string "YOU GOT TO BE JOKING$"
 
 ErpCity_ProfessorBirds_Speech_Pokedex_Text_5:
-# 51 "data/maps/ErpCity/scripts.pory"
+# 52 "data/maps/ErpCity/scripts.pory"
 	.string "THROW THESE MOTHERFUCKERS, AND THE\n"
 	.string "WORLD WILL BE MINE... I MEAN OURS$"
 
 ErpCity_ProfessorBirds_Speech_Pokedex_Text_6:
-# 63 "data/maps/ErpCity/scripts.pory"
+# 64 "data/maps/ErpCity/scripts.pory"
 	.string "HE BREAKS INTO YOUR LAB AND GETS A\n"
 	.string "POKEDEX, POKEBALLS AND A MISSION TO\l"
 	.string "BECOME A POKEMON MASTER?\p"
@@ -606,7 +656,7 @@ ErpCity_ProfessorBirds_Speech_Pokedex_Text_6:
 	.string "FUCK YOU!!$"
 
 ErpCity_ProfessorBirds_Speech_Pokedex_Text_7:
-# 68 "data/maps/ErpCity/scripts.pory"
+# 69 "data/maps/ErpCity/scripts.pory"
 	.string "...\p"
 	.string "YOU??\p"
 	.string "A POKEMON MASTER?\p"
@@ -615,12 +665,12 @@ ErpCity_ProfessorBirds_Speech_Pokedex_Text_7:
 	.string "THAT FROM HAPPENING!$"
 
 ErpCity_ProfessorBirds_Speech_Pokedex_Text_8:
-# 79 "data/maps/ErpCity/scripts.pory"
+# 80 "data/maps/ErpCity/scripts.pory"
 	.string "...I'd probably should search for\n"
 	.string "another intern right now...$"
 
 ErpCity_ProfessorBirds_Speech_Pokedex_Text_9:
-# 84 "data/maps/ErpCity/scripts.pory"
+# 85 "data/maps/ErpCity/scripts.pory"
 	.string "OH BY THE WAY... I HAVE AN OLD FRIEND IN\n"
 	.string "THE NEXT TOWN WHO COULD HELP YOU CATCH\l"
 	.string "A WONDERFULL SPECIE...\p"
@@ -634,47 +684,47 @@ ErpCity_ProfessorBirds_Speech_Pokedex_Text_9:
 	.string "I MEAN YOU OFCOURSE!!$"
 
 ErpCity_ProfessorBirds_Speech_Pokedex_Text_10:
-# 102 "data/maps/ErpCity/scripts.pory"
+# 103 "data/maps/ErpCity/scripts.pory"
 	.string "...I think it is safe to come out now\n"
 	.string "{STR_VAR_1}, lets get out of here!$"
 
 ErpCity_ProfessorBirds_After_Speech_Text_0:
-# 108 "data/maps/ErpCity/scripts.pory"
+# 109 "data/maps/ErpCity/scripts.pory"
 	.string "WELL, WHAT ARE YOU WAITING FOR?\p"
 	.string "GET THAT DATA FOR ME... I MEAN US.$"
 
 ErpCity_Mispoes_Miauw_Text_0:
-# 115 "data/maps/ErpCity/scripts.pory"
+# 116 "data/maps/ErpCity/scripts.pory"
 	.string "Mispoes: Miaaaauw... KSSSSJSJJGGGG$"
 
 ErpCity_Lab_Sign_Text_0:
-# 122 "data/maps/ErpCity/scripts.pory"
+# 123 "data/maps/ErpCity/scripts.pory"
 	.string "Professor Birds's Lab$"
 
 ErpCity_Hiker_Cave_Text_0:
-# 131 "data/maps/ErpCity/scripts.pory"
+# 132 "data/maps/ErpCity/scripts.pory"
 	.string "The cave is not accessible at this time.\p"
 	.string "Recent tremors from a unknown source\n"
 	.string "have caused massive rock slides.\p"
-	.string "The path is to dangerous.$"
+	.string "The path is too dangerous.$"
 
 ErpCity_Cave_Sign_Text_0:
-# 138 "data/maps/ErpCity/scripts.pory"
+# 139 "data/maps/ErpCity/scripts.pory"
 	.string "A large map with a labyrint of routes\n"
 	.string "going through the cave.\p"
 	.string "Most of them are crossed out.$"
 
 ErpCity_Trigger_Stopplayer_Text_0:
-# 145 "data/maps/ErpCity/scripts.pory"
+# 146 "data/maps/ErpCity/scripts.pory"
 	.string "Wandering without any pokemon might be\n"
 	.string "dangerous....$"
 
 ErpCity_Trigger_Stopplayer2_Text_0:
-# 157 "data/maps/ErpCity/scripts.pory"
+# 158 "data/maps/ErpCity/scripts.pory"
 	.string "Mom said the lab was up north I think...$"
 
 ErpCity_Receive_Running_Shoes_Text_0:
-# 172 "data/maps/ErpCity/scripts.pory"
+# 174 "data/maps/ErpCity/scripts.pory"
 	.string "Honey, I almost forgot!\p"
 	.string "If you want to make an impression on\n"
 	.string "the professor you should wear some\l"
@@ -683,27 +733,47 @@ ErpCity_Receive_Running_Shoes_Text_0:
 	.string "you!$"
 
 ErpCity_Receive_Running_Shoes_Text_1:
-# 175 "data/maps/ErpCity/scripts.pory"
+# 178 "data/maps/ErpCity/scripts.pory"
 	.string "You have received running shoes from\n"
 	.string "Mom.$"
 
 ErpCity_Receive_Running_Shoes_Text_2:
-# 179 "data/maps/ErpCity/scripts.pory"
+# 180 "data/maps/ErpCity/scripts.pory"
 	.string "Look at you, all nice and shiny.\p"
 	.string "Say hello to the professor for me.\p"
 	.string "Have fun!$"
 
 ErpCity_Receive_Running_Shoes_Text_3:
-# 182 "data/maps/ErpCity/scripts.pory"
+# 183 "data/maps/ErpCity/scripts.pory"
 	.string "Well, go on!\n"
 	.string "Don't be shy!$"
 
 ErpCity_Receive_Running_Shoes_Text_4:
-# 187 "data/maps/ErpCity/scripts.pory"
+# 188 "data/maps/ErpCity/scripts.pory"
 	.string "There you go!\n"
-	.string "I'll see you at dinner!$"
+	.string "I'll prepare some potatoes, meat and\l"
+	.string "vegetables for you when you get back,\l"
+	.string "your favorite!$"
 
 ErpCity_Receive_Running_Shoes_Text_5:
-# 199 "data/maps/ErpCity/scripts.pory"
+# 200 "data/maps/ErpCity/scripts.pory"
 	.string "Better get to the lab, Mom probably\n"
 	.string "won't let me in if I don't try.$"
+
+ErpCity_Sign_Mailbox_ProfBirds_Text_0:
+# 211 "data/maps/ErpCity/scripts.pory"
+	.string "This mailbox seems to be filled to the\n"
+	.string "brim, somebody should clean this thing\l"
+	.string "out.$"
+
+ErpCity_Sign_Mailbox_Starthouse_Text_0:
+# 218 "data/maps/ErpCity/scripts.pory"
+	.string "{PLAYER}'s house.$"
+
+ErpCity_Sign_Mailbox_BarryHouse_Text_0:
+# 225 "data/maps/ErpCity/scripts.pory"
+	.string "Family Stonebakers's house.$"
+
+ErpCity_Sign_Mailbox_JanVogels_Text_0:
+# 232 "data/maps/ErpCity/scripts.pory"
+	.string "Family Birds's house.$"

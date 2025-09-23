@@ -364,7 +364,7 @@ Indoor_Maasje_Jakub_Home_JakubConvo_Movement_5:
 
 Indoor_Maasje_Jakub_Home_JakubConvo_Text_0:
 # 7 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
-	.string "Hi there, my name is Jakub. Welcome to\n"
+	.string "Hi there, my name is Jacob. Welcome to\n"
 	.string "our home!\p"
 	.string "...Professor Birds sent you?\p"
 	.string "To catch rare species of Pokémon?\p"

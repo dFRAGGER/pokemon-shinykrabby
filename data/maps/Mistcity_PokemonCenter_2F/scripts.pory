@@ -1,0 +1,10 @@
+mapscripts Mistcity_PokemonCenter_2F_MapScripts {}
+
+script Mistcity_PokemonCenter_2F_Red_Convo {
+    lock
+    faceplayer
+    msgbox(format("Hi there! Well done on getting to the third town.\pMy inspiration for this map and it surroundings is the cloud forest in Costa Rica.\pThis forest, located high up the mountains, provides it's own rain and is really up in the clouds all the time.\pWhile being there I saw so many different species of animals.\pEverytime we went on a wildlife tour we saw something new and exciting.\pHopefully this is the case in Mist City as well.\pThe cool thing is that I modelled Dan, the protecter of the forest, after myself.\pMy real life job is being a biodiversity advisor for a large construction company in europe.\pI'm trying to make our construction projects nature postive, and our supply chains nature damage free.\pThis mission is close to my heart, hopefully that passion shines through in this map of the game.\pEnjoy!"))
+    waitmessage
+    release
+    end
+}

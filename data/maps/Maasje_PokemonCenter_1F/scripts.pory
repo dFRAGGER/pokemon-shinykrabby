@@ -43,7 +43,7 @@ script Maasje_PokemonCenter_1F_Bryan_Trigger0 {
     applymovement(2, moves(emote_exclamation_mark))
     delay(60)
     applymovement(2, moves(walk_fast_left * 4 walk_fast_down))
-    msgbox(format("Hi, my name is Bryan.\p I'd like to film everything, absolutely everything.\p Can I film your journey towards becoming a pokemon master?\p ..... What? No?\p Just don't mind me, act like you don't see me.\p"))
+    msgbox(format("Hi, my name is Bryan.\p I'd like to film everything, absolutely everything.\p Can I film your journey towards becoming a pokemon master?\p ..... What? No?\p Just don't mind me, act like you don't see me."))
     waitmessage
     release
 }

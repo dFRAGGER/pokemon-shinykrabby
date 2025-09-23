@@ -632,7 +632,8 @@
     "ErpCity",
     "Maasje",
     "Route02",
-    "MistCity"
+    "MistCity",
+    "TheShadowLands"
   ],
   "gMapGroup_IndooErpusCity": [
     "LabJariIndoor",
@@ -663,10 +664,18 @@
     "Maasje_Gym_Basement",
     "Maasje_Coastal_Cave1",
     "Maasje_Coastal_Cave2",
-    "Maasje_Coastal_Cave3"
+    "Maasje_Coastal_Cave3",
+    "Mistcity_Indoor_FacultySympathizer"
   ],
   "gMapGroup_IndoorMistCity": [
     "Mistcity_Research_Center",
-    "Mistcity_Research_Center_Entrance"
+    "Mistcity_Research_Center_Entrance",
+    "Mistcity_Indoor_Old_Storyteller_Cabin",
+    "Mistcity_Indoor_PatternFinder_Father",
+    "Mistcity_Indoor_Woodwork_Shop",
+    "Mistcity_Indoor_MushroomShop",
+    "Mistcity_PokemonCenter_1F",
+    "Mistcity_PokemonCenter_2F",
+    "Mistcity_Mart"
   ]
 }

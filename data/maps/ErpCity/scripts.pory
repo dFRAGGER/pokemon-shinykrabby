@@ -39,6 +39,7 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     msgbox(format(".....DID I SAY THAT OUT LOUD?\pARGH ANYWAYS, HOW ABOUT I REHIRE YOU AGAIN TO BECOME MY DATA HOARDER....\pI MEAN MY FELLOW RESEARCHER OFCOURSE! MY BELOVED PARTNER!\pTO BECOME A REAL POKEMON MASTER WE... I MEAN YOU... NEED TO CATCH EVERY POKEMON\pAND SCAN THEM WITH THIS LITTLE DEVICE...."))
     waitmessage
     setflag(FLAG_SYS_POKEDEX_GET)
+    special(EnableNationalPokedex)
     setflag(FLAG_SYS_NATIONAL_DEX)
     msgbox(format("You have received the Pokédex."))
     playfanfare(MUS_OBTAIN_ITEM)
@@ -128,7 +129,7 @@ script ErpCity_Hiker_Cave {
     lockall
     applymovement(5, moves(face_player)    
     )
-    msgbox(format("The cave is not accessible at this time.\p Recent tremors from a unknown source have caused massive rock slides.\p The path is to dangerous."))
+    msgbox(format("The cave is not accessible at this time.\p Recent tremors from a unknown source have caused massive rock slides.\p The path is too dangerous."))
     waitmessage
     releaseall
 }
@@ -163,6 +164,7 @@ script ErpCity_Trigger_Stopplayer2 {
 script ErpCity_Receive_Running_Shoes {
     lockall
     if(flag(FLAG_RECEIVED_RUNNING_SHOES)==FALSE){
+    playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark face_up))
     waitmovement
     clearflag(FLAG_HIDE_MOM_SHOES)
@@ -172,9 +174,8 @@ script ErpCity_Receive_Running_Shoes {
     msgbox(format("Honey, I almost forgot!\pIf you want to make an impression on the professor you should wear some different shoes.\pAs a surprise I've bought a new pair for you!"))
     waitmessage
     setflag(FLAG_RECEIVED_RUNNING_SHOES)
-    msgbox(format("You have received running shoes from Mom."))
     playfanfare(MUS_OBTAIN_ITEM)
-    waitfanfare
+    msgbox(format("You have received running shoes from Mom."))
     waitmessage
     msgbox(format("Look at you, all nice and shiny.\p Say hello to the professor for me.\p Have fun!"),MSGBOX_AUTOCLOSE)
     waitmessage
@@ -184,7 +185,7 @@ script ErpCity_Receive_Running_Shoes {
     delay(40)
     applymovement(LOCALID_PLAYER, moves(walk_down))
     waitmovement
-    msgbox(format("There you go!\nI'll see you at dinner!"))
+    msgbox(format("There you go!\nI'll prepare some potatoes, meat and vegetables for you when you get back, your favorite!"))
     waitmessage
     applymovement(4, moves(walk_up))
     waitmovement
@@ -203,4 +204,32 @@ script ErpCity_Receive_Running_Shoes {
         releaseall
         end
     }
+}
+
+script ErpCity_Sign_Mailbox_ProfBirds {
+    lock
+    msgbox(format("This mailbox seems to be filled to the brim, somebody should clean this thing out."))
+    waitmessage
+    release
+}
+
+script ErpCity_Sign_Mailbox_Starthouse {
+    lock
+    msgbox(format("{PLAYER}'s house."))
+    waitmessage
+    release
+}
+
+script ErpCity_Sign_Mailbox_BarryHouse {
+    lock
+    msgbox(format("Family Stonebakers's house."))
+    waitmessage
+    release
+}
+
+script ErpCity_Sign_Mailbox_JanVogels {
+    lock
+    msgbox(format("Family Birds's house."))
+    waitmessage
+    release
 }

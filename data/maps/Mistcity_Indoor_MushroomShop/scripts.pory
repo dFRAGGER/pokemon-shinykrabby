@@ -1,0 +1,87 @@
+mapscripts Mistcity_Indoor_MushroomShop_MapScripts {}
+
+
+script Mistcity_Indoor_MushroomShop_MushroomGirl {
+    lock
+    faceplayer
+    if(!flag(FLAG_MUSHROOM_MISSION_STARTED)&&!flag(FLAG_MUSHROOM_MISSION_COMPLETED)){
+    setflag(FLAG_MUSHROOM_MISSION_STARTED)
+    msgbox(format("HEY! WELCOME!\pWatch your step, a new batch of mushrooms just arrived from the forest!\pI'm Leaf! I'm a mycologist!\pThat means I LOVE MUSHROOMS!\nAnd this forest is a PARADISE!\pSay, you're a trainer, right?!\pYou could help me with my research!\pI'm making a Fungus Index!\pCould you show me some Pokémon that have fungi on them?\pI'm looking for a Paras, a Parasect, a Shroomish, and a Breloom!\pPleeeease?"))
+    waitmessage
+    }
+    if(flag(FLAG_MUSHROOM_MISSION_STARTED)&&!flag(FLAG_MUSHROOM_MISSION_COMPLETED)){
+    if(!flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARAS)||!flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT)||!flag(FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH)||!flag(FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM)) {
+    msgbox(format("Well!!\pHave you found any new mushroom Pokemon?"))
+    waitmessage
+    specialvar(VAR_RESULT,ScriptGetPartyMonSpecies)
+    if(var(VAR_RESULT)==SPECIES_PARAS){
+        setflag(FLAG_MISTCITY_SHOW_MUSHROOM_PARAS)
+        msgbox(format("Ooh, a Paras with tochukaso spores!\pA classic symbiotic relationship! Fascinating!"))
+    }
+    if(var(VAR_RESULT)==SPECIES_PARASECT){
+        setflag(FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT)
+        msgbox(format("YES! The fungus has taken full control of the host!\pLook at those wonderfully vacant eyes! This Parasect is perfect!"))
+    }
+    if(var(VAR_RESULT)==SPECIES_SHROOMISH){
+        setflag(FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH)
+        msgbox(format("A Shroomish! I love how its spores can paralyze a foe! So efficient!\pHave you found any more interesting shroom species?"))
+    }
+    if(var(VAR_RESULT)==SPECIES_BRELOOM){
+        setflag(FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM)
+        msgbox(format("Breloom, the apex predator of the mushroom world!\pIts toxic spores are a masterpiece of natural engineering!"))
+    }
+    if(flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARAS)&&flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT)&&flag(FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH)&&flag(FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM)) {
+        msgbox(format("YOU DID IT! YOU DID IT!\pMy Fungus Index is complete!\pI'm the happiest mycologist in the world!\pHere, I grew this for you! It's extra potent!"))
+        waitmessage
+        setflag(FLAG_MUSHROOM_MISSION_COMPLETED)
+        playfanfare(MUS_OBTAIN_ITEM)
+        giveitem(ITEM_BALM_MUSHROOM)
+        msgbox(format("Wait! Wait!\pI have more!"))
+        waitmessage
+        playfanfare(MUS_OBTAIN_ITEM)
+        giveitem(ITEM_BIG_MUSHROOM)
+        msgbox(format("No.. No! I'm not done!"))
+        waitmessage
+        playfanfare(MUS_OBTAIN_ITEM)
+        giveitem(ITEM_TINY_MUSHROOM)
+        msgbox(format("There you go!\pPssttt....\pIf you ever need some shrooms to trip out...\pI'm here for ya..."))
+        waitmessage
+        release
+        end
+
+    }
+    else{
+        msgbox(format("For my Fungus Index to be complete I'm still missing:"))
+        waitmessage
+        if(!flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARAS)){
+            msgbox(format("A Paras. Which burrows to suck tree roots and who's mushrooms on its back grow by drawing nutrients from the bug host."))
+            waitmessage
+        }
+        if(!flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT)){
+            msgbox(format("A Parasect. A host-parasite pair in which the parasite mushroom has taken over the host bug."))
+            waitmessage
+        }
+        if(!flag(FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH)){
+            msgbox(format("A Shroomish. By day a Shroomish remains still in the forest shade. It releases toxic powder from its head."))
+            waitmessage
+        }
+        if(!flag(FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM)){
+            msgbox(format("A Breloom. It loves warm and humid climates and scatters spores from holes in the cap on its head."))
+            waitmessage
+        }
+        else{
+            msgbox(format("Good luck finding those!\p I have a small reward for you if you manage to help me complete my Fungus Index."))
+            waitmessage
+        }
+        release
+        end
+    }
+    }
+    if(flag(FLAG_MUSHROOM_MISSION_STARTED)&&!flag(FLAG_MUSHROOM_MISSION_COMPLETED)){
+        msgbox(format("Thank you so much for helping me complete my Fungus Index!\pAre you enjoying those mushrooms I gave you?"))
+        waitmessage
+        release
+        end
+    }
+}
+}
