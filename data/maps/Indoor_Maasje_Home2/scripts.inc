@@ -52,8 +52,8 @@ Indoor_Maasje_Home2_WomanSailor::
 
 Indoor_Maasje_Home2_Sailor_Text_0:
 # 7 "data/maps/Indoor_Maasje_Home2/scripts.pory"
-	.string "I learned the ways of the sea from my\n"
-	.string "mother.\p"
+	.string "{COLOR RED}Sailor: {COLOR DARK_GRAY}I learned the ways of the sea\n"
+	.string "from my mother.\p"
 	.string "She loves telling stories of all her\n"
 	.string "journeys, but sometimes the stories are\l"
 	.string "too crazy to be true.\p"
@@ -69,11 +69,11 @@ Indoor_Maasje_Home2_Sailor_Text_1:
 
 Indoor_Maasje_Home2_Sailor_Text_2:
 # 16 "data/maps/Indoor_Maasje_Home2/scripts.pory"
-	.string "Well?\p"
-	.string "Did you already catch any fish?$"
+	.string "{COLOR RED}Sailor: {COLOR DARK_GRAY}Well?\p"
+	.string "Did you catch any fish already?$"
 
 Indoor_Maasje_Home2_WomanSailor_Text_0:
 # 26 "data/maps/Indoor_Maasje_Home2/scripts.pory"
-	.string "My son worries about his grandmother a\n"
-	.string "lot.\p"
+	.string "{COLOR RED}Sailor's wife: {COLOR DARK_GRAY}My son worries about his\n"
+	.string "grandmother a lot.\p"
 	.string "That is why he is always by her side.$"

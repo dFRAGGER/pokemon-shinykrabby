@@ -4,7 +4,7 @@ mapscripts LabJariIndoor_MapScripts {
 
 script LabJariIndoor_Eventscript_Birds_Pokemon_Check {
     lockall
-    msgbox(format("...WHY ARE YOU STILL HERE? BETTER GET TO THAT SCRUB OF A FRIEND CALLED JAKUB IN THE NEXT TOWN! HE PROBABLY KNOWS HOW TO CATCH SOME POKEMON!"))
+    msgbox(format("{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}...WHY ARE YOU STILL HERE? BETTER GET TO THAT SCRUB OF A FRIEND CALLED JAKUB IN THE NEXT TOWN! HE PROBABLY KNOWS HOW TO CATCH SOME POKEMON!"))
     waitmessage
     releaseall
 }
@@ -35,7 +35,7 @@ script LabJariIndoor_Eventscript_Barry_Birds {
         applymovement(LOCALID_PLAYER, moves(face_up))
     }
     waitmovement
-    msgbox(format("SO WHO ARE YOU?\p ...\pYOU WANT TO BECOME MY INTERN?\p WELL TOO LATE BOY!!\p BARRY WAS HERE FIRST!!\p ISN'T THAT RIGHT BARRY?"),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}SO WHO ARE YOU?\p ...\pYOU WANT TO BECOME MY INTERN?\p WELL TOO LATE BOY!!\p BARRY WAS HERE FIRST!!\p ISN'T THAT RIGHT BARRY?"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(3, moves(face_left))
     playse(SE_PIN)
@@ -99,7 +99,7 @@ script LabJariIndoor_Eventscript_Barry_Birds {
     else {
         playse(SE_PIN)
         applymovement(3, moves(emote_exclamation_mark face_down))
-        msgbox(format("WHERE DO YOU THINK YOU ARE GOING?\p GET TO THE BACK AND GET THOSE BOXES HERE!!"),MSGBOX_AUTOCLOSE)
+        msgbox(format("{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}WHERE DO YOU THINK YOU ARE GOING?\p GET TO THE BACK AND GET THOSE BOXES HERE!!"),MSGBOX_AUTOCLOSE)
         waitmessage
         applymovement(LOCALID_PLAYER, moves(walk_up))
         applymovement(3, moves(face_up))
@@ -115,7 +115,7 @@ script LabJariIndoor_Eventscript_Birds_Convo {
     playse(SE_PIN)
     applymovement(3, moves(emote_exclamation_mark))
     faceplayer
-    msgbox(format("DON'T BOTHER US, I'M EXPLAINING TO BARRY HOW IMPORTANT DNA SAMPL... PIG SENSORS ARE!!\p GET THOSE BOXES OUT OF THE BACK OF THE STORAGE ROOM!!"))
+    msgbox(format("{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}DON'T BOTHER US, I'M EXPLAINING TO BARRY HOW IMPORTANT DNA SAMPL... PIG SENSORS ARE!!\p GET THOSE BOXES OUT OF THE BACK OF THE STORAGE ROOM!!"))
     waitmessage
     applymovement(3, moves(face_up))
     waitmovement

@@ -581,8 +581,8 @@ ErpCity_Receive_Running_Shoes_Movement_3:
 
 ErpCity_ProfessorBirds_Speech_Pokedex_Text_0:
 # 26 "data/maps/ErpCity/scripts.pory"
-	.string "WHO DO YOU THINK YOU ARE? TAYLOR SWIFT\n"
-	.string "OR SOMETHING?\p"
+	.string "{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}WHO DO YOU THINK YOU ARE?\n"
+	.string "TAYLOR SWIFT OR SOMETHING?\p"
 	.string "Actually.... I love Taylor Swift hehe..\n"
 	.string "ANYWAYS!!\p"
 	.string "I TOLD YOU TO NOT SNIFF AROUND IN MY\n"
@@ -645,9 +645,9 @@ ErpCity_ProfessorBirds_Speech_Pokedex_Text_5:
 
 ErpCity_ProfessorBirds_Speech_Pokedex_Text_6:
 # 64 "data/maps/ErpCity/scripts.pory"
-	.string "HE BREAKS INTO YOUR LAB AND GETS A\n"
-	.string "POKEDEX, POKEBALLS AND A MISSION TO\l"
-	.string "BECOME A POKEMON MASTER?\p"
+	.string "{COLOR BLUE}Barry: {COLOR DARK_GRAY}HE BREAKS INTO YOUR LAB AND\n"
+	.string "GETS A POKEDEX, POKEBALLS AND A\l"
+	.string "MISSION TO BECOME A POKEMON MASTER?\p"
 	.string "WHAT DID I GET?\p"
 	.string "A FUCKING MAGIKARP?\p"
 	.string "THE MOST USELESS POKEMON EVER IN\n"
@@ -657,7 +657,7 @@ ErpCity_ProfessorBirds_Speech_Pokedex_Text_6:
 
 ErpCity_ProfessorBirds_Speech_Pokedex_Text_7:
 # 69 "data/maps/ErpCity/scripts.pory"
-	.string "...\p"
+	.string "{COLOR BLUE}Barry: {COLOR DARK_GRAY}...\p"
 	.string "YOU??\p"
 	.string "A POKEMON MASTER?\p"
 	.string "DON'T LET ME LAUGH\p"
@@ -666,14 +666,14 @@ ErpCity_ProfessorBirds_Speech_Pokedex_Text_7:
 
 ErpCity_ProfessorBirds_Speech_Pokedex_Text_8:
 # 80 "data/maps/ErpCity/scripts.pory"
-	.string "...I'd probably should search for\n"
-	.string "another intern right now...$"
+	.string "{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}...I'd probably should\n"
+	.string "search for another intern right now...$"
 
 ErpCity_ProfessorBirds_Speech_Pokedex_Text_9:
 # 85 "data/maps/ErpCity/scripts.pory"
-	.string "OH BY THE WAY... I HAVE AN OLD FRIEND IN\n"
-	.string "THE NEXT TOWN WHO COULD HELP YOU CATCH\l"
-	.string "A WONDERFULL SPECIE...\p"
+	.string "{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}OH BY THE WAY... I HAVE AN\n"
+	.string "OLD FRIEND IN THE NEXT TOWN WHO COULD\l"
+	.string "HELP YOU CATCH A WONDERFULL SPECIE...\p"
 	.string "HIS NAME IS JAKUB... HE USED TO LIVE IN\n"
 	.string "THIS TOWN... BUT THE TRAITOR MOVED TO\l"
 	.string "MAASJE...\p"
@@ -695,7 +695,7 @@ ErpCity_ProfessorBirds_After_Speech_Text_0:
 
 ErpCity_Mispoes_Miauw_Text_0:
 # 116 "data/maps/ErpCity/scripts.pory"
-	.string "Mispoes: Miaaaauw... KSSSSJSJJGGGG$"
+	.string "{COLOR RED}Mispoes: {COLOR DARK_GRAY}Miaaaauw... KSSSSJSJJGGGG$"
 
 ErpCity_Lab_Sign_Text_0:
 # 123 "data/maps/ErpCity/scripts.pory"
@@ -703,7 +703,8 @@ ErpCity_Lab_Sign_Text_0:
 
 ErpCity_Hiker_Cave_Text_0:
 # 132 "data/maps/ErpCity/scripts.pory"
-	.string "The cave is not accessible at this time.\p"
+	.string "{COLOR RED}Hiker: {COLOR DARK_GRAY}The cave is not accessible at\n"
+	.string "this time.\p"
 	.string "Recent tremors from a unknown source\n"
 	.string "have caused massive rock slides.\p"
 	.string "The path is too dangerous.$"
@@ -725,7 +726,7 @@ ErpCity_Trigger_Stopplayer2_Text_0:
 
 ErpCity_Receive_Running_Shoes_Text_0:
 # 174 "data/maps/ErpCity/scripts.pory"
-	.string "Honey, I almost forgot!\p"
+	.string "{COLOR RED}Mom: {COLOR DARK_GRAY}Honey, I almost forgot!\p"
 	.string "If you want to make an impression on\n"
 	.string "the professor you should wear some\l"
 	.string "different shoes.\p"

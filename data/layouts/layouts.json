@@ -618,8 +618,8 @@
       "name": "Underwater_Route127_Layout",
       "width": 80,
       "height": 80,
-      "border_width": 0,
-      "border_height": 0,
+      "border_width": 2,
+      "border_height": 2,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Underwater",
       "border_filepath": "data/layouts/Underwater_Route127/border.bin",
@@ -5712,6 +5712,42 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/TheShadowLands/border.bin",
       "blockdata_filepath": "data/layouts/TheShadowLands/map.bin"
+    },
+    {
+      "id": "LAYOUT_DEEP_CLOUD_FOREST_FACULTY_GORGE",
+      "name": "DeepCloudForest_FacultyGorge_Layout",
+      "width": 51,
+      "height": 59,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/DeepCloudForest_FacultyGorge/border.bin",
+      "blockdata_filepath": "data/layouts/DeepCloudForest_FacultyGorge/map.bin"
+    },
+    {
+      "id": "LAYOUT_SILTROOT_TOWN",
+      "name": "SiltrootTown_Layout",
+      "width": 60,
+      "height": 55,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/SiltrootTown/border.bin",
+      "blockdata_filepath": "data/layouts/SiltrootTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_SILTROOT_TOWN_INDOOR_ALI_APOTHECARY",
+      "name": "SiltrootTown_Indoor_Ali_Apothecary_Layout",
+      "width": 20,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Johto_General",
+      "secondary_tileset": "gTileset_PrettyPetalFlowerShop",
+      "border_filepath": "data/layouts/SiltrootTown_Indoor_Ali_Apothecary/border.bin",
+      "blockdata_filepath": "data/layouts/SiltrootTown_Indoor_Ali_Apothecary/map.bin"
     }
   ]
 }

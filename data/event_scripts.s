@@ -1230,3 +1230,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Mistcity_Mart/scripts.inc"
 
 	.include "data/maps/TheShadowLands/scripts.inc"
+
+	.include "data/maps/DeepCloudForest_FacultyGorge/scripts.inc"
+
+	.include "data/maps/SiltrootTown/scripts.inc"
+
+	.include "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.inc"

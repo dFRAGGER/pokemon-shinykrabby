@@ -65,14 +65,16 @@ Maasje_Mart_Bug_Catcher::
 
 Maasje_Mart_Fat_Man_Text_0:
 # 28 "data/maps/Maasje_Mart/scripts.pory"
-	.string "I'm looking for pink cookies, but I can't\n"
-	.string "find them anywhere.$"
+	.string "{COLOR RED}Fat man: {COLOR DARK_GRAY}I'm looking for pink cookies,\n"
+	.string "but I can't find them anywhere.$"
 
 Maasje_Mart_Bug_Catcher_Text_0:
 # 37 "data/maps/Maasje_Mart/scripts.pory"
-	.string "I was attacked by two Bee Pokemons, I\n"
-	.string "needed some antidote.\p"
-	.string "I have never seen those here before,\n"
-	.string "but apparently they belong together.\p"
-	.string "My dad says they are called Volbeat and\n"
+	.string "{COLOR RED}Bug catcher: {COLOR DARK_GRAY}I was attacked by two\n"
+	.string "bee-like Pokémon and needed some\l"
+	.string "antidote.\p"
+	.string "I've never seen that kind around here\n"
+	.string "before, but apparently they travel\l"
+	.string "together.\p"
+	.string "My dad says they're called Volbeat and\n"
 	.string "Illumise.$"

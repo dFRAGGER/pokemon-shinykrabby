@@ -32,8 +32,8 @@ ErpusCity_Barryhouse_1F_Father::
 
 ErpusCity_Barryhouse_1F_Mother_Text_0:
 # 8 "data/maps/ErpusCity_BarryHouse_1F/scripts.pory"
-	.string "Oh, hello... You're the new intern for\n"
-	.string "Professor Birds, aren't you?\p"
+	.string "{COLOR BLUE}Barry's Mom: {COLOR DARK_GRAY}Oh, hello... You're the new\n"
+	.string "intern for Professor Birds, aren't you?\p"
 	.string "It's lovely to meet you\p"
 	.string "....Wouter? Oh, don't you worry about him.\n"
 	.string "He was a bit... disappointed, yes.\p"
@@ -60,7 +60,8 @@ ErpusCity_Barryhouse_1F_Mother_Text_0:
 
 ErpusCity_Barryhouse_1F_Father_Text_0:
 # 16 "data/maps/ErpusCity_BarryHouse_1F/scripts.pory"
-	.string "So, you're the one who got the spot. Hm.\p"
+	.string "{COLOR BLUE}Barry's Dad: {COLOR DARK_GRAY}So, you're the one who got\n"
+	.string "the spot. Hm.\p"
 	.string "Don't mind the boy. If he couldn't\n"
 	.string "secure a simple internship, he didn't\l"
 	.string "deserve it.\p"

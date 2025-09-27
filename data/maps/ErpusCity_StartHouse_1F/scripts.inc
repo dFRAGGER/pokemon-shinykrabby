@@ -255,7 +255,7 @@ Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Movement_6:
 
 Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_0:
 # 28 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	.string "There you are! Finally awake.\p"
+	.string "{COLOR RED}Mom: {COLOR DARK_GRAY}There you are! Finally awake.\p"
 	.string "Getting up so early for the move must\n"
 	.string "have completely exhausted you.\p"
 	.string "You've slept through the whole morning.\p"
@@ -304,17 +304,18 @@ Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_4:
 
 Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_5:
 # 50 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	.string "{PLAYER} I won't say it again, come on,\n"
-	.string "the lab will be fun for you!$"
+	.string "{COLOR RED}Mom: {COLOR DARK_GRAY}{PLAYER} I won't say it again,\n"
+	.string "come on, the lab will be fun for you!$"
 
 Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_0:
 # 64 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	.string "Well, what are you waiting for my boy.\p"
+	.string "{COLOR RED}Mom: {COLOR DARK_GRAY}Well, what are you waiting for my\n"
+	.string "boy.\p"
 	.string "I'll see you at dinner!$"
 
 Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_1:
 # 68 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	.string "So, you are going on an adventure?\p"
+	.string "{COLOR RED}Mom: {COLOR DARK_GRAY}So, you are going on an adventure?\p"
 	.string "I knew you had it in you, dad would have\n"
 	.string "been proud!\p"
 	.string "Let me know if you ever need rest!$"

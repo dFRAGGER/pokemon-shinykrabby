@@ -62,8 +62,9 @@ Maasje_Coastal_Cave2_Hiker_8:
 
 Maasje_Coastal_Cave2_Hiker_Text_0:
 # 7 "data/maps/Maasje_Coastal_Cave2/scripts.pory"
-	.string "I'm looking for fossils, if you happen to\n"
-	.string "find one please tell me!$"
+	.string "{COLOR RED}Archaeologist: {COLOR DARK_GRAY}I'm looking for fossils,\n"
+	.string "if you happen to find one please tell\l"
+	.string "me!$"
 
 Maasje_Coastal_Cave2_Hiker_Text_1:
 # 11 "data/maps/Maasje_Coastal_Cave2/scripts.pory"
@@ -89,5 +90,5 @@ Maasje_Coastal_Cave2_Hiker_Text_4:
 
 Maasje_Coastal_Cave2_Hiker_Text_5:
 # 32 "data/maps/Maasje_Coastal_Cave2/scripts.pory"
-	.string "Thanks for trading, my collection is\n"
-	.string "complete now!$"
+	.string "{COLOR RED}Archaeologist: {COLOR DARK_GRAY}Thanks for trading, my\n"
+	.string "collection is complete now!$"

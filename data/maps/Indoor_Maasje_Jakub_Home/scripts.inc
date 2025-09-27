@@ -364,7 +364,7 @@ Indoor_Maasje_Jakub_Home_JakubConvo_Movement_5:
 
 Indoor_Maasje_Jakub_Home_JakubConvo_Text_0:
 # 7 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
-	.string "Hi there, my name is Jacob. Welcome to\n"
+	.string "Hi there, my name is {COLOR GREEN}Jacob{COLOR DARK_GRAY}. Welcome to\n"
 	.string "our home!\p"
 	.string "...Professor Birds sent you?\p"
 	.string "To catch rare species of Pokémon?\p"
@@ -417,13 +417,14 @@ Indoor_Maasje_Jakub_Home_JakubConvo_Text_0:
 
 Indoor_Maasje_Jakub_Home_JakubConvo_Text_1:
 # 12 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
-	.string "Please help me and my family, little\n"
-	.string "George can't play outside right now. He\l"
-	.string "has been gaming on his GameBoy all day.$"
+	.string "{COLOR GREEN}Jacob: {COLOR DARK_GRAY}Please help me and my family,\n"
+	.string "little George can't play outside right\l"
+	.string "now. He has been gaming on his GameBoy\l"
+	.string "all day.$"
 
 Indoor_Maasje_Jakub_Home_JakubConvo_Text_2:
 # 15 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
-	.string "... WHAT??\p"
+	.string "{COLOR GREEN}Jacob: {COLOR DARK_GRAY}... WHAT??\p"
 	.string "You saw the alpha Krabby, and it was a\n"
 	.string "SHINY KRABBY??\p"
 	.string "You helped the other Krabby's snap out\n"
@@ -502,7 +503,8 @@ Indoor_Maasje_Jakub_Home_JakubConvo_Text_4:
 
 Indoor_Maasje_Jakub_Home_JakubConvo_Text_5:
 # 34 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
-	.string "GEORGEEE, COME HERE, GET OUTSIDE!!$"
+	.string "{COLOR GREEN}Jacob: {COLOR DARK_GRAY}GEORGEEE, COME HERE, GET\n"
+	.string "OUTSIDE!!$"
 
 Indoor_Maasje_Jakub_Home_JakubConvo_Text_6:
 # 39 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
@@ -527,7 +529,7 @@ Indoor_Maasje_Jakub_Home_JakubConvo_Text_10:
 
 Indoor_Maasje_Jakub_Home_JakubConvo_Text_11:
 # 87 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
-	.string "Thanks for everything you did!\p"
+	.string "{COLOR GREEN}Jacob: {COLOR DARK_GRAY}Thanks for everything you did!\p"
 	.string "George is happily playing outsi... on his\n"
 	.string "gameboy again!\p"
 	.string "When you get to Mist City, say hi to my\n"
@@ -535,27 +537,27 @@ Indoor_Maasje_Jakub_Home_JakubConvo_Text_11:
 
 Indoor_Maasje_Jakub_Home_SiennaConvo_Text_0:
 # 96 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
-	.string "Please help my husband, he has not been\n"
-	.string "the same since these weird Krabby's\l"
-	.string "have been showing up. He hates to see\l"
-	.string "his favorite pokemon being seen as a\l"
-	.string "nuisance.$"
+	.string "{COLOR RED}Sienna: {COLOR DARK_GRAY}Please help my husband, he has\n"
+	.string "not been the same since these weird\l"
+	.string "Krabby's have been showing up. He hates\l"
+	.string "to see his favorite pokemon being seen\l"
+	.string "as a nuisance.$"
 
 Indoor_Maasje_Jakub_Home_SiennaConvo_Text_1:
 # 99 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
-	.string "Thanks for helping my husband!\p"
+	.string "{COLOR RED}Sienna: {COLOR DARK_GRAY}Thanks for helping my husband!\p"
 	.string "He has been more relaxt since the\n"
 	.string "Krabby's have been acting normal again.$"
 
 Indoor_Maasje_Jakub_Home_GeorgeConvo_Text_0:
 # 108 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
-	.string "Dad says that I can't be on my GameBoy\n"
-	.string "the entire time.\p"
+	.string "{COLOR RED}George: {COLOR DARK_GRAY}Dad says that I can't be on my\n"
+	.string "GameBoy the entire time.\p"
 	.string "I'm sure he did the same thing back in\n"
 	.string "the day.$"
 
 Indoor_Maasje_Jakub_Home_GeorgeConvo_Text_1:
 # 111 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
-	.string "Last night I saw my dad play on his own\n"
-	.string "gameboy.\p"
+	.string "{COLOR RED}George: {COLOR DARK_GRAY}Last night I saw my dad play on\n"
+	.string "his own gameboy.\p"
 	.string "I'm sure as hell not going outside.$"

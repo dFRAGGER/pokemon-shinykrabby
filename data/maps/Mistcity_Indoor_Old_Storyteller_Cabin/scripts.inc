@@ -68,7 +68,7 @@ Mistcity_Indoor_Old_Storyteller_Elara_Text_0:
 # 7 "data/maps/Mistcity_Indoor_Old_Storyteller_Cabin/scripts.pory"
 	.string "Come in, come in, child. Don't mind the\n"
 	.string "old books.\p"
-	.string "My name is Elara.\p"
+	.string "My name is {COLOR GREEN}Elara{COLOR DARK_GRAY}.\p"
 	.string "My family has watched over this forest\n"
 	.string "for more generations than I can count.\p"
 	.string "Lately, something is wrong, I can feel it\n"
@@ -90,8 +90,8 @@ Mistcity_Indoor_Old_Storyteller_Elara_Text_0:
 
 Mistcity_Indoor_Old_Storyteller_Elara_Text_1:
 # 13 "data/maps/Mistcity_Indoor_Old_Storyteller_Cabin/scripts.pory"
-	.string "You! You are the one who stood with\n"
-	.string "Daan!\p"
+	.string "{COLOR GREEN}Elara{COLOR DARK_GRAY}: You! You are the one who stood\n"
+	.string "with Daan!\p"
 	.string "I knew there was a kind heart in you.\p"
 	.string "The forest breathes a sigh of relief,\n"
 	.string "and so do I.\p"
@@ -114,7 +114,7 @@ Mistcity_Indoor_Old_Storyteller_Elara_Text_2:
 
 Mistcity_Indoor_Old_Storyteller_Elara_Text_3:
 # 25 "data/maps/Mistcity_Indoor_Old_Storyteller_Cabin/scripts.pory"
-	.string "Thanks for restoring the balance of\n"
-	.string "the forest.\p"
+	.string "{COLOR GREEN}Elara{COLOR DARK_GRAY}: Thanks for restoring the balance\n"
+	.string "of the forest.\p"
 	.string "Remember...\p"
 	.string "Legends are not always just stories.$"

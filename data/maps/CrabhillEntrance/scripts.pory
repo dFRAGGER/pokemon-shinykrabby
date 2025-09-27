@@ -56,7 +56,7 @@ script Crabhill_Wall_Carving {
 script Crabhill_Hiker_Hint {
     lock
     faceplayer
-    msgbox(format("I have been in this cave for hours.\pThe more time I spend in here the more I realize going backwards might be going forward, and the other way around.\p If you know what I mean."))
+    msgbox(format("{COLOR RED}Hiker: {COLOR DARK_GRAY}I have been in this cave for hours.\pThe more time I spend in here the more I realize going backwards might be going forward, and the other way around.\p If you know what I mean."))
     waitmessage
     release
 }

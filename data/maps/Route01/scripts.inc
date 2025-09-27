@@ -446,8 +446,8 @@ Route01_Factulty_Grunts_Position4_Movement_3:
 
 Route01_Convo_Bugcatcher_Text_0:
 # 8 "data/maps/Route01/scripts.pory"
-	.string "This place is the perfect place to\n"
-	.string "catch some pidgeys.\p"
+	.string "{COLOR RED}Bug catcher{COLOR DARK_GRAY}: This place is the perfect\n"
+	.string "place to catch some pidgeys.\p"
 	.string "Although lately they seem to be a little\n"
 	.string "on edge.\p"
 	.string "Yesterday I saw a curly tail sticking\n"
@@ -457,21 +457,21 @@ Route01_Convo_Bugcatcher_Text_0:
 
 Route01_Convo_Fatman_Text_0:
 # 15 "data/maps/Route01/scripts.pory"
-	.string "A clearing is visible through the trees,\n"
-	.string "but the path is overgrown.\p"
+	.string "{COLOR RED}Fat man{COLOR DARK_GRAY}: A clearing is visible through\n"
+	.string "the trees, but the path is overgrown.\p"
 	.string "Someone will have to clear the bushes\n"
 	.string "to get to that place.$"
 
 Route01_Convo_ExIntern_Text_0:
 # 23 "data/maps/Route01/scripts.pory"
-	.string "I used to be an intern for Professor\n"
-	.string "Birds.\p"
+	.string "{COLOR RED}Ex intern{COLOR DARK_GRAY}: I used to be an intern for\n"
+	.string "Professor Birds.\p"
 	.string "The day he told me to carve a hole in a\n"
 	.string "stone wall, I quit.$"
 
 Route01_Factulty_Grunts_Position1_Text_0:
 # 37 "data/maps/Route01/scripts.pory"
-	.string "Argh, nevermind.\p"
+	.string "{COLOR BLUE}Ad Dice{COLOR DARK_GRAY}: Argh, nevermind.\p"
 	.string "That Pokemon isn't worth registrating\n"
 	.string "anyway.\p"
 	.string "He barely listens to his owner and so he\n"
@@ -483,7 +483,7 @@ Route01_Factulty_Grunts_Position1_Text_0:
 
 Route01_Factulty_Grunts_Position2_Text_0:
 # 58 "data/maps/Route01/scripts.pory"
-	.string "Argh, nevermind.\p"
+	.string "{COLOR BLUE}Ad Dice{COLOR DARK_GRAY}: Argh, nevermind.\p"
 	.string "That Pokemon isn't worth registrating\n"
 	.string "anyway.\p"
 	.string "He barely listens to his owner and he\n"
@@ -495,8 +495,8 @@ Route01_Factulty_Grunts_Position2_Text_0:
 
 Route01_Battle_Factulty_Grunts_Text_0:
 # 114 "data/maps/Route01/scripts.pory"
-	.string "Do you have registration for that\n"
-	.string "Pokémon?\p"
+	.string "{COLOR BLUE}Ton Cross{COLOR DARK_GRAY}: Do you have registration for\n"
+	.string "that Pokémon?\p"
 	.string "No registration?\p"
 	.string "All unregistered Pokémon have to be\n"
 	.string "confiscated by The Faculty!\p"
@@ -504,17 +504,18 @@ Route01_Battle_Factulty_Grunts_Text_0:
 
 Route01_Battle_Factulty_Grunts_Text_1:
 # 118 "data/maps/Route01/scripts.pory"
-	.string "Ton, you are an absolute loser, let me\n"
-	.string "handle this prick.$"
+	.string "{COLOR BLUE}Ad Dice{COLOR DARK_GRAY}: Ton, you are an absolute loser,\n"
+	.string "let me handle this prick.$"
 
 Route01_Loss_Ton_Cross::
 # 124 "data/maps/Route01/scripts.pory"
-	.string "Even losing does not feel as bad as\n"
-	.string "teaching geography to unmotivated\l"
-	.string "children.$"
+	.string "{COLOR BLUE}Tod Cross{COLOR DARK_GRAY}: Even losing does not feel as\n"
+	.string "bad as teaching geography to\l"
+	.string "unmotivated children.$"
 
 Route01_Loss_Ad_Dice::
 # 128 "data/maps/Route01/scripts.pory"
-	.string "Being a janitor or losing a battle?\p"
+	.string "{COLOR BLUE}Ad Dice{COLOR DARK_GRAY}: Being a janitor or losing a\n"
+	.string "battle?\p"
 	.string "I'd rather lose a battle than spend\n"
 	.string "another minute with my old colleagues.$"

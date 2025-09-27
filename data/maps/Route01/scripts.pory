@@ -5,14 +5,14 @@ mapscripts Route01_MapScripts {
 script Route01_Convo_Bugcatcher {
     lock
     applymovement(4, moves(face_player))
-    msgbox(format("This place is the perfect place to catch some pidgeys.\p Although lately they seem to be a little on edge.\p Yesterday I saw a curly tail sticking out of the grass, but I'm pretty sure it wasn't a Rattata or Sentret.\p Maybe my eyes decieved me..."))
+    msgbox(format("{COLOR RED}Bug catcher{COLOR DARK_GRAY}: This place is the perfect place to catch some pidgeys.\p Although lately they seem to be a little on edge.\p Yesterday I saw a curly tail sticking out of the grass, but I'm pretty sure it wasn't a Rattata or Sentret.\p Maybe my eyes decieved me..."))
     waitmessage
     release
 }
 
 script Route01_Convo_Fatman {
     lock
-    msgbox(format("A clearing is visible through the trees, but the path is overgrown.\p Someone will have to clear the bushes to get to that place."))
+    msgbox(format("{COLOR RED}Fat man{COLOR DARK_GRAY}: A clearing is visible through the trees, but the path is overgrown.\p Someone will have to clear the bushes to get to that place."))
     waitmessage
     release
 }
@@ -20,7 +20,7 @@ script Route01_Convo_Fatman {
 script Route01_Convo_ExIntern {
     lock
     applymovement(6, moves(face_player))
-    msgbox(format("I used to be an intern for Professor Birds.\p The day he told me to carve a hole in a stone wall, I quit."))
+    msgbox(format("{COLOR RED}Ex intern{COLOR DARK_GRAY}: I used to be an intern for Professor Birds.\p The day he told me to carve a hole in a stone wall, I quit."))
     release
 }
 
@@ -34,7 +34,7 @@ script Route01_Factulty_Grunts_Position1 {
     applymovement(2, moves(walk_right * 6 ))
     applymovement(3, moves(walk_right * 7 walk_down))
     call(Route01_Battle_Factulty_Grunts)
-    msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and so he has no potential.\p The Faculty would discard him right away!\p Come on Ton, let's go. The boss is waiting for us."), MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR BLUE}Ad Dice{COLOR DARK_GRAY}: Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and so he has no potential.\p The Faculty would discard him right away!\p Come on Ton, let's go. The boss is waiting for us."), MSGBOX_AUTOCLOSE)
     setflag(FLAG_FACULTY_GRUNTS_ROUT01)
     applymovement(2, moves(walk_left * 10))
     applymovement(3, moves(walk_left * 10))
@@ -55,7 +55,7 @@ script Route01_Factulty_Grunts_Position2 {
     applymovement(2, moves(walk_up walk_right * 6 ))
     applymovement(3, moves(walk_right * 7 face_player))
     call(Route01_Battle_Factulty_Grunts)
-    msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\p Come on Ton, let's go. The boss is waiting for us."), MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR BLUE}Ad Dice{COLOR DARK_GRAY}: Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\p Come on Ton, let's go. The boss is waiting for us."), MSGBOX_AUTOCLOSE)
     setflag(FLAG_FACULTY_GRUNTS_ROUT01)
     applymovement(2, moves(walk_left * 10))
     applymovement(3, moves(walk_left * 10))
@@ -76,7 +76,7 @@ script Route01_Factulty_Grunts_Position3 {
     applymovement(2, moves(walk_right * 7 walk_up ))
     applymovement(3, moves(walk_right * 6 ))
     call(Route01_Battle_Factulty_Grunts)
-    msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\p Come on Ton, let's go. The boss is waiting for us."), MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR BLUE}Ad Dice{COLOR DARK_GRAY}: Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\p Come on Ton, let's go. The boss is waiting for us."), MSGBOX_AUTOCLOSE)
     setflag(FLAG_FACULTY_GRUNTS_ROUT01)
     applymovement(2, moves(walk_left * 10))
     applymovement(3, moves(walk_left * 10))
@@ -97,7 +97,7 @@ script Route01_Factulty_Grunts_Position4 {
     applymovement(2, moves(walk_right * 7 walk_up * 2 ))
     applymovement(3, moves(walk_right walk_up walk_right * 5))
     call(Route01_Battle_Factulty_Grunts)
-    msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\p Come on Ton, let's go. The boss is waiting for us."), MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR BLUE}Ad Dice{COLOR DARK_GRAY}: Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\p Come on Ton, let's go. The boss is waiting for us."), MSGBOX_AUTOCLOSE)
     setflag(FLAG_FACULTY_GRUNTS_ROUT01)
     applymovement(2, moves(walk_down * 2 walk_left * 10))
     applymovement(3, moves(walk_down walk_left * 10))
@@ -111,20 +111,20 @@ script Route01_Factulty_Grunts_Position4 {
 
 
 script Route01_Battle_Factulty_Grunts {
-    msgbox(format("Do you have registration for that Pokémon?\p No registration?\p All unregistered Pokémon have to be confiscated by The Faculty!\p Let me take on this loser, Ad."))
+    msgbox(format("{COLOR BLUE}Ton Cross{COLOR DARK_GRAY}: Do you have registration for that Pokémon?\p No registration?\p All unregistered Pokémon have to be confiscated by The Faculty!\p Let me take on this loser, Ad."))
     waitmessage
     trainerbattle_no_intro(TRAINER_GRUNT_FACULTY_1, Route01_Loss_Ton_Cross)
     playse(MUS_AQUA_MAGMA_HIDEOUT)
-    msgbox(format("Ton, you are an absolute loser, let me handle this prick."))
+    msgbox(format("{COLOR BLUE}Ad Dice{COLOR DARK_GRAY}: Ton, you are an absolute loser, let me handle this prick."))
     waitmessage
     trainerbattle_no_intro(TRAINER_GRUNT_FACULTY_2, Route01_Loss_Ad_Dice)
     waitse
 }
 
 text Route01_Loss_Ton_Cross {
-    format("Even losing does not feel as bad as teaching geography to unmotivated children.")
+    format("{COLOR BLUE}Tod Cross{COLOR DARK_GRAY}: Even losing does not feel as bad as teaching geography to unmotivated children.")
 }
 
 text Route01_Loss_Ad_Dice {
-    format("Being a janitor or losing a battle?\p I'd rather lose a battle than spend another minute with my old colleagues.")
+    format("{COLOR BLUE}Ad Dice{COLOR DARK_GRAY}: Being a janitor or losing a battle?\p I'd rather lose a battle than spend another minute with my old colleagues.")
 }

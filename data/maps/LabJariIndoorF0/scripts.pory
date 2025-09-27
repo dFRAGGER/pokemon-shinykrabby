@@ -295,36 +295,28 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection {
 
 script ErpusCity_ProfessorBirdsLab_Eventscript_Kanto_Sign {
     lockall
-    msgbox(format("There seems to be something written on this paper:"))
-    waitmessage
-    msgbox(format("KANTOOOO!!?"))
+    msgbox(format("An almost illegible note is scrawled on the paper:\pKANTOOOO!!?"))
     waitmessage
     releaseall
 }
 
 script ErpusCity_ProfessorBirdsLab_Eventscript_Johto_Sign {
     lockall
-    msgbox(format("There seems to be something written on this paper:"))
-    waitmessage
-    msgbox(format("JOHTOO?!"))
+    msgbox(format("An almost illegible note is scrawled on the paper:\pJOHTOO?!"))
     waitmessage
     releaseall
 }
 
 script ErpusCity_ProfessorBirdsLab_Eventscript_Hoenn_Sign {
     lockall
-    msgbox(format("There seems to be something written on this paper:"))
-    waitmessage
-    msgbox(format("HOEENN??"))
+    msgbox(format("An almost illegible note is scrawled on the paper:\pHOEENN??"))
     waitmessage
     releaseall
 }
 
 script ErpusCity_ProfessorBirdsLab_Eventscript_TaylorSwift_Sign {
     lockall
-    msgbox(format("There seems to be something written on this paper:"))
-    waitmessage
-    msgbox(format("I LOVEEEEE TAYLOR SWIFT"))
+    msgbox(format("An almost illegible note is scrawled on the paper:\pI LOVEEEEE TAYLOR SWIFT"))
     waitmessage
     releaseall
 }
@@ -345,7 +337,7 @@ script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit {
         applymovement (10, moves(walk_fast_right walk_fast_down face_left))
         waitmovement
         applymovement(LOCALID_PLAYER, moves(face_right))
-        msgbox(format("I TOLD YOU TO GET SOME BOXES!!\pNOT WANDER AROUND IN MY SECRET LA.. I MEAN STORAGE ROOM!!\pGET THE FUCK OUT!!"))
+        msgbox(format("{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}I TOLD YOU TO GET SOME BOXES!!\pNOT WANDER AROUND IN MY SECRET LA.. I MEAN STORAGE ROOM!!\pGET THE FUCK OUT!!"))
         waitmessage
         fadescreen(FADE_TO_BLACK)
         warpsilent (MAP_ERP_CITY, 0)
@@ -377,7 +369,7 @@ script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit {
         applymovement (10, moves(walk_fast_down face_right))
         waitmovement
         applymovement(LOCALID_PLAYER, moves(face_left))
-        msgbox(format("I TOLD YOU TO GET SOME BOXES!!\pNOT WANDER AROUND IN MY SECRET LA.. I MEAN STORAGE ROOM!!\pGET THE FUCK OUT!!"))
+        msgbox(format("{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}I TOLD YOU TO GET SOME BOXES!!\pNOT WANDER AROUND IN MY SECRET LA.. I MEAN STORAGE ROOM!!\pGET THE FUCK OUT!!"))
         waitmessage
         fadescreen(FADE_TO_BLACK)
         warpsilent (MAP_ERP_CITY, 0)

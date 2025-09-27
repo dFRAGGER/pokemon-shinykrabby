@@ -18,7 +18,8 @@ Maasje_PokemonCenter_2F_Red::
 
 Maasje_PokemonCenter_2F_Red_Text_0:
 # 6 "data/maps/Maasje_PokemonCenter_2F/scripts.pory"
-	.string "Hi there, I'm the creator of this game.\p"
+	.string "{COLOR GREEN}Gamemaker: {COLOR DARK_GRAY}Hi there, I'm the creator of\n"
+	.string "this game.\p"
 	.string "I hope you're enjoying it so far!\p"
 	.string "This game, its characters, maps, and\n"
 	.string "plot, is based on a real-life group of\l"

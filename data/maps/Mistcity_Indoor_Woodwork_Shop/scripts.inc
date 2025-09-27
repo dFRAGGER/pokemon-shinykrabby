@@ -163,7 +163,7 @@ Mistcity_Indoor_Woodwork_Shop_Silas_Text_0:
 	.string "Hello there.\p"
 	.string "Welcome to my workshop.\p"
 	.string "Or what's left of it.\p"
-	.string "I'm Silas.\p"
+	.string "I'm {COLOR GREEN}Silas{COLOR DARK_GRAY}.\p"
 	.string "I make my living carving figures from\n"
 	.string "the fallen branches in the Whisperwood\l"
 	.string "Grove.\p"
@@ -176,7 +176,7 @@ Mistcity_Indoor_Woodwork_Shop_Silas_Text_0:
 
 Mistcity_Indoor_Woodwork_Shop_Silas_Text_1:
 # 13 "data/maps/Mistcity_Indoor_Woodwork_Shop/scripts.pory"
-	.string "Wait, it's you!\p"
+	.string "{COLOR GREEN}Woodworker Silas{COLOR DARK_GRAY}: Wait, it's you!\p"
 	.string "I heard what you did!\p"
 	.string "You stood up to them!\p"
 	.string "The path to the grove... is it really\n"
@@ -206,13 +206,14 @@ Mistcity_Indoor_Woodwork_Shop_Silas_Text_3:
 
 Mistcity_Indoor_Woodwork_Shop_Silas_Text_4:
 # 30 "data/maps/Mistcity_Indoor_Woodwork_Shop/scripts.pory"
-	.string "The grove is beautiful, isn't it? Please\n"
-	.string "be careful looking for that Mosswood.\l"
-	.string "The oldest trees are sacred.$"
+	.string "{COLOR GREEN}Woodworker Silas{COLOR DARK_GRAY}: The grove is\n"
+	.string "beautiful, isn't it? Please be careful\l"
+	.string "looking for that Mosswood. The oldest\l"
+	.string "trees are sacred.$"
 
 Mistcity_Indoor_Woodwork_Shop_Silas_Text_5:
 # 36 "data/maps/Mistcity_Indoor_Woodwork_Shop/scripts.pory"
-	.string "You found it!\p"
+	.string "{COLOR GREEN}Woodworker Silas{COLOR DARK_GRAY}: You found it!\p"
 	.string "This is incredible! The grain, the\n"
 	.string "colour... it's perfect!\p"
 	.string "I can finally complete my work. I am\n"
@@ -228,14 +229,17 @@ Mistcity_Indoor_Woodwork_Shop_Silas_Text_6:
 
 Mistcity_Indoor_Woodwork_Shop_Silas_Text_7:
 # 47 "data/maps/Mistcity_Indoor_Woodwork_Shop/scripts.pory"
-	.string "Thank you so much for everything you\n"
-	.string "did for me, my shop is thriving again!$"
+	.string "{COLOR GREEN}Woodworker Silas{COLOR DARK_GRAY}: Thank you so much for\n"
+	.string "everything you did for me, my shop is\l"
+	.string "thriving again!$"
 
 Mistcity_Indoor_Woodwork_Shop_daughter_Text_0:
 # 59 "data/maps/Mistcity_Indoor_Woodwork_Shop/scripts.pory"
-	.string "Grandpa can't make the little wooden\n"
-	.string "Teddiursas anymore... It makes me sad.$"
+	.string "{COLOR RED}Grandchild{COLOR DARK_GRAY}: Grandpa can't make the\n"
+	.string "little wooden Teddiursas anymore... It\l"
+	.string "makes me sad.$"
 
 Mistcity_Indoor_Woodwork_Shop_daughter_Text_1:
 # 62 "data/maps/Mistcity_Indoor_Woodwork_Shop/scripts.pory"
-	.string "Grandpa is happily carving wood again!$"
+	.string "{COLOR RED}Grandchild{COLOR DARK_GRAY}: Grandpa is happily carving\n"
+	.string "wood again!$"

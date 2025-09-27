@@ -14,11 +14,11 @@ script LabJariIndoorStorage_Eventscript_Intern_Cave {
     playse(SE_PIN)
     applymovement(1, moves(reveal_trainer emote_exclamation_mark jump_in_place_down))
     waitmovement
-    msgbox (format("Uhm... I'm just an intern... just putting up this big poster of this beautifull rock formation.... A hole in the wall??? Not sure what you are talking about? Nothing to see here..."))
+    msgbox (format("{COLOR RED}Young intern: {COLOR DARK_GRAY}Uhm... I'm just an intern... just putting up this big poster of this beautifull rock formation.... A hole in the wall??? Not sure what you are talking about? Nothing to see here..."))
     waitmessage
     setvar(VAR_TEMP_0, 1)}
     else {
-        msgbox(format("Like I said, nothing to see here..... just a regular rock wall... with a few dents here and there..."))
+        msgbox(format("{COLOR RED}Young intern: {COLOR DARK_GRAY}Like I said, nothing to see here..... just a regular rock wall... with a few dents here and there..."))
     }
     releaseall
 }

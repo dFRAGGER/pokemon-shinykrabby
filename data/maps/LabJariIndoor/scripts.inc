@@ -447,14 +447,15 @@ LabJariIndoor_Eventscript_Barry_Birds_Movement_16:
 
 LabJariIndoor_Eventscript_Birds_Pokemon_Check_Text_0:
 # 7 "data/maps/LabJariIndoor/scripts.pory"
-	.string "...WHY ARE YOU STILL HERE? BETTER GET\n"
-	.string "TO THAT SCRUB OF A FRIEND CALLED JAKUB\l"
-	.string "IN THE NEXT TOWN! HE PROBABLY KNOWS\l"
-	.string "HOW TO CATCH SOME POKEMON!$"
+	.string "{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}...WHY ARE YOU STILL HERE?\n"
+	.string "BETTER GET TO THAT SCRUB OF A FRIEND\l"
+	.string "CALLED JAKUB IN THE NEXT TOWN! HE\l"
+	.string "PROBABLY KNOWS HOW TO CATCH SOME\l"
+	.string "POKEMON!$"
 
 LabJariIndoor_Eventscript_Barry_Birds_Text_0:
 # 38 "data/maps/LabJariIndoor/scripts.pory"
-	.string "SO WHO ARE YOU?\p"
+	.string "{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}SO WHO ARE YOU?\p"
 	.string "...\p"
 	.string "YOU WANT TO BECOME MY INTERN?\p"
 	.string "WELL TOO LATE BOY!!\p"
@@ -521,14 +522,15 @@ LabJariIndoor_Eventscript_Barry_Birds_Text_6:
 
 LabJariIndoor_Eventscript_Barry_Birds_Text_7:
 # 102 "data/maps/LabJariIndoor/scripts.pory"
-	.string "WHERE DO YOU THINK YOU ARE GOING?\p"
+	.string "{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}WHERE DO YOU THINK YOU ARE\n"
+	.string "GOING?\p"
 	.string "GET TO THE BACK AND GET THOSE BOXES\n"
 	.string "HERE!!$"
 
 LabJariIndoor_Eventscript_Birds_Convo_Text_0:
 # 118 "data/maps/LabJariIndoor/scripts.pory"
-	.string "DON'T BOTHER US, I'M EXPLAINING TO\n"
-	.string "BARRY HOW IMPORTANT DNA SAMPL... PIG\l"
-	.string "SENSORS ARE!!\p"
+	.string "{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}DON'T BOTHER US, I'M\n"
+	.string "EXPLAINING TO BARRY HOW IMPORTANT DNA\l"
+	.string "SAMPL... PIG SENSORS ARE!!\p"
 	.string "GET THOSE BOXES OUT OF THE BACK OF THE\n"
 	.string "STORAGE ROOM!!$"

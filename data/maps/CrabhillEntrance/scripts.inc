@@ -143,7 +143,8 @@ Crabhill_Wall_Carving_Text_0:
 
 Crabhill_Hiker_Hint_Text_0:
 # 59 "data/maps/CrabhillEntrance/scripts.pory"
-	.string "I have been in this cave for hours.\p"
+	.string "{COLOR RED}Hiker: {COLOR DARK_GRAY}I have been in this cave for\n"
+	.string "hours.\p"
 	.string "The more time I spend in here the more I\n"
 	.string "realize going backwards might be going\l"
 	.string "forward, and the other way around.\p"

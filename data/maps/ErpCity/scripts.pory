@@ -23,7 +23,7 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     applymovement(2, moves(walk_fast_down walk_fast_left))
     applymovement(5, moves(walk_down*2 face_left))
     waitmovement
-    msgbox(format("WHO DO YOU THINK YOU ARE? TAYLOR SWIFT OR SOMETHING?\pActually.... I love Taylor Swift hehe.. ANYWAYS!!\pI TOLD YOU TO NOT SNIFF AROUND IN MY SECRET LA... I MEAN STORAGE ROOM!!\p...YOU DIDN'T STEAL ANYTHING RIGHT? RIGHT??!!\pIT DOESN'T REALLY MATTER ANYWAYS, YOU ARE FIRED!!\pI GOT MY SQUIRKY LITTLE INTERN CALLED BARRY ALREADY, HE IS LIVING THE DREAM..."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}WHO DO YOU THINK YOU ARE? TAYLOR SWIFT OR SOMETHING?\pActually.... I love Taylor Swift hehe.. ANYWAYS!!\pI TOLD YOU TO NOT SNIFF AROUND IN MY SECRET LA... I MEAN STORAGE ROOM!!\p...YOU DIDN'T STEAL ANYTHING RIGHT? RIGHT??!!\pIT DOESN'T REALLY MATTER ANYWAYS, YOU ARE FIRED!!\pI GOT MY SQUIRKY LITTLE INTERN CALLED BARRY ALREADY, HE IS LIVING THE DREAM..."),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
     applymovement(5, moves(emote_question_mark))
@@ -61,12 +61,12 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     applymovement(5, moves(walk_fast_left face_up))
     applymovement(2, moves(face_down))
     waitmovement
-    msgbox(format("HE BREAKS INTO YOUR LAB AND GETS A POKEDEX, POKEBALLS AND A MISSION TO BECOME A POKEMON MASTER?\pWHAT DID I GET?\p A FUCKING MAGIKARP?\pTHE MOST USELESS POKEMON EVER IN EXISTENCE?\pI QUIT!!\p FUCK YOU!!"))
+    msgbox(format("{COLOR BLUE}Barry: {COLOR DARK_GRAY}HE BREAKS INTO YOUR LAB AND GETS A POKEDEX, POKEBALLS AND A MISSION TO BECOME A POKEMON MASTER?\pWHAT DID I GET?\p A FUCKING MAGIKARP?\pTHE MOST USELESS POKEMON EVER IN EXISTENCE?\pI QUIT!!\p FUCK YOU!!"))
     waitmessage
     applymovement(5, moves(walk_fast_left face_up))
     applymovement(LOCALID_PLAYER, moves(face_down))
     waitmovement
-    msgbox(format("...\pYOU??\pA POKEMON MASTER?\pDON'T LET ME LAUGH\pI WILL TAKE EVERY CHANCE TO PREVENT THAT FROM HAPPENING!"))
+    msgbox(format("{COLOR BLUE}Barry: {COLOR DARK_GRAY}...\pYOU??\pA POKEMON MASTER?\pDON'T LET ME LAUGH\pI WILL TAKE EVERY CHANCE TO PREVENT THAT FROM HAPPENING!"))
     waitmessage
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_question_mark face_left))
@@ -77,12 +77,12 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     setflag (FLAG_KICKED_OUT_LAB_CONVO)
     setvar(VAR_RECIEVED_STARTER_POKEMON, 2)
     clearflag(FLAG_HIDE_INTERN_BIRDS_LAB)
-    msgbox(format("...I'd probably should search for another intern right now..."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}...I'd probably should search for another intern right now..."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
     applymovement(LOCALID_PLAYER, moves(face_right))
     waitmovement
-    msgbox(format("OH BY THE WAY... I HAVE AN OLD FRIEND IN THE NEXT TOWN WHO COULD HELP YOU CATCH A WONDERFULL SPECIE...\pHIS NAME IS JAKUB... HE USED TO LIVE IN THIS TOWN... BUT THE TRAITOR MOVED TO MAASJE...\pNOW WHAT ARE YOU WAITING FOR!?\pGET THAT DATA FOR ME... I MEAN US.\p AND STAY AWAY FROM MISPOES...\p HE DOESN'T LIKE ME...\p I MEAN YOU OFCOURSE!!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}OH BY THE WAY... I HAVE AN OLD FRIEND IN THE NEXT TOWN WHO COULD HELP YOU CATCH A WONDERFULL SPECIE...\pHIS NAME IS JAKUB... HE USED TO LIVE IN THIS TOWN... BUT THE TRAITOR MOVED TO MAASJE...\pNOW WHAT ARE YOU WAITING FOR!?\pGET THAT DATA FOR ME... I MEAN US.\p AND STAY AWAY FROM MISPOES...\p HE DOESN'T LIKE ME...\p I MEAN YOU OFCOURSE!!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER, moves(jump_left face_left))
     waitmovement
@@ -113,7 +113,7 @@ script ErpCity_ProfessorBirds_After_Speech {
 
 script ErpCity_Mispoes_Miauw {
     lockall
-    msgbox(format("Mispoes: Miaaaauw... KSSSSJSJJGGGG"))
+    msgbox(format("{COLOR RED}Mispoes: {COLOR DARK_GRAY}Miaaaauw... KSSSSJSJJGGGG"))
     waitmessage
     releaseall
 }
@@ -129,7 +129,7 @@ script ErpCity_Hiker_Cave {
     lockall
     applymovement(5, moves(face_player)    
     )
-    msgbox(format("The cave is not accessible at this time.\p Recent tremors from a unknown source have caused massive rock slides.\p The path is too dangerous."))
+    msgbox(format("{COLOR RED}Hiker: {COLOR DARK_GRAY}The cave is not accessible at this time.\p Recent tremors from a unknown source have caused massive rock slides.\p The path is too dangerous."))
     waitmessage
     releaseall
 }
@@ -171,7 +171,7 @@ script ErpCity_Receive_Running_Shoes {
     addobject(4)
     applymovement(4, moves(walk_down face_player))
     waitmovement
-    msgbox(format("Honey, I almost forgot!\pIf you want to make an impression on the professor you should wear some different shoes.\pAs a surprise I've bought a new pair for you!"))
+    msgbox(format("{COLOR RED}Mom: {COLOR DARK_GRAY}Honey, I almost forgot!\pIf you want to make an impression on the professor you should wear some different shoes.\pAs a surprise I've bought a new pair for you!"))
     waitmessage
     setflag(FLAG_RECEIVED_RUNNING_SHOES)
     playfanfare(MUS_OBTAIN_ITEM)

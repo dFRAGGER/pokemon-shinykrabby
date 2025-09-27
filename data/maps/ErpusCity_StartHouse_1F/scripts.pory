@@ -25,7 +25,7 @@ script Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech {
     if(var(VAR_TEMP_0)== 9 && var(VAR_TEMP_1)== 3) {
         applymovement(LOCALID_PLAYER, moves(walk_down*3 walk_left*4))
     }
-    msgbox(format("There you are! Finally awake.\p Getting up so early for the move must have completely exhausted you.\p You've slept through the whole morning.\p"),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR RED}Mom: {COLOR DARK_GRAY}There you are! Finally awake.\p Getting up so early for the move must have completely exhausted you.\p You've slept through the whole morning.\p"),MSGBOX_AUTOCLOSE)
     waitmessage
     msgbox(format("Here, I've got some breakfast for you. That should fix you right up!"),MSGBOX_AUTOCLOSE)
     waitmessage
@@ -47,7 +47,7 @@ script Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech {
         playse(SE_PIN)
         applymovement(LOCALID_PLAYER,moves(emote_exclamation_mark))
         waitmovement        
-        msgbox(format("{PLAYER} I won't say it again, come on, the lab will be fun for you!"),MSGBOX_AUTOCLOSE)
+        msgbox(format("{COLOR RED}Mom: {COLOR DARK_GRAY}{PLAYER} I won't say it again, come on, the lab will be fun for you!"),MSGBOX_AUTOCLOSE)
         waitmessage
         applymovement(LOCALID_PLAYER, moves(walk_down))
         waitmovement
@@ -61,11 +61,11 @@ script Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech {
     lock
     faceplayer
     if(flag(FLAG_SYS_NATIONAL_DEX)==FALSE){
-    msgbox(format("Well, what are you waiting for my boy.\p I'll see you at dinner!"))
+    msgbox(format("{COLOR RED}Mom: {COLOR DARK_GRAY}Well, what are you waiting for my boy.\p I'll see you at dinner!"))
     waitmessage
     }
     else {
-        msgbox(format("So, you are going on an adventure?\pI knew you had it in you, dad would have been proud!\pLet me know if you ever need rest!"))
+        msgbox(format("{COLOR RED}Mom: {COLOR DARK_GRAY}So, you are going on an adventure?\pI knew you had it in you, dad would have been proud!\pLet me know if you ever need rest!"))
         waitmessage
         msgbox(format("Do you need rest right now?"),MSGBOX_YESNO)
         waitmessage

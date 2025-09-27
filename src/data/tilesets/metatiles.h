@@ -219,3 +219,9 @@ const u16 gMetatileAttributes_AutumnRuins[] = INCBIN_U16("data/tilesets/secondar
 
 const u16 gMetatiles_PrimaryTest[] = INCBIN_U16("data/tilesets/primary/primary_test/metatiles.bin");
 const u16 gMetatileAttributes_PrimaryTest[] = INCBIN_U16("data/tilesets/primary/primary_test/metatile_attributes.bin");
+
+const u16 gMetatiles_Johto_General[] = INCBIN_U16("data/tilesets/primary/johto_general/metatiles.bin");
+const u16 gMetatileAttributes_Johto_General[] = INCBIN_U16("data/tilesets/primary/johto_general/metatile_attributes.bin");
+
+const u16 gMetatiles_KantoGeneral[] = INCBIN_U16("data/tilesets/primary/kanto_general/metatiles.bin");
+const u16 gMetatileAttributes_KantoGeneral[] = INCBIN_U16("data/tilesets/primary/kanto_general/metatile_attributes.bin");

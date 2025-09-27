@@ -223,7 +223,7 @@ Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0:
 	.string "Watch your step, a new batch of\n"
 	.string "mushrooms just arrived from the\l"
 	.string "forest!\p"
-	.string "I'm Leaf! I'm a mycologist!\p"
+	.string "I'm {COLOR GREEN}Leaf{COLOR DARK_GRAY}! I'm a mycologist!\p"
 	.string "That means I LOVE MUSHROOMS!\n"
 	.string "And this forest is a PARADISE!\p"
 	.string "Say, you're a trainer, right?!\p"
@@ -237,7 +237,7 @@ Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0:
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_1:
 # 14 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	.string "Well!!\p"
+	.string "{COLOR GREEN}Leaf{COLOR DARK_GRAY}: Well!!\p"
 	.string "Have you found any new mushroom\n"
 	.string "Pokemon?$"
 
@@ -333,7 +333,7 @@ Mistcity_Indoor_MushroomShop_MushroomGirl_Text_15:
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_16:
 # 81 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	.string "Thank you so much for helping me\n"
+	.string "{COLOR GREEN}Leaf{COLOR DARK_GRAY}: Thank you so much for helping me\n"
 	.string "complete my Fungus Index!\p"
 	.string "Are you enjoying those mushrooms I\n"
 	.string "gave you?$"

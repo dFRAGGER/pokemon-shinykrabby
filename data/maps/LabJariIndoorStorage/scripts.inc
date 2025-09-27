@@ -80,17 +80,17 @@ LabJariIndoorStorage_Eventscript_BoxesAssignment_Movement_0:
 
 LabJariIndoorStorage_Eventscript_Intern_Cave_Text_0:
 # 17 "data/maps/LabJariIndoorStorage/scripts.pory"
-	.string "Uhm... I'm just an intern... just putting\n"
-	.string "up this big poster of this beautifull\l"
-	.string "rock formation.... A hole in the wall???\l"
-	.string "Not sure what you are talking about?\l"
-	.string "Nothing to see here...$"
+	.string "{COLOR RED}Young intern: {COLOR DARK_GRAY}Uhm... I'm just an intern...\n"
+	.string "just putting up this big poster of this\l"
+	.string "beautifull rock formation.... A hole in\l"
+	.string "the wall??? Not sure what you are\l"
+	.string "talking about? Nothing to see here...$"
 
 LabJariIndoorStorage_Eventscript_Intern_Cave_Text_1:
 # 21 "data/maps/LabJariIndoorStorage/scripts.pory"
-	.string "Like I said, nothing to see here..... just\n"
-	.string "a regular rock wall... with a few dents\l"
-	.string "here and there...$"
+	.string "{COLOR RED}Young intern: {COLOR DARK_GRAY}Like I said, nothing to\n"
+	.string "see here..... just a regular rock wall...\l"
+	.string "with a few dents here and there...$"
 
 LabJariIndoorStorage_Eventscript_BoxesAssignment_Text_0:
 # 28 "data/maps/LabJariIndoorStorage/scripts.pory"

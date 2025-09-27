@@ -10,9 +10,24 @@ script ErpCity_Starthouse1F_Mom_Calling {
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER,moves(emote_exclamation_mark))
     waitmovement
-    msgbox(format("HONEY!!\pWAKE UP!!\pI NEED YOU DOWNSTAIRS!!"))
+    msgbox(format("{COLOR RED}Mom: {COLOR DARK_GRAY}HONEY!!\pWAKE UP!!\pI NEED YOU DOWNSTAIRS!!"))
     waitmessage
     release
     end
       
+}
+
+script ErpCity_Starthouse1F_Mom_Clock {
+    if(!flag(FLAG_SET_WALL_CLOCK)){
+        lock
+        msgbox(format("{COLOR RED}Mom: {COLOR DARK_GRAY}OH, AND DON'T FORGET YOUR CLOCK!\pI JUST PUT NEW BATTERIES IN THEM!"))
+        waitmessage
+        applymovement(LOCALID_PLAYER, moves(walk_left))
+        waitmovement
+        release
+        end
+    }
+    else{
+        end
+    }
 }

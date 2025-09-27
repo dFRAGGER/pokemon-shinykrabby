@@ -3,7 +3,7 @@ mapscripts Indoor_Maasje_Home1_MapScripts {}
 script Indoor_Maasje_Home1_Convo {
     lock
     faceplayer
-    msgbox(format("I might not look like it, but I used to sail the world.\p Crossing the seven seas I saw many different species of pokemon. \p One time, after a long time on sea, me and my crew came across an island which was covered in a thick fog.\p We only saw it for a brief moment, but I'm sure it was not a halucination."))
+    msgbox(format("{COLOR RED}Old woman: {COLOR DARK_GRAY}I might not look like it, but I used to sail the world.\p Crossing the seven seas I saw many different species of pokemon. \p One time, after a long time on sea, me and my crew came across an island which was covered in a thick fog.\p We only saw it for a brief moment, but I'm sure it was not a halucination."))
     waitmessage
     release
 }
@@ -11,7 +11,7 @@ script Indoor_Maasje_Home1_Convo {
 script Indoor_Maasje_Home1_Kid {
     lock
     faceplayer
-    msgbox(format("Grandma is getting more forgetfull everyday.\p Although sometimes, she seems to have a clear moment."))
+    msgbox(format("{COLOR RED}Little child: {COLOR DARK_GRAY}Grandma is getting more forgetfull everyday.\p Although sometimes, she seems to have a clear moment."))
     waitmessage
     release
 }

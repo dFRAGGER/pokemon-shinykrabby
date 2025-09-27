@@ -874,3 +874,25 @@ const struct Tileset gTileset_PrimaryTest =
     .metatileAttributes = gMetatileAttributes_PrimaryTest,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Johto_General =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Johto_General,
+    .palettes = gTilesetPalettes_Johto_General,
+    .metatiles = gMetatiles_Johto_General,
+    .metatileAttributes = gMetatileAttributes_Johto_General,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_KantoGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_KantoGeneral,
+    .palettes = gTilesetPalettes_KantoGeneral,
+    .metatiles = gMetatiles_KantoGeneral,
+    .metatileAttributes = gMetatileAttributes_KantoGeneral,
+    .callback = NULL,
+};

@@ -215,7 +215,8 @@ Maasje_Gym_PeteLongfellow_Defeated_Movement_1:
 
 Maasje_Gym_Introduction_Text_0:
 # 11 "data/maps/Maasje_Gym/scripts.pory"
-	.string "Hi, welcome to the Maasje Pokemon Gym.\p"
+	.string "{COLOR RED}Gym guide: {COLOR DARK_GRAY}Hi, welcome to the Maasje\n"
+	.string "Pokemon Gym.\p"
 	.string "The gym leader and trainers use sand &\n"
 	.string "ground pokemon.\p"
 	.string "Grass pokemon seem to have an edge,\n"
@@ -237,7 +238,8 @@ Maasje_Gym_Introduction_Text_1:
 
 Maasje_Gym_Introduction_Text_2:
 # 20 "data/maps/Maasje_Gym/scripts.pory"
-	.string "Hi, welcome to the Maasje Pokemon Gym.\p"
+	.string "{COLOR RED}Gym guide: {COLOR DARK_GRAY}Hi, welcome to the Maasje\n"
+	.string "Pokemon Gym.\p"
 	.string "The gym leader and trainers use sand &\n"
 	.string "ground pokemon.\p"
 	.string "Grass pokemon seem to have an edge,\n"
@@ -254,14 +256,15 @@ Maasje_Gym_Introduction_Text_2:
 
 Maasje_Gym_Introduction_Text_3:
 # 25 "data/maps/Maasje_Gym/scripts.pory"
-	.string "Congrats on getting your badge!\p"
+	.string "{COLOR RED}Gym guide: {COLOR DARK_GRAY}Congrats on getting your\n"
+	.string "badge!\p"
 	.string "Pete looked mad, I don't think he is\n"
 	.string "coming back.$"
 
 Maasje_Gym_PeteLongfellow_Defeated_Text_0:
 # 37 "data/maps/Maasje_Gym/scripts.pory"
-	.string "In geography we call this fulgurite,\n"
-	.string "just pure luck.\p"
+	.string "{COLOR BLUE}Pete Longfellow: {COLOR DARK_GRAY}In geography we call\n"
+	.string "this fulgurite, just pure luck.\p"
 	.string "Only regirous order and obedience will\n"
 	.string "help you against The Faculty.\p"
 	.string "Nothing else beats it.\p"
@@ -296,19 +299,20 @@ Maasje_Gym_PeteLongfellow_Defeated_Text_3:
 
 Maasje_Gym_Eventscript_Bram_Text_0:
 # 84 "data/maps/Maasje_Gym/scripts.pory"
-	.string "The faculty is a strong faction, almost\n"
-	.string "as strong as those chemical bonds I\l"
-	.string "used to create back in the day.$"
+	.string "{COLOR BLUE}Bram of the Millcount: {COLOR DARK_GRAY}The faculty is a\n"
+	.string "strong faction, almost as strong as\l"
+	.string "those chemical bonds I used to create\l"
+	.string "back in the day.$"
 
 Maasje_Gym_Eventscript_Rob_Text_0:
 # 98 "data/maps/Maasje_Gym/scripts.pory"
-	.string "The faculty is all about structure, just\n"
-	.string "like the computers I used to fix at my\l"
-	.string "old job.$"
+	.string "{COLOR BLUE}Rob of Erup: {COLOR DARK_GRAY}The faculty is all about\n"
+	.string "structure, just like the computers I\l"
+	.string "used to fix at my old job.$"
 
 Maasje_Gym_PeteLongfellow_Introtext::
 # 62 "data/maps/Maasje_Gym/scripts.pory"
-	.string "Well, well.\p"
+	.string "{COLOR BLUE}Pete Longfellow: {COLOR DARK_GRAY}Well, well.\p"
 	.string "Look who we got here.\p"
 	.string "Let me learn you something about\n"
 	.string "tectonic plates and the glorious power\l"
@@ -316,24 +320,29 @@ Maasje_Gym_PeteLongfellow_Introtext::
 
 Maasje_Gym_PeteLongfellow_Defeattext::
 # 66 "data/maps/Maasje_Gym/scripts.pory"
-	.string "I might be getting to old for this.\p"
+	.string "{COLOR BLUE}Pete Longfellow: {COLOR DARK_GRAY}I might be getting to\n"
+	.string "old for this.\p"
 	.string "Maybe my skills have finally eroded with\n"
 	.string "the wind.$"
 
 Maasje_Gym_Introtext_Trainer_Bram::
 # 88 "data/maps/Maasje_Gym/scripts.pory"
-	.string "Everybody calls me an assistant.\n"
+	.string "{COLOR BLUE}Bram of the Millcount: {COLOR DARK_GRAY}Everybody calls\n"
+	.string "me an assistant.\n"
 	.string "I call myself a TOA!!$"
 
 Maasje_Gym_Losetext_Trainer_Bram::
 # 92 "data/maps/Maasje_Gym/scripts.pory"
-	.string "Maybe I'm just an assitant afterall.$"
+	.string "{COLOR BLUE}Bram of the Millcount: {COLOR DARK_GRAY}Maybe I'm just an\n"
+	.string "assitant afterall.$"
 
 Maasje_Gym_Introtext_Trainer_Rob::
 # 102 "data/maps/Maasje_Gym/scripts.pory"
-	.string "I used to be a boring IT guy.\n"
+	.string "{COLOR BLUE}Rob of Erup: {COLOR DARK_GRAY}I used to be a boring IT\n"
+	.string "guy.\n"
 	.string "Now I am the bug in the system!!$"
 
 Maasje_Gym_Losetext_Trainer_Rob::
 # 106 "data/maps/Maasje_Gym/scripts.pory"
-	.string "It seems like my strategy got hacked.$"
+	.string "{COLOR BLUE}Rob of Erup: {COLOR DARK_GRAY}It seems like my strategy\n"
+	.string "got hacked.$"

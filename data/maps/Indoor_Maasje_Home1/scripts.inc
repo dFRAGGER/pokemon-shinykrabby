@@ -32,8 +32,8 @@ Indoor_Maasje_Home1_Kid::
 
 Indoor_Maasje_Home1_Convo_Text_0:
 # 6 "data/maps/Indoor_Maasje_Home1/scripts.pory"
-	.string "I might not look like it, but I used to\n"
-	.string "sail the world.\p"
+	.string "{COLOR RED}Old woman: {COLOR DARK_GRAY}I might not look like it, but\n"
+	.string "I used to sail the world.\p"
 	.string "Crossing the seven seas I saw many\n"
 	.string "different species of pokemon.\p"
 	.string "One time, after a long time on sea, me\n"
@@ -44,7 +44,7 @@ Indoor_Maasje_Home1_Convo_Text_0:
 
 Indoor_Maasje_Home1_Kid_Text_0:
 # 14 "data/maps/Indoor_Maasje_Home1/scripts.pory"
-	.string "Grandma is getting more forgetfull\n"
-	.string "everyday.\p"
+	.string "{COLOR RED}Little child: {COLOR DARK_GRAY}Grandma is getting more\n"
+	.string "forgetfull everyday.\p"
 	.string "Although sometimes, she seems to have\n"
 	.string "a clear moment.$"

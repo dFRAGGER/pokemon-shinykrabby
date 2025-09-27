@@ -71,14 +71,14 @@ script Maasje_Advice_Fisher_Crabhill {
     lock
     applymovement(60, moves(face_player))
     if(flag(FLAG_RECEIVED_ESCAPE_ROPE) == FALSE){
-    msgbox(format("Whoa there, planning on going in?\pThat place can be a tricky maze. Here, take this with you, just in case."))
+    msgbox(format("{COLOR RED}Fisher: {COLOR DARK_GRAY}Whoa there, planning on going in?\pThat place can be a tricky maze. Here, take this with you, just in case."))
     giveitem(ITEM_ESCAPE_ROPE)
     setflag(FLAG_RECEIVED_ESCAPE_ROPE)
     msgbox(format("It's an Escape Rope. A real lifesaver if you ever feel hopelessly lost!"))
     waitmessage
     }
     else {
-        msgbox(format("Can you believe this whole place was once an underwater reef?\p Thanks to the tireless work of crabs, the reef grew over time, creating this safe haven for Pokémon."))
+        msgbox(format("{COLOR RED}Fisher: {COLOR DARK_GRAY}Can you believe this whole place was once an underwater reef?\p Thanks to the tireless work of crabs, the reef grew over time, creating this safe haven for Pokémon."))
         waitmessage
     }
     release
@@ -346,12 +346,12 @@ script Maasje_Eventscript_Maniac {
     lock
     faceplayer
     if(flag(FLAG_SHINY_KRABBY_ENCOUNTER)==FALSE){
-    msgbox(format("This town is overrun by Krabby's, everybody is scared to go outside!"))
+    msgbox(format("{COLOR RED}Young man: {COLOR DARK_GRAY}This town is overrun by Krabby's, everybody is scared to go outside!\pI still need groceries though, so I'm taking the risk!"))
     release
     end
     }
     else{
-        msgbox(format("Everybody is still shook by the infestation by those Krabby's.\p You won't seem them outside very often.\p Hopefully one day everyting will be back to normal."))
+        msgbox(format("{COLOR RED}Young man: {COLOR DARK_GRAY}Everybody is still shook by the infestation by those Krabby's.\p You won't seem them outside very often.\p Hopefully one day everyting will be back to normal."))
         release
         end
     }

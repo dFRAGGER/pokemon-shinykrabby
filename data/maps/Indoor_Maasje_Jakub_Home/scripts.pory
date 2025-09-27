@@ -4,15 +4,15 @@ script Indoor_Maasje_Jakub_Home_JakubConvo {
     lock
     applymovement(3, moves(face_player))
     if (flag(FLAG_SHINY_KRABBY_ENCOUNTER) == FALSE && flag(FLAG_JAKUB_CONVO) == FALSE) {
-    msgbox(format("Hi there, my name is Jacob. Welcome to our home!\p...Professor Birds sent you?\p To catch rare species of Pokémon?\p And I can help you with that???\p That old fool...\p I don't have the time to help you with that, I'm afraid.\p I'm the one who needs help right now...\p You see this whole mess? The entire town is overrun.\p And these aren't normal Krabby. They're agitated, aggressive... lost.\p This all started when that new gym leader, Pete Longfellow, showed up.\p Rumor has it that he is part of a secret group called The Faculty.\p Apparently, this group is obsessed with... 'structure'. They talk about 'potential' and 'discipline', but something about them feels wrong.\p They look at Pokémon not as partners, but as things to be optimized, like numbers in an equation.\p The thing is... Krabby is my favorite Pokémon!\p I've spent my whole life here watching them, and I've never seen anything like this.\p It feels so... wrong.\p It's like the soul of the town is sick.\p I've heard strange humming sounds coming from Crabhill, just north-west of here.\p Rumor has it there's a unique Krabby deep in the caves there, the alpha of the whole colony.\p If The Faculty is involved, I'm sure they're targeting the leader to cause all this chaos.\p I don't know what their grand plan is, but this feels like the first step.\p Please, can you go to Krabby Hill and investigate? Find that alpha Krabby and see what's happening to it.\p Whatever they're doing, you need to be the one to stop it.\p Freeing their leader is the only way to calm the colony. You'd be helping me a lot... and you'd be helping them."))
+    msgbox(format("Hi there, my name is {COLOR GREEN}Jacob{COLOR DARK_GRAY}. Welcome to our home!\p...Professor Birds sent you?\p To catch rare species of Pokémon?\p And I can help you with that???\p That old fool...\p I don't have the time to help you with that, I'm afraid.\p I'm the one who needs help right now...\p You see this whole mess? The entire town is overrun.\p And these aren't normal Krabby. They're agitated, aggressive... lost.\p This all started when that new gym leader, Pete Longfellow, showed up.\p Rumor has it that he is part of a secret group called The Faculty.\p Apparently, this group is obsessed with... 'structure'. They talk about 'potential' and 'discipline', but something about them feels wrong.\p They look at Pokémon not as partners, but as things to be optimized, like numbers in an equation.\p The thing is... Krabby is my favorite Pokémon!\p I've spent my whole life here watching them, and I've never seen anything like this.\p It feels so... wrong.\p It's like the soul of the town is sick.\p I've heard strange humming sounds coming from Crabhill, just north-west of here.\p Rumor has it there's a unique Krabby deep in the caves there, the alpha of the whole colony.\p If The Faculty is involved, I'm sure they're targeting the leader to cause all this chaos.\p I don't know what their grand plan is, but this feels like the first step.\p Please, can you go to Krabby Hill and investigate? Find that alpha Krabby and see what's happening to it.\p Whatever they're doing, you need to be the one to stop it.\p Freeing their leader is the only way to calm the colony. You'd be helping me a lot... and you'd be helping them."))
     waitmessage
     setflag(FLAG_JAKUB_CONVO)
     }
     if(flag(FLAG_SHINY_KRABBY_ENCOUNTER) == FALSE && flag(FLAG_JAKUB_CONVO) == TRUE){
-        msgbox(format("Please help me and my family, little George can't play outside right now. He has been gaming on his GameBoy all day."))
+        msgbox(format("{COLOR GREEN}Jacob: {COLOR DARK_GRAY}Please help me and my family, little George can't play outside right now. He has been gaming on his GameBoy all day."))
     }
     if (flag(FLAG_SHINY_KRABBY_ENCOUNTER) == TRUE && flag(FLAG_JAKUB_CONVO_2)==FALSE) {
-        msgbox(format("... WHAT??\p You saw the alpha Krabby, and it was a SHINY KRABBY??\p You helped the other Krabby's snap out of their confusion?\p Thank you so much!!\p We, in Maasje, owe you so much!\p Now my son George can go outside and play again!\p Here, take this, as a gift of gratitude:"))
+        msgbox(format("{COLOR GREEN}Jacob: {COLOR DARK_GRAY}... WHAT??\p You saw the alpha Krabby, and it was a SHINY KRABBY??\p You helped the other Krabby's snap out of their confusion?\p Thank you so much!!\p We, in Maasje, owe you so much!\p Now my son George can go outside and play again!\p Here, take this, as a gift of gratitude:"))
         waitmessage
         playfanfare(MUS_OBTAIN_ITEM)
         giveitem(ITEM_HELIX_FOSSIL)
@@ -31,7 +31,7 @@ script Indoor_Maasje_Jakub_Home_JakubConvo {
             applymovement(3, moves(emote_exclamation_mark))
             waitmovement
             delay(60)
-            msgbox(format("GEORGEEE, COME HERE, GET OUTSIDE!!"),MSGBOX_AUTOCLOSE)
+            msgbox(format("{COLOR GREEN}Jacob: {COLOR DARK_GRAY}GEORGEEE, COME HERE, GET OUTSIDE!!"),MSGBOX_AUTOCLOSE)
             delay(60)
             applymovement(3, moves(walk_left walk_down*4 walk_right*7))
             waitmovement
@@ -53,7 +53,7 @@ script Indoor_Maasje_Jakub_Home_JakubConvo {
             applymovement(3, moves(emote_exclamation_mark))
             waitmovement
             delay(60)
-            msgbox(format("GEORGEEE, COME HERE, GET OUTSIDE!!"),MSGBOX_AUTOCLOSE)
+            msgbox(format("{COLOR GREEN}Jacob: {COLOR DARK_GRAY}GEORGEEE, COME HERE, GET OUTSIDE!!"),MSGBOX_AUTOCLOSE)
             delay(60)
             applymovement(3, moves(walk_down*4 walk_right*6))
             waitmovement
@@ -84,7 +84,7 @@ script Indoor_Maasje_Jakub_Home_JakubConvo {
         end
     }
     if (flag(FLAG_SHINY_KRABBY_ENCOUNTER) == TRUE && flag(FLAG_JAKUB_CONVO_2)==TRUE){
-        msgbox(format("Thanks for everything you did!\p George is happily playing outsi... on his gameboy again!\p When you get to Mist City, say hi to my old friend Daan."))
+        msgbox(format("{COLOR GREEN}Jacob: {COLOR DARK_GRAY}Thanks for everything you did!\p George is happily playing outsi... on his gameboy again!\p When you get to Mist City, say hi to my old friend Daan."))
     }
     release
 }
@@ -93,10 +93,10 @@ script Indoor_Maasje_Jakub_Home_SiennaConvo {
     lock
     faceplayer
     if(flag(FLAG_SHINY_KRABBY_ENCOUNTER) == FALSE){
-    msgbox(format("Please help my husband, he has not been the same since these weird Krabby's have been showing up. He hates to see his favorite pokemon being seen as a nuisance."))
+    msgbox(format("{COLOR RED}Sienna: {COLOR DARK_GRAY}Please help my husband, he has not been the same since these weird Krabby's have been showing up. He hates to see his favorite pokemon being seen as a nuisance."))
     }
     else{
-        msgbox(format("Thanks for helping my husband!\p He has been more relaxt since the Krabby's have been acting normal again."))
+        msgbox(format("{COLOR RED}Sienna: {COLOR DARK_GRAY}Thanks for helping my husband!\p He has been more relaxt since the Krabby's have been acting normal again."))
     }
     release
 }
@@ -105,10 +105,10 @@ script Indoor_Maasje_Jakub_Home_GeorgeConvo {
     lock
     faceplayer
     if(flag(FLAG_SHINY_KRABBY_ENCOUNTER) == FALSE){
-    msgbox(format("Dad says that I can't be on my GameBoy the entire time.\p I'm sure he did the same thing back in the day. "))
+    msgbox(format("{COLOR RED}George: {COLOR DARK_GRAY}Dad says that I can't be on my GameBoy the entire time.\p I'm sure he did the same thing back in the day. "))
     }
     else{
-        msgbox(format("Last night I saw my dad play on his own gameboy.\p I'm sure as hell not going outside."))
+        msgbox(format("{COLOR RED}George: {COLOR DARK_GRAY}Last night I saw my dad play on his own gameboy.\p I'm sure as hell not going outside."))
     }
     release
 }

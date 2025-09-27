@@ -8,7 +8,7 @@ script Maasje_Gym_Introduction {
     lock
     if(flag(FLAG_ITEM_FRESH_WATER_GYM1) == FALSE&&flag(FLAG_BADGE01_GET)==FALSE){
             setflag(FLAG_ITEM_FRESH_WATER_GYM1)
-            msgbox(format("Hi, welcome to the Maasje Pokemon Gym.\p The gym leader and trainers use sand & ground pokemon.\p Grass pokemon seem to have an edge, while electric pokemon are not recommended.\p The gym leader is called Pete Longfellow, he used to be a geography teacher.\p He has been training pokemon for a long time but he can be stubborn and emotional.\p Stay cool and calm and you should be good.\p Also have this:"))
+            msgbox(format("{COLOR RED}Gym guide: {COLOR DARK_GRAY}Hi, welcome to the Maasje Pokemon Gym.\p The gym leader and trainers use sand & ground pokemon.\p Grass pokemon seem to have an edge, while electric pokemon are not recommended.\p The gym leader is called Pete Longfellow, he used to be a geography teacher.\p He has been training pokemon for a long time but he can be stubborn and emotional.\p Stay cool and calm and you should be good.\p Also have this:"))
             waitmessage
             giveitem(ITEM_FRESH_WATER)
             waitmessage
@@ -17,12 +17,12 @@ script Maasje_Gym_Introduction {
             release
     }
     if(flag(FLAG_ITEM_FRESH_WATER_GYM1) == TRUE&&flag(FLAG_BADGE01_GET)==FALSE){
-        msgbox(format("Hi, welcome to the Maasje Pokemon Gym.\p The gym leader and trainers use sand & ground pokemon.\p Grass pokemon seem to have an edge, while electric pokemon are not recommended.\p The gym leader is called Pete Longfellow, he used to be a geography teacher.\p He has been training pokemon for a long time but he can be stubborn and emotional.\p Stay cool and calm and you should be good."))
+        msgbox(format("{COLOR RED}Gym guide: {COLOR DARK_GRAY}Hi, welcome to the Maasje Pokemon Gym.\p The gym leader and trainers use sand & ground pokemon.\p Grass pokemon seem to have an edge, while electric pokemon are not recommended.\p The gym leader is called Pete Longfellow, he used to be a geography teacher.\p He has been training pokemon for a long time but he can be stubborn and emotional.\p Stay cool and calm and you should be good."))
         waitmessage
         release
     }
     if(flag(FLAG_ITEM_FRESH_WATER_GYM1) == TRUE&&flag(FLAG_BADGE01_GET)==TRUE){
-        msgbox(format("Congrats on getting your badge!\p Pete looked mad, I don't think he is coming back."))
+        msgbox(format("{COLOR RED}Gym guide: {COLOR DARK_GRAY}Congrats on getting your badge!\p Pete looked mad, I don't think he is coming back."))
         waitmessage
         release
     }
@@ -34,7 +34,7 @@ script Maasje_Gym_Leader_Pete_Longfellow {
 }
 
 script Maasje_Gym_PeteLongfellow_Defeated {
-    msgbox(format("In geography we call this fulgurite, just pure luck.\p Only regirous order and obedience will help you against The Faculty.\p Nothing else beats it.\p This move I used during battle was too random as well, you can have it:"))
+    msgbox(format("{COLOR BLUE}Pete Longfellow: {COLOR DARK_GRAY}In geography we call this fulgurite, just pure luck.\p Only regirous order and obedience will help you against The Faculty.\p Nothing else beats it.\p This move I used during battle was too random as well, you can have it:"))
     playfanfare(MUS_OBTAIN_ITEM)
     giveitem(ITEM_TM37)
     msgbox(format("This Technical Machine is called Sandstorm.\p It creates a sandstorm on the battlefield that last 5 turns with additional effects....\p which I forgot..\p You might have been lucky against me, but the rest of The Factulty will ruin your life.\p Running this gym has been fun, but the grand mission of The Faculty calls.\p Don't let me see you again, you punk!"), MSGBOX_AUTOCLOSE)
@@ -60,11 +60,11 @@ script Maasje_Gym_PeteLongfellow_Defeated {
 }
 
 text Maasje_Gym_PeteLongfellow_Introtext {
-    format("Well, well.\p Look who we got here.\p Let me learn you something about tectonic plates and the glorious power of erosion!!")
+    format("{COLOR BLUE}Pete Longfellow: {COLOR DARK_GRAY}Well, well.\p Look who we got here.\p Let me learn you something about tectonic plates and the glorious power of erosion!!")
 }
 
 text Maasje_Gym_PeteLongfellow_Defeattext {
-    format("I might be getting to old for this.\p Maybe my skills have finally eroded with the wind.")
+    format("{COLOR BLUE}Pete Longfellow: {COLOR DARK_GRAY}I might be getting to old for this.\p Maybe my skills have finally eroded with the wind.")
 }
 
 script Maasje_Gym_Set_Gym_Trainers {
@@ -81,28 +81,28 @@ script Maasje_Gym_Check_Buried {
 
 script Maasje_Gym_Eventscript_Bram {
     trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_BRAM, TRAINER_BRAM, Maasje_Gym_Introtext_Trainer_Bram, Maasje_Gym_Losetext_Trainer_Bram, NULL, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE )
-    msgbox(format("The faculty is a strong faction, almost as strong as those chemical bonds I used to create back in the day."), MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR BLUE}Bram of the Millcount: {COLOR DARK_GRAY}The faculty is a strong faction, almost as strong as those chemical bonds I used to create back in the day."), MSGBOX_AUTOCLOSE)
     end
 }
 
 text Maasje_Gym_Introtext_Trainer_Bram {
-    format("Everybody calls me an assistant.\nI call myself a TOA!!")
+    format("{COLOR BLUE}Bram of the Millcount: {COLOR DARK_GRAY}Everybody calls me an assistant.\nI call myself a TOA!!")
 }
 
 text Maasje_Gym_Losetext_Trainer_Bram {
-    format("Maybe I'm just an assitant afterall.")
+    format("{COLOR BLUE}Bram of the Millcount: {COLOR DARK_GRAY}Maybe I'm just an assitant afterall.")
 }
 
 script Maasje_Gym_Eventscript_Rob {
     trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_ROB, TRAINER_ROB, Maasje_Gym_Introtext_Trainer_Rob, Maasje_Gym_Losetext_Trainer_Rob, NULL, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE )
-    msgbox(format("The faculty is all about structure, just like the computers I used to fix at my old job."), MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR BLUE}Rob of Erup: {COLOR DARK_GRAY}The faculty is all about structure, just like the computers I used to fix at my old job."), MSGBOX_AUTOCLOSE)
     end
 }
 
 text Maasje_Gym_Introtext_Trainer_Rob {
-    format("I used to be a boring IT guy.\n Now I am the bug in the system!!")
+    format("{COLOR BLUE}Rob of Erup: {COLOR DARK_GRAY}I used to be a boring IT guy.\n Now I am the bug in the system!!")
 }
 
 text Maasje_Gym_Losetext_Trainer_Rob {
-    format("It seems like my strategy got hacked.")
+    format("{COLOR BLUE}Rob of Erup: {COLOR DARK_GRAY}It seems like my strategy got hacked.")
 }

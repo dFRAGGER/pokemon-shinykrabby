@@ -735,7 +735,8 @@ Maasje_Collect_Honey_BeeHives_Text_0:
 
 Maasje_Advice_Fisher_Crabhill_Text_0:
 # 74 "data/maps/Maasje/scripts.pory"
-	.string "Whoa there, planning on going in?\p"
+	.string "{COLOR RED}Fisher: {COLOR DARK_GRAY}Whoa there, planning on going\n"
+	.string "in?\p"
 	.string "That place can be a tricky maze. Here,\n"
 	.string "take this with you, just in case.$"
 
@@ -746,8 +747,8 @@ Maasje_Advice_Fisher_Crabhill_Text_1:
 
 Maasje_Advice_Fisher_Crabhill_Text_2:
 # 81 "data/maps/Maasje/scripts.pory"
-	.string "Can you believe this whole place was\n"
-	.string "once an underwater reef?\p"
+	.string "{COLOR RED}Fisher: {COLOR DARK_GRAY}Can you believe this whole place\n"
+	.string "was once an underwater reef?\p"
 	.string "Thanks to the tireless work of crabs,\n"
 	.string "the reef grew over time, creating this\l"
 	.string "safe haven for Pokémon.$"
@@ -784,13 +785,16 @@ Maasje_Joris_UpToTheWhiteLight_Text_1:
 
 Maasje_Eventscript_Maniac_Text_0:
 # 349 "data/maps/Maasje/scripts.pory"
-	.string "This town is overrun by Krabby's,\n"
-	.string "everybody is scared to go outside!$"
+	.string "{COLOR RED}Young man: {COLOR DARK_GRAY}This town is overrun by\n"
+	.string "Krabby's, everybody is scared to go\l"
+	.string "outside!\p"
+	.string "I still need groceries though, so I'm\n"
+	.string "taking the risk!$"
 
 Maasje_Eventscript_Maniac_Text_1:
 # 354 "data/maps/Maasje/scripts.pory"
-	.string "Everybody is still shook by the\n"
-	.string "infestation by those Krabby's.\p"
+	.string "{COLOR RED}Young man: {COLOR DARK_GRAY}Everybody is still shook by\n"
+	.string "the infestation by those Krabby's.\p"
 	.string "You won't seem them outside very often.\p"
 	.string "Hopefully one day everyting will be\n"
 	.string "back to normal.$"

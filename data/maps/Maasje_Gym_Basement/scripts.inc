@@ -35,29 +35,34 @@ Maasje_Gym_Basement_Eventscript_Mart::
 
 Maasje_Gym_Basement_Eventscript_Addy_Text_0:
 # 14 "data/maps/Maasje_Gym_Basement/scripts.pory"
-	.string "The faculty has been good to me, I do\n"
-	.string "have to get used to this outfit though.$"
+	.string "{COLOR BLUE}Addy the Janitor : {COLOR DARK_GRAY}The faculty has been\n"
+	.string "good to me, I do have to get used to\l"
+	.string "this outfit though.$"
 
 Maasje_Gym_Basement_Eventscript_Mart_Text_0:
 # 28 "data/maps/Maasje_Gym_Basement/scripts.pory"
-	.string "The faculty has some smart people, but\n"
-	.string "in Math nobody can rival me.$"
+	.string "{COLOR BLUE}Mart of the Breakel: {COLOR DARK_GRAY}The faculty has\n"
+	.string "some smart people, but in Math nobody\l"
+	.string "can rival me.$"
 
 Maasje_Gym_Introtext_Trainer_Addy::
 # 18 "data/maps/Maasje_Gym_Basement/scripts.pory"
-	.string "Students only called me when they were\n"
-	.string "'sick'.\n"
+	.string "{COLOR BLUE}Addy the Janitor : {COLOR DARK_GRAY}Students only called\n"
+	.string "me when they were 'sick'.\n"
 	.string "But I call the shots now!!$"
 
 Maasje_Gym_Losetext_Trainer_Addy::
 # 22 "data/maps/Maasje_Gym_Basement/scripts.pory"
-	.string "These cloths don't fit me anyway.$"
+	.string "{COLOR BLUE}Addy the Janitor : {COLOR DARK_GRAY}These cloths don't\n"
+	.string "fit me anyway.$"
 
 Maasje_Gym_Introtext_Trainer_Mart::
 # 32 "data/maps/Maasje_Gym_Basement/scripts.pory"
-	.string "I was too smart to be a teacher anyway.\n"
+	.string "{COLOR BLUE}Mart of the Breakel: {COLOR DARK_GRAY}I was too smart to\n"
+	.string "be a teacher anyway.\n"
 	.string "Lets put this brain to the test!!$"
 
 Maasje_Gym_Losetext_Trainer_Mart::
 # 36 "data/maps/Maasje_Gym_Basement/scripts.pory"
-	.string "Maybe my IQ is lower than I thought.$"
+	.string "{COLOR BLUE}Mart of the Breakel: {COLOR DARK_GRAY}Maybe my IQ is\n"
+	.string "lower than I thought.$"

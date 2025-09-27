@@ -18,8 +18,8 @@ Mistcity_PokemonCenter_2F_Red_Convo::
 
 Mistcity_PokemonCenter_2F_Red_Convo_Text_0:
 # 6 "data/maps/Mistcity_PokemonCenter_2F/scripts.pory"
-	.string "Hi there! Well done on getting to the\n"
-	.string "third town.\p"
+	.string "{COLOR GREEN}Gamemaker{COLOR DARK_GRAY}: Hi there! Well done on\n"
+	.string "getting to the third town.\p"
 	.string "My inspiration for this map and it\n"
 	.string "surroundings is the cloud forest in\l"
 	.string "Costa Rica.\p"

@@ -4,13 +4,13 @@ script Mistcity_Indoor_Faculty_Husband {
     lock
     faceplayer
     if(!flag(FLAG_HELPED_DAN_BEAT_FACULTY)) {
-        msgbox(format("Welcome to the future site of progress.\p My name is Marcus.\p The Faculty transferred me here to oversee regional development.\p This town and forest is a chaotic mess of untapped resources.\p We're here to implement structure, to turn this town into a model of efficiency."))
+        msgbox(format("Welcome to the future site of progress.\p My name is {COLOR BLUE}Marcus{COLOR DARK_GRAY}.\p The Faculty transferred me here to oversee regional development.\p This town and forest is a chaotic mess of untapped resources.\p We're here to implement structure, to turn this town into a model of efficiency."))
         waitmessage
         release
         end 
     }
     if(flag(FLAG_HELPED_DAN_BEAT_FACULTY)) {
-        msgbox(format("You.\pSo you're the hooligan who interfered with our work.\p You've accomplished nothing but delaying the inevitable.\p This region needs order, not sentimental rabble-rousers."))
+        msgbox(format("{COLOR BLUE}Marcus{COLOR DARK_GRAY}: You.\pSo you're the hooligan who interfered with our work.\p You've accomplished nothing but delaying the inevitable.\p This region needs order, not sentimental rabble-rousers."))
         waitmessage
         release
         end 
@@ -21,13 +21,13 @@ script Mistcity_Indoor_Faculty_Wife {
     lock
     faceplayer
     if(!flag(FLAG_HELPED_DAN_BEAT_FACULTY)) {
-        msgbox(format("Oh, hello.\pA new face?\p I'm Eleanor.\p Mist City has a certain... rustic charm, I suppose.\p But it's so dreadfully unproductive.\p Don't you worry, The Faculty will bring modern amenities and a real sense of purpose to this place.\p That Dan fellow chaining himself to a tree? Utterly backwards.\pYou can't stop the future."))
+        msgbox(format("Oh, hello.\pA new face?\p I'm {COLOR BLUE}Eleanor{COLOR DARK_GRAY}.\p Mist City has a certain... rustic charm, I suppose.\p But it's so dreadfully unproductive.\p Don't you worry, The Faculty will bring modern amenities and a real sense of purpose to this place.\p That Dan fellow chaining himself to a tree? Utterly backwards.\pYou can't stop the future."))
         waitmessage
         release
         end 
     }
     if(flag(FLAG_HELPED_DAN_BEAT_FACULTY)) {
-        msgbox(format("Mph.\pI suppose you think you're some kind of hero.\pEnjoy your precious, muddy trees.\p Progress will find a way, with or without your approval."))
+        msgbox(format("{COLOR BLUE}Eleanor{COLOR DARK_GRAY}: Mph.\pI suppose you think you're some kind of hero.\pEnjoy your precious, muddy trees.\p Progress will find a way, with or without your approval."))
         waitmessage
         release
         end 

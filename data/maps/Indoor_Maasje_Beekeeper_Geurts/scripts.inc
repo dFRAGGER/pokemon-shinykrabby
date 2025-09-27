@@ -101,7 +101,7 @@ Maasje_Indoor_Beekeeper_Geurts_Assignment_19:
 Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_0:
 # 7 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
 	.string "Hi there!\n"
-	.string "My Name is Steven Smells.\p"
+	.string "My Name is {COLOR RED}Steven Smells{COLOR DARK_GRAY}.\p"
 	.string "I recently retired as a biology teacher,\n"
 	.string "and now am a full time beekeper.\p"
 	.string "I love honey! It is my favorite\n"
@@ -127,15 +127,15 @@ Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_2:
 
 Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_3:
 # 21 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
-	.string "The beehives should be along the\n"
-	.string "coastal area's.\p"
+	.string "{COLOR RED}Steven Smells: {COLOR DARK_GRAY}The beehives should be\n"
+	.string "along the coastal area's.\p"
 	.string "If you could collect the honey, I might\n"
 	.string "have a little surprise for you.$"
 
 Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_4:
 # 24 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
-	.string "Keep going! I still need some more honey\n"
-	.string "to fill up my storage.\p"
+	.string "{COLOR RED}Steven Smells: {COLOR DARK_GRAY}Keep going! I still need\n"
+	.string "some more honey to fill up my storage.\p"
 	.string "Once my storage is full, I can begin\n"
 	.string "processing orders across the region.\p"
 	.string "With the profits I can protect the rare\n"
@@ -143,8 +143,9 @@ Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_4:
 
 Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_5:
 # 27 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
-	.string "Thank you so much! This will be enough\n"
-	.string "for all the orders this season.\p"
+	.string "{COLOR RED}Steven Smells: {COLOR DARK_GRAY}Thank you so much!\p"
+	.string "This will be enough for all the orders\n"
+	.string "this season.\p"
 	.string "All of the profit will go directly into\n"
 	.string "the protection of the bee species\l"
 	.string "across this coast.\p"
@@ -164,5 +165,7 @@ Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_6:
 
 Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_7:
 # 39 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
-	.string "Thanks for helping me out! If I ever\n"
-	.string "need help again I know where to find ya!$"
+	.string "{COLOR RED}Steven Smells: {COLOR DARK_GRAY}Thanks for helping me\n"
+	.string "out!\p"
+	.string "If I ever need help again I know where\n"
+	.string "to find ya!$"

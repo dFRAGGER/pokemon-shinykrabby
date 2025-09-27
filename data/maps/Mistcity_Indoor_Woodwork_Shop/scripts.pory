@@ -4,13 +4,13 @@ script Mistcity_Indoor_Woodwork_Shop_Silas {
     lock
     faceplayer
     if(!flag(FLAG_HELPED_DAN_BEAT_FACULTY)) {
-        msgbox(format("Hello there.\p Welcome to my workshop.\p Or what's left of it.\p I'm Silas.\pI make my living carving figures from the fallen branches in the Whisperwood Grove.\pBut...\pThe Faculty has blocked the path.\pThey call the ancient trees 'safety hazards.'\pNow, I can't get the materials I need.\pI don't know what I'm going to do..."))
+        msgbox(format("Hello there.\p Welcome to my workshop.\p Or what's left of it.\p I'm {COLOR GREEN}Silas{COLOR DARK_GRAY}.\pI make my living carving figures from the fallen branches in the Whisperwood Grove.\pBut...\pThe Faculty has blocked the path.\pThey call the ancient trees 'safety hazards.'\pNow, I can't get the materials I need.\pI don't know what I'm going to do..."))
         waitmessage
         release
         end 
     }
     if(flag(FLAG_HELPED_DAN_BEAT_FACULTY)&&!flag(FLAG_MOSSWOOD_MISSION_STARTED)) {
-        msgbox(format("Wait, it's you!\pI heard what you did!\pYou stood up to them!\pThe path to the grove... is it really open again?\pOh, thank you! Thank you!\pYou're strong... and kind.\pI don't suppose you could help me with one more thing?\pI need a special material for a very important commission.\pIt's a type of wood called 'Mosswood,' and it only grows on the oldest trees in the deepest part of the grove.\pCould you find a piece for me?"),MSGBOX_YESNO)
+        msgbox(format("{COLOR GREEN}Woodworker Silas{COLOR DARK_GRAY}: Wait, it's you!\pI heard what you did!\pYou stood up to them!\pThe path to the grove... is it really open again?\pOh, thank you! Thank you!\pYou're strong... and kind.\pI don't suppose you could help me with one more thing?\pI need a special material for a very important commission.\pIt's a type of wood called 'Mosswood,' and it only grows on the oldest trees in the deepest part of the grove.\pCould you find a piece for me?"),MSGBOX_YESNO)
         waitmessage
         if(var(VAR_RESULT)==YES){
             setflag(FLAG_MOSSWOOD_MISSION_STARTED)
@@ -27,13 +27,13 @@ script Mistcity_Indoor_Woodwork_Shop_Silas {
         }
     }
     if(flag(FLAG_HELPED_DAN_BEAT_FACULTY)&&flag(FLAG_MOSSWOOD_MISSION_STARTED)) {
-        msgbox(format("The grove is beautiful, isn't it? Please be careful looking for that Mosswood. The oldest trees are sacred."))
+        msgbox(format("{COLOR GREEN}Woodworker Silas{COLOR DARK_GRAY}: The grove is beautiful, isn't it? Please be careful looking for that Mosswood. The oldest trees are sacred."))
         waitmessage
         release
         end
     }
     if(flag(FLAG_HELPED_DAN_BEAT_FACULTY)&&flag(FLAG_MOSSWOOD_MISSION_STARTED)&&flag(FLAG_MOSSWOOD_MISSION_COMPLETED)&&!flag(FLAG_ITEM_ROOT_FOSSIL)) {
-        msgbox(format("You found it!\pThis is incredible! The grain, the colour... it's perfect!\pI can finally complete my work. I am forever in your debt.\pPlease, take this."))
+        msgbox(format("{COLOR GREEN}Woodworker Silas{COLOR DARK_GRAY}: You found it!\pThis is incredible! The grain, the colour... it's perfect!\pI can finally complete my work. I am forever in your debt.\pPlease, take this."))
         waitmessage
         playfanfare(MUS_OBTAIN_ITEM)
         giveitem(ITEM_ROOT_FOSSIL)
@@ -44,7 +44,7 @@ script Mistcity_Indoor_Woodwork_Shop_Silas {
         end
     }
         if(flag(FLAG_HELPED_DAN_BEAT_FACULTY)&&flag(FLAG_MOSSWOOD_MISSION_STARTED)&&flag(FLAG_MOSSWOOD_MISSION_COMPLETED)&&flag(FLAG_ITEM_ROOT_FOSSIL)) {
-        msgbox(format("Thank you so much for everything you did for me, my shop is thriving again!"))
+        msgbox(format("{COLOR GREEN}Woodworker Silas{COLOR DARK_GRAY}: Thank you so much for everything you did for me, my shop is thriving again!"))
         waitmessage
         release
         end
@@ -56,10 +56,10 @@ script Mistcity_Indoor_Woodwork_Shop_daughter {
     lock
     faceplayer
     if(!flag(FLAG_HELPED_DAN_BEAT_FACULTY)) {
-        msgbox(format("Grandpa can't make the little wooden Teddiursas anymore... It makes me sad."))
+        msgbox(format("{COLOR RED}Grandchild{COLOR DARK_GRAY}: Grandpa can't make the little wooden Teddiursas anymore... It makes me sad."))
     }
     else{
-        msgbox(format("Grandpa is happily carving wood again!"))
+        msgbox(format("{COLOR RED}Grandchild{COLOR DARK_GRAY}: Grandpa is happily carving wood again!"))
     }
     waitmessage
     release

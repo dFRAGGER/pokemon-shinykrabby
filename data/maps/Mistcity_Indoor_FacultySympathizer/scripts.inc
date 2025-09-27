@@ -65,7 +65,7 @@ Mistcity_Indoor_Faculty_Wife_4:
 Mistcity_Indoor_Faculty_Husband_Text_0:
 # 7 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	.string "Welcome to the future site of progress.\p"
-	.string "My name is Marcus.\p"
+	.string "My name is {COLOR BLUE}Marcus{COLOR DARK_GRAY}.\p"
 	.string "The Faculty transferred me here to\n"
 	.string "oversee regional development.\p"
 	.string "This town and forest is a chaotic mess\n"
@@ -76,7 +76,7 @@ Mistcity_Indoor_Faculty_Husband_Text_0:
 
 Mistcity_Indoor_Faculty_Husband_Text_1:
 # 13 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	.string "You.\p"
+	.string "{COLOR BLUE}Marcus{COLOR DARK_GRAY}: You.\p"
 	.string "So you're the hooligan who interfered\n"
 	.string "with our work.\p"
 	.string "You've accomplished nothing but\n"
@@ -88,7 +88,7 @@ Mistcity_Indoor_Faculty_Wife_Text_0:
 # 24 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	.string "Oh, hello.\p"
 	.string "A new face?\p"
-	.string "I'm Eleanor.\p"
+	.string "I'm {COLOR BLUE}Eleanor{COLOR DARK_GRAY}.\p"
 	.string "Mist City has a certain... rustic charm, I\n"
 	.string "suppose.\p"
 	.string "But it's so dreadfully unproductive.\p"
@@ -101,7 +101,7 @@ Mistcity_Indoor_Faculty_Wife_Text_0:
 
 Mistcity_Indoor_Faculty_Wife_Text_1:
 # 30 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	.string "Mph.\p"
+	.string "{COLOR BLUE}Eleanor{COLOR DARK_GRAY}: Mph.\p"
 	.string "I suppose you think you're some kind of\n"
 	.string "hero.\p"
 	.string "Enjoy your precious, muddy trees.\p"

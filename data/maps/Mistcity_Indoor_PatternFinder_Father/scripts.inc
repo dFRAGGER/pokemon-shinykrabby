@@ -32,7 +32,7 @@ Mistcity_Indoor_PatternFinder_Father_5:
 
 Mistcity_Indoor_PatternFinder_Father_Text_0:
 # 7 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
-	.string "Oh, hello. My name is Mr. Heartfield.\p"
+	.string "Oh, hello. My name is {COLOR GREEN}Mr. Heartfield{COLOR DARK_GRAY}.\p"
 	.string "Welcome.\p"
 	.string "Sorry for all the ladders and climbing\n"
 	.string "to get to here.\p"
@@ -55,7 +55,7 @@ Mistcity_Indoor_PatternFinder_Father_Text_0:
 
 Mistcity_Indoor_PatternFinder_Father_Text_1:
 # 11 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
-	.string "It's you.\n"
+	.string "{COLOR GREEN}Mr. Heartfield{COLOR DARK_GRAY}: It's you.\n"
 	.string "Thank you.\p"
 	.string "My son David came home yesterday... he\n"
 	.string "seemed so happy. So alive.\p"

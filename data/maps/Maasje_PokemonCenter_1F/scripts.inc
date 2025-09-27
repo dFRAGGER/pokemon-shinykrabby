@@ -262,7 +262,7 @@ Maasje_PokemonCenter_1F_Second_Nurse_Text_0:
 
 Maasje_PokemonCenter_1F_Bryan_Trigger0_Text_0:
 # 46 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
-	.string "Hi, my name is Bryan.\p"
+	.string "Hi, my name is {COLOR RED}Bryan{COLOR DARK_GRAY}.\p"
 	.string "I'd like to film everything, absolutely\n"
 	.string "everything.\p"
 	.string "Can I film your journey towards\n"
@@ -273,7 +273,7 @@ Maasje_PokemonCenter_1F_Bryan_Trigger0_Text_0:
 
 Maasje_PokemonCenter_1F_Bryan_Trigger1_Text_0:
 # 59 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
-	.string "Hi, my name is Bryan.\p"
+	.string "Hi, my name is {COLOR RED}Bryan{COLOR DARK_GRAY}.\p"
 	.string "I'd like to film everything, absolutely\n"
 	.string "everything.\p"
 	.string "Can I film your journey towards\n"
@@ -285,14 +285,15 @@ Maasje_PokemonCenter_1F_Bryan_Trigger1_Text_0:
 
 Maasje_PokemonCenter_1F_Bryan_Following_Text_0:
 # 95 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
-	.string "Are you talking to me?\p"
+	.string "{COLOR RED}Bryan: {COLOR DARK_GRAY}Are you talking to me?\p"
 	.string "I'm not even here, don't worry!\p"
 	.string "I'll send you the footage on DVD!$"
 
 Maasje_PokemonCenter_1F_Man_Text_0:
 # 103 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
-	.string "Back in the day the gym leader, Pete\n"
-	.string "Longfellow, was my geography teacher.\p"
+	.string "{COLOR RED}Steph Boilers: {COLOR DARK_GRAY}Back in the day the gym\n"
+	.string "leader, Pete Longfellow, was my\l"
+	.string "geography teacher.\p"
 	.string "He quit his old job because one of\n"
 	.string "students started to imitate his quirks.\p"
 	.string "I forgot the real name of the student,\n"

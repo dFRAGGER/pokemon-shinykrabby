@@ -38,7 +38,9 @@
     "gMapGroup_IndooErpusCity",
     "gMapGroup_IndoorBernrode",
     "gMapGroup_IndoorMaasje",
-    "gMapGroup_IndoorMistCity"
+    "gMapGroup_IndoorMistCity",
+    "gMapGroup_DeepCloudForest",
+    "gMapGroup_IndoorSiltrootTown"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -633,7 +635,8 @@
     "Maasje",
     "Route02",
     "MistCity",
-    "TheShadowLands"
+    "TheShadowLands",
+    "SiltrootTown"
   ],
   "gMapGroup_IndooErpusCity": [
     "LabJariIndoor",
@@ -677,5 +680,11 @@
     "Mistcity_PokemonCenter_1F",
     "Mistcity_PokemonCenter_2F",
     "Mistcity_Mart"
+  ],
+  "gMapGroup_DeepCloudForest": [
+    "DeepCloudForest_FacultyGorge"
+  ],
+  "gMapGroup_IndoorSiltrootTown": [
+    "SiltrootTown_Indoor_Ali_Apothecary"
   ]
 }
