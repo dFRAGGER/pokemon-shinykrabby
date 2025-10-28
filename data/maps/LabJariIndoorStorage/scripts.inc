@@ -62,6 +62,66 @@ LabJariIndoorStorage_Eventscript_BoxesAssignment::
 	return
 
 
+LabJariIndoorStorage_Sign_1::
+# 36 "data/maps/LabJariIndoorStorage/scripts.pory"
+	lock
+# 37 "data/maps/LabJariIndoorStorage/scripts.pory"
+	msgbox LabJariIndoorStorage_Sign_1_Text_0
+# 38 "data/maps/LabJariIndoorStorage/scripts.pory"
+	waitmessage
+# 39 "data/maps/LabJariIndoorStorage/scripts.pory"
+	release
+	return
+
+
+LabJariIndoorStorage_Sign_2::
+# 43 "data/maps/LabJariIndoorStorage/scripts.pory"
+	lock
+# 44 "data/maps/LabJariIndoorStorage/scripts.pory"
+	msgbox LabJariIndoorStorage_Sign_2_Text_0
+# 45 "data/maps/LabJariIndoorStorage/scripts.pory"
+	waitmessage
+# 46 "data/maps/LabJariIndoorStorage/scripts.pory"
+	release
+	return
+
+
+LabJariIndoorStorage_Sign_3::
+# 50 "data/maps/LabJariIndoorStorage/scripts.pory"
+	lock
+# 51 "data/maps/LabJariIndoorStorage/scripts.pory"
+	msgbox LabJariIndoorStorage_Sign_3_Text_0
+# 52 "data/maps/LabJariIndoorStorage/scripts.pory"
+	waitmessage
+# 53 "data/maps/LabJariIndoorStorage/scripts.pory"
+	release
+	return
+
+
+LabJariIndoorStorage_Sign_4::
+# 57 "data/maps/LabJariIndoorStorage/scripts.pory"
+	lock
+# 58 "data/maps/LabJariIndoorStorage/scripts.pory"
+	msgbox LabJariIndoorStorage_Sign_4_Text_0
+# 59 "data/maps/LabJariIndoorStorage/scripts.pory"
+	waitmessage
+# 60 "data/maps/LabJariIndoorStorage/scripts.pory"
+	release
+	return
+
+
+LabJariIndoorStorage_Sign_5::
+# 64 "data/maps/LabJariIndoorStorage/scripts.pory"
+	lock
+# 65 "data/maps/LabJariIndoorStorage/scripts.pory"
+	msgbox LabJariIndoorStorage_Sign_5_Text_0
+# 66 "data/maps/LabJariIndoorStorage/scripts.pory"
+	waitmessage
+# 67 "data/maps/LabJariIndoorStorage/scripts.pory"
+	release
+	return
+
+
 # 15 "data/maps/LabJariIndoorStorage/scripts.pory"
 LabJariIndoorStorage_Eventscript_Intern_Cave_Movement_0:
 # 15 "data/maps/LabJariIndoorStorage/scripts.pory"
@@ -97,3 +157,47 @@ LabJariIndoorStorage_Eventscript_BoxesAssignment_Text_0:
 	.string "Hmm.... those boxes should be here\n"
 	.string "somewhere...\p"
 	.string "Better not return empty handed...$"
+
+LabJariIndoorStorage_Sign_1_Text_0:
+# 37 "data/maps/LabJariIndoorStorage/scripts.pory"
+	.string "These appear to be notes detailing a\n"
+	.string "major construction project for an\l"
+	.string "underground facility beneath a\l"
+	.string "mountain.$"
+
+LabJariIndoorStorage_Sign_2_Text_0:
+# 44 "data/maps/LabJariIndoorStorage/scripts.pory"
+	.string "A server whose cooling fans are\n"
+	.string "spinning rapidly.$"
+
+LabJariIndoorStorage_Sign_3_Text_0:
+# 51 "data/maps/LabJariIndoorStorage/scripts.pory"
+	.string "This coffee is so old it appears to have\n"
+	.string "polymerized into a solid mass.$"
+
+LabJariIndoorStorage_Sign_4_Text_0:
+# 58 "data/maps/LabJariIndoorStorage/scripts.pory"
+	.string "--FACILITY SERVER: DEBUG LOG--\p"
+	.string "PROJECT OMEGA: CURRENT STATUS: PHASE\n"
+	.string "3 CONSTRUCTION.\n"
+	.string "LOCATION: SUBTERRANEAN, MOUNT BASE\l"
+	.string "COMPLEX.\p"
+	.string "GEOLOGIC REPORT: DRILLING OPERATIONS\n"
+	.string "proceeding close to SAFE TOLERANCES.\l"
+	.string "We have excavated the full footprint\l"
+	.string "for the Rare Starter Pokemon Facility\l"
+	.string "and the Advanced Research Wing.\p"
+	.string "CORE DIRECTIVE: Maintain absolute\n"
+	.string "SIGNAL SILENCE. The government must\l"
+	.string "not be aware of the scope of this\l"
+	.string "project.\p"
+	.string "SYSTEM ALERT: POWER CONSUMPTION for\n"
+	.string "SUB-LEVEL 5 COOLING is CRITICAL.\l"
+	.string "Authorized CPU MINING seems to drain\l"
+	.string "the power in AUXILIARY LABS.\p"
+	.string "--PRESS A TO VIEW SCHEMATICS--$"
+
+LabJariIndoorStorage_Sign_5_Text_0:
+# 65 "data/maps/LabJariIndoorStorage/scripts.pory"
+	.string "Shelves with books about underground\n"
+	.string "construction.$"

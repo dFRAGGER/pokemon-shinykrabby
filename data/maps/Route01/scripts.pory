@@ -122,9 +122,9 @@ script Route01_Battle_Factulty_Grunts {
 }
 
 text Route01_Loss_Ton_Cross {
-    format("{COLOR BLUE}Tod Cross{COLOR DARK_GRAY}: Even losing does not feel as bad as teaching geography to unmotivated children.")
+    format("Even losing does not feel as bad as teaching geography to unmotivated children.")
 }
 
 text Route01_Loss_Ad_Dice {
-    format("{COLOR BLUE}Ad Dice{COLOR DARK_GRAY}: Being a janitor or losing a battle?\p I'd rather lose a battle than spend another minute with my old colleagues.")
+    format("Being a janitor or losing a battle?\p I'd rather lose a battle than spend another minute with my old colleagues.")
 }

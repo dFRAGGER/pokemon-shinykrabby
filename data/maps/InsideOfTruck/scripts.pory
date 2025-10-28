@@ -1,0 +1,90 @@
+raw `
+InsideOfTruck_EventScript_SetIntroFlagsMale::
+	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
+	setdynamicwarp MAP_LITTLEROOT_TOWN, 3, 10
+	releaseall
+	end
+
+InsideOfTruck_EventScript_MovingBox::
+	msgbox InsideOfTruck_Text_BoxPrintedWithMonLogo, MSGBOX_SIGN
+	end
+
+InsideOfTruck_Text_BoxPrintedWithMonLogo:
+	.string "The box is printed with a POKéMON logo.\p"
+	.string "It's a POKéMON brand moving and\n"
+	.string "delivery service.$"
+`
+mapscripts InsideOfTruck_MapScripts {
+    MAP_SCRIPT_ON_LOAD {call(Mistcity_InsideOfTruck_OnLoad)} 
+	MAP_SCRIPT_ON_RESUME {call(Mistcity_InsideOfTruck_OnResume) }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 0: Miscity_InsideOfTruck_Daan_RescueMission
+    ]
+}
+
+script Miscity_InsideOfTruck_Daan_RescueMission {
+    lock
+    setvar(VAR_MISTCITY_RESEARCH_CENTER_LOCATION,1)
+    applymovement(LOCALID_PLAYER,moves(walk_left walk_up face_down))
+    waitmovement
+    setdynamicwarp(MAP_DEEP_CLOUD_FOREST_FACULTY_GORGE, 22, 7)
+    call(Mistcity_InsideOfTruck_OnDrive)
+    delay(60)
+    playse(SE_TRUCK_DOOR)
+    special(DrawWholeMapView)
+    delay(60)
+    callnative(StartTruckDrivingScene)
+    msgbox(format("{COLOR GREEN}David{COLOR DARK_GRAY}: The gorge is deep in the forest, it might take a couple of hours.\p Take some rest."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    fadescreen(FADE_TO_BLACK)
+    delay(120)
+    msgbox(format("...A couple of hours later..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    fadescreen(FADE_FROM_BLACK)
+    msgbox(format("{COLOR GREEN}David{COLOR DARK_GRAY}: Ehummmm.... Hello... Wake up.\pI think we're here."),MSGBOX_AUTOCLOSE)
+    callnative(StartTruckSlowingDownScene)
+    delay(200)
+    callnative(WaitForTruckToStop)
+    delay(60)
+    msgbox(format("{COLOR GREEN}David{COLOR DARK_GRAY}: Allright, lets get out there, and keep those Beedrill of me!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    setflag(FLAG_DAVID_TRUCK)
+    setflag(FLAG_FACULTY_GORGE_NASH2)
+    applymovement(4, moves(walk_down walk_right*2 jump_right))
+    waitmovement
+    removeobject(4)
+    waitmessage
+    waitmessage
+    release
+
+}
+
+script Mistcity_InsideOfTruck_OnLoad {
+    setmetatile(4, 1, METATILE_InsideOfTruck_ExitLight_Top, FALSE)
+	setmetatile( 4, 2, METATILE_InsideOfTruck_ExitLight_Mid, FALSE)
+	setmetatile(4, 3, METATILE_InsideOfTruck_ExitLight_Bottom, FALSE)
+	return
+}
+
+script Mistcity_InsideOfTruck_OnDrive {
+    setmetatile(4, 1, METATILE_InsideOfTruck_DoorClosedFloor_Top, FALSE)
+	setmetatile( 4, 2, METATILE_InsideOfTruck_DoorClosedFloor_Mid, FALSE)
+	setmetatile(4, 3, METATILE_InsideOfTruck_DoorClosedFloor_Bottom, FALSE)
+	return
+}
+
+script Mistcity_InsideOfTruck_OnOffLoad {
+    setmetatile(4, 1, METATILE_InsideOfTruck_ExitLight_Top, FALSE)
+	setmetatile( 4, 2, METATILE_InsideOfTruck_ExitLight_Mid, FALSE)
+	setmetatile(4, 3, METATILE_InsideOfTruck_ExitLight_Bottom, FALSE)
+	return
+}
+
+script Mistcity_InsideOfTruck_OnResume {
+	setstepcallback(STEP_CB_TRUCK) 
+	end
+}
+
+
+

@@ -37,7 +37,7 @@ script Maasje_Gym_PeteLongfellow_Defeated {
     msgbox(format("{COLOR BLUE}Pete Longfellow: {COLOR DARK_GRAY}In geography we call this fulgurite, just pure luck.\p Only regirous order and obedience will help you against The Faculty.\p Nothing else beats it.\p This move I used during battle was too random as well, you can have it:"))
     playfanfare(MUS_OBTAIN_ITEM)
     giveitem(ITEM_TM37)
-    msgbox(format("This Technical Machine is called Sandstorm.\p It creates a sandstorm on the battlefield that last 5 turns with additional effects....\p which I forgot..\p You might have been lucky against me, but the rest of The Factulty will ruin your life.\p Running this gym has been fun, but the grand mission of The Faculty calls.\p Don't let me see you again, you punk!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("This Technical Machine is called Sandstorm.\p It creates a sandstorm on the battlefield that last 5 turns with additional effects....\p which I forgot..\p You might have been lucky against me, but the rest of The Factulty will ruin your life.\p Running this gym has been fun, but the grand mission of The Faculty calls.\p Soon, the unyielding stone of true order will put you in your place."), MSGBOX_AUTOCLOSE)
     setflag(FLAG_HIDE_PETELONGFELLOW)
     getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
     if(var(VAR_TEMP_0)== 13 && var(VAR_TEMP_1 == 3)){
@@ -64,7 +64,7 @@ text Maasje_Gym_PeteLongfellow_Introtext {
 }
 
 text Maasje_Gym_PeteLongfellow_Defeattext {
-    format("{COLOR BLUE}Pete Longfellow: {COLOR DARK_GRAY}I might be getting to old for this.\p Maybe my skills have finally eroded with the wind.")
+    format("I might be getting to old for this.\p Maybe my skills have finally eroded with the wind.")
 }
 
 script Maasje_Gym_Set_Gym_Trainers {
@@ -90,7 +90,7 @@ text Maasje_Gym_Introtext_Trainer_Bram {
 }
 
 text Maasje_Gym_Losetext_Trainer_Bram {
-    format("{COLOR BLUE}Bram of the Millcount: {COLOR DARK_GRAY}Maybe I'm just an assitant afterall.")
+    format("Maybe I'm just an assitant afterall.")
 }
 
 script Maasje_Gym_Eventscript_Rob {
@@ -104,5 +104,5 @@ text Maasje_Gym_Introtext_Trainer_Rob {
 }
 
 text Maasje_Gym_Losetext_Trainer_Rob {
-    format("{COLOR BLUE}Rob of Erup: {COLOR DARK_GRAY}It seems like my strategy got hacked.")
+    format("It seems like my strategy got hacked.")
 }

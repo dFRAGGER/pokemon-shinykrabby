@@ -740,6 +740,8 @@ ErpCity_Receive_Running_Shoes_Text_1:
 
 ErpCity_Receive_Running_Shoes_Text_2:
 # 180 "data/maps/ErpCity/scripts.pory"
+	.string "Now if you press your 'B muscle' while\n"
+	.string "moving, you will sprint!\p"
 	.string "Look at you, all nice and shiny.\p"
 	.string "Say hello to the professor for me.\p"
 	.string "Have fun!$"

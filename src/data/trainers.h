@@ -12175,8 +12175,8 @@ F_TRAINER_FEMALE |
 #line 4928
                 MOVE_SANDSTORM,
                 MOVE_ROLLOUT,
-                MOVE_BULLDOZE,
                 MOVE_DEFENSE_CURL,
+                MOVE_TACKLE,
             },
             },
         },
@@ -28260,9 +28260,9 @@ F_TRAINER_FEMALE |
 #line 11259
         .trainerName = _("LYLE"),
 #line 11260
-        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
+        .trainerClass = TRAINER_CLASS_FISHERMAN,
 #line 11261
-        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
 #line 11263
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -28275,7 +28275,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 11267
-            .species = SPECIES_WURMPLE,
+            .species = SPECIES_KRABBY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11269
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -28286,7 +28286,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 11271
-            .species = SPECIES_WURMPLE,
+            .species = SPECIES_KRABBY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11273
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -28297,7 +28297,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 11275
-            .species = SPECIES_WURMPLE,
+            .species = SPECIES_KRABBY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11277
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -28308,7 +28308,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 11279
-            .species = SPECIES_WURMPLE,
+            .species = SPECIES_KRABBY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11281
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),

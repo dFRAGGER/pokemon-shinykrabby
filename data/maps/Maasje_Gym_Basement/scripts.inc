@@ -53,8 +53,7 @@ Maasje_Gym_Introtext_Trainer_Addy::
 
 Maasje_Gym_Losetext_Trainer_Addy::
 # 22 "data/maps/Maasje_Gym_Basement/scripts.pory"
-	.string "{COLOR BLUE}Addy the Janitor : {COLOR DARK_GRAY}These cloths don't\n"
-	.string "fit me anyway.$"
+	.string "These cloths don't fit me anyway.$"
 
 Maasje_Gym_Introtext_Trainer_Mart::
 # 32 "data/maps/Maasje_Gym_Basement/scripts.pory"
@@ -64,5 +63,4 @@ Maasje_Gym_Introtext_Trainer_Mart::
 
 Maasje_Gym_Losetext_Trainer_Mart::
 # 36 "data/maps/Maasje_Gym_Basement/scripts.pory"
-	.string "{COLOR BLUE}Mart of the Breakel: {COLOR DARK_GRAY}Maybe my IQ is\n"
-	.string "lower than I thought.$"
+	.string "Maybe my IQ is lower than I thought.$"

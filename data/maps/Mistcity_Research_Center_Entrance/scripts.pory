@@ -1,1 +1,150 @@
 mapscripts Mistcity_Research_Center_Entrance_MapScripts {}
+
+script Mistcity_Research_Center_Entrance_Scientist_Paras {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+        msgbox(format(""))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+    msgbox(format("{COLOR RED}Scientist{COLOR DARK_GRAY}: Now, this is the most alarming case.\pThe tochukaso mushroom that controls the Parasect is a fungus, right?\pIt's incredibly sensitive to geological changes.\pLately, we've rescued several Parasect from the deep woods whose mushrooms have developed a faint, unnatural bio-luminescence.\pIt's a defensive reaction.\pOur hypothesis is that something is emitting powerful, systematic waves of energy into the ground-like a sonar.\pThe fungus is reacting to being 'scanned.'\pSomeone isn't just exploring the forest; they're X-raying it."))
+    }
+    waitmessage
+    applymovement(3,moves(face_right))
+    waitmovement
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Scientist_Tropius {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+        msgbox(format(""))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+    msgbox(format("{COLOR RED}Scientist{COLOR DARK_GRAY}: This poor thing was part of a whole herd we saw fleeing the Whisperwood Grove area last week.\pThey were in a complete panic, flying erratically as if escaping a huge predator, but there was nothing there.\pThis one got separated and was exhausted.\pIt's still incredibly skittish.\pWe've been getting similar reports from other flying-type Pokémon.\pSome kind of powerful, ground-based energy pulse in that sector is making the sky feel unsafe to them."))
+    }
+    waitmessage
+    applymovement(12,moves(face_up))
+    waitmovement
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Scientist_Shiftry {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+        msgbox(format(""))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+    msgbox(format("{COLOR RED}Scientist{COLOR DARK_GRAY}: Shiftry are masters of the forest, moving like ghosts through the trees.\pThey are deeply connected to their territory.\pBut this one? We found it completely disoriented, miles from its home.\pIt acts dazed, sometimes just staring blankly at the ground for hours.\pOur analysis suggests its sensory organs, which help it navigate, are being overwhelmed by some kind of external interference.\pIt's like its natural compass has been scrambled by a powerful magnetic field."))
+    }
+    waitmessage
+    applymovement(4,moves(face_down))
+    waitmovement
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Scientist_Slaking {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+        msgbox(format(""))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+    msgbox(format("{COLOR RED}Scientist{COLOR DARK_GRAY}: It's the strangest thing.\pSlaking are the definition of energy conservation, but this one... it won't rest.\pWe rescued it a few weeks back after reports of it aggressively pacing near some ancient stone ruins deep in the forest.\pIts bio-scans are all over the place, showing constant, low-level stress.\pIt's as if it's reacting to a persistent, low-frequency hum that none of our equipment can even detect.\pSomething out there is seriously disturbing the peace."))
+    }
+    waitmessage
+    applymovement(2,moves(face_down))
+    waitmovement
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Daan_RescueMission {
+    lock
+    playse(SE_PIN)
+    applymovement(19, moves(face_right emote_exclamation_mark))
+    waitmovement
+    applymovement(LOCALID_PLAYER,moves(face_left))
+    msgbox(format("{COLOR RED}Lead Ranger{COLOR DARK_GRAY}: Hold it right there.\pYou're a skilled trainer, right?\p...Good. We have a serious situation.\pJoin us."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER,moves(walk_left*3 face_up))
+    waitmovement
+    applymovement(19, moves(face_up))
+    waitmovement
+    msgbox(format("About two hours ago, a distress alarm went off in the Whisperwood Grove.\pIt's in the same sector we've been getting all these weird reports from.\pThe alarm was triggered by a report of illegal deforestation.\pOur best ranger, Daan, took the first truck out to investigate.\pWe were expecting a radio check-in an hour ago, but we've gotten nothing but static.\pWe need someone to head to his last known coordinates to provide backup and find out what's going on.\pWe're stretched thin here with all these agitated Pokémon."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(19, moves(face_right))
+    applymovement(LOCALID_PLAYER,moves(face_left))
+    waitmovement
+    msgbox(format("Can you do it?"),MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT)==YES){
+    msgbox(format("...Great!\pDon't go in there unprepared.\pEvery Pokémon we've rescued recently has come from that sector.\pThey're all on edge, so expect wild Pokémon to be more aggressive than usual.\pThe reports mentioned there were tracks from vehicles that have no business being that deep in a protected forest.\pThis group, whoever they are, are well-equipped, and they're after something specific.\pLook for tracks, listen for machinery, and find Daan.\pBut be careful, whoever is out there is not just breaking the rules;they're trying to tear the heart out of the forest."),MSGBOX_AUTOCLOSE)
+    }
+    if(var(VAR_RESULT)==NO){
+        msgbox(format("Well, I'm afraid you have no choice.\pWe are understaffed but you won't go in there alone.\pEvery Pokémon we've rescued recently has come from that sector.\pThey're all on edge, so expect wild Pokémon to be more aggressive than usual.\pThe reports mentioned there were tracks from vehicles that have no business being that deep in a protected forest.\pThis group, whoever they are, are well-equipped, and they're after something specific.\pLook for tracks, listen for machinery, and find Daan.\pBut be careful, whoever is out there is not just breaking the rules; they're trying to tear the heart out of the forest."),MSGBOX_AUTOCLOSE)
+    }
+    waitmessage
+    applymovement(LOCALID_PLAYER,moves(walk_right*2 face_up))
+    applymovement(21, moves(face_down))
+    waitmovement
+    applymovement(19, moves(walk_right*2 face_up))
+    applymovement(20, moves(walk_right walk_up face_down))
+    applymovement(18, moves(face_down))
+    waitmovement
+    msgbox(format("{COLOR RED}Lead Ranger{COLOR DARK_GRAY}: I want to introduce you to two of my people, {COLOR BLUE}Nash{COLOR DARK_GRAY} & {COLOR GREEN}David{COLOR DARK_GRAY}."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(20, moves(walk_down))
+    waitmovement
+    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: Glad to have you with us.\pMy partner, Arcanine, and I know that sector like the back of our hands.\pI'll handle communications and watch our six for any ambushes.\pThe reports about organized trespassers are what worry me most.\pAmateurs get lost; professionals leave tracks like the ones we've seen.\pLet's move out, find Daan, and make sure whoever is doing this regrets stepping foot in our forest."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(20, moves(face_up))
+    waitmovement
+    delay(40)
+    applymovement(20, moves(face_down))
+    waitmovement
+    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: This is the kid's first time out in the deep woods.\pHe's... a specialist.\pA bit green, but the sharpest mind we've got.\pLet's all make sure we get back in one piece.\pGo ahead, introduce yourself."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(20, moves(walk_up face_down))
+    waitmovement
+    applymovement(18, moves(walk_down walk_right face_down))
+    waitmovement
+    msgbox(format("I'm {COLOR GREEN}David Heartfield{COLOR DARK_GRAY}.\pI'm...\pI'm not a great battler.\pNash is for the fighting.\pI'm here to find the wrongness.\pThe scientists... they said the Parasect's mushroom was glowing.\pA stress reaction to a high-frequency energy pulse.\pI built a scanner to detect that specific frequency.\pIt won't find Pokémon... it will find the source of what's hurting them."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    applymovement(18,moves(face_right))
+    waitmovement
+    delay(60)
+    msgbox(format("It's... loud out there.\pLots of data.\pAll the agitated Pokémon are creating chaotic energy spikes.\pBut their pattern is random.\pThe deforestation signal... that will be a steady, repeating pattern.\pA clean signal in the noise."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(18, moves(face_down))
+    waitmovement
+    msgbox(format("I'll find the signal.\pThat's what I'm good at.\pJust...\pjust keep the angry Beedrill away from me."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(18, moves(walk_left walk_up face_down))
+    waitmovement
+    msgbox(format("{COLOR RED}Lead Ranger{COLOR DARK_GRAY}: Nash.\nDavid.\pGo downstairs and prepare the truck.\pKeep me updated on your progress."))
+    waitmessage
+    applymovement(20, moves(walk_up*2))
+    waitmovement
+    removeobject(20)
+    applymovement(21, moves(walk_left walk_up*2))
+    waitmovement
+    removeobject(21)
+    applymovement(18,moves(walk_right walk_up*2))
+    waitmovement
+    removeobject(18)
+    waitmovement
+    setflag(FLAG_HIDE_NASH_DAVID)
+    applymovement(19,moves(face_right))
+    applymovement(LOCALID_PLAYER,moves(face_left))
+    waitmovement
+    msgbox(format("{COLOR RED}Lead Ranger{COLOR DARK_GRAY}: Don't be afraid.\pNash & David are the best people I got.\pMake sure you heal your Pokémon and stack up on some potions, the forest can be a very harsh place.\pI'll keep in contact trough the radio.\pNash and David should be ready any minute now."))
+    waitmessage
+    setvar(VAR_MISTCITY_RESEARCH_CENTER,1)
+    release
+    end
+}
+

@@ -1,1 +1,170 @@
-mapscripts DeepCloudForest_FacultyGorge_MapScripts {}
+mapscripts DeepCloudForest_FacultyGorge_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 1: DeepCloudForest_FacultyGorge_GetOutTruck
+    ]
+}
+
+script DeepCloudForest_FacultyGorge_GetOutTruck {
+    lock
+    applymovement(LOCALID_PLAYER, moves(jump_right face_down))
+    waitmovement
+    setvar(VAR_MISTCITY_RESEARCH_CENTER_LOCATION,2)
+    delay(60)
+    applymovement(LOCALID_PLAYER, moves(walk_down*2))
+    waitmovement
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down*3))
+    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: By Arceus... This is a massacre.\pThis isn't logging; it's somebody looking for something they can't find.\pThey seem to be cutting these trees randomly, as if expecting to stumble upon what they're searching for with each swing of the axe."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(7,moves(face_left))
+    waitmovement
+    msgbox(format("{COLOR GREEN}David{COLOR DARK_GRAY}: The signal... it's deafening here.\pAll this random destruction is creating so much chaotic energy...\pBut the Faculty's frequency...\p ...the clean, repeating pattern...\p ...it's close. Very close."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up*3))
+    waitmovement
+    special(RemoveCameraObject)
+    delay(60)
+    playse(SE_PIN)
+    applymovement(7,moves(emote_exclamation_mark face_down))
+    waitmovement
+    msgbox(format("That way! Just over that ridge!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(7, moves(walk_fast_down*2 walk_fast_right*3 walk_fast_down*4))
+    waitmovement
+    msgbox(format("Alright, team, let's move! Stay sharp!"), MSGBOX_AUTOCLOSE)
+    applymovement(6, moves(walk_fast_down*2 walk_fast_right*3 walk_fast_down*4))
+    waitmovement
+    applymovement(16, moves(walk_fast_down*2 walk_fast_right*3 walk_fast_down*4))
+    waitmovement
+    applymovement(LOCALID_PLAYER, moves(walk_fast_down*2 walk_fast_right*3 walk_fast_down*5))
+    waitmovement
+    special(SpawnCameraObject)
+    playse(MUS_AQUA_MAGMA_HIDEOUT)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down*23 walk_left))
+    waitmovement
+    setflag(FLAG_FACULTY_GORGE_NASH1)
+    clearflag(FLAG_FACULTY_GORGE_NASH2)
+    clearflag(FLAG_DAVID_TRUCK)
+    msgbox(format("{COLOR GREEN}Daan{COLOR DARK_GRAY}: ...and I won't let you touch these trees!\pThis forest is alive! It has a right to exist!\p Can't you see it's not just plants standing in your way? We depend on every single one of them!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    msgbox(format("{COLOR RED}Jos Vanderloo{COLOR DARK_GRAY}: Analysis: Subject is displaying irrational, sentimental attachment to non-productive biomass.\pHis methods are inefficient."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    msgbox(format("{COLOR BLUE}Barry{COLOR DARK_GRAY}: Shut up! I've got this.\p...Listen to yourself, Daan!\p You're clinging to this messy, inefficient past.\pThe Faculty offers a real path to strength!\pA structured path! Something you and your 'friends' would never understand."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    msgbox(format("{COLOR GREEN}Daan{COLOR DARK_GRAY}: Strength? You call this strength?!\pTearing down something that's taken a thousand years to grow?\pYou're a coward, Barry, hiding behind their machines!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(2, moves(emote_exclamation_mark))
+    msgbox(format("{COLOR BLUE}Barry{COLOR DARK_GRAY}: STOP CALLING ME BARRY, MY NAME IS WOUTER YOU IDIOT!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    msgbox(format("{COLOR RED}Ton Cross{COLOR DARK_GRAY}: Hey! Show some respect for the Junior Administrator!\pWhy don't you and your tree-hugging Pokémon just give it up?"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    msgbox(format("{COLOR GREEN}Daan{COLOR DARK_GRAY}: NEVER!!\p VENUSAUR, HEADBUTT!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_M_HEADBUTT)
+    applymovement(14, moves(jump_left))
+    waitmovement
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right walk_up*23))
+    waitmovement
+    special(RemoveCameraObject)
+    applymovement(LOCALID_PLAYER,moves(face_right))
+    applymovement(18 ,moves(face_left))
+    waitmovement
+    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: There he is.\pTwo grunts and their leader.\pDavid, stay back and monitor that device.\p{PLAYER}, looks like Daan could use some help.\pI'll take the lead, follow me!"),MSGBOX_AUTOCLOSE)
+    applymovement(18 ,moves(face_down))
+    applymovement(19, moves(walk_fast_right*8 walk_fast_down*6))
+    applymovement(20, moves(walk_fast_right*7 walk_fast_down*6))
+    waitmovement
+    setflag(FLAG_FACULTY_GORGE_NASH2)
+    removeobject(19)
+    removeobject(20)    
+    waitmovement
+    release
+}
+
+script DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts {
+    lock
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down*3))
+    waitmovement
+    msgbox(format("ARCANINE, BITE!"))
+    waitmessage
+    playse(SE_M_BITE)
+    applymovement(24,moves(jump_down))
+    waitmovement
+    applymovement(23, moves(face_up))
+    waitmovement
+    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: {PLAYER}, apparently there are more grunts here.\pI'll hold these two off for now!\pI'll be right behind you!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(23, moves(face_down))
+    waitmovement
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up*4))
+    waitmovement
+    special(RemoveCameraObject)
+    setvar(VAR_MISTCITY_RESEARCH_CENTER_LOCATION,3)
+    release
+}
+
+script DeepCloudForest_FacultyGorge_Daan_Rescue_Start {
+    lock
+    getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
+    clearflag(FLAG_FACULTY_GORGE_NASH1)
+    if(var(VAR_TEMP_0) == 25 && var(VAR_TEMP_1) == 42) {
+        applymovement(LOCALID_PLAYER, moves(walk_left face_up))
+    }
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up))
+    waitmovement
+    addobject(27)
+    addobject(28)
+    addobject(29)
+    if(var(VAR_TEMP_0) == 24 && var(VAR_TEMP_1) == 42) {
+        applymovement(27,moves(walk_fast_left*4 walk_fast_down*3 walk_fast_left*4 walk_fast_up*2 walk_fast_left walk_fast_up))
+        applymovement(28,moves(walk_fast_down walk_fast_left*4 walk_fast_down*3 walk_fast_left*4 walk_up*2))
+        applymovement(29,moves(walk_left*4))
+        waitmovement
+    }
+    if(var(VAR_TEMP_0) == 25 && var(VAR_TEMP_1) == 42) {
+        applymovement(27,moves(walk_fast_left*4 walk_fast_down*3 walk_fast_left*4 walk_fast_up*2 walk_fast_left walk_fast_up))
+        applymovement(28,moves(walk_fast_down walk_fast_left*4 walk_fast_down*3 walk_fast_left*4 walk_up*2))
+        applymovement(29,moves(walk_left*4))
+        waitmovement
+    }
+    playse(SE_PIN)
+    applymovement(5, moves(emote_exclamation_mark face_down))
+    waitmovement
+    msgbox(format("{COLOR GREEN}Daan{COLOR DARK_GRAY}: {PLAYER}! Nash! I knew you'd come! You're just in time for a party."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    playse(SE_PIN)
+    applymovement(4, moves(emote_question_mark face_down walk_up walk_right walk_right*2 face_down))
+    applymovement(13, moves(walk_right*2 face_down))
+    applymovement(3, moves(emote_question_mark walk_up*2 walk_right*2 face_down))
+    applymovement(1, moves(walk_up face_down))
+    playse(SE_PIN)
+    applymovement(2, moves(emote_exclamation_mark walk_diag_southeast walk_right face_down))
+    applymovement(12, moves(walk_down walk_right face_down))
+    waitmovement
+    msgbox(format("{COLOR BLUE}Barry{COLOR DARK_GRAY}: YOU!?\pOf course you'd show up to ruin everything!\pI should have known you'd be involved in this chaos."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(2, moves(face_up) )
+    waitmovement
+    delay(40)
+    applymovement(2, moves(face_down) )
+    waitmovement
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down))
+    waitmovement
+    special(RemoveCameraObject)
+    msgbox(format("Enough talk!\pGrunts, deal with the ranger and that tree hugger! {PLAYER} is mine!\pLet's show them the true meaning of order!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(2, moves(walk_fast_left*3 walk_fast_down face_right))
+    applymovement(12, moves(walk_fast_left*3 walk_fast_down face_right))
+    applymovement(LOCALID_PLAYER, moves(walk_up walk_left))
+    applymovement(27, moves(walk_up))
+    applymovement(28, moves(walk_left walk_up walk_left walk_up*2))
+    release
+
+}
+
+

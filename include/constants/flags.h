@@ -78,11 +78,11 @@
 #define FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT    0x40 // Unused Flag
 #define FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH    0x41 // Unused Flag
 #define FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
+#define FLAG_RESCUED_DAAN   0x43 // Unused Flag
+#define FLAG_HIDE_NASH_DAVID    0x44 // Unused Flag
+#define FLAG_DAVID_TRUCK   0x45 // Unused Flag
+#define FLAG_FACULTY_GORGE_NASH1    0x46 // Unused Flag
+#define FLAG_FACULTY_GORGE_NASH2    0x47 // Unused Flag
 #define FLAG_UNUSED_0x048    0x48 // Unused Flag
 #define FLAG_UNUSED_0x049    0x49 // Unused Flag
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag

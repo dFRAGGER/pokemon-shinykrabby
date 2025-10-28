@@ -1,1 +1,21 @@
 mapscripts Mistcity_Research_Center_MapScripts {}
+
+script Mistcity_Research_Center_Daan_RescueMission2 {
+    lock
+    if(var(VAR_MISTCITY_RESEARCH_CENTER_LOCATION)== 0) {
+    msgbox(format("There you are.\pNo time to waste.\pDavid is already in the back of the truck.\pLets go!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(13,moves(walk_right walk_up*3 walk_right face_down))
+    applymovement(3, moves(walk_right*4 walk_up walk_right*6 walk_up*3 face_down))
+    applymovement(LOCALID_PLAYER, moves(walk_right*5 walk_up walk_right*6 walk_up*2))
+    waitmovement
+    msgbox(format("Allright. Let's load you up!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(jump_left))
+    waitmovement
+    fadescreen(FADE_TO_BLACK)
+    warpsilent (MAP_INSIDE_OF_TRUCK, 1)
+    waitstate
+    }
+
+}

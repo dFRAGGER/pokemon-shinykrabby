@@ -121,3 +121,153 @@ script LabJariIndoor_Eventscript_Birds_Convo {
     waitmovement
     release
 }
+
+script LabJariIndoor_Eventscript_Barry_Convo {
+    lock
+    playse(SE_PIN)
+    applymovement(2, moves(emote_exclamation_mark))
+    faceplayer
+    msgbox(format("{COLOR BLUE}Barry{COLOR DARK_GRAY}: Don't disturb me... I'm learning a lot about...\ppig sensors..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(2, moves(face_up))
+    waitmovement
+    release
+}
+
+script LabJariIndoor_Sign_1 {
+    lock
+    msgbox(format("--COMPUTER TERMINAL: FILE LOG--\pDIRECTORY: OLDFILES/UNCATEGORIZED/VIDEOS/\nFILE NAME: 'HOW-TO-POTATO-CANNON.MP4'\pSIZE: MASSIVE.\nDATE CREATED: 08/17/2005\pSYSTEM NOTE: VIDEO ARCHIVED. Content appears to involve the dangerous CONSTRUCTION of a PROJECTILE DEVICE using TUBER parts.\pWARNING: DO NOT OPEN. PROFESSOR'S ORDERS. DANGER LEVEL: MEDIUM. (POTATO DAMAGE ONLY)\p--PRESS A TO EXIT--"))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_2 {
+    lock
+    msgbox(format("This appears to be a DNA sequencer machine."))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_3 {
+    lock
+    msgbox(format("Loads of books about bitcoin."))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_4 {
+    lock
+    msgbox(format("This shelf is stacked with copies of Taylor Swift's autobiography."))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_5 {
+    lock
+    msgbox(format("An unopened box bearing the label, 'SMAC'."))
+    waitmessage
+    release
+}
+
+
+
+
+script LabJariIndoor_Sign_6 {
+    lock
+    msgbox(format("A stack of opened, empty egg cartons."))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_7 {
+    lock
+    msgbox(format("Books about the history of bitcoin."))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_8 {
+    lock
+    msgbox(format("A sheet of paper covered with unintelligible scribbling."))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_9 {
+    lock
+    msgbox(format("--MINING LOG: PROF. BIRDS SECURE ACCESS--\pSTATUS: BITCOIN MINING... FULL OPERATION.\nGIGA-HASH RATE: 0.000000000001 BTC/sec.\pSYSTEM MESSAGE: 'PROJECT ETERNAL HODL'\nEstimated time to recover 2011 Wallet Balance: 8500 YEARS.\p--PRESS A TO CLOSE WINDOW--"))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_10 {
+    lock
+    msgbox(format("--FINANCE TERMINAL ACCESS: PROFESSOR'S DESK--\pSUBSIDY LOG: FUNDING STREAM DISRUPTED.\nCAUSE: GRANTS EXPIRED..\pPAYMENT MODULE: INTERN STIPENDS currently designated PENDING.\nNOTE: ALLOCATION DELAYED until RESOURCE RE-AQUISITION.\pEXPECTED WAIT TIME: --ERROR: VALUE UNKNOWN--\p--SYSTEM: INSUFFICIENT FUNDS. PRESS A TO HOLD OF ANY PAYMENT TO INTERNS.--"))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_11 {
+    lock
+    msgbox(format("The plant is clearly struggling, it looks as though it hasn't had any water in weeks."))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_12 {
+    lock
+    msgbox(format("This server is making strange beeping noises."))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_13 {
+    lock
+    msgbox(format("--PROJECT CHRONOS: LATEST DATA LOG--\pSUBJECT: PROFESSOR'S INNATE TIME DISPLACEMENT\nOBSERVATION: 100% CONFIRMED that the Professor always arrives at least 3 HOURS LATE for meetings.\pHYPOTHESIS: The Professor's body mass is creating a localized TEMPORAL DISTORTION FIELD, a micro-DIALGA-EFFECT, that actively shifts his personal timeline.\pSYSTEM WARNING: Current calculations predict that if this trend continues, the Professor will eventually be living A DECADE IN THE PAST. Do not rely on him to revive your FOSSILS.\p--NOTE: PLEASE ADJUST ALL CLOCKS IN THE LAB BY -180 MINUTES. PRESS A TO COMPLY.--"))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_14 {
+    lock
+    msgbox(format("A box overflowing with unsuccessful government subsidy requests."))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_15 {
+    lock
+    msgbox(format("A box overflowing with unsuccessful government subsidy requests."))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_16 {
+    lock
+    msgbox(format("An antique, leather-bound book with the title:\p The Source Code:\nHidden truths about Pokémon origins."))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_17 {
+    lock
+    msgbox(format("A shelf containing books on pig biosensors and their application in intensive agriculture."))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_18 {
+    lock
+    msgbox(format("These appear to be field notes detailing a journey through a forest. That's strange."))
+    waitmessage
+    release
+}
+
+script LabJariIndoor_Sign_19 {
+    lock
+    msgbox(format("An unopened box labeled with 'GPU cards'."))
+    waitmessage
+    release
+}
+
+

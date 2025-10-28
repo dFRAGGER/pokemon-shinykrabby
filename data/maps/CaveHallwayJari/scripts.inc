@@ -22,38 +22,52 @@ CaveHallwayJari_Mapscripts2::
 # 16 "data/maps/CaveHallwayJari/scripts.pory"
 	lock
 # 17 "data/maps/CaveHallwayJari/scripts.pory"
-	msgbox CaveHallwayJari_Mapscripts2_Text_0
+	setvar VAR_TEMP_0, 1
 # 18 "data/maps/CaveHallwayJari/scripts.pory"
-	waitmessage
+	msgbox CaveHallwayJari_Mapscripts2_Text_0
 # 19 "data/maps/CaveHallwayJari/scripts.pory"
-	applymovement LOCALID_PLAYER, CaveHallwayJari_Mapscripts2_Movement_0
+	waitmessage
 # 20 "data/maps/CaveHallwayJari/scripts.pory"
+	release
+	return
+
+
+CaveHallwayJari_Mapscript3::
+# 24 "data/maps/CaveHallwayJari/scripts.pory"
+	lock
+# 25 "data/maps/CaveHallwayJari/scripts.pory"
+	msgbox CaveHallwayJari_Mapscript3_Text_0
+# 26 "data/maps/CaveHallwayJari/scripts.pory"
+	waitmessage
+# 27 "data/maps/CaveHallwayJari/scripts.pory"
+	applymovement LOCALID_PLAYER, CaveHallwayJari_Mapscript3_Movement_0
+# 28 "data/maps/CaveHallwayJari/scripts.pory"
 	waitmovement
-# 21 "data/maps/CaveHallwayJari/scripts.pory"
+# 29 "data/maps/CaveHallwayJari/scripts.pory"
 	release
 	return
 
 
 CaveHallwayJari_PlexServer::
-# 25 "data/maps/CaveHallwayJari/scripts.pory"
+# 33 "data/maps/CaveHallwayJari/scripts.pory"
 	lock
-# 26 "data/maps/CaveHallwayJari/scripts.pory"
+# 34 "data/maps/CaveHallwayJari/scripts.pory"
 	msgbox CaveHallwayJari_PlexServer_Text_0
-# 27 "data/maps/CaveHallwayJari/scripts.pory"
+# 35 "data/maps/CaveHallwayJari/scripts.pory"
 	waitmessage
-# 28 "data/maps/CaveHallwayJari/scripts.pory"
+# 36 "data/maps/CaveHallwayJari/scripts.pory"
 	release
 	return
 
 
 CaveHallway_Jari_LaptopScreen::
-# 32 "data/maps/CaveHallwayJari/scripts.pory"
+# 40 "data/maps/CaveHallwayJari/scripts.pory"
 	lock
-# 33 "data/maps/CaveHallwayJari/scripts.pory"
+# 41 "data/maps/CaveHallwayJari/scripts.pory"
 	msgbox CaveHallway_Jari_LaptopScreen_Text_0
-# 34 "data/maps/CaveHallwayJari/scripts.pory"
+# 42 "data/maps/CaveHallwayJari/scripts.pory"
 	waitmessage
-# 35 "data/maps/CaveHallwayJari/scripts.pory"
+# 43 "data/maps/CaveHallwayJari/scripts.pory"
 	release
 	return
 
@@ -64,9 +78,9 @@ CaveHallwayJari_Mapscripts1_Movement_0:
 	walk_up
 	step_end
 
-# 19 "data/maps/CaveHallwayJari/scripts.pory"
-CaveHallwayJari_Mapscripts2_Movement_0:
-# 19 "data/maps/CaveHallwayJari/scripts.pory"
+# 27 "data/maps/CaveHallwayJari/scripts.pory"
+CaveHallwayJari_Mapscript3_Movement_0:
+# 27 "data/maps/CaveHallwayJari/scripts.pory"
 	walk_down
 	step_end
 
@@ -77,19 +91,25 @@ CaveHallwayJari_Mapscripts1_Text_0:
 	.string "Maybe the boxes are over there?$"
 
 CaveHallwayJari_Mapscripts2_Text_0:
-# 17 "data/maps/CaveHallwayJari/scripts.pory"
+# 18 "data/maps/CaveHallwayJari/scripts.pory"
 	.string "This place is so weird...\p"
 	.string "What is all this stuff?$"
 
+CaveHallwayJari_Mapscript3_Text_0:
+# 25 "data/maps/CaveHallwayJari/scripts.pory"
+	.string "Those boxes...\p"
+	.string "If I return empty handed Professor\n"
+	.string "Birds will scold me...$"
+
 CaveHallwayJari_PlexServer_Text_0:
-# 26 "data/maps/CaveHallwayJari/scripts.pory"
+# 34 "data/maps/CaveHallwayJari/scripts.pory"
 	.string "This seems to be giant computer server,\n"
 	.string "on the screen it says:\p"
 	.string "'PLEX SERVER RUNNING: BITCOIN MINING\n"
 	.string "THROUGH STREAMING IN FULL FORCE'$"
 
 CaveHallway_Jari_LaptopScreen_Text_0:
-# 33 "data/maps/CaveHallwayJari/scripts.pory"
+# 41 "data/maps/CaveHallwayJari/scripts.pory"
 	.string "The screen shows a rotating\n"
 	.string "double-helix DNA.\p"
 	.string "A text window is open on the side:\p"

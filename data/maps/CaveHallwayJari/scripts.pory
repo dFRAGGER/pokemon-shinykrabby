@@ -14,7 +14,15 @@ script CaveHallwayJari_Mapscripts1 {
 
 script CaveHallwayJari_Mapscripts2 {
     lock
+    setvar(VAR_TEMP_0,1)
     msgbox(format("This place is so weird...\pWhat is all this stuff?"))
+    waitmessage
+    release
+}
+
+script CaveHallwayJari_Mapscript3 {
+    lock
+    msgbox(format("Those boxes...\pIf I return empty handed Professor Birds will scold me..."))
     waitmessage
     applymovement(LOCALID_PLAYER, moves(walk_down))
     waitmovement

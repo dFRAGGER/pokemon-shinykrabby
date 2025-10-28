@@ -1236,3 +1236,37 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/SiltrootTown/scripts.inc"
 
 	.include "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.inc"
+
+	.include "data/maps/Route03/scripts.inc"
+
+	.include "data/maps/Route04/scripts.inc"
+
+	.include "data/maps/Route01_Forest/scripts.inc"
+
+	.include "data/maps/LionsarchCity/scripts.inc"
+
+	.include "data/maps/DeepCloudForest_FacultyGorge_Restored/scripts.inc"
+
+	.include "data/maps/Route06/scripts.inc"
+
+	.include "data/maps/Route05/scripts.inc"
+
+	.include "data/maps/WestLionMountain/scripts.inc"
+
+	.include "data/maps/WestLionMountain_SnowTop/scripts.inc"
+
+	.include "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.inc"
+
+	.include "data/maps/SiltrootTown_Indoor_Healer/scripts.inc"
+
+	.include "data/maps/SiltrootTown_Indoor_House4/scripts.inc"
+
+	.include "data/maps/Route07/scripts.inc"
+
+	.include "data/maps/Route08/scripts.inc"
+
+	.include "data/maps/EastLionMountain/scripts.inc"
+
+	.include "data/maps/Route09_SecretFiord/scripts.inc"
+
+	.include "data/maps/Route10/scripts.inc"

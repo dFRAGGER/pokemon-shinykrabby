@@ -1,0 +1,36 @@
+{
+  "id": "MAP_ROUTE06",
+  "name": "Route06",
+  "layout": "LAYOUT_ROUTE06",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY_CLOUDS",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_LIONSARCH_CITY",
+      "offset": -28,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE05",
+      "offset": 6,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_EAST_LION_MOUNTAIN",
+      "offset": 19,
+      "direction": "up"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

@@ -79,9 +79,18 @@
       "x": 10,
       "y": 5,
       "elevation": 0,
-      "var": "VAR_RECIEVED_STARTER_POKEMON",
+      "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "CaveHallwayJari_Mapscripts2"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_RECIEVED_STARTER_POKEMON",
+      "var_value": "0",
+      "script": "CaveHallwayJari_Mapscript3"
     }
   ],
   "bg_events": [

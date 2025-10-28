@@ -284,7 +284,8 @@ Maasje_Gym_PeteLongfellow_Defeated_Text_1:
 	.string "your life.\p"
 	.string "Running this gym has been fun, but the\n"
 	.string "grand mission of The Faculty calls.\p"
-	.string "Don't let me see you again, you punk!$"
+	.string "Soon, the unyielding stone of true\n"
+	.string "order will put you in your place.$"
 
 Maasje_Gym_PeteLongfellow_Defeated_Text_2:
 # 54 "data/maps/Maasje_Gym/scripts.pory"
@@ -320,8 +321,7 @@ Maasje_Gym_PeteLongfellow_Introtext::
 
 Maasje_Gym_PeteLongfellow_Defeattext::
 # 66 "data/maps/Maasje_Gym/scripts.pory"
-	.string "{COLOR BLUE}Pete Longfellow: {COLOR DARK_GRAY}I might be getting to\n"
-	.string "old for this.\p"
+	.string "I might be getting to old for this.\p"
 	.string "Maybe my skills have finally eroded with\n"
 	.string "the wind.$"
 
@@ -333,8 +333,7 @@ Maasje_Gym_Introtext_Trainer_Bram::
 
 Maasje_Gym_Losetext_Trainer_Bram::
 # 92 "data/maps/Maasje_Gym/scripts.pory"
-	.string "{COLOR BLUE}Bram of the Millcount: {COLOR DARK_GRAY}Maybe I'm just an\n"
-	.string "assitant afterall.$"
+	.string "Maybe I'm just an assitant afterall.$"
 
 Maasje_Gym_Introtext_Trainer_Rob::
 # 102 "data/maps/Maasje_Gym/scripts.pory"
@@ -344,5 +343,4 @@ Maasje_Gym_Introtext_Trainer_Rob::
 
 Maasje_Gym_Losetext_Trainer_Rob::
 # 106 "data/maps/Maasje_Gym/scripts.pory"
-	.string "{COLOR BLUE}Rob of Erup: {COLOR DARK_GRAY}It seems like my strategy\n"
-	.string "got hacked.$"
+	.string "It seems like my strategy got hacked.$"

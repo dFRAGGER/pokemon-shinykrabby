@@ -383,7 +383,7 @@ PetalburgWoods_Text_YoureLoadedWithItems:
 PetalburgWoods_Text_GoBugPokemonTeam:
 	.string "I caught a whole bunch of POKéMON!\p"
 	.string "Go, go, go!\n"
-	.string "My BUG POKéMON team!$"
+	.string "My CRUSTACEAN POKéMON team!$"
 
 PetalburgWoods_Text_ICouldntWin:
 	.string "I have all these POKéMON,\n"

@@ -32,3 +32,38 @@ script LabJariIndoorStorage_Eventscript_BoxesAssignment {
     release
 }
 
+script LabJariIndoorStorage_Sign_1 {
+    lock
+    msgbox(format("These appear to be notes detailing a major construction project for an underground facility beneath a mountain."))
+    waitmessage
+    release
+}
+
+script LabJariIndoorStorage_Sign_2 {
+    lock
+    msgbox(format("A server whose cooling fans are spinning rapidly."))
+    waitmessage
+    release
+}
+
+script LabJariIndoorStorage_Sign_3 {
+    lock
+    msgbox(format("This coffee is so old it appears to have polymerized into a solid mass."))
+    waitmessage
+    release
+}
+
+script LabJariIndoorStorage_Sign_4 {
+    lock
+    msgbox(format("--FACILITY SERVER: DEBUG LOG--\pPROJECT OMEGA: CURRENT STATUS: PHASE 3 CONSTRUCTION.\nLOCATION: SUBTERRANEAN, MOUNT BASE COMPLEX.\pGEOLOGIC REPORT: DRILLING OPERATIONS proceeding close to SAFE TOLERANCES. We have excavated the full footprint for the Rare Starter Pokemon Facility and the Advanced Research Wing.\pCORE DIRECTIVE: Maintain absolute SIGNAL SILENCE. The government must not be aware of the scope of this project.\pSYSTEM ALERT: POWER CONSUMPTION for SUB-LEVEL 5 COOLING is CRITICAL. Authorized CPU MINING seems to drain the power in AUXILIARY LABS.\p--PRESS A TO VIEW SCHEMATICS--"))
+    waitmessage
+    release
+}
+
+script LabJariIndoorStorage_Sign_5 {
+    lock
+    msgbox(format("Shelves with books about underground construction."))
+    waitmessage
+    release
+}
+

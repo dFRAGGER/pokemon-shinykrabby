@@ -225,3 +225,9 @@ const u16 gMetatileAttributes_Johto_General[] = INCBIN_U16("data/tilesets/primar
 
 const u16 gMetatiles_KantoGeneral[] = INCBIN_U16("data/tilesets/primary/kanto_general/metatiles.bin");
 const u16 gMetatileAttributes_KantoGeneral[] = INCBIN_U16("data/tilesets/primary/kanto_general/metatile_attributes.bin");
+
+const u16 gMetatiles_Cerulean_City[] = INCBIN_U16("data/tilesets/secondary/cerulean_city/metatiles.bin");
+const u16 gMetatileAttributes_Cerulean_City[] = INCBIN_U16("data/tilesets/secondary/cerulean_city/metatile_attributes.bin");
+
+const u16 gMetatiles_Snow[] = INCBIN_U16("data/tilesets/primary/snow/metatiles.bin");
+const u16 gMetatileAttributes_Snow[] = INCBIN_U16("data/tilesets/primary/snow/metatile_attributes.bin");

@@ -299,6 +299,256 @@ LabJariIndoor_Eventscript_Birds_Convo::
 	return
 
 
+LabJariIndoor_Eventscript_Barry_Convo::
+# 126 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 127 "data/maps/LabJariIndoor/scripts.pory"
+	playse SE_PIN
+# 128 "data/maps/LabJariIndoor/scripts.pory"
+	applymovement 2, LabJariIndoor_Eventscript_Barry_Birds_Movement_10
+# 129 "data/maps/LabJariIndoor/scripts.pory"
+	faceplayer
+# 130 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Eventscript_Barry_Convo_Text_0, MSGBOX_AUTOCLOSE
+# 131 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 132 "data/maps/LabJariIndoor/scripts.pory"
+	applymovement 2, LabJariIndoor_Eventscript_Barry_Birds_Movement_3
+# 133 "data/maps/LabJariIndoor/scripts.pory"
+	waitmovement
+# 134 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_1::
+# 138 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 139 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_1_Text_0
+# 140 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 141 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_2::
+# 145 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 146 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_2_Text_0
+# 147 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 148 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_3::
+# 152 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 153 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_3_Text_0
+# 154 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 155 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_4::
+# 159 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 160 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_4_Text_0
+# 161 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 162 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_5::
+# 166 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 167 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_5_Text_0
+# 168 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 169 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_6::
+# 176 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 177 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_6_Text_0
+# 178 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 179 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_7::
+# 183 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 184 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_7_Text_0
+# 185 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 186 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_8::
+# 190 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 191 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_8_Text_0
+# 192 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 193 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_9::
+# 197 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 198 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_9_Text_0
+# 199 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 200 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_10::
+# 204 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 205 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_10_Text_0
+# 206 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 207 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_11::
+# 211 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 212 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_11_Text_0
+# 213 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 214 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_12::
+# 218 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 219 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_12_Text_0
+# 220 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 221 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_13::
+# 225 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 226 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_13_Text_0
+# 227 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 228 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_14::
+# 232 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 233 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_14_Text_0
+# 234 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 235 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_15::
+# 239 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 240 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_14_Text_0
+# 241 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 242 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_16::
+# 246 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 247 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_16_Text_0
+# 248 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 249 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_17::
+# 253 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 254 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_17_Text_0
+# 255 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 256 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_18::
+# 260 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 261 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_18_Text_0
+# 262 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 263 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
+LabJariIndoor_Sign_19::
+# 267 "data/maps/LabJariIndoor/scripts.pory"
+	lock
+# 268 "data/maps/LabJariIndoor/scripts.pory"
+	msgbox LabJariIndoor_Sign_19_Text_0
+# 269 "data/maps/LabJariIndoor/scripts.pory"
+	waitmessage
+# 270 "data/maps/LabJariIndoor/scripts.pory"
+	release
+	return
+
+
 # 18 "data/maps/LabJariIndoor/scripts.pory"
 LabJariIndoor_Eventscript_Barry_Birds_Movement_0:
 # 18 "data/maps/LabJariIndoor/scripts.pory"
@@ -534,3 +784,150 @@ LabJariIndoor_Eventscript_Birds_Convo_Text_0:
 	.string "SAMPL... PIG SENSORS ARE!!\p"
 	.string "GET THOSE BOXES OUT OF THE BACK OF THE\n"
 	.string "STORAGE ROOM!!$"
+
+LabJariIndoor_Eventscript_Barry_Convo_Text_0:
+# 130 "data/maps/LabJariIndoor/scripts.pory"
+	.string "{COLOR BLUE}Barry{COLOR DARK_GRAY}: Don't disturb me... I'm learning a\n"
+	.string "lot about...\p"
+	.string "pig sensors...$"
+
+LabJariIndoor_Sign_1_Text_0:
+# 139 "data/maps/LabJariIndoor/scripts.pory"
+	.string "--COMPUTER TERMINAL: FILE LOG--\p"
+	.string "DIRECTORY:\n"
+	.string "OLDFILES/UNCATEGORIZED/VIDEOS/\n"
+	.string "FILE NAME: 'HOW-TO-POTATO-CANNON.MP4'\p"
+	.string "SIZE: MASSIVE.\n"
+	.string "DATE CREATED: 08/17/2005\p"
+	.string "SYSTEM NOTE: VIDEO ARCHIVED. Content\n"
+	.string "appears to involve the dangerous\l"
+	.string "CONSTRUCTION of a PROJECTILE DEVICE\l"
+	.string "using TUBER parts.\p"
+	.string "WARNING: DO NOT OPEN. PROFESSOR'S\n"
+	.string "ORDERS. DANGER LEVEL: MEDIUM. (POTATO\l"
+	.string "DAMAGE ONLY)\p"
+	.string "--PRESS A TO EXIT--$"
+
+LabJariIndoor_Sign_2_Text_0:
+# 146 "data/maps/LabJariIndoor/scripts.pory"
+	.string "This appears to be a DNA sequencer\n"
+	.string "machine.$"
+
+LabJariIndoor_Sign_3_Text_0:
+# 153 "data/maps/LabJariIndoor/scripts.pory"
+	.string "Loads of books about bitcoin.$"
+
+LabJariIndoor_Sign_4_Text_0:
+# 160 "data/maps/LabJariIndoor/scripts.pory"
+	.string "This shelf is stacked with copies of\n"
+	.string "Taylor Swift's autobiography.$"
+
+LabJariIndoor_Sign_5_Text_0:
+# 167 "data/maps/LabJariIndoor/scripts.pory"
+	.string "An unopened box bearing the label,\n"
+	.string "'SMAC'.$"
+
+LabJariIndoor_Sign_6_Text_0:
+# 177 "data/maps/LabJariIndoor/scripts.pory"
+	.string "A stack of opened, empty egg cartons.$"
+
+LabJariIndoor_Sign_7_Text_0:
+# 184 "data/maps/LabJariIndoor/scripts.pory"
+	.string "Books about the history of bitcoin.$"
+
+LabJariIndoor_Sign_8_Text_0:
+# 191 "data/maps/LabJariIndoor/scripts.pory"
+	.string "A sheet of paper covered with\n"
+	.string "unintelligible scribbling.$"
+
+LabJariIndoor_Sign_9_Text_0:
+# 198 "data/maps/LabJariIndoor/scripts.pory"
+	.string "--MINING LOG: PROF. BIRDS SECURE\n"
+	.string "ACCESS--\p"
+	.string "STATUS: BITCOIN MINING... FULL\n"
+	.string "OPERATION.\n"
+	.string "GIGA-HASH RATE: 0.000000000001\l"
+	.string "BTC/sec.\p"
+	.string "SYSTEM MESSAGE: 'PROJECT ETERNAL\n"
+	.string "HODL'\n"
+	.string "Estimated time to recover 2011 Wallet\l"
+	.string "Balance: 8500 YEARS.\p"
+	.string "--PRESS A TO CLOSE WINDOW--$"
+
+LabJariIndoor_Sign_10_Text_0:
+# 205 "data/maps/LabJariIndoor/scripts.pory"
+	.string "--FINANCE TERMINAL ACCESS:\n"
+	.string "PROFESSOR'S DESK--\p"
+	.string "SUBSIDY LOG: FUNDING STREAM\n"
+	.string "DISRUPTED.\n"
+	.string "CAUSE: GRANTS EXPIRED..\p"
+	.string "PAYMENT MODULE: INTERN STIPENDS\n"
+	.string "currently designated PENDING.\n"
+	.string "NOTE: ALLOCATION DELAYED until\l"
+	.string "RESOURCE RE-AQUISITION.\p"
+	.string "EXPECTED WAIT TIME: --ERROR: VALUE\n"
+	.string "UNKNOWN--\p"
+	.string "--SYSTEM: INSUFFICIENT FUNDS. PRESS A\n"
+	.string "TO HOLD OF ANY PAYMENT TO INTERNS.--$"
+
+LabJariIndoor_Sign_11_Text_0:
+# 212 "data/maps/LabJariIndoor/scripts.pory"
+	.string "The plant is clearly struggling, it looks\n"
+	.string "as though it hasn't had any water in\l"
+	.string "weeks.$"
+
+LabJariIndoor_Sign_12_Text_0:
+# 219 "data/maps/LabJariIndoor/scripts.pory"
+	.string "This server is making strange beeping\n"
+	.string "noises.$"
+
+LabJariIndoor_Sign_13_Text_0:
+# 226 "data/maps/LabJariIndoor/scripts.pory"
+	.string "--PROJECT CHRONOS: LATEST DATA LOG--\p"
+	.string "SUBJECT: PROFESSOR'S INNATE TIME\n"
+	.string "DISPLACEMENT\n"
+	.string "OBSERVATION: 100% CONFIRMED that the\l"
+	.string "Professor always arrives at least 3\l"
+	.string "HOURS LATE for meetings.\p"
+	.string "HYPOTHESIS: The Professor's body mass\n"
+	.string "is creating a localized TEMPORAL\l"
+	.string "DISTORTION FIELD, a\l"
+	.string "micro-DIALGA-EFFECT, that actively\l"
+	.string "shifts his personal timeline.\p"
+	.string "SYSTEM WARNING: Current calculations\n"
+	.string "predict that if this trend continues,\l"
+	.string "the Professor will eventually be living\l"
+	.string "A DECADE IN THE PAST. Do not rely on him\l"
+	.string "to revive your FOSSILS.\p"
+	.string "--NOTE: PLEASE ADJUST ALL CLOCKS IN\n"
+	.string "THE LAB BY -180 MINUTES. PRESS A TO\l"
+	.string "COMPLY.--$"
+
+LabJariIndoor_Sign_14_Text_0:
+# 233 "data/maps/LabJariIndoor/scripts.pory"
+	.string "A box overflowing with unsuccessful\n"
+	.string "government subsidy requests.$"
+
+LabJariIndoor_Sign_16_Text_0:
+# 247 "data/maps/LabJariIndoor/scripts.pory"
+	.string "An antique, leather-bound book with\n"
+	.string "the title:\p"
+	.string "The Source Code:\n"
+	.string "Hidden truths about Pokémon origins.$"
+
+LabJariIndoor_Sign_17_Text_0:
+# 254 "data/maps/LabJariIndoor/scripts.pory"
+	.string "A shelf containing books on pig\n"
+	.string "biosensors and their application in\l"
+	.string "intensive agriculture.$"
+
+LabJariIndoor_Sign_18_Text_0:
+# 261 "data/maps/LabJariIndoor/scripts.pory"
+	.string "These appear to be field notes\n"
+	.string "detailing a journey through a forest.\l"
+	.string "That's strange.$"
+
+LabJariIndoor_Sign_19_Text_0:
+# 268 "data/maps/LabJariIndoor/scripts.pory"
+	.string "An unopened box labeled with 'GPU\n"
+	.string "cards'.$"

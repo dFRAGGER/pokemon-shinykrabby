@@ -20,7 +20,7 @@ text Maasje_Gym_Introtext_Trainer_Addy {
 }
 
 text Maasje_Gym_Losetext_Trainer_Addy {
-    format("{COLOR BLUE}Addy the Janitor : {COLOR DARK_GRAY}These cloths don't fit me anyway.")
+    format("These cloths don't fit me anyway.")
 }
 
 script Maasje_Gym_Basement_Eventscript_Mart {
@@ -34,5 +34,5 @@ text Maasje_Gym_Introtext_Trainer_Mart {
 }
 
 text Maasje_Gym_Losetext_Trainer_Mart {
-    format("{COLOR BLUE}Mart of the Breakel: {COLOR DARK_GRAY}Maybe my IQ is lower than I thought.")
+    format("Maybe my IQ is lower than I thought.")
 }

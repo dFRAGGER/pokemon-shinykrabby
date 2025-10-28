@@ -509,13 +509,12 @@ Route01_Battle_Factulty_Grunts_Text_1:
 
 Route01_Loss_Ton_Cross::
 # 124 "data/maps/Route01/scripts.pory"
-	.string "{COLOR BLUE}Tod Cross{COLOR DARK_GRAY}: Even losing does not feel as\n"
-	.string "bad as teaching geography to\l"
-	.string "unmotivated children.$"
+	.string "Even losing does not feel as bad as\n"
+	.string "teaching geography to unmotivated\l"
+	.string "children.$"
 
 Route01_Loss_Ad_Dice::
 # 128 "data/maps/Route01/scripts.pory"
-	.string "{COLOR BLUE}Ad Dice{COLOR DARK_GRAY}: Being a janitor or losing a\n"
-	.string "battle?\p"
+	.string "Being a janitor or losing a battle?\p"
 	.string "I'd rather lose a battle than spend\n"
 	.string "another minute with my old colleagues.$"

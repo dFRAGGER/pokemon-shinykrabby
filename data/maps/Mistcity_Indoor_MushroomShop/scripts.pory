@@ -8,6 +8,7 @@ script Mistcity_Indoor_MushroomShop_MushroomGirl {
     setflag(FLAG_MUSHROOM_MISSION_STARTED)
     msgbox(format("HEY! WELCOME!\pWatch your step, a new batch of mushrooms just arrived from the forest!\pI'm {COLOR GREEN}Leaf{COLOR DARK_GRAY}! I'm a mycologist!\pThat means I LOVE MUSHROOMS!\nAnd this forest is a PARADISE!\pSay, you're a trainer, right?!\pYou could help me with my research!\pI'm making a Fungus Index!\pCould you show me some Pokémon that have fungi on them?\pI'm looking for a Paras, a Parasect, a Shroomish, and a Breloom!\pPleeeease?"))
     waitmessage
+    end
     }
     if(flag(FLAG_MUSHROOM_MISSION_STARTED)&&!flag(FLAG_MUSHROOM_MISSION_COMPLETED)){
     if(!flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARAS)||!flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT)||!flag(FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH)||!flag(FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM)) {
@@ -69,10 +70,8 @@ script Mistcity_Indoor_MushroomShop_MushroomGirl {
             msgbox(format("A Breloom. It loves warm and humid climates and scatters spores from holes in the cap on its head."))
             waitmessage
         }
-        else{
-            msgbox(format("Good luck finding those!\p I have a small reward for you if you manage to help me complete my Fungus Index."))
-            waitmessage
-        }
+        msgbox(format("Good luck finding those!\p I have a small reward for you if you manage to help me complete my Fungus Index."))
+        waitmessage
         release
         end
     }

@@ -4927,8 +4927,8 @@ Level: 15
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Sandstorm
 - Rollout
-- Bulldoze
 - Defense Curl
+- Tackle
 
 === TRAINER_NORMAN_1 ===
 Name: NORMAN
@@ -11257,26 +11257,26 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LYLE ===
 Name: LYLE
-Class: Bug Catcher
-Pic: Bug Catcher
+Class: Fisherman
+Pic: Fisherman
 Gender: Male
 Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Wurmple
+Krabby
 Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wurmple
+Krabby
 Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wurmple
+Krabby
 Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wurmple
+Krabby
 Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 

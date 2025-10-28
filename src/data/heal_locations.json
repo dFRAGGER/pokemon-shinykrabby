@@ -155,6 +155,12 @@
       "map": "MAP_MIST_CITY",
       "x": 53,
       "y": 23
+    },
+    {
+      "id": "HEAL_LOCATION_DEEP_CLOUD_FOREST_FACULTY_GORGE",
+      "map": "MAP_DEEP_CLOUD_FOREST_FACULTY_GORGE",
+      "x": 23,
+      "y": 7
     }
   ]
 }

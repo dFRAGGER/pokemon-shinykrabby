@@ -636,7 +636,20 @@
     "Route02",
     "MistCity",
     "TheShadowLands",
-    "SiltrootTown"
+    "SiltrootTown",
+    "Route03",
+    "Route04",
+    "Route01_Forest",
+    "LionsarchCity",
+    "Route05",
+    "Route06",
+    "WestLionMountain",
+    "WestLionMountain_SnowTop",
+    "Route07",
+    "Route08",
+    "EastLionMountain",
+    "Route09_SecretFiord",
+    "Route10"
   ],
   "gMapGroup_IndooErpusCity": [
     "LabJariIndoor",
@@ -682,9 +695,13 @@
     "Mistcity_Mart"
   ],
   "gMapGroup_DeepCloudForest": [
-    "DeepCloudForest_FacultyGorge"
+    "DeepCloudForest_FacultyGorge",
+    "DeepCloudForest_FacultyGorge_Restored"
   ],
   "gMapGroup_IndoorSiltrootTown": [
-    "SiltrootTown_Indoor_Ali_Apothecary"
+    "SiltrootTown_Indoor_Ali_Apothecary",
+    "SiltrootTown_Indoor_FacultyDefector",
+    "SiltrootTown_Indoor_Healer",
+    "SiltrootTown_Indoor_House4"
   ]
 }

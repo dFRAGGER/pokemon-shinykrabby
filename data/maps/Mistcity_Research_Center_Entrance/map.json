@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Mistcity_Research_Center_Entrance_Scientist_Slaking",
       "flag": "0"
     },
     {
@@ -50,12 +50,12 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Mistcity_Research_Center_Entrance_Scientist_Paras",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
-      "x": 0,
+      "x": 1,
       "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
@@ -63,15 +63,15 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Mistcity_Research_Center_Entrance_Scientist_Shiftry",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MYSTERY_GIFT_MAN",
-      "x": 5,
-      "y": 3,
+      "x": 4,
+      "y": 10,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -145,19 +145,6 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PELIPPER)",
-      "x": 18,
-      "y": 4,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
       "x": 26,
       "y": 4,
@@ -180,7 +167,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Mistcity_Research_Center_Entrance_Scientist_Tropius",
       "flag": "0"
     },
     {
@@ -249,7 +236,20 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
+      "graphics_id": "OBJ_EVENT_GFX_BRANDON",
+      "x": 3,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_NASH_DAVID"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MYSTERY_GIFT_MAN",
       "x": 1,
       "y": 6,
       "elevation": 0,
@@ -262,7 +262,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 3,
       "y": 5,
       "elevation": 0,
@@ -272,7 +272,20 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_NASH_DAVID"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ARCANINE)",
+      "x": 5,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_NASH_DAVID"
     }
   ],
   "warp_events": [
@@ -305,6 +318,16 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_MISTCITY_RESEARCH_CENTER",
+      "var_value": "0",
+      "script": "Mistcity_Research_Center_Entrance_Daan_RescueMission"
+    }
+  ],
   "bg_events": []
 }

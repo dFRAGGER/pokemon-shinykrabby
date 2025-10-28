@@ -177,7 +177,7 @@ script ErpCity_Receive_Running_Shoes {
     playfanfare(MUS_OBTAIN_ITEM)
     msgbox(format("You have received running shoes from Mom."))
     waitmessage
-    msgbox(format("Look at you, all nice and shiny.\p Say hello to the professor for me.\p Have fun!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("Now if you press your 'B muscle' while moving, you will sprint!\pLook at you, all nice and shiny.\p Say hello to the professor for me.\p Have fun!"),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
     msgbox(format("Well, go on!\nDon't be shy!"), MSGBOX_AUTOCLOSE)
