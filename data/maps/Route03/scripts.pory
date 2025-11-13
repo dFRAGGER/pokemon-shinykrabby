@@ -1,1 +1,91 @@
 mapscripts Route03_MapScripts {}
+
+script Route03_Trainer_Gabrielle {
+    trainerbattle_single(TRAINER_GABRIELLE, Route03_Text_GabrielleIntro, Route03_Text_GabrielleDefeated)
+	msgbox(Route03_Text_GabriellePostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text Route03_Text_GabrielleIntro {
+    format("Some Pokémon walk, but mine prefer to flap and flutter!")
+}
+
+text Route03_Text_GabrielleDefeated {
+    format("Grounded!\nI can't believe it.")
+}
+
+text Route03_Text_GabriellePostBattle {
+    format("Yanma is really fast.\nIt is hard to catch one.")
+}
+
+script Route03_Trainer_Lawson {
+    trainerbattle_single(TRAINER_LAWSON, Route03_Text_LawsonIntro, Route03_Text_LawsonDefeated)
+	msgbox(Route03_Text_LawsonPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text Route03_Text_LawsonIntro {
+    format("Eek! A spider!\nJust kidding, it's my friend.")
+}
+
+text Route03_Text_LawsonDefeated {
+    format("Squashed like a bug...")
+}
+
+text Route03_Text_LawsonPostBattle {
+    format("Bug Pokémon evolve quickly.\nI can't wait for them to change.")
+}
+
+script Route03_Trainer_Marcel {
+    trainerbattle_single(TRAINER_MARCEL, Route03_Text_MarcelIntro, Route03_Text_MarcelDefeated)
+	msgbox(Route03_Text_MarcelPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text Route03_Text_MarcelIntro {
+    format("Fire is hot, so you better watch out or you'll get burned!")
+}
+
+text Route03_Text_MarcelDefeated {
+    format("We burned out...")
+}
+
+text Route03_Text_MarcelPostBattle {
+    format("If you meet a Grass-type Pokémon, my Charmander is unbeatable.")
+}
+
+script Route03_Trainer_Alberto {
+    trainerbattle_single(TRAINER_ALBERTO, Route03_Text_AlbertoIntro, Route03_Text_AlbertoDefeated)
+	msgbox(Route03_Text_AlbertoPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text Route03_Text_AlbertoIntro {
+    format("I'm thirsty for a battle.\nLet's make a splash!")
+}
+
+text Route03_Text_AlbertoDefeated {
+    format("I'm all dried up.")
+}
+
+text Route03_Text_AlbertoPostBattle {
+    format("Water Pokémon are the best.\nThey have fewer weaknesses.")
+}
+
+script Route03_Trainer_Ed {
+    trainerbattle_single(TRAINER_ED, Route03_Text_EdIntro, Route03_Text_EdDefeated)
+	msgbox(Route03_Text_EdPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text Route03_Text_EdIntro {
+    format("Stop right there!\nOnly the strong pass this point.")
+}
+
+text Route03_Text_EdDefeated {
+    format("Okay, okay!\nYou are strong enough.")
+}
+
+text Route03_Text_EdPostBattle {
+    format("Training is a never-ending road.\nKeep moving forward.")
+}

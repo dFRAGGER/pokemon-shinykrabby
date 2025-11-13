@@ -1806,8 +1806,8 @@
       "name": "SeafloorCavern_Room4_Layout",
       "width": 18,
       "height": 19,
-      "border_width": 0,
-      "border_height": 0,
+      "border_width": 2,
+      "border_height": 2,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/SeafloorCavern_Room4/border.bin",
@@ -3054,8 +3054,8 @@
       "name": "FortreeCity_DecorationShop_Layout",
       "width": 8,
       "height": 6,
-      "border_width": 0,
-      "border_height": 0,
+      "border_width": 2,
+      "border_height": 2,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/FortreeCity_DecorationShop/border.bin",
@@ -5920,8 +5920,8 @@
     {
       "id": "LAYOUT_EAST_LION_MOUNTAIN",
       "name": "EastLionMountain_Layout",
-      "width": 69,
-      "height": 53,
+      "width": 49,
+      "height": 54,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -5952,6 +5952,54 @@
       "secondary_tileset": "gTileset_Mossdeep",
       "border_filepath": "data/layouts/Route10/border.bin",
       "blockdata_filepath": "data/layouts/Route10/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIKE_PARK",
+      "name": "BikePark_Layout",
+      "width": 32,
+      "height": 100,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/BikePark/border.bin",
+      "blockdata_filepath": "data/layouts/BikePark/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE09_SECRET_WATER_SOURCE",
+      "name": "Route09_SecretWaterSource_Layout",
+      "width": 50,
+      "height": 33,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Route09_SecretWaterSource/border.bin",
+      "blockdata_filepath": "data/layouts/Route09_SecretWaterSource/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE09_DEEP_FOREST_CORE",
+      "name": "Route09_DeepForestCore_Layout",
+      "width": 43,
+      "height": 30,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Route09_DeepForestCore/border.bin",
+      "blockdata_filepath": "data/layouts/Route09_DeepForestCore/map.bin"
+    },
+    {
+      "id": "LAYOUT_MISTCITY_INDOOR_GYM",
+      "name": "Mistcity_Indoor_Gym_Layout",
+      "width": 40,
+      "height": 30,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_FortreeGym",
+      "border_filepath": "data/layouts/Mistcity_Indoor_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/Mistcity_Indoor_Gym/map.bin"
     }
   ]
 }

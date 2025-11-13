@@ -142,10 +142,6 @@ Route121_EventScript_Pat::
 	msgbox Route121_Text_PatPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route121_EventScript_Marcel::
-	trainerbattle_single TRAINER_MARCEL, Route121_Text_MarcelIntro, Route121_Text_MarcelDefeat
-	msgbox Route121_Text_MarcelPostBattle, MSGBOX_AUTOCLOSE
-	end
 
 Route121_EventScript_Cristin::
 	trainerbattle_single TRAINER_CRISTIN_1, Route121_Text_CristinIntro, Route121_Text_CristinDefeat, Route121_EventScript_RegisterCristin

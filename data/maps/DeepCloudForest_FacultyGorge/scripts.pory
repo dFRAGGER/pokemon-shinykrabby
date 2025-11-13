@@ -1,7 +1,15 @@
 mapscripts DeepCloudForest_FacultyGorge_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+        call(DeepCloudforest_Healspot_OnTransition)
+    }
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 1: DeepCloudForest_FacultyGorge_GetOutTruck
     ]
+}
+
+script DeepCloudforest_Healspot_OnTransition {
+    setrespawn(HEAL_LOCATION_DEEP_CLOUD_FOREST_FACULTY_GORGE)
+    end
 }
 
 script DeepCloudForest_FacultyGorge_GetOutTruck {
@@ -108,27 +116,27 @@ script DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts {
 
 script DeepCloudForest_FacultyGorge_Daan_Rescue_Start {
     lock
-    getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
     clearflag(FLAG_FACULTY_GORGE_NASH1)
-    if(var(VAR_TEMP_0) == 25 && var(VAR_TEMP_1) == 42) {
-        applymovement(LOCALID_PLAYER, moves(walk_left face_up))
-    }
     special(SpawnCameraObject)
-    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up))
-    waitmovement
+    getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
     addobject(27)
     addobject(28)
     addobject(29)
-    if(var(VAR_TEMP_0) == 24 && var(VAR_TEMP_1) == 42) {
-        applymovement(27,moves(walk_fast_left*4 walk_fast_down*3 walk_fast_left*4 walk_fast_up*2 walk_fast_left walk_fast_up))
-        applymovement(28,moves(walk_fast_down walk_fast_left*4 walk_fast_down*3 walk_fast_left*4 walk_up*2))
-        applymovement(29,moves(walk_left*4))
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up))
+    waitmovement
+    if(var(VAR_TEMP_0) == 24) {
+        applymovement(27, moves(walk_fast_left*4 walk_fast_down*3 walk_fast_left*4 walk_fast_up*2 walk_fast_left walk_fast_up))
+        applymovement(28, moves(walk_fast_down walk_fast_left*4 walk_fast_down*3 walk_fast_left*4 walk_up*2))
+        waitmovement
+        applymovement(29, moves(walk_left*4))
         waitmovement
     }
-    if(var(VAR_TEMP_0) == 25 && var(VAR_TEMP_1) == 42) {
-        applymovement(27,moves(walk_fast_left*4 walk_fast_down*3 walk_fast_left*4 walk_fast_up*2 walk_fast_left walk_fast_up))
-        applymovement(28,moves(walk_fast_down walk_fast_left*4 walk_fast_down*3 walk_fast_left*4 walk_up*2))
-        applymovement(29,moves(walk_left*4))
+    if(var(VAR_TEMP_0) == 25) {
+        applymovement(LOCALID_PLAYER, moves(walk_left face_up))
+        applymovement(27, moves(walk_fast_left*4 walk_fast_down*3 walk_fast_left*4 walk_fast_up*2 walk_fast_left walk_fast_up))
+        applymovement(28, moves(walk_fast_down walk_fast_left*4 walk_fast_down*3 walk_fast_left*4 walk_up*2))
+        waitmovement
+        applymovement(29, moves(walk_left*4))
         waitmovement
     }
     playse(SE_PIN)
@@ -155,16 +163,148 @@ script DeepCloudForest_FacultyGorge_Daan_Rescue_Start {
     waitmovement
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down))
     waitmovement
-    special(RemoveCameraObject)
     msgbox(format("Enough talk!\pGrunts, deal with the ranger and that tree hugger! {PLAYER} is mine!\pLet's show them the true meaning of order!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(2, moves(walk_fast_left*3 walk_fast_down face_right))
     applymovement(12, moves(walk_fast_left*3 walk_fast_down face_right))
-    applymovement(LOCALID_PLAYER, moves(walk_up walk_left))
-    applymovement(27, moves(walk_up))
-    applymovement(28, moves(walk_left walk_up walk_left walk_up*2))
-    release
-
+    applymovement(LOCALID_PLAYER, moves(walk_up))
+    waitmovement
+    applymovement(27, moves(walk_fast_up*2 walk_fast_right*2 face_left))
+    applymovement(28, moves(walk_fast_left walk_fast_up*3 face_left))
+    applymovement(5, moves(face_left))
+    applymovement(3, moves(walk_left walk_down*2 face_right))
+    applymovement(1, moves(walk_down face_right))
+    applymovement(4, moves(walk_left walk_down*2 face_right))
+    applymovement(13, moves(walk_left walk_down face_right))
+    applymovement(LOCALID_PLAYER, moves(face_left))
+    waitmovement
+    msgbox(format("{COLOR BLUE}Barry{COLOR DARK_GRAY}: Show me what you got dumb lab intern!"))
+    waitmessage
+    trainerbattle_no_intro(TRAINER_BARRY_DEEPCLOUDFOREST, Deepcloudforest_Barry_Defeattext)
+    goto(Deepcloudforest_Barry_Defeated)
+    
 }
 
+text Deepcloudforest_Barry_Defeattext {
+    format("That stupid fish, should have dumped him a while ago!")
+}
+
+script Deepcloudforest_Barry_Defeated {
+    lock
+    applymovement(2, moves(jump_left face_right))
+    applymovement(12, moves(jump_left face_right))
+    applymovement(3, moves(jump_left face_right))
+    applymovement(1, moves(jump_left face_right))
+    applymovement(4, moves(jump_left face_right))
+    applymovement(13, moves(jump_left face_right))
+    waitmovement
+    msgbox(format("{COLOR BLUE}Barry{COLOR DARK_GRAY}: No... Impossible!\nOur strategy was flawless!\pThe tactical analysis was perfect...\pThe geological resonance scans were pinpoint accurate!\pHow could we lose to a bunch of chaotic, sentimental...!")MSGBOX_AUTOCLOSE)
+    waitmessage
+    msgbox(format("{COLOR RED}Jos Vanderloo{COLOR DARK_GRAY}: Administrator Barry... I mean Wouter!\nCease communications at once!\pThat information is classified.\nWe are falling back."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(5, moves(emote_exclamation_mark))
+    msgbox(format("{COLOR GREEN}Daan{COLOR DARK_GRAY}: Geological scans?\nWhat are you talking about, Barry?\pThis was never just about cutting down trees, was it?\pWhat were you really looking for out here?"),MSGBOX_AUTOCLOSE)
+    delay(60)
+    playse(SE_POKENAV_CALL)
+    delay(60)
+    msgbox(format("...\pHello Boss...\pYes...\pUnderstood...\p...You are on speaker right now!")MSGBOX_AUTOCLOSE)
+    waitmessage
+    msgbox(format("?????: .....Well hello there children.\pThis is the Rector speaking.\pWe have secured the Objective.\pThe target, codename: SILENT GUARDIAN, is in our possession.\pI repeat, the Silent Guardian has been secured.\pMUAHAHAHAHA..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_POKENAV_HANG_UP)
+    msgbox(format("{COLOR RED}Jos Vanderloo{COLOR DARK_GRAY}: It seems your victory here is irrelevant.\pWhile you were playing hero in the mud, our primary team accomplished the mission.\pThis was merely a distraction."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    msgbox(format("{COLOR BLUE}Barry{COLOR DARK_GRAY}: That's right!\nYou didn't win anything!\pThe Faculty always thinks two steps ahead.\pYou haven't stopped a thing!\pYou've just proven how insignificant you really are!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_BALL_THROW)
+    delay(40)
+    playse(SE_BANG)
+    fadescreen(FADE_TO_WHITE)
+    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: It's a flashbang! Don't let them get away!"),MSGBOX_AUTOCLOSE)
+    setflag(FLAG_RESCUED_DAAN)
+    setvar(VAR_MISTCITY_RESEARCH_CENTER_LOCATION,4)
+    removeobject(4)
+    removeobject(2)
+    removeobject(3)
+    removeobject(1)
+    removeobject(13)
+    removeobject(12)
+    delay(60)
+    fadescreen(FADE_FROM_WHITE)
+    
+    release
+}    
+
+script Deepcloudforest_Trainer_Grunt1 {
+    trainerbattle_single(TRAINER_GRUNT_FACULTY_CLOUDFOREST_1, Deepcloudforest_Text_Grunt1Intro, Deepcloudforest_Text_Grunt1Defeated)
+	msgbox(Deepcloudforest_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text Deepcloudforest_Text_Grunt1Intro {
+    format("Chopping down these ancient trees is hard work. You better not get in my way!")
+}
+
+text Deepcloudforest_Text_Grunt1Defeated {
+    format("I'm too tired from all this woodcutting to battle properly...")
+}
+
+text Deepcloudforest_Text_Grunt1PostBattle {
+    format("We have orders to clear this whole area.\nThere is something buried here that needs to see the light of day.")
+}
+
+script Deepcloudforest_Trainer_Grunt2 {
+    trainerbattle_single(TRAINER_GRUNT_FACULTY_CLOUDFOREST_2, Deepcloudforest_Text_Grunt2Intro, Deepcloudforest_Text_Grunt2Defeated)
+	msgbox(Deepcloudforest_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text Deepcloudforest_Text_Grunt2Intro {
+    format("My equipment is going crazy! There is a massive magnetic signal nearby.")
+}
+
+text Deepcloudforest_Text_Grunt2Defeated {
+    format("My equipment!\nYou made me drop my scanner!")
+}
+
+text Deepcloudforest_Text_Grunt2PostBattle {
+    format("The readings aren't coming from a normal Pokémon. It feels like living metal is sleeping beneath this gorge.")
+}
+
+script Deepcloudforest_Trainer_Grunt3 {
+    trainerbattle_single(TRAINER_GRUNT_FACULTY_CLOUDFOREST_3, Deepcloudforest_Text_Grunt3Intro, Deepcloudforest_Text_Grunt3Defeated)
+	msgbox(Deepcloudforest_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text Deepcloudforest_Text_Grunt3Intro {
+    format("This gorge is off-limits by order of the Faculty. Turn back now, kid!")
+}
+
+text Deepcloudforest_Text_Grunt3Defeated {
+    format("Alert!\nWe have an intruder!")
+}
+
+text Deepcloudforest_Text_Grunt3PostBattle {
+    format("We believe there is a sealed chamber hidden in these rock walls. We just need to find the right door.")
+}
+
+script Deepcloudforest_Trainer_Grunt4 {
+    trainerbattle_single(TRAINER_GRUNT_FACULTY_CLOUDFOREST_4, Deepcloudforest_Text_Grunt4Intro, Deepcloudforest_Text_Grunt4Defeated)
+	msgbox(Deepcloudforest_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text Deepcloudforest_Text_Grunt4Intro {
+    format("Do you know how old this forest is? Not as old as the thing we are looking for.")
+}
+
+text Deepcloudforest_Text_Grunt4Defeated {
+    format("History repeats itself... Defeated again.")
+}
+
+text Deepcloudforest_Text_Grunt4PostBattle {
+    format("Legend says an ancient golem was locked away here ages ago. The Faculty will harness its power!")
+}
 

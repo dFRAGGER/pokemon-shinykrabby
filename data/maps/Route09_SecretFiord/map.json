@@ -32,6 +32,11 @@
       "map": "MAP_ROUTE02",
       "offset": -33,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE09_SECRET_WATER_SOURCE",
+      "offset": 9,
+      "direction": "up"
     }
   ],
   "object_events": [],

@@ -32,6 +32,16 @@
       "map": "MAP_ROUTE09_SECRET_FIORD",
       "offset": 73,
       "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE09_SECRET_WATER_SOURCE",
+      "offset": 57,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE09_DEEP_FOREST_CORE",
+      "offset": 27,
+      "direction": "right"
     }
   ],
   "object_events": [],

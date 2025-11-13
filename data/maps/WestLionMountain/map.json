@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ROUTE05",
-      "offset": 6,
+      "offset": 10,
       "direction": "down"
     },
     {
@@ -24,8 +24,13 @@
       "direction": "left"
     },
     {
-      "map": "MAP_EAST_LION_MOUNTAIN",
-      "offset": 0,
+      "map": "MAP_ROUTE06",
+      "offset": 54,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_BIKE_PARK",
+      "offset": -46,
       "direction": "right"
     }
   ],

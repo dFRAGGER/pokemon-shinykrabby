@@ -649,7 +649,10 @@
     "Route08",
     "EastLionMountain",
     "Route09_SecretFiord",
-    "Route10"
+    "Route10",
+    "BikePark",
+    "Route09_SecretWaterSource",
+    "Route09_DeepForestCore"
   ],
   "gMapGroup_IndooErpusCity": [
     "LabJariIndoor",
@@ -692,7 +695,8 @@
     "Mistcity_Indoor_MushroomShop",
     "Mistcity_PokemonCenter_1F",
     "Mistcity_PokemonCenter_2F",
-    "Mistcity_Mart"
+    "Mistcity_Mart",
+    "Mistcity_Indoor_Gym"
   ],
   "gMapGroup_DeepCloudForest": [
     "DeepCloudForest_FacultyGorge",

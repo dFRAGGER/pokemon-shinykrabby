@@ -1,877 +1,1055 @@
 DeepCloudForest_FacultyGorge_MapScripts::
 # 2 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, DeepCloudForest_FacultyGorge_MapScripts_MAP_SCRIPT_ON_TRANSITION
+# 5 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, DeepCloudForest_FacultyGorge_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
-DeepCloudForest_FacultyGorge_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+DeepCloudForest_FacultyGorge_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	call DeepCloudforest_Healspot_OnTransition
+	return
+
+DeepCloudForest_FacultyGorge_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+# 6 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	map_script_2 VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 1, DeepCloudForest_FacultyGorge_GetOutTruck
 	.2byte 0
 
 
-DeepCloudForest_FacultyGorge_GetOutTruck::
-# 8 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	lock
-# 9 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_0
-# 10 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
+DeepCloudforest_Healspot_OnTransition::
 # 11 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	setvar VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 2
-# 12 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	delay 60
-# 13 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_1
-# 14 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
-# 15 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	special SpawnCameraObject
+	setrespawn HEAL_LOCATION_DEEP_CLOUD_FOREST_FACULTY_GORGE
+	end
+
+
+DeepCloudForest_FacultyGorge_GetOutTruck::
 # 16 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_2
+	lock
 # 17 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_0, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_0
 # 18 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmessage
+	waitmovement
 # 19 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	delay 60
+	setvar VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 2
 # 20 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 7, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_3
+	delay 60
 # 21 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
+	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_1
 # 22 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_1, MSGBOX_AUTOCLOSE
-# 23 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmessage
-# 24 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_4
-# 25 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	waitmovement
+# 23 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	special SpawnCameraObject
+# 24 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_2
+# 25 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_0, MSGBOX_AUTOCLOSE
 # 26 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	special RemoveCameraObject
+	waitmessage
 # 27 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	delay 60
 # 28 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	playse SE_PIN
+	applymovement 7, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_3
 # 29 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 7, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_5
+	waitmovement
 # 30 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_1, MSGBOX_AUTOCLOSE
 # 31 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_2, MSGBOX_AUTOCLOSE
-# 32 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	waitmessage
+# 32 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_4
 # 33 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 7, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_6
+	waitmovement
 # 34 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
+	special RemoveCameraObject
 # 35 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_3, MSGBOX_AUTOCLOSE
+	delay 60
 # 36 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 6, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_6
+	playse SE_PIN
 # 37 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
+	applymovement 7, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_5
 # 38 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 16, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_6
+	waitmovement
 # 39 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_2, MSGBOX_AUTOCLOSE
 # 40 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_7
+	waitmessage
 # 41 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
+	applymovement 7, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_6
 # 42 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	special SpawnCameraObject
+	waitmovement
 # 43 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	playse MUS_AQUA_MAGMA_HIDEOUT
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_3, MSGBOX_AUTOCLOSE
 # 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_8
+	applymovement 6, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_6
 # 45 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	waitmovement
 # 46 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	setflag FLAG_FACULTY_GORGE_NASH1
+	applymovement 16, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_6
 # 47 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	clearflag FLAG_FACULTY_GORGE_NASH2
+	waitmovement
 # 48 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	clearflag FLAG_DAVID_TRUCK
+	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_7
 # 49 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_4, MSGBOX_AUTOCLOSE
+	waitmovement
 # 50 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmessage
+	special SpawnCameraObject
 # 51 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_5, MSGBOX_AUTOCLOSE
+	playse MUS_AQUA_MAGMA_HIDEOUT
 # 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmessage
+	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_8
 # 53 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_6, MSGBOX_AUTOCLOSE
+	waitmovement
 # 54 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmessage
+	setflag FLAG_FACULTY_GORGE_NASH1
 # 55 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_7, MSGBOX_AUTOCLOSE
+	clearflag FLAG_FACULTY_GORGE_NASH2
 # 56 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmessage
+	clearflag FLAG_DAVID_TRUCK
 # 57 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	playse SE_PIN
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_4, MSGBOX_AUTOCLOSE
 # 58 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 2, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_9
+	waitmessage
 # 59 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_8, MSGBOX_AUTOCLOSE
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_5, MSGBOX_AUTOCLOSE
 # 60 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	waitmessage
 # 61 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_9, MSGBOX_AUTOCLOSE
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_6, MSGBOX_AUTOCLOSE
 # 62 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	waitmessage
 # 63 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_10, MSGBOX_AUTOCLOSE
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_7, MSGBOX_AUTOCLOSE
 # 64 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	waitmessage
 # 65 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	playse SE_M_HEADBUTT
+	playse SE_PIN
 # 66 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 14, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_10
+	applymovement 2, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_9
 # 67 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_8, MSGBOX_AUTOCLOSE
 # 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_11
+	waitmessage
 # 69 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_9, MSGBOX_AUTOCLOSE
 # 70 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	special RemoveCameraObject
+	waitmessage
 # 71 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_12
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_10, MSGBOX_AUTOCLOSE
 # 72 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 18, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_3
+	waitmessage
 # 73 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
+	playse SE_M_HEADBUTT
 # 74 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_11, MSGBOX_AUTOCLOSE
+	applymovement 14, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_10
 # 75 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 18, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_13
+	waitmovement
 # 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 19, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_14
+	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_11
 # 77 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 20, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_15
+	waitmovement
 # 78 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
+	special RemoveCameraObject
 # 79 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	setflag FLAG_FACULTY_GORGE_NASH2
+	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_12
 # 80 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	removeobject 19
+	applymovement 18, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_3
 # 81 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	removeobject 20
-# 82 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	waitmovement
+# 82 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_11, MSGBOX_AUTOCLOSE
 # 83 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 18, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_13
+# 84 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 19, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_14
+# 85 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 20, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_15
+# 86 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmovement
+# 87 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	setflag FLAG_FACULTY_GORGE_NASH2
+# 88 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	removeobject 19
+# 89 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	removeobject 20
+# 90 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmovement
+# 91 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	release
 	return
 
 
 DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts::
-# 87 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	lock
-# 88 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	special SpawnCameraObject
-# 89 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_2
-# 90 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
-# 91 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Text_0
-# 92 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmessage
-# 93 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	playse SE_M_BITE
-# 94 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 24, DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Movement_0
 # 95 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
+	lock
 # 96 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 23, DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Movement_1
+	special SpawnCameraObject
 # 97 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
+	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_2
 # 98 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Text_1, MSGBOX_AUTOCLOSE
-# 99 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmessage
-# 100 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 23, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_13
-# 101 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	waitmovement
+# 99 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Text_0
+# 100 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmessage
+# 101 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	playse SE_M_BITE
 # 102 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Movement_2
+	applymovement 24, DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Movement_0
 # 103 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	waitmovement
 # 104 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	special RemoveCameraObject
+	applymovement 23, DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Movement_1
 # 105 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	setvar VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 3
+	waitmovement
 # 106 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Text_1, MSGBOX_AUTOCLOSE
+# 107 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmessage
+# 108 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 23, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_13
+# 109 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmovement
+# 110 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Movement_2
+# 111 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmovement
+# 112 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	special RemoveCameraObject
+# 113 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	setvar VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 3
+# 114 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	release
 	return
 
 
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start::
-# 110 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	lock
-# 111 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-# 112 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	clearflag FLAG_FACULTY_GORGE_NASH1
-# 113 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	compare VAR_TEMP_0, 25
-	goto_if_eq DeepCloudForest_FacultyGorge_Daan_Rescue_Start_3
-DeepCloudForest_FacultyGorge_Daan_Rescue_Start_1:
-# 116 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	special SpawnCameraObject
-# 117 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_1
 # 118 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
+	lock
 # 119 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	addobject 27
+	clearflag FLAG_FACULTY_GORGE_NASH1
 # 120 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	addobject 28
+	special SpawnCameraObject
 # 121 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	addobject 29
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 # 122 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	addobject 27
+# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	addobject 28
+# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	addobject 29
+# 125 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_0
+# 126 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmovement
+# 127 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	compare VAR_TEMP_0, 24
-	goto_if_eq DeepCloudForest_FacultyGorge_Daan_Rescue_Start_8
-DeepCloudForest_FacultyGorge_Daan_Rescue_Start_6:
-# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	compare VAR_TEMP_0, 25
-	goto_if_eq DeepCloudForest_FacultyGorge_Daan_Rescue_Start_13
-DeepCloudForest_FacultyGorge_Daan_Rescue_Start_11:
+	goto_if_eq DeepCloudForest_FacultyGorge_Daan_Rescue_Start_2
+DeepCloudForest_FacultyGorge_Daan_Rescue_Start_1:
 # 134 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	playse SE_PIN
-# 135 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 5, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_5
-# 136 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
-# 137 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_0, MSGBOX_AUTOCLOSE
-# 138 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmessage
-# 139 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	delay 40
-# 140 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	playse SE_PIN
-# 141 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 4, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_5
+	compare VAR_TEMP_0, 25
+	goto_if_eq DeepCloudForest_FacultyGorge_Daan_Rescue_Start_5
+DeepCloudForest_FacultyGorge_Daan_Rescue_Start_4:
 # 142 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 13, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_6
-# 143 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 3, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_7
-# 144 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 1, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_8
-# 145 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	playse SE_PIN
+# 143 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 5, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_5
+# 144 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmovement
+# 145 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_0, MSGBOX_AUTOCLOSE
 # 146 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 2, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_9
-# 147 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 12, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_10
-# 148 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
-# 149 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_1, MSGBOX_AUTOCLOSE
-# 150 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	waitmessage
-# 151 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 2, DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Movement_1
-# 152 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
-# 153 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 147 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	delay 40
+# 148 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	playse SE_PIN
+# 149 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 4, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_5
+# 150 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 13, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_6
+# 151 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 3, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_7
+# 152 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 1, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_8
+# 153 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	playse SE_PIN
 # 154 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 2, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_13
+	applymovement 2, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_9
 # 155 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
+	applymovement 12, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_10
 # 156 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_11
-# 157 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	waitmovement
+# 157 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_1, MSGBOX_AUTOCLOSE
 # 158 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	special RemoveCameraObject
+	waitmessage
 # 159 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	msgbox DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_2, MSGBOX_AUTOCLOSE
+	applymovement 2, DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Movement_1
 # 160 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 2, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_12
+	waitmovement
 # 161 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 12, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_12
+	delay 40
 # 162 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_13
+	applymovement 2, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_13
 # 163 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 27, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_1
+	waitmovement
 # 164 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 28, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_14
+	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_11
 # 165 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	release
+	waitmovement
+# 166 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_2, MSGBOX_AUTOCLOSE
+# 167 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmessage
+# 168 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 2, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_12
+# 169 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 12, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_12
+# 170 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_0
+# 171 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmovement
+# 172 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 27, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_13
+# 173 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 28, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_14
+# 174 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 5, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_3
+# 175 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 3, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_15
+# 176 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 1, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_16
+# 177 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 4, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_15
+# 178 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 13, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_17
+# 179 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_3
+# 180 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmovement
+# 181 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_3
+# 182 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmessage
+# 183 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	trainerbattle_no_intro TRAINER_BARRY_DEEPCLOUDFOREST, Deepcloudforest_Barry_Defeattext
+# 184 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	goto Deepcloudforest_Barry_Defeated
 	return
 
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_2:
-# 114 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_0
-	goto DeepCloudForest_FacultyGorge_Daan_Rescue_Start_1
-
-DeepCloudForest_FacultyGorge_Daan_Rescue_Start_3:
-# 113 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	compare VAR_TEMP_1, 42
-	goto_if_eq DeepCloudForest_FacultyGorge_Daan_Rescue_Start_2
-	goto DeepCloudForest_FacultyGorge_Daan_Rescue_Start_1
-
-DeepCloudForest_FacultyGorge_Daan_Rescue_Start_7:
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 27, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_2
-# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 28, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_3
-# 125 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 29, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_4
-# 126 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	waitmovement
-	goto DeepCloudForest_FacultyGorge_Daan_Rescue_Start_6
-
-DeepCloudForest_FacultyGorge_Daan_Rescue_Start_8:
-# 122 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	compare VAR_TEMP_1, 42
-	goto_if_eq DeepCloudForest_FacultyGorge_Daan_Rescue_Start_7
-	goto DeepCloudForest_FacultyGorge_Daan_Rescue_Start_6
-
-DeepCloudForest_FacultyGorge_Daan_Rescue_Start_12:
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 27, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_1
 # 129 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 27, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_2
+	applymovement 28, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_2
 # 130 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 28, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_3
+	waitmovement
 # 131 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	applymovement 29, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_4
+	applymovement 29, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_3
 # 132 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	waitmovement
-	goto DeepCloudForest_FacultyGorge_Daan_Rescue_Start_11
+	goto DeepCloudForest_FacultyGorge_Daan_Rescue_Start_1
 
-DeepCloudForest_FacultyGorge_Daan_Rescue_Start_13:
-# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	compare VAR_TEMP_1, 42
-	goto_if_eq DeepCloudForest_FacultyGorge_Daan_Rescue_Start_12
-	goto DeepCloudForest_FacultyGorge_Daan_Rescue_Start_11
+DeepCloudForest_FacultyGorge_Daan_Rescue_Start_5:
+# 135 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_4
+# 136 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 27, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_1
+# 137 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 28, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_2
+# 138 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmovement
+# 139 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 29, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_3
+# 140 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmovement
+	goto DeepCloudForest_FacultyGorge_Daan_Rescue_Start_4
 
 
-# 9 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+Deepcloudforest_Barry_Defeated::
+# 193 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	lock
+# 194 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 2, Deepcloudforest_Barry_Defeated_Movement_0
+# 195 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 12, Deepcloudforest_Barry_Defeated_Movement_0
+# 196 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 3, Deepcloudforest_Barry_Defeated_Movement_0
+# 197 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 1, Deepcloudforest_Barry_Defeated_Movement_0
+# 198 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 4, Deepcloudforest_Barry_Defeated_Movement_0
+# 199 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 13, Deepcloudforest_Barry_Defeated_Movement_0
+# 200 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmovement
+# 201 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox Deepcloudforest_Barry_Defeated_Text_0
+# 202 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmessage
+# 203 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox Deepcloudforest_Barry_Defeated_Text_1, MSGBOX_AUTOCLOSE
+# 204 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmessage
+# 205 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	playse SE_PIN
+# 206 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	applymovement 5, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_9
+# 207 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox Deepcloudforest_Barry_Defeated_Text_2, MSGBOX_AUTOCLOSE
+# 208 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	delay 60
+# 209 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	playse SE_POKENAV_CALL
+# 210 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	delay 60
+# 211 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox Deepcloudforest_Barry_Defeated_Text_3
+# 212 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmessage
+# 213 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox Deepcloudforest_Barry_Defeated_Text_4, MSGBOX_AUTOCLOSE
+# 214 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmessage
+# 215 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	playse SE_POKENAV_HANG_UP
+# 216 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox Deepcloudforest_Barry_Defeated_Text_5, MSGBOX_AUTOCLOSE
+# 217 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmessage
+# 218 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox Deepcloudforest_Barry_Defeated_Text_6, MSGBOX_AUTOCLOSE
+# 219 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	waitmessage
+# 220 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	playse SE_BALL_THROW
+# 221 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	delay 40
+# 222 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	playse SE_BANG
+# 223 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	fadescreen FADE_TO_WHITE
+# 224 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox Deepcloudforest_Barry_Defeated_Text_7, MSGBOX_AUTOCLOSE
+# 225 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	setflag FLAG_RESCUED_DAAN
+# 226 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	removeobject 4
+# 227 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	removeobject 2
+# 228 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	removeobject 3
+# 229 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	removeobject 1
+# 230 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	removeobject 13
+# 231 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	removeobject 12
+# 232 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	delay 60
+# 233 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	fadescreen FADE_FROM_WHITE
+# 234 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	release
+	return
+
+
+Deepcloudforest_Trainer_Grunt1::
+# 238 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	trainerbattle_single TRAINER_GRUNT_FACULTY_CLOUDFOREST_1, Deepcloudforest_Text_Grunt1Intro, Deepcloudforest_Text_Grunt1Defeated
+# 239 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox Deepcloudforest_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
+Deepcloudforest_Trainer_Grunt2::
+# 256 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	trainerbattle_single TRAINER_GRUNT_FACULTY_CLOUDFOREST_2, Deepcloudforest_Text_Grunt2Intro, Deepcloudforest_Text_Grunt2Defeated
+# 257 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox Deepcloudforest_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
+Deepcloudforest_Trainer_Grunt3::
+# 274 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	trainerbattle_single TRAINER_GRUNT_FACULTY_CLOUDFOREST_3, Deepcloudforest_Text_Grunt3Intro, Deepcloudforest_Text_Grunt3Defeated
+# 275 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox Deepcloudforest_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
+Deepcloudforest_Trainer_Grunt4::
+# 292 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	trainerbattle_single TRAINER_GRUNT_FACULTY_CLOUDFOREST_4, Deepcloudforest_Text_Grunt4Intro, Deepcloudforest_Text_Grunt4Defeated
+# 293 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	msgbox Deepcloudforest_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
+# 17 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_0:
-# 9 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 17 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	jump_right
-# 9 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 17 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	face_down
 	step_end
 
-# 13 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 21 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_1:
-# 13 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 21 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 13 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 21 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
 	step_end
 
-# 16 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 24 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_2:
-# 16 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 24 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 16 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 24 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 16 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 24 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
 	step_end
 
-# 20 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 28 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_3:
-# 20 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 28 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	face_left
 	step_end
 
-# 24 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 32 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_4:
-# 24 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 32 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 24 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 32 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 24 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 32 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
 	step_end
 
-# 29 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 37 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_5:
-# 29 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 37 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	emote_exclamation_mark
-# 29 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 37 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	face_down
 	step_end
 
-# 33 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 41 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_6:
-# 33 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 41 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 33 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 41 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 33 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 41 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 33 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 41 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 33 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 41 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 33 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 41 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 33 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 41 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 33 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 41 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 33 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 41 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 40 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 48 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_7:
-# 40 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 48 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 40 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 48 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 40 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 48 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 40 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 48 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 40 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 48 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 40 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 48 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 40 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 48 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 40 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 48 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 40 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 48 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 40 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 48 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_8:
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 44 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 52 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_left
 	step_end
 
-# 58 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 66 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_9:
-# 58 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 66 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 66 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 74 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_10:
-# 66 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 74 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	jump_left
 	step_end
 
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_11:
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_right
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 68 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
 	step_end
 
-# 71 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 79 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_12:
-# 71 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 79 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	face_right
 	step_end
 
-# 75 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 83 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_13:
-# 75 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 83 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	face_down
 	step_end
 
-# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 84 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_14:
-# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 84 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 84 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 84 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 84 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 84 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 84 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 84 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 84 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 84 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 84 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 84 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 84 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 84 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 76 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 84 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 77 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 85 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_15:
-# 77 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 85 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 77 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 85 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 77 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 85 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 77 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 85 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 77 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 85 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 77 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 85 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 77 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 85 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_right
-# 77 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 85 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 77 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 85 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 77 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 85 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 77 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 85 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 77 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 85 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 77 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 85 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 94 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 102 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Movement_0:
-# 94 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 102 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	jump_down
 	step_end
 
-# 96 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 104 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Movement_1:
-# 96 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 104 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	face_up
 	step_end
 
-# 102 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 110 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Movement_2:
-# 102 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 110 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 102 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 110 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 102 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 110 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 102 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 110 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
 	step_end
 
-# 114 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 125 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_0:
-# 114 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 125 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_up
+	step_end
+
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_1:
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_down
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_down
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_down
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_up
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_up
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 128 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_up
+	step_end
+
+# 129 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_2:
+# 129 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_down
+# 129 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 129 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 129 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 129 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 129 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_down
+# 129 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_down
+# 129 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_down
+# 129 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 129 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 129 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 129 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 129 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_up
+# 129 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_up
+	step_end
+
+# 131 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_3:
+# 131 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_left
-# 114 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 131 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_left
+# 131 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_left
+# 131 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_left
+	step_end
+
+# 135 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_4:
+# 135 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_left
+# 135 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	face_up
 	step_end
 
-# 117 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_1:
-# 117 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_up
-	step_end
-
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_2:
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_down
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_down
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_down
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_up
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_up
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 123 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_up
-	step_end
-
-# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_3:
-# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_down
-# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_down
-# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_down
-# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_down
-# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_fast_left
-# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_up
-# 124 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_up
-	step_end
-
-# 125 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_4:
-# 125 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_left
-# 125 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_left
-# 125 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_left
-# 125 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_left
-	step_end
-
-# 141 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 149 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_5:
-# 141 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 149 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	emote_question_mark
-# 141 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 149 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	face_down
-# 141 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 149 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 141 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 149 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_right
-# 141 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 149 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_right
-# 141 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 149 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_right
-# 141 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 149 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	face_down
 	step_end
 
-# 142 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 150 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_6:
-# 142 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 150 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_right
-# 142 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 150 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_right
-# 142 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 150 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	face_down
 	step_end
 
-# 143 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 151 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_7:
-# 143 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 151 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	emote_question_mark
-# 143 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 151 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 143 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 151 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 143 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 151 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_right
-# 143 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 151 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_right
-# 143 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 151 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	face_down
 	step_end
 
-# 144 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 152 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_8:
-# 144 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 152 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_up
-# 144 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 152 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	face_down
 	step_end
 
-# 146 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 154 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_9:
-# 146 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 154 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	emote_exclamation_mark
-# 146 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 154 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_diag_southeast
-# 146 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 154 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_right
-# 146 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 154 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	face_down
 	step_end
 
-# 147 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 155 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_10:
-# 147 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 155 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
-# 147 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 155 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_right
-# 147 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 155 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	face_down
 	step_end
 
-# 156 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 164 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_11:
-# 156 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 164 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_down
 	step_end
 
-# 160 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 168 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_12:
-# 160 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 168 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_left
-# 160 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 168 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_left
-# 160 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 168 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_left
-# 160 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 168 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_fast_down
-# 160 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 168 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	face_right
 	step_end
 
-# 162 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 172 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_13:
-# 162 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_up
-# 162 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_left
+# 172 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_up
+# 172 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_up
+# 172 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_right
+# 172 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_right
+# 172 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	face_left
 	step_end
 
-# 164 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 173 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_14:
-# 164 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 173 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_left
+# 173 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_up
+# 173 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_up
+# 173 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_fast_up
+# 173 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	face_left
+	step_end
+
+# 175 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_15:
+# 175 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_left
-# 164 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_up
-# 164 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 175 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_down
+# 175 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_down
+# 175 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	face_right
+	step_end
+
+# 176 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_16:
+# 176 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_down
+# 176 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	face_right
+	step_end
+
+# 178 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_17:
+# 178 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_left
-# 164 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_up
-# 164 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	walk_up
+# 178 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	walk_down
+# 178 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	face_right
+	step_end
+
+# 194 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+Deepcloudforest_Barry_Defeated_Movement_0:
+# 194 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	jump_left
+# 194 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	face_right
 	step_end
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_0:
-# 17 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 25 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "{COLOR BLUE}Nash{COLOR DARK_GRAY}: By Arceus... This is a massacre.\p"
 	.string "This isn't logging; it's somebody looking\n"
 	.string "for something they can't find.\p"
@@ -881,7 +1059,7 @@ DeepCloudForest_FacultyGorge_GetOutTruck_Text_0:
 	.string "each swing of the axe.$"
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_1:
-# 22 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 30 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "{COLOR GREEN}David{COLOR DARK_GRAY}: The signal... it's deafening here.\p"
 	.string "All this random destruction is creating\n"
 	.string "so much chaotic energy...\p"
@@ -890,15 +1068,15 @@ DeepCloudForest_FacultyGorge_GetOutTruck_Text_1:
 	.string "...it's close. Very close.$"
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_2:
-# 31 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 39 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "That way! Just over that ridge!$"
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_3:
-# 35 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 43 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "Alright, team, let's move! Stay sharp!$"
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_4:
-# 49 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 57 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "{COLOR GREEN}Daan{COLOR DARK_GRAY}: ...and I won't let you touch these\n"
 	.string "trees!\p"
 	.string "This forest is alive! It has a right to\n"
@@ -908,14 +1086,14 @@ DeepCloudForest_FacultyGorge_GetOutTruck_Text_4:
 	.string "every single one of them!$"
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_5:
-# 51 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 59 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "{COLOR RED}Jos Vanderloo{COLOR DARK_GRAY}: Analysis: Subject is\n"
 	.string "displaying irrational, sentimental\l"
 	.string "attachment to non-productive biomass.\p"
 	.string "His methods are inefficient.$"
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_6:
-# 53 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 61 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "{COLOR BLUE}Barry{COLOR DARK_GRAY}: Shut up! I've got this.\p"
 	.string "...Listen to yourself, Daan!\p"
 	.string "You're clinging to this messy,\n"
@@ -926,7 +1104,7 @@ DeepCloudForest_FacultyGorge_GetOutTruck_Text_6:
 	.string "your 'friends' would never understand.$"
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_7:
-# 55 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 63 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "{COLOR GREEN}Daan{COLOR DARK_GRAY}: Strength? You call this\n"
 	.string "strength?!\p"
 	.string "Tearing down something that's taken a\n"
@@ -935,24 +1113,24 @@ DeepCloudForest_FacultyGorge_GetOutTruck_Text_7:
 	.string "their machines!$"
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_8:
-# 59 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 67 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "{COLOR BLUE}Barry{COLOR DARK_GRAY}: STOP CALLING ME BARRY, MY NAME\n"
 	.string "IS WOUTER YOU IDIOT!$"
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_9:
-# 61 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 69 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "{COLOR RED}Ton Cross{COLOR DARK_GRAY}: Hey! Show some respect for\n"
 	.string "the Junior Administrator!\p"
 	.string "Why don't you and your tree-hugging\n"
 	.string "Pokémon just give it up?$"
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_10:
-# 63 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 71 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "{COLOR GREEN}Daan{COLOR DARK_GRAY}: NEVER!!\p"
 	.string "VENUSAUR, HEADBUTT!$"
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_11:
-# 74 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 82 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "{COLOR BLUE}Nash{COLOR DARK_GRAY}: There he is.\p"
 	.string "Two grunts and their leader.\p"
 	.string "David, stay back and monitor that\n"
@@ -962,23 +1140,23 @@ DeepCloudForest_FacultyGorge_GetOutTruck_Text_11:
 	.string "I'll take the lead, follow me!$"
 
 DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Text_0:
-# 91 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 99 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "ARCANINE, BITE!$"
 
 DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Text_1:
-# 98 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 106 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "{COLOR BLUE}Nash{COLOR DARK_GRAY}: {PLAYER}, apparently there are\n"
 	.string "more grunts here.\p"
 	.string "I'll hold these two off for now!\p"
 	.string "I'll be right behind you!$"
 
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_0:
-# 137 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 145 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "{COLOR GREEN}Daan{COLOR DARK_GRAY}: {PLAYER}! Nash! I knew you'd\n"
 	.string "come! You're just in time for a party.$"
 
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_1:
-# 149 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 157 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "{COLOR BLUE}Barry{COLOR DARK_GRAY}: YOU!?\p"
 	.string "Of course you'd show up to ruin\n"
 	.string "everything!\p"
@@ -986,9 +1164,153 @@ DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_1:
 	.string "this chaos.$"
 
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_2:
-# 159 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 166 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "Enough talk!\p"
 	.string "Grunts, deal with the ranger and that\n"
 	.string "tree hugger! {PLAYER} is mine!\p"
 	.string "Let's show them the true meaning of\n"
 	.string "order!$"
+
+DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_3:
+# 181 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "{COLOR BLUE}Barry{COLOR DARK_GRAY}: Show me what you got dumb lab\n"
+	.string "intern!$"
+
+Deepcloudforest_Barry_Defeated_Text_0:
+# 201 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "{COLOR BLUE}Barry{COLOR DARK_GRAY}: No... Impossible!\n"
+	.string "Our strategy was flawless!\p"
+	.string "The tactical analysis was perfect...\p"
+	.string "The geological resonance scans were\n"
+	.string "pinpoint accurate!\p"
+	.string "How could we lose to a bunch of chaotic,\n"
+	.string "sentimental...!$"
+
+Deepcloudforest_Barry_Defeated_Text_1:
+# 203 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "{COLOR RED}Jos Vanderloo{COLOR DARK_GRAY}: Administrator Barry... I\n"
+	.string "mean Wouter!\n"
+	.string "Cease communications at once!\p"
+	.string "That information is classified.\n"
+	.string "We are falling back.$"
+
+Deepcloudforest_Barry_Defeated_Text_2:
+# 207 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "{COLOR GREEN}Daan{COLOR DARK_GRAY}: Geological scans?\n"
+	.string "What are you talking about, Barry?\p"
+	.string "This was never just about cutting down\n"
+	.string "trees, was it?\p"
+	.string "What were you really looking for out\n"
+	.string "here?$"
+
+Deepcloudforest_Barry_Defeated_Text_3:
+# 211 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "...\p"
+	.string "Hello Boss...\p"
+	.string "Yes...\p"
+	.string "Understood...\p"
+	.string "...You are on speaker right now!$"
+
+Deepcloudforest_Barry_Defeated_Text_4:
+# 213 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "?????:...Well hello there children.\p"
+	.string "This is the Rector speaking.\p"
+	.string "We have secured the Objective.\p"
+	.string "The target, codename: SILENT GUARDIAN,\n"
+	.string "is in our possession.\p"
+	.string "I repeat, the Silent Guardian has been\n"
+	.string "secured.\p"
+	.string "MUAHAHAHAHA...$"
+
+Deepcloudforest_Barry_Defeated_Text_5:
+# 216 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "{COLOR RED}Jos Vanderloo{COLOR DARK_GRAY}: It seems your victory\n"
+	.string "here is irrelevant.\p"
+	.string "While you were playing hero in the mud,\n"
+	.string "our primary team accomplished the\l"
+	.string "mission.\p"
+	.string "This was merely a distraction.$"
+
+Deepcloudforest_Barry_Defeated_Text_6:
+# 218 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "{COLOR BLUE}Barry{COLOR DARK_GRAY}: That's right!\n"
+	.string "You didn't win anything!\p"
+	.string "The Faculty always thinks two steps\n"
+	.string "ahead.\p"
+	.string "You haven't stopped a thing!\p"
+	.string "You've just proven how insignificant\n"
+	.string "you really are!$"
+
+Deepcloudforest_Barry_Defeated_Text_7:
+# 224 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "{COLOR BLUE}Nash{COLOR DARK_GRAY}: It's a flashbang! Don't let them\n"
+	.string "get away!$"
+
+Deepcloudforest_Barry_Defeattext::
+# 188 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "That stupid fish, should have dumped\n"
+	.string "him a while ago!$"
+
+Deepcloudforest_Text_Grunt1Intro::
+# 243 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "Chopping down these ancient trees is\n"
+	.string "hard work. You better not get in my way!$"
+
+Deepcloudforest_Text_Grunt1Defeated::
+# 247 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "I'm too tired from all this woodcutting\n"
+	.string "to battle properly...$"
+
+Deepcloudforest_Text_Grunt1PostBattle::
+# 251 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "We have orders to clear this whole area.\n"
+	.string "There is something buried here that\l"
+	.string "needs to see the light of day.$"
+
+Deepcloudforest_Text_Grunt2Intro::
+# 261 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "My equipment is going crazy! There is a\n"
+	.string "massive magnetic signal nearby.$"
+
+Deepcloudforest_Text_Grunt2Defeated::
+# 265 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "My equipment!\n"
+	.string "You made me drop my scanner!$"
+
+Deepcloudforest_Text_Grunt2PostBattle::
+# 269 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "The readings aren't coming from a\n"
+	.string "normal Pokémon. It feels like living\l"
+	.string "metal is sleeping beneath this gorge.$"
+
+Deepcloudforest_Text_Grunt3Intro::
+# 279 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "This gorge is off-limits by order of the\n"
+	.string "Faculty. Turn back now, kid!$"
+
+Deepcloudforest_Text_Grunt3Defeated::
+# 283 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "Alert!\n"
+	.string "We have an intruder!$"
+
+Deepcloudforest_Text_Grunt3PostBattle::
+# 287 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "We believe there is a sealed chamber\n"
+	.string "hidden in these rock walls. We just need\l"
+	.string "to find the right door.$"
+
+Deepcloudforest_Text_Grunt4Intro::
+# 297 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "Do you know how old this forest is? Not\n"
+	.string "as old as the thing we are looking for.$"
+
+Deepcloudforest_Text_Grunt4Defeated::
+# 301 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "History repeats itself... Defeated\n"
+	.string "again.$"
+
+Deepcloudforest_Text_Grunt4PostBattle::
+# 305 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+	.string "Legend says an ancient golem was\n"
+	.string "locked away here ages ago. The Faculty\l"
+	.string "will harness its power!$"

@@ -1,1 +1,109 @@
 mapscripts Route02_MapScripts {}
+
+script Route02_Trainer_Miles {
+    trainerbattle_single(TRAINER_MILES, Route02_Text_MilesIntro, Route02_Text_MilesDefeated)
+	msgbox(Route02_Text_MilesPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text Route02_Text_MilesIntro {
+    format("If you have POKéMON with you, then\nyou're an official POKéMON TRAINER!\lYou can't say no to my challenge!")
+}
+
+text Route02_Text_MilesDefeated {
+    format("Arrgh, I lost…\nI should have trained mine more…")
+}
+
+text Route02_Text_MilesPostBattle {
+    format("Listen, you. If you're strong,\nyou should have told me before!")
+}
+
+script Route02_Trainer_Kegan {
+    trainerbattle_single(TRAINER_KEGAN, Route02_Text_KeganIntro, Route02_Text_KeganDefeated)
+	msgbox(Route02_Text_KeganPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text Route02_Text_KeganIntro {
+    format("The grass here feels so nice.\nMy Pokémon loves it too!")
+}
+
+text Route02_Text_KeganDefeated {
+    format("I guess we were too relaxed...")
+}
+
+text Route02_Text_KeganPostBattle {
+    format("Oddish may be small, but it hides in the grass really well.")
+}
+
+script Route02_Trainer_Newton {
+    trainerbattle_single(TRAINER_NEWTON, Route02_Text_NewtonIntro, Route02_Text_NewtonDefeated)
+	msgbox(Route02_Text_NewtonPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text Route02_Text_NewtonIntro {
+    format("My Pokémon has a handy tail.\nLet's see if you can handle it!")
+}
+
+text Route02_Text_NewtonDefeated {
+    format("You handled us easily...")
+}
+
+text Route02_Text_NewtonPostBattle {
+    format("Aipom is mischievous, but that is why I like it so much.")
+}
+
+script Route02_Trainer_Anona {
+    trainerbattle_single(TRAINER_ANONA, Route02_Text_AnonaIntro, Route02_Text_AnonaDefeated)
+	msgbox(Route02_Text_AnonaPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text Route02_Text_AnonaIntro {
+    format("Check this out! I have a rare Pokémon that you don't see often.")
+}
+
+text Route02_Text_AnonaDefeated {
+    format("My rare Pokémon couldn't win?")
+}
+
+text Route02_Text_AnonaPostBattle {
+    format("I'm going to raise this Bulbasaur to be the strongest ever.")
+}
+
+script Route02_Trainer_Teresa {
+    trainerbattle_single(TRAINER_TERESA, Route02_Text_TeresaIntro, Route02_Text_TeresaDefeated)
+	msgbox(Route02_Text_TeresaPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text Route02_Text_TeresaIntro {
+    format("I love walking in the forest.\nHave you seen any mushrooms?")
+}
+
+text Route02_Text_TeresaDefeated {
+    format("Oh no! My nature walk is ruined.")
+}
+
+text Route02_Text_TeresaPostBattle {
+    format("Shroomish and Lotad are perfect partners for a hike like this.")
+}
+
+script Route02_Trainer_Denton {
+    trainerbattle_single(TRAINER_DENTON, Route02_Text_DentonIntro, Route02_Text_DentonDefeated)
+	msgbox(Route02_Text_DentonPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text Route02_Text_DentonIntro {
+    format("My Pokémon are as hard as rock.\nYour attacks will just bounce off!")
+}
+
+text Route02_Text_DentonDefeated {
+    format("Crumbled into pebbles...")
+}
+
+text Route02_Text_DentonPostBattle {
+    format("Defense is important, but I guess I need some offense too.")
+}

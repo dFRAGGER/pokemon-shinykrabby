@@ -4,23 +4,23 @@
 #include "constants/battle_partner.h"
 
 #define TRAINER_NONE                          0
-#define TRAINER_SAWYER_1                      1
+#define TRAINER_MILES                         1     //TRAINER_SAWYER_1  
 #define TRAINER_GRUNT_FACULTY_1               2     //Original define was TRAINER_GRUNT_AQUA_HIDEOUT_1
 #define TRAINER_GRUNT_FACULTY_2               3     //Original define was TRAINER_GRUNT_AQUA_HIDEOUT_2
-#define TRAINER_GRUNT_AQUA_HIDEOUT_3          4
-#define TRAINER_GRUNT_AQUA_HIDEOUT_4          5
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_1       6
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_2       7
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_3       8
-#define TRAINER_GABRIELLE_1                   9
-#define TRAINER_GRUNT_PETALBURG_WOODS        10
-#define TRAINER_MARCEL                       11
-#define TRAINER_ALBERTO                      12
-#define TRAINER_ED                           13
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_4      14
-#define TRAINER_DECLAN                       15
-#define TRAINER_GRUNT_RUSTURF_TUNNEL         16
-#define TRAINER_GRUNT_WEATHER_INST_1         17
+#define TRAINER_KEGAN                         4     //TRAINER_GRUNT_AQUA_HIDEOUT_3
+#define TRAINER_NEWTON                        5     //TRAINER_GRUNT_AQUA_HIDEOUT_4
+#define TRAINER_ANONA                         6     //TRAINER_GRUNT_SEAFLOOR_CAVERN_1 
+#define TRAINER_TERESA                        7     //TRAINER_GRUNT_SEAFLOOR_CAVERN_2
+#define TRAINER_DENTON                        8     //TRAINER_GRUNT_SEAFLOOR_CAVERN_3   
+#define TRAINER_GABRIELLE                     9     //TRAINER_GABRIELLE_1     
+#define TRAINER_LAWSON                       10     //TRAINER_GRUNT_PETALBURG_WOODS
+#define TRAINER_MARCEL                       11     //TRAINER_MARCEL
+#define TRAINER_ALBERTO                      12     //TRAINER_ALBERTO
+#define TRAINER_ED                           13     //TRAINER_ED
+#define TRAINER_GRUNT_FACULTY_CLOUDFOREST_1  14     //TRAINER_GRUNT_SEAFLOOR_CAVERN_4
+#define TRAINER_GRUNT_FACULTY_CLOUDFOREST_2  15     //TRAINER_DECLAN   
+#define TRAINER_GRUNT_FACULTY_CLOUDFOREST_3  16     //TRAINER_GRUNT_RUSTURF_TUNNEL  
+#define TRAINER_GRUNT_FACULTY_CLOUDFOREST_4  17     //TRAINER_GRUNT_WEATHER_INST_1 
 #define TRAINER_GRUNT_WEATHER_INST_2         18
 #define TRAINER_GRUNT_WEATHER_INST_3         19
 #define TRAINER_GRUNT_MUSEUM_1               20
@@ -659,7 +659,7 @@
 #define TRAINER_RILEY                       653
 #define TRAINER_FLINT                       654
 #define TRAINER_ASHLEY                      655
-#define TRAINER_WALLY_MAUVILLE              656
+#define TRAINER_BARRY_DEEPCLOUDFOREST       656     //TRAINER_WALLY_MAUVILLE OG
 #define TRAINER_WALLY_VR_2                  657
 #define TRAINER_WALLY_VR_3                  658
 #define TRAINER_WALLY_VR_4                  659

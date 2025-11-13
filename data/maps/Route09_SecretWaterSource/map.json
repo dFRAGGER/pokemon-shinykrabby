@@ -1,0 +1,46 @@
+{
+  "id": "MAP_ROUTE09_SECRET_WATER_SOURCE",
+  "name": "Route09_SecretWaterSource",
+  "layout": "LAYOUT_ROUTE09_SECRET_WATER_SOURCE",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE09_SECRET_FIORD",
+      "offset": -9,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE04",
+      "offset": -57,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE02",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE03",
+      "offset": 43,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_ROUTE09_DEEP_FOREST_CORE",
+      "offset": 0,
+      "direction": "up"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}
