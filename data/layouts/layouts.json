@@ -6000,6 +6000,18 @@
       "secondary_tileset": "gTileset_FortreeGym",
       "border_filepath": "data/layouts/Mistcity_Indoor_Gym/border.bin",
       "blockdata_filepath": "data/layouts/Mistcity_Indoor_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_DEEP_CLOUDFOREST_FACULTY_ANCIENT_GROTTO",
+      "name": "DeepCloudforest_FacultyAncientGrotto_Layout",
+      "width": 48,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/DeepCloudforest_FacultyAncientGrotto/border.bin",
+      "blockdata_filepath": "data/layouts/DeepCloudforest_FacultyAncientGrotto/map.bin"
     }
   ]
 }

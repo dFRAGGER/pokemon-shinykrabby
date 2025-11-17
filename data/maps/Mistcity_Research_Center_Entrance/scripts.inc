@@ -294,6 +294,8 @@ Mistcity_Research_Center_Entrance_Daan_RescueMission_4:
 # 146 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	setvar VAR_MISTCITY_RESEARCH_CENTER, 1
 # 147 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+	setflag FLAG_NASH_ENTRANCE_RESEARCH_CENTER1
+# 148 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	release
 	end
 

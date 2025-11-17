@@ -83,11 +83,11 @@
 #define FLAG_DAVID_TRUCK   0x45 // Unused Flag
 #define FLAG_FACULTY_GORGE_NASH1    0x46 // Unused Flag
 #define FLAG_FACULTY_GORGE_NASH2    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
-#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
+#define FLAG_DAAN_NASH_TRUCK    0x48 // Unused Flag
+#define FLAG_ANCIENTGROTTO_BOARD_SHIP    0x49 // Unused Flag
+#define FLAG_ANCIENTGROTTO_DISAPPEAR_SHIP    0x4A // Unused Flag
+#define FLAG_NASH_ENTRANCE_RESEARCH_CENTER1    0x4B // Unused Flag
+#define FLAG_NASH_ENTRANCE_RESEARCH_CENTER2    0x4C // Unused Flag
 #define FLAG_UNUSED_0x04D    0x4D // Unused Flag
 #define FLAG_UNUSED_0x04E    0x4E // Unused Flag
 #define FLAG_UNUSED_0x04F    0x4F // Unused Flag

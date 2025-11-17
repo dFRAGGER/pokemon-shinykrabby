@@ -1269,3 +1269,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route09_DeepForestCore/scripts.inc"
 
 	.include "data/maps/Mistcity_Indoor_Gym/scripts.inc"
+
+	.include "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.inc"

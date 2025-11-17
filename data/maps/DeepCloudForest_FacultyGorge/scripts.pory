@@ -125,10 +125,11 @@ script DeepCloudForest_FacultyGorge_Daan_Rescue_Start {
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up))
     waitmovement
     if(var(VAR_TEMP_0) == 24) {
+        applymovement(LOCALID_PLAYER, moves(face_up))
         applymovement(27, moves(walk_fast_left*4 walk_fast_down*3 walk_fast_left*4 walk_fast_up*2 walk_fast_left walk_fast_up))
         applymovement(28, moves(walk_fast_down walk_fast_left*4 walk_fast_down*3 walk_fast_left*4 walk_up*2))
         waitmovement
-        applymovement(29, moves(walk_left*4))
+        applymovement(29, moves(walk_left*3))
         waitmovement
     }
     if(var(VAR_TEMP_0) == 25) {
@@ -136,7 +137,7 @@ script DeepCloudForest_FacultyGorge_Daan_Rescue_Start {
         applymovement(27, moves(walk_fast_left*4 walk_fast_down*3 walk_fast_left*4 walk_fast_up*2 walk_fast_left walk_fast_up))
         applymovement(28, moves(walk_fast_down walk_fast_left*4 walk_fast_down*3 walk_fast_left*4 walk_up*2))
         waitmovement
-        applymovement(29, moves(walk_left*4))
+        applymovement(29, moves(walk_left*3))
         waitmovement
     }
     playse(SE_PIN)
@@ -163,6 +164,7 @@ script DeepCloudForest_FacultyGorge_Daan_Rescue_Start {
     waitmovement
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down))
     waitmovement
+    special(RemoveCameraObject)
     msgbox(format("Enough talk!\pGrunts, deal with the ranger and that tree hugger! {PLAYER} is mine!\pLet's show them the true meaning of order!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(2, moves(walk_fast_left*3 walk_fast_down face_right))
@@ -232,7 +234,35 @@ script Deepcloudforest_Barry_Defeated {
     removeobject(12)
     delay(60)
     fadescreen(FADE_FROM_WHITE)
-    
+    delay(120)
+    applymovement(LOCALID_PLAYER, moves(face_up))
+    waitmovement
+    special(SpawnCameraObject)
+    msgbox(format("{COLOR GREEN}Daan{COLOR DARK_GRAY}: The 'Silent Guardian'... that's what Elara called the legend!\pThey weren't just digging; they found it!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(27, moves(face_right))
+    applymovement(5, moves(face_right))
+    applymovement(LOCALID_PLAYER, moves(face_right))
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right*3))
+    waitmovement
+    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: They played us perfectly.\nDavid! Can you track them?\p That comms signal, the new objective... anything!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(29, moves(emote_exclamation_mark))
+    msgbox(format("{COLOR RED}David{COLOR DARK_GRAY}: I... I can't track them.\pBut the objective... the 'Guardian'... the energy it's giving off is immense!\pIt's overwhelming everything else!\pIt's moving fast, heading east!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    msgbox(format("{COLOR GREEN}Daan{COLOR DARK_GRAY}: We have to go!\pWe can't let them get away with a piece of this forest's soul!\pLets get back to the truck!"))
+    waitmessage
+    setflag(FLAG_DAAN_NASH_TRUCK)
+    fadescreen(FADE_TO_BLACK)
+    delay(40)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_fast_left*3))
+    waitmovement
+    special(RemoveCameraObject)
+    playse(SE_TRUCK_DOOR)
+    warpsilent (MAP_INSIDE_OF_TRUCK, 1)
+    waitstate
     release
 }    
 
@@ -308,3 +338,11 @@ text Deepcloudforest_Text_Grunt4PostBattle {
     format("Legend says an ancient golem was locked away here ages ago. The Faculty will harness its power!")
 }
 
+script Deepcloudforest_Gorge_Goback {
+    lock
+    msgbox(format("This is not a time to flee {PLAYER}, Daan is counting on us."))
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(walk_left))
+    waitmovement
+    release
+}

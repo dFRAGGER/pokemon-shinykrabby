@@ -3,7 +3,7 @@
   "name": "SiltrootTown_Indoor_Ali_Apothecary",
   "layout": "LAYOUT_ROUTE104_PRETTY_PETAL_FLOWER_SHOP",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_SILTROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_FOG_DIAGONAL",
   "map_type": "MAP_TYPE_INDOOR",

@@ -144,6 +144,7 @@ script Mistcity_Research_Center_Entrance_Daan_RescueMission {
     msgbox(format("{COLOR RED}Lead Ranger{COLOR DARK_GRAY}: Don't be afraid.\pNash & David are the best people I got.\pMake sure you heal your Pokémon and stack up on some potions, the forest can be a very harsh place.\pI'll keep in contact trough the radio.\pNash and David should be ready any minute now."))
     waitmessage
     setvar(VAR_MISTCITY_RESEARCH_CENTER,1)
+    setflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER1)
     release
     end
 }

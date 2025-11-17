@@ -1,9 +1,22 @@
-mapscripts Mistcity_Research_Center_MapScripts {}
+mapscripts Mistcity_Research_Center_MapScripts {MAP_SCRIPT_ON_TRANSITION{
+        call(DeepCloudforest_Healspot_OnTransition)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 7: Mistcity_Research_Center_ReturnRescueMissionDaan
+
+    ]
+}
+
+script Mistcity_Research_Center_Healspot_OnTransition {
+    setrespawn(HEAL_LOCATION_MIST_CITY)
+    end
+}
 
 script Mistcity_Research_Center_Daan_RescueMission2 {
     lock
+    setflag(FLAG_DAAN_NASH_TRUCK)
     if(var(VAR_MISTCITY_RESEARCH_CENTER_LOCATION)== 0) {
-    msgbox(format("There you are.\pNo time to waste.\pDavid is already in the back of the truck.\pLets go!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: There you are.\pNo time to waste.\pDavid is already in the back of the truck.\pLets go!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(13,moves(walk_right walk_up*3 walk_right face_down))
     applymovement(3, moves(walk_right*4 walk_up walk_right*6 walk_up*3 face_down))
@@ -18,4 +31,54 @@ script Mistcity_Research_Center_Daan_RescueMission2 {
     waitstate
     }
 
+}
+
+script Mistcity_Research_Center_ReturnRescueMissionDaan {
+    lock
+    applymovement(LOCALID_PLAYER, moves(jump_right))
+    waitmovement
+    setvar(VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 10)
+    delay(40)
+    applymovement(LOCALID_PLAYER, moves(walk_down*2 walk_left*5))
+    waitmovement
+    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: Whew.\nGlad to be back, but that was intense.\pRegisteel... I still can't believe they pulled it off."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(15, moves(face_left))
+    delay(40)
+    applymovement(15, moves(face_down))
+    delay(40)
+    applymovement(15, moves(face_up))
+    delay(40)
+    applymovement(15, moves(face_right))
+    delay(40)
+    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: I think Daan and David are already gone.\pSoon as the truck stopped, Daan bolted.\pHe was... furious. He's heading for that Faculty sympathizer's house, the one next to the gym.\p He wants to confront them, find out what they knew about the Registeel operation.\pI can't say I blame him, but he was seeing red."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(15, moves(walk_down))
+    applymovement(LOCALID_PLAYER, moves(face_down))
+    waitmovement
+    delay(40)
+    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: And then the weirdest part.\pDaan said something to David... just mumbled it.\pI couldn't make it out.\nBut the kid... he just lit up.\pThe biggest smile I've ever seen on him.\pThen he took off sprinting towards the Gym, of all places.\pAfter what we just saw?\n A smile?\p Baffles me.\p Maybe he's going to the gym archives there to research the 'Silent Guardian'?\pI don't know, but my head's spinning...."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    applymovement(15, moves(walk_up face_right))
+    applymovement(LOCALID_PLAYER, moves(face_left))
+    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: Anyway, you've got a clear path for now.\pI'd check in on Daan at that sympathizer house first, make sure he doesn't do something he'll regret.\pAfter that, you should probably tackle the Gym."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: Oh, right! The Gym.\pIt's... unique.\pDaan is actually the official Gym Leader here, but with all this Faculty business, he's had a few of his best ranger trainees on rotation to test challengers.\pHe designed it to replicate the forest at night.\pIt's almost pitch black in there.\pHe always says you don't really know the cloud forest until you've seen the ecosystem that comes alive after dark.\pIt's a real challenge, but you'll be facing a gauntlet of nocturnal Pokémon... think Noctowl, Ariados, maybe even a Mightyena.\p Here, you'll need this."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    giveitem(ITEM_HM05)
+    waitmessage
+    setflag(FLAG_RECEIVED_HM_FLASH)
+    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: It's the HM for Flash.\pIt'll help you see, but trust me, the Pokémon in there are more than comfortable in the dark.\pIt'll be a good test of your skills before you head out again.\pAfter you've handled things here, your next step should be Siltroot Town.\pIt's an old, rural town deep in the mangrove swamps to the west.\pIt's a bit... rustic, from what I hear, but it's the only place you'll find a boat.\pOur long-range reports show The Faculty's main transport ship headed north, towards the Lion Mountains.\pYou'll never make it there on foot. But in Siltroot, you might find a skipper willing to take you to the port city of Lionsarch.\pIt's the only real access point to those two frozen peaks.\p Good luck, {PLAYER}.\pFind me at the station if you learn anything new, or if you want to explore the forest again."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(walk_down walk_left*6))
+    waitmovement
+    applymovement(15, moves(walk_down walk_left*5))
+    applymovement(16, moves(walk_down*2 walk_left))
+    waitmovement
+    setflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER1)
+    setflag(FLAG_HELPED_DAN_BEAT_FACULTY)
+    clearflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER2)
+    release
 }

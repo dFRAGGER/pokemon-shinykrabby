@@ -781,7 +781,11 @@
     },
     {
       "id": "MAPSEC_ROUTE_10",
-      "name": "ROUTE 10"
+      "name": "Route 10",
+      "x": 7,
+      "y": 6,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_11",
@@ -1266,6 +1270,110 @@
     {
       "id": "MAPSEC_MIST_CITY",
       "name": "Mist City",
+      "x": 7,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ROUTE_03",
+      "name": "Route 3",
+      "x": 7,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ROUTE_04",
+      "name": "Route 4",
+      "x": 7,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ROUTE_05",
+      "name": "Route 5",
+      "x": 7,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ROUTE_06",
+      "name": "Route 6",
+      "x": 7,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ROUTE_07",
+      "name": "Route 7",
+      "x": 7,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ROUTE_08",
+      "name": "Route 8",
+      "x": 7,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ROUTE_09",
+      "name": "Route 9",
+      "x": 7,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SK_ROUTE_10",
+      "name": "Route 10",
+      "x": 7,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_LIONS_ARCH_CITY",
+      "name": "Lions Arch City",
+      "x": 7,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_EAST_LION_MOUNTAIN",
+      "name": "East Lion Mountain",
+      "x": 7,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_WEST_LION_MOUNTAIN",
+      "name": "West Lion Mountain",
+      "x": 7,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SILTROOT_TOWN",
+      "name": "Siltroot Town",
+      "x": 7,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_CLOUD_FOREST",
+      "name": "The Cloud Forest",
       "x": 7,
       "y": 6,
       "width": 1,

@@ -2,7 +2,7 @@
   "id": "MAP_MISTCITY_RESEARCH_CENTER_ENTRANCE",
   "name": "Mistcity_Research_Center_Entrance",
   "layout": "LAYOUT_MISTCITY_RESEARCH_CENTER_ENTRANCE",
-  "music": "MUS_B_FACTORY",
+  "music": "MUS_FORTREE",
   "region_map_section": "MAPSEC_MIST_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
