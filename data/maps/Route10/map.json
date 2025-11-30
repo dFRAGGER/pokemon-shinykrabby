@@ -22,6 +22,11 @@
       "map": "MAP_SILTROOT_TOWN",
       "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_ROUTE04",
+      "offset": -85,
+      "direction": "right"
     }
   ],
   "object_events": [],

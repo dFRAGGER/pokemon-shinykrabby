@@ -19,72 +19,86 @@ script DeepCloudForest_AncientGrotto_GetOutTruck {
     msgbox(format("The Rector: Allright children, to make a long story short, force the golem on the ship and lets get out of here."),MSGBOX_AUTOCLOSE)
     setflag(FLAG_ANCIENTGROTTO_BOARD_SHIP)
     delay(40)
-    applymovement(5, moves(walk_slow_left*2 walk_slow_down walk_left))
+    applymovement(3, moves(walk_slow_left*3))
+    applymovement(5, moves(walk_slow_left*3))
+    applymovement(4, moves(walk_slow_left*3))
+    applymovement(7, moves(walk_slow_left*3))
+    applymovement(12, moves(walk_slow_left*3))
+    applymovement(6, moves(walk_slow_left*3))
+    applymovement(11, moves(walk_slow_left*3))
+    applymovement(13, moves(walk_slow_left*3))
+    waitmovement  
+    applymovement(LOCALID_PLAYER, moves(walk_fast_left*3))
+    applymovement(9, moves(walk_fast_left*3 emote_exclamation_mark))
+    applymovement(8, moves(walk_fast_left*3))
+    applymovement(10, moves(walk_fast_left*3))
     waitmovement
-    removeobject(5)
-    applymovement(4, moves(walk_slow_left*2 walk_slow_up walk_left))
+    msgbox(format("{COLOR GREEN}Daan{COLOR DARK_GRAY}: HEY!\nWHAT ARE YOU GUYS DOING?"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(7, moves(walk_right*2))
+    playse(SE_PIN)
+    applymovement(6, moves(emote_exclamation_mark walk_slow_right))
     waitmovement
-    removeobject(4)
-    applymovement(3, moves(walk_slow_left*5))
-    waitmovement
-    removeobject(3)
-    applymovement(6, moves(walk_slow_left walk_slow_down*2 walk_slow_left*4))
-    waitmovement
-    removeobject(6)
-    applymovement(7, moves(walk_slow_left walk_slow_up*2 walk_slow_left*4))
-    waitmovement
-    removeobject(7)
-    applymovement(9, moves(walk_slow_left*6))
-    waitmovement
-    removeobject(9)
-    applymovement(8, moves(walk_slow_down*2 walk_slow_left*6))
-    waitmovement
-    removeobject(8)
-    applymovement(11, moves(walk_right*2))
-    applymovement(10, moves(walk_fast_right))
     applymovement(LOCALID_PLAYER, moves(jump_right face_left))
+    applymovement(12, moves(face_right))
+    applymovement(11, moves(face_right))
+    applymovement(13, moves(face_right))
+    applymovement(3, moves(face_right))
+    applymovement(5, moves(face_right))
+    applymovement(4, moves(face_right))
     waitmovement
-    applymovement(10, moves(walk_slow_left face_right))
+    applymovement(6, moves(walk_slow_left face_right))
     waitmovement
     msgbox(format("The Rector: Impressive!\pHow did you guys find us that quickly?"), MSGBOX_AUTOCLOSE)
     waitmessage
+    applymovement(8, moves(walk_down face_left))
     delay(40)
     msgbox(format("{COLOR RED}David{COLOR DARK_GRAY}: That energy...\pthe pressure...\pIt's the 'Silent Guardian'...\pIt's exactly what the legends described.\nThey actually did it.\pThey have Registeel."),MSGBOX_AUTOCLOSE)
     delay(60)
+    applymovement(7, moves(walk_down*2 face_right))
+    waitmovement
     msgbox(format("The Rector: Well well, young man.\pYou seem to be an intelligent kid.\pWhy don't you join the faculty?\nAt the faculty we Push Boundaries, Develop Talent and Inspire!!\pYou would be the perfect fit!"),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
-    applymovement(13, moves(emote_exclamation_mark))
+    applymovement(9, moves(emote_exclamation_mark walk_fast_left walk_fast_down*2 face_left ))
     waitmovement
     msgbox(format("{COLOR GREEN}Daan{COLOR DARK_GRAY}: Don't talk to him, you fool!\pFree Registeel, he belongs in this forest!"), MSGBOX_AUTOCLOSE)
     delay(40)
-    applymovement(11, moves(face_left))
+    applymovement(7, moves(face_left))
     delay(60)
-    applymovement(11, moves(face_right))
+    applymovement(7, moves(face_right))
     waitmessage
     msgbox(format("The Rector: Unfortunately, I can't do that.\pOur plan is bigger than this chaotic forest.\pHe is a necessary piece to bring order to this world."), MSGBOX_AUTOCLOSE)
     waitmessage
+    applymovement(10, moves(emote_exclamation_mark walk_fast_left*2 face_down))
+    waitmovement
     msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: What do you mean?"),MSGBOX_AUTOCLOSE)
     waitmessage
-    msgbox(format("The Rector: You will see my friend, you will see.\pChildren, lets get out of here.\pELECTABUZZ, FLASH!!"), MSGBOX_AUTOCLOSE)
+    applymovement(7, moves(face_up))
+    msgbox(format("The Rector: You will see my friend, you will see.\pChildren, lets get out of here."), MSGBOX_AUTOCLOSE)
     waitmessage
+    applymovement(7, moves(face_left))
+    msgbox(format("The Rector: ELECTABUZZ, FLASH!!"), MSGBOX_AUTOCLOSE)
     setflag(FLAG_ANCIENTGROTTO_DISAPPEAR_SHIP)
     delay(40)
     playse(SE_BANG)
-    fadescreen(FADE_TO_WHITE)
+    fadescreenswapbuffers(FADE_TO_WHITE)
     msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: Goddamn, not again...\nI should have brought my sunglasses..."),MSGBOX_AUTOCLOSE)
-    removeobject(15)
-    removeobject(17)
+    removeobject(12)
+    removeobject(7)
+    removeobject(6)
+    removeobject(13)
     removeobject(11)
-    removeobject(10)
-    removeobject(16)
-    delay(60)
-    fadescreen(FADE_FROM_WHITE)
+    removeobject(3)
+    removeobject(4)
+    removeobject(5)
+    delay(60)    
+    fadescreenswapbuffers(FADE_FROM_WHITE)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left*2))
-    applymovement(LOCALID_PLAYER, moves(walk_fast_left*7))
-    applymovement(13, moves(walk_fast_left*7))
-    applymovement(14, moves(walk_fast_left*7))
-    applymovement(12, moves(walk_fast_left*7))
+    applymovement(LOCALID_PLAYER, moves(walk_fast_left*4))
+    applymovement(9, moves(walk_fast_left*4))
+    applymovement(10, moves(walk_fast_left*4))
+    applymovement(8, moves(walk_fast_left*4))
     waitmovement
     applymovement(2, moves(walk_slow_left*5))
     special(RemoveCameraObject)
@@ -98,5 +112,5 @@ script DeepCloudForest_AncientGrotto_GetOutTruck {
     playse(SE_TRUCK_DOOR)
     warpsilent (MAP_INSIDE_OF_TRUCK, 1)
     waitstate
-    release
+    release 
 }

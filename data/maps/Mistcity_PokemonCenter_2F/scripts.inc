@@ -32,7 +32,7 @@ Mistcity_PokemonCenter_2F_Red_Convo_Text_0:
 	.string "saw something new and exciting.\p"
 	.string "Hopefully this is the case in Mist City\n"
 	.string "as well.\p"
-	.string "The cool thing is that I modelled Dan,\n"
+	.string "The cool thing is that I modelled Daan,\n"
 	.string "the protecter of the forest, after\l"
 	.string "myself.\p"
 	.string "My real life job is being a biodiversity\n"

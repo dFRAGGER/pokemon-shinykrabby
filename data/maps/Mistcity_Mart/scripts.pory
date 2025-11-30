@@ -1,1 +1,41 @@
 mapscripts Mistcity_Mart_MapScripts {}
+
+script Mistcity_Mart_Employer {
+    lock
+	faceplayer
+	message(gText_HowMayIServeYou) 
+	waitmessage
+	pokemart(Mistcity_Mart_Items)
+	msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+	release
+	end
+    
+}
+
+mart Mistcity_Mart_Items {
+    ITEM_POKE_BALL
+	ITEM_GREAT_BALL
+	ITEM_POTION
+	ITEM_SUPER_POTION
+	ITEM_ANTIDOTE
+	ITEM_PARALYZE_HEAL
+	ITEM_ESCAPE_ROPE
+	ITEM_REPEL
+	ITEM_HARBOR_MAIL
+}
+
+script Mistcity_Mart_Ranger {
+    lock
+    faceplayer
+    msgbox(format("I always double-check my supply of Antidotes before a shift, because the Spinarak in these woods don't mess around."))
+    waitmessage
+    release
+}
+
+script Mistcity_Mart_Hiker {
+    lock
+    faceplayer
+    msgbox(format("I'm trying to find a backpack that is actually waterproof, because the mist here manages to soak through everything I own."))
+    waitmessage
+    release
+}

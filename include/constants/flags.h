@@ -1227,20 +1227,20 @@
 #define FLAG_ITEM_TRADED_DOME_FOSSIL                                          0x495 // Unused Flag
 #define FLAG_ITEM_TM23_IRON_TAIL                                         0x496 // Unused Flag
 #define FLAG_ITEM_ROOT_FOSSIL                                           0x497 // Unused Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
-#define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
+#define FLAG_ITEM_FRESH_WATER_GYM2                                          0x498 // Unused Flag
+#define FLAG_ITEM_ROUTE_02_POKE_BALL                                          0x499 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ROUTE_02_ANTIDOTE                                          0x49A // Unused Flag
+#define FLAG_HIDDEN_ITEM_ROUTE_02_POTION                                          0x49B // Unused Flag
+#define FLAG_HIDDEN_ITEM_ROUTE_02_HEART_SCALE                                            0x49C // Unused Flag
+#define FLAG_ITEM_ROUTE_03_ETHER                                          0x49D // Unused Flag
+#define FLAG_HIDDEN_ITEM_ROUTE_03_GREAT_BALL                                         0x49E // Unused Flag
+#define FLAG_HIDDEN_ITEM_ROUTE_03_POKE_BALL                                          0x49F // Unused Flag
+#define FLAG_HIDDEN_ITEM_ROUTE_03_PARLYZ_HEAL                                          0x4A0 // Unused Flag
+#define FLAG_ITEM_ROUTE_03_GREAT_BALL                                          0x4A1 // Unused Flag
+#define FLAG_HIDDEN_ITEM_MISTCITY_SUPER_POTION                                          0x4A2 // Unused Flag
+#define FLAG_HIDDEN_ITEM_MISTCITY_POKE_BALL                                       0x4A3 // Unused Flag
+#define FLAG_ITEM_MISTCITY_POTION                                       0x4A4 // Unused Flag
+#define FLAG_ITEM_MISTCITY_X_DEFENSE                                           0x4A5 // Unused Flag
 #define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
@@ -1316,8 +1316,8 @@
 #define FLAG_UNUSED_0x4EE                                           0x4EE // Unused Flag
 #define FLAG_UNUSED_0x4EF                                           0x4EF // Unused Flag
 
-#define FLAG_DEFEATED_RUSTBORO_GYM                                  0x4F0
-#define FLAG_DEFEATED_DEWFORD_GYM                                   0x4F1
+#define FLAG_DEFEATED_RUSTBORO_GYM                                  0x4F0 //used in Maasje Gym
+#define FLAG_DEFEATED_DEWFORD_GYM                                   0x4F1 //used in Mistcity Gym
 #define FLAG_DEFEATED_MAUVILLE_GYM                                  0x4F2
 #define FLAG_DEFEATED_LAVARIDGE_GYM                                 0x4F3
 #define FLAG_DEFEATED_PETALBURG_GYM                                 0x4F4

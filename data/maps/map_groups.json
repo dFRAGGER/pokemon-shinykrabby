@@ -40,7 +40,8 @@
     "gMapGroup_IndoorMaasje",
     "gMapGroup_IndoorMistCity",
     "gMapGroup_DeepCloudForest",
-    "gMapGroup_IndoorSiltrootTown"
+    "gMapGroup_IndoorSiltrootTown",
+    "gMapGroup_IndoorDungeons"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -708,5 +709,9 @@
     "SiltrootTown_Indoor_FacultyDefector",
     "SiltrootTown_Indoor_Healer",
     "SiltrootTown_Indoor_House4"
+  ],
+  "gMapGroup_IndoorDungeons": [
+    "Batcave",
+    "Route04_CenterCave"
   ]
 }

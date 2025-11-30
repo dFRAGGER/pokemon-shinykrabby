@@ -332,112 +332,117 @@ Tyrogue
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_WEATHER_INST_2 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_DAVID_HEARTFIELD ===
+Name: DAVID
+Class: Leader
+Pic: Pyramid King Brandon
 Gender: Male
-Music: Aqua
+Music: Male
+Items: Super Potion / Super Potion
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Hoothoot
+Level: 16
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Confusion
+- Peck
+- Reflect
+- Echoed Voice
 
-Carvanha
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Murkrow
+Level: 16
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Wing Attack
+- Astonish
+- Night Shade
+- Mean Look
 
-=== TRAINER_GRUNT_WEATHER_INST_3 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+Heracross @ Sitrus Berry
+Level: 19
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Horn Attack
+- Aerial Ace
+- Endure
+- Night Slash
+
+=== TRAINER_LINTON ===
+Name: LINTON
+Class: Ninja Boy
+Pic: Ninja Boy
 Gender: Male
-Music: Aqua
+Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ekans
+Level: 13
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Zubat
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Carvanha
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GRUNT_MUSEUM_1 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_ROYSTON ===
+Name: ROYSTON
+Class: Ninja Boy
+Pic: Ninja Boy
 Gender: Male
-Music: Aqua
+Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Venonat
+Level: 13
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_GRUNT_MUSEUM_2 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_CHUCKIE ===
+Name: CHUCKIE
+Class: Ninja Boy
+Pic: Ninja Boy
 Gender: Male
-Music: Aqua
+Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tangela
+Level: 13
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Carvanha
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GRUNT_SPACE_CENTER_1 ===
-Name: GRUNT
-Class: Team Magma
-Pic: Magma Grunt M
+=== TRAINER_HARDY ===
+Name: HARDY
+Class: Ninja Boy
+Pic: Ninja Boy
 Gender: Male
-Music: Magma
+Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Numel
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Hoothoot
+Level: 13
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_GRUNT_MT_PYRE_1 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_LAYTON ===
+Name: LAYTON
+Class: Ninja Boy
+Pic: Ninja Boy
 Gender: Male
-Music: Aqua
+Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ariados
+Level: 13
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_GRUNT_MT_PYRE_2 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_NEELY ===
+Name: NEELY
+Class: Ninja Boy
+Pic: Ninja Boy
 Gender: Male
-Music: Aqua
+Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kecleon
+Level: 13
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_GRUNT_MT_PYRE_3 ===
 Name: GRUNT
@@ -4897,7 +4902,7 @@ Class: Leader
 Pic: Expert M
 Gender: Male
 Music: Male
-Items: Potion / Potion
+Items: Potion
 Double Battle: No
 AI: Basic Trainer
 
@@ -4917,13 +4922,13 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Astonish
 - Scratch
 
-Donphan @ Oran Berry
+Gligar
 Level: 15 
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Sandstorm
-- Rollout
-- Defense Curl
-- Tackle
+- Fury Cutter
+- Sand Attack
+- Mud Shot
 
 === TRAINER_NORMAN_1 ===
 Name: NORMAN

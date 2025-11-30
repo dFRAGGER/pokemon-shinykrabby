@@ -1,5 +1,61 @@
 mapscripts Mistcity_Research_Center_Entrance_MapScripts {}
 
+script Mistcity_Research_Center_Entrance_Rangers_Slaking {
+    lock
+    faceplayer
+    msgbox(format("This Slaking usually sleeps eighteen hours a day, but it keeps pressing its ear to the mud like it hears something moving deep underground."))
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Rangers_Shiftry {
+    lock
+    faceplayer
+    msgbox(format("I've never seen a Shiftry act this aggressive, but it keeps staring toward the deep woods and howling as if an intruder is tearing up its home."))
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Rangers_Paras {
+    lock
+    faceplayer
+    msgbox(format("The mushroom on this Parasect's back has been releasing defensive spores all morning, a reaction usually only triggered by heavy seismic activity."))
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Rangers_Tropius {
+    lock
+    faceplayer
+    msgbox(format("We found this poor Tropius tangled in the lower branches; it was terrified of a loud, metallic grinding sound echoing from the restricted zone."))
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Rangers_Trucks {
+    lock
+    faceplayer
+    msgbox(format("We've had to mobilize the all our rescue trucks just to keep up with the sheer volume of distress signals coming from the forest core."))
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Scientist_Mist {
+    lock
+    faceplayer
+    msgbox(format("The deep cloud forest is a biological marvel, a unique ecosystem where the perpetual mist allows rare and ancient Pokémon species to thrive in isolation."))
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Scientist_Guard {
+    lock
+    faceplayer
+    msgbox(format("I can't let you through; the upper level is strictly reserved for our lead researchers to analyze the sensitive data coming from the forest."))
+    waitmessage
+    release
+}
+
 script Mistcity_Research_Center_Entrance_Scientist_Paras {
     lock
     faceplayer
@@ -66,7 +122,7 @@ script Mistcity_Research_Center_Entrance_Daan_RescueMission {
     applymovement(19, moves(face_right emote_exclamation_mark))
     waitmovement
     applymovement(LOCALID_PLAYER,moves(face_left))
-    msgbox(format("{COLOR RED}Lead Ranger{COLOR DARK_GRAY}: Hold it right there.\pYou're a skilled trainer, right?\p...Good. We have a serious situation.\pJoin us."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR RED}Lead Scientist{COLOR DARK_GRAY}: Hold it right there.\pYou're a skilled trainer, right?\p...Good. We have a serious situation.\pJoin us."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER,moves(walk_left*3 face_up))
     waitmovement
@@ -93,7 +149,7 @@ script Mistcity_Research_Center_Entrance_Daan_RescueMission {
     applymovement(20, moves(walk_right walk_up face_down))
     applymovement(18, moves(face_down))
     waitmovement
-    msgbox(format("{COLOR RED}Lead Ranger{COLOR DARK_GRAY}: I want to introduce you to two of my people, {COLOR BLUE}Nash{COLOR DARK_GRAY} & {COLOR GREEN}David{COLOR DARK_GRAY}."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR RED}Lead Scientist{COLOR DARK_GRAY}: I want to introduce you to two of my people, {COLOR BLUE}Nash{COLOR DARK_GRAY} & {COLOR GREEN}David{COLOR DARK_GRAY}."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(20, moves(walk_down))
     waitmovement
@@ -125,7 +181,7 @@ script Mistcity_Research_Center_Entrance_Daan_RescueMission {
     waitmessage
     applymovement(18, moves(walk_left walk_up face_down))
     waitmovement
-    msgbox(format("{COLOR RED}Lead Ranger{COLOR DARK_GRAY}: Nash.\nDavid.\pGo downstairs and prepare the truck.\pKeep me updated on your progress."))
+    msgbox(format("{COLOR RED}Lead Scientist{COLOR DARK_GRAY}: Nash.\nDavid.\pGo downstairs and prepare the truck.\pKeep me updated on your progress."))
     waitmessage
     applymovement(20, moves(walk_up*2))
     waitmovement
@@ -141,7 +197,7 @@ script Mistcity_Research_Center_Entrance_Daan_RescueMission {
     applymovement(19,moves(face_right))
     applymovement(LOCALID_PLAYER,moves(face_left))
     waitmovement
-    msgbox(format("{COLOR RED}Lead Ranger{COLOR DARK_GRAY}: Don't be afraid.\pNash & David are the best people I got.\pMake sure you heal your Pokémon and stack up on some potions, the forest can be a very harsh place.\pI'll keep in contact trough the radio.\pNash and David should be ready any minute now."))
+    msgbox(format("{COLOR RED}Lead Scientist{COLOR DARK_GRAY}: Don't be afraid.\pNash & David are the best people I got.\pMake sure you heal your Pokémon and stack up on some potions, the forest can be a very harsh place.\pI'll keep in contact trough the radio.\pNash and David should be ready any minute now."))
     waitmessage
     setvar(VAR_MISTCITY_RESEARCH_CENTER,1)
     setflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER1)

@@ -55,6 +55,7 @@ script Maasje_Gym_PeteLongfellow_Defeated {
     waitmessage
     call(Common_EventScript_PlayGymBadgeFanfare)
     setflag(FLAG_BADGE01_GET)
+    setflag(FLAG_DEFEATED_RUSTBORO_GYM)
     msgbox(format("On the back it says: 'This badge gives you the permission to cut down trees with the move Cut.'"), MSGBOX_AUTOCLOSE)
     release
 }

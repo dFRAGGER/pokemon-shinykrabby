@@ -1,1 +1,178 @@
 mapscripts Mistcity_Indoor_Gym_MapScripts {}
+
+script Mistcity_Gym_Introduction {
+    lock
+    if(flag(FLAG_ITEM_FRESH_WATER_GYM2) == FALSE&&flag(FLAG_BADGE02_GET)==FALSE){
+            setflag(FLAG_ITEM_FRESH_WATER_GYM2)
+            msgbox(format("{COLOR RED}Gym guide: {COLOR DARK_GRAY}Hi, welcome to the Mistcity Pokemon Gym.\p The gym leader and trainers use pokemon that like the darkness.\p While Pokémon that can give you a little light can help you, Pokémon afraid of the dark are not recommended.\p The gym leader is always on rotation, but I think I saw a red haired young ranger slip by just a moment ago.\pHe seemed to be unusually confident.\pTrust your instinct and I'm sure you will be victorious!\p Also have this:"))
+            waitmessage
+            giveitem(ITEM_FRESH_WATER)
+            waitmessage
+            msgbox(format("Good luck!!"))
+            waitmessage
+            release
+            end
+    }
+    if(flag(FLAG_ITEM_FRESH_WATER_GYM2) == TRUE&&flag(FLAG_BADGE02_GET)==FALSE){
+        msgbox(format("{COLOR RED}Gym guide: {COLOR DARK_GRAY}Hi, welcome to the Mistcity Pokemon Gym.\p The gym leader and trainers use pokemon that like the darkness.\p While Pokémon that can give you a little light can help you, Pokémon afraid of the dark are not recommended.\p The gym leader is always on rotation, but I think I saw a red haired young ranger slip by just a moment ago.\pHe seemed to be unusually confident.\pTrust your instinct and I'm sure you will be victorious!"))
+        waitmessage
+        release
+        end
+    }
+    if(flag(FLAG_ITEM_FRESH_WATER_GYM2) == TRUE&&flag(FLAG_BADGE02_GET)==TRUE){
+        msgbox(format("{COLOR RED}Gym guide: {COLOR DARK_GRAY}Congrats on getting your badge!\p David looked dissapointed, but I think he will handle the loss well."))
+        waitmessage
+        release
+        end
+    }
+}
+
+
+
+script Mistcity_Gym_Leader_David {
+    trainerbattle_single(TRAINER_DAVID_HEARTFIELD, Mistcity_Gym_David_Introtext, Mistcity_Gym_David_Defeattext, Mistcity_Gym_David_Defeated, NO_MUSIC)
+    release
+    end
+}
+
+script Mistcity_Gym_David_Defeated {
+    lock
+    msgbox(format("You battle with the same courage you showed during the rescue mission.\pYou have earned this Badge not just for winning, but for your heart.\pI know Daan would be proud of you too."))
+    call(Common_EventScript_PlayGymBadgeFanfare)
+    setflag(FLAG_BADGE02_GET)
+    msgbox(format("The FOREST BADGE makes all POKéMON up to Level 30, even those you get in trades, obey without question.\pAnd, you'll be able to use this HM move FLASH outside of battle too!"))
+    waitmessage
+    giveitem(ITEM_HM05)
+    setflag(FLAG_RECEIVED_HM_FLASH)
+    setflag(FLAG_DEFEATED_DEWFORD_GYM )
+    msgbox(format("That Hidden Machine contains the move Flash.\pIt creates a brilliant light.\pIt can light up even the darkest of areas to guide your path.\pI learned it from studying that Faculty scum.\pSometimes you have to fight fire with fire!\pGood luck on your further endeavours."))
+    waitmessage
+    call(MistcityGym_Set_Gym_Trainers)
+    release
+    end
+}
+
+script MistcityGym_Set_Gym_Trainers {
+    settrainerflag (TRAINER_LINTON)
+    settrainerflag (TRAINER_ROYSTON)
+    settrainerflag (TRAINER_CHUCKIE)
+    settrainerflag (TRAINER_HARDY)
+    settrainerflag (TRAINER_LAYTON)
+    settrainerflag (TRAINER_NEELY)
+}
+
+text Mistcity_Gym_David_Introtext {
+    format("Daan gave me the confidence to finally take on a battle! Show me the strength that saved our friend!")
+}
+
+text Mistcity_Gym_David_Defeattext {
+    format("Brilliant! You cleared the darkness.")
+}
+
+script MistcityGym_Trainer_Linton {
+    trainerbattle_single(TRAINER_LINTON, MistcityGym_Text_LintonIntro, Mistcity_Text_LintonDefeated)
+	msgbox(Mistcity_Text_LintonPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text MistcityGym_Text_LintonIntro {
+    format("It is pitch black in here. My Pokemon senses you by your heat signature!")
+}
+
+text Mistcity_Text_LintonDefeated {
+    format("Hiss!\nWe were extinguished.")
+}
+
+text Mistcity_Text_LintonPostBattle {
+    format("You better watch your step. The darkness hides many things in this gym.")
+}
+
+script MistcityGym_Trainer_Royston {
+    trainerbattle_single(TRAINER_ROYSTON, MistcityGym_Text_RoystonIntro, Mistcity_Text_RoystonDefeated)
+	msgbox(Mistcity_Text_RoystonPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text MistcityGym_Text_RoystonIntro {
+    format("Venonat has radar eyes. The darkness means nothing to us!")
+}
+
+text Mistcity_Text_RoystonDefeated {
+    format("My radar failed me!")
+}
+
+text Mistcity_Text_RoystonPostBattle {
+    format("Navigating this gym requires more than just eyes. You need instinct.")
+}
+
+script MistcityGym_Trainer_Chuckie {
+    trainerbattle_single(TRAINER_CHUCKIE, MistcityGym_Text_ChuckieIntro, Mistcity_Text_ChuckieDefeated)
+	msgbox(Mistcity_Text_ChuckiePostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text MistcityGym_Text_ChuckieIntro {
+    format("Watch your step! My Tangela's vines are everywhere in this gloom.")
+}
+
+text Mistcity_Text_ChuckieDefeated {
+    format("Tangled up in my own trap...")
+}
+
+text Mistcity_Text_ChuckiePostBattle {
+    format("The shadows make the vines look like snakes. It is pretty spooky.")
+}
+
+script MistcityGym_Trainer_Hardy {
+    trainerbattle_single(TRAINER_HARDY, MistcityGym_Text_HardyIntro, Mistcity_Text_HardyDefeated)
+	msgbox(Mistcity_Text_HardyPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text MistcityGym_Text_HardyIntro {
+    format("Who goes there? My Hoothoot owns the night shift.")
+}
+
+text Mistcity_Text_HardyDefeated {
+    format("I should have stayed asleep.")
+}
+
+text Mistcity_Text_HardyPostBattle {
+    format("This gym mimics the Deepcloud Forest at night perfectly. It gives me the shivers.")
+}
+
+script MistcityGym_Trainer_Layton {
+    trainerbattle_single(TRAINER_LAYTON, MistcityGym_Text_LaytonIntro, Mistcity_Text_LaytonDefeated)
+	msgbox(Mistcity_Text_LaytonPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text MistcityGym_Text_LaytonIntro {
+    format("Did you feel that sticky thread? You just walked right into our web!")
+}
+
+text Mistcity_Text_LaytonDefeated {
+    format("Our web has been torn apart...")
+}
+
+text Mistcity_Text_LaytonPostBattle {
+    format("Ariados spins webs in the dark to catch wandering trainers like you.")
+}
+
+script MistcityGym_Trainer_Neely {
+    trainerbattle_single(TRAINER_NEELY, MistcityGym_Text_NeelyIntro, Mistcity_Text_NeelyDefeated)
+	msgbox(Mistcity_Text_NeelyPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+text MistcityGym_Text_NeelyIntro {
+    format("I am blending into the shadows. You will never see my Kecleon coming!")
+}
+
+text Mistcity_Text_NeelyDefeated {
+    format("You spotted us!")
+}
+
+text Mistcity_Text_NeelyPostBattle {
+    format("Kecleon can change colors to match the darkness. It is the ultimate camouflage.")
+}

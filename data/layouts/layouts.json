@@ -1830,8 +1830,8 @@
       "name": "SeafloorCavern_Room6_Layout",
       "width": 24,
       "height": 23,
-      "border_width": 0,
-      "border_height": 0,
+      "border_width": 2,
+      "border_height": 2,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/SeafloorCavern_Room6/border.bin",
@@ -1854,8 +1854,8 @@
       "name": "SeafloorCavern_Room8_Layout",
       "width": 11,
       "height": 14,
-      "border_width": 0,
-      "border_height": 0,
+      "border_width": 2,
+      "border_height": 2,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/SeafloorCavern_Room8/border.bin",
@@ -5997,7 +5997,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_FortreeGym",
+      "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/Mistcity_Indoor_Gym/border.bin",
       "blockdata_filepath": "data/layouts/Mistcity_Indoor_Gym/map.bin"
     },
@@ -6012,6 +6012,30 @@
       "secondary_tileset": "gTileset_Mossdeep",
       "border_filepath": "data/layouts/DeepCloudforest_FacultyAncientGrotto/border.bin",
       "blockdata_filepath": "data/layouts/DeepCloudforest_FacultyAncientGrotto/map.bin"
+    },
+    {
+      "id": "LAYOUT_BATCAVE",
+      "name": "Batcave_Layout",
+      "width": 56,
+      "height": 35,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Batcave/border.bin",
+      "blockdata_filepath": "data/layouts/Batcave/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE04_CENTER_CAVE",
+      "name": "Route04_CenterCave_Layout",
+      "width": 25,
+      "height": 25,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route04_CenterCave/border.bin",
+      "blockdata_filepath": "data/layouts/Route04_CenterCave/map.bin"
     }
   ]
 }

@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_MYSTERY_GIFT_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 14,
       "y": 14,
       "elevation": 0,
@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Mistcity_Research_Center_Entrance_Rangers_Paras",
       "flag": "0"
     },
     {
@@ -67,7 +67,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MYSTERY_GIFT_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 4,
       "y": 10,
       "elevation": 0,
@@ -76,7 +76,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Mistcity_Research_Center_Entrance_Rangers_Trucks",
       "flag": "0"
     },
     {
@@ -154,7 +154,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Mistcity_Research_Center_Entrance_Scientist_Mist",
       "flag": "0"
     },
     {
@@ -171,7 +171,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MYSTERY_GIFT_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 21,
       "y": 6,
       "elevation": 0,
@@ -180,11 +180,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Mistcity_Research_Center_Entrance_Rangers_Tropius",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MYSTERY_GIFT_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 25,
       "y": 16,
       "elevation": 0,
@@ -193,11 +193,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Mistcity_Research_Center_Entrance_Rangers_Slaking",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MYSTERY_GIFT_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 7,
       "y": 17,
       "elevation": 0,
@@ -206,11 +206,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Mistcity_Research_Center_Entrance_Rangers_Shiftry",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MYSTERY_GIFT_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 8,
       "y": 3,
       "elevation": 0,
@@ -219,7 +219,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Mistcity_Research_Center_Entrance_Scientist_Guard",
       "flag": "0"
     },
     {
@@ -249,7 +249,7 @@
       "flag": "FLAG_HIDE_NASH_DAVID"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MYSTERY_GIFT_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
       "x": 1,
       "y": 6,
       "elevation": 0,

@@ -122,8 +122,10 @@ Maasje_Gym_PeteLongfellow_Defeated_1:
 # 57 "data/maps/Maasje_Gym/scripts.pory"
 	setflag FLAG_BADGE01_GET
 # 58 "data/maps/Maasje_Gym/scripts.pory"
-	msgbox Maasje_Gym_PeteLongfellow_Defeated_Text_3, MSGBOX_AUTOCLOSE
+	setflag FLAG_DEFEATED_RUSTBORO_GYM
 # 59 "data/maps/Maasje_Gym/scripts.pory"
+	msgbox Maasje_Gym_PeteLongfellow_Defeated_Text_3, MSGBOX_AUTOCLOSE
+# 60 "data/maps/Maasje_Gym/scripts.pory"
 	release
 	return
 
@@ -140,37 +142,37 @@ Maasje_Gym_PeteLongfellow_Defeated_4:
 
 
 Maasje_Gym_Set_Gym_Trainers::
-# 71 "data/maps/Maasje_Gym/scripts.pory"
-	settrainerflag TRAINER_BRAM
 # 72 "data/maps/Maasje_Gym/scripts.pory"
-	settrainerflag TRAINER_ROB
+	settrainerflag TRAINER_BRAM
 # 73 "data/maps/Maasje_Gym/scripts.pory"
-	settrainerflag TRAINER_ADDY
+	settrainerflag TRAINER_ROB
 # 74 "data/maps/Maasje_Gym/scripts.pory"
+	settrainerflag TRAINER_ADDY
+# 75 "data/maps/Maasje_Gym/scripts.pory"
 	settrainerflag TRAINER_MART
 	return
 
 
 Maasje_Gym_Check_Buried::
-# 78 "data/maps/Maasje_Gym/scripts.pory"
-	setobjectmovementtype 3, MOVEMENT_TYPE_BURIED
 # 79 "data/maps/Maasje_Gym/scripts.pory"
+	setobjectmovementtype 3, MOVEMENT_TYPE_BURIED
+# 80 "data/maps/Maasje_Gym/scripts.pory"
 	setobjectmovementtype 4, MOVEMENT_TYPE_BURIED
 	return
 
 
 Maasje_Gym_Eventscript_Bram::
-# 83 "data/maps/Maasje_Gym/scripts.pory"
-	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_BRAM, TRAINER_BRAM, Maasje_Gym_Introtext_Trainer_Bram, Maasje_Gym_Losetext_Trainer_Bram, NULL, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
 # 84 "data/maps/Maasje_Gym/scripts.pory"
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_BRAM, TRAINER_BRAM, Maasje_Gym_Introtext_Trainer_Bram, Maasje_Gym_Losetext_Trainer_Bram, NULL, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
+# 85 "data/maps/Maasje_Gym/scripts.pory"
 	msgbox Maasje_Gym_Eventscript_Bram_Text_0, MSGBOX_AUTOCLOSE
 	end
 
 
 Maasje_Gym_Eventscript_Rob::
-# 97 "data/maps/Maasje_Gym/scripts.pory"
-	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_ROB, TRAINER_ROB, Maasje_Gym_Introtext_Trainer_Rob, Maasje_Gym_Losetext_Trainer_Rob, NULL, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
 # 98 "data/maps/Maasje_Gym/scripts.pory"
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_ROB, TRAINER_ROB, Maasje_Gym_Introtext_Trainer_Rob, Maasje_Gym_Losetext_Trainer_Rob, NULL, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
+# 99 "data/maps/Maasje_Gym/scripts.pory"
 	msgbox Maasje_Gym_Eventscript_Rob_Text_0, MSGBOX_AUTOCLOSE
 	end
 
@@ -293,26 +295,26 @@ Maasje_Gym_PeteLongfellow_Defeated_Text_2:
 	.string "It seems to be the Sand Badge!$"
 
 Maasje_Gym_PeteLongfellow_Defeated_Text_3:
-# 58 "data/maps/Maasje_Gym/scripts.pory"
+# 59 "data/maps/Maasje_Gym/scripts.pory"
 	.string "On the back it says: 'This badge gives\n"
 	.string "you the permission to cut down trees\l"
 	.string "with the move Cut.'$"
 
 Maasje_Gym_Eventscript_Bram_Text_0:
-# 84 "data/maps/Maasje_Gym/scripts.pory"
+# 85 "data/maps/Maasje_Gym/scripts.pory"
 	.string "{COLOR BLUE}Bram of the Millcount: {COLOR DARK_GRAY}The faculty is a\n"
 	.string "strong faction, almost as strong as\l"
 	.string "those chemical bonds I used to create\l"
 	.string "back in the day.$"
 
 Maasje_Gym_Eventscript_Rob_Text_0:
-# 98 "data/maps/Maasje_Gym/scripts.pory"
+# 99 "data/maps/Maasje_Gym/scripts.pory"
 	.string "{COLOR BLUE}Rob of Erup: {COLOR DARK_GRAY}The faculty is all about\n"
 	.string "structure, just like the computers I\l"
 	.string "used to fix at my old job.$"
 
 Maasje_Gym_PeteLongfellow_Introtext::
-# 62 "data/maps/Maasje_Gym/scripts.pory"
+# 63 "data/maps/Maasje_Gym/scripts.pory"
 	.string "{COLOR BLUE}Pete Longfellow: {COLOR DARK_GRAY}Well, well.\p"
 	.string "Look who we got here.\p"
 	.string "Let me learn you something about\n"
@@ -320,27 +322,27 @@ Maasje_Gym_PeteLongfellow_Introtext::
 	.string "of erosion!!$"
 
 Maasje_Gym_PeteLongfellow_Defeattext::
-# 66 "data/maps/Maasje_Gym/scripts.pory"
+# 67 "data/maps/Maasje_Gym/scripts.pory"
 	.string "I might be getting to old for this.\p"
 	.string "Maybe my skills have finally eroded with\n"
 	.string "the wind.$"
 
 Maasje_Gym_Introtext_Trainer_Bram::
-# 88 "data/maps/Maasje_Gym/scripts.pory"
+# 89 "data/maps/Maasje_Gym/scripts.pory"
 	.string "{COLOR BLUE}Bram of the Millcount: {COLOR DARK_GRAY}Everybody calls\n"
 	.string "me an assistant.\n"
 	.string "I call myself a TOA!!$"
 
 Maasje_Gym_Losetext_Trainer_Bram::
-# 92 "data/maps/Maasje_Gym/scripts.pory"
+# 93 "data/maps/Maasje_Gym/scripts.pory"
 	.string "Maybe I'm just an assitant afterall.$"
 
 Maasje_Gym_Introtext_Trainer_Rob::
-# 102 "data/maps/Maasje_Gym/scripts.pory"
+# 103 "data/maps/Maasje_Gym/scripts.pory"
 	.string "{COLOR BLUE}Rob of Erup: {COLOR DARK_GRAY}I used to be a boring IT\n"
 	.string "guy.\n"
 	.string "Now I am the bug in the system!!$"
 
 Maasje_Gym_Losetext_Trainer_Rob::
-# 106 "data/maps/Maasje_Gym/scripts.pory"
+# 107 "data/maps/Maasje_Gym/scripts.pory"
 	.string "It seems like my strategy got hacked.$"

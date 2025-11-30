@@ -310,7 +310,7 @@ Mistcity_InsideOfTruck_Daan_Returndrive::
 # 164 "data/maps/InsideOfTruck/scripts.pory"
 	waitmessage
 # 165 "data/maps/InsideOfTruck/scripts.pory"
-	delay 40
+	delay 60
 # 166 "data/maps/InsideOfTruck/scripts.pory"
 	msgbox Mistcity_InsideOfTruck_Daan_Returndrive_Text_3, MSGBOX_AUTOCLOSE
 # 167 "data/maps/InsideOfTruck/scripts.pory"
@@ -360,22 +360,24 @@ Mistcity_InsideOfTruck_Daan_Returndrive::
 # 189 "data/maps/InsideOfTruck/scripts.pory"
 	setflag FLAG_NASH_ENTRANCE_RESEARCH_CENTER2
 # 190 "data/maps/InsideOfTruck/scripts.pory"
-	applymovement 6, Mistcity_InsideOfTruck_Daan_ChaseFaculty_Movement_1
+	clearflag FLAG_NASH_ENTRANCE_RESEARCH_CENTER1
 # 191 "data/maps/InsideOfTruck/scripts.pory"
-	applymovement 5, Mistcity_InsideOfTruck_Daan_ChaseFaculty_Movement_1
+	applymovement 6, Mistcity_InsideOfTruck_Daan_ChaseFaculty_Movement_1
 # 192 "data/maps/InsideOfTruck/scripts.pory"
-	waitmovement
+	applymovement 5, Mistcity_InsideOfTruck_Daan_ChaseFaculty_Movement_1
 # 193 "data/maps/InsideOfTruck/scripts.pory"
-	removeobject 6
-# 194 "data/maps/InsideOfTruck/scripts.pory"
-	removeobject 5
-# 195 "data/maps/InsideOfTruck/scripts.pory"
-	applymovement 4, Miscity_InsideOfTruck_Daan_RescueMission_Movement_1
-# 196 "data/maps/InsideOfTruck/scripts.pory"
 	waitmovement
+# 194 "data/maps/InsideOfTruck/scripts.pory"
+	removeobject 6
+# 195 "data/maps/InsideOfTruck/scripts.pory"
+	removeobject 5
+# 196 "data/maps/InsideOfTruck/scripts.pory"
+	applymovement 4, Miscity_InsideOfTruck_Daan_RescueMission_Movement_1
 # 197 "data/maps/InsideOfTruck/scripts.pory"
-	removeobject 4
+	waitmovement
 # 198 "data/maps/InsideOfTruck/scripts.pory"
+	removeobject 4
+# 199 "data/maps/InsideOfTruck/scripts.pory"
 	release
 	return
 
@@ -556,4 +558,4 @@ Mistcity_InsideOfTruck_Daan_Returndrive_Text_7:
 
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_8:
 # 181 "data/maps/InsideOfTruck/scripts.pory"
-	.string "{COLOR BLUE}Nash{COLOR DARK_GRAY}: We're here.$"
+	.string "{COLOR GREEN}Daan{COLOR DARK_GRAY}: We're here.$"

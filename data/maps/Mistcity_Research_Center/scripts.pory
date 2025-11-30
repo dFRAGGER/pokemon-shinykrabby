@@ -12,6 +12,38 @@ script Mistcity_Research_Center_Healspot_OnTransition {
     end
 }
 
+script Mistcity_Research_Center_Hiker {
+    lock
+    faceplayer
+    msgbox(format("I've hiked those trails for twenty years, but the heavy tread marks I saw deep in the mud today were definitely not made by any Pokémon."))
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_Scientist {
+    lock
+    faceplayer
+    msgbox(format("The humidity levels in sector four dropped drastically today, almost as if something massive was sucking the moisture right out of the air to cool a machine."))
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_LittleGirl {
+    lock
+    faceplayer
+    msgbox(format("The nice ranger gave me a ride in the big truck because the Beedrills were chasing us way faster than they usually do!"))
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_DadBugCatcher {
+    lock
+    faceplayer
+    msgbox(format("We just wanted to look for Heracross, but the whole forest felt... angry; I'm just glad we got back on the last truck safely."))
+    waitmessage
+    release
+}
+
 script Mistcity_Research_Center_Daan_RescueMission2 {
     lock
     setflag(FLAG_DAAN_NASH_TRUCK)
@@ -29,6 +61,22 @@ script Mistcity_Research_Center_Daan_RescueMission2 {
     fadescreen(FADE_TO_BLACK)
     warpsilent (MAP_INSIDE_OF_TRUCK, 1)
     waitstate
+    }
+    if(var(VAR_MISTCITY_RESEARCH_CENTER_LOCATION)== 10) {
+        msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: Hi {PLAYER}, good to see you again.\pDo you want to explore the Deep Cloud Forest?"),MSGBOX_YESNO)
+        waitmessage
+        if(var(VAR_RESULT)==YES) {
+            msgbox(format("We currently don't have any drivers available, all the rangers are very busy.\pIf you come back tomorrow I might have a place for you somewhere in the back of a truck."))
+            waitmessage
+            release
+            end
+        }
+        if(var(VAR_RESULT)==NO){
+            msgbox(format("No worries! Feel free to come back whenever you want, you did so much for this forest already!"),MSGBOX_AUTOCLOSE)
+            waitmessage
+            release
+            end
+        }
     }
 
 }
@@ -65,18 +113,15 @@ script Mistcity_Research_Center_ReturnRescueMissionDaan {
     msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: Anyway, you've got a clear path for now.\pI'd check in on Daan at that sympathizer house first, make sure he doesn't do something he'll regret.\pAfter that, you should probably tackle the Gym."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
-    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: Oh, right! The Gym.\pIt's... unique.\pDaan is actually the official Gym Leader here, but with all this Faculty business, he's had a few of his best ranger trainees on rotation to test challengers.\pHe designed it to replicate the forest at night.\pIt's almost pitch black in there.\pHe always says you don't really know the cloud forest until you've seen the ecosystem that comes alive after dark.\pIt's a real challenge, but you'll be facing a gauntlet of nocturnal Pokémon... think Noctowl, Ariados, maybe even a Mightyena.\p Here, you'll need this."),MSGBOX_AUTOCLOSE)
-    waitmessage
-    giveitem(ITEM_HM05)
-    waitmessage
-    setflag(FLAG_RECEIVED_HM_FLASH)
-    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: It's the HM for Flash.\pIt'll help you see, but trust me, the Pokémon in there are more than comfortable in the dark.\pIt'll be a good test of your skills before you head out again.\pAfter you've handled things here, your next step should be Siltroot Town.\pIt's an old, rural town deep in the mangrove swamps to the west.\pIt's a bit... rustic, from what I hear, but it's the only place you'll find a boat.\pOur long-range reports show The Faculty's main transport ship headed north, towards the Lion Mountains.\pYou'll never make it there on foot. But in Siltroot, you might find a skipper willing to take you to the port city of Lionsarch.\pIt's the only real access point to those two frozen peaks.\p Good luck, {PLAYER}.\pFind me at the station if you learn anything new, or if you want to explore the forest again."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: Oh, right! The Gym.\pIt's... unique.\pDaan is actually the official Gym Leader here, but with all this Faculty business, he's had a few of his best ranger trainees on rotation to test challengers.\pHe designed it to replicate the forest at night.\pIt's almost pitch black in there.\pHe always says you don't really know the cloud forest until you've seen the ecosystem that comes alive after dark.\pIt's a real challenge, but you'll be facing a gauntlet of nocturnal Pokémon... think Noctowl, Ariados, maybe even a Mightyena.\pThe Pokémon in there are more than comfortable in the dark.\pIt'll be a good test of your skills before you head out again.\pAfter you've handled things here, your next step should be Siltroot Town.\pIt's an old, rural town deep in the mangrove swamps to the west.\pIt's a bit... rustic, from what I hear, but it's the only place you'll find a boat.\pOur long-range reports show The Faculty's main transport ship headed north, towards the Lion Mountains.\pYou'll never make it there on foot. But in Siltroot, you might find a skipper willing to take you to the port city of Lionsarch.\pIt's the only real access point to those two frozen peaks.\p Good luck, {PLAYER}.\pFind me at the station if you learn anything new, or if you want to explore the forest again."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER, moves(walk_down walk_left*6))
     waitmovement
-    applymovement(15, moves(walk_down walk_left*5))
+    applymovement(15, moves(walk_down walk_left*4))
+    waitmovement
     applymovement(16, moves(walk_down*2 walk_left))
     waitmovement
+    delay(40)
     setflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER1)
     setflag(FLAG_HELPED_DAN_BEAT_FACULTY)
     clearflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER2)

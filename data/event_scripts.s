@@ -1271,3 +1271,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Mistcity_Indoor_Gym/scripts.inc"
 
 	.include "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.inc"
+
+	.include "data/maps/Batcave/scripts.inc"
+
+	.include "data/maps/Route04_CenterCave/scripts.inc"

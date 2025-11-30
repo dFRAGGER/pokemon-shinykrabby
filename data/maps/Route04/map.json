@@ -42,10 +42,39 @@
       "map": "MAP_ROUTE09_DEEP_FOREST_CORE",
       "offset": 27,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE10",
+      "offset": 85,
+      "direction": "left"
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 78,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_BATCAVE",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 31,
+      "y": 49,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE04_CENTER_CAVE",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": -1,
+      "y": 47,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    }
+  ]
 }

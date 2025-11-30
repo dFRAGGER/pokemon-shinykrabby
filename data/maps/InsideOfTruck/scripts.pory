@@ -162,7 +162,7 @@ script Mistcity_InsideOfTruck_Daan_Returndrive {
     delay(40)
     msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: And they were willing to tear down an entire ecosystem just to find it.\pThis changes everything.\pThis isn't just a group of fanatics; it's a well-funded, highly organized operation."),MSGBOX_AUTOCLOSE)
     waitmessage
-    delay(40)
+    delay(60)
     msgbox(format("{COLOR GREEN}Daan{COLOR DARK_GRAY}: It's not the first time someone's come searching for secrets in this forest, though.\pA few years back, it was that eccentric Professor. Birds.\pHe was out here for months with all sorts of weird scanners.\pSaid he was mapping 'geothermal pig habitats' or some other nonsense.\pHe was just as secretive as The Faculty, but his energy... it felt different.\pMore curious than malicious.\pI wonder what he was really looking for..."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(120)
@@ -178,7 +178,7 @@ script Mistcity_InsideOfTruck_Daan_Returndrive {
     msgbox(format("{COLOR RED}David{COLOR DARK_GRAY}: But even the Regis... the old texts call them 'golems.' Keys.\pThey're just a tool to control something more fundamental.\pSomething The Faculty fears more than anything.\pThe source of all the genetic diversity they call 'chaos'...\pIf they're gathering the keys, it means they're planning to find the lock."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(120)
-    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: We're here."),MSGBOX_AUTOCLOSE)
+    msgbox(format("{COLOR GREEN}Daan{COLOR DARK_GRAY}: We're here."),MSGBOX_AUTOCLOSE)
     waitmessage
     callnative(StartTruckSlowingDownScene)
     delay(200)
@@ -187,6 +187,7 @@ script Mistcity_InsideOfTruck_Daan_Returndrive {
     setflag(FLAG_DAVID_TRUCK)
     setflag(FLAG_DAAN_NASH_TRUCK)
     setflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER2)
+    clearflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER1)
     applymovement(6, moves(jump_right))
     applymovement(5, moves(jump_right))
     waitmovement
