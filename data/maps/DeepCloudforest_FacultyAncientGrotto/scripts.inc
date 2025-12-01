@@ -153,72 +153,76 @@ DeepCloudForest_AncientGrotto_GetOutTruck::
 # 79 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	waitmessage
 # 80 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	setflag FLAG_ANCIENTGROTTO_DISAPPEAR_SHIP
+	applymovement 7, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_14
 # 81 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	delay 40
-# 82 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	playse SE_BANG
-# 83 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	fadescreen FADE_TO_WHITE
-# 84 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_9, MSGBOX_AUTOCLOSE
+# 82 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	setflag FLAG_ANCIENTGROTTO_DISAPPEAR_SHIP
+# 83 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	delay 40
+# 84 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	playse SE_BANG
 # 85 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	removeobject 12
+	fadescreenswapbuffers FADE_TO_WHITE
 # 86 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	removeobject 7
-# 87 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	removeobject 6
-# 88 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	removeobject 13
-# 89 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	removeobject 11
-# 90 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	removeobject 3
-# 91 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	removeobject 4
-# 92 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	removeobject 5
-# 93 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	delay 60
-# 94 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	fadescreen FADE_FROM_WHITE
-# 95 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_17
-# 96 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	applymovement LOCALID_PLAYER, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_18
-# 97 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	applymovement 9, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_18
-# 98 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	applymovement 10, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_18
-# 99 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	applymovement 8, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_18
-# 100 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	waitmovement
-# 101 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	applymovement 2, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_19
-# 102 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	special RemoveCameraObject
-# 103 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_10, MSGBOX_AUTOCLOSE
+# 87 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	removeobject 12
+# 88 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	removeobject 7
+# 89 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	removeobject 6
+# 90 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	removeobject 13
+# 91 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	removeobject 11
+# 92 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	removeobject 3
+# 93 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	removeobject 4
+# 94 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	removeobject 5
+# 95 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	delay 60
+# 96 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_WHITE
+# 97 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_17
+# 98 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	applymovement LOCALID_PLAYER, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_18
+# 99 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	applymovement 9, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_18
+# 100 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	applymovement 10, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_18
+# 101 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	applymovement 8, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_18
+# 102 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	waitmovement
+# 103 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	applymovement 2, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_19
 # 104 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	delay 120
+	special RemoveCameraObject
 # 105 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_11, MSGBOX_AUTOCLOSE
 # 106 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	waitmessage
+	delay 120
 # 107 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	clearflag FLAG_DAVID_TRUCK
+	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_12, MSGBOX_AUTOCLOSE
 # 108 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	waitmessage
 # 109 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	delay 40
+	clearflag FLAG_DAVID_TRUCK
 # 110 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	playse SE_TRUCK_DOOR
+	fadescreen FADE_TO_BLACK
 # 111 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	warpsilent MAP_INSIDE_OF_TRUCK, 1
+	delay 40
 # 112 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	waitstate
+	playse SE_TRUCK_DOOR
 # 113 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	warpsilent MAP_INSIDE_OF_TRUCK, 1
+# 114 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	waitstate
+# 115 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	release
 	return
 
@@ -385,37 +389,37 @@ DeepCloudForest_AncientGrotto_GetOutTruck_Movement_16:
 	face_up
 	step_end
 
-# 95 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+# 97 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_17:
-# 95 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+# 97 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	walk_left
-# 95 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+# 97 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	walk_left
 	step_end
 
-# 96 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+# 98 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_18:
-# 96 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+# 98 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	walk_fast_left
-# 96 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+# 98 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	walk_fast_left
-# 96 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+# 98 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	walk_fast_left
-# 96 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+# 98 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 101 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+# 103 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_19:
-# 101 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+# 103 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	walk_slow_left
-# 101 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+# 103 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	walk_slow_left
-# 101 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+# 103 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	walk_slow_left
-# 101 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+# 103 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	walk_slow_left
-# 101 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+# 103 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	walk_slow_left
 	step_end
 
@@ -477,19 +481,22 @@ DeepCloudForest_AncientGrotto_GetOutTruck_Text_8:
 # 78 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	.string "The Rector: You will see my friend, you\n"
 	.string "will see.\p"
-	.string "Children, lets get out of here.\p"
-	.string "ELECTABUZZ, FLASH!!$"
+	.string "Children, lets get out of here.$"
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_9:
-# 84 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+# 81 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	.string "The Rector: ELECTABUZZ, FLASH!!$"
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Text_10:
+# 86 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	.string "{COLOR BLUE}Nash{COLOR DARK_GRAY}: Goddamn, not again...\n"
 	.string "I should have brought my sunglasses...$"
 
-DeepCloudForest_AncientGrotto_GetOutTruck_Text_10:
-# 103 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	.string "{COLOR GREEN}Daan{COLOR DARK_GRAY}: We can't catch them...$"
-
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_11:
 # 105 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
+	.string "{COLOR GREEN}Daan{COLOR DARK_GRAY}: We can't catch them...$"
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Text_12:
+# 107 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	.string "{COLOR GREEN}Daan{COLOR DARK_GRAY}: Lets get back to the research\n"
 	.string "station, it's getting dark.$"

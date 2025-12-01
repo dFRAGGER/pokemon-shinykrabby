@@ -260,16 +260,16 @@ Mistcity_DarkCaveFail::
 
 Mistcity_AipomGuy_Text_0:
 # 6 "data/maps/MistCity/scripts.pory"
-	.string "I can't believe the nerve of that Aipom;\n"
-	.string "it swiped my lunch right out of my hands\l"
-	.string "with its tail, and now it's just sitting\l"
-	.string "up there enjoying my sandwich!$"
+	.string "I can't believe the nerve of that Aipom!\p"
+	.string "It swiped my lunch right out of my\n"
+	.string "hands with its tail, and now it's just\l"
+	.string "sitting up there enjoying my sandwich!$"
 
 Mistcity_LotadGuy_Text_0:
 # 14 "data/maps/MistCity/scripts.pory"
 	.string "My Lotad collects fresh rainwater in\n"
-	.string "its leaf for my tea every morning;\l"
-	.string "nothing beats the taste of pure cloud\l"
+	.string "its leaf for my tea every morning\p"
+	.string "Nothing beats the taste of pure cloud\n"
 	.string "forest dew.$"
 
 Mistcity_PuddleKid_Text_0:
@@ -292,17 +292,19 @@ Mistcity_Lotad_Text_0:
 Mistcity_FailedRanger_Text_0:
 # 48 "data/maps/MistCity/scripts.pory"
 	.string "I come here every morning to watch the\n"
-	.string "trucks head out; if I hadn't flunked my\l"
-	.string "Ranger exam, I'd be in the driver's seat\l"
-	.string "right now instead of just watching from\l"
-	.string "the sidelines.$"
+	.string "trucks head out\p"
+	.string "If I hadn't flunked my Ranger exam, I'd\n"
+	.string "be in the driver's seat right now\l"
+	.string "instead of just watching from the\l"
+	.string "sidelines....$"
 
 Mistcity_SpacedoutGirlMushroom_Text_0:
 # 56 "data/maps/MistCity/scripts.pory"
 	.string "I just bought a bag of 'special'\n"
 	.string "mushrooms from Leaf, and now I can't\l"
 	.string "tell if the rain is moving or if the whole\l"
-	.string "world is just slowly spinning... whoa.$"
+	.string "world is just slowly spinning...\p"
+	.string "whoa....$"
 
 Mistcity_Artist_Text_0:
 # 64 "data/maps/MistCity/scripts.pory"
@@ -316,9 +318,12 @@ Mistcity_Smoker_Text_0:
 # 72 "data/maps/MistCity/scripts.pory"
 	.string "I just got fired for 'unauthorized\n"
 	.string "combustion of plant matter' in the\l"
-	.string "locker room; honestly, I think they're\l"
+	.string "locker room. Honestly, I think they're\l"
 	.string "just jealous of how relaxed I am about\l"
-	.string "the whole thing.$"
+	.string "the whole thing.\p"
+	.string "I got my special herbs from Siltroot\n"
+	.string "Town.\p"
+	.string "Their stuff is heavvyyy...$"
 
 Mistcity_Tourist_Text_0:
 # 80 "data/maps/MistCity/scripts.pory"
