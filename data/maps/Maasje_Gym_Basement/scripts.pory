@@ -11,12 +11,13 @@ script Maasje_Gym_Basement_Check_Buried {
 
 script Maasje_Gym_Basement_Eventscript_Addy {
     trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_ADDY, TRAINER_ADDY, Maasje_Gym_Introtext_Trainer_Addy, Maasje_Gym_Losetext_Trainer_Addy, NULL, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE )
-    msgbox(format("{COLOR BLUE}Addy the Janitor : {COLOR DARK_GRAY}The faculty has been good to me, I do have to get used to this outfit though."), MSGBOX_AUTOCLOSE)
+    setspeaker("Addy the Janitor")
+    msgbox(format("The faculty has been good to me, I do have to get used to this outfit though."), MSGBOX_AUTOCLOSE)
     end
 }
 
 text Maasje_Gym_Introtext_Trainer_Addy {
-    format("{COLOR BLUE}Addy the Janitor : {COLOR DARK_GRAY}Students only called me when they were 'sick'.\nBut I call the shots now!!")
+    format("Students only called me when they were 'sick'.\nBut I call the shots now!!")
 }
 
 text Maasje_Gym_Losetext_Trainer_Addy {
@@ -25,12 +26,13 @@ text Maasje_Gym_Losetext_Trainer_Addy {
 
 script Maasje_Gym_Basement_Eventscript_Mart {
     trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_MART, TRAINER_MART, Maasje_Gym_Introtext_Trainer_Mart, Maasje_Gym_Losetext_Trainer_Mart, NULL, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE )
-    msgbox(format("{COLOR BLUE}Mart of the Breakel: {COLOR DARK_GRAY}The faculty has some smart people, but in Math nobody can rival me."), MSGBOX_AUTOCLOSE)
+    setspeaker("Mart of the Breakel")
+    msgbox(format("The faculty has some smart people, but in Math nobody can rival me."), MSGBOX_AUTOCLOSE)
     end
 }
 
 text Maasje_Gym_Introtext_Trainer_Mart {
-    format("{COLOR BLUE}Mart of the Breakel: {COLOR DARK_GRAY}I was too smart to be a teacher anyway.\nLets put this brain to the test!!")
+    format("I was too smart to be a teacher anyway.\nLets put this brain to the test!!")
 }
 
 text Maasje_Gym_Losetext_Trainer_Mart {

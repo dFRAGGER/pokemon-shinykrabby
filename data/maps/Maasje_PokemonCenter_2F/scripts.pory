@@ -3,7 +3,8 @@ mapscripts Maasje_PokemonCenter_2F_MapScripts {}
 script Maasje_PokemonCenter_2F_Red {
     lock
     faceplayer
-    msgbox(format("{COLOR GREEN}Gamemaker: {COLOR DARK_GRAY}Hi there, I'm the creator of this game.\p I hope you're enjoying it so far!\p This game, its characters, maps, and plot, is based on a real-life group of friends.\p While many of the stories and plotlines are inspired by actual events, please take everything with a grain of salt.\p I've taken the creative liberty to let my imagination run wild, telling these stories in a style of game I've loved since I was a child.\p Have fun!"))
+    setspeaker("Game Maker")
+    msgbox(format("Hi there, I'm the creator of this game.\p I hope you're enjoying it so far!\p This game, its characters, maps, and plot, is based on a real-life group of friends.\p While many of the stories and plotlines are inspired by actual events, please take everything with a grain of salt.\p I've taken the creative liberty to let my imagination run wild, telling these stories in a style of game I've loved since I was a child.\p Have fun!"))
     waitmessage
     release
 }

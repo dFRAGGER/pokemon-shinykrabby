@@ -25,7 +25,7 @@ mart Maasje_Mart_Items {
 script Maasje_Mart_Fat_Man {
     lock
     faceplayer
-    msgbox(format("{COLOR RED}Fat man: {COLOR DARK_GRAY}I'm looking for pink cookies, but I can't find them anywhere."))
+    msgbox(format("I'm looking for pink cookies, but I can't find them anywhere."))
     waitmessage
     release
     end
@@ -34,7 +34,7 @@ script Maasje_Mart_Fat_Man {
 script Maasje_Mart_Bug_Catcher {
     lock
     faceplayer
-    msgbox(format("{COLOR RED}Bug catcher: {COLOR DARK_GRAY}I was attacked by two bee-like Pokémon and needed some antidote.\p I've never seen that kind around here before, but apparently they travel together.\p My dad says they're called Volbeat and Illumise."))
+    msgbox(format("I was attacked by two bee-like Pokémon and needed some antidote.\p I've never seen that kind around here before, but apparently they travel together.\p My dad says they're called Volbeat and Illumise."))
     waitmessage
     release
     end

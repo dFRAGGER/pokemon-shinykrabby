@@ -1,16 +1,71 @@
-mapscripts Mistcity_Indoor_FacultySympathizer_MapScripts {}
+mapscripts Mistcity_Indoor_FacultySympathizer_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_MISTCITY_STATE, 1: Mistcity_Indoor_FacultySympathizer_Escape
+    ]
+
+}
+
+script Mistcity_Indoor_FacultySympathizer_Escape {
+    lock
+    setspeaker("Marcus")
+    msgbox(format("... I'M TELLING YOU NOTHING, YOU STUPID TREE HUGGER!!\pNOW GET OUT OF MY WAY!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(4, moves(walk_fast_down walk_fast_left walk_fast_down*3))
+    applymovement(LOCALID_PLAYER, moves(jump_right face_left))
+    waitmovement
+    applymovement(3, moves(face_down))
+    setflag(FLAG_FACULTY_SYMPATHIZERS_1)
+    removeobject(4)
+    delay(60)
+    applymovement(3, moves(face_up))
+    delay(60)
+    applymovement(5,moves(walk_fast_down*3 face_right))
+    waitmovement
+    applymovement(3, moves(face_down))
+    setspeaker("Eleanor")
+    msgbox(format("Mph.\pI suppose you think you are some kind of hero?\pEnjoy your precious, muddy trees.\p Progress will find a way, with or without your approval."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(5,moves(walk_fast_down))
+    waitmovement
+    removeobject(5)
+    applymovement(LOCALID_PLAYER, moves(face_down))
+    applymovement(3, moves(face_down))
+    waitmovement
+    delay(120)
+    applymovement(LOCALID_PLAYER, moves(face_up))
+    waitmovement
+    setspeaker("Daan")
+    msgbox(format("I think they're gone.\pRan like Rattata the second I started asking real questions about the excavation.\pThey knew exactly what The Faculty was doing to the forest.\pBut this... this feels too big for just them.\pI can't shake this feeling about Prof. Birds.\pYou remember what I said in the truck?\pAbout him scanning the forest years ago?\pIt's too much of a coincidence.\nIm going to call Jacob.\pHe's got a way of making people talk.\pWe're going to pay the Professor a visit at his lab.\pWe need to know what he was really looking for back then.\pIf he knows anything about Registeel, we're going to get it out of him.\pWhile we handle Prof. Birds, I need you to keep chasing The Faculty.\pThe reports from the northern rangers are getting worse.\pSomething big is happening near Lionsarch City and the Lion Mountains.\pYou have to investigate.\pTo get there, head through Bat Cave to Siltroot Town.\pIt's an old, rural trading post deep in the mangroves.\pLook for a guy named Ali.\pHe's an old friend... a brilliant herbalist.\p ...though he's usually busy sampling his own... very potent herbs.\pHe knows all the old smuggling routes and the boat captains.\pIf anyone can get you a ride to Lionsarch, it's him.\p Oh and don't forget to check out the gym before you leave!\pThe gym leader might surprise you..."))
+    waitmessage
+    if(flag(FLAG_BADGE02_GET)==TRUE){
+        setspeaker("Daan")
+        msgbox(format("Oh, you already beat David?\nImpressive.\pYou're ready for the swamps, then.\pGood luck, {PLAYER}. I'll let you know what we find out from Prof. Birds."),MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    else{
+        setspeaker("Daan")
+        msgbox(format("Also, you'll learn to move trough pitch darkness.\pSomething you'll need to pass through Bat Cave safely.\pI'll let you know what we find out from Prof. Birds."),MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    applymovement(3, moves(walk_left walk_down*2))
+    waitmovement
+    removeobject(3)
+    release
+}
 
 script Mistcity_Indoor_Faculty_Husband {
     lock
     faceplayer
     if(!flag(FLAG_HELPED_DAN_BEAT_FACULTY)) {
+        setspeaker("Marcus")
         msgbox(format("Welcome to the future site of progress.\p My name is {COLOR BLUE}Marcus{COLOR DARK_GRAY}.\p The Faculty transferred me here to oversee regional development.\p This town and forest is a chaotic mess of untapped resources.\p We're here to implement structure, to turn this town into a model of efficiency."))
         waitmessage
         release
         end 
     }
     if(flag(FLAG_HELPED_DAN_BEAT_FACULTY)) {
-        msgbox(format("{COLOR BLUE}Marcus{COLOR DARK_GRAY}: You.\pSo you're the hooligan who interfered with our work.\p You've accomplished nothing but delaying the inevitable.\p This region needs order, not sentimental rabble-rousers."))
+        setspeaker("Marcus")
+        msgbox(format("You.\pSo you're the hooligan who interfered with our work.\p You've accomplished nothing but delaying the inevitable.\p This region needs order, not sentimental rabble-rousers."))
         waitmessage
         release
         end 
@@ -21,13 +76,15 @@ script Mistcity_Indoor_Faculty_Wife {
     lock
     faceplayer
     if(!flag(FLAG_HELPED_DAN_BEAT_FACULTY)) {
+        setspeaker("Eleanor")
         msgbox(format("Oh, hello.\pA new face?\p I'm {COLOR BLUE}Eleanor{COLOR DARK_GRAY}.\p Mist City has a certain... rustic charm, I suppose.\p But it's so dreadfully unproductive.\p Don't you worry, The Faculty will bring modern amenities and a real sense of purpose to this place.\p That Dan fellow chaining himself to a tree? Utterly backwards.\pYou can't stop the future."))
         waitmessage
         release
         end 
     }
     if(flag(FLAG_HELPED_DAN_BEAT_FACULTY)) {
-        msgbox(format("{COLOR BLUE}Eleanor{COLOR DARK_GRAY}: Mph.\pI suppose you think you're some kind of hero.\pEnjoy your precious, muddy trees.\p Progress will find a way, with or without your approval."))
+        setspeaker("Eleanor")
+        msgbox(format("Mph.\pI suppose you think you're some kind of hero.\pEnjoy your precious, muddy trees.\p Progress will find a way, with or without your approval."))
         waitmessage
         release
         end 

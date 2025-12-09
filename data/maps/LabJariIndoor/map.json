@@ -303,7 +303,7 @@
     {
       "type": "sign",
       "x": 1,
-      "y": 7,
+      "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LabJariIndoor_Sign_19"
@@ -339,6 +339,38 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LabJariIndoor_Sign_6"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LabJariIndoor_Sign_6"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LabJariIndoor_Sign_13"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LabJariIndoor_Sign_10"
+    },
+    {
+      "type": "sign",
+      "x": 0,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LabJariIndoor_Sign_1"
     }
   ]
 }

@@ -2,5 +2,6 @@ mapscripts Route01_Forest_MapScripts {}
 
 script Route01_Forest_Sign {
     lock
-    msgbox(format("WARNING!\nDangerous Pokémon with horns spotted here recently."))
+    msgbox(format("WARNING!\nDangerous Pokémon with horns spotted here recently."),MSGBOX_AUTOCLOSE)
+    release
 }

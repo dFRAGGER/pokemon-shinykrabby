@@ -4,7 +4,7 @@ script Indoor_Maasje_Home2_Sailor {
     lock
     faceplayer
     if(flag(FLAG_RECEIVED_OLD_ROD)== FALSE){
-    msgbox(format("{COLOR RED}Sailor: {COLOR DARK_GRAY}I learned the ways of the sea from my mother.\p She loves telling stories of all her journeys, but sometimes the stories are too crazy to be true.\p Nowadays she just sit at home reminiscing about the past.\p Here you can have this:"))
+    msgbox(format("I learned the ways of the sea from my mother.\p She loves telling stories of all her journeys, but sometimes the stories are too crazy to be true.\p Nowadays she just sit at home reminiscing about the past.\p Here you can have this:"))
     waitmessage
     giveitem(ITEM_OLD_ROD)
     waitmessage
@@ -13,7 +13,7 @@ script Indoor_Maasje_Home2_Sailor {
     setflag(FLAG_RECEIVED_OLD_ROD)
     }
     else{
-    msgbox(format("{COLOR RED}Sailor: {COLOR DARK_GRAY}Well?\p Did you catch any fish already?"))
+    msgbox(format("Well?\p Did you catch any fish already?"))
     waitmessage
     }
     release
@@ -23,7 +23,7 @@ script Indoor_Maasje_Home2_Sailor {
 script Indoor_Maasje_Home2_WomanSailor {
     lock
     faceplayer
-    msgbox(format("{COLOR RED}Sailor's wife: {COLOR DARK_GRAY}My son worries about his grandmother a lot.\p That is why he is always by her side."))
+    msgbox(format("My son worries about his grandmother a lot.\p That is why he is always by her side."))
     waitmessage
     release
 }

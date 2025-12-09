@@ -11,8 +11,8 @@ InsideOfTruck_EventScript_MovingBox::
 
 InsideOfTruck_Text_BoxPrintedWithMonLogo:
 	.string "The box is printed with a POKéMON logo.\p"
-	.string "It's a POKéMON brand moving and\n"
-	.string "delivery service.$"
+	.string "It's a POKéMON brand for food and\n"
+	.string "supply service.$"
 `
 mapscripts InsideOfTruck_MapScripts {
     MAP_SCRIPT_ON_LOAD {call(Mistcity_InsideOfTruck_OnLoad)} 
@@ -36,7 +36,8 @@ script Miscity_InsideOfTruck_Daan_RescueMission {
     special(DrawWholeMapView)
     delay(60)
     callnative(StartTruckDrivingScene)
-    msgbox(format("{COLOR GREEN}David{COLOR DARK_GRAY}: The gorge is deep in the forest, it might take a couple of hours.\p Take some rest."),MSGBOX_AUTOCLOSE)
+    setspeaker("David")
+    msgbox(format("The gorge is deep in the forest, it might take a couple of hours.\p Take some rest."),MSGBOX_AUTOCLOSE)
     waitmessage
     fadescreen(FADE_TO_BLACK)
     delay(120)
@@ -44,12 +45,14 @@ script Miscity_InsideOfTruck_Daan_RescueMission {
     waitmessage
     delay(60)
     fadescreen(FADE_FROM_BLACK)
-    msgbox(format("{COLOR GREEN}David{COLOR DARK_GRAY}: Ehummmm.... Hello... Wake up.\pI think we're here."),MSGBOX_AUTOCLOSE)
+    setspeaker("David")
+    msgbox(format("Ehummmm.... Hello... Wake up.\pI think we're here."),MSGBOX_AUTOCLOSE)
     callnative(StartTruckSlowingDownScene)
     delay(200)
     callnative(WaitForTruckToStop)
     delay(60)
-    msgbox(format("{COLOR GREEN}David{COLOR DARK_GRAY}: Allright, lets get out there, and keep those Beedrill of me!"),MSGBOX_AUTOCLOSE)
+    setspeaker("David")
+    msgbox(format("Allright, lets get out there, and keep those Beedrill of me!"),MSGBOX_AUTOCLOSE)
     waitmessage
     setflag(FLAG_DAVID_TRUCK)
     setflag(FLAG_FACULTY_GORGE_NASH2)
@@ -95,8 +98,6 @@ script Mistcity_InsideOfTruck_Daan_ChaseFaculty {
     waitmovement
     clearflag(FLAG_DAAN_NASH_TRUCK)
     addobject(5)
-    addobject(6)
-    applymovement(6, moves(jump_left))
     applymovement(5, moves(jump_left))
     waitmovement
     setdynamicwarp(MAP_DEEP_CLOUDFOREST_FACULTY_ANCIENT_GROTTO, 35, 16)
@@ -106,28 +107,27 @@ script Mistcity_InsideOfTruck_Daan_ChaseFaculty {
     special(DrawWholeMapView)
     delay(60)
     callnative(StartTruckDrivingScene)
-    msgbox(format("{COLOR RED}David{COLOR DARK_GRAY}: They can't be that far away...\pThe signal seems to be coming from the Ancient Grotto."),MSGBOX_AUTOCLOSE)
+    setspeaker("David")
+    msgbox(format("They can't be that far away...\pThe signal seems to be coming from the Ancient Grotto."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(120)
-    msgbox(format("{COLOR RED}David{COLOR DARK_GRAY}: BEEP.... BEEP....\pI think this is it!"),MSGBOX_AUTOCLOSE)
+    setspeaker("David")
+    msgbox(format("BEEP.... BEEP....\pI think this is it!\pNASH!\nSTOP THE CAR!"),MSGBOX_AUTOCLOSE)
     callnative(StartTruckSlowingDownScene)
     delay(200)
     callnative(WaitForTruckToStop)
     delay(60)
     waitmessage
-    msgbox(format("{COLOR GREEN}Daan{COLOR DARK_GRAY}: Let's go!\nStay behind me!"),MSGBOX_AUTOCLOSE)
+    setspeaker("Daan")
+    msgbox(format("Let's go!\nStay behind me!"),MSGBOX_AUTOCLOSE)
     waitmessage
     setflag(FLAG_DAVID_TRUCK)
     setflag(FLAG_DAAN_NASH_TRUCK)
-    applymovement(6, moves(jump_right))
-    waitmovement
-    removeobject(6)
-    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: Don't be afraid.\nWe got this!"),MSGBOX_AUTOCLOSE)
-    waitmessage
     applymovement(5, moves(jump_right))
     waitmovement
     removeobject(5)
-    msgbox(format("{COLOR RED}David{COLOR DARK_GRAY}: Well... what are you waiting for?"),MSGBOX_AUTOCLOSE)
+    setspeaker("David")
+    msgbox(format("Well... what are you waiting for?"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(4, moves(walk_down walk_right*2 jump_right))
     waitmovement
@@ -143,8 +143,6 @@ script Mistcity_InsideOfTruck_Daan_Returndrive {
     waitmovement
     clearflag(FLAG_DAAN_NASH_TRUCK)
     addobject(5)
-    addobject(6)
-    applymovement(6, moves(jump_left))
     applymovement(5, moves(jump_left))
     waitmovement
     setdynamicwarp(MAP_MISTCITY_RESEARCH_CENTER, 15, 9)
@@ -154,31 +152,40 @@ script Mistcity_InsideOfTruck_Daan_Returndrive {
     special(DrawWholeMapView)
     delay(60)
     callnative(StartTruckDrivingScene)
-    msgbox(format("{COLOR GREEN}Daan{COLOR DARK_GRAY}: I can't believe it.\nThey just... took it.\pRipped a part of the forest's soul right out of the ground and flew away.\pThat 'Silent Guardian'... it was meant to sleep forever."),MSGBOX_AUTOCLOSE)
+    setspeaker("Daan")
+    msgbox(format("I can't believe it.\nThey just... took it.\pRipped a part of the forest's soul right out of the ground and flew away.\pThat 'Silent Guardian'... it was meant to sleep forever."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
-    msgbox(format("{COLOR RED}David{COLOR DARK_GRAY}: The energy signature was off the charts.\pAll my research on ancient Pokémon points to one name...\pThey have Registeel."),MSGBOX_AUTOCLOSE)
+    setspeaker("David")
+    msgbox(format("The energy signature was off the charts.\pAll my research on ancient Pokémon points to one name...\pThey have Registeel."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
-    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: And they were willing to tear down an entire ecosystem just to find it.\pThis changes everything.\pThis isn't just a group of fanatics; it's a well-funded, highly organized operation."),MSGBOX_AUTOCLOSE)
+    setspeaker("Daan")
+    msgbox(format("And they were willing to tear down an entire ecosystem just to find it.\pThis changes everything.\pThis isn't just a group of fanatics; it's a well-funded, highly organized operation."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
-    msgbox(format("{COLOR GREEN}Daan{COLOR DARK_GRAY}: It's not the first time someone's come searching for secrets in this forest, though.\pA few years back, it was that eccentric Professor. Birds.\pHe was out here for months with all sorts of weird scanners.\pSaid he was mapping 'geothermal pig habitats' or some other nonsense.\pHe was just as secretive as The Faculty, but his energy... it felt different.\pMore curious than malicious.\pI wonder what he was really looking for..."),MSGBOX_AUTOCLOSE)
+    setspeaker("Daan")
+    msgbox(format("Hmmmm.....\pIt's not the first time someone's come searching for secrets in this forest, though.\pA few years back, it was that eccentric Professor. Birds.\pHe was out here for months with all sorts of weird scanners.\pSaid he was mapping 'geothermal pig habitats' or some other nonsense.\pHe was just as secretive as The Faculty, but his energy... it felt different.\pMore curious than malicious.\pI wonder what he was really looking for..."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(120)
-    msgbox(format("{COLOR GREEN}Daan{COLOR DARK_GRAY}: But that's a mystery for another time.\pRight now, we fight back.\pTheir rot goes deep... it's even taken root in our own town.\pEleanor and Marcus, two faculty sympathizers who recently moved into town...\pMaybe we should give a little knock on their door."),MSGBOX_AUTOCLOSE)
+    setspeaker("Daan")
+    msgbox(format("But that's a mystery for another time.\pRight now, we fight back.\pTheir rot goes deep... it's even taken root in our own town.\pEleanor and Marcus, two faculty sympathizers who recently moved into town...\pMaybe we should give a little knock on their door."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
-    msgbox(format("{COLOR BLUE}Nash{COLOR DARK_GRAY}: Daan's right.\pWe need to push back here and figure out their next move.\pWe've been getting strange reports from the rangers stationed up north, on the Lions Mountains.\pRecently a 'private corporation' bought up all the mining rights and has restricted access to the area.\pSounds suspiciously familiar, doesn't it?"),MSGBOX_AUTOCLOSE)
+    setspeaker("Daan")
+    msgbox(format("Also, we've been getting strange reports from the rangers stationed up north, on the Lions Mountains.\pRecently a 'private corporation' bought up all the mining rights and has restricted access to the area.\pSounds suspiciously familiar, doesn't it?"),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
-    msgbox(format("{COLOR RED}David{COLOR DARK_GRAY}: He's right.\pMy long-range scanner has been picking up faint energy pulses from those mountains.\pThey're similar to the frequency they used here, but... colder.\pIf they have Registeel, I'm worried they're searching for its counterparts."),MSGBOX_AUTOCLOSE)
+    setspeaker("David")
+    msgbox(format("He's right.\pMy long-range scanner has been picking up faint energy pulses from those mountains.\pThey're similar to the frequency they used here, but... colder.\pIf they have Registeel, I'm worried they're searching for its counterparts."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(120)
-    msgbox(format("{COLOR RED}David{COLOR DARK_GRAY}: But even the Regis... the old texts call them 'golems.' Keys.\pThey're just a tool to control something more fundamental.\pSomething The Faculty fears more than anything.\pThe source of all the genetic diversity they call 'chaos'...\pIf they're gathering the keys, it means they're planning to find the lock."),MSGBOX_AUTOCLOSE)
+    setspeaker("David")
+    msgbox(format("But even the Regis... the old texts call them 'golems.' Keys.\pThey're just a tool to control something more fundamental.\pSomething The Faculty fears more than anything.\pThe source of all the genetic diversity they call 'chaos'...\pIf they're gathering the keys, it means they're planning to find the lock."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(120)
-    msgbox(format("{COLOR GREEN}Daan{COLOR DARK_GRAY}: We're here."),MSGBOX_AUTOCLOSE)
+    setspeaker("Daan")
+    msgbox(format("We're here."),MSGBOX_AUTOCLOSE)
     waitmessage
     callnative(StartTruckSlowingDownScene)
     delay(200)
@@ -188,10 +195,8 @@ script Mistcity_InsideOfTruck_Daan_Returndrive {
     setflag(FLAG_DAAN_NASH_TRUCK)
     setflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER2)
     clearflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER1)
-    applymovement(6, moves(jump_right))
     applymovement(5, moves(jump_right))
     waitmovement
-    removeobject(6)
     removeobject(5)
     applymovement(4, moves(walk_down walk_right*2 jump_right))
     waitmovement

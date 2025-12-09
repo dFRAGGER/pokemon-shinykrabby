@@ -10,21 +10,21 @@ script Maasje_On_Transition {
 
 script Maasje_Sign_Welcome {
     lock
-    msgbox(format("Welcome to Maasje!"))
+    msgbox(format("MESTREECH TOWN\pHome to people, and crustaceans."),MSGBOX_AUTOCLOSE)
     waitmessage
     release
 }
 
 script Maasje_Sign_Jakub_Home {
     lock
-    msgbox(format("Jakub's House"))
+    msgbox(format("Jacob's House"))
     waitmessage
     release
 }
 
 script Maasje_Sign_Gym {
     lock
-    msgbox(format("Maasje Gym:\n Where sand rules the world."))
+    msgbox(format("Mestreech Gym:\n Where sand rules the world."))
     waitmessage
     release
 }
@@ -69,16 +69,17 @@ script Maasje_Collect_Honey_BeeHives {
 
 script Maasje_Advice_Fisher_Crabhill {
     lock
+    faceplayer
     applymovement(60, moves(face_player))
     if(flag(FLAG_RECEIVED_ESCAPE_ROPE) == FALSE){
-    msgbox(format("{COLOR RED}Fisher: {COLOR DARK_GRAY}Whoa there, planning on going in?\pThat place can be a tricky maze. Here, take this with you, just in case."))
+    msgbox(format("Whoa there, planning on going in?\pThat place can be a tricky maze. Here, take this with you, just in case."))
     giveitem(ITEM_ESCAPE_ROPE)
     setflag(FLAG_RECEIVED_ESCAPE_ROPE)
     msgbox(format("It's an Escape Rope. A real lifesaver if you ever feel hopelessly lost!"))
     waitmessage
     }
     else {
-        msgbox(format("{COLOR RED}Fisher: {COLOR DARK_GRAY}Can you believe this whole place was once an underwater reef?\p Thanks to the tireless work of crabs, the reef grew over time, creating this safe haven for Pokémon."))
+        msgbox(format("Can you believe this whole place was once an underwater reef?\p Thanks to the tireless work of crabs, the reef grew over time, creating this safe haven for Pokémon."))
         waitmessage
     }
     release
@@ -301,6 +302,7 @@ script Maasje_Joris_UpToTheWhiteLight {
     waitmessage
     applymovement(2, moves(walk_in_place_fast_down))
     delay(40)
+    setspeaker("?????")
     msgbox(format("UP TO THE WHITELIGHT!!!"), MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER,moves(emote_question_mark))
@@ -346,12 +348,12 @@ script Maasje_Eventscript_Maniac {
     lock
     faceplayer
     if(flag(FLAG_SHINY_KRABBY_ENCOUNTER)==FALSE){
-    msgbox(format("{COLOR RED}Young man: {COLOR DARK_GRAY}This town is overrun by Krabby's, everybody is scared to go outside!\pI still need groceries though, so I'm taking the risk!"))
+    msgbox(format("This town is overrun by Krabby's.\pEverybody is scared to go outside.\pI still need groceries though, so I'm taking the risk!"))
     release
     end
     }
     else{
-        msgbox(format("{COLOR RED}Young man: {COLOR DARK_GRAY}Everybody is still shook by the infestation by those Krabby's.\p You won't seem them outside very often.\p Hopefully one day everyting will be back to normal."))
+        msgbox(format("Everybody is still shook by the infestation by those Krabby's.\p You won't seem them outside very often.\p Hopefully one day everyting will be back to normal."))
         release
         end
     }

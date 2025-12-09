@@ -5,7 +5,8 @@ raw`ErpusCity_House3_1F_MapScripts::
 script ErpusCity_House3_1F_DadBirds_Conversation {
     lockall
     faceplayer
-    msgbox(format("{COLOR RED}John Birds: {COLOR DARK_GRAY}Back in the day, my son and I ran a pig farm together in a town much like this one.\p Nowadays, he's more into advanced technology and runs the local lab.\p After I retired, I spent years traveling to festivals and partying, but I'm getting too old for that shit now.\p So, I followed my son when he moved here, looking for a quieter life.\p He can be a bit chaotic, but he's got a good heart."))
+    setspeaker("John Birds")
+    msgbox(format("Back in the day, my son and I ran a pig farm together in a town much like this one.\p Nowadays, he's more into advanced technology and runs the local lab.\p After I retired, I spent years traveling to festivals and partying, but I'm getting too old for that shit now.\p So, I followed my son when he moved here, looking for a quieter life.\p He can be a bit chaotic, but he's got a good heart."))
     waitmessage
     releaseall
 }

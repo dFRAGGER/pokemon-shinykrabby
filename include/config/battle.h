@@ -207,8 +207,8 @@
 #define B_FLAG_INVERSE_BATTLE       0     // If this flag is set, the battle's type effectiveness are inversed. For example, fire is super effective against water.
 #define B_FLAG_FORCE_DOUBLE_WILD    0     // If this flag is set, all land and surfing wild battles will be double battles.
 #define B_SMART_WILD_AI_FLAG        0     // If this flag is set, wild Pokémon will become smart, with all AI flags enabled.
-#define B_FLAG_NO_CATCHING          0     // If this flag is set, the ability to catch wild Pokémon is disabled.
-#define B_FLAG_NO_RUNNING           0     // If this flag is set, the ability to escape from wild battles is disabled. Also makes Roar/Whirlwind and Teleport (under Gen8) fail.
+#define B_FLAG_NO_CATCHING          B_FLAG_NO_CATCHING     // If this flag is set, the ability to catch wild Pokémon is disabled.
+#define B_FLAG_NO_RUNNING           B_FLAG_NO_RUNNING    // If this flag is set, the ability to escape from wild battles is disabled. Also makes Roar/Whirlwind and Teleport (under Gen8) fail.
 #define B_FLAG_AI_VS_AI_BATTLE      0     // If this flag is set, the player's mons will be controlled by the ai next battles.
 #define B_FLAG_DYNAMAX_BATTLE       0     // If this flag is set, the ability to Dynamax in battle is enabled for all trainers.
 #define B_FLAG_TERA_ORB_CHARGED     0     // If this flag is set, the Tera Orb is charged. It is automatically set upon healing and cleared upon Terastallizing once configured.
@@ -286,6 +286,7 @@
 #define B_MOVE_DESCRIPTION_BUTTON   L_BUTTON // If set to a button other than B_LAST_USED_BALL_BUTTON, pressing this button will open the move description menu
 #define B_SHOW_USELESS_Z_MOVE_INFO  FALSE // If set to TRUE, Z-moves without additional effects like newer gen status moves will say "no additional effect"
 #define B_ANIMATE_MON_AFTER_KO      TRUE // If set to TRUE, if a Pokémon on the opposite site faints, the non-fainted Pokemon will display a victory animation.
+#define B_ANIMATE_MON_AFTER_FAILED_POKEBALL TRUE  // If set to TRUE, if a Pokémon on the opposite side breaks out of a thrown Poké Ball, the wild Pokémon will display its animation.
 #define B_SHOW_DYNAMAX_MESSAGE      FALSE // If set to TRUE, an additional battle message is shown after completing Dynamaxing/Gigantamaxing.
 
 // Catching settings

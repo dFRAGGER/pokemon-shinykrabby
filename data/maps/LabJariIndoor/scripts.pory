@@ -4,7 +4,8 @@ mapscripts LabJariIndoor_MapScripts {
 
 script LabJariIndoor_Eventscript_Birds_Pokemon_Check {
     lockall
-    msgbox(format("{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}...WHY ARE YOU STILL HERE? BETTER GET TO THAT SCRUB OF A FRIEND CALLED JAKUB IN THE NEXT TOWN! HE PROBABLY KNOWS HOW TO CATCH SOME POKEMON!"))
+    setspeaker("Prof. Birds")
+    msgbox(format("...WHY ARE YOU STILL HERE? BETTER GET TO THAT SCRUB OF A FRIEND CALLED {COLOR GREEN}Jacob{COLOR DARK_GRAY} IN THE {COLOR RED}Mestreech{COLOR DARK_GRAY}! HE PROBABLY KNOWS HOW TO CATCH SOME POKEMON!"))
     waitmessage
     releaseall
 }
@@ -35,13 +36,18 @@ script LabJariIndoor_Eventscript_Barry_Birds {
         applymovement(LOCALID_PLAYER, moves(face_up))
     }
     waitmovement
-    msgbox(format("{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}SO WHO ARE YOU?\p ...\pYOU WANT TO BECOME MY INTERN?\p WELL TOO LATE BOY!!\p BARRY WAS HERE FIRST!!\p ISN'T THAT RIGHT BARRY?"),MSGBOX_AUTOCLOSE)
+    setspeaker("Prof. Birds")
+    msgbox(format("SO WHO ARE YOU?\p ...\pYou want to become my intern?\p WELL TOO LATE BOY!!\p BARRY WAS HERE FIRST!!\p ISN'T THAT RIGHT BARRY?"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(3, moves(face_left))
     playse(SE_PIN)
     applymovement(2, moves(emote_question_mark))
     waitmovement
-    msgbox(format("YES BARRY, YOU ARE MY INTERN\p ...NO, I'M NOT PAYING YOU A FULL SALARY\p...NO, THE GOVERNMENT SUBSIDIES ARE NOT ENOUGH!"),MSGBOX_AUTOCLOSE)
+    setspeaker("Barry")
+    msgbox(format("Uhmm...\nwait a second...\pI'm just...\n...an intern???\pBut what about...\n...my salary?"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    setspeaker("Prof. Birds")
+    msgbox(format("YES BARRY, YOU ARE MY INTERN\p ...NO, I'M NOT PAYING YOU A FULL SALARY\p...NO, THE GOVERNMENT SUBSIDIES AREN'T ENOUGH!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(3, moves(face_down))
     delay(40)
@@ -56,17 +62,23 @@ script LabJariIndoor_Eventscript_Barry_Birds {
     playse(SE_PIN)
     applymovement(3, moves(emote_exclamation_mark))
     waitmovement
-    msgbox(format("....wait a second....\pI JUST LOOKED AT THE NEW SUBSIDIES AND...\pOUR BUDGET STILL ALLOWS AN EXTRA INTERN!!\pYOU ARE HIRED!!\p...SALARY?? AT THE END OF THE MONTH OFCOURSE...\pMAYBE...\pWHO KNOWS!!"))
+    setspeaker("Prof. Birds")
+    msgbox(format("....wait a second....\p...I just looked at the new subsidies and...\pOUR BUDGET STILL ALLOWS AN EXTRA INTERN!!\pYOU ARE HIRED!!\p...SALARY?? AT THE END OF THE MONTH OFCOURSE...\pMAYBE...\pWHO KNOWS!!"))
     release
     waitmessage
     playse(SE_PIN)
     applymovement(2,moves(emote_exclamation_mark))
     waitmovement
+    setspeaker("Barry")
+    msgbox(format("What the..."))
+    waitmessage
     applymovement(3, moves(face_left))
+    setspeaker("Prof. Birds")
     msgbox(format("DON'T COMPLAIN BARRY!!\pSHUT U....I MEAN WE WILL TALK ABOUT THIS LATER!"))
     waitmessage
     applymovement(3, moves(face_down))
-    msgbox(format("AND YOU ARE... {PLAYER}??\p...AND {PLAYER} IS INTERESTED IN POKEMON??\p WELL, GET IN LINE! HAHAHA.\p MY NAME IS PROFESSOR BIRDS!\p I RESEARCH POKEMON FOR A LIVING!!\pBESIDES THAT, I ALSO DEVELOP SECRET TECHNOL... I MEAN SENSORS FOR PIG FARMS.\p...SO YOU WANT TO BECOME A POKEMON MASTER?\pMUAAHAHAHAH, YOU!!? A POKEMON MASTER???\p YOUR FIRST TASK AS AN INTERN IS TO GET SOME BOXES OUT OF MY STORAGE ROOM.\pEVERYBODY WHO WANTS TO BECOME A POKEMON MASTER HAS TO START SOMEWHERE!!\pI WARN YOU, DO NOT SNIFF AROUND OR I'LL FIRE YOU IMMEDIATELY!"),MSGBOX_AUTOCLOSE)
+    setspeaker("Prof. Birds")
+    msgbox(format("And you are... {PLAYER}??\p...and {PLAYER} is interested in Pokémon??\p WELL, GET IN LINE! HAHAHA.\p MY NAME IS PROFESSOR BIRDS!\p I RESEARCH POKEMON FOR A LIVING!!\pBESIDES THAT, I ALSO DEVELOP SECRET TECHNOL... I mean sensors for pig farms.\p...so you want to become a Pokémon Master?\p...HAHAHAH, YOU!!?\nA POKEMON MASTER???\p YOUR FIRST TASK AS AN INTERN IS TO GET SOME BOXES OUT OF MY STORAGE ROOM.\pEVERYBODY WHO WANTS TO BECOME A POKEMON MASTER HAS TO START SOMEWHERE!!\pHAHAHAHAH!!\pI warn you, do not sniff around in my storage room...\p...OR I'LL FIRE YOU IMMEDIATELY!\pHAHAHHAHA... HAHAH... HAHA... HA... haha..."),MSGBOX_AUTOCLOSE)
     waitmessage
     if(var(VAR_TEMP_0)== 3 && var(VAR_TEMP_1)== 14) {
         applymovement(3, moves(walk_up*2))
@@ -82,14 +94,16 @@ script LabJariIndoor_Eventscript_Barry_Birds {
     }
     applymovement(2, moves(face_up))
     waitmovement
-    delay(40)
+    delay(120)
     applymovement(3, moves(face_down))
     waitmovement
-    msgbox(format("THE BOXES ARE IN THE BACK YOU IDIO... LOVELY LITTLE INTERN!!"),MSGBOX_AUTOCLOSE)
+    setspeaker("Prof. Birds")
+    msgbox(format("THE BOXES ARE IN THE BACK YOU IDIO... lovely little intern!!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER, moves(walk_up))
     waitmovement
     applymovement(3, moves(face_up))
+    setspeaker("Prof. Birds")
     msgbox(format("WELL, WHERE WERE WE BARRY??"),MSGBOX_AUTOCLOSE)
     waitmessage
     setflag(FLAG_INTERN_BOXES_ASSIGNMENT)
@@ -99,7 +113,8 @@ script LabJariIndoor_Eventscript_Barry_Birds {
     else {
         playse(SE_PIN)
         applymovement(3, moves(emote_exclamation_mark face_down))
-        msgbox(format("{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}WHERE DO YOU THINK YOU ARE GOING?\p GET TO THE BACK AND GET THOSE BOXES HERE!!"),MSGBOX_AUTOCLOSE)
+        setspeaker("Prof. Birds")
+        msgbox(format("WHERE DO YOU THINK YOU ARE GOING, {PLAYER}?\p GET TO THE BACK AND GET THOSE BOXES HERE!!"),MSGBOX_AUTOCLOSE)
         waitmessage
         applymovement(LOCALID_PLAYER, moves(walk_up))
         applymovement(3, moves(face_up))
@@ -115,7 +130,27 @@ script LabJariIndoor_Eventscript_Birds_Convo {
     playse(SE_PIN)
     applymovement(3, moves(emote_exclamation_mark))
     faceplayer
-    msgbox(format("{COLOR GREEN}Prof. Birds: {COLOR DARK_GRAY}DON'T BOTHER US, I'M EXPLAINING TO BARRY HOW IMPORTANT DNA SAMPL... PIG SENSORS ARE!!\p GET THOSE BOXES OUT OF THE BACK OF THE STORAGE ROOM!!"))
+    setspeaker("Prof. Birds")
+    msgbox(format("DON'T BOTHER US, I'M EXPLAINING TO BARRY HOW IMPORTANT DNA SAMPL... pig sensors are!!"))
+    waitmessage
+    playse(SE_PIN)
+    applymovement(2, moves(face_right emote_question_mark))
+    setspeaker("Barry")
+    msgbox(format("...ehummm...\p...my name is Wou..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(3,moves(emote_exclamation_mark face_left))
+    waitmovement
+    setspeaker("Prof. Birds")
+    msgbox(format("JUST FOCUS ON THE BOOKS BARRY!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(2, moves(face_up))
+    waitmovement
+    delay(40)
+    applymovement(3, moves(face_down))
+    waitmovement
+    setspeaker("Prof. Birds")
+    msgbox(format("NOW GET THOSE BOXES OUT OF THE STORAGE ROOM!!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(3, moves(face_up))
     waitmovement
@@ -127,7 +162,8 @@ script LabJariIndoor_Eventscript_Barry_Convo {
     playse(SE_PIN)
     applymovement(2, moves(emote_exclamation_mark))
     faceplayer
-    msgbox(format("{COLOR BLUE}Barry{COLOR DARK_GRAY}: Don't disturb me... I'm learning a lot about...\ppig sensors..."),MSGBOX_AUTOCLOSE)
+    setspeaker("Barry")
+    msgbox(format("Don't disturb me... I'm learning a lot about...\ppig sensors..."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(2, moves(face_up))
     waitmovement
@@ -136,7 +172,7 @@ script LabJariIndoor_Eventscript_Barry_Convo {
 
 script LabJariIndoor_Sign_1 {
     lock
-    msgbox(format("--COMPUTER TERMINAL: FILE LOG--\pDIRECTORY: OLDFILES/UNCATEGORIZED/VIDEOS/\nFILE NAME: 'HOW-TO-POTATO-CANNON.MP4'\pSIZE: MASSIVE.\nDATE CREATED: 08/17/2005\pSYSTEM NOTE: VIDEO ARCHIVED. Content appears to involve the dangerous CONSTRUCTION of a PROJECTILE DEVICE using TUBER parts.\pWARNING: DO NOT OPEN. PROFESSOR'S ORDERS. DANGER LEVEL: MEDIUM. (POTATO DAMAGE ONLY)\p--PRESS A TO EXIT--"))
+    msgbox(format("--COMPUTER TERMINAL: FILE LOG--\pDIRECTORY: OLDFILES/UNCATEGORIZED/VIDEOS/\nFILE NAME: 'HOW-TO-POTATO-CANNON.MP4'\pSIZE: MASSIVE.\nDATE CREATED: 08/17/2005\pSYSTEM NOTE: VIDEO ARCHIVED.\nContent appears to involve the dangerous CONSTRUCTION of a PROJECTILE DEVICE using TUBER parts.\pWARNING: DO NOT OPEN.\nPROFESSOR'S ORDERS.\pDANGER LEVEL: MEDIUM.\n(POTATO DAMAGE ONLY)\p--PRESS A TO EXIT--"))
     waitmessage
     release
 }
@@ -164,7 +200,7 @@ script LabJariIndoor_Sign_4 {
 
 script LabJariIndoor_Sign_5 {
     lock
-    msgbox(format("An unopened box bearing the label, 'SMAC'."))
+    msgbox(format("An unopened box bearing the label:\n'SMAC'"))
     waitmessage
     release
 }
@@ -195,14 +231,14 @@ script LabJariIndoor_Sign_8 {
 
 script LabJariIndoor_Sign_9 {
     lock
-    msgbox(format("--MINING LOG: PROF. BIRDS SECURE ACCESS--\pSTATUS: BITCOIN MINING... FULL OPERATION.\nGIGA-HASH RATE: 0.000000000001 BTC/sec.\pSYSTEM MESSAGE: 'PROJECT ETERNAL HODL'\nEstimated time to recover 2011 Wallet Balance: 8500 YEARS.\p--PRESS A TO CLOSE WINDOW--"))
+    msgbox(format("--MINING LOG: SECURE ACCESS--\pSTATUS:\nBITCOIN MINING IN FULL OPERATION.\pGIGA-HASH RATE:\n0.000000000001 BTC/sec.\pSYSTEM MESSAGE:\n'PROJECT ETERNAL HODL'\pEstimated time to recover 2011 Wallet Balance: 8500 YEARS.\p--PRESS A TO CLOSE WINDOW--"))
     waitmessage
     release
 }
 
 script LabJariIndoor_Sign_10 {
     lock
-    msgbox(format("--FINANCE TERMINAL ACCESS: PROFESSOR'S DESK--\pSUBSIDY LOG: FUNDING STREAM DISRUPTED.\nCAUSE: GRANTS EXPIRED..\pPAYMENT MODULE: INTERN STIPENDS currently designated PENDING.\nNOTE: ALLOCATION DELAYED until RESOURCE RE-AQUISITION.\pEXPECTED WAIT TIME: --ERROR: VALUE UNKNOWN--\p--SYSTEM: INSUFFICIENT FUNDS. PRESS A TO HOLD OF ANY PAYMENT TO INTERNS.--"))
+    msgbox(format("--FINANCE TERMINAL: LOGGED IN--\pSUBSIDY LOG:\nFUNDING STREAM DISRUPTED.\pCAUSE:\nGRANTS EXPIRED..\pPAYMENT MODULE:\nINTERN STIPENDS currently designated PENDING.\pNOTE:\nALLOCATION DELAYED until RESOURCE RE-AQUISITION.\pEXPECTED WAIT TIME:\n--ERROR: VALUE UNKNOWN--\pSYSTEM:\nINSUFFICIENT FUNDS.\p--PRESS A TO HOLD OF ANY PAYMENT TO INTERNS.--"))
     waitmessage
     release
 }
@@ -223,7 +259,7 @@ script LabJariIndoor_Sign_12 {
 
 script LabJariIndoor_Sign_13 {
     lock
-    msgbox(format("--PROJECT CHRONOS: LATEST DATA LOG--\pSUBJECT: PROFESSOR'S INNATE TIME DISPLACEMENT\nOBSERVATION: 100% CONFIRMED that the Professor always arrives at least 3 HOURS LATE for meetings.\pHYPOTHESIS: The Professor's body mass is creating a localized TEMPORAL DISTORTION FIELD, a micro-DIALGA-EFFECT, that actively shifts his personal timeline.\pSYSTEM WARNING: Current calculations predict that if this trend continues, the Professor will eventually be living A DECADE IN THE PAST. Do not rely on him to revive your FOSSILS.\p--NOTE: PLEASE ADJUST ALL CLOCKS IN THE LAB BY -180 MINUTES. PRESS A TO COMPLY.--"))
+    msgbox(format("--PROJECT CHRONOS: LATEST DATA LOG--\pSUBJECT:\nPROFESSOR'S INNATE TIME DISPLACEMENT\pOBSERVATION:\n100% CONFIRMED that the Professor always arrives at least 3 HOURS LATE for meetings.\pHYPOTHESIS:\nThe Professor's body mass is creating a localized TEMPORAL DISTORTION FIELD, a micro-DIALGA-EFFECT, that actively shifts his personal timeline.\pSYSTEM WARNING:\nCurrent calculations predict that if this trend continues, the Professor will eventually be living A DECADE IN THE PAST. Do not rely on him to revive your FOSSILS.\pNOTE:\nPLEASE ADJUST ALL CLOCKS IN THE LAB BY -180 MINUTES.\p--PRESS A TO COMPLY.--"))
     waitmessage
     release
 }

@@ -4,7 +4,7 @@ script Maasje_Coastal_Cave2_Hiker {
     lock
     faceplayer
     if(flag(FLAG_ITEM_TRADED_DOME_FOSSIL)==FALSE){
-    msgbox(format("{COLOR RED}Archaeologist: {COLOR DARK_GRAY}I'm looking for fossils, if you happen to find one please tell me!"))
+    msgbox(format("I'm looking for fossils, if you happen to find one please tell me!"))
     waitmessage
     checkitem(ITEM_HELIX_FOSSIL)
     if(var(VAR_RESULT)==TRUE){
@@ -29,7 +29,7 @@ script Maasje_Coastal_Cave2_Hiker {
     }
     }
     else{
-        msgbox(format("{COLOR RED}Archaeologist: {COLOR DARK_GRAY}Thanks for trading, my collection is complete now!"))
+        msgbox(format("Thanks for trading, my collection is complete now!"))
     }
     release
     end
