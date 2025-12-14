@@ -1,10 +1,9 @@
 mapscripts CrabhillEntrance_MapScripts {}
 
 script Crabhill_Jacob_in_need {
-    setvar(VAR_MEESTRECH_TOWN_STATE,1)
     applymovement(LOCALID_PLAYER, moves(walk_up*4 face_left))
     setspeaker("Jacob")
-    msgbox(format("HEY! HELP ME! I'M SO TIRED!\nATTACK THAT GOLDEN KRABBY OVER THERE!\pI CAN'T MOVE...\nNO, I MUST MOVE!!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("HEY!\n HELP ME!\p I'M SO TIRED!\pATTACK THAT GOLDEN KRABBY OVER THERE!\pI CAN'T MOVE...\nNO, I MUST MOVE!!"),MSGBOX_AUTOCLOSE)
     waitmessage    
 }
 
@@ -13,27 +12,26 @@ script Crabhill_Eventscript_ShinykrabbyEncounter {
     playmoncry(SPECIES_KRABBY, CRY_MODE_ENCOUNTER)
     delay(40)
     waitmoncry
-    createmon(1, 0, SPECIES_KRABBY, 10,,,,,,,,,,,,,,,,,,,,,,TRUE,,,)
-    setflag(B_FLAG_NO_RUNNING)
-    setflag(B_FLAG_NO_CATCHING)
+    setflag(FLAG_NOCATCH_ENCOUNTER)
+    createmon(1, 0, SPECIES_KRABBY, 10,,,,,,,,,,,,,,,,,,,,,,SHINY_MODE_ALWAYS,,,)
     dowildbattle
+    clearflag(FLAG_NOCATCH_ENCOUNTER)
     specialvar(VAR_RESULT, GetBattleOutcome)
     if(var(VAR_RESULT) == B_OUTCOME_WON){
+        
         call(Won_or_Caught)
     }
     elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
-        call(Krabby_won)
+        clearflag(FLAG_NOCATCH_ENCOUNTER)
+        
     }
-    waitmessage
-    clearflag(B_FLAG_NO_RUNNING)
-    clearflag(B_FLAG_NO_CATCHING)
+    setvar(VAR_MEESTRECH_TOWN_STATE,1)
     release
 }
 
 script Won_or_Caught{
-    applymovement(LOCALID_PLAYER,moves(jump_left face_down))
-    waitmovement
-    applymovement(1, moves(walk_fast_down*7))
+    applymovement(LOCALID_PLAYER,moves(jump_down*2 face_down))
+    applymovement(1, moves(walk_fast_down*10))
     waitmovement
     delay(60)
     msgbox(format("The Krabby's seem to have snapped out of their confusion."),MSGBOX_AUTOCLOSE)
@@ -41,18 +39,19 @@ script Won_or_Caught{
     applymovement(31,moves(walk_fast_left*4))
     applymovement(30,moves(walk_fast_up*4))
     applymovement(29,moves(walk_fast_up*4))
-    applymovement(32,moves(walk_fast_right*4))
-    applymovement(28,moves(walk_fast_right*4))
-    applymovement(25,moves(walk_fast_right*5))
-    applymovement(27,moves(walk_fast_down*4))
-    applymovement(26,moves(walk_fast_down*4))
+    applymovement(32,moves(walk_fast_right*7))
+    applymovement(28,moves(walk_fast_right*7))
+    applymovement(25,moves(walk_fast_up*2 walk_fast_right*7))
+    applymovement(27,moves(walk_fast_down*7))
+    applymovement(26,moves(walk_fast_down*7))
     applymovement(2,moves(walk_fast_up*2 walk_fast_left*7))
     applymovement(23,moves(walk_fast_up*2 walk_fast_left*7))
-    applymovement(22,moves(walk_fast_down*5 ))
-    applymovement(24,moves(walk_fast_down*5 ))
+    applymovement(22,moves(walk_fast_down*7 ))
+    applymovement(24,moves(walk_fast_down*7 ))
+    applymovement(33,moves(walk_fast_down*7 ))
     waitmovement
-    setflag(FLAG_SHINY_KRABBY_ENCOUNTER)
-    removeobject(31)
+    delay(60)    
+    removeobject(33)
     removeobject(30)
     removeobject(29)
     removeobject(32)
@@ -69,16 +68,17 @@ script Won_or_Caught{
     msgbox(format("Left... Right... Left... WHOA!"),MSGBOX_AUTOCLOSE)
     applymovement(21, moves(walk_slow_left walk_slow_right walk_slow_left walk_slow_right))
     waitmovement
+    setobjectmovementtype(LOCALID_JACOB,MOVEMENT_TYPE_NONE)
     delay(120)
-    applymovement(21, moves(face_up))
-    setspeaker("Jacob")
-    msgbox(format("Kid! You broke the trance!\pThank Arceus... another five minutes of that and my legs would have fallen right off!"),MSGBOX_AUTOCLOSE)
-    waitmessage
-    applymovement(LOCALID_PLAYER,moves(walk_right walk_down*3 face_left))
+    applymovement(21, moves(walk_right*3 face_up))
     waitmovement
     setspeaker("Jacob")
-    msgbox(format("But did you see it?!\pThat was it!\pThat was the 'special specimen' I wanted to show you!\pA Krabby!\p The single most magnificent creature to walk—or sidle—on this earth!\pPeople talk about Dragonites or Tyranitars... pshh!\pLook at that carapace!\pLook at that perfect pincer geometry!\p It is the peak of evolution!\pThe best Pokémon in the whole wide world, bar none!\pAnd a Shiny one...\na golden King...\nand it got away.\p Truly, a dark day for science.\p It would have been the perfect specie to start your internship with, Prof. Birds would have been soo proud..."),MSGBOX_AUTOCLOSE)
-    waitmessage
+    msgbox(format("Kid! You broke the trance!\pThank Arceus... another five minutes of that and my legs would have fallen right off!\pBut did you see it?!\pThat was it!\pThat was the 'special specimen' I wanted to show you!\pA Krabby!\p The single most magnificent creature to sidle on this earth!\pPeople talk about Dragonites or Tyranitars... pshh!\pLook at that carapace!\pLook at that perfect pincer geometry!\p It is the peak of evolution!\pThe best Pokémon in the whole wide world, bar none!\pAnd a Shiny one...\na golden King...\nand it got away...\p Truly, a dark day for science.\pWait...\pHow long was I doing the side-step shuffle?\pOh no.\nOh no no no.\pI left without telling my wife!\pShe's probably barricaded the door by now!\pIf I don't get back before she realizes I've been gone for three hours without permission, she's going to be scarier than a Gyarados!\pI gotta run!\pYou are welcome to join for dinner!"),MSGBOX_AUTOCLOSE)
+    applymovement(21,moves(walk_fast_down*7))
+    waitmovement
+    removeobject(21)
+    setflag(FLAG_SHINY_KRABBY_ENCOUNTER)
+    clearflag(FLAG_HIDE_JACOB_SIENNA)
     return
 }
 

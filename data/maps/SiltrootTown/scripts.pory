@@ -1,1 +1,103 @@
 mapscripts SiltrootTown_MapScripts {}
+
+script SiltrootTown_Sign_AliApothecary {
+    lock
+    msgbox(format(" "))
+    waitmessage
+    release
+}
+
+
+
+script Siltroottown_Youth_Outide_Ali_Shop_1 {
+    lock
+    msgbox(format("Yo Charmander, give your tail here, I need to light my joint as we..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(14, moves(emote_exclamation_mark face_player))
+    msgbox(format("!!\p...as well as my incense!\pYes, purely medicinal incense.\pFor my... glaucoma.\pPlease don't tell Officer Jenny."))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Youth_Outide_Ali_Shop_2 {
+    lock
+    faceplayer
+    msgbox(format("Dude, be cool!\pStop looking at me!\pIf you stare, they'll know we aren't actually training.\pJust act natural.\p...Is 'acting natural' standing perfectly still or waving my arms? I forgot."))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Youth_Outide_Ali_Shop_3 {
+    lock
+    faceplayer
+    msgbox(format("Ali really knows his botany...\pI feel like a Hoppip floating on a breeze.\pHey, do you have any snacks?\pI would kill for a Lava Cookie right now."))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Stoned_Dude_Outside {
+    lock
+    faceplayer
+    msgbox(format("I came outside for some fresh air, but the air feels... really loud right now.\pI think I'm just going to stare at the sand for a while."))
+    waitmessage
+    release
+    end
+}
+
+
+script Siltroottown_Old_Lady {
+    lock
+    faceplayer
+    msgbox(format("All this beautiful nature, and the youth only care about those dreadful herbs.\pThey should be burying their noses in books, not clouds of smoke."))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Fat_Man {
+    lock
+    faceplayer
+    msgbox(format("Everyone claims the hunger comes from the special grass, but that is total nonsense.\pI am just big-boned and naturally require three pizzas every hour to survive."))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Children_Boy {
+    lock
+    
+    msgbox(format("Hey, cut it out! Janine!\pI am trying to look for a Magikarp down here and you are scaring them away!\pWhy is your face all red? The water isn't even hot!"))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Children_Girl {
+    lock
+    msgbox(format("Take that! Adrian!\pI bet you can't catch me, even with those floaties on!\p...But if you did catch me, I wouldn't be mad or anything."))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Sailor_Biodiversity {
+    lock
+    faceplayer
+    msgbox(format("Back in the day, you couldn't cast a line into these mangroves without hooking something rare.\pSiltroot was legendary, the water was practically bubbling with life.\pBut for the last twenty years? It has been dead silent.\pNow you sit here for hours and catch nothing but old boots and seaweed.\pIt breaks my heart to see the mudflats this empty."))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Fisher_Sad {
+    lock
+    faceplayer
+    msgbox(format("They say the fish are gone because of 'overfishing,' but that is total rubbish.\pIt is the bureaucrats and their endless regulations that killed this town!\pThat is why I sneak into the protected marine reserve to cast my line now.\pYou have to break the law just to find a decent catch these days!"))
+    waitmessage
+    release
+    end
+}

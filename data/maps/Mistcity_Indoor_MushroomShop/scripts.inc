@@ -10,7 +10,7 @@ Mistcity_Indoor_MushroomShop_MushroomGirl::
 # 7 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_unset FLAG_MUSHROOM_MISSION_STARTED, Mistcity_Indoor_MushroomShop_MushroomGirl_3
 Mistcity_Indoor_MushroomShop_MushroomGirl_1:
-# 14 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 15 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_set FLAG_MUSHROOM_MISSION_STARTED, Mistcity_Indoor_MushroomShop_MushroomGirl_7
 	return
 
@@ -20,9 +20,11 @@ Mistcity_Indoor_MushroomShop_MushroomGirl_2:
 # 9 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 10 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_1
+	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_1, MSGBOX_AUTOCLOSE
 # 11 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	waitmessage
+# 12 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	release
 	end
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_3:
@@ -31,222 +33,222 @@ Mistcity_Indoor_MushroomShop_MushroomGirl_3:
 	goto Mistcity_Indoor_MushroomShop_MushroomGirl_1
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_6:
-# 15 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 16 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_unset FLAG_MISTCITY_SHOW_MUSHROOM_PARAS, Mistcity_Indoor_MushroomShop_MushroomGirl_11
-# 15 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 16 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_unset FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT, Mistcity_Indoor_MushroomShop_MushroomGirl_11
-# 15 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 16 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_unset FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH, Mistcity_Indoor_MushroomShop_MushroomGirl_11
-# 15 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 16 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_unset FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM, Mistcity_Indoor_MushroomShop_MushroomGirl_11
-# 95 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 96 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_set FLAG_MUSHROOM_MISSION_STARTED, Mistcity_Indoor_MushroomShop_MushroomGirl_20
 	return
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_7:
-# 14 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 15 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_unset FLAG_MUSHROOM_MISSION_COMPLETED, Mistcity_Indoor_MushroomShop_MushroomGirl_6
 	return
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_11:
-# 16 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 17 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_2
+	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 18 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	waitmessage
+	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_2
 # 19 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	waitmessage
 # 20 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+# 21 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	compare VAR_RESULT, SPECIES_PARAS
 	goto_if_eq Mistcity_Indoor_MushroomShop_MushroomGirl_24
 Mistcity_Indoor_MushroomShop_MushroomGirl_23:
-# 25 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 26 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	compare VAR_RESULT, SPECIES_PARASECT
 	goto_if_eq Mistcity_Indoor_MushroomShop_MushroomGirl_27
 Mistcity_Indoor_MushroomShop_MushroomGirl_26:
-# 30 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 31 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	compare VAR_RESULT, SPECIES_SHROOMISH
 	goto_if_eq Mistcity_Indoor_MushroomShop_MushroomGirl_30
 Mistcity_Indoor_MushroomShop_MushroomGirl_29:
-# 35 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 36 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	compare VAR_RESULT, SPECIES_BRELOOM
 	goto_if_eq Mistcity_Indoor_MushroomShop_MushroomGirl_33
 Mistcity_Indoor_MushroomShop_MushroomGirl_32:
-# 40 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 41 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_set FLAG_MISTCITY_SHOW_MUSHROOM_PARAS, Mistcity_Indoor_MushroomShop_MushroomGirl_38
 Mistcity_Indoor_MushroomShop_MushroomGirl_36:
-# 65 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 66 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_11
+	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 67 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	waitmessage
+	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_11
 # 68 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	waitmessage
+# 69 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_unset FLAG_MISTCITY_SHOW_MUSHROOM_PARAS, Mistcity_Indoor_MushroomShop_MushroomGirl_45
 Mistcity_Indoor_MushroomShop_MushroomGirl_44:
-# 73 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 74 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_unset FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT, Mistcity_Indoor_MushroomShop_MushroomGirl_48
 Mistcity_Indoor_MushroomShop_MushroomGirl_47:
-# 78 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 79 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_unset FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH, Mistcity_Indoor_MushroomShop_MushroomGirl_51
 Mistcity_Indoor_MushroomShop_MushroomGirl_50:
-# 83 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 84 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_unset FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM, Mistcity_Indoor_MushroomShop_MushroomGirl_54
 Mistcity_Indoor_MushroomShop_MushroomGirl_53:
-# 88 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 89 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_16
+	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 90 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	waitmessage
+	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_16
 # 91 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	waitmessage
+# 92 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	release
 	end
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_19:
-# 96 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 97 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_17
+	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 98 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	waitmessage
+	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_17
 # 99 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	waitmessage
+# 100 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	release
 	end
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_20:
-# 95 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 96 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_unset FLAG_MUSHROOM_MISSION_COMPLETED, Mistcity_Indoor_MushroomShop_MushroomGirl_19
 	return
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_24:
-# 21 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setflag FLAG_MISTCITY_SHOW_MUSHROOM_PARAS
 # 22 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
+	setflag FLAG_MISTCITY_SHOW_MUSHROOM_PARAS
 # 23 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
+# 24 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_3
 	goto Mistcity_Indoor_MushroomShop_MushroomGirl_23
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_27:
-# 26 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setflag FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT
 # 27 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
+	setflag FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT
 # 28 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
+# 29 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_4
 	goto Mistcity_Indoor_MushroomShop_MushroomGirl_26
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_30:
-# 31 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setflag FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH
 # 32 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
+	setflag FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH
 # 33 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
+# 34 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_5
 	goto Mistcity_Indoor_MushroomShop_MushroomGirl_29
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_33:
-# 36 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setflag FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM
 # 37 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
+	setflag FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM
 # 38 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
+# 39 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_6
 	goto Mistcity_Indoor_MushroomShop_MushroomGirl_32
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_35:
-# 41 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 42 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_7
+	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 43 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	waitmessage
+	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_7
 # 44 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setflag FLAG_MUSHROOM_MISSION_COMPLETED
+	waitmessage
 # 45 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	setflag FLAG_MUSHROOM_MISSION_COMPLETED
 # 46 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	giveitem ITEM_BALM_MUSHROOM
+	playfanfare MUS_OBTAIN_ITEM
 # 47 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
+	giveitem ITEM_BALM_MUSHROOM
 # 48 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_8
+	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 49 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	waitmessage
+	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_8
 # 50 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	waitmessage
 # 51 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	giveitem ITEM_BIG_MUSHROOM
-# 52 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
-# 53 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_9
-# 54 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	waitmessage
-# 55 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 56 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	giveitem ITEM_TINY_MUSHROOM
-# 57 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 52 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	giveitem ITEM_BIG_MUSHROOM
+# 53 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
-# 58 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_10
-# 59 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 54 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_9
+# 55 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	waitmessage
+# 56 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 57 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	giveitem ITEM_TINY_MUSHROOM
+# 58 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
+# 59 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_10
 # 60 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	waitmessage
+# 61 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	release
 	end
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_37:
-# 40 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 41 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_set FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH, Mistcity_Indoor_MushroomShop_MushroomGirl_41
 	goto Mistcity_Indoor_MushroomShop_MushroomGirl_36
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_38:
-# 40 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 41 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_set FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT, Mistcity_Indoor_MushroomShop_MushroomGirl_37
 	goto Mistcity_Indoor_MushroomShop_MushroomGirl_36
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_41:
-# 40 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 41 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	goto_if_set FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM, Mistcity_Indoor_MushroomShop_MushroomGirl_35
 	goto Mistcity_Indoor_MushroomShop_MushroomGirl_36
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_45:
-# 69 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 70 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_12
+	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 71 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_12
+# 72 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	waitmessage
 	goto Mistcity_Indoor_MushroomShop_MushroomGirl_44
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_48:
-# 74 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 75 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_13
+	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 76 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_13
+# 77 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	waitmessage
 	goto Mistcity_Indoor_MushroomShop_MushroomGirl_47
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_51:
-# 79 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 80 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_14
+	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 81 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_14
+# 82 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	waitmessage
 	goto Mistcity_Indoor_MushroomShop_MushroomGirl_50
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_54:
-# 84 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 85 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_15
+	setspeaker Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0
 # 86 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+	msgbox Mistcity_Indoor_MushroomShop_MushroomGirl_Text_15
+# 87 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	waitmessage
 	goto Mistcity_Indoor_MushroomShop_MushroomGirl_53
 
@@ -274,40 +276,40 @@ Mistcity_Indoor_MushroomShop_MushroomGirl_Text_1:
 	.string "Pleeeease?$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_2:
-# 17 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 18 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	.string "Well!!\p"
 	.string "Have you found any new mushroom\n"
 	.string "Pokemon?$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_3:
-# 23 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 24 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	.string "Ooh, a Paras with tochukaso spores!\p"
 	.string "A classic symbiotic relationship!\n"
 	.string "Fascinating!$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_4:
-# 28 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 29 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	.string "YES! The fungus has taken full control\n"
 	.string "of the host!\p"
 	.string "Look at those wonderfully vacant eyes!\n"
 	.string "This Parasect is perfect!$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_5:
-# 33 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 34 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	.string "A Shroomish! I love how its spores can\n"
 	.string "paralyze a foe! So efficient!\p"
 	.string "Have you found any more interesting\n"
 	.string "shroom species?$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_6:
-# 38 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 39 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	.string "Breloom, the apex predator of the\n"
 	.string "mushroom world!\p"
 	.string "Its toxic spores are a masterpiece of\n"
 	.string "natural engineering!$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_7:
-# 42 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 43 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	.string "YOU DID IT! YOU DID IT!\p"
 	.string "My Fungus Index is complete!\p"
 	.string "I'm the happiest mycologist in the\n"
@@ -316,16 +318,16 @@ Mistcity_Indoor_MushroomShop_MushroomGirl_Text_7:
 	.string "potent!$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_8:
-# 48 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 49 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	.string "Wait! Wait!\p"
 	.string "I have more!$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_9:
-# 53 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 54 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	.string "No.. No! I'm not done!$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_10:
-# 58 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 59 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	.string "There you go!\p"
 	.string "Pssttt....\p"
 	.string "If you ever need some shrooms to trip\n"
@@ -333,35 +335,35 @@ Mistcity_Indoor_MushroomShop_MushroomGirl_Text_10:
 	.string "I'm here for ya...$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_11:
-# 66 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 67 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	.string "For my Fungus Index to be complete I'm\n"
 	.string "still missing:$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_12:
-# 70 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 71 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	.string "A Paras.$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_13:
-# 75 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 76 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	.string "A Parasect.$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_14:
-# 80 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 81 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	.string "A Shroomish.$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_15:
-# 85 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 86 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	.string "A Breloom.$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_16:
-# 89 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 90 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	.string "Good luck finding those!\p"
 	.string "I have a small reward for you if you\n"
 	.string "manage to help me complete my Fungus\l"
 	.string "Index.$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_17:
-# 97 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
+# 98 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
 	.string "Thank you so much for helping me\n"
 	.string "complete my Fungus Index!\p"
 	.string "Are you enjoying those mushrooms I\n"

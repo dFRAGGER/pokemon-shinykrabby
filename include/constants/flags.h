@@ -98,8 +98,8 @@
 #define FLAG_RESCUED_BIRCH                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
-#define B_UNUSED_1                  0x54  // Unused Flag
-#define B_UNUSED_2                    0x55  // Unused Flag
+#define FLAG_SHINY_ENCOUNTER                 0x54  // Unused Flag
+#define FLAG_NOCATCH_ENCOUNTER                 0x55  // Unused Flag
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
 #define FLAG_MET_RIVAL_MOM                   0x57
@@ -120,7 +120,7 @@
 #define FLAG_MOSSDEEP_GYM_SWITCH_3           0x66 //
 #define FLAG_MOSSDEEP_GYM_SWITCH_4           0x67 //
 
-#define FLAG_UNUSED_0x068                    0x68  // Unused Flag
+#define FLAG_SIENNA_CONVO                   0x68  // Unused Flag
 
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
@@ -516,7 +516,7 @@
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
+#define FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1    0x1DE // Unused Flag
 #define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
 #define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
 #define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
@@ -1241,8 +1241,8 @@
 #define FLAG_HIDDEN_ITEM_MISTCITY_POKE_BALL                                       0x4A3 // Unused Flag
 #define FLAG_ITEM_MISTCITY_POTION                                       0x4A4 // Unused Flag
 #define FLAG_ITEM_MISTCITY_X_DEFENSE                                           0x4A5 // Unused Flag
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
+#define FLAG_HIDDEN_ITEM_BAT_CAVE_EVER_STONE                                           0x4A6 // Unused Flag
+#define FLAG_ITEM_BAT_CAVE_POKE_BALL                                          0x4A7 // Unused Flag
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
 #define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag

@@ -318,9 +318,10 @@ Mistcity_Smoker_Text_0:
 # 72 "data/maps/MistCity/scripts.pory"
 	.string "I just got fired for 'unauthorized\n"
 	.string "combustion of plant matter' in the\l"
-	.string "locker room. Honestly, I think they're\l"
-	.string "just jealous of how relaxed I am about\l"
-	.string "the whole thing.\p"
+	.string "locker room.\p"
+	.string "Honestly, I think they're just jealous\n"
+	.string "of how relaxed I am about the whole\l"
+	.string "thing.\p"
 	.string "I got my special herbs from Siltroot\n"
 	.string "Town.\p"
 	.string "Their stuff is heavvyyy...$"
@@ -373,7 +374,7 @@ Mistcity_Gymdoor_Text_0:
 
 Mistcity_Sign_DarkCave_Text_0:
 # 137 "data/maps/MistCity/scripts.pory"
-	.string "Dark Cave\n"
+	.string "Bat Cave\n"
 	.string "Caution: Heavy Bat Population.$"
 
 Mistcity_DarkCaveFail_Text_0:

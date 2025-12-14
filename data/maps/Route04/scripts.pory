@@ -1,1 +1,8 @@
 mapscripts Route04_MapScripts {}
+
+script Route04_Sign_DarkCave {
+    lock
+    msgbox(format("Bat Cave\nCaution: Heavy Bat Population."))
+    waitmessage
+    release
+}

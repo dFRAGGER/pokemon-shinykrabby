@@ -653,7 +653,8 @@
     "Route10",
     "BikePark",
     "Route09_SecretWaterSource",
-    "Route09_DeepForestCore"
+    "Route09_DeepForestCore",
+    "Route011"
   ],
   "gMapGroup_IndooErpusCity": [
     "LabJariIndoor",
@@ -708,7 +709,8 @@
     "SiltrootTown_Indoor_Ali_Apothecary",
     "SiltrootTown_Indoor_FacultyDefector",
     "SiltrootTown_Indoor_Healer",
-    "SiltrootTown_Indoor_House4"
+    "SiltrootTown_Indoor_House4",
+    "SiltrootTown_Indoor_Shed"
   ],
   "gMapGroup_IndoorDungeons": [
     "Batcave",

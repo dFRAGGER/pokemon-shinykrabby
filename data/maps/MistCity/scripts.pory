@@ -69,7 +69,7 @@ script Mistcity_Artist {
 script Mistcity_Smoker {
     lock
     faceplayer
-    msgbox(format("I just got fired for 'unauthorized combustion of plant matter' in the locker room. Honestly, I think they're just jealous of how relaxed I am about the whole thing.\pI got my special herbs from Siltroot Town.\pTheir stuff is heavvyyy..."))
+    msgbox(format("I just got fired for 'unauthorized combustion of plant matter' in the locker room.\p Honestly, I think they're just jealous of how relaxed I am about the whole thing.\pI got my special herbs from Siltroot Town.\pTheir stuff is heavvyyy..."))
     waitmessage
     release
 }
@@ -134,7 +134,7 @@ script Mistcity_Gymdoor {
 
 script Mistcity_Sign_DarkCave {
     lock
-    msgbox(format("Dark Cave\nCaution: Heavy Bat Population."))
+    msgbox(format("Bat Cave\nCaution: Heavy Bat Population."))
     waitmessage
     release
 }

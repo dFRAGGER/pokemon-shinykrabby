@@ -5,7 +5,7 @@ script Mistcity_Indoor_Old_Storyteller_Elara {
     faceplayer
     if(!flag(FLAG_HELPED_DAN_BEAT_FACULTY)){
     setspeaker("Elara")
-    msgbox(format("Come in, come in, child. Don't mind the old books.\p My name is {COLOR GREEN}Elara{COLOR DARK_GRAY}.\p My family has watched over this forest for more generations than I can count.\pLately, something is wrong, I can feel it in my old bones.\p These new people, The Faculty... they move without respect.\p They see the trees, but they do not see the forest.\pThey do not know the legends.\p They do not know of the Silent Guardian that sleeps beneath our feet.\p An ancient being of steel, said to awaken only when the forest's chaotic harmony is threatened...\pThat brave young man, Dan, he understands.\p He feels the forest's heartbeat. I pray you have a similar spirit."))
+    msgbox(format("Come in, come in, child. Don't mind the old books.\p My name is {COLOR GREEN}Elara{COLOR DARK_GRAY}.\p My family has watched over this forest for more generations than I can count.\pLately, something is wrong, I can feel it in my old bones.\p These new people, The Faculty... they move without respect.\p They see the trees, but they do not see the forest.\pThey do not know the legends.\p They do not know of the Silent Guardian that sleeps beneath our feet.\p An ancient being of steel, said to awaken only when the forest's chaotic harmony is threatened...\pThat brave young man, Daan, he understands.\p He feels the forest's heartbeat. I pray you have a similar spirit."))
     waitmessage
     release
     end

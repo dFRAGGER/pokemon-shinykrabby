@@ -15,7 +15,14 @@ script Mistcity_Research_Center_Healspot_OnTransition {
 script Mistcity_Research_Center_Hiker {
     lock
     faceplayer
-    msgbox(format("I've hiked those trails for twenty years, but the heavy tread marks I saw deep in the mud today were definitely not made by any Pokémon."))
+    if (flag(FLAG_RESCUED_DAAN)){
+        
+        msgbox(format("The Rangers gave the all-clear signal.\pI'm going to head back out there.\pI need to see for myself what kind of machine could leave tracks that deep in the mud."))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+        
+        msgbox(format("I've hiked those trails for twenty years, but the heavy tread marks I saw deep in the mud today were definitely not made by any Pokémon."))
+    }
     waitmessage
     release
 }
@@ -23,7 +30,14 @@ script Mistcity_Research_Center_Hiker {
 script Mistcity_Research_Center_Scientist {
     lock
     faceplayer
-    msgbox(format("The humidity levels in sector four dropped drastically today, almost as if something massive was sucking the moisture right out of the air to cool a machine."))
+    if (flag(FLAG_RESCUED_DAAN)){
+        
+        msgbox(format("Moisture levels are stabilizing rapidly.\pWhatever was draining the hydro-energy from the air has been shut down.\pThe forest is literally taking a deep breath again."))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+        
+        msgbox(format("The humidity levels in sector four dropped drastically today, almost as if something massive was sucking the moisture right out of the air to cool a machine."))
+    }
     waitmessage
     release
 }
@@ -31,7 +45,14 @@ script Mistcity_Research_Center_Scientist {
 script Mistcity_Research_Center_LittleGirl {
     lock
     faceplayer
-    msgbox(format("The nice ranger gave me a ride in the big truck because the Beedrills were chasing us way faster than they usually do!"))
+    if (flag(FLAG_RESCUED_DAAN)){
+        
+        msgbox(format("Is it safe now?\pMy daddy says the angry noise is gone.\pMaybe the Beedrills will be nice to us next time!"))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+        
+        msgbox(format("The nice ranger gave me a ride in the big truck because the Beedrills were chasing us way faster than they usually do!"))
+    }
     waitmessage
     release
 }
@@ -39,7 +60,14 @@ script Mistcity_Research_Center_LittleGirl {
 script Mistcity_Research_Center_DadBugCatcher {
     lock
     faceplayer
-    msgbox(format("We just wanted to look for Heracross, but the whole forest felt... angry; I'm just glad we got back on the last truck safely."))
+    if (flag(FLAG_RESCUED_DAAN)){
+        
+        msgbox(format("Thank goodness that's over.\pWe're going to wait here a bit longer just to be safe, but the tension in the air is gone.\pMaybe we'll actually find that Heracross tomorrow."))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+        
+        msgbox(format("We just wanted to look for Heracross, but the whole forest felt... angry; I'm just glad we got back on the last truck safely."))
+    }
     waitmessage
     release
 }
@@ -123,7 +151,7 @@ script Mistcity_Research_Center_ReturnRescueMissionDaan {
     waitmessage
     delay(40)
     setspeaker("Nash")
-    msgbox(format("Oh, right! The Gym.\pIt's... unique.\pDaan is actually the official Gym Leader here, but with all this Faculty business, he's had a few of his best ranger trainees on rotation to test challengers.\pHe designed it to replicate the forest at night.\pIt's almost pitch black in there.\pHe always says you don't really know the cloud forest until you've seen the ecosystem that comes alive after dark.\pIt's a real challenge, but you'll be facing a gauntlet of nocturnal Pokémon... think Noctowl, Ariados, maybe even a Mightyena.\pThe Pokémon in there are more than comfortable in the dark.\pIt'll be a good test of your skills before you head out again.\pAfter you've handled things here, your next step should be Siltroot Town.\pIt's an old, rural town deep in the mangrove swamps to the west.\pIt's a bit... rustic, from what I hear, but it's the only place you'll find a boat.\pOur long-range reports show The Faculty's main transport ship headed north, towards the Lion Mountains.\pYou'll never make it there on foot. But in Siltroot, you might find a skipper willing to take you to the port city of Lionsarch.\pIt's the only real access point to those two frozen peaks.\p Good luck, {PLAYER}.\pFind me at the station if you learn anything new, or if you want to explore the forest again."),MSGBOX_AUTOCLOSE)
+    msgbox(format("Oh, right! The Gym.\pIt's... unique.\pDaan is actually the official Gym Leader here, but with all this Faculty business, he's had a few of his best ranger trainees on rotation to test challengers.\pHe designed it to replicate the forest at night.\pIt's almost pitch black in there.\pHe always says you don't really know the cloud forest until you've seen the ecosystem that comes alive after dark.\pIt's a real challenge, but you'll be facing a gauntlet of nocturnal Pokémon... think Noctowl, Ariados, maybe even a Mightyena.\pThe Pokémon in there are more than comfortable in the dark.\pIt'll be a good test of your skills before you head out again.\pGood luck, {PLAYER}.\pFind me at the station if you learn anything new, or if you want to explore the forest again."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER, moves(walk_down walk_left*6))
     waitmovement

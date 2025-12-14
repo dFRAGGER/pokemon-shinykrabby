@@ -15,16 +15,19 @@ script Maasje_Gym_Introduction {
             msgbox(format("Good luck!!"))
             waitmessage
             release
+            end
     }
     if(flag(FLAG_ITEM_FRESH_WATER_GYM1) == TRUE&&flag(FLAG_BADGE01_GET)==FALSE){
         msgbox(format("Hi, welcome to the Maasje Pokemon Gym.\p The gym leader and trainers use sand & ground pokemon.\p Grass pokemon seem to have an edge, while electric pokemon are not recommended.\p The gym leader is called Pete Longfellow, he used to be a geography teacher.\p He has been training pokemon for a long time but he can be stubborn and emotional.\p Stay cool and calm and you should be good."))
         waitmessage
         release
+        end
     }
     if(flag(FLAG_ITEM_FRESH_WATER_GYM1) == TRUE&&flag(FLAG_BADGE01_GET)==TRUE){
         msgbox(format("Congrats on getting your badge!\p Pete looked mad, I don't think he is coming back."))
         waitmessage
         release
+        end
     }
 }
 script Maasje_Gym_Leader_Pete_Longfellow {
@@ -34,11 +37,11 @@ script Maasje_Gym_Leader_Pete_Longfellow {
 }
 
 script Maasje_Gym_PeteLongfellow_Defeated {
-    setspeaker("Pete Longfellow")
+    setspeaker("Pete")
     msgbox(format("In geography we call this fulgurite, just pure luck.\p Only regirous order and obedience will help you against The Faculty.\p Nothing else beats it.\p This move I used during battle was too random as well, you can have it:"))
     playfanfare(MUS_OBTAIN_ITEM)
     giveitem(ITEM_TM37)
-    setspeaker("Pete Longfellow")
+    setspeaker("Pete")
     msgbox(format("This Technical Machine is called Sandstorm.\p It creates a sandstorm on the battlefield that last 5 turns with additional effects....\p which I forgot..\p You might have been lucky against me, but the rest of The Factulty will ruin your life.\p Running this gym has been fun, but the grand mission of The Faculty calls.\p Soon, the unyielding stone of true order will put you in your place."), MSGBOX_AUTOCLOSE)
     setflag(FLAG_HIDE_PETELONGFELLOW)
     getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
@@ -64,7 +67,7 @@ script Maasje_Gym_PeteLongfellow_Defeated {
 }
 
 text Maasje_Gym_PeteLongfellow_Introtext {
-    format("{COLOR BLUE}Pete Longfellow: {COLOR DARK_GRAY}Well, well.\p Look who we got here.\p Let me learn you something about tectonic plates and the glorious power of erosion!!")
+    format("Well, well.\p Look who we got here.\p Let me learn you something about tectonic plates and the glorious power of erosion!!")
 }
 
 text Maasje_Gym_PeteLongfellow_Defeattext {

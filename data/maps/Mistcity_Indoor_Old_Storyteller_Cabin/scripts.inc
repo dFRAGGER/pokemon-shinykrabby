@@ -95,7 +95,7 @@ Mistcity_Indoor_Old_Storyteller_Elara_Text_1:
 	.string "An ancient being of steel, said to\n"
 	.string "awaken only when the forest's chaotic\l"
 	.string "harmony is threatened...\p"
-	.string "That brave young man, Dan, he\n"
+	.string "That brave young man, Daan, he\n"
 	.string "understands.\p"
 	.string "He feels the forest's heartbeat. I pray\n"
 	.string "you have a similar spirit.$"

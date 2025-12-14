@@ -13561,12 +13561,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_SCANNER] =
     {
-        .name = ITEM_NAME("Scanner"),
+        .name = ITEM_NAME("Strange Device"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A device found\n"
             "inside the\n"
-            "Abandoned Ship."),
+            "Crab Hill."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

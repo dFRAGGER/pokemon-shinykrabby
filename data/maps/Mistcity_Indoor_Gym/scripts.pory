@@ -14,14 +14,14 @@ script Mistcity_Gym_Introduction {
             release
             end
     }
-    if(flag(FLAG_ITEM_FRESH_WATER_GYM2) == TRUE&&flag(FLAG_BADGE02_GET)==FALSE){
+    elif(flag(FLAG_ITEM_FRESH_WATER_GYM2) == TRUE&&flag(FLAG_BADGE02_GET)==FALSE){
         faceplayer
         msgbox(format("Hi, welcome to the Mistcity Pokemon Gym.\p The gym leader and trainers use pokemon that like the darkness.\p While Pokémon that can give you a little light can help you, Pokémon afraid of the dark are not recommended.\p The gym leader is always on rotation, but I think I saw a red haired young ranger slip by just a moment ago.\pHe seemed to be unusually confident.\pTrust your instinct and I'm sure you will be victorious!"))
         waitmessage
         release
         end
     }
-    if(flag(FLAG_ITEM_FRESH_WATER_GYM2) == TRUE&&flag(FLAG_BADGE02_GET)==TRUE){
+    elif(flag(FLAG_BADGE02_GET)==TRUE){
         faceplayer
         msgbox(format("Congrats on getting your badge!\p David looked dissapointed, but I think he will handle the loss well."))
         waitmessage
@@ -44,6 +44,7 @@ script Mistcity_Gym_David_Defeated {
     msgbox(format("You battle with the same courage you showed during the rescue mission.\pYou have earned this Badge not just for winning, but for your heart.\pI know Daan would be proud of you too."))
     call(Common_EventScript_PlayGymBadgeFanfare)
     setflag(FLAG_BADGE02_GET)
+    setspeaker(NULL)
     msgbox(format("You have recieved the FOREST BADGE!"))
     waitmessage
     setspeaker("David")
@@ -55,8 +56,9 @@ script Mistcity_Gym_David_Defeated {
     setspeaker("David")
     msgbox(format("That Hidden Machine contains the move Flash.\pIt creates a brilliant light.\pIt can light up even the darkest of areas to guide your path.\pI learned it from studying that Faculty scum.\pSometimes you have to fight fire with fire!\pGood luck on your further endeavours."))
     waitmessage
-    call(MistcityGym_Set_Gym_Trainers)
+    animateflash(1)
     setflashlevel(1)
+    call(MistcityGym_Set_Gym_Trainers)
     release
     end
 }
@@ -68,6 +70,7 @@ script MistcityGym_Set_Gym_Trainers {
     settrainerflag (TRAINER_HARDY)
     settrainerflag (TRAINER_LAYTON)
     settrainerflag (TRAINER_NEELY)
+    return
 }
 
 text Mistcity_Gym_David_Introtext {

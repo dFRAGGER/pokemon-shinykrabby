@@ -7,11 +7,12 @@ mapscripts Mistcity_Indoor_FacultySympathizer_MapScripts {
 
 script Mistcity_Indoor_FacultySympathizer_Escape {
     lock
+    setvar(VAR_MISTCITY_STATE, 2)
     setspeaker("Marcus")
     msgbox(format("... I'M TELLING YOU NOTHING, YOU STUPID TREE HUGGER!!\pNOW GET OUT OF MY WAY!"),MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(4, moves(walk_fast_down walk_fast_left walk_fast_down*3))
     applymovement(LOCALID_PLAYER, moves(jump_right face_left))
+    applymovement(4, moves(walk_fast_down walk_fast_left walk_fast_down*3))
     waitmovement
     applymovement(3, moves(face_down))
     setflag(FLAG_FACULTY_SYMPATHIZERS_1)
@@ -35,7 +36,7 @@ script Mistcity_Indoor_FacultySympathizer_Escape {
     applymovement(LOCALID_PLAYER, moves(face_up))
     waitmovement
     setspeaker("Daan")
-    msgbox(format("I think they're gone.\pRan like Rattata the second I started asking real questions about the excavation.\pThey knew exactly what The Faculty was doing to the forest.\pBut this... this feels too big for just them.\pI can't shake this feeling about Prof. Birds.\pYou remember what I said in the truck?\pAbout him scanning the forest years ago?\pIt's too much of a coincidence.\nIm going to call Jacob.\pHe's got a way of making people talk.\pWe're going to pay the Professor a visit at his lab.\pWe need to know what he was really looking for back then.\pIf he knows anything about Registeel, we're going to get it out of him.\pWhile we handle Prof. Birds, I need you to keep chasing The Faculty.\pThe reports from the northern rangers are getting worse.\pSomething big is happening near Lionsarch City and the Lion Mountains.\pYou have to investigate.\pTo get there, head through Bat Cave to Siltroot Town.\pIt's an old, rural trading post deep in the mangroves.\pLook for a guy named Ali.\pHe's an old friend... a brilliant herbalist.\p ...though he's usually busy sampling his own... very potent herbs.\pHe knows all the old smuggling routes and the boat captains.\pIf anyone can get you a ride to Lionsarch, it's him.\p Oh and don't forget to check out the gym before you leave!\pThe gym leader might surprise you..."))
+    msgbox(format("I think they're gone.\pRan like Rattata the second I started asking real questions about the excavation.\pThey knew exactly what The Faculty was doing to the forest.\p...\pWhat? There were problems in Meestreech as well?\p...\pThat device looks very similar to the ones the faculty were using in Whisperwood grove.\pBut this... this feels too big for just them.\pI can't shake this feeling about Prof. Birds.\pYou remember what I said in the truck?\pAbout him scanning the forest years ago?\pIt's too much of a coincidence.\nIm going to call Jacob.\pHe's got a way of making people talk.\pWe're going to pay the Professor a visit at his lab.\pWe need to know what he was really looking for back then.\pIf he knows anything about Registeel, we're going to get it out of him.\pWhile we handle Prof. Birds, I need you to keep chasing The Faculty.\pForget the internship for a moment, this is bigger.\pThe reports from the northern rangers are getting worse.\pSomething big is happening near Lionsarch City and the Lion Mountains.\pYou have to investigate.\pTo get there, head west through Bat Cave, towards Siltroot Town.\pIt's an old, rural trading post deep in the mangroves.\pLook for a guy named Ali.\pHe's an old friend... a brilliant herbalist.\p ...though he's usually busy sampling his own... very potent herbs.\pHe knows all the old smuggling routes and the boat captains.\pIf anyone can get you a ride to Lionsarch, it's him.\p Oh and don't forget to check out the gym before you leave!\pThe gym leader might surprise you..."))
     waitmessage
     if(flag(FLAG_BADGE02_GET)==TRUE){
         setspeaker("Daan")
@@ -44,7 +45,7 @@ script Mistcity_Indoor_FacultySympathizer_Escape {
     }
     else{
         setspeaker("Daan")
-        msgbox(format("Also, you'll learn to move trough pitch darkness.\pSomething you'll need to pass through Bat Cave safely.\pI'll let you know what we find out from Prof. Birds."),MSGBOX_AUTOCLOSE)
+        msgbox(format("I'll let you know what we find out from Prof. Birds."),MSGBOX_AUTOCLOSE)
         waitmessage
     }
     applymovement(3, moves(walk_left walk_down*2))
@@ -77,7 +78,7 @@ script Mistcity_Indoor_Faculty_Wife {
     faceplayer
     if(!flag(FLAG_HELPED_DAN_BEAT_FACULTY)) {
         setspeaker("Eleanor")
-        msgbox(format("Oh, hello.\pA new face?\p I'm {COLOR BLUE}Eleanor{COLOR DARK_GRAY}.\p Mist City has a certain... rustic charm, I suppose.\p But it's so dreadfully unproductive.\p Don't you worry, The Faculty will bring modern amenities and a real sense of purpose to this place.\p That Dan fellow chaining himself to a tree? Utterly backwards.\pYou can't stop the future."))
+        msgbox(format("Oh, hello.\pA new face?\p I'm {COLOR BLUE}Eleanor{COLOR DARK_GRAY}.\p Mist City has a certain... rustic charm, I suppose.\p But it's so dreadfully unproductive.\p Don't you worry, The Faculty will bring modern amenities and a real sense of purpose to this place.\p That Daan fellow chaining himself to a tree? Utterly backwards.\pYou can't stop the future."))
         waitmessage
         release
         end 

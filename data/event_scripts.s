@@ -1280,3 +1280,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route04_CenterCave/scripts.inc"
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
+
+	.include "data/maps/Route011/scripts.inc"
+
+	.include "data/maps/SiltrootTown_Indoor_Shed/scripts.inc"

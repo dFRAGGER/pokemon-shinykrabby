@@ -19,7 +19,7 @@
       "x": 36,
       "y": 9,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -38,7 +38,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
@@ -275,6 +275,7 @@
       "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
     },
     {
+      "local_id": "LOCALID_JACOB",
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
       "x": 33,
       "y": 13,
@@ -285,7 +286,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
@@ -298,7 +299,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
@@ -311,7 +312,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
@@ -324,7 +325,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
@@ -334,10 +335,10 @@
       "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
@@ -350,7 +351,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
@@ -363,7 +364,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
@@ -376,7 +377,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
@@ -389,7 +390,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
@@ -402,7 +403,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
@@ -415,7 +416,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
@@ -428,7 +429,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
@@ -441,7 +442,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
     }
   ],
   "warp_events": [

@@ -1,1 +1,20 @@
 mapscripts Batcave_MapScripts {}
+
+script Batcave_rockfall_Contracter {
+    lock
+    faceplayer
+    msgbox(format("Man... I really should have brought a Pokémon that knows Flash.\pWatch your step, kid! My Machoke is tossing boulders around in the dark.\pThis rockslide came out of nowhere, and it is pretty much impossible to see what we are doing down here.\pIt is going to take another couple of hours to clear the debris.\pCome back in a bit if you are trying to get to Siltroot Town."))
+    waitmessage
+    release
+    end
+}
+
+script Batcave_rockfall_Machoke {
+    lock
+    faceplayer
+    playmoncry(SPECIES_MACHOKE, CRY_MODE_ENCOUNTER)
+    msgbox(format("MA.. CHOKE!\nMACHOKE!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
