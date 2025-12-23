@@ -224,6 +224,12 @@
       "map": "MAP_DEEP_CLOUD_FOREST_FACULTY_GORGE",
       "x": 23,
       "y": 7
+    },
+    {
+      "id": "HEAL_LOCATION_LIONSARCH_CITY",
+      "map": "MAP_LIONSARCH_CITY",
+      "x": 83,
+      "y": 27
     }
   ]
 }

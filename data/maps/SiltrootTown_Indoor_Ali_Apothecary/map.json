@@ -2,7 +2,7 @@
   "id": "MAP_SILTROOT_TOWN_INDOOR_ALI_APOTHECARY",
   "name": "SiltrootTown_Indoor_Ali_Apothecary",
   "layout": "LAYOUT_ROUTE104_PRETTY_PETAL_FLOWER_SHOP",
-  "music": "MUS_DUMMY",
+  "music": "MUS_B_PALACE",
   "region_map_section": "MAPSEC_SILTROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_FOG_DIAGONAL",

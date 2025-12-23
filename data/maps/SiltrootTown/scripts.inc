@@ -156,12 +156,183 @@ Siltroottown_Fisher_Sad::
 	end
 
 
+Siltroottown_Guard_shed::
+# 106 "data/maps/SiltrootTown/scripts.pory"
+	lock
+# 107 "data/maps/SiltrootTown/scripts.pory"
+	faceplayer
+# 108 "data/maps/SiltrootTown/scripts.pory"
+	goto_if_unset FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1, Siltroottown_Guard_shed_11
+Siltroottown_Guard_shed_9:
+# 114 "data/maps/SiltrootTown/scripts.pory"
+	goto_if_set FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1, Siltroottown_Guard_shed_8
+Siltroottown_Guard_shed_6:
+# 144 "data/maps/SiltrootTown/scripts.pory"
+	goto_if_set FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1, Siltroottown_Guard_shed_5
+Siltroottown_Guard_shed_1:
+# 150 "data/maps/SiltrootTown/scripts.pory"
+	release
+	end
+
+Siltroottown_Guard_shed_2:
+# 109 "data/maps/SiltrootTown/scripts.pory"
+	msgbox Siltroottown_Guard_shed_Text_0, MSGBOX_AUTOCLOSE
+# 110 "data/maps/SiltrootTown/scripts.pory"
+	waitmessage
+# 111 "data/maps/SiltrootTown/scripts.pory"
+	release
+	end
+
+Siltroottown_Guard_shed_3:
+# 115 "data/maps/SiltrootTown/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 116 "data/maps/SiltrootTown/scripts.pory"
+	msgbox Siltroottown_Guard_shed_Text_0, MSGBOX_AUTOCLOSE
+# 117 "data/maps/SiltrootTown/scripts.pory"
+	waitmessage
+# 118 "data/maps/SiltrootTown/scripts.pory"
+	delay 60
+# 119 "data/maps/SiltrootTown/scripts.pory"
+	playse SE_PIN
+# 120 "data/maps/SiltrootTown/scripts.pory"
+	applymovement 20, Siltroottown_Guard_shed_Movement_0
+# 121 "data/maps/SiltrootTown/scripts.pory"
+	waitmovement
+# 122 "data/maps/SiltrootTown/scripts.pory"
+	msgbox Siltroottown_Guard_shed_Text_1, MSGBOX_AUTOCLOSE
+# 123 "data/maps/SiltrootTown/scripts.pory"
+	waitmessage
+# 124 "data/maps/SiltrootTown/scripts.pory"
+	compare VAR_TEMP_0, 52
+	goto_if_eq Siltroottown_Guard_shed_20
+Siltroottown_Guard_shed_18:
+# 130 "data/maps/SiltrootTown/scripts.pory"
+	compare VAR_TEMP_0, 51
+	goto_if_eq Siltroottown_Guard_shed_17
+Siltroottown_Guard_shed_14:
+# 136 "data/maps/SiltrootTown/scripts.pory"
+	msgbox Siltroottown_Guard_shed_Text_2, MSGBOX_AUTOCLOSE
+# 137 "data/maps/SiltrootTown/scripts.pory"
+	waitmessage
+# 138 "data/maps/SiltrootTown/scripts.pory"
+	applymovement LOCALID_PLAYER, Siltroottown_Guard_shed_Movement_5
+# 139 "data/maps/SiltrootTown/scripts.pory"
+	waitmovement
+# 140 "data/maps/SiltrootTown/scripts.pory"
+	setflag FLAG_HIDE_SILTROOTTOWN_SHED_GUARD
+# 141 "data/maps/SiltrootTown/scripts.pory"
+	release
+	end
+
+Siltroottown_Guard_shed_4:
+# 145 "data/maps/SiltrootTown/scripts.pory"
+	msgbox Siltroottown_Guard_shed_Text_3, MSGBOX_AUTOCLOSE
+# 146 "data/maps/SiltrootTown/scripts.pory"
+	waitmessage
+# 147 "data/maps/SiltrootTown/scripts.pory"
+	release
+	end
+
+Siltroottown_Guard_shed_5:
+# 144 "data/maps/SiltrootTown/scripts.pory"
+	goto_if_set FLAG_HIDE_SILTROOTTOWN_SHED_GUARD, Siltroottown_Guard_shed_4
+	goto Siltroottown_Guard_shed_1
+
+Siltroottown_Guard_shed_8:
+# 114 "data/maps/SiltrootTown/scripts.pory"
+	goto_if_unset FLAG_HIDE_SILTROOTTOWN_SHED_GUARD, Siltroottown_Guard_shed_3
+	goto Siltroottown_Guard_shed_6
+
+Siltroottown_Guard_shed_11:
+# 108 "data/maps/SiltrootTown/scripts.pory"
+	goto_if_unset FLAG_HIDE_SILTROOTTOWN_SHED_GUARD, Siltroottown_Guard_shed_2
+	goto Siltroottown_Guard_shed_9
+
+Siltroottown_Guard_shed_15:
+# 125 "data/maps/SiltrootTown/scripts.pory"
+	applymovement 20, Siltroottown_Guard_shed_Movement_1
+# 126 "data/maps/SiltrootTown/scripts.pory"
+	waitmovement
+# 127 "data/maps/SiltrootTown/scripts.pory"
+	applymovement LOCALID_PLAYER, Siltroottown_Guard_shed_Movement_2
+# 128 "data/maps/SiltrootTown/scripts.pory"
+	waitmovement
+	goto Siltroottown_Guard_shed_14
+
+Siltroottown_Guard_shed_16:
+# 131 "data/maps/SiltrootTown/scripts.pory"
+	applymovement 20, Siltroottown_Guard_shed_Movement_3
+# 132 "data/maps/SiltrootTown/scripts.pory"
+	waitmovement
+# 133 "data/maps/SiltrootTown/scripts.pory"
+	applymovement LOCALID_PLAYER, Siltroottown_Guard_shed_Movement_4
+# 134 "data/maps/SiltrootTown/scripts.pory"
+	waitmovement
+	goto Siltroottown_Guard_shed_14
+
+Siltroottown_Guard_shed_17:
+# 130 "data/maps/SiltrootTown/scripts.pory"
+	compare VAR_TEMP_1, 66
+	goto_if_eq Siltroottown_Guard_shed_16
+	goto Siltroottown_Guard_shed_14
+
+Siltroottown_Guard_shed_20:
+# 124 "data/maps/SiltrootTown/scripts.pory"
+	compare VAR_TEMP_1, 65
+	goto_if_eq Siltroottown_Guard_shed_15
+	goto Siltroottown_Guard_shed_18
+
+
 # 17 "data/maps/SiltrootTown/scripts.pory"
 Siltroottown_Youth_Outide_Ali_Shop_1_Movement_0:
 # 17 "data/maps/SiltrootTown/scripts.pory"
 	emote_exclamation_mark
 # 17 "data/maps/SiltrootTown/scripts.pory"
 	face_player
+	step_end
+
+# 120 "data/maps/SiltrootTown/scripts.pory"
+Siltroottown_Guard_shed_Movement_0:
+# 120 "data/maps/SiltrootTown/scripts.pory"
+	emote_exclamation_mark
+	step_end
+
+# 125 "data/maps/SiltrootTown/scripts.pory"
+Siltroottown_Guard_shed_Movement_1:
+# 125 "data/maps/SiltrootTown/scripts.pory"
+	walk_down
+# 125 "data/maps/SiltrootTown/scripts.pory"
+	face_up
+	step_end
+
+# 127 "data/maps/SiltrootTown/scripts.pory"
+Siltroottown_Guard_shed_Movement_2:
+# 127 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 127 "data/maps/SiltrootTown/scripts.pory"
+	face_down
+	step_end
+
+# 131 "data/maps/SiltrootTown/scripts.pory"
+Siltroottown_Guard_shed_Movement_3:
+# 131 "data/maps/SiltrootTown/scripts.pory"
+	walk_right
+# 131 "data/maps/SiltrootTown/scripts.pory"
+	face_left
+	step_end
+
+# 133 "data/maps/SiltrootTown/scripts.pory"
+Siltroottown_Guard_shed_Movement_4:
+# 133 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 133 "data/maps/SiltrootTown/scripts.pory"
+	face_right
+	step_end
+
+# 138 "data/maps/SiltrootTown/scripts.pory"
+Siltroottown_Guard_shed_Movement_5:
+# 138 "data/maps/SiltrootTown/scripts.pory"
+	face_up
 	step_end
 
 SiltrootTown_Sign_AliApothecary_Text_0:
@@ -263,3 +434,37 @@ Siltroottown_Fisher_Sad_Text_0:
 	.string "marine reserve to cast my line now.\p"
 	.string "You have to break the law just to find a\n"
 	.string "decent catch these days!$"
+
+Siltroottown_Guard_shed_Text_0:
+# 109 "data/maps/SiltrootTown/scripts.pory"
+	.string "Whoa, hold your Ponyta.\p"
+	.string "This is a restricted agricultural\n"
+	.string "facility.\p"
+	.string "Strictly authorized personnel only.$"
+
+Siltroottown_Guard_shed_Text_1:
+# 122 "data/maps/SiltrootTown/scripts.pory"
+	.string "...\p"
+	.string "Oh? Ali sent you?\p"
+	.string "For the 'Project Star-Shot' shipment?\p"
+	.string "Alright, you're clear.$"
+
+Siltroottown_Guard_shed_Text_2:
+# 136 "data/maps/SiltrootTown/scripts.pory"
+	.string "But listen carefully.\p"
+	.string "The production team is inside right now.\p"
+	.string "It's a bunch of Slowbros.\p"
+	.string "They are in a deep, meditative trance\n"
+	.string "while they work.\p"
+	.string "If they see you, it breaks their flow,\n"
+	.string "and they will use Confusion to toss you\l"
+	.string "right back out the front door.\p"
+	.string "The bag is in the back.\p"
+	.string "Move like a ghost, kid.$"
+
+Siltroottown_Guard_shed_Text_3:
+# 145 "data/maps/SiltrootTown/scripts.pory"
+	.string "Remember, don't let the Slowbro's see\n"
+	.string "you.\p"
+	.string "The bag is in the back.\p"
+	.string "Move like a ghost, kid.$"

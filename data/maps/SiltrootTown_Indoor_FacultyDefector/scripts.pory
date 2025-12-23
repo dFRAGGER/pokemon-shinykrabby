@@ -1,1 +1,110 @@
 mapscripts SiltrootTown_Indoor_FacultyDefector_MapScripts {}
+
+script SiltrootTown_Indoor_Scott {
+    lock
+    faceplayer
+    playse(SE_PIN)
+    applymovement(1, moves( emote_exclamation_mark))
+    setspeaker("Scott")
+    msgbox(format("What are you doing in my home?!\pWho are you?!\pDid the government send you?\pAre you a drone in a human suit?!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    if(flag(FLAG_SILTROOTTOWN_STASH_SACK)) {
+        getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
+        setspeaker("Scott")
+        msgbox(format("...\p...\p..Ali sent you?\pAnd you have the inventory?\pHmm.\pOne sec..."))
+        waitmessage
+        if(var(VAR_TEMP_0)==3){
+            applymovement(1, moves(walk_down walk_left face_up))
+            waitmovement
+            delay(60)
+            applymovement(1, moves(walk_left walk_up face_right))
+            waitmovement
+            delay(60)
+            applymovement(1, moves(walk_down walk_right*2 walk_up face_left))
+            waitmovement
+            delay(60)
+        }
+        elif(var(VAR_TEMP_0)==4){
+            applymovement(1, moves(walk_left walk_down face_right))
+            waitmovement
+            delay(60)
+            applymovement(1, moves(walk_down walk_right face_up))
+            waitmovement
+            delay(60)
+            applymovement(1, moves(walk_left walk_up*2 walk_right face_down))
+            waitmovement
+            delay(60)
+        }
+        setspeaker("Scott")
+        msgbox(format("Okay, your heat signature is normal.\pYou aren't wearing a wire.\pI suppose I can trust you."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        delay(40)
+        if(var(VAR_TEMP_0)==3){
+            applymovement(1, moves(walk_fast_down*2 walk_fast_left walk_fast_down))
+            waitmovement
+            applymovement(LOCALID_PLAYER, moves(face_down))            
+            delay(60)
+            applymovement(1, moves(face_up))
+            waitmovement
+            setspeaker("Scott")
+            msgbox(format("Nobody saw you coming in right?\pWe cannot leave together through the front door.\pToo many eyes on the street.\pSatellite flyover is in three minutes."),MSGBOX_AUTOCLOSE)
+            waitmessage
+            applymovement(1, moves(face_down))
+            waitmovement
+            delay(60)
+            applymovement(1, moves(walk_fast_up walk_fast_right walk_fast_up*2 face_left))
+            waitmovement
+            applymovement(LOCALID_PLAYER, moves(face_right))    
+        }
+        elif(var(VAR_TEMP_0)==4){
+            applymovement(1, moves(walk_fast_left walk_fast_down*3))
+            waitmovement 
+            applymovement(LOCALID_PLAYER, moves(face_down))               
+            delay(60)
+            applymovement(1, moves(face_up))
+            waitmovement
+            setspeaker("Scott")
+            msgbox(format("Nobody saw you coming in right?\pWe cannot leave together through the front door.\pToo many eyes on the street.\pSatellite flyover is in three minutes."),MSGBOX_AUTOCLOSE)
+            waitmessage
+            applymovement(1, moves(face_down))
+            waitmovement
+            delay(60)
+            applymovement(1, moves(walk_fast_up*3 walk_fast_right face_down))
+            waitmovement
+            applymovement(LOCALID_PLAYER, moves(face_up)) 
+        }
+        setspeaker("Scott")
+        msgbox(format("My boat is hidden in the mangroves, right behind the house, camouflaged under the roots.\pMeet me out back.\pI will prep the engine.\pWe are dropping you at the Industrial Harbor in Lion's Arch.\pIt's a rough ride, so don't eat anything heavy before we leave.\pLets move..."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        if(var(VAR_TEMP_0)==3){
+            applymovement(1, moves(walk_down*3))
+            waitmovement
+        }
+        elif(var(VAR_TEMP_0)==4){
+            applymovement(LOCALID_PLAYER, moves(jump_left face_down))
+            applymovement(1, moves(walk_down*3))
+            waitmovement
+        }
+        setflag(FLAG_HIDE_SCOTT_AFTER_CONVO)
+        clearflag(FLAG_HIDE_SCOTT_OUTSIDE_BOAT)
+        removeobject(1)
+        release
+        end
+
+    }
+    elif(!flag(FLAG_SILTROOTTOWN_STASH_SACK)) {
+        msgbox(format("No answers?\nGET OUT! NOW!"),MSGBOX_AUTOCLOSE)
+        waitmessage
+        if(var(VAR_TEMP_0)==3){
+            applymovement(LOCALID_PLAYER, moves(jump_left))
+            waitmovement
+        }
+        elif(var(VAR_TEMP_0)==4){
+            applymovement(LOCALID_PLAYER, moves(jump_down))
+            waitmovement
+        }
+    }
+    release
+    end
+    
+}

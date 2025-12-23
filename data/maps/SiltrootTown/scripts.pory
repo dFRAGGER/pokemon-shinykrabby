@@ -101,3 +101,52 @@ script Siltroottown_Fisher_Sad {
     release
     end
 }
+
+script Siltroottown_Guard_shed {
+    lock
+    faceplayer
+    if(flag(FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1)==FALSE && flag(FLAG_HIDE_SILTROOTTOWN_SHED_GUARD)==FALSE){
+        msgbox(format("Whoa, hold your Ponyta.\pThis is a restricted agricultural facility.\pStrictly authorized personnel only."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+    elif(flag(FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1)==TRUE && flag(FLAG_HIDE_SILTROOTTOWN_SHED_GUARD)==FALSE){
+    getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
+    msgbox(format("Whoa, hold your Ponyta.\pThis is a restricted agricultural facility.\pStrictly authorized personnel only."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    playse(SE_PIN)
+    applymovement(20,moves(emote_exclamation_mark))
+    waitmovement
+    msgbox(format("...\pOh? Ali sent you?\pFor the 'Project Star-Shot' shipment?\pAlright, you're clear."),MSGBOX_AUTOCLOSE)
+    waitmessage    
+    if(var(VAR_TEMP_0) == 52 && var(VAR_TEMP_1) == 65) {
+        applymovement(20, moves(walk_down face_up))
+        waitmovement
+        applymovement(LOCALID_PLAYER, moves(walk_left face_down))
+        waitmovement
+    }
+    elif(var(VAR_TEMP_0) == 51 && var(VAR_TEMP_1) == 66) {
+        applymovement(20, moves(walk_right face_left))
+        waitmovement
+        applymovement(LOCALID_PLAYER, moves(walk_up face_right))
+        waitmovement
+    }
+    msgbox(format("But listen carefully.\pThe production team is inside right now.\pIt's a bunch of Slowbros.\pThey are in a deep, meditative trance while they work.\pIf they see you, it breaks their flow, and they will use Confusion to toss you right back out the front door.\pThe bag is in the back.\pMove like a ghost, kid."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(face_up))
+    waitmovement
+    setflag(FLAG_HIDE_SILTROOTTOWN_SHED_GUARD)
+    release
+    end
+    }
+    elif(flag(FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1)==TRUE && flag(FLAG_HIDE_SILTROOTTOWN_SHED_GUARD)==TRUE) {
+        msgbox(format("Remember, don't let the Slowbro's see you.\pThe bag is in the back.\pMove like a ghost, kid."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+    release
+    end
+}

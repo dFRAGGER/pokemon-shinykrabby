@@ -28,20 +28,20 @@
 #define TRAINER_CHUCKIE                      22     //TRAINER_GRUNT_SPACE_CENTER_1 
 #define TRAINER_HARDY                        23     //TRAINER_GRUNT_MT_PYRE_1 
 #define TRAINER_LAYTON                       24     //TRAINER_GRUNT_MT_PYRE_2
-#define TRAINER_GRUNT_MT_PYRE_3              25
-#define TRAINER_GRUNT_WEATHER_INST_4         26
-#define TRAINER_GRUNT_AQUA_HIDEOUT_5         27
-#define TRAINER_GRUNT_AQUA_HIDEOUT_6         28
-#define TRAINER_FREDRICK                     29
-#define TRAINER_MATT                         30
-#define TRAINER_ZANDER                       31
-#define TRAINER_SHELLY_WEATHER_INSTITUTE     32
-#define TRAINER_SHELLY_SEAFLOOR_CAVERN       33
-#define TRAINER_ARCHIE                       34
-#define TRAINER_LEAH                         35
-#define TRAINER_DAISY                        36
-#define TRAINER_ROSE_1                       37
-#define TRAINER_FELIX                        38
+#define TRAINER_GRUNT_MT_PYRE_3              25     //TRAINER_GRUNT_MT_PYRE_3 
+#define TRAINER_GRUNT_WEATHER_INST_4         26     //TRAINER_GRUNT_WEATHER_INST_4 
+#define TRAINER_GRUNT_AQUA_HIDEOUT_5         27     //TRAINER_GRUNT_AQUA_HIDEOUT_5 
+#define TRAINER_GRUNT_AQUA_HIDEOUT_6         28     //TRAINER_GRUNT_AQUA_HIDEOUT_6 
+#define TRAINER_FREDRICK                     29     //TRAINER_FREDRICK
+#define TRAINER_MATT                         30     //TRAINER_MATT  
+#define TRAINER_ZANDER                       31     //TRAINER_ZANDER
+#define TRAINER_SHELLY_WEATHER_INSTITUTE     32     //TRAINER_SHELLY_WEATHER_INSTITUTE 
+#define TRAINER_SHELLY_SEAFLOOR_CAVERN       33     //TRAINER_SHELLY_SEAFLOOR_CAVERN
+#define TRAINER_ARCHIE                       34     //TRAINER_ARCHIE
+#define TRAINER_LEAH                         35     //TRAINER_LEAH
+#define TRAINER_DAISY                        36     //TRAINER_DAISY 
+#define TRAINER_ROSE_1                       37     //TRAINER_ROSE_1
+#define TRAINER_FELIX                        38     //TRAINER_FELIX
 #define TRAINER_VIOLET                       39
 #define TRAINER_ROSE_2                       40
 #define TRAINER_ROSE_3                       41

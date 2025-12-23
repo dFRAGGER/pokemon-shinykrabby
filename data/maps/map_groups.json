@@ -654,7 +654,8 @@
     "BikePark",
     "Route09_SecretWaterSource",
     "Route09_DeepForestCore",
-    "Route011"
+    "Route011",
+    "Route012"
   ],
   "gMapGroup_IndooErpusCity": [
     "LabJariIndoor",

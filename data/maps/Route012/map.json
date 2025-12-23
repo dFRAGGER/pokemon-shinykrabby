@@ -1,11 +1,11 @@
 {
-  "id": "MAP_ROUTE011",
-  "name": "Route011",
-  "layout": "LAYOUT_ROUTE011",
+  "id": "MAP_ROUTE012",
+  "name": "Route012",
+  "layout": "LAYOUT_ROUTE012",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ROUTE_11",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
-  "weather": "WEATHER_SUNNY_CLOUDS",
+  "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
@@ -14,18 +14,13 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_SILTROOT_TOWN",
-      "offset": 30,
+      "map": "MAP_ROUTE011",
+      "offset": 6,
       "direction": "down"
     },
     {
-      "map": "MAP_ROUTE04",
-      "offset": 45,
-      "direction": "right"
-    },
-    {
-      "map": "MAP_ROUTE012",
-      "offset": -6,
+      "map": "MAP_LIONSARCH_CITY",
+      "offset": -10,
       "direction": "up"
     }
   ],

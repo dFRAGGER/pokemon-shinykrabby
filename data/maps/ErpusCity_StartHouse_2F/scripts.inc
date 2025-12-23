@@ -27,29 +27,37 @@ ErpCity_Starthouse1F_Mom_Calling::
 # 15 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
 	waitmessage
 # 16 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
+	call Start_FLAGS_Reset
+# 17 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
 	release
 	end
 
 
+Start_FLAGS_Reset::
+# 23 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
+	setflag FLAG_HIDE_SCOTT_OUTSIDE_BOAT
+	return
+
+
 ErpCity_Starthouse1F_Mom_Clock::
-# 22 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
+# 28 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
 	goto_if_unset FLAG_SET_WALL_CLOCK, ErpCity_Starthouse1F_Mom_Clock_1
 	end
 
 ErpCity_Starthouse1F_Mom_Clock_1:
-# 23 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
-	lock
-# 24 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
-	setspeaker ErpCity_Starthouse1F_Mom_Calling_Text_0
-# 25 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
-	msgbox ErpCity_Starthouse1F_Mom_Clock_Text_0
-# 26 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
-	waitmessage
-# 27 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
-	applymovement LOCALID_PLAYER, ErpCity_Starthouse1F_Mom_Clock_Movement_0
-# 28 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
-	waitmovement
 # 29 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
+	lock
+# 30 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
+	setspeaker ErpCity_Starthouse1F_Mom_Calling_Text_0
+# 31 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
+	msgbox ErpCity_Starthouse1F_Mom_Clock_Text_0
+# 32 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
+	waitmessage
+# 33 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
+	applymovement LOCALID_PLAYER, ErpCity_Starthouse1F_Mom_Clock_Movement_0
+# 34 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
+	waitmovement
+# 35 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
 	release
 	end
 
@@ -60,9 +68,9 @@ ErpCity_Starthouse1F_Mom_Calling_Movement_0:
 	emote_exclamation_mark
 	step_end
 
-# 27 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
+# 33 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
 ErpCity_Starthouse1F_Mom_Clock_Movement_0:
-# 27 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
+# 33 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
 	walk_left
 	step_end
 
@@ -77,7 +85,7 @@ ErpCity_Starthouse1F_Mom_Calling_Text_1:
 	.string "YOU'RE LATE!!$"
 
 ErpCity_Starthouse1F_Mom_Clock_Text_0:
-# 25 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
+# 31 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
 	.string "OH, AND DON'T FORGET YOUR CLOCK!\p"
 	.string "OTHERWISE YOU WILL BE LATE AGAIN\n"
 	.string "TOMORROW!!$"

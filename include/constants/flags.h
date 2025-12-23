@@ -517,10 +517,10 @@
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
 #define FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1    0x1DE // Unused Flag
-#define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
+#define FLAG_HIDE_SILTROOTTOWN_SHED_GUARD                   0x1DF // Unused Flag
+#define FLAG_SILTROOTTOWN_STASH_SACK                   0x1E0 // Unused Flag
+#define FLAG_HIDE_SCOTT_AFTER_CONVO                  0x1E1 // Unused Flag
+#define FLAG_HIDE_SCOTT_OUTSIDE_BOAT                   0x1E2 // Unused Flag
 #define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
 
 // Mystery Gift Flags (Unknown)

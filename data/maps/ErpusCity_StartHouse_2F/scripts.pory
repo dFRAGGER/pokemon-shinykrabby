@@ -13,9 +13,15 @@ script ErpCity_Starthouse1F_Mom_Calling {
     setspeaker("Mom")
     msgbox(format("HONEY!!\pWAKE UP!!\pYOU'RE LATE!!"))
     waitmessage
+    call(Start_FLAGS_Reset)
     release
     end
       
+}
+
+script Start_FLAGS_Reset {
+    setflag(FLAG_HIDE_SCOTT_OUTSIDE_BOAT)
+    return
 }
 
 script ErpCity_Starthouse1F_Mom_Clock {

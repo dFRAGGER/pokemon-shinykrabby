@@ -1,0 +1,27 @@
+mapscripts SiltrootTown_Indoor_Shed_MapScripts {
+
+}
+
+script SiltrootTown_Indoor_Shed_slowbro {
+    lockall
+    playmoncry(SPECIES_SLOWBRO,CRY_MODE_ENCOUNTER)
+    msgbox(format("SLOOOWWWWW.... BRO"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    fadescreen(FADE_TO_BLACK)
+    delay(60)
+    warp(MAP_SILTROOT_TOWN, 4)
+    waitstate
+    fadescreen(FADE_FROM_BLACK)
+    releaseall
+    end
+
+}
+
+script Siltroottown_Indoor_Shed_Stash {
+    lock
+    setflag(FLAG_SILTROOTTOWN_STASH_SACK)
+    removeobject(1)
+    giveitem(ITEM_SOOT_SACK)
+    release
+    end
+}

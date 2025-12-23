@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_LIONSARCH_CITY",
-      "offset": -28,
+      "offset": -50,
       "direction": "down"
     },
     {

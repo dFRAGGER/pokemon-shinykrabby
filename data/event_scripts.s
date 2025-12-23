@@ -1284,3 +1284,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route011/scripts.inc"
 
 	.include "data/maps/SiltrootTown_Indoor_Shed/scripts.inc"
+
+	.include "data/maps/Route012/scripts.inc"
