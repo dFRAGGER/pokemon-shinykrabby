@@ -347,43 +347,47 @@ Route01_Factulty_Grunts_Position2_Movement_1:
 # 78 "data/maps/Route01/scripts.pory"
 Route01_Factulty_Grunts_Position3_Movement_0:
 # 78 "data/maps/Route01/scripts.pory"
-	walk_right
-# 78 "data/maps/Route01/scripts.pory"
-	walk_right
-# 78 "data/maps/Route01/scripts.pory"
-	walk_right
-# 78 "data/maps/Route01/scripts.pory"
-	walk_right
-# 78 "data/maps/Route01/scripts.pory"
-	walk_right
-# 78 "data/maps/Route01/scripts.pory"
-	walk_right
-# 78 "data/maps/Route01/scripts.pory"
-	walk_right
-# 78 "data/maps/Route01/scripts.pory"
 	walk_up
+# 78 "data/maps/Route01/scripts.pory"
+	walk_right
+# 78 "data/maps/Route01/scripts.pory"
+	walk_right
+# 78 "data/maps/Route01/scripts.pory"
+	walk_right
+# 78 "data/maps/Route01/scripts.pory"
+	walk_right
+# 78 "data/maps/Route01/scripts.pory"
+	walk_right
+# 78 "data/maps/Route01/scripts.pory"
+	walk_right
+# 78 "data/maps/Route01/scripts.pory"
+	walk_right
+# 78 "data/maps/Route01/scripts.pory"
+	face_up
 	step_end
 
 # 100 "data/maps/Route01/scripts.pory"
 Route01_Factulty_Grunts_Position4_Movement_0:
 # 100 "data/maps/Route01/scripts.pory"
-	walk_right
-# 100 "data/maps/Route01/scripts.pory"
-	walk_right
-# 100 "data/maps/Route01/scripts.pory"
-	walk_right
-# 100 "data/maps/Route01/scripts.pory"
-	walk_right
-# 100 "data/maps/Route01/scripts.pory"
-	walk_right
-# 100 "data/maps/Route01/scripts.pory"
-	walk_right
-# 100 "data/maps/Route01/scripts.pory"
-	walk_right
-# 100 "data/maps/Route01/scripts.pory"
 	walk_up
 # 100 "data/maps/Route01/scripts.pory"
 	walk_up
+# 100 "data/maps/Route01/scripts.pory"
+	walk_right
+# 100 "data/maps/Route01/scripts.pory"
+	walk_right
+# 100 "data/maps/Route01/scripts.pory"
+	walk_right
+# 100 "data/maps/Route01/scripts.pory"
+	walk_right
+# 100 "data/maps/Route01/scripts.pory"
+	walk_right
+# 100 "data/maps/Route01/scripts.pory"
+	walk_right
+# 100 "data/maps/Route01/scripts.pory"
+	walk_right
+# 100 "data/maps/Route01/scripts.pory"
+	face_up
 	step_end
 
 # 101 "data/maps/Route01/scripts.pory"

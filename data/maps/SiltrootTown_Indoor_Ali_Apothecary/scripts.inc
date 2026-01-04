@@ -9,405 +9,534 @@ SiltrootTown_Indoor_Ali_Apothecary_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	.2byte 0
 
 
-SiltrootTown_Indoor_Apothecary_Ali_Giel::
+SiltrootTown_Ali_Employer::
 # 8 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	lock
 # 9 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	setvar VAR_SILTROOT_TOWN_STATE, 1
+	faceplayer
 # 10 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	playse SE_PIN
+	msgbox SiltrootTown_Ali_Employer_Text_0
 # 11 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_0
+	waitmessage
 # 12 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmovement
+	pokemart SiltrootTown_Mart_Items
 # 13 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 # 14 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_1, MSGBOX_AUTOCLOSE
-# 15 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmessage
-# 16 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 1, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_1
-# 17 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmovement
-# 18 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_2
+	release
+	end
+
+
+	.align 2
 # 19 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_2
+SiltrootTown_Mart_Items:
 # 20 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_3, MSGBOX_AUTOCLOSE
+	.2byte ITEM_LEPPA_BERRY
 # 21 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmessage
+	.2byte ITEM_PECHA_BERRY
 # 22 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_3
+	.2byte ITEM_ORAN_BERRY
 # 23 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	delay 60
-# 24 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0
-# 25 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_4, MSGBOX_AUTOCLOSE
-# 26 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmessage
+	.2byte ITEM_SITRUS_BERRY
+	.2byte ITEM_NONE
+
+SiltrootTown_Elder_Dialogue::
 # 27 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	delay 60
+	lock
 # 28 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 5, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_4
+	faceplayer
 # 29 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmovement
+	msgbox SiltrootTown_Elder_Dialogue_Text_0, MSGBOX_AUTOCLOSE
 # 30 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	playse SE_PIN
+	waitmessage
 # 31 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	delay 60
-# 32 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0
-# 33 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_5, MSGBOX_AUTOCLOSE
-# 34 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmessage
-# 35 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	delay 60
+	release
+	end
+
+
+SiltrootTown_Woman_Dialogue::
 # 36 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_2
+	lock
 # 37 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 5, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_5
+	faceplayer
 # 38 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmovement
+	msgbox SiltrootTown_Woman_Dialogue_Text_0, MSGBOX_AUTOCLOSE
 # 39 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	delay 60
+	waitmessage
 # 40 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 5, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_6
-# 41 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmovement
-# 42 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	delay 60
-# 43 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_2
-# 44 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_6, MSGBOX_AUTOCLOSE
+	release
+	end
+
+
+SiltrootTown_Screen_Dialogue::
 # 45 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmessage
+	lock
 # 46 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 5, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_7
+	faceplayer
 # 47 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmovement
+	msgbox SiltrootTown_Screen_Dialogue_Text_0, MSGBOX_AUTOCLOSE
 # 48 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_2
+	waitmessage
 # 49 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_2
-# 50 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_7
-# 51 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmessage
-# 52 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_3
-# 53 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0
+	release
+	end
+
+
+SiltrootTown_Plant_Dialogue::
 # 54 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_8
+	lock
 # 55 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmessage
+	faceplayer
 # 56 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0
+	msgbox SiltrootTown_Plant_Dialogue_Text_0, MSGBOX_AUTOCLOSE
 # 57 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_9, MSGBOX_AUTOCLOSE
+	waitmessage
 # 58 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmessage
-# 59 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	delay 60
-# 60 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	playse SE_POKENAV_CALL
-# 61 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	delay 60
-# 62 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	playse SE_POKENAV_CALL
+	release
+	end
+
+
+SiltrootTown_Indoor_Apothecary_Ali_Giel::
 # 63 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	delay 60
+	lock
 # 64 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_2
+	setvar VAR_SILTROOT_TOWN_STATE, 1
 # 65 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 1, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_8
+	playse SE_PIN
 # 66 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_2
+	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_0
 # 67 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_10, MSGBOX_AUTOCLOSE
+	waitmovement
 # 68 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmessage
+	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0
 # 69 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 1, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_9
+	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_1, MSGBOX_AUTOCLOSE
 # 70 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_3
+	waitmessage
 # 71 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement LOCALID_PLAYER, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_10
+	applymovement 1, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_1
 # 72 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	waitmovement
 # 73 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_2
+	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_2
 # 74 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_11, MSGBOX_AUTOCLOSE
+	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_2
 # 75 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmessage
+	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_3, MSGBOX_AUTOCLOSE
 # 76 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 1, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_11
-# 77 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmovement
-# 78 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	setflag FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1
-# 79 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	removeobject 1
-# 80 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	removeobject 5
-# 81 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	delay 120
-# 82 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement LOCALID_PLAYER, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_6
-# 83 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	waitmovement
-# 84 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0
-# 85 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_12, MSGBOX_AUTOCLOSE
-# 86 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	waitmessage
-# 87 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_6
-# 88 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 77 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_3
+# 78 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	delay 60
+# 79 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0
+# 80 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_4, MSGBOX_AUTOCLOSE
+# 81 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	waitmessage
+# 82 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	delay 60
+# 83 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	applymovement 5, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_4
+# 84 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	waitmovement
+# 85 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	playse SE_PIN
+# 86 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	delay 60
+# 87 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0
+# 88 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_5, MSGBOX_AUTOCLOSE
 # 89 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	waitmessage
+# 90 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	delay 60
+# 91 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_2
+# 92 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	applymovement 5, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_5
+# 93 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	waitmovement
+# 94 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	delay 60
+# 95 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	applymovement 5, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_6
+# 96 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	waitmovement
+# 97 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	delay 60
+# 98 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_2
+# 99 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_6, MSGBOX_AUTOCLOSE
+# 100 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	waitmessage
+# 101 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	applymovement 5, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_7
+# 102 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	waitmovement
+# 103 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_2
+# 104 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_2
+# 105 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_7
+# 106 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	waitmessage
+# 107 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_3
+# 108 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0
+# 109 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_8
+# 110 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	waitmessage
+# 111 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0
+# 112 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_9, MSGBOX_AUTOCLOSE
+# 113 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	waitmessage
+# 114 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	delay 60
+# 115 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	playse SE_POKENAV_CALL
+# 116 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	delay 60
+# 117 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	playse SE_POKENAV_CALL
+# 118 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	delay 60
+# 119 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_2
+# 120 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	applymovement 1, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_8
+# 121 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_2
+# 122 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_10, MSGBOX_AUTOCLOSE
+# 123 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	waitmessage
+# 124 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	applymovement 1, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_9
+# 125 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_3
+# 126 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	applymovement LOCALID_PLAYER, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_10
+# 127 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	waitmovement
+# 128 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_2
+# 129 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_11, MSGBOX_AUTOCLOSE
+# 130 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	waitmessage
+# 131 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	applymovement 1, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_11
+# 132 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	waitmovement
+# 133 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	setflag FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1
+# 134 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	removeobject 1
+# 135 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	removeobject 5
+# 136 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	delay 120
+# 137 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	applymovement LOCALID_PLAYER, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_6
+# 138 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	waitmovement
+# 139 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0
+# 140 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_12, MSGBOX_AUTOCLOSE
+# 141 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	waitmessage
+# 142 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_6
+# 143 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	waitmovement
+# 144 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	release
 	end
 
 
 Siltroottown_Indoor_Apothecary_Ali::
-# 94 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 149 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	lock
-# 95 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 150 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	faceplayer
-# 96 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 151 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	goto_if_unset FLAG_SILTROOTTOWN_STASH_SACK, Siltroottown_Indoor_Apothecary_Ali_11
 Siltroottown_Indoor_Apothecary_Ali_9:
-# 101 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 156 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	goto_if_set FLAG_SILTROOTTOWN_STASH_SACK, Siltroottown_Indoor_Apothecary_Ali_8
 Siltroottown_Indoor_Apothecary_Ali_6:
-# 123 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 178 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	goto_if_set FLAG_SILTROOTTOWN_STASH_SACK, Siltroottown_Indoor_Apothecary_Ali_5
 Siltroottown_Indoor_Apothecary_Ali_1:
-# 128 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 183 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	release
 	end
 
 Siltroottown_Indoor_Apothecary_Ali_2:
-# 97 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 152 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0
-# 98 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 153 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	msgbox Siltroottown_Indoor_Apothecary_Ali_Text_0, MSGBOX_AUTOCLOSE
-# 99 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 154 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	waitmessage
 	goto Siltroottown_Indoor_Apothecary_Ali_1
 
 Siltroottown_Indoor_Apothecary_Ali_3:
-# 102 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 157 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0
-# 103 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 158 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	msgbox Siltroottown_Indoor_Apothecary_Ali_Text_1, MSGBOX_AUTOCLOSE
-# 104 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 159 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	waitmessage
-# 105 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 160 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_2
-# 106 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 161 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	waitmovement
-# 107 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 162 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	delay 40
-# 108 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 163 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_6
-# 109 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 164 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	waitmovement
-# 110 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 165 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	delay 40
-# 111 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 166 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	applymovement 2, Siltroottown_Indoor_Apothecary_Ali_Movement_0
-# 112 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 167 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	waitmovement
-# 113 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 168 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	delay 40
-# 114 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 169 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_3
-# 115 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 170 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	waitmovement
-# 116 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 171 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	delay 40
-# 117 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 172 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	applymovement 2, Siltroottown_Indoor_Apothecary_Ali_Movement_1
-# 118 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 173 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0
-# 119 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 174 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	msgbox Siltroottown_Indoor_Apothecary_Ali_Text_2, MSGBOX_AUTOCLOSE
-# 120 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 175 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	waitmessage
 	goto Siltroottown_Indoor_Apothecary_Ali_1
 
 Siltroottown_Indoor_Apothecary_Ali_4:
-# 124 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 179 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0
-# 125 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 180 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	msgbox Siltroottown_Indoor_Apothecary_Ali_Text_3
-# 126 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 181 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	waitmessage
 	goto Siltroottown_Indoor_Apothecary_Ali_1
 
 Siltroottown_Indoor_Apothecary_Ali_5:
-# 123 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 178 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	goto_if_set FLAG_HIDE_SCOTT_AFTER_CONVO, Siltroottown_Indoor_Apothecary_Ali_4
 	goto Siltroottown_Indoor_Apothecary_Ali_1
 
 Siltroottown_Indoor_Apothecary_Ali_8:
-# 101 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 156 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	goto_if_unset FLAG_HIDE_SCOTT_AFTER_CONVO, Siltroottown_Indoor_Apothecary_Ali_3
 	goto Siltroottown_Indoor_Apothecary_Ali_6
 
 Siltroottown_Indoor_Apothecary_Ali_11:
-# 96 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 151 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	goto_if_unset FLAG_HIDE_SCOTT_AFTER_CONVO, Siltroottown_Indoor_Apothecary_Ali_2
 	goto Siltroottown_Indoor_Apothecary_Ali_9
 
 
-# 11 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 66 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_0:
-# 11 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 66 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	emote_question_mark
-# 11 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 66 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	face_down
 	step_end
 
-# 16 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 71 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_1:
-# 16 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 71 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_left
-# 16 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 71 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_down
 	step_end
 
-# 18 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 73 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_2:
-# 18 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 73 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	face_left
 	step_end
 
-# 22 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 77 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_3:
-# 22 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 77 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	face_down
 	step_end
 
-# 28 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 83 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_4:
-# 28 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 83 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_down
-# 28 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 83 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_down
-# 28 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 83 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_down
-# 28 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 83 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_down
-# 28 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 83 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_down
-# 28 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 83 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_right
-# 28 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 83 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_right
-# 28 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 83 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_right
-# 28 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 83 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	face_down
-# 28 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 83 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	emote_question_mark
 	step_end
 
-# 37 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 92 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_5:
-# 37 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 92 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_up
-# 37 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 92 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	face_right
 	step_end
 
-# 40 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 95 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_6:
-# 40 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 95 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	face_up
 	step_end
 
-# 46 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 101 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_7:
-# 46 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 101 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_down
-# 46 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 101 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_left
-# 46 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 101 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_left
-# 46 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 101 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_left
-# 46 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 101 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_up
-# 46 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 101 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_up
-# 46 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 101 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_up
-# 46 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 101 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_up
-# 46 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 101 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_slow_up
 	step_end
 
-# 65 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 120 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_8:
-# 65 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 120 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	emote_question_mark
 	step_end
 
-# 69 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 124 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_9:
-# 69 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 124 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_down
-# 69 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 124 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_down
-# 69 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 124 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_down
-# 69 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 124 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	face_right
 	step_end
 
-# 71 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 126 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_10:
-# 71 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 126 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_right
-# 71 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 126 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	face_left
 	step_end
 
-# 76 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 131 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_11:
-# 76 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 131 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	walk_down
 	step_end
 
-# 111 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 166 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 Siltroottown_Indoor_Apothecary_Ali_Movement_0:
-# 111 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 166 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	face_right
 	step_end
 
-# 117 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 172 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 Siltroottown_Indoor_Apothecary_Ali_Movement_1:
-# 117 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 172 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	face_player
 	step_end
 
+SiltrootTown_Ali_Employer_Text_0:
+# 10 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	.string "Hi there. A new batch just arrived.\n"
+	.string "How can I help?$"
+
+SiltrootTown_Elder_Dialogue_Text_0:
+# 29 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	.string "My doctor prescribed me all sorts of\n"
+	.string "pills for my stiff hip... but Ali's\l"
+	.string "'special brownies' are the only thing\l"
+	.string "that work.\p"
+	.string "I feel twenty years younger... and very,\n"
+	.string "very hungry.\p"
+	.string "Do you have any cookies, dear?$"
+
+SiltrootTown_Woman_Dialogue_Text_0:
+# 38 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	.string "I don't even smoke.\p"
+	.string "I just come here to sit in the fog.\p"
+	.string "It is the only place in town where\n"
+	.string "nobody asks me to do anything.\p"
+	.string "It's like a sanctuary... a very smelly\n"
+	.string "sanctuary.$"
+
+SiltrootTown_Screen_Dialogue_Text_0:
+# 47 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	.string "Eight hundred for a gram of OG Kush?!\p"
+	.string "Inflation is hitting us hard.\p"
+	.string "I might have to settle for the Lemon\n"
+	.string "Haze mix this week.\p"
+	.string "It's weaker, but it leaves enough money\n"
+	.string "for snacks.$"
+
+SiltrootTown_Plant_Dialogue_Text_0:
+# 56 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+	.string "Look at the leaves on this one.\p"
+	.string "They call it 'Indica'.\p"
+	.string "Ali says if you stare at it long enough,\n"
+	.string "you can see the cosmos.\p"
+	.string "I have been staring for ten minutes and\n"
+	.string "I only see a very fuzzy caterpie.$"
+
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0:
-# 13 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 68 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "Ali$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_1:
-# 14 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 69 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "Whoa... enter the event horizon, my\n"
 	.string "friend.\p"
 	.string "You have pulled into my gravity well.\p"
@@ -417,11 +546,11 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_1:
 	.string "with hydroponics that rival NASA specs.$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_2:
-# 19 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 74 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "Giel$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_3:
-# 20 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 75 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "cough... COUGH!\p"
 	.string "Don't let him start on the space stuff,\n"
 	.string "kid.\p"
@@ -432,7 +561,7 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_3:
 	.string "further away.$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_4:
-# 25 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 80 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "Wait... the vibrations are shifting.\p"
 	.string "Daan sent you?\p"
 	.string "Whoa. That guy is intense.\p"
@@ -444,7 +573,7 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_4:
 	.string "bring me a sample of that OG Kush.$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_5:
-# 33 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 88 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "Slowbro, abort launch.\p"
 	.string "Our guest is grounded.\p"
 	.string "More for us, right?\p"
@@ -453,13 +582,13 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_5:
 	.string "black holes isn't going to write itself.$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_6:
-# 44 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 99 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "Thanks Slowbro. These herbs will do me\n"
 	.string "good.\p"
 	.string "cough... COUGH!$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_7:
-# 50 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 105 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "So you need a ride to Lion's Arch?\p"
 	.string "That frozen wasteland up north?\p"
 	.string "Why would anyone want to go there?\p"
@@ -467,7 +596,7 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_7:
 	.string "and corporate shills.$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_8:
-# 54 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 109 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "It is a long trip across the wild ocean.\p"
 	.string "You need my neighbor, Scott.\p"
 	.string "He... moves inventory for me.\p"
@@ -477,7 +606,7 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_8:
 	.string "I mean... high-quality fertilizer. Yeah.$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_9:
-# 57 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 112 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "I believe in Karma. Celestial mechanics.\p"
 	.string "I help you, you help me.\p"
 	.string "I have a client in Lion's Arch.\p"
@@ -490,7 +619,7 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_9:
 	.string "and tell him it is for the 'Ice Cold' run.$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_10:
-# 67 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 122 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "...\p"
 	.string "Wait... that's my phone?\p"
 	.string "Oh for the love of...\p"
@@ -504,14 +633,14 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_10:
 	.string "system grind you down.$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_11:
-# 74 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 129 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "Oh... if you are ever visit Hezik Town,\n"
 	.string "let me know.\p"
 	.string "Maybe you can visit one of my history\n"
 	.string "lectures, girls love that shit.$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_12:
-# 85 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 140 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "He loves that woman, even if the\n"
 	.string "thermodynamics of their relationship\l"
 	.string "are unstable.\p"
@@ -522,7 +651,7 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_12:
 	.string "coming.$"
 
 Siltroottown_Indoor_Apothecary_Ali_Text_0:
-# 98 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 153 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "Follow coastline south, there you'll\n"
 	.string "find a passage to a small shed.\p"
 	.string "Feel free to take any samples if you'd\n"
@@ -531,7 +660,7 @@ Siltroottown_Indoor_Apothecary_Ali_Text_0:
 	.string "the strongest I got hehe.$"
 
 Siltroottown_Indoor_Apothecary_Ali_Text_1:
-# 103 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 158 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "Ah, the satellite returns to base.\p"
 	.string "You smell like swamp water... and\n"
 	.string "success.\p"
@@ -545,7 +674,7 @@ Siltroottown_Indoor_Apothecary_Ali_Text_1:
 	.string "'hydro-garden project'.$"
 
 Siltroottown_Indoor_Apothecary_Ali_Text_2:
-# 119 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 174 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "Okay, listen closely.\p"
 	.string "Go to the house at the very end of the\n"
 	.string "mudflat, right next to mine.\p"
@@ -559,7 +688,7 @@ Siltroottown_Indoor_Apothecary_Ali_Text_2:
 	.string "Good luck kiddo.$"
 
 Siltroottown_Indoor_Apothecary_Ali_Text_3:
-# 125 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
+# 180 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "So you've met scott?\p"
 	.string "He's a little bit of weirdo, I know, but\n"
 	.string "he gets the job done.\p"

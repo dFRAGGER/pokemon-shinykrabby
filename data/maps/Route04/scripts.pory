@@ -6,3 +6,237 @@ script Route04_Sign_DarkCave {
     waitmessage
     release
 }
+
+script Route04_HikerTired_Convo {
+    lock
+    faceplayer
+    msgbox(format("I thought...... escaping the mud would be the hard part......\pBut gravity is winning this battle! My belly is pulling me down faster than my legs can push up!"))
+    waitmessage
+    release
+    end
+}
+
+script Route04_OldLady_Convo {
+    lock
+    faceplayer
+    msgbox(format("It is pitch black inside that cave!\pI can hear the flapping of a thousand Zubat wings echoing from the entrance.\pI think I will just stand here until the sun somehow rises underground."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script Route04_ElderMen_Convo {
+    lock
+    faceplayer
+    msgbox(format("You see that dark cave mouth over there? The water runs deep inside it.\pLegend says it was a sanctuary for ancient shell Pokémon, creatures with rock-hard armor.\pFishermen prized them, but greed is a terrible thing... Overfishing wiped them out.\pI saw the very last one hiding in those shadows sixty years ago, back when I was just a boy."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script Route04_Totodile_Convo {
+    lock
+    faceplayer
+    msgbox(format("Hey, watch your ankles while you walk through here.\pI swear I saw some little blue monsters snapping their jaws at a Magikarp earlier.\pThey had red ridges on their backs and looked way too energetic for a swamp like this."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script Route04_LadySwimming_Convo {
+    lock
+    faceplayer
+    msgbox(format("Oh, hello there dearie! Don't look at me like that!\pThe mud in these mangroves is absolutely full of minerals. It works wonders for your joints!\pWhy don't you take off those shoes and hop in? It is only a little bit slimy!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script Route04_MenLost_Convo {
+    lock
+    faceplayer
+    msgbox(format("Ugh, squish, squash... My socks are completely soaked!\pI am just trying to find the dry path to Siltroot Town, but these roots make this place feel like a maze.\pI try to go left, I hit water. I try to go right, I hit mud. How do people live here?"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script Route04_Trainer_Alfred {
+    trainerbattle_single(TRAINER_ALFRED, Route04_Text_AlfredIntro, Route04_Text_AlfredDefeated)
+    msgbox(Route04_Text_AlfredPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route04_Text_AlfredIntro {
+    format("I spotted these little guys in the mangrove from way up here!")
+}
+
+text Route04_Text_AlfredDefeated {
+    format("My new team was not ready for the climb!")
+}
+
+text Route04_Text_AlfredPostBattle {
+    format("The mangrove roots below are full of life. You should go take a look if you are not afraid of getting muddy.")
+}
+
+script Route04_Trainer_Deryck {
+    trainerbattle_single(TRAINER_DERYCK, Route04_Text_DeryckIntro, Route04_Text_DeryckDefeated)
+    msgbox(Route04_Text_DeryckPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route04_Text_DeryckIntro {
+    format("Hiyah! Ouch! This rock is harder than it looks. Hey, you look like a good target practice!")
+}
+
+text Route04_Text_DeryckDefeated {
+    format("You shattered my confidence faster than I shatter rocks.")
+}
+
+text Route04_Text_DeryckPostBattle {
+    format("I am training my fists to be as hard as steel. One day I will punch through a mountain!")
+}
+
+script Route04_Trainer_Leah {
+    trainerbattle_single(TRAINER_LEAH, Route04_Text_LeahIntro, Route04_Text_LeahDefeated)
+    msgbox(Route04_Text_LeahPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route04_Text_LeahIntro {
+    format("My Eevee has so much potential, just watch!")
+}
+
+text Route04_Text_LeahDefeated {
+    format("We still have a lot of growing to do.")
+}
+
+text Route04_Text_LeahPostBattle {
+    format("I cannot decide what I want my Eevee to evolve into. There are just too many choices!")
+}
+
+script Route04_Trainer_Fredrick {
+    trainerbattle_single(TRAINER_FREDRICK, Route04_Text_FredrickIntro, Route04_Text_FredrickDefeated)
+    msgbox(Route04_Text_FredrickPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route04_Text_FredrickIntro {
+    format("Shh! Keep your voice down. I think I saw a rare bug crawling in the mudflats.")
+}
+
+text Route04_Text_FredrickDefeated {
+    format("Aww, all the commotion scared it away!")
+}
+
+text Route04_Text_FredrickPostBattle {
+    format("Some bugs love the tall grass, but the really interesting ones like to hide in the sticky mud. You just have to get your hands dirty.")
+}
+
+script Route04_Trainer_Matt {
+    trainerbattle_single(TRAINER_MATT, Route04_Text_MattIntro, Route04_Text_MattDefeated)
+    msgbox(Route04_Text_MattPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route04_Text_MattIntro {
+    format("Feel the resistance! Running on sand builds explosive leg muscles!")
+}
+
+text Route04_Text_MattDefeated {
+    format("I hit the wall! No energy left.")
+}
+
+text Route04_Text_MattPostBattle {
+    format("The sand sinks under your feet, making you work twice as hard. That is the secret to my speed.")
+}
+
+script Route04_Trainer_Daisy {
+    trainerbattle_single(TRAINER_DAISY, Route04_Text_DaisyIntro, Route04_Text_DaisyDefeated)
+    msgbox(Route04_Text_DaisyPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route04_Text_DaisyIntro {
+    format("I am doing interval training. Let's see if a battle can keep my heart rate up!")
+}
+
+text Route04_Text_DaisyDefeated {
+    format("Phew! That was a high-intensity workout.")
+}
+
+text Route04_Text_DaisyPostBattle {
+    format("My boyfriend Matt is training further down the beach. He says the sand is good for his calves, but I think he just likes the view.")
+}
+
+script Route04_Trainer_Zander {
+    trainerbattle_single(TRAINER_ZANDER, Route04_Text_ZanderIntro, Route04_Text_ZanderDefeated)
+    msgbox(Route04_Text_ZanderPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route04_Text_ZanderIntro {
+    format("I stepped off my ship to stretch my legs and found these two wriggling in the mud!")
+}
+
+text Route04_Text_ZanderDefeated {
+    format("Abandon ship! My fresh catch was not ready for battle.")
+}
+
+text Route04_Text_ZanderPostBattle {
+    format("The mud in these mangroves is thick and sticky. It is perfect for Barboach, but terrible for my boots.")
+}
+
+script Route04_Trainer_Arielle {
+    trainerbattle_single(TRAINER_ARIELLE, Route04_Text_ArielleIntro, Route04_Text_ArielleDefeated)
+    msgbox(Route04_Text_AriellePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route04_Text_ArielleIntro {
+    format("Hey! You are blocking my view. I am trying to focus on that waterfall.")
+}
+
+text Route04_Text_ArielleDefeated {
+    format("My vision is blurry now...")
+}
+
+text Route04_Text_AriellePostBattle {
+    format("Look closely at the water crashing down in the distance. I swear I saw a shadow slip behind the curtain of water. Is there a cave entrance back there?")
+}
+
+script Route04_Trainer_Archie {
+    trainerbattle_single(TRAINER_ARCHIE, Route04_Text_ArchieIntro, Route04_Text_ArchieDefeated)
+    msgbox(Route04_Text_ArchiePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route04_Text_ArchieIntro {
+    format("Fufufu! One day, the sea will cover everything, and I will be its king! Behold the power of the tides!")
+}
+
+text Route04_Text_ArchieDefeated {
+    format("Grrr! The land... it is too much land!")
+}
+
+text Route04_Text_ArchiePostBattle {
+    format("I am going to form a super cool team when I grow up. We will wear blue bandanas and worship the ancient gods of the sea! You will see!")
+}
+
+script Route04_Trainer_Edgard {
+    trainerbattle_single(TRAINER_EDGARD, Route04_Text_EdgardIntro, Route04_Text_EdgardDefeated)
+    msgbox(Route04_Text_EdgardPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route04_Text_EdgardIntro {
+    format("Sacre bleu! Do not step on ze ingredients! I am looking for ze perfect catch for my bisque.")
+}
+
+text Route04_Text_EdgardDefeated {
+    format("My soufflé has collapsed!")
+}
+
+text Route04_Text_EdgardPostBattle {
+    format("Zis Qwilfish is exquisite, no? One must be very careful preparing it, or zap! Ze poison will get you. A true chef loves a little danger.")
+}

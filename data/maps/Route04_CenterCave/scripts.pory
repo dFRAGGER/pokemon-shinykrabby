@@ -1,1 +1,10 @@
 mapscripts Route04_CenterCave_MapScripts {}
+
+script Route04_CenterCave_Geologist {
+    lock
+    faceplayer
+    msgbox(format("The dark blue shade of this water indicates a massive vertical drop right here.\pI wouldn't try swimming without heavy equipment unless you have a death wish."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}

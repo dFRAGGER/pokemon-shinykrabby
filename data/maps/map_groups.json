@@ -41,7 +41,8 @@
     "gMapGroup_IndoorMistCity",
     "gMapGroup_DeepCloudForest",
     "gMapGroup_IndoorSiltrootTown",
-    "gMapGroup_IndoorDungeons"
+    "gMapGroup_IndoorDungeons",
+    "gMapGroup_LionsarchCity"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -711,10 +712,16 @@
     "SiltrootTown_Indoor_FacultyDefector",
     "SiltrootTown_Indoor_Healer",
     "SiltrootTown_Indoor_House4",
-    "SiltrootTown_Indoor_Shed"
+    "SiltrootTown_Indoor_Shed",
+    "SiltrootTown_Indoor_Pokecenter_1F"
   ],
   "gMapGroup_IndoorDungeons": [
     "Batcave",
     "Route04_CenterCave"
+  ],
+  "gMapGroup_LionsarchCity": [
+    "LionarchsCity_Indoor_Mart",
+    "LionsarchCity_PokemonCenter_1F",
+    "LionsarchCity_PokemonCenter_2F"
   ]
 }

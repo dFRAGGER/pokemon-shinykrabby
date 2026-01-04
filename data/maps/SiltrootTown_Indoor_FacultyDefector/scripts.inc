@@ -22,7 +22,7 @@ SiltrootTown_Indoor_Scott::
 # 95 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
 	goto_if_unset FLAG_SILTROOTTOWN_STASH_SACK, SiltrootTown_Indoor_Scott_3
 SiltrootTown_Indoor_Scott_1:
-# 107 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
+# 108 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
 	release
 	end
 
@@ -82,13 +82,15 @@ SiltrootTown_Indoor_Scott_20:
 
 SiltrootTown_Indoor_Scott_3:
 # 96 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
-	msgbox SiltrootTown_Indoor_Scott_Text_6, MSGBOX_AUTOCLOSE
+	setspeaker SiltrootTown_Indoor_Scott_Text_0
 # 97 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
-	waitmessage
+	msgbox SiltrootTown_Indoor_Scott_Text_6, MSGBOX_AUTOCLOSE
 # 98 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
+	waitmessage
+# 99 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
 	compare VAR_TEMP_0, 3
 	goto_if_eq SiltrootTown_Indoor_Scott_11
-# 102 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
+# 103 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
 	compare VAR_TEMP_0, 4
 	goto_if_eq SiltrootTown_Indoor_Scott_12
 	goto SiltrootTown_Indoor_Scott_1
@@ -136,16 +138,16 @@ SiltrootTown_Indoor_Scott_8:
 	goto SiltrootTown_Indoor_Scott_6
 
 SiltrootTown_Indoor_Scott_11:
-# 99 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
-	applymovement LOCALID_PLAYER, SiltrootTown_Indoor_Scott_Movement_16
 # 100 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
+	applymovement LOCALID_PLAYER, SiltrootTown_Indoor_Scott_Movement_16
+# 101 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
 	waitmovement
 	goto SiltrootTown_Indoor_Scott_1
 
 SiltrootTown_Indoor_Scott_12:
-# 103 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
-	applymovement LOCALID_PLAYER, SiltrootTown_Indoor_Scott_Movement_17
 # 104 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
+	applymovement LOCALID_PLAYER, SiltrootTown_Indoor_Scott_Movement_17
+# 105 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
 	waitmovement
 	goto SiltrootTown_Indoor_Scott_1
 
@@ -394,15 +396,15 @@ SiltrootTown_Indoor_Scott_Movement_15:
 	face_down
 	step_end
 
-# 99 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
+# 100 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
 SiltrootTown_Indoor_Scott_Movement_16:
-# 99 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
+# 100 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
 	jump_left
 	step_end
 
-# 103 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
+# 104 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
 SiltrootTown_Indoor_Scott_Movement_17:
-# 103 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
+# 104 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
 	jump_down
 	step_end
 
@@ -454,6 +456,6 @@ SiltrootTown_Indoor_Scott_Text_5:
 	.string "Lets move...$"
 
 SiltrootTown_Indoor_Scott_Text_6:
-# 96 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
+# 97 "data/maps/SiltrootTown_Indoor_FacultyDefector/scripts.pory"
 	.string "No answers?\n"
 	.string "GET OUT! NOW!$"

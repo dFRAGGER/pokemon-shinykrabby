@@ -37,10 +37,6 @@ MtPyre_2F_EventScript_Leah::
 	msgbox MtPyre_2F_Text_LeahPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-MtPyre_2F_EventScript_Zander::
-	trainerbattle_single TRAINER_ZANDER, MtPyre_2F_Text_ZanderIntro, MtPyre_2F_Text_ZanderDefeat
-	msgbox MtPyre_2F_Text_ZanderPostBattle, MSGBOX_AUTOCLOSE
-	end
 
 MtPyre_2F_Text_MemoriesOfSkitty:
 	.string "Memories of my darling SKITTY…\n"

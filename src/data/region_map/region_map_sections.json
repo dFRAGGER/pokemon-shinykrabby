@@ -1378,6 +1378,22 @@
       "y": 6,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_ROUTE_011",
+      "name": "Route 11",
+      "x": 7,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ROUTE_012",
+      "name": "Route 12",
+      "x": 7,
+      "y": 6,
+      "width": 1,
+      "height": 1
     }
   ]
 }

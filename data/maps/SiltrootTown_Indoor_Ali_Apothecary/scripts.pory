@@ -4,6 +4,61 @@ mapscripts SiltrootTown_Indoor_Ali_Apothecary_MapScripts {
     ]
 }
 
+script SiltrootTown_Ali_Employer {
+    lock
+	faceplayer
+	msgbox(format("Hi there. A new batch just arrived.\n How can I help?"))
+	waitmessage
+	pokemart(SiltrootTown_Mart_Items)
+	msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+	release
+	end
+    
+}
+
+mart SiltrootTown_Mart_Items {
+    ITEM_LEPPA_BERRY
+	ITEM_PECHA_BERRY
+	ITEM_ORAN_BERRY
+    ITEM_SITRUS_BERRY
+}
+
+script SiltrootTown_Elder_Dialogue {
+    lock
+    faceplayer
+    msgbox(format("My doctor prescribed me all sorts of pills for my stiff hip... but Ali's 'special brownies' are the only thing that work.\pI feel twenty years younger... and very, very hungry.\pDo you have any cookies, dear?"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script SiltrootTown_Woman_Dialogue {
+    lock
+    faceplayer
+    msgbox(format("I don't even smoke.\pI just come here to sit in the fog.\pIt is the only place in town where nobody asks me to do anything.\pIt's like a sanctuary... a very smelly sanctuary."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script SiltrootTown_Screen_Dialogue {
+    lock
+    faceplayer
+    msgbox(format("Eight hundred for a gram of OG Kush?!\pInflation is hitting us hard.\pI might have to settle for the Lemon Haze mix this week.\pIt's weaker, but it leaves enough money for snacks."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script SiltrootTown_Plant_Dialogue {
+    lock
+    faceplayer
+    msgbox(format("Look at the leaves on this one.\pThey call it 'Indica'.\pAli says if you stare at it long enough, you can see the cosmos.\pI have been staring for ten minutes and I only see a very fuzzy caterpie."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
 script SiltrootTown_Indoor_Apothecary_Ali_Giel {
     lock
     setvar(VAR_SILTROOT_TOWN_STATE,1)

@@ -1286,3 +1286,11 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/SiltrootTown_Indoor_Shed/scripts.inc"
 
 	.include "data/maps/Route012/scripts.inc"
+
+	.include "data/maps/LionarchsCity_Indoor_Mart/scripts.inc"
+
+	.include "data/maps/LionsarchCity_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/LionsarchCity_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/SiltrootTown_Indoor_Pokecenter_1F/scripts.inc"

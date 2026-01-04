@@ -230,6 +230,12 @@
       "map": "MAP_LIONSARCH_CITY",
       "x": 83,
       "y": 27
+    },
+    {
+      "id": "HEAL_LOCATION_SILTROOT_TOWN",
+      "map": "MAP_SILTROOT_TOWN",
+      "x": 43,
+      "y": 49
     }
   ]
 }

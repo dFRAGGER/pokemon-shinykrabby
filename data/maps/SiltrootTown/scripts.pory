@@ -7,6 +7,68 @@ script SiltrootTown_Sign_AliApothecary {
     release
 }
 
+script SiltrootTown_Scott_Boatride {
+    lockall
+    setflag(FLAG_HIDE_SCOTT_LIONSARCH_CITY)
+    getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
+    faceplayer
+    setspeaker("Scott")
+    msgbox(format("Nobody saw you right?\pLets move before the sattelite flies over.\pThe boat ride will be a rough one."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    setobjectsubpriority(12, MAP_SILTROOT_TOWN, 0)
+    setobjectsubpriority(LOCALID_PLAYER, MAP_SILTROOT_TOWN, 0)
+    applymovement(12, moves(walk_right))
+    waitmovement
+    removeobject(12)
+    if(var(VAR_TEMP_0)==22 && var(VAR_TEMP_1)==20){
+        applymovement(LOCALID_PLAYER,moves(walk_right*2))
+    }
+    elif(var(VAR_TEMP_0)== 23 && var(VAR_TEMP_1)==19){
+        applymovement(LOCALID_PLAYER,moves(walk_down walk_right))
+    }
+    elif(var(VAR_TEMP_0)== 23 && var(VAR_TEMP_1)==21){
+        applymovement(LOCALID_PLAYER,moves(walk_up walk_right))      
+    }
+    waitmovement
+    hideobjectat(LOCALID_PLAYER, MAP_SILTROOT_TOWN)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
+	playbgm(MUS_SAILING, FALSE)
+    applymovement(1, Siltroottown_Boat_Ride_To_Lionsarch)
+    applymovement(LOCALID_PLAYER, Siltroottown_Boat_Ride_To_Lionsarch)
+    waitmovement
+    goto(SiltrootTown_Arrive_Boatride)
+}
+
+script SiltrootTown_Arrive_Boatride {
+    delay(50)
+    applymovement(LOCALID_PLAYER,moves(walk_up))
+    waitmovement
+    call(Common_EventScript_StopBrineysBoatMusic)
+    showobjectat(LOCALID_PLAYER, MAP_SILTROOT_TOWN)
+    applymovement(LOCALID_PLAYER,moves(walk_up face_down))
+    waitmovement
+    setobjectxyperm(7,9,59)
+    addobject(7)
+    setobjectsubpriority(7, MAP_SILTROOT_TOWN,0)
+    clearflag(FLAG_HIDE_SCOTT_LIONSARCH_CITY)
+    applymovement(7,moves(walk_up))
+    call(Common_EventScript_StopBrineysBoatMusic)
+    setflag(FLAG_HIDE_SCOTT_OUTSIDE_BOAT)
+    resetobjectsubpriority(LOCALID_PLAYER, MAP_SILTROOT_TOWN)
+    resetobjectsubpriority(7, MAP_LIONSARCH_CITY)
+    setspeaker("Scott")
+    msgbox(format("Touchdown. We are in the blind spot.\pMy scanners show a gap in the harbor security grid for exactly forty-five seconds.\pListen fast because I am burning fuel here.\pI am not going into the city.\pToo many facial recognition towers.\pYou have to take the package to the client yourself.\pHe is a DJ.\pPeter.\pIf you hear loud, old-school disco music, that is the drop-off point.\pNow get moving!\pDon't look back.\pIf anyone asks, we never met.\pI was never here.\pThis boat doesn't exist!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(7, moves(walk_down))
+    waitmovement
+    removeobject(7)
+    applymovement(3, moves(walk_fast_down*7))
+    waitmovement
+    removeobject(3)
+    setflag(FLAG_HIDE_SCOTT_LIONSARCH_CITY)
+    end
+}
+
 
 
 script Siltroottown_Youth_Outide_Ali_Shop_1 {
@@ -121,13 +183,13 @@ script Siltroottown_Guard_shed {
     waitmovement
     msgbox(format("...\pOh? Ali sent you?\pFor the 'Project Star-Shot' shipment?\pAlright, you're clear."),MSGBOX_AUTOCLOSE)
     waitmessage    
-    if(var(VAR_TEMP_0) == 52 && var(VAR_TEMP_1) == 65) {
+    if(var(VAR_TEMP_0) == 62 && var(VAR_TEMP_1) == 65) {
         applymovement(20, moves(walk_down face_up))
         waitmovement
         applymovement(LOCALID_PLAYER, moves(walk_left face_down))
         waitmovement
     }
-    elif(var(VAR_TEMP_0) == 51 && var(VAR_TEMP_1) == 66) {
+    elif(var(VAR_TEMP_0) == 61 && var(VAR_TEMP_1) == 66) {
         applymovement(20, moves(walk_right face_left))
         waitmovement
         applymovement(LOCALID_PLAYER, moves(walk_up face_right))
@@ -149,4 +211,331 @@ script Siltroottown_Guard_shed {
     }
     release
     end
+}
+
+movement Siltroottown_Boat_Ride_To_Lionsarch {
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_right
+    walk_fast_right
+    walk_fast_right
+    walk_fast_right
+    walk_fast_right
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_right
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_right
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    step_end
 }

@@ -93,6 +93,7 @@ script SiltrootTown_Indoor_Scott {
 
     }
     elif(!flag(FLAG_SILTROOTTOWN_STASH_SACK)) {
+        setspeaker("Scott")
         msgbox(format("No answers?\nGET OUT! NOW!"),MSGBOX_AUTOCLOSE)
         waitmessage
         if(var(VAR_TEMP_0)==3){

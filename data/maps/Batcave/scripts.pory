@@ -18,3 +18,48 @@ script Batcave_rockfall_Machoke {
     release
     end
 }
+
+script BatCave_Trainer_Jeffry {
+    trainerbattle_single(TRAINER_JEFFRY, BatCave_Text_JeffryIntro, BatCave_Text_JeffryDefeated)
+    msgbox(BatCave_Text_JeffryPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BatCave_Text_JeffryIntro {
+    format("Quiet! You will scare away the cave fish.")
+}
+
+text BatCave_Text_JeffryDefeated {
+    format("You made such a splash I lost my concentration.")
+}
+
+text BatCave_Text_JeffryPostBattle {
+    format("Fishing in the dark is an art form. You have to feel the water, not just see it.")
+}
+
+script BatCave_Trainer_Wilfred {
+    trainerbattle_single(TRAINER_WILFRED, BatCave_Text_WilfredIntro, BatCave_Text_WilfredDefeated)
+    msgbox(BatCave_Text_WilfredPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BatCave_Text_WilfredIntro {
+    format("My Onix loves the dark. It makes his rocky hide shine!")
+}
+
+text BatCave_Text_WilfredDefeated {
+    format("My defenses crumbled just like loose gravel.")
+}
+
+text BatCave_Text_WilfredPostBattle {
+    format("Hiking in caves is efficient. No need to worry about the weather when you have a roof of stone.")
+}
+
+script Batcave_Scientist_Convo {
+    lock
+    faceplayer
+    msgbox(format("Remarkable... without any light source, these Dunsparce navigate solely by sensing subtle air currents.\pPlease keep your flashlight down, you are ruining my control variables!"))
+    waitmessage
+    release
+    end
+}

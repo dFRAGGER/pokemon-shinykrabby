@@ -1,0 +1,58 @@
+mapscripts SiltrootTown_Indoor_Pokecenter_1F_MapScripts {        
+    MAP_SCRIPT_ON_TRANSITION{
+        call(Siltroottown_PokemonCenter_1F_OnTransition)
+    }    
+    MAP_SCRIPT_ON_RESUME{
+        call(CableClub_OnResume)
+    }
+}
+
+script Siltroottown_PokemonCenter_1F_OnTransition {
+    setrespawn(HEAL_LOCATION_SILTROOT_TOWN)
+    end
+}
+
+script Siltroottown_PokemonCenter_1F_EventScript_Nurse {
+	setvar(VAR_0x800B, LOCALID_MISTCITY_NURSE) 
+	call (Common_EventScript_PkmnCenterNurse)
+	waitmessage
+    waitbuttonpress
+    release
+    end
+	
+}
+script SiltrootTown_Indoor_Pokecenter_1F_Captain {
+    lock
+    faceplayer
+    msgbox(format("That storm nearly claimed my ship, but we made it to port.\pLet the crew rest; they have earned a solid twelve hours of sleep."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script SiltrootTown_Indoor_Pokecenter_1F_Sailor1 {
+    lock
+    faceplayer
+    msgbox(format("The ground stopped moving hours ago, but my legs still feel like jelly.\pI have never been so happy to see a Nurse Joy in my life."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script SiltrootTown_Indoor_Pokecenter_1F_Sailor2 {
+    lock
+    faceplayer
+    msgbox(format("The waves out there were taller than the mast!\pIt was so rough that even my Water-type Pokémon started getting seasick."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script SiltrootTown_Indoor_Pokecenter_1F_Cook {
+    lock
+    faceplayer
+    msgbox(format("Try chopping carrots when the ship is tilting forty-five degrees!\pI think most of the crew's dinner ended up on the kitchen ceiling."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}

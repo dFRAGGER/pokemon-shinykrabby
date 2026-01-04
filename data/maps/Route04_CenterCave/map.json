@@ -13,10 +13,24 @@
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 6,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route04_CenterCave_Geologist",
+      "flag": "0"
+    }
+  ],
   "warp_events": [
     {
-      "x": 12,
+      "x": 7,
       "y": 23,
       "elevation": 0,
       "dest_map": "MAP_ROUTE04",
