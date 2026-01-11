@@ -1294,3 +1294,23 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/LionsarchCity_PokemonCenter_2F/scripts.inc"
 
 	.include "data/maps/SiltrootTown_Indoor_Pokecenter_1F/scripts.inc"
+
+	.include "data/maps/Route02_Indoor_Ranger_House/scripts.inc"
+
+	.include "data/maps/LionsarchCity_Indoor_VisitorCenter/scripts.inc"
+
+	.include "data/maps/LionsarchCity_Indoor_House1/scripts.inc"
+
+	.include "data/maps/LionsarchCity_Indoor_House2/scripts.inc"
+
+	.include "data/maps/LionsarchCity_Indoor_House3/scripts.inc"
+
+	.include "data/maps/LionsarchCity_Indoor_House4/scripts.inc"
+
+	.include "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.inc"
+
+	.include "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.inc"
+
+	.include "data/maps/MarshDukeCity/scripts.inc"
+
+	.include "data/maps/Route014/scripts.inc"

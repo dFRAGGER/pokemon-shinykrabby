@@ -42,7 +42,8 @@
     "gMapGroup_DeepCloudForest",
     "gMapGroup_IndoorSiltrootTown",
     "gMapGroup_IndoorDungeons",
-    "gMapGroup_LionsarchCity"
+    "gMapGroup_LionsarchCity",
+    "gMapGroup_Indoor_Route02"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -656,7 +657,9 @@
     "Route09_SecretWaterSource",
     "Route09_DeepForestCore",
     "Route011",
-    "Route012"
+    "Route012",
+    "MarshDukeCity",
+    "Route014"
   ],
   "gMapGroup_IndooErpusCity": [
     "LabJariIndoor",
@@ -722,6 +725,16 @@
   "gMapGroup_LionsarchCity": [
     "LionarchsCity_Indoor_Mart",
     "LionsarchCity_PokemonCenter_1F",
-    "LionsarchCity_PokemonCenter_2F"
+    "LionsarchCity_PokemonCenter_2F",
+    "LionsarchCity_Indoor_VisitorCenter",
+    "LionsarchCity_Indoor_House1",
+    "LionsarchCity_Indoor_House2",
+    "LionsarchCity_Indoor_House3",
+    "LionsarchCity_Indoor_House4",
+    "LionsarchCity_Indoor_PeterHouse",
+    "LionsarchCity_Indoor_PeterBasementParty"
+  ],
+  "gMapGroup_Indoor_Route02": [
+    "Route02_Indoor_Ranger_House"
   ]
 }

@@ -24,7 +24,7 @@ Siltroottown_PokemonCenter_1F_OnTransition::
 
 Siltroottown_PokemonCenter_1F_EventScript_Nurse::
 # 16 "data/maps/SiltrootTown_Indoor_Pokecenter_1F/scripts.pory"
-	setvar VAR_0x800B, LOCALID_MISTCITY_NURSE
+	setvar VAR_0x800B, LOCALID_SILTROOT_TOWN_NURSE
 # 17 "data/maps/SiltrootTown_Indoor_Pokecenter_1F/scripts.pory"
 	call Common_EventScript_PkmnCenterNurse
 # 18 "data/maps/SiltrootTown_Indoor_Pokecenter_1F/scripts.pory"

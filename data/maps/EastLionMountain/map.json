@@ -15,12 +15,17 @@
   "connections": [
     {
       "map": "MAP_ROUTE06",
-      "offset": -32,
+      "offset": 0,
       "direction": "down"
     },
     {
       "map": "MAP_BIKE_PARK",
       "offset": -46,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_WEST_LION_MOUNTAIN",
+      "offset": 0,
       "direction": "left"
     }
   ],

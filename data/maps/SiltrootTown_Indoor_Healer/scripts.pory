@@ -1,1 +1,19 @@
 mapscripts SiltrootTown_Indoor_Healer_MapScripts {}
+
+script SiltrootTown_Indoor_2F_Sailor {
+    lock
+    faceplayer
+    msgbox(format("Ten years ago, you couldn't find a single empty bed here because the fishing was so good.\pNow, with the ecosystem collapsing, the silence in this dormitory is louder than the storms outside."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script SiltrootTown_Indoor_2F_Nurse {
+    lock
+    faceplayer
+    msgbox(format("I ensure these sheets are crisp and fresh every single day, no matter what.\pIt is getting harder to keep this floor open, though... the funding just isn't what it used to be."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}

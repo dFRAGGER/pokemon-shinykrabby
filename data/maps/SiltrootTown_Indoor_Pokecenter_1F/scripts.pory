@@ -13,14 +13,14 @@ script Siltroottown_PokemonCenter_1F_OnTransition {
 }
 
 script Siltroottown_PokemonCenter_1F_EventScript_Nurse {
-	setvar(VAR_0x800B, LOCALID_MISTCITY_NURSE) 
+	setvar(VAR_0x800B, LOCALID_SILTROOT_TOWN_NURSE) 
 	call (Common_EventScript_PkmnCenterNurse)
 	waitmessage
     waitbuttonpress
     release
     end
-	
 }
+
 script SiltrootTown_Indoor_Pokecenter_1F_Captain {
     lock
     faceplayer

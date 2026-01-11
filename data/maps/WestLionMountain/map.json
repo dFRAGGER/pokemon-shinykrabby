@@ -29,8 +29,8 @@
       "direction": "right"
     },
     {
-      "map": "MAP_BIKE_PARK",
-      "offset": -46,
+      "map": "MAP_EAST_LION_MOUNTAIN",
+      "offset": 0,
       "direction": "right"
     }
   ],
