@@ -1314,3 +1314,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/MarshDukeCity/scripts.inc"
 
 	.include "data/maps/Route014/scripts.inc"
+
+	.include "data/maps/Route15/scripts.inc"

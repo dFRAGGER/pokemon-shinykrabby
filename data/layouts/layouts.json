@@ -5956,8 +5956,8 @@
     {
       "id": "LAYOUT_BIKE_PARK",
       "name": "BikePark_Layout",
-      "width": 200,
-      "height": 23,
+      "width": 100,
+      "height": 70,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -6208,14 +6208,26 @@
     {
       "id": "LAYOUT_ROUTE014",
       "name": "Route014_Layout",
-      "width": 60,
-      "height": 27,
+      "width": 93,
+      "height": 40,
       "border_width": 10,
       "border_height": 10,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Route014/border.bin",
       "blockdata_filepath": "data/layouts/Route014/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE15",
+      "name": "Route15_Layout",
+      "width": 20,
+      "height": 100,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/Route15/border.bin",
+      "blockdata_filepath": "data/layouts/Route15/map.bin"
     }
   ]
 }
