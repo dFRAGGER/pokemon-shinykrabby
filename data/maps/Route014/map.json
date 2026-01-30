@@ -17,6 +17,11 @@
       "map": "MAP_MARSH_DUKE_CITY",
       "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_ROUTE013_2",
+      "offset": -80,
+      "direction": "left"
     }
   ],
   "object_events": [],

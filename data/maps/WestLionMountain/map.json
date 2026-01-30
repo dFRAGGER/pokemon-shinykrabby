@@ -24,13 +24,8 @@
       "direction": "left"
     },
     {
-      "map": "MAP_ROUTE06",
-      "offset": 54,
-      "direction": "right"
-    },
-    {
       "map": "MAP_EAST_LION_MOUNTAIN",
-      "offset": 0,
+      "offset": -2,
       "direction": "right"
     }
   ],

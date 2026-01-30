@@ -43,7 +43,8 @@
     "gMapGroup_IndoorSiltrootTown",
     "gMapGroup_IndoorDungeons",
     "gMapGroup_LionsarchCity",
-    "gMapGroup_Indoor_Route02"
+    "gMapGroup_Indoor_Route02",
+    "gMapGroup_IndoorMarshDuke"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -660,7 +661,10 @@
     "Route012",
     "MarshDukeCity",
     "Route014",
-    "Route15"
+    "Route15",
+    "Route016",
+    "Route013",
+    "Route013_2"
   ],
   "gMapGroup_IndooErpusCity": [
     "LabJariIndoor",
@@ -737,5 +741,8 @@
   ],
   "gMapGroup_Indoor_Route02": [
     "Route02_Indoor_Ranger_House"
+  ],
+  "gMapGroup_IndoorMarshDuke": [
+    "Marshduke_Indoor_Chatedral"
   ]
 }

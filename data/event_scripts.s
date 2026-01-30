@@ -1316,3 +1316,11 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route014/scripts.inc"
 
 	.include "data/maps/Route15/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Chatedral/scripts.inc"
+
+	.include "data/maps/Route016/scripts.inc"
+
+	.include "data/maps/Route013/scripts.inc"
+
+	.include "data/maps/Route013_2/scripts.inc"
