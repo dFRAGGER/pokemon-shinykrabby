@@ -664,7 +664,8 @@
     "Route15",
     "Route016",
     "Route013",
-    "Route013_2"
+    "Route013_2",
+    "Route017"
   ],
   "gMapGroup_IndooErpusCity": [
     "LabJariIndoor",
@@ -737,7 +738,8 @@
     "LionsarchCity_Indoor_House3",
     "LionsarchCity_Indoor_House4",
     "LionsarchCity_Indoor_PeterHouse",
-    "LionsarchCity_Indoor_PeterBasementParty"
+    "LionsarchCity_Indoor_PeterBasementParty",
+    "LionsarchCity_Indoor_Gym"
   ],
   "gMapGroup_Indoor_Route02": [
     "Route02_Indoor_Ranger_House"

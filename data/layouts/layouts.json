@@ -6208,7 +6208,7 @@
     {
       "id": "LAYOUT_ROUTE014",
       "name": "Route014_Layout",
-      "width": 140,
+      "width": 117,
       "height": 40,
       "border_width": 10,
       "border_height": 10,
@@ -6276,6 +6276,30 @@
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Route013_2/border.bin",
       "blockdata_filepath": "data/layouts/Route013_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE017",
+      "name": "Route017_Layout",
+      "width": 20,
+      "height": 100,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/Route017/border.bin",
+      "blockdata_filepath": "data/layouts/Route017/map.bin"
+    },
+    {
+      "id": "LAYOUT_LIONSARCH_CITY_INDOOR_GYM",
+      "name": "LionsarchCity_Indoor_Gym_Layout",
+      "width": 50,
+      "height": 50,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Cerulean_City",
+      "border_filepath": "data/layouts/LionsarchCity_Indoor_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/LionsarchCity_Indoor_Gym/map.bin"
     }
   ]
 }

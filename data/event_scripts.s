@@ -1324,3 +1324,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route013/scripts.inc"
 
 	.include "data/maps/Route013_2/scripts.inc"
+
+	.include "data/maps/Route017/scripts.inc"
+
+	.include "data/maps/LionsarchCity_Indoor_Gym/scripts.inc"
