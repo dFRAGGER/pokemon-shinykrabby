@@ -50,6 +50,14 @@ script Maasje_Sign_CrabHill {
     release
 }
 
+script Maasje_Tree_Boy_Cut {
+    lock
+    faceplayer
+    msgbox(format("The rain in Cloud Forest makes everything grow at a frightening speed.\pWe have to cut these trees down every single day because they just keep growing back!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
 script Maasje_Sign_NextRoute {
     lock
     msgbox(format("The Cloud Forest:\n Enter on own risk, or with a guide."))

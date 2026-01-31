@@ -3,8 +3,53 @@ mapscripts CrabhillEntrance_MapScripts {}
 script Crabhill_Jacob_in_need {
     applymovement(LOCALID_PLAYER, moves(walk_up*4 face_left))
     setspeaker("Jacob")
-    msgbox(format("HEY!\n HELP ME!\p I'M SO TIRED!\pATTACK THAT GOLDEN KRABBY OVER THERE!\pI CAN'T MOVE...\nNO, I MUST MOVE!!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("HEY!\n HELP ME!\p I'M SO TIRED!\pSTOP THAT MAN OVER THERE!\pHE IS BROADCASTING SOMETHING...\pI CAN'T MOVE...\nNO, I MUST MOVE!!"),MSGBOX_AUTOCLOSE)
     waitmessage    
+}
+
+script Crabhill_Faculty_Grunt_Signal {
+    lock
+    faceplayer
+    setspeaker("Faculty Grunt")
+    msgbox(format("Step back boy!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER,moves(jump_down face_up))
+    waitmovement
+    setspeaker("Faculty Grunt")
+    msgbox(format("Signal output nominal. All organic assets are oscillating in perfect synchronization.\pLook at this beautiful efficiency! This is the future of workforce optimization!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(34, moves(face_up emote_exclamation_mark))
+    waitmovement
+    setspeaker("Faculty Grunt")
+    msgbox(format("Wait. Anomaly detected.\pYou there, the gold variant. Your neural pathways are rejecting the command.\pCompliance is not optional. Receive the input!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(34, moves(walk_up))
+    waitmovement
+    setspeaker("Faculty Grunt")
+    msgbox(format("Why aren't you moving?!\pIncreasing signal intensity to maximum voltage! Obey!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_M_EXPLOSION)
+    fadescreen(FADE_TO_WHITE)
+    fadescreen(FADE_FROM_WHITE)
+    applymovement(34, moves(jump_down face_up))
+    waitmovement
+    setspeaker("Faculty Grunt")
+    msgbox(format("It... it deflected the carrier wave?!\pThe feedback loop just fried the transmitter circuits!\pThat carapace is acting like a mirror!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(34,moves(face_down))
+    waitmovement
+    setspeaker("Faculty Grunt")
+    msgbox(format("This data is completely anomalous!\pI am not paid enough for radioactive crustaceans!\pTactical retreat! Abort mission!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(jump_left face_down))
+    applymovement(34, moves(walk_fast_down*7))    
+    waitmovement
+    removeobject(34)
+    call(Won_or_Caught)
+    setvar(VAR_MEESTRECH_TOWN_STATE,1)
+    release
+    end
 }
 
 script Crabhill_Eventscript_ShinykrabbyEncounter {
@@ -30,13 +75,11 @@ script Crabhill_Eventscript_ShinykrabbyEncounter {
 }
 
 script Won_or_Caught{
-    applymovement(LOCALID_PLAYER,moves(jump_down*2 face_down))
-    applymovement(1, moves(walk_fast_down*10))
-    waitmovement
-    delay(60)
+    
     msgbox(format("The Krabby's seem to have snapped out of their confusion."),MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(31,moves(walk_fast_left*4))
+    
+    applymovement(31,moves(walk_fast_left*5))
     applymovement(30,moves(walk_fast_up*4))
     applymovement(29,moves(walk_fast_up*4))
     applymovement(32,moves(walk_fast_right*7))
@@ -49,8 +92,10 @@ script Won_or_Caught{
     applymovement(22,moves(walk_fast_down*7 ))
     applymovement(24,moves(walk_fast_down*7 ))
     applymovement(33,moves(walk_fast_down*7 ))
+    applymovement(1,moves(walk_down walk_right jump_2_right walk_fast_right*5))
     waitmovement
     delay(60)    
+    removeobject(31)   
     removeobject(33)
     removeobject(30)
     removeobject(29)
@@ -109,3 +154,14 @@ script Crabhill_Hiker_Hint {
     waitmessage
     release
 }
+
+script Crabhill_Faculty_Lost_grunt {
+    lock
+    faceplayer
+    setspeaker("Faculty Grunt")
+    msgbox(format("I have lost contact with my associate, this cave is a maze!\pThe Control Signal seemed to cause a chaotic dispersal instead of obedience!\pWait... erase that input! I absolutely did not say we are manipulating local wildlife frequencies!\pForget you heard anything about the signal!"))
+    waitmessage
+    release
+}
+
+

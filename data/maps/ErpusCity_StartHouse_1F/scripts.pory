@@ -42,7 +42,7 @@ script Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech {
         applymovement(LOCALID_PLAYER, moves(walk_down*3 walk_left*4))
     }
     setspeaker("Mom")
-    msgbox(format("Look who decided to finally join the land of the living!\p Do you have any idea what time it is?!\pProfessor Birds called the house phone two hours ago!\pHe was absolutely fuming.\p Muttering something about how impossible it is to find 'competent, zero-cost labor' these days. I thinnk he said something about the government rejecting his grant application again...\pHe caught himself, though!\pHe quickly coughed and added that he intends to 'reward' you very handsomely... just, you know, with 'cutting-edge technology' instead of an actual paycheck.\pWhich is exciting, right?"),MSGBOX_AUTOCLOSE)
+    msgbox(format("Well, look who's finally awake!\pDo you have any idea what time it is?!\pProfessor Birds just called and was fuming over the phone...\pHe started ranting about another rejected grant, and how 'unreliable' today's youth are.\pHe even threatened to give your internship to the next kid who walks into the lab!\pYou'd better get moving.\nHe's waiting for you!"), MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER,moves(emote_question_mark))

@@ -77,7 +77,7 @@ script Route01_Factulty_Grunts_Position3 {
     playse(MUS_AQUA_MAGMA_HIDEOUT)
     applymovement(2, moves(walk_up walk_right * 7 face_up))
     applymovement(3, moves(walk_right * 6 ))
-    call(Route01_Battle_Factulty_Grunts)
+    call(Route01_Battle_Factulty_Grunts2)
     setspeaker("Ad Dice")
     msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\p Come on Ton, let's go. The boss is waiting for us."), MSGBOX_AUTOCLOSE)
     setflag(FLAG_FACULTY_GRUNTS_ROUT01)
@@ -99,7 +99,7 @@ script Route01_Factulty_Grunts_Position4 {
     playse(MUS_AQUA_MAGMA_HIDEOUT)
     applymovement(2, moves(walk_up * 2 walk_right * 7 face_up))
     applymovement(3, moves(walk_right walk_up walk_right * 5))
-    call(Route01_Battle_Factulty_Grunts)
+    call(Route01_Battle_Factulty_Grunts2)
     setspeaker("Ad Dice")
     msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\p Come on Ton, let's go. The boss is waiting for us."), MSGBOX_AUTOCLOSE)
     setflag(FLAG_FACULTY_GRUNTS_ROUT01)
@@ -121,6 +121,20 @@ script Route01_Battle_Factulty_Grunts {
     trainerbattle_no_intro(TRAINER_GRUNT_FACULTY_1, Route01_Loss_Ton_Cross)
     playse(MUS_AQUA_MAGMA_HIDEOUT)
     applymovement(LOCALID_PLAYER, moves(face_up))
+    setspeaker("Ad Dice")
+    msgbox(format("Ton, you are an absolute loser, let me handle this prick."))
+    waitmessage
+    trainerbattle_no_intro(TRAINER_GRUNT_FACULTY_2, Route01_Loss_Ad_Dice)
+    waitse
+}
+
+script Route01_Battle_Factulty_Grunts2 {
+    setspeaker("Ton Cross")
+    msgbox(format("Do you have registration for that Pokémon?\p No registration?\p All unregistered Pokémon have to be confiscated by The Faculty!\p Let me take on this loser, Ad."))
+    waitmessage
+    trainerbattle_no_intro(TRAINER_GRUNT_FACULTY_1, Route01_Loss_Ton_Cross)
+    playse(MUS_AQUA_MAGMA_HIDEOUT)
+    applymovement(LOCALID_PLAYER, moves(face_down))
     setspeaker("Ad Dice")
     msgbox(format("Ton, you are an absolute loser, let me handle this prick."))
     waitmessage

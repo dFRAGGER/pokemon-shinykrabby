@@ -4,10 +4,25 @@ mapscripts LabJariIndoor_MapScripts {
 
 script LabJariIndoor_Eventscript_Birds_Pokemon_Check {
     lockall
+    faceplayer
     setspeaker("Prof. Birds")
-    msgbox(format("...WHY ARE YOU STILL HERE? BETTER GET TO THAT SCRUB OF A FRIEND CALLED {COLOR GREEN}Jacob{COLOR DARK_GRAY} IN THE {COLOR RED}Mestreech{COLOR DARK_GRAY}! HE PROBABLY KNOWS HOW TO CATCH SOME POKEMON!"))
+    if(!flag(FLAG_SHINY_KRABBY_ENCOUNTER)){
+    msgbox(format("...WHY ARE YOU STILL HERE? BETTER GET TO THAT SCRUB OF A FRIEND CALLED {COLOR GREEN}Jacob{COLOR DARK_GRAY} IN THE {COLOR RED}Mestreech{COLOR DARK_GRAY}! HE PROBABLY KNOWS WHERE TO FIND THAT GOLDEN KRABBY!"))
     waitmessage
+    }
+    if(flag(FLAG_SHINY_KRABBY_ENCOUNTER)){
+    setspeaker("Prof. Birds")
+    msgbox(format("ZERO DATA?! YOU SAW THE GOLDEN ANOMALY AND YOU HAVE ZERO DATA?!\pTHIS IS WORSE THAN THE DAY I SOLD MY BITCOIN FOR A PIZZA!\p...wait...\p...you said it deflected the signal? That level of energy resistance...\p...It might imply that the mutation was triggered by...\p...no...\p...it can't be...\pANYWAYS! DO NOT COME BACK UNTIL YOU CATCH A RARE POKÉMON OR THAT GOLDEN KRABBY!\pNOW GET OUT! I NEED TO LISTEN TO SABRINA CARPENTER! USELESS INTERN!"))
+    }
     releaseall
+}
+
+script LabJariIndoor_Eventscript_Magikarp {
+    lock
+    msgbox(format("...splash...splash..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
 }
 
 script LabJariIndoor_Eventscript_Barry_Birds {
@@ -37,7 +52,7 @@ script LabJariIndoor_Eventscript_Barry_Birds {
     }
     waitmovement
     setspeaker("Prof. Birds")
-    msgbox(format("SO WHO ARE YOU?\p ...\pYou want to become my intern?\p WELL TOO LATE BOY!!\p BARRY WAS HERE FIRST!!\p ISN'T THAT RIGHT BARRY?"),MSGBOX_AUTOCLOSE)
+    msgbox(format("SO WHO ARE YOU?\p ...\pYou want to become my new intern?\p WELL TOO LATE BOY!!\p BARRY WAS HERE FIRST!!\p ISN'T THAT RIGHT BARRY?"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(3, moves(face_left))
     playse(SE_PIN)
@@ -94,7 +109,7 @@ script LabJariIndoor_Eventscript_Barry_Birds {
     }
     applymovement(2, moves(face_up))
     waitmovement
-    delay(120)
+    delay(90)
     applymovement(3, moves(face_down))
     waitmovement
     setspeaker("Prof. Birds")
@@ -147,7 +162,7 @@ script LabJariIndoor_Eventscript_Birds_Convo {
     applymovement(2, moves(face_up))
     waitmovement
     delay(40)
-    applymovement(3, moves(face_down))
+    faceplayer
     waitmovement
     setspeaker("Prof. Birds")
     msgbox(format("NOW GET THOSE BOXES OUT OF THE STORAGE ROOM!!"),MSGBOX_AUTOCLOSE)
