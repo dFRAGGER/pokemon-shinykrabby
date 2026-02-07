@@ -521,7 +521,7 @@
 #define FLAG_SILTROOTTOWN_STASH_SACK                   0x1E0 // Unused Flag
 #define FLAG_HIDE_SCOTT_AFTER_CONVO                  0x1E1 // Unused Flag
 #define FLAG_HIDE_SCOTT_OUTSIDE_BOAT                   0x1E2 // Unused Flag
-#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
+#define FLAG_DELIVERED_ALIS_PACKAGE_TO_PETER         0x1E3 // Player delivered Ali's package to Peter in Lionsarch City
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
@@ -665,9 +665,9 @@
 #define FLAG_CLEAR_BEEHIVE_07  0x26A // Unused Flag
 #define FLAG_CLEAR_BEEHIVE_08  0x26B // Unused Flag
 #define FLAG_START_COLLECTING_HONEY  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
+#define FLAG_BASEMENT_DJ_STAGE_ACCESS  0x26D // Player got access to DJ stage in Peter's basement
+#define FLAG_GIEL_LEFT_BASEMENT  0x26E // Giel left Peter's basement after getting rejected
+#define FLAG_PETER_HOUSE_INTRO_DONE  0x26F // Player saw the intro scene at Peter's house
 #define FLAG_UNUSED_0x270  0x270 // Unused Flag
 #define FLAG_UNUSED_0x271  0x271 // Unused Flag
 #define FLAG_UNUSED_0x272  0x272 // Unused Flag

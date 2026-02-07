@@ -1,1 +1,356 @@
 mapscripts LionsarchCity_MapScripts {}
+
+// ========================================
+// CITY SIGNS
+// ========================================
+
+script LionsarchCity_Sign_CityName {
+    lockall
+    msgbox(format("LIONSARCH CITY\nGateway to the Northern Peaks\pWhere the harbor meets the mountains"))
+    releaseall
+}
+
+script LionsarchCity_Sign_Gym {
+    lockall
+    msgbox(format("LIONSARCH CITY GYM\nLEADER: PETRA\nThe Iron Mountain"))
+    releaseall
+}
+
+script LionsarchCity_Sign_VisitorCenter {
+    lockall
+    msgbox(format("TWIN LIONS VISITOR CENTER\nInformation for travelers heading to Lion Mountains"))
+    releaseall
+}
+
+script LionsarchCity_Sign_IndustrialPort {
+    lockall
+    msgbox(format("INDUSTRIAL PORT DISTRICT\nAUTHORIZED PERSONNEL ONLY\pHeavy machinery in operation - Exercise caution"))
+    releaseall
+}
+
+script LionsarchCity_Sign_LeisurePort {
+    lockall
+    msgbox(format("LIONSARCH MARINA\nLeisure vessels and tour boats"))
+    releaseall
+}
+
+// ========================================
+// DISCO CLUB PAMPHLETS (scattered around city)
+// ========================================
+
+script LionsarchCity_DiscoPamphlet_1 {
+    lockall
+    msgbox(format("A crumpled flyer is taped to the wall:\pGROOVE UNDERGROUND\nOLD SCHOOL DISCO NIGHTS\nEvery weekend!\p...The rest is too faded to read."))
+    releaseall
+}
+
+script LionsarchCity_DiscoPamphlet_2 {
+    lockall
+    msgbox(format("A colorful poster catches your eye:\pWHEN: Every Friday & Saturday\nWHERE: Ask around... if you're cool enough\nWHAT: Vinyl-only disco classics!\pBOOGIE WONDERLAND AWAITS"))
+    releaseall
+}
+
+script LionsarchCity_DiscoPamphlet_3 {
+    lockall
+    msgbox(format("A flyer stuck under a rock:\pDJ PETER PRESENTS:\nDISCO INFERNO\nThe funkiest beats this side of the mountains!\pFind the basement. Feel the groove."))
+    releaseall
+}
+
+// ========================================
+// MARKET STANDS - Rare Items from Harbor
+// ========================================
+
+script LionsarchCity_MarketStand_ExoticBerries {
+    lockall
+    faceplayer
+    msgbox(format("Welcome to my humble stand!\pI import the finest strands from the tropical islands far to the south.\pYou won't find these in Siltroot Town!"))
+    waitmessage
+    pokemart(LionsarchCity_Mart_ExoticBerries)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    releaseall
+}
+
+mart LionsarchCity_Mart_ExoticBerries {
+    ITEM_LUM_BERRY
+    ITEM_POMEG_BERRY
+    ITEM_KELPSY_BERRY
+    ITEM_QUALOT_BERRY
+}
+
+script LionsarchCity_MarketStand_EasternSpices {
+    lockall
+    faceplayer
+    msgbox(format("Greetings, traveler!\pMy family has traded across the eastern sea routes for three generations.\pThese Poké Dolls and incense come straight from Marshduke City's finest craftsmen!"))
+    waitmessage
+    pokemart(LionsarchCity_Mart_EasternGoods)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    releaseall
+}
+
+mart LionsarchCity_Mart_EasternGoods {
+    ITEM_POKE_DOLL
+    ITEM_FLUFFY_TAIL
+    ITEM_CLEANSE_TAG
+}
+
+script LionsarchCity_MarketStand_MountainGear {
+    lockall
+    faceplayer
+    msgbox(format("Heading up to the Lion Mountains?\pYou'll need proper gear!\pI stock everything the rangers recommend for high-altitude training."))
+    waitmessage
+    pokemart(LionsarchCity_Mart_MountainGear)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    releaseall
+}
+
+mart LionsarchCity_Mart_MountainGear {
+    ITEM_SUPER_POTION
+    ITEM_HYPER_POTION
+    ITEM_FULL_HEAL
+    ITEM_REVIVE
+    ITEM_SUPER_REPEL
+    ITEM_MAX_REPEL
+}
+
+script LionsarchCity_MarketStand_RareStones {
+    lockall
+    faceplayer
+    msgbox(format("These stones came in on the morning shipment from deep caves across the region.\pPerfect for trainers looking to evolve their partners!"))
+    waitmessage
+    pokemart(LionsarchCity_Mart_RareStones)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    releaseall
+}
+
+mart LionsarchCity_Mart_RareStones {
+    ITEM_FIRE_STONE
+    ITEM_WATER_STONE
+    ITEM_THUNDER_STONE
+    ITEM_LEAF_STONE
+    ITEM_MOON_STONE
+}
+
+script LionsarchCity_MarketStand_ImportedPokeBalls {
+    lockall
+    faceplayer
+    msgbox(format("Fresh shipment just arrived from Silph Co.!\pWe get specialty Poké Balls that most marts don't carry."))
+    waitmessage
+    pokemart(LionsarchCity_Mart_SpecialtyBalls)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    releaseall
+}
+
+mart LionsarchCity_Mart_SpecialtyBalls {
+    ITEM_GREAT_BALL
+    ITEM_ULTRA_BALL
+    ITEM_NET_BALL
+    ITEM_NEST_BALL
+    ITEM_TIMER_BALL
+}
+
+script LionsarchCity_MarketStand_SeaDelicacies {
+    lockall
+    faceplayer
+    msgbox(format("Fresh from the harbor this morning!\pOur Lava Cookies are baked using a recipe from sailors who've traveled the world.\pPerfect for curing any ailment!"))
+    waitmessage
+    pokemart(LionsarchCity_Mart_Delicacies)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    releaseall
+}
+
+mart LionsarchCity_Mart_Delicacies {
+    ITEM_LAVA_COOKIE
+    ITEM_SODA_POP
+    ITEM_LEMONADE
+    ITEM_MOOMOO_MILK
+}
+
+script LionsarchCity_MarketStand_TreasureHunter {
+    lockall
+    faceplayer
+    msgbox(format("I deal in rarities, kid.\pThings that wash up on distant shores or get dug out of ancient ruins.\pYou got the cash, I got the goods."))
+    waitmessage
+    pokemart(LionsarchCity_Mart_Treasures)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    releaseall
+}
+
+mart LionsarchCity_Mart_Treasures {
+    ITEM_STAR_PIECE
+    ITEM_NUGGET
+    ITEM_PEARL
+    ITEM_BIG_PEARL
+}
+
+// ========================================
+// FACULTY GRUNTS - Mining Operation
+// ========================================
+
+script LionsarchCity_FacultyGrunt_1 {
+    lockall
+    faceplayer
+    msgbox(format("The Faculty's mining operation in the Lion Mountains is proceeding ahead of schedule.\pWe're extracting rare metals that'll change everything."))
+    releaseall
+}
+
+script LionsarchCity_FacultyGrunt_2 {
+    lockall
+    faceplayer
+    msgbox(format("Move along, kid.\pThis is Faculty business.\pWe've got authorization from the regional board to transport our equipment through this harbor."))
+    releaseall
+}
+
+script LionsarchCity_FacultyGrunt_3 {
+    lockall
+    faceplayer
+    msgbox(format("These crates contain prototype containment units.\pNot that it's any of your concern.\pThe Faculty is doing important work in the northern peaks."))
+    releaseall
+}
+
+script LionsarchCity_FacultyGrunt_4 {
+    lockall
+    faceplayer
+    msgbox(format("Did you know certain metals can suppress psychic and electromagnetic frequencies?\pFascinating stuff.\pThe mountains up north are full of them."))
+    releaseall
+}
+
+script LionsarchCity_FacultyWorker_Suspicious {
+    lockall
+    faceplayer
+    msgbox(format("Another truck of drilling equipment heading north tomorrow.\pThe boss says we're close to a breakthrough.\pSomething about 'legendary containment protocols'... whatever that means."))
+    releaseall
+}
+
+// ========================================
+// WORLD-BUILDING NPCS
+// ========================================
+
+script LionsarchCity_NPC_ColdWeather {
+    lockall
+    faceplayer
+    msgbox(format("Brrr! The wind coming off the mountains is brutal today!\pI should've worn a thicker coat."))
+    releaseall
+}
+
+script LionsarchCity_NPC_TouristCouple_F {
+    lockall
+    faceplayer
+    msgbox(format("My husband and I came to see the Twin Lions.\pThey say if you look at the peaks from the right angle, they look like two Pyroar facing each other!"))
+    releaseall
+}
+
+script LionsarchCity_NPC_TouristCouple_M {
+    lockall
+    faceplayer
+    msgbox(format("The Visitor Center has some great hiking maps.\pWe're planning to trek up to the north pass tomorrow if the weather holds."))
+    releaseall
+}
+
+script LionsarchCity_NPC_OldSailor {
+    lockall
+    faceplayer
+    msgbox(format("I've been working these docks for forty years.\pUsed to be we only shipped fish and lumber.\pNow it's all industrial equipment and strange machinery.\pTimes change, I suppose."))
+    releaseall
+}
+
+script LionsarchCity_NPC_DockWorker_1 {
+    lockall
+    faceplayer
+    msgbox(format("Three industrial ports keep this city running.\pWe load and unload cargo ships day and night.\pIt's hard work, but the pay is good."))
+    releaseall
+}
+
+script LionsarchCity_NPC_DockWorker_2 {
+    lockall
+    faceplayer
+    msgbox(format("That leisure port over there? That's where the rich folks keep their yachts.\pMeanwhile, we're out here hauling crates in the freezing cold."))
+    releaseall
+}
+
+script LionsarchCity_NPC_LocalResident_1 {
+    lockall
+    faceplayer
+    msgbox(format("Lionsarch has changed so much in recent years.\pThe Faculty's mining operation brought jobs, but also a lot of pollution.\pSome call it 'the smog.'"))
+    releaseall
+}
+
+script LionsarchCity_NPC_LocalResident_2 {
+    lockall
+    faceplayer
+    msgbox(format("If you're looking for a good time, there's supposedly a secret disco club somewhere in the city.\pI've heard the music thumping late at night, but I've never found it!"))
+    releaseall
+}
+
+script LionsarchCity_NPC_MusicFan {
+    lockall
+    faceplayer
+    msgbox(format("You like old school disco?\pThere's this DJ... Peter, I think his name is.\pHe throws the most incredible underground parties.\pBut you need to know someone who knows someone to get in."))
+    releaseall
+}
+
+script LionsarchCity_NPC_BusinessPerson {
+    lockall
+    faceplayer
+    msgbox(format("The route east through the cliffs is treacherous but beautiful.\pIt eventually leads to Marshduke City, an old city built right in the middle of a swamp.\pQuite the sight!"))
+    releaseall
+}
+
+script LionsarchCity_NPC_MountainHiker {
+    lockall
+    faceplayer
+    msgbox(format("The two paths through the mountains each offer unique challenges.\pThe Lion Mountains path is steep but rewarding.\pThe eastern cliff route is longer but has incredible views."))
+    releaseall
+}
+
+script LionsarchCity_NPC_Ranger {
+    lockall
+    faceplayer
+    msgbox(format("We've been getting reports of increased seismic activity near the Lion Mountains.\pProbably just the Faculty's mining operation, but it's concerning nonetheless."))
+    releaseall
+}
+
+script LionsarchCity_NPC_FishingEnthusiast {
+    lockall
+    faceplayer
+    msgbox(format("The waters around Lionsarch are full of Water-type Pokémon.\pI caught a Krabby just this morning!\pI couldn't believe my luck!"))
+    releaseall
+}
+
+script LionsarchCity_NPC_NewsReporter {
+    lockall
+    faceplayer
+    msgbox(format("I'm investigating the Faculty's activities for the regional news network.\pThey claim to be mining rare metals, but their security is unusually tight.\pWhat are they really doing up there?"))
+    releaseall
+}
+
+script LionsarchCity_NPC_GymTrainer {
+    lockall
+    faceplayer
+    msgbox(format("Petra's Gym specializes in mountain-dwelling Pokémon.\pUrsaring, Golem, Donphan... they're all incredibly tough!\pYou better come prepared."))
+    releaseall
+}
+
+script LionsarchCity_NPC_ShipCaptain {
+    lockall
+    faceplayer
+    msgbox(format("My vessel sails between here and Siltroot Town regularly.\pThe harbor's always busy with cargo ships coming and going.\pIt's what keeps this city alive."))
+    releaseall
+}
+
+script LionsarchCity_NPC_StreetVendor {
+    lockall
+    faceplayer
+    msgbox(format("The markets are the soul of Lionsarch!\pTraders from all over the region bring their goods here.\pYou can find things here that don't exist anywhere else!"))
+    releaseall
+}
+
+// ========================================
+// SCOTT'S ARRIVAL SCENE (from boat)
+// ========================================
+
+script LionsarchCity_Scott_ArrivalPoint {
+    lockall
+    msgbox(format("The industrial dock stretches out before you.\pThe smell of saltwater and diesel fills the air."))
+    releaseall
+}
+

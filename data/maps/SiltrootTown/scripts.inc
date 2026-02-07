@@ -107,53 +107,53 @@ SiltrootTown_Arrive_Boatride::
 # 43 "data/maps/SiltrootTown/scripts.pory"
 	delay 50
 # 44 "data/maps/SiltrootTown/scripts.pory"
-	applymovement LOCALID_PLAYER, SiltrootTown_Arrive_Boatride_Movement_0
-# 45 "data/maps/SiltrootTown/scripts.pory"
-	waitmovement
-# 46 "data/maps/SiltrootTown/scripts.pory"
-	call Common_EventScript_StopBrineysBoatMusic
-# 47 "data/maps/SiltrootTown/scripts.pory"
-	showobjectat LOCALID_PLAYER, MAP_SILTROOT_TOWN
-# 48 "data/maps/SiltrootTown/scripts.pory"
-	applymovement LOCALID_PLAYER, SiltrootTown_Arrive_Boatride_Movement_1
-# 49 "data/maps/SiltrootTown/scripts.pory"
-	waitmovement
-# 50 "data/maps/SiltrootTown/scripts.pory"
-	setobjectxyperm 7, 9, 59
-# 51 "data/maps/SiltrootTown/scripts.pory"
-	addobject 7
-# 52 "data/maps/SiltrootTown/scripts.pory"
-	setobjectsubpriority 7, MAP_SILTROOT_TOWN, 0
-# 53 "data/maps/SiltrootTown/scripts.pory"
-	clearflag FLAG_HIDE_SCOTT_LIONSARCH_CITY
-# 54 "data/maps/SiltrootTown/scripts.pory"
-	applymovement 7, SiltrootTown_Arrive_Boatride_Movement_0
-# 55 "data/maps/SiltrootTown/scripts.pory"
-	call Common_EventScript_StopBrineysBoatMusic
-# 56 "data/maps/SiltrootTown/scripts.pory"
-	setflag FLAG_HIDE_SCOTT_OUTSIDE_BOAT
-# 57 "data/maps/SiltrootTown/scripts.pory"
-	resetobjectsubpriority LOCALID_PLAYER, MAP_SILTROOT_TOWN
-# 58 "data/maps/SiltrootTown/scripts.pory"
-	resetobjectsubpriority 7, MAP_LIONSARCH_CITY
-# 59 "data/maps/SiltrootTown/scripts.pory"
 	setspeaker SiltrootTown_Scott_Boatride_Text_0
-# 60 "data/maps/SiltrootTown/scripts.pory"
+# 45 "data/maps/SiltrootTown/scripts.pory"
 	msgbox SiltrootTown_Arrive_Boatride_Text_0, MSGBOX_AUTOCLOSE
-# 61 "data/maps/SiltrootTown/scripts.pory"
+# 46 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 62 "data/maps/SiltrootTown/scripts.pory"
-	applymovement 7, SiltrootTown_Arrive_Boatride_Movement_2
-# 63 "data/maps/SiltrootTown/scripts.pory"
+# 47 "data/maps/SiltrootTown/scripts.pory"
+	applymovement LOCALID_PLAYER, SiltrootTown_Arrive_Boatride_Movement_0
+# 48 "data/maps/SiltrootTown/scripts.pory"
 	waitmovement
+# 49 "data/maps/SiltrootTown/scripts.pory"
+	call Common_EventScript_StopBrineysBoatMusic
+# 50 "data/maps/SiltrootTown/scripts.pory"
+	showobjectat LOCALID_PLAYER, MAP_SILTROOT_TOWN
+# 51 "data/maps/SiltrootTown/scripts.pory"
+	applymovement LOCALID_PLAYER, SiltrootTown_Arrive_Boatride_Movement_1
+# 52 "data/maps/SiltrootTown/scripts.pory"
+	call Common_EventScript_StopBrineysBoatMusic
+# 53 "data/maps/SiltrootTown/scripts.pory"
+	setflag FLAG_HIDE_SCOTT_OUTSIDE_BOAT
+# 54 "data/maps/SiltrootTown/scripts.pory"
+	setobjectxyperm 6, 9, 59
+# 55 "data/maps/SiltrootTown/scripts.pory"
+	addobject 6
+# 56 "data/maps/SiltrootTown/scripts.pory"
+	setobjectsubpriority 6, MAP_SILTROOT_TOWN, 0
+# 57 "data/maps/SiltrootTown/scripts.pory"
+	clearflag FLAG_HIDE_SCOTT_LIONSARCH_CITY
+# 58 "data/maps/SiltrootTown/scripts.pory"
+	applymovement 6, SiltrootTown_Arrive_Boatride_Movement_2
+# 59 "data/maps/SiltrootTown/scripts.pory"
+	waitmovement
+# 60 "data/maps/SiltrootTown/scripts.pory"
+	resetobjectsubpriority LOCALID_PLAYER, MAP_SILTROOT_TOWN
+# 61 "data/maps/SiltrootTown/scripts.pory"
+	resetobjectsubpriority 6, MAP_LIONSARCH_CITY
+# 62 "data/maps/SiltrootTown/scripts.pory"
+	setspeaker SiltrootTown_Scott_Boatride_Text_0
+# 63 "data/maps/SiltrootTown/scripts.pory"
+	msgbox SiltrootTown_Arrive_Boatride_Text_1, MSGBOX_AUTOCLOSE
 # 64 "data/maps/SiltrootTown/scripts.pory"
-	removeobject 7
+	waitmessage
 # 65 "data/maps/SiltrootTown/scripts.pory"
-	applymovement 3, SiltrootTown_Arrive_Boatride_Movement_3
+	applymovement 6, SiltrootTown_Arrive_Boatride_Movement_3
 # 66 "data/maps/SiltrootTown/scripts.pory"
 	waitmovement
 # 67 "data/maps/SiltrootTown/scripts.pory"
-	removeobject 3
+	removeobject 6
 # 68 "data/maps/SiltrootTown/scripts.pory"
 	setflag FLAG_HIDE_SCOTT_LIONSARCH_CITY
 	end
@@ -1109,28 +1109,74 @@ SiltrootTown_Scott_Boatride_Movement_3:
 	walk_right
 	step_end
 
-# 44 "data/maps/SiltrootTown/scripts.pory"
+# 47 "data/maps/SiltrootTown/scripts.pory"
 SiltrootTown_Arrive_Boatride_Movement_0:
-# 44 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+# 47 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
 	step_end
 
-# 48 "data/maps/SiltrootTown/scripts.pory"
+# 51 "data/maps/SiltrootTown/scripts.pory"
 SiltrootTown_Arrive_Boatride_Movement_1:
-# 48 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
-# 48 "data/maps/SiltrootTown/scripts.pory"
-	face_down
+# 51 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 51 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 51 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 51 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 51 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 51 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 51 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 51 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_right
+# 51 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 51 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_right
+# 51 "data/maps/SiltrootTown/scripts.pory"
+	face_left
 	step_end
 
-# 62 "data/maps/SiltrootTown/scripts.pory"
+# 58 "data/maps/SiltrootTown/scripts.pory"
 SiltrootTown_Arrive_Boatride_Movement_2:
-# 62 "data/maps/SiltrootTown/scripts.pory"
-	walk_down
+# 58 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 58 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 58 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 58 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 58 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 58 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 58 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 58 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 58 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_right
+# 58 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_up
+# 58 "data/maps/SiltrootTown/scripts.pory"
+	face_right
 	step_end
 
 # 65 "data/maps/SiltrootTown/scripts.pory"
 SiltrootTown_Arrive_Boatride_Movement_3:
+# 65 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 65 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_left
+# 65 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 65 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
 # 65 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_down
 # 65 "data/maps/SiltrootTown/scripts.pory"
@@ -1215,14 +1261,22 @@ SiltrootTown_Scott_Boatride_Text_1:
 	.string "The boat ride will be a rough one.$"
 
 SiltrootTown_Arrive_Boatride_Text_0:
-# 60 "data/maps/SiltrootTown/scripts.pory"
+# 45 "data/maps/SiltrootTown/scripts.pory"
+	.string "Bravo, Tango here.\p"
+	.string "Ready to disembark?\p"
+	.string "...\p"
+	.string "Copy that.\p"
+	.string "Let's move!$"
+
+SiltrootTown_Arrive_Boatride_Text_1:
+# 63 "data/maps/SiltrootTown/scripts.pory"
 	.string "Touchdown. We are in the blind spot.\p"
 	.string "My scanners show a gap in the harbor\n"
 	.string "security grid for exactly forty-five\l"
 	.string "seconds.\p"
 	.string "Listen fast because I am burning fuel\n"
-	.string "here.\p"
-	.string "I am not going into the city.\p"
+	.string "right now.\p"
+	.string "I am not going further into the city.\p"
 	.string "Too many facial recognition towers.\p"
 	.string "You have to take the package to the\n"
 	.string "client yourself.\p"
@@ -1231,10 +1285,10 @@ SiltrootTown_Arrive_Boatride_Text_0:
 	.string "If you hear loud, old-school disco\n"
 	.string "music, that is the drop-off point.\p"
 	.string "Now get moving!\p"
-	.string "Don't look back.\p"
+	.string "Walk forward and don't look back.\p"
 	.string "If anyone asks, we never met.\p"
 	.string "I was never here.\p"
-	.string "This boat doesn't exist!$"
+	.string "Tango going dark.$"
 
 Siltroottown_Youth_Outide_Ali_Shop_1_Text_0:
 # 76 "data/maps/SiltrootTown/scripts.pory"
@@ -1354,8 +1408,9 @@ Siltroottown_Guard_shed_Text_2:
 	.string "They are in a deep, meditative trance\n"
 	.string "while they work.\p"
 	.string "If they see you, it breaks their flow,\n"
-	.string "and they will use Confusion to toss you\l"
-	.string "right back out the front door.\p"
+	.string "and they will use their psychic powers\l"
+	.string "to toss you right back out the front\l"
+	.string "door.\p"
 	.string "The bag is in the back.\p"
 	.string "Move like a ghost, kid.$"
 

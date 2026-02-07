@@ -1,1 +1,217 @@
-mapscripts LionsarchCity_Indoor_PeterHouse_MapScripts {}
+mapscripts LionsarchCity_Indoor_PeterHouse_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_0, 0: PeterHouse_EntranceScene
+    ]
+}
+
+// Entrance scene - girls leave, bouncer blocks entrance, guard checks you
+script PeterHouse_EntranceScene {
+    lock
+    // Check if we've already done this scene
+    if (flag(FLAG_PETER_HOUSE_INTRO_DONE)) {
+        setvar(VAR_TEMP_0, 1)
+        release
+        end
+    }
+
+    // Check if player has the package from Ali
+    if (!checkitem(ITEM_SOOT_SACK, 1)) {
+        // No package, just let them look around but guard won't let them in
+        setvar(VAR_TEMP_0, 1)
+        release
+        end
+    }
+
+    setvar(VAR_TEMP_0, 1)
+
+    // Scene: Girls leaving the basement area
+    delay(30)
+
+    // Girls walk toward the exit (walking down and right to door at 8,7)
+    applymovement(4, moves(walk_down walk_down walk_right walk_right walk_right walk_right walk_right walk_right))
+    applymovement(5, moves(walk_right walk_down walk_down walk_right walk_right walk_right walk_right walk_right))
+    applymovement(6, moves(walk_down walk_down walk_right walk_right walk_right walk_right walk_right))
+    waitmovement
+
+    // Girls exit the building
+    removeobject(4)
+    removeobject(5)
+    removeobject(6)
+
+    delay(20)
+
+    // Bouncer and Machokes move to block the basement entrance
+    applymovement(1, moves(walk_up face_down))
+    applymovement(2, moves(walk_left face_down))
+    applymovement(3, moves(walk_right face_down))
+    waitmovement
+
+    delay(20)
+
+    // Guard at the table notices the player
+    playse(SE_PIN)
+    applymovement(7, moves(emote_exclamation_mark))
+    waitmovement
+    applymovement(7, moves(face_left))
+    waitmovement
+
+    setspeaker("Door Guard")
+    msgbox(format("Hey, you there!\pCome over here for a second."))
+    waitmessage
+
+    // Player walks toward the guard
+    applymovement(LOCALID_PLAYER, moves(walk_up walk_up walk_right walk_right))
+    waitmovement
+    applymovement(7, moves(face_down))
+    waitmovement
+
+    setspeaker("Door Guard")
+    msgbox(format("Alright, what's your name?\pAnd more importantly... who do you know here?\pThis ain't a public venue, kid."))
+    waitmessage
+
+    setspeaker("{PLAYER}")
+    msgbox(format("I'm looking for Peter.\pI have a special delivery from Ali in Siltroot Town."))
+    waitmessage
+
+    playse(SE_PIN)
+    applymovement(7, moves(emote_exclamation_mark))
+    waitmovement
+
+    setspeaker("Door Guard")
+    msgbox(format("Ali?\pFrom down south?\pOh damn, you're THAT delivery!"))
+    waitmessage
+
+    setspeaker("Door Guard")
+    msgbox(format("Peter's been waiting for this package for weeks!\pSays it's essential for the 'party atmosphere'.\pWhatever that means..."))
+    waitmessage
+
+    // Guard signals to the bouncer
+    applymovement(7, moves(face_left))
+    waitmovement
+
+    setspeaker("Door Guard")
+    msgbox(format("Hey Bruno! Let this one through!\pVIP delivery from Ali!"))
+    waitmessage
+
+    // Bouncer acknowledges
+    applymovement(1, moves(face_right))
+    waitmovement
+    delay(20)
+
+    setspeaker("Bouncer Bruno")
+    msgbox(format("Ali's contact, huh?\pAlright, you're good.\pHead on down. Peter's in the basement spinning records."))
+    waitmessage
+
+    // Bouncer and Machokes step aside
+    applymovement(1, moves(walk_right face_down))
+    applymovement(2, moves(walk_right face_left))
+    applymovement(3, moves(walk_left face_right))
+    waitmovement
+
+    applymovement(7, moves(face_down))
+    waitmovement
+
+    setspeaker("Door Guard")
+    msgbox(format("Go on.\pAnd hey... enjoy the groove down there.\pPeter throws one hell of a party."))
+    waitmessage
+
+    setflag(FLAG_PETER_HOUSE_INTRO_DONE)
+
+    release
+    end
+}
+
+// Bouncer Bruno - blocks basement entrance
+script PeterHouse_Bouncer {
+    lockall
+    faceplayer
+    setspeaker("Bouncer Bruno")
+    if (flag(FLAG_PETER_HOUSE_INTRO_DONE)) {
+        msgbox(format("You're cleared.\pHead on down whenever you're ready.\pJust don't cause any trouble."))
+    } elif (checkitem(ITEM_SOOT_SACK, 1)) {
+        msgbox(format("Hold up.\pYou need to check in with the guard at the table first.\pNo exceptions."))
+    } else {
+        msgbox(format("Sorry, VIP access only.\pYou need to know someone to get in here.\pOr bring something special..."))
+    }
+    waitmessage
+    releaseall
+}
+
+// Machoke guards
+script PeterHouse_Machoke {
+    lockall
+    faceplayer
+    setspeaker("Machoke")
+    msgbox(format("MACHOKE!\p(The Machoke cracks its knuckles menacingly.)"))
+    waitmessage
+    releaseall
+}
+
+// Guard at the table
+script PeterHouse_DoorGuard {
+    lockall
+    faceplayer
+    setspeaker("Door Guard")
+    if (flag(FLAG_PETER_HOUSE_INTRO_DONE)) {
+        msgbox(format("You're on the list now.\pGo enjoy the party.\pPeter's got the best beats in Lionsarch."))
+    } elif (checkitem(ITEM_SOOT_SACK, 1)) {
+        msgbox(format("Oh, you've got something from Ali?\pWhy didn't you say so!\pGo talk to Bruno, he'll let you through."))
+        waitmessage
+        setflag(FLAG_PETER_HOUSE_INTRO_DONE)
+        msgbox(format("Hey Bruno! This one's cleared!"))
+    } else {
+        msgbox(format("Name and reference, please.\pYou don't know anyone?\pThen I can't let you in. House rules."))
+    }
+    waitmessage
+    releaseall
+}
+
+// Girls leaving dialogue (if player talks to them before scene)
+script PeterHouse_PartyGirl {
+    lockall
+    faceplayer
+    setspeaker("Party Girl")
+    msgbox(format("That was SO fun!\pPeter's parties are the best!\pGotta come back next weekend!"))
+    waitmessage
+    releaseall
+}
+
+script PeterHouse_NPC_Peter {
+    lockall
+    faceplayer
+    if(!flag(FLAG_DELIVERED_ALIS_PACKAGE_TO_PETER)) {
+        setspeaker("Peter")
+        msgbox(format("Hey there! You looking for something?\pIf you're here about the party... well, you gotta know the password first.\pOr bring me something special from my friend Ali down south."))
+        waitmessage
+    } else {
+        setspeaker("Peter")
+        msgbox(format("The groove is strong tonight!\pFeel free to head downstairs anytime.\pThe basement is where the magic happens."))
+        waitmessage
+    }
+    releaseall
+}
+
+script PeterHouse_Woman_Neighbor {
+    lockall
+    faceplayer
+    msgbox(format("Peter is such a nice young man.\pA bit loud with his music sometimes, but he's always polite.\pI hear thumping bass at odd hours... must be doing aerobics or something."))
+    releaseall
+}
+
+script PeterHouse_RecordPlayer {
+    lockall
+    msgbox(format("An old record player sits in the corner.\pA vinyl record is spinning: 'Stayin' Alive' by the Bee Gees."))
+    releaseall
+}
+
+script PeterHouse_Bookshelf {
+    lockall
+    msgbox(format("The shelf is filled with vinyl records:\nEarth, Wind & Fire\nDonna Summer\nKool & The Gang\nChic\p...All disco classics!"))
+    releaseall
+}
+
+script PeterHouse_DiscoBalPostet {
+    lockall
+    msgbox(format("A glittery poster on the wall:\n'DISCO WILL NEVER DIE'\nwith a silhouette of a dancer in platform shoes."))
+    releaseall
+}

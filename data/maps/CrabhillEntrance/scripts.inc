@@ -146,159 +146,159 @@ Crabhill_Eventscript_ShinykrabbyEncounter_3:
 Won_or_Caught::
 # 79 "data/maps/CrabhillEntrance/scripts.pory"
 	msgbox Won_or_Caught_Text_0, MSGBOX_AUTOCLOSE
-# 80 "data/maps/CrabhillEntrance/scripts.pory"
+# 81 "data/maps/CrabhillEntrance/scripts.pory"
 	waitmessage
-# 82 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 31, Won_or_Caught_Movement_0
 # 83 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 30, Won_or_Caught_Movement_1
+	applymovement 31, Won_or_Caught_Movement_0
 # 84 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 29, Won_or_Caught_Movement_1
+	applymovement 30, Won_or_Caught_Movement_1
 # 85 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 32, Won_or_Caught_Movement_2
+	applymovement 29, Won_or_Caught_Movement_1
 # 86 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 28, Won_or_Caught_Movement_2
+	applymovement 32, Won_or_Caught_Movement_2
 # 87 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 25, Won_or_Caught_Movement_3
+	applymovement 28, Won_or_Caught_Movement_2
 # 88 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 27, Crabhill_Faculty_Grunt_Signal_Movement_5
+	applymovement 25, Won_or_Caught_Movement_3
 # 89 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 26, Crabhill_Faculty_Grunt_Signal_Movement_5
+	applymovement 27, Crabhill_Faculty_Grunt_Signal_Movement_5
 # 90 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 2, Won_or_Caught_Movement_4
+	applymovement 26, Crabhill_Faculty_Grunt_Signal_Movement_5
 # 91 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 23, Won_or_Caught_Movement_4
+	applymovement 2, Won_or_Caught_Movement_4
 # 92 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 22, Crabhill_Faculty_Grunt_Signal_Movement_5
+	applymovement 23, Won_or_Caught_Movement_4
 # 93 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 24, Crabhill_Faculty_Grunt_Signal_Movement_5
+	applymovement 22, Crabhill_Faculty_Grunt_Signal_Movement_5
 # 94 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 33, Crabhill_Faculty_Grunt_Signal_Movement_5
+	applymovement 24, Crabhill_Faculty_Grunt_Signal_Movement_5
 # 95 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 1, Won_or_Caught_Movement_5
+	applymovement 33, Crabhill_Faculty_Grunt_Signal_Movement_5
 # 96 "data/maps/CrabhillEntrance/scripts.pory"
-	waitmovement
+	applymovement 1, Won_or_Caught_Movement_5
 # 97 "data/maps/CrabhillEntrance/scripts.pory"
-	delay 60
+	waitmovement
 # 98 "data/maps/CrabhillEntrance/scripts.pory"
-	removeobject 31
+	delay 60
 # 99 "data/maps/CrabhillEntrance/scripts.pory"
-	removeobject 33
+	removeobject 31
 # 100 "data/maps/CrabhillEntrance/scripts.pory"
-	removeobject 30
+	removeobject 33
 # 101 "data/maps/CrabhillEntrance/scripts.pory"
-	removeobject 29
+	removeobject 30
 # 102 "data/maps/CrabhillEntrance/scripts.pory"
-	removeobject 32
+	removeobject 29
 # 103 "data/maps/CrabhillEntrance/scripts.pory"
-	removeobject 28
+	removeobject 32
 # 104 "data/maps/CrabhillEntrance/scripts.pory"
-	removeobject 25
+	removeobject 28
 # 105 "data/maps/CrabhillEntrance/scripts.pory"
-	removeobject 27
+	removeobject 25
 # 106 "data/maps/CrabhillEntrance/scripts.pory"
-	removeobject 26
+	removeobject 27
 # 107 "data/maps/CrabhillEntrance/scripts.pory"
-	removeobject 2
+	removeobject 26
 # 108 "data/maps/CrabhillEntrance/scripts.pory"
-	removeobject 23
+	removeobject 2
 # 109 "data/maps/CrabhillEntrance/scripts.pory"
-	removeobject 22
+	removeobject 23
 # 110 "data/maps/CrabhillEntrance/scripts.pory"
-	removeobject 24
+	removeobject 22
 # 111 "data/maps/CrabhillEntrance/scripts.pory"
-	removeobject 1
+	removeobject 24
 # 112 "data/maps/CrabhillEntrance/scripts.pory"
-	setspeaker Crabhill_Jacob_in_need_Text_0
+	removeobject 1
 # 113 "data/maps/CrabhillEntrance/scripts.pory"
-	msgbox Won_or_Caught_Text_1, MSGBOX_AUTOCLOSE
-# 114 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 21, Won_or_Caught_Movement_6
-# 115 "data/maps/CrabhillEntrance/scripts.pory"
-	waitmovement
-# 116 "data/maps/CrabhillEntrance/scripts.pory"
-	setobjectmovementtype LOCALID_JACOB, MOVEMENT_TYPE_NONE
-# 117 "data/maps/CrabhillEntrance/scripts.pory"
-	delay 120
-# 118 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 21, Won_or_Caught_Movement_7
-# 119 "data/maps/CrabhillEntrance/scripts.pory"
-	waitmovement
-# 120 "data/maps/CrabhillEntrance/scripts.pory"
 	setspeaker Crabhill_Jacob_in_need_Text_0
-# 121 "data/maps/CrabhillEntrance/scripts.pory"
-	msgbox Won_or_Caught_Text_2, MSGBOX_AUTOCLOSE
-# 122 "data/maps/CrabhillEntrance/scripts.pory"
-	applymovement 21, Crabhill_Faculty_Grunt_Signal_Movement_5
-# 123 "data/maps/CrabhillEntrance/scripts.pory"
+# 114 "data/maps/CrabhillEntrance/scripts.pory"
+	msgbox Won_or_Caught_Text_1, MSGBOX_AUTOCLOSE
+# 115 "data/maps/CrabhillEntrance/scripts.pory"
+	applymovement 21, Won_or_Caught_Movement_6
+# 116 "data/maps/CrabhillEntrance/scripts.pory"
 	waitmovement
+# 117 "data/maps/CrabhillEntrance/scripts.pory"
+	setobjectmovementtype LOCALID_JACOB, MOVEMENT_TYPE_NONE
+# 118 "data/maps/CrabhillEntrance/scripts.pory"
+	delay 120
+# 119 "data/maps/CrabhillEntrance/scripts.pory"
+	applymovement 21, Won_or_Caught_Movement_7
+# 120 "data/maps/CrabhillEntrance/scripts.pory"
+	waitmovement
+# 121 "data/maps/CrabhillEntrance/scripts.pory"
+	setspeaker Crabhill_Jacob_in_need_Text_0
+# 122 "data/maps/CrabhillEntrance/scripts.pory"
+	msgbox Won_or_Caught_Text_2, MSGBOX_AUTOCLOSE
+# 123 "data/maps/CrabhillEntrance/scripts.pory"
+	applymovement 21, Crabhill_Faculty_Grunt_Signal_Movement_5
 # 124 "data/maps/CrabhillEntrance/scripts.pory"
-	removeobject 21
+	waitmovement
 # 125 "data/maps/CrabhillEntrance/scripts.pory"
-	setflag FLAG_SHINY_KRABBY_ENCOUNTER
+	removeobject 21
 # 126 "data/maps/CrabhillEntrance/scripts.pory"
+	setflag FLAG_SHINY_KRABBY_ENCOUNTER
+# 127 "data/maps/CrabhillEntrance/scripts.pory"
 	clearflag FLAG_HIDE_JACOB_SIENNA
 	return
 
 
 Krabby_won::
-# 131 "data/maps/CrabhillEntrance/scripts.pory"
-	playmoncry SPECIES_KRABBY, CRY_MODE_ENCOUNTER
 # 132 "data/maps/CrabhillEntrance/scripts.pory"
-	msgbox Krabby_won_Text_0, MSGBOX_AUTOCLOSE
+	playmoncry SPECIES_KRABBY, CRY_MODE_ENCOUNTER
 # 133 "data/maps/CrabhillEntrance/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	msgbox Krabby_won_Text_0, MSGBOX_AUTOCLOSE
 # 134 "data/maps/CrabhillEntrance/scripts.pory"
-	removeobject 1
+	fadescreen FADE_TO_BLACK
 # 135 "data/maps/CrabhillEntrance/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	removeobject 1
 # 136 "data/maps/CrabhillEntrance/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 137 "data/maps/CrabhillEntrance/scripts.pory"
 	msgbox Krabby_won_Text_1
 	return
 
 
 Crabhill_Krabby_Cry::
-# 141 "data/maps/CrabhillEntrance/scripts.pory"
+# 142 "data/maps/CrabhillEntrance/scripts.pory"
 	playmoncry SPECIES_KRABBY, CRY_MODE_NORMAL
 	return
 
 
 Crabhill_Wall_Carving::
-# 145 "data/maps/CrabhillEntrance/scripts.pory"
-	lock
 # 146 "data/maps/CrabhillEntrance/scripts.pory"
-	msgbox Crabhill_Wall_Carving_Text_0
+	lock
 # 147 "data/maps/CrabhillEntrance/scripts.pory"
+	msgbox Crabhill_Wall_Carving_Text_0
+# 148 "data/maps/CrabhillEntrance/scripts.pory"
 	release
 	return
 
 
 Crabhill_Hiker_Hint::
-# 151 "data/maps/CrabhillEntrance/scripts.pory"
-	lock
 # 152 "data/maps/CrabhillEntrance/scripts.pory"
-	faceplayer
+	lock
 # 153 "data/maps/CrabhillEntrance/scripts.pory"
-	msgbox Crabhill_Hiker_Hint_Text_0
+	faceplayer
 # 154 "data/maps/CrabhillEntrance/scripts.pory"
-	waitmessage
+	msgbox Crabhill_Hiker_Hint_Text_0
 # 155 "data/maps/CrabhillEntrance/scripts.pory"
+	waitmessage
+# 156 "data/maps/CrabhillEntrance/scripts.pory"
 	release
 	return
 
 
 Crabhill_Faculty_Lost_grunt::
-# 159 "data/maps/CrabhillEntrance/scripts.pory"
-	lock
 # 160 "data/maps/CrabhillEntrance/scripts.pory"
-	faceplayer
+	lock
 # 161 "data/maps/CrabhillEntrance/scripts.pory"
-	setspeaker Crabhill_Faculty_Grunt_Signal_Text_0
+	faceplayer
 # 162 "data/maps/CrabhillEntrance/scripts.pory"
-	msgbox Crabhill_Faculty_Lost_grunt_Text_0
+	setspeaker Crabhill_Faculty_Grunt_Signal_Text_0
 # 163 "data/maps/CrabhillEntrance/scripts.pory"
-	waitmessage
+	msgbox Crabhill_Faculty_Lost_grunt_Text_0
 # 164 "data/maps/CrabhillEntrance/scripts.pory"
+	waitmessage
+# 165 "data/maps/CrabhillEntrance/scripts.pory"
 	release
 	return
 
@@ -371,135 +371,135 @@ Crabhill_Faculty_Grunt_Signal_Movement_5:
 	walk_fast_down
 	step_end
 
-# 82 "data/maps/CrabhillEntrance/scripts.pory"
+# 83 "data/maps/CrabhillEntrance/scripts.pory"
 Won_or_Caught_Movement_0:
-# 82 "data/maps/CrabhillEntrance/scripts.pory"
+# 83 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_left
-# 82 "data/maps/CrabhillEntrance/scripts.pory"
+# 83 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_left
-# 82 "data/maps/CrabhillEntrance/scripts.pory"
+# 83 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_left
-# 82 "data/maps/CrabhillEntrance/scripts.pory"
+# 83 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_left
-# 82 "data/maps/CrabhillEntrance/scripts.pory"
+# 83 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 83 "data/maps/CrabhillEntrance/scripts.pory"
+# 84 "data/maps/CrabhillEntrance/scripts.pory"
 Won_or_Caught_Movement_1:
-# 83 "data/maps/CrabhillEntrance/scripts.pory"
+# 84 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_up
-# 83 "data/maps/CrabhillEntrance/scripts.pory"
+# 84 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_up
-# 83 "data/maps/CrabhillEntrance/scripts.pory"
+# 84 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_up
-# 83 "data/maps/CrabhillEntrance/scripts.pory"
+# 84 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 85 "data/maps/CrabhillEntrance/scripts.pory"
+# 86 "data/maps/CrabhillEntrance/scripts.pory"
 Won_or_Caught_Movement_2:
-# 85 "data/maps/CrabhillEntrance/scripts.pory"
+# 86 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
-# 85 "data/maps/CrabhillEntrance/scripts.pory"
+# 86 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
-# 85 "data/maps/CrabhillEntrance/scripts.pory"
+# 86 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
-# 85 "data/maps/CrabhillEntrance/scripts.pory"
+# 86 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
-# 85 "data/maps/CrabhillEntrance/scripts.pory"
+# 86 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
-# 85 "data/maps/CrabhillEntrance/scripts.pory"
+# 86 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
-# 85 "data/maps/CrabhillEntrance/scripts.pory"
+# 86 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 87 "data/maps/CrabhillEntrance/scripts.pory"
+# 88 "data/maps/CrabhillEntrance/scripts.pory"
 Won_or_Caught_Movement_3:
-# 87 "data/maps/CrabhillEntrance/scripts.pory"
+# 88 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_up
-# 87 "data/maps/CrabhillEntrance/scripts.pory"
+# 88 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_up
-# 87 "data/maps/CrabhillEntrance/scripts.pory"
+# 88 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
-# 87 "data/maps/CrabhillEntrance/scripts.pory"
+# 88 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
-# 87 "data/maps/CrabhillEntrance/scripts.pory"
+# 88 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
-# 87 "data/maps/CrabhillEntrance/scripts.pory"
+# 88 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
-# 87 "data/maps/CrabhillEntrance/scripts.pory"
+# 88 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
-# 87 "data/maps/CrabhillEntrance/scripts.pory"
+# 88 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
-# 87 "data/maps/CrabhillEntrance/scripts.pory"
+# 88 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 90 "data/maps/CrabhillEntrance/scripts.pory"
+# 91 "data/maps/CrabhillEntrance/scripts.pory"
 Won_or_Caught_Movement_4:
-# 90 "data/maps/CrabhillEntrance/scripts.pory"
+# 91 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_up
-# 90 "data/maps/CrabhillEntrance/scripts.pory"
+# 91 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_up
-# 90 "data/maps/CrabhillEntrance/scripts.pory"
+# 91 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_left
-# 90 "data/maps/CrabhillEntrance/scripts.pory"
+# 91 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_left
-# 90 "data/maps/CrabhillEntrance/scripts.pory"
+# 91 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_left
-# 90 "data/maps/CrabhillEntrance/scripts.pory"
+# 91 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_left
-# 90 "data/maps/CrabhillEntrance/scripts.pory"
+# 91 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_left
-# 90 "data/maps/CrabhillEntrance/scripts.pory"
+# 91 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_left
-# 90 "data/maps/CrabhillEntrance/scripts.pory"
+# 91 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 95 "data/maps/CrabhillEntrance/scripts.pory"
+# 96 "data/maps/CrabhillEntrance/scripts.pory"
 Won_or_Caught_Movement_5:
-# 95 "data/maps/CrabhillEntrance/scripts.pory"
+# 96 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_down
-# 95 "data/maps/CrabhillEntrance/scripts.pory"
+# 96 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_right
-# 95 "data/maps/CrabhillEntrance/scripts.pory"
+# 96 "data/maps/CrabhillEntrance/scripts.pory"
 	jump_2_right
-# 95 "data/maps/CrabhillEntrance/scripts.pory"
+# 96 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
-# 95 "data/maps/CrabhillEntrance/scripts.pory"
+# 96 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
-# 95 "data/maps/CrabhillEntrance/scripts.pory"
+# 96 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
-# 95 "data/maps/CrabhillEntrance/scripts.pory"
+# 96 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
-# 95 "data/maps/CrabhillEntrance/scripts.pory"
+# 96 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 114 "data/maps/CrabhillEntrance/scripts.pory"
+# 115 "data/maps/CrabhillEntrance/scripts.pory"
 Won_or_Caught_Movement_6:
-# 114 "data/maps/CrabhillEntrance/scripts.pory"
+# 115 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_slow_left
-# 114 "data/maps/CrabhillEntrance/scripts.pory"
+# 115 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_slow_right
-# 114 "data/maps/CrabhillEntrance/scripts.pory"
+# 115 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_slow_left
-# 114 "data/maps/CrabhillEntrance/scripts.pory"
+# 115 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_slow_right
 	step_end
 
-# 118 "data/maps/CrabhillEntrance/scripts.pory"
+# 119 "data/maps/CrabhillEntrance/scripts.pory"
 Won_or_Caught_Movement_7:
-# 118 "data/maps/CrabhillEntrance/scripts.pory"
+# 119 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_right
-# 118 "data/maps/CrabhillEntrance/scripts.pory"
+# 119 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_right
-# 118 "data/maps/CrabhillEntrance/scripts.pory"
+# 119 "data/maps/CrabhillEntrance/scripts.pory"
 	walk_right
-# 118 "data/maps/CrabhillEntrance/scripts.pory"
+# 119 "data/maps/CrabhillEntrance/scripts.pory"
 	face_up
 	step_end
 
@@ -565,14 +565,16 @@ Crabhill_Faculty_Grunt_Signal_Text_6:
 Won_or_Caught_Text_0:
 # 79 "data/maps/CrabhillEntrance/scripts.pory"
 	.string "The Krabby's seem to have snapped out\n"
-	.string "of their confusion.$"
+	.string "of it!\p"
+	.string "Whatever was controlling them... it\n"
+	.string "stopped working.$"
 
 Won_or_Caught_Text_1:
-# 113 "data/maps/CrabhillEntrance/scripts.pory"
+# 114 "data/maps/CrabhillEntrance/scripts.pory"
 	.string "Left... Right... Left... WHOA!$"
 
 Won_or_Caught_Text_2:
-# 121 "data/maps/CrabhillEntrance/scripts.pory"
+# 122 "data/maps/CrabhillEntrance/scripts.pory"
 	.string "Kid! You broke the trance!\p"
 	.string "Thank Arceus... another five minutes of\n"
 	.string "that and my legs would have fallen right\l"
@@ -611,17 +613,17 @@ Won_or_Caught_Text_2:
 	.string "You are welcome to join for dinner!$"
 
 Krabby_won_Text_0:
-# 132 "data/maps/CrabhillEntrance/scripts.pory"
+# 133 "data/maps/CrabhillEntrance/scripts.pory"
 	.string "KRABBY, KRAB-BY!$"
 
 Krabby_won_Text_1:
-# 136 "data/maps/CrabhillEntrance/scripts.pory"
+# 137 "data/maps/CrabhillEntrance/scripts.pory"
 	.string "The shiny Krabby fled through a crack\n"
 	.string "in the wall, the other krabby's seem\l"
 	.string "still confused.$"
 
 Crabhill_Wall_Carving_Text_0:
-# 146 "data/maps/CrabhillEntrance/scripts.pory"
+# 147 "data/maps/CrabhillEntrance/scripts.pory"
 	.string "Carved into the damp cave wall,\n"
 	.string "glistening with moisture:\p"
 	.string "When stone weeps and the tide is low, a\n"
@@ -630,7 +632,7 @@ Crabhill_Wall_Carving_Text_0:
 	.string "soon command the land.$"
 
 Crabhill_Hiker_Hint_Text_0:
-# 153 "data/maps/CrabhillEntrance/scripts.pory"
+# 154 "data/maps/CrabhillEntrance/scripts.pory"
 	.string "I have been in this cave for hours.\p"
 	.string "The more time I spend in here the more I\n"
 	.string "realize going backwards might be going\l"
@@ -638,7 +640,7 @@ Crabhill_Hiker_Hint_Text_0:
 	.string "If you know what I mean.$"
 
 Crabhill_Faculty_Lost_grunt_Text_0:
-# 162 "data/maps/CrabhillEntrance/scripts.pory"
+# 163 "data/maps/CrabhillEntrance/scripts.pory"
 	.string "I have lost contact with my associate,\n"
 	.string "this cave is a maze!\p"
 	.string "The Control Signal seemed to cause a\n"

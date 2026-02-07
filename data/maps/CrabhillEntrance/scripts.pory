@@ -76,7 +76,8 @@ script Crabhill_Eventscript_ShinykrabbyEncounter {
 
 script Won_or_Caught{
     
-    msgbox(format("The Krabby's seem to have snapped out of their confusion."),MSGBOX_AUTOCLOSE)
+    msgbox(format("The Krabby's seem to have snapped out of it!\pWhatever was controlling them... it stopped working."),MSGBOX_AUTOCLOSE)
+
     waitmessage
     
     applymovement(31,moves(walk_fast_left*5))

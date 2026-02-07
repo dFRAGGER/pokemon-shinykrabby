@@ -1,27 +1,198 @@
 mapscripts SiltrootTown_Indoor_Shed_MapScripts {
-
+    MAP_SCRIPT_ON_TRANSITION {
+        call(SiltrootTown_Shed_OnTransition)
+    }
 }
 
-script SiltrootTown_Indoor_Shed_slowbro {
-    lockall
-    playmoncry(SPECIES_SLOWBRO,CRY_MODE_ENCOUNTER)
-    msgbox(format("SLOOOWWWWW.... BRO"),MSGBOX_AUTOCLOSE)
+script SiltrootTown_Shed_OnTransition {
+    // Reset any temporary flags if needed
+    end
+}
+
+// ============================================
+// ENTRANCE SIGN - Explains the minigame logic
+// ============================================
+script SiltrootTown_Indoor_Shed_EntranceSign {
+    lock
+    msgbox(format("--HANDWRITTEN NOTE FROM ALI--\p'Yo, friend.\pThe Slowbro are maintaining the optimal growth frequency through deep meditation.\pTheir psychic vibes keep the whole hydroponic system balanced.\pDO NOT disturb their wavelength.\pIf they detect a foreign energy signature...\pThey'll reflexively reset the entire dimensional pocket.\p(Translation: They'll teleport you back outside. Sorry.)\pThe package is in the back corner.\pVisualize yourself as a shadow.\pBe the absence of light.\p- Ali'\p\nP.S. Move slowly. They're Slowbro, not Alakazam.\nYou can sneak past if you're careful.'"),MSGBOX_AUTOCLOSE)
     waitmessage
-    fadescreen(FADE_TO_BLACK)
+    release
+}
+
+// ============================================
+// SLOWBRO ENCOUNTERS - Different Alert Levels
+// ============================================
+
+// Type 1: ALERT SLOWBRO (Quick Detection)
+// Use this for Slowbro near the entrance or critical paths
+script SiltrootTown_Indoor_Shed_Slowbro_Alert {
+    lockall
+    delay(40)
+    playmoncry(SPECIES_SLOWBRO, CRY_MODE_ENCOUNTER)
+    delay(30)
+    waitmoncry
+    msgbox(format("SLOOOW...\p...BRO!\p(Slowbro detected an intruder!)"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    msgbox(format("Slowbro's eyes glow with psychic energy!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_M_PSYBEAM)
+    fadescreen(FADE_TO_WHITE)
     delay(60)
-    warp(MAP_SILTROOT_TOWN, 4)
-    waitstate
-    fadescreen(FADE_FROM_BLACK)
+    // Check if player has the package
+    if (flag(FLAG_SILTROOTTOWN_STASH_SACK)) {
+        msgbox(format("The psychic pulse knocked the package out of your hands!"),MSGBOX_AUTOCLOSE)
+        waitmessage
+        removeitem(ITEM_SOOT_SACK)
+        clearflag(FLAG_SILTROOTTOWN_STASH_SACK)
+        addobject(1)  // Make package reappear
+        msgbox(format("The shed's dimensional pocket is resetting..."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        warp(MAP_SILTROOT_TOWN_INDOOR_SHED, 4, 18)
+        waitstate
+        fadescreen(FADE_FROM_WHITE)
+        delay(40)
+        msgbox(format("You were sent back to the entrance!\pThe package was left behind...\pYou'll have to try again!"),MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    else {
+        msgbox(format("The shed's dimensional pocket is resetting..."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        warp(MAP_SILTROOT_TOWN_INDOOR_SHED, 4, 18)
+        waitstate
+        fadescreen(FADE_FROM_WHITE)
+        delay(40)
+        msgbox(format("You were teleported back to the entrance!\pThe Slowbro's meditation trance was disturbed."),MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
     releaseall
     end
-
 }
 
+// Type 2: DROWSY SLOWBRO (Delayed Detection)
+// Use this for Slowbro in middle areas - gives player more time
+script SiltrootTown_Indoor_Shed_Slowbro_Drowsy {
+    lockall
+    delay(100)  // Slowbro is slow to notice
+    applymovement(VAR_LAST_TALKED, moves(emote_question_mark))
+    delay(60)
+    playmoncry(SPECIES_SLOWBRO, CRY_MODE_NORMAL)
+    msgbox(format("Sloooow...?\p(Slowbro slowly opens one eye...)\p.......\p(Wait... someone's here?)"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(80)
+    playse(SE_PIN)
+    applymovement(VAR_LAST_TALKED, moves(emote_exclamation_mark))
+    msgbox(format("BRO! SLOOOW-BRO!\p(Intruder detected!)"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_M_PSYBEAM)
+    fadescreen(FADE_TO_WHITE)
+    delay(60)
+    // Check if player has the package
+    if (flag(FLAG_SILTROOTTOWN_STASH_SACK)) {
+        msgbox(format("The psychic pulse knocked the package from your grip!"),MSGBOX_AUTOCLOSE)
+        waitmessage
+        removeitem(ITEM_SOOT_SACK)
+        clearflag(FLAG_SILTROOTTOWN_STASH_SACK)
+        addobject(1)  // Make package reappear
+        msgbox(format("Slowbro's psychic pulse resets the room!"),MSGBOX_AUTOCLOSE)
+        waitmessage
+        warp(MAP_SILTROOT_TOWN_INDOOR_SHED, 4, 18)
+        waitstate
+        fadescreen(FADE_FROM_WHITE)
+        msgbox(format("You were sent back!\pThe package tumbled back to where you found it...\pYou'll have to be more careful this time!"),MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    else {
+        msgbox(format("Slowbro's psychic pulse resets the room!"),MSGBOX_AUTOCLOSE)
+        waitmessage
+        warp(MAP_SILTROOT_TOWN_INDOOR_SHED, 4, 18)
+        waitstate
+        fadescreen(FADE_FROM_WHITE)
+        msgbox(format("You were sent back!\pThe Slowbro eventually noticed you."),MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    releaseall
+    end
+}
+
+// Type 3: DEEP MEDITATION SLOWBRO (Barely Notices)
+// Use this for Slowbro near the package - easiest to sneak past
+// NOTE: This one is so zoned out it WON'T catch you even with package
+script SiltrootTown_Indoor_Shed_Slowbro_DeepMeditation {
+    lockall
+    delay(150)  // Takes FOREVER to notice
+    playmoncry(SPECIES_SLOWBRO, CRY_MODE_WEAK)
+    if (flag(FLAG_SILTROOTTOWN_STASH_SACK)) {
+        msgbox(format("...Sloooooo...\p(Slowbro is completely zoned out...)\p.......\p(It doesn't even notice you carrying something...)"),MSGBOX_AUTOCLOSE)
+    }
+    else {
+        msgbox(format("...Sloooooo...\p(Slowbro is completely zoned out...)\p.......\p(It's contemplating the cosmos...)"),MSGBOX_AUTOCLOSE)
+    }
+    waitmessage
+    delay(100)
+    applymovement(VAR_LAST_TALKED, moves(emote_question_mark))
+    msgbox(format("...w?\p(Huh? Was that a noise...?)\p.......\p(Probably nothing...)"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    msgbox(format("Slowbro drifted back into meditation.\pYou're safe... for now."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    releaseall
+    end
+}
+
+// ============================================
+// PEACEFUL SLOWBRO INTERACTION (When safe)
+// ============================================
+script SiltrootTown_Indoor_Shed_Slowbro_Peaceful {
+    lock
+    faceplayer
+    playmoncry(SPECIES_SLOWBRO, CRY_MODE_NORMAL)
+    msgbox(format("Slooooow...\p(Slowbro is deep in meditation.)\pBro...\p(Its eyes are closed. It's humming a low frequency.)\p.......\pThe air around it feels... peaceful."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+// ============================================
+// SUCCESSFUL PACKAGE RETRIEVAL
+// ============================================
 script Siltroottown_Indoor_Shed_Stash {
     lock
+    msgbox(format("You found the package!\pIt's a well-wrapped bundle with a handwritten note:\p'My best harvest yet.\nHave fun, friend.\n- Ali'"),MSGBOX_AUTOCLOSE)
+    waitmessage
     setflag(FLAG_SILTROOTTOWN_STASH_SACK)
-    removeobject(1)
+    removeobject(1)  // Remove the package object
     giveitem(ITEM_SOOT_SACK)
+    delay(30)
+    msgbox(format("You carefully picked up the package.\pThe nearby Slowbro didn't even notice."),MSGBOX_AUTOCLOSE)
+    waitmessage
     release
     end
+}
+
+// ============================================
+// ENVIRONMENTAL FLAVOR TEXT
+// ============================================
+
+// Hydroponic System Sign
+script SiltrootTown_Shed_HydroponicSystem {
+    lock
+    msgbox(format("It's an advanced hydroponic growing system.\pThe plants are thriving under perfect LED spectrum lighting.\pSeveral Slowbro are stationed around the room, maintaining the environment through psychic energy.\pThe temperature is precisely controlled... and it smells heavily of herbs."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+// Ali's Research Notes (Easter Egg)
+script SiltrootTown_Shed_ResearchNotes {
+    lock
+    msgbox(format("--ALI'S RESEARCH LOG--\p'Day 347:\nThe Slowbro have achieved perfect symbiosis with the hydroponic matrix.\pTheir Psychic-type frequencies resonate at 420 Hz...\nthe universal frequency of the cosmos.\pHypothesis: If we can channel this energy toward Project Star-Shot, we may achieve orbital velocity.\pNote to self: Stop watching Carl Sagan documentaries before bed.'\p--END LOG--"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+// Growing Plants
+script SiltrootTown_Shed_Plants {
+    lock
+    msgbox(format("These plants are growing at an incredible rate.\pThe Slowbro's psychic energy seems to be accelerating their growth cycle.\pThe leaves are a vibrant green, and the smell is... intense."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
 }

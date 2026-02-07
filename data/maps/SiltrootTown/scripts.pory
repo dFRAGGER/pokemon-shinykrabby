@@ -41,30 +41,30 @@ script SiltrootTown_Scott_Boatride {
 
 script SiltrootTown_Arrive_Boatride {
     delay(50)
-    applymovement(LOCALID_PLAYER,moves(walk_up))
+    setspeaker("Scott")
+    msgbox(format("Bravo, Tango here.\pReady to disembark?\p...\pCopy that.\pLet's move!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER,moves(walk_fast_up))
     waitmovement
     call(Common_EventScript_StopBrineysBoatMusic)
     showobjectat(LOCALID_PLAYER, MAP_SILTROOT_TOWN)
-    applymovement(LOCALID_PLAYER,moves(walk_up face_down))
-    waitmovement
-    setobjectxyperm(7,9,59)
-    addobject(7)
-    setobjectsubpriority(7, MAP_SILTROOT_TOWN,0)
-    clearflag(FLAG_HIDE_SCOTT_LIONSARCH_CITY)
-    applymovement(7,moves(walk_up))
+    applymovement(LOCALID_PLAYER,moves(walk_fast_up*7 walk_fast_right walk_fast_up walk_fast_right face_left)) 
     call(Common_EventScript_StopBrineysBoatMusic)
     setflag(FLAG_HIDE_SCOTT_OUTSIDE_BOAT)
+    setobjectxyperm(6,9,59)
+    addobject(6)
+    setobjectsubpriority(6, MAP_SILTROOT_TOWN,0)
+    clearflag(FLAG_HIDE_SCOTT_LIONSARCH_CITY)
+    applymovement(6,moves(walk_fast_up*8 walk_fast_right walk_fast_up face_right))
+    waitmovement
     resetobjectsubpriority(LOCALID_PLAYER, MAP_SILTROOT_TOWN)
-    resetobjectsubpriority(7, MAP_LIONSARCH_CITY)
+    resetobjectsubpriority(6, MAP_LIONSARCH_CITY)
     setspeaker("Scott")
-    msgbox(format("Touchdown. We are in the blind spot.\pMy scanners show a gap in the harbor security grid for exactly forty-five seconds.\pListen fast because I am burning fuel here.\pI am not going into the city.\pToo many facial recognition towers.\pYou have to take the package to the client yourself.\pHe is a DJ.\pPeter.\pIf you hear loud, old-school disco music, that is the drop-off point.\pNow get moving!\pDon't look back.\pIf anyone asks, we never met.\pI was never here.\pThis boat doesn't exist!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("Touchdown. We are in the blind spot.\pMy scanners show a gap in the harbor security grid for exactly forty-five seconds.\pListen fast because I am burning fuel right now.\pI am not going further into the city.\pToo many facial recognition towers.\pYou have to take the package to the client yourself.\pHe is a DJ.\pPeter.\pIf you hear loud, old-school disco music, that is the drop-off point.\pNow get moving!\pWalk forward and don't look back.\pIf anyone asks, we never met.\pI was never here.\pTango going dark."),MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(7, moves(walk_down))
+    applymovement(6, moves(walk_fast_down walk_fast_left walk_fast_down*9))
     waitmovement
-    removeobject(7)
-    applymovement(3, moves(walk_fast_down*7))
-    waitmovement
-    removeobject(3)
+    removeobject(6)
     setflag(FLAG_HIDE_SCOTT_LIONSARCH_CITY)
     end
 }
@@ -195,7 +195,7 @@ script Siltroottown_Guard_shed {
         applymovement(LOCALID_PLAYER, moves(walk_up face_right))
         waitmovement
     }
-    msgbox(format("But listen carefully.\pThe production team is inside right now.\pIt's a bunch of Slowbros.\pThey are in a deep, meditative trance while they work.\pIf they see you, it breaks their flow, and they will use Confusion to toss you right back out the front door.\pThe bag is in the back.\pMove like a ghost, kid."),MSGBOX_AUTOCLOSE)
+    msgbox(format("But listen carefully.\pThe production team is inside right now.\pIt's a bunch of Slowbros.\pThey are in a deep, meditative trance while they work.\pIf they see you, it breaks their flow, and they will use their psychic powers to toss you right back out the front door.\pThe bag is in the back.\pMove like a ghost, kid."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER, moves(face_up))
     waitmovement

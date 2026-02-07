@@ -12,6 +12,7 @@
 #define OW_WHITEOUT_CUTSCENE            GEN_4 // In Gen4+, whiting out shows an additional message and post whiteout event script cutscene with a healing NPC. (While this change was also in FRLG, for the sake of simplicity, setting this to GEN_3 will result in RSE behavior.)
 #define OW_DEFOG_FIELD_MOVE             FALSE      // If enabled, Defog can be used as a Field Move as seen in DPPt.
 #define OW_ROCK_CLIMB_FIELD_MOVE        FALSE      // If enabled, Rock Climb can be used as a Field Move as seen in DPPt.
+#define OW_HM_ITEMS_ALLOW_FIELD_USE     TRUE       // If enabled, HM field moves can be used without teaching them to Pokémon. Requires having the HM item, required badge, and a Pokémon that can learn the move in your party.
 
 // Item Obtain Description Box
 #define OW_ITEM_DESCRIPTIONS_OFF        0   // never show descriptions

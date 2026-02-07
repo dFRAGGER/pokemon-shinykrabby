@@ -590,10 +590,10 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_6:
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_7:
 # 105 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
 	.string "So you need a ride to Lion's Arch?\p"
-	.string "That frozen wasteland up north?\p"
+	.string "That cold ass harbor up north?\p"
 	.string "Why would anyone want to go there?\p"
-	.string "There's no good music scene, just ice\n"
-	.string "and corporate shills.$"
+	.string "There's no good music scene, apart from\n"
+	.string "a disco club in a random basement.$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_8:
 # 109 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"

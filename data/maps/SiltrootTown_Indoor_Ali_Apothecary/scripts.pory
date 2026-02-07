@@ -102,7 +102,7 @@ script SiltrootTown_Indoor_Apothecary_Ali_Giel {
     waitmovement
     applymovement(2, moves(face_left))
     setspeaker("Giel")
-    msgbox(format("So you need a ride to Lion's Arch?\pThat frozen wasteland up north?\pWhy would anyone want to go there?\pThere's no good music scene, just ice and corporate shills."))
+    msgbox(format("So you need a ride to Lion's Arch?\pThat cold ass harbor up north?\pWhy would anyone want to go there?\pThere's no good music scene, apart from a disco club in a random basement."))
     waitmessage
     applymovement(2, moves(face_down))
     setspeaker("Ali")

@@ -34,4 +34,6 @@ static inline u32 FieldMove_GetPartyMsgID(enum FieldMove fieldMove)
     return gFieldMoveInfo[fieldMove].partyMsgID;
 }
 
+bool32 HasHMItemForFieldMove(enum FieldMove fieldMove);
+
 #endif //GUARD_FIELD_MOVE_H

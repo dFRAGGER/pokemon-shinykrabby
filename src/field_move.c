@@ -7,6 +7,9 @@
 #include "constants/field_move.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
+#include "constants/items.h"
+#include "item.h"
+#include "config/overworld.h"
 
 static bool32 IsFieldMoveUnlocked_Cut(void)
 {
@@ -89,6 +92,42 @@ static bool32 IsFieldMoveUnlocked_SweetScent(void)
 static bool32 IsFieldMoveUnlocked_Defog(void)
 {
     return TRUE;
+}
+#endif
+
+#if OW_HM_ITEMS_ALLOW_FIELD_USE == TRUE
+// Maps HM moves to their corresponding HM items
+static u16 GetHMItemForMove(u16 moveId)
+{
+    switch (moveId)
+    {
+        case MOVE_CUT:        return ITEM_HM01;
+        case MOVE_FLY:        return ITEM_HM02;
+        case MOVE_SURF:       return ITEM_HM03;
+        case MOVE_STRENGTH:   return ITEM_HM04;
+        case MOVE_FLASH:      return ITEM_HM05;
+        case MOVE_ROCK_SMASH: return ITEM_HM06;
+        case MOVE_WATERFALL:  return ITEM_HM07;
+        case MOVE_DIVE:       return ITEM_HM08;
+        default:              return ITEM_NONE;
+    }
+}
+
+// Checks if player has the HM item for a specific field move
+bool32 HasHMItemForFieldMove(enum FieldMove fieldMove)
+{
+    u16 moveId = FieldMove_GetMoveId(fieldMove);
+    u16 hmItem = GetHMItemForMove(moveId);
+
+    if (hmItem == ITEM_NONE)
+        return FALSE;
+
+    return CheckBagHasItem(hmItem, 1);
+}
+#else
+bool32 HasHMItemForFieldMove(enum FieldMove fieldMove)
+{
+    return TRUE; // When config is disabled, always return TRUE (no item check needed)
 }
 #endif
 

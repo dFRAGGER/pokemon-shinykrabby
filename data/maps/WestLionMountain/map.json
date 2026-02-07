@@ -5,7 +5,7 @@
   "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_WEST_LION_MOUNTAIN",
   "requires_flash": false,
-  "weather": "WEATHER_SUNNY_CLOUDS",
+  "weather": "WEATHER_SNOW",
   "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
@@ -30,7 +30,22 @@
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 29,
+      "y": 59,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE05",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 30,
+      "y": 59,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE05",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

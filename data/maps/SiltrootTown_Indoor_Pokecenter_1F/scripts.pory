@@ -13,10 +13,24 @@ script Siltroottown_PokemonCenter_1F_OnTransition {
 }
 
 script Siltroottown_PokemonCenter_1F_EventScript_Nurse {
-	setvar(VAR_0x800B, LOCALID_SILTROOT_TOWN_NURSE) 
-	call (Common_EventScript_PkmnCenterNurse)
-	waitmessage
-    waitbuttonpress
+	lock
+    msgbox(format("Welcome to the Siltroot Town Pokémon Center.\pWe are the oldest Pokémon Center in the region.\pWould you like to heal your Pokémon?"),MSGBOX_YESNO)
+    waitmessage
+    if (var(VAR_RESULT) == YES) {
+        call(Common_EventScript_OutOfCenterPartyHeal)
+        msgbox(format("Your Pokémon have been healed!\pThank you for visiting the Siltroot Town Pokémon Center.\pWe hope to see you again!"),MSGBOX_AUTOCLOSE)
+        waitmessage
+        applymovement(LOCALID_PLAYER, moves(face_down))
+        waitmovement
+        release
+        end
+    }
+    else {
+        msgbox(format("No problem! Come back when you're ready.\pWe always have bed available for you."),MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    applymovement(LOCALID_PLAYER, moves(face_down))
+    waitmovement
     release
     end
 }
@@ -33,7 +47,7 @@ script SiltrootTown_Indoor_Pokecenter_1F_Captain {
 script SiltrootTown_Indoor_Pokecenter_1F_Sailor1 {
     lock
     faceplayer
-    msgbox(format("The ground stopped moving hours ago, but my legs still feel like jelly.\pI have never been so happy to see a Nurse Joy in my life."),MSGBOX_AUTOCLOSE)
+    msgbox(format("The ground stopped moving hours ago, but my legs still feel like jelly.\pI have never been so happy to see a nurse in my life."),MSGBOX_AUTOCLOSE)
     waitmessage
     release
     end

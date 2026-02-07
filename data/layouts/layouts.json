@@ -5840,7 +5840,7 @@
       "height": 60,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_Snow",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/WestLionMountain/border.bin",
       "blockdata_filepath": "data/layouts/WestLionMountain/map.bin"
@@ -5924,7 +5924,7 @@
       "height": 56,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_Snow",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/EastLionMountain/border.bin",
       "blockdata_filepath": "data/layouts/EastLionMountain/map.bin"
@@ -6185,7 +6185,7 @@
       "id": "LAYOUT_LIONSARCH_CITY_INDOOR_PETER_BASEMENT_PARTY",
       "name": "LionsarchCity_Indoor_PeterBasementParty_Layout",
       "width": 25,
-      "height": 26,
+      "height": 15,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",

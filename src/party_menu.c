@@ -79,6 +79,7 @@
 #include "constants/party_menu.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "config/overworld.h"
 
 enum {
     MENU_SUMMARY,
@@ -2881,6 +2882,39 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUB_MOVES);
 
     // Add field moves to action list
+#if OW_HM_ITEMS_ALLOW_FIELD_USE == TRUE
+    // Check if Pokémon can use field moves either by knowing them or being able to learn them (with HM item)
+    for (j = 0; j != FIELD_MOVES_COUNT; j++)
+    {
+        bool8 canUseFieldMove = FALSE;
+        u16 moveId = FieldMove_GetMoveId(j);
+
+        // First check if Pokémon knows the move
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == moveId)
+            {
+                canUseFieldMove = TRUE;
+                break;
+            }
+        }
+
+        // If Pokémon doesn't know the move, check if it can learn it and player has HM item
+        if (!canUseFieldMove)
+        {
+            u16 species = GetMonData(&mons[slotId], MON_DATA_SPECIES_OR_EGG);
+            if (species != SPECIES_EGG && IsFieldMoveUnlocked(j) && HasHMItemForFieldMove(j))
+            {
+                if (CanLearnTeachableMove(species, moveId))
+                    canUseFieldMove = TRUE;
+            }
+        }
+
+        if (canUseFieldMove)
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+    }
+#else
+    // Original behavior: Only check if Pokémon knows the move
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         for (j = 0; j != FIELD_MOVES_COUNT; j++)
@@ -2892,6 +2926,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             }
         }
     }
+#endif
 
     if (!InBattlePike())
     {

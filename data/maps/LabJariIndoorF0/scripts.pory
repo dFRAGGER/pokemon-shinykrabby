@@ -27,6 +27,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection {
     if(var(VAR_RESULT) == YES) {
         givemon(SPECIES_CHARMANDER, 5)
         playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_CHARMANDER)
         removeobject(9)
@@ -35,7 +36,9 @@ script ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection {
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
         }
+        
     }
     hidemonpic
     }
@@ -57,6 +60,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection {
     if(var(VAR_RESULT) == YES) {
         givemon(SPECIES_BULBASAUR, 5)
         playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_BULBASAUR)
         removeobject(8)
@@ -65,6 +69,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection {
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
         }
         
     }
@@ -88,6 +93,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection {
     if(var(VAR_RESULT) == YES) {
         givemon(SPECIES_SQUIRTLE, 5)
         playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_SQUIRTLE)
         removeobject(7)
@@ -96,7 +102,9 @@ script ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection {
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
         }
+        
     }
     hidemonpic
     }
@@ -119,6 +127,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection {
     if(var(VAR_RESULT) == YES) {
         givemon(SPECIES_CYNDAQUIL, 5)
         playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_CYNDAQUIL)
         removeobject(6)
@@ -127,6 +136,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection {
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
         }
         
     }
@@ -150,6 +160,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection {
     if(var(VAR_RESULT) == YES) {
         givemon(SPECIES_CHIKORITA, 5)
         playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_CHIKORITA)
         removeobject(5)
@@ -158,6 +169,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection {
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
         }
         
     }
@@ -181,6 +193,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection {
     if(var(VAR_RESULT) == YES) {
         givemon(SPECIES_TOTODILE, 5)
         playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_TOTODILE)
         removeobject(4)
@@ -189,8 +202,9 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection {
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
         }
-        
+    
     }
     hidemonpic
     }
@@ -212,6 +226,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection {
     if(var(VAR_RESULT) == YES) {
         givemon(SPECIES_TORCHIC, 5)
         playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_TORCHIC)
         removeobject(3)
@@ -220,6 +235,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection {
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
         }
         
     }
@@ -243,6 +259,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection {
     if(var(VAR_RESULT) == YES) {
         givemon(SPECIES_TREECKO, 5)
         playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_TREECKO)
         removeobject(2)
@@ -251,6 +268,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection {
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
         }
         
     }
@@ -274,6 +292,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection {
     if(var(VAR_RESULT) == YES) {
         givemon(SPECIES_MUDKIP, 5)
         playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_MUDKIP)
         removeobject(1)
@@ -282,7 +301,9 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection {
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
         }
+        
     }
     hidemonpic
     }

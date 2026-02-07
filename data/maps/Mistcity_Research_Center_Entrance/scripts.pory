@@ -164,6 +164,7 @@ script Mistcity_Research_Center_Entrance_Scientist_Slaking {
 script Mistcity_Research_Center_Entrance_Daan_RescueMission {
     lock
     setflag(FLAG_DISABLE_FOLLOWER_POKEMON)
+    delay(20)
     playse(SE_PIN)
     applymovement(19, moves(face_right emote_exclamation_mark))
     waitmovement
@@ -195,6 +196,8 @@ script Mistcity_Research_Center_Entrance_Daan_RescueMission {
     waitmessage
     applymovement(LOCALID_PLAYER,moves(walk_right*2 face_up))
     applymovement(21, moves(face_down))
+    
+    
     waitmovement
     applymovement(19, moves(walk_right*2 face_up))
     applymovement(20, moves(walk_right walk_up face_down))

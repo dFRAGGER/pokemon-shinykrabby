@@ -1,1 +1,245 @@
 mapscripts LionsarchCity_Indoor_PeterBasementParty_MapScripts {}
+
+// The secret disco basement club
+
+script DiscoBasement_DJ_Peter {
+    lock
+    faceplayer
+    setspeaker("DJ Peter")
+    // Check if player has delivered the package
+    if (flag(FLAG_DELIVERED_ALIS_PACKAGE_TO_PETER)) {
+        // Already delivered, check if got Rock Smash
+        if (flag(FLAG_RECEIVED_HM_ROCK_SMASH)) {
+            setspeaker("DJ Peter")
+            msgbox(format("Welcome back to the GROOVE ZONE!\pThe herbs you brought are keeping the vibes strong!\pRock Smash treating you well?\pRemember, you need permission from the Gym Leader to use it outside!"))
+        } else {
+            // This shouldn't happen, but handle it
+            setspeaker("DJ Peter")
+            msgbox(format("Hey, thanks again for the delivery!\pDon't forget to use that Rock Smash I gave you!\pJust get permission from the Gym Leader first."))
+        }
+    } elif (checkitem(ITEM_SOOT_SACK, 1)) {
+        // Player has the package from Ali
+        setspeaker("DJ Peter")
+        msgbox(format("Wait... that smell...\pIs that what I think it is?"))
+        waitmessage
+        setspeaker("DJ Peter")
+        msgbox(format("You brought the goods from Ali!\pMy man! This is exactly what I needed!\pThe party can really get started now!"))
+        waitmessage
+        removeitem(ITEM_SOOT_SACK, 1)
+        setflag(FLAG_DELIVERED_ALIS_PACKAGE_TO_PETER)
+        setspeaker("DJ Peter")
+        msgbox(format("So, you want to know about the Faculty?\pThose corporate goons...\pThey're mining at the foot of East Lion Mountain.\pDigging up the whole place, destroying the natural beauty."))
+        waitmessage
+        setspeaker("DJ Peter")
+        msgbox(format("They've got the whole operation locked down tight.\pYou need to pass through there to reach the Lion Mountains proper."))
+        waitmessage
+        setspeaker("DJ Peter")
+        msgbox(format("You know what?\pYou've done me a solid, so let me return the favor.\pHow about a night out of dancing?\pOn the house, baby!"))
+        waitmessage
+        setspeaker("DJ Peter")
+        msgbox(format("...\pNo?\pYou don't want to dance?\pTough crowd!"))
+        waitmessage
+        setspeaker("DJ Peter")
+        msgbox(format("Alright, alright, I got something better.\pI discovered this technique when experimenting with my Loudreds.\pTurns out, if you point really loud sounds at rocks...\pThey just... pulverize!"))
+        waitmessage
+        setspeaker("DJ Peter")
+        msgbox(format("I call it 'Rock Smash'.\pYou're gonna need this to get through the rocky terrain near the Lion Mountains."))
+        waitmessage
+        giveitem(ITEM_HM_ROCK_SMASH)
+        setflag(FLAG_RECEIVED_HM_ROCK_SMASH)
+        setspeaker("DJ Peter")
+        msgbox(format("But here's the thing...\pYou can't just go around smashing rocks willy-nilly.\pYou need official permission from the Gym Leader to use it outside.\pBureaucracy, am I right?"))
+        waitmessage
+        setspeaker("DJ Peter")
+        msgbox(format("Now get out there and show those Faculty goons what's up!\pAnd remember... stay funky!"))
+    } else {
+        // Normal dialogue
+        setspeaker("DJ Peter")
+        msgbox(format("Welcome to the GROOVE ZONE!\pThis is where the real party happens!\pOld school disco, baby!\pNone of that modern stuff - just pure, unadulterated FUNK!"))
+    }
+    waitmessage
+    release
+}
+
+// Guard near the DJ stage - grants access after hearing about Ali's stash
+script DiscoBasement_Guard_DJStage {
+    lockall
+    faceplayer
+    setspeaker("Security Guard")
+    if (flag(FLAG_BASEMENT_DJ_STAGE_ACCESS)) {
+        msgbox(format("Alright, you're cool.\pPeter's up there doing his thing.\pJust don't touch the vinyl collection!"))
+        applymovement(10, moves(walk_left face_down))
+        waitmovement
+    } elif (checkitem(ITEM_SOOT_SACK, 1)) {
+        msgbox(format("Hey, hold up.\pNobody gets past me without clearance.\p..."))
+        waitmessage
+        msgbox(format("Wait... is that Ali's stash you're carrying?\pI can smell it from here!\pDamn, that's the good stuff!"))
+        waitmessage
+        msgbox(format("Alright, you're clearly here on business.\pPeter's gonna want to see you.\pGo on through, VIP access granted!"))
+        waitmessage
+        setflag(FLAG_BASEMENT_DJ_STAGE_ACCESS)
+        msgbox(format("Tell Peter I said what's up!"))
+        applymovement(10, moves(walk_left face_down))
+        waitmovement
+    } else {
+        msgbox(format("Hey, VIP area only past this point.\pNo entry without clearance from the boss.\pYou want in? Talk to someone who knows someone."))
+    }
+    waitmessage
+    releaseall
+}
+
+// Guard near entrance - talks about the smuggling tunnel
+script DiscoBasement_Guard_Tunnel {
+    lockall
+    faceplayer
+    setspeaker("Security Guard")
+    msgbox(format("You see that old tunnel over there?\pIt used to run all the way to the Iron Factory.\pBack in the day, it was a smuggling route.\pDirect link from the harbor, if you know what I mean."))
+    waitmessage
+    setspeaker("Security Guard")
+    msgbox(format("Used to move all kinds of... 'merchandise' through there.\pNo customs, no questions asked.\pThe good old days, you know?"))
+    waitmessage
+    setspeaker("Security Guard")
+    msgbox(format("But then the Faculty took over the factory.\pThey sealed the whole thing up.\pNow only Peter and the Faculty have the keys.\pRest of us are locked out for good."))
+    waitmessage
+    setspeaker("Security Guard")
+    msgbox(format("It's a shame, really.\pThat tunnel had some history.\pNow it's just another thing the Faculty controls."))
+    waitmessage
+    releaseall
+}
+
+// Machoke guard
+script DiscoBasement_Guard_Machoke {
+    lockall
+    faceplayer
+    setspeaker("Machoke")
+    msgbox(format("MACHOKE! CHOKE!"))
+    waitmessage
+    releaseall
+}
+
+// Giel watching the girls and getting rejected
+script DiscoBasement_Giel {
+    lock
+    faceplayer
+    setspeaker("Giel")
+    if (flag(FLAG_GIEL_LEFT_BASEMENT)) {
+        // This shouldn't trigger as Giel should be gone
+        releaseall
+        end
+    }
+    msgbox(format("Oh hey, it's you!\pSmall world, right?\pI got here way faster than you.\pI know people, you see. Connections."))
+    waitmessage
+    msgbox(format("When you mentioned Lionsarch City back in Siltroot Town, I got inspired.\pThought I'd check out the scene here.\pMaybe meet some intellectuals who appreciate fine conversation."))
+    waitmessage
+    // Look at the girls
+    applymovement(7, moves(face_left))
+    waitmovement
+    delay(30)
+    msgbox(format("See those lovely ladies over there?\pI've been trying to impress them with my knowledge.\pDid you know about the historical conflicts in the Kanto region?\pFascinating stuff, really."))
+    waitmessage
+    msgbox(format("The war between Celadon and Saffron...\pThe trade disputes of Vermilion Harbor...\pClassic historical drama!"))
+    waitmessage
+    // Girl 1 pushes back
+    playse(SE_PIN)
+    applymovement(4, moves(emote_exclamation_mark face_right))
+    waitmovement
+    setspeaker("Dancing Girl")
+    msgbox(format("Ugh, this guy again?\pNobody wants to hear about ancient wars!\pWe're trying to DANCE here!"))
+    waitmessage
+    playse(SE_PIN)
+    applymovement(5, moves(emote_exclamation_mark face_right))    
+    waitmovement
+    setspeaker("Dancing Girl")
+    msgbox(format("Seriously, take the hint!\pYou've been hovering around us all night!\pSo creepy!"))
+    waitmessage
+    playse(SE_PIN)
+    applymovement(6, moves(emote_exclamation_mark face_right))
+    waitmovement
+    setspeaker("Dancing Girl")
+    msgbox(format("Security! Can someone get this weirdo away from us?!"))
+    waitmessage
+    // Giel reacts
+    faceplayer
+    setspeaker("Giel")
+    msgbox(format("FINE!\pI see how it is!\pYou just can't appreciate intellectual discourse!\pThis is what's wrong with society today!"))
+    waitmessage
+    setspeaker("Giel")
+    msgbox(format("Women just don't appreciate a man who understands history!\pI try to share my knowledge and THIS is the thanks I get?!"))
+    waitmessage
+    setspeaker("Giel")
+    msgbox(format("I'm done with this city!\pThe disco scene here is TERRIBLE anyway!\pI'm going back to Hezik City where people actually have CULTURE!"))
+    waitmessage
+    // Giel storms out
+    applymovement(7, moves(walk_down walk_down walk_down walk_down walk_right))
+    waitmovement
+    setflag(FLAG_GIEL_LEFT_BASEMENT)
+    removeobject(7)
+    // Girls go back to dancing
+    applymovement(4, moves(face_up))
+    applymovement(5, moves(face_up))
+    applymovement(6, moves(face_up))
+    waitmovement
+    setspeaker("Dancing Girl")
+    msgbox(format("Finally! Good riddance!\pNow we can dance in peace!"))
+    waitmessage
+    release
+}
+
+script DiscoBasement_Dancer_1 {
+    lockall
+    faceplayer
+    msgbox(format("Can you FEEL it?!\pThe bass is hitting different tonight!\pI haven't stopped dancing for THREE HOURS!"))
+    releaseall
+}
+
+script DiscoBasement_Dancer_2 {
+    lockall
+    faceplayer
+    msgbox(format("This place is the best-kept secret in Lionsarch!\pNo Faculty goons, no harbor noise...\pJust pure vibes and disco lights!"))
+    releaseall
+}
+
+script DiscoBasement_Dancer_3 {
+    lockall
+    faceplayer
+    msgbox(format("Peter only plays vinyl.\pHe says digital music doesn't have the same soul.\pI don't know about that, but this music SLAPS!"))
+    releaseall
+}
+
+script DiscoBasement_Chillaxer {
+    lockall
+    faceplayer
+    msgbox(format("I needed this, you know?\pThe city above is all smog and industry.\pDown here, it's like traveling back to a better time."))
+    releaseall
+}
+
+script DiscoBasement_AliFriend {
+    lockall
+    faceplayer
+    msgbox(format("Ali from Siltroot Town hooks Peter up with the good stuff.\pI mean... the good MUSIC.\pYeah. Definitely just music."))
+    releaseall
+}
+
+script DiscoBasement_DiscoBall {
+    lockall
+    msgbox(format("A massive disco ball spins overhead, scattering light across the room.\pIt's mesmerizing..."))
+    releaseall
+}
+
+script DiscoBasement_SpeakerSystem {
+    lockall
+    msgbox(format("The Loudred is blasting:\n'Le Freak' by Chic\p'FREAK OUT!'"))
+    releaseall
+}
+
+script DiscoBasement_VinylCollection {
+    lockall
+    msgbox(format("Peter's vinyl collection is MASSIVE.\pHundreds of records, all meticulously organized.\pThis must have cost a fortune!"))
+    releaseall
+}
+
+script DiscoBasement_SecretEntrance {
+    lockall
+    msgbox(format("A discrete entrance hidden behind a bookshelf upstairs.\pVery clever!"))
+    releaseall
+}

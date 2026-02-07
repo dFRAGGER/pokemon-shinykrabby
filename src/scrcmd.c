@@ -39,6 +39,7 @@
 #include "palette.h"
 #include "party_menu.h"
 #include "pokedex.h"
+#include "pokemon.h"
 #include "pokemon_storage_system.h"
 #include "random.h"
 #include "overworld.h"
@@ -61,6 +62,7 @@
 #include "malloc.h"
 #include "constants/event_objects.h"
 #include "constants/map_types.h"
+#include "config/overworld.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(struct ScriptContext *ctx);
@@ -2305,7 +2307,23 @@ bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
         u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
         if (!species)
             break;
+
+        bool8 canUseFieldMove = FALSE;
+
+        // First check if Pokémon knows the move
         if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], move) == TRUE)
+            canUseFieldMove = TRUE;
+
+#if OW_HM_ITEMS_ALLOW_FIELD_USE == TRUE
+        // If Pokémon doesn't know the move, check if it can learn it and player has HM item
+        if (!canUseFieldMove && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+        {
+            if (HasHMItemForFieldMove(fieldMove) && CanLearnTeachableMove(species, move))
+                canUseFieldMove = TRUE;
+        }
+#endif
+
+        if (canUseFieldMove)
         {
             gSpecialVar_Result = i;
             gSpecialVar_0x8004 = species;

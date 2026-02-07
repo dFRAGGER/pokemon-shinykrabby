@@ -12,6 +12,16 @@ script DeepCloudforest_Healspot_OnTransition {
     end
 }
 
+script DeepCloudForest_FacultyGorge_David_Dialogue {
+    lock
+    faceplayer
+    setspeaker("David")
+    msgbox(format("Daan charged in there to fight the Faculty, but I... I freeze up every time I hear the buzzing of a Beedrill.\pI'll just guard the entrance, you go ahead and help him before I pass out from the stress."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    
+}
+
 script DeepCloudForest_FacultyGorge_GetOutTruck {
     lock
     applymovement(LOCALID_PLAYER, moves(jump_right face_down))
@@ -296,7 +306,7 @@ script Deepcloudforest_Barry_Defeated {
     playse(SE_PIN)
     applymovement(28, moves(emote_exclamation_mark))
     setspeaker("David")
-    msgbox(format("I... I can't track them.\pBut the objective... the 'Guardian'... the energy it's giving off is immense!\pIt's overwhelming everything else!\pIt's moving fast, heading east!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("I... I can't track them.\pBut the objective... the 'Guardian'... the energy it's giving off is immense!\pIt's overwhelming everything else!\pIt's moving fast, heading west!"),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
     setspeaker("Daan")
