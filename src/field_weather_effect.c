@@ -2288,6 +2288,104 @@ bool8 Shade_Finish(void)
 }
 
 //------------------------------------------------------------------------------
+// WEATHER_CLUB_LIGHTS
+//------------------------------------------------------------------------------
+
+enum {
+    CLUB_LIGHTS_STATE_INIT,
+    CLUB_LIGHTS_STATE_WAIT_CHANGE,
+    CLUB_LIGHTS_STATE_FLASH_ON,
+    CLUB_LIGHTS_STATE_FLASH_HOLD,
+    CLUB_LIGHTS_STATE_FLASH_OFF,
+    CLUB_LIGHTS_STATE_FLASH_WAIT,
+};
+
+void ClubLights_InitVars(void)
+{
+    gWeatherPtr->initStep = CLUB_LIGHTS_STATE_INIT;
+    gWeatherPtr->weatherGfxLoaded = FALSE;
+    gWeatherPtr->targetColorMapIndex = 3;
+    gWeatherPtr->colorMapStepDelay = 20;
+    gWeatherPtr->thunderTimer = 0;
+    gWeatherPtr->thunderAllowEnd = TRUE;
+    Weather_SetBlendCoeffs(8, 8);
+    gWeatherPtr->noShadows = FALSE;
+}
+
+void ClubLights_InitAll(void)
+{
+    ClubLights_InitVars();
+    while (gWeatherPtr->weatherGfxLoaded == FALSE)
+        ClubLights_Main();
+}
+
+void ClubLights_Main(void)
+{
+    switch (gWeatherPtr->initStep)
+    {
+    case CLUB_LIGHTS_STATE_INIT:
+        gWeatherPtr->weatherGfxLoaded = TRUE;
+        gWeatherPtr->initStep++;
+        break;
+    case CLUB_LIGHTS_STATE_WAIT_CHANGE:
+        if (gWeatherPtr->palProcessingState != WEATHER_PAL_STATE_CHANGING_WEATHER)
+        {
+            gWeatherPtr->thunderTimer = (Random() % 20) + 30;
+            gWeatherPtr->initStep = CLUB_LIGHTS_STATE_FLASH_ON;
+        }
+        break;
+    case CLUB_LIGHTS_STATE_FLASH_ON:
+        // Flash bright
+        gWeatherPtr->thunderAllowEnd = FALSE;
+        ApplyWeatherColorMapIfIdle(18);
+        gWeatherPtr->thunderTimer = (Random() % 3) + 4;
+        gWeatherPtr->initStep++;
+        break;
+    case CLUB_LIGHTS_STATE_FLASH_HOLD:
+        if (--gWeatherPtr->thunderTimer == 0)
+        {
+            gWeatherPtr->initStep++;
+        }
+        break;
+    case CLUB_LIGHTS_STATE_FLASH_OFF:
+        // Return to darker state
+        ApplyWeatherColorMapIfIdle(3);
+        gWeatherPtr->thunderAllowEnd = TRUE;
+        gWeatherPtr->thunderTimer = (Random() % 30) + 20;
+        gWeatherPtr->initStep++;
+        break;
+    case CLUB_LIGHTS_STATE_FLASH_WAIT:
+        if (--gWeatherPtr->thunderTimer == 0)
+        {
+            gWeatherPtr->initStep = CLUB_LIGHTS_STATE_FLASH_ON;
+        }
+        break;
+    }
+}
+
+bool8 ClubLights_Finish(void)
+{
+    switch (gWeatherPtr->finishStep)
+    {
+    case 0:
+        gWeatherPtr->thunderAllowEnd = FALSE;
+        gWeatherPtr->finishStep++;
+        // fall through
+    case 1:
+        ClubLights_Main();
+        if (gWeatherPtr->thunderAllowEnd)
+        {
+            gWeatherPtr->finishStep++;
+            return FALSE;
+        }
+        break;
+    default:
+        return FALSE;
+    }
+    return TRUE;
+}
+
+//------------------------------------------------------------------------------
 // WEATHER_UNDERWATER_BUBBLES
 //------------------------------------------------------------------------------
 
@@ -2629,6 +2727,7 @@ static u8 TranslateWeatherNum(u8 weather)
     case WEATHER_DROUGHT:            return WEATHER_DROUGHT;
     case WEATHER_DOWNPOUR:           return WEATHER_DOWNPOUR;
     case WEATHER_UNDERWATER_BUBBLES: return WEATHER_UNDERWATER_BUBBLES;
+    case WEATHER_CLUB_LIGHTS:        return WEATHER_CLUB_LIGHTS;
     case WEATHER_ABNORMAL:           return WEATHER_ABNORMAL;
     case WEATHER_ROUTE119_CYCLE:     return sWeatherCycleRoute119[gSaveBlock1Ptr->weatherCycleStage];
     case WEATHER_ROUTE123_CYCLE:     return sWeatherCycleRoute123[gSaveBlock1Ptr->weatherCycleStage];

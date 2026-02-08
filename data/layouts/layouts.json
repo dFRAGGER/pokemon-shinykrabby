@@ -6173,7 +6173,7 @@
       "id": "LAYOUT_LIONSARCH_CITY_INDOOR_PETER_HOUSE",
       "name": "LionsarchCity_Indoor_PeterHouse_Layout",
       "width": 14,
-      "height": 8,
+      "height": 7,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
@@ -6292,14 +6292,26 @@
     {
       "id": "LAYOUT_LIONSARCH_CITY_INDOOR_GYM",
       "name": "LionsarchCity_Indoor_Gym_Layout",
-      "width": 50,
-      "height": 50,
+      "width": 30,
+      "height": 30,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Cerulean_City",
+      "secondary_tileset": "gTileset_SootopolisGym",
       "border_filepath": "data/layouts/LionsarchCity_Indoor_Gym/border.bin",
       "blockdata_filepath": "data/layouts/LionsarchCity_Indoor_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_LIONSARCH_CITY_STEEL_FACTORY",
+      "name": "LionsarchCity_Steel_Factory_Layout",
+      "width": 40,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/LionsarchCity_Steel_Factory/border.bin",
+      "blockdata_filepath": "data/layouts/LionsarchCity_Steel_Factory/map.bin"
     }
   ]
 }

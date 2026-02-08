@@ -4,7 +4,7 @@ LionsarchCity_Indoor_PeterBasementParty_MapScripts::
 
 DiscoBasement_DJ_Peter::
 # 6 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	lockall
+	lock
 # 7 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	faceplayer
 # 8 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
@@ -23,7 +23,7 @@ DiscoBasement_DJ_Peter_1:
 # 60 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	waitmessage
 # 61 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	releaseall
+	release
 	return
 
 DiscoBasement_DJ_Peter_2:
@@ -114,367 +114,627 @@ DiscoBasement_DJ_Peter_7:
 
 DiscoBasement_Guard_DJStage::
 # 66 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	lockall
+	lock
 # 67 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	faceplayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 # 68 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	setspeaker DiscoBasement_Guard_DJStage_Text_0
+	faceplayer
 # 69 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker DiscoBasement_Guard_DJStage_Text_0
+# 70 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	goto_if_set FLAG_BASEMENT_DJ_STAGE_ACCESS, DiscoBasement_Guard_DJStage_2
 	checkitem ITEM_SOOT_SACK, 1
 # 0 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne DiscoBasement_Guard_DJStage_3
-# 85 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 120 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker DiscoBasement_Guard_DJStage_Text_0
+# 121 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_Guard_DJStage_Text_6
 DiscoBasement_Guard_DJStage_1:
-# 87 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 123 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	waitmessage
-# 88 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	releaseall
+# 124 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	release
 	return
 
 DiscoBasement_Guard_DJStage_2:
-# 70 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	msgbox DiscoBasement_Guard_DJStage_Text_1
 # 71 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	applymovement 10, DiscoBasement_Guard_DJStage_Movement_0
+	msgbox DiscoBasement_Guard_DJStage_Text_1
 # 72 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement 10, DiscoBasement_Guard_DJStage_Movement_0
+# 73 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	compare VAR_TEMP_0, 21
+	goto_if_eq DiscoBasement_Guard_DJStage_17
+DiscoBasement_Guard_DJStage_15:
+# 78 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	compare VAR_TEMP_0, 22
+	goto_if_eq DiscoBasement_Guard_DJStage_14
+DiscoBasement_Guard_DJStage_12:
+# 83 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	compare VAR_TEMP_0, 22
+	goto_if_eq DiscoBasement_Guard_DJStage_11
+DiscoBasement_Guard_DJStage_7:
+# 88 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	waitmovement
 	goto DiscoBasement_Guard_DJStage_1
 
 DiscoBasement_Guard_DJStage_3:
-# 74 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 90 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker DiscoBasement_Guard_DJStage_Text_0
+# 91 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_Guard_DJStage_Text_2
-# 75 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 92 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	waitmessage
-# 76 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 93 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker DiscoBasement_Guard_DJStage_Text_0
+# 94 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_Guard_DJStage_Text_3
-# 77 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 95 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	waitmessage
-# 78 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 96 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker DiscoBasement_Guard_DJStage_Text_0
+# 97 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_Guard_DJStage_Text_4
-# 79 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 98 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	waitmessage
-# 80 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 99 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	setflag FLAG_BASEMENT_DJ_STAGE_ACCESS
-# 81 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 100 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker DiscoBasement_Guard_DJStage_Text_0
+# 101 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_Guard_DJStage_Text_5
-# 82 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 102 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	applymovement 10, DiscoBasement_Guard_DJStage_Movement_0
-# 83 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 103 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	compare VAR_TEMP_0, 21
+	goto_if_eq DiscoBasement_Guard_DJStage_30
+DiscoBasement_Guard_DJStage_28:
+# 108 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	compare VAR_TEMP_0, 22
+	goto_if_eq DiscoBasement_Guard_DJStage_27
+DiscoBasement_Guard_DJStage_25:
+# 113 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	compare VAR_TEMP_0, 22
+	goto_if_eq DiscoBasement_Guard_DJStage_24
+DiscoBasement_Guard_DJStage_20:
+# 118 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	waitmovement
 	goto DiscoBasement_Guard_DJStage_1
 
+DiscoBasement_Guard_DJStage_8:
+# 74 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement LOCALID_PLAYER, DiscoBasement_Guard_DJStage_Movement_1
+# 75 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmovement
+# 76 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement 10, DiscoBasement_Guard_DJStage_Movement_2
+	goto DiscoBasement_Guard_DJStage_7
+
+DiscoBasement_Guard_DJStage_9:
+# 79 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement LOCALID_PLAYER, DiscoBasement_Guard_DJStage_Movement_3
+# 80 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmovement
+# 81 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement 10, DiscoBasement_Guard_DJStage_Movement_2
+	goto DiscoBasement_Guard_DJStage_7
+
+DiscoBasement_Guard_DJStage_10:
+# 84 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement LOCALID_PLAYER, DiscoBasement_Guard_DJStage_Movement_4
+# 85 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmovement
+# 86 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement 10, DiscoBasement_Guard_DJStage_Movement_2
+	goto DiscoBasement_Guard_DJStage_7
+
+DiscoBasement_Guard_DJStage_11:
+# 83 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	compare VAR_TEMP_1, 4
+	goto_if_eq DiscoBasement_Guard_DJStage_10
+	goto DiscoBasement_Guard_DJStage_7
+
+DiscoBasement_Guard_DJStage_14:
+# 78 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	compare VAR_TEMP_1, 6
+	goto_if_eq DiscoBasement_Guard_DJStage_9
+	goto DiscoBasement_Guard_DJStage_12
+
+DiscoBasement_Guard_DJStage_17:
+# 73 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	compare VAR_TEMP_1, 5
+	goto_if_eq DiscoBasement_Guard_DJStage_8
+	goto DiscoBasement_Guard_DJStage_15
+
+DiscoBasement_Guard_DJStage_21:
+# 104 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement LOCALID_PLAYER, DiscoBasement_Guard_DJStage_Movement_1
+# 105 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmovement
+# 106 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement 10, DiscoBasement_Guard_DJStage_Movement_2
+	goto DiscoBasement_Guard_DJStage_20
+
+DiscoBasement_Guard_DJStage_22:
+# 109 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement LOCALID_PLAYER, DiscoBasement_Guard_DJStage_Movement_3
+# 110 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmovement
+# 111 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement 10, DiscoBasement_Guard_DJStage_Movement_2
+	goto DiscoBasement_Guard_DJStage_20
+
+DiscoBasement_Guard_DJStage_23:
+# 114 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement LOCALID_PLAYER, DiscoBasement_Guard_DJStage_Movement_4
+# 115 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmovement
+# 116 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement 10, DiscoBasement_Guard_DJStage_Movement_2
+	goto DiscoBasement_Guard_DJStage_20
+
+DiscoBasement_Guard_DJStage_24:
+# 113 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	compare VAR_TEMP_1, 4
+	goto_if_eq DiscoBasement_Guard_DJStage_23
+	goto DiscoBasement_Guard_DJStage_20
+
+DiscoBasement_Guard_DJStage_27:
+# 108 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	compare VAR_TEMP_1, 6
+	goto_if_eq DiscoBasement_Guard_DJStage_22
+	goto DiscoBasement_Guard_DJStage_25
+
+DiscoBasement_Guard_DJStage_30:
+# 103 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	compare VAR_TEMP_1, 5
+	goto_if_eq DiscoBasement_Guard_DJStage_21
+	goto DiscoBasement_Guard_DJStage_28
+
 
 DiscoBasement_Guard_Tunnel::
-# 93 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 129 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	lockall
-# 94 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 130 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	faceplayer
-# 95 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	setspeaker DiscoBasement_Guard_DJStage_Text_0
-# 96 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	msgbox DiscoBasement_Guard_Tunnel_Text_0
-# 97 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmessage
-# 98 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	setspeaker DiscoBasement_Guard_DJStage_Text_0
-# 99 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 131 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker DiscoBasement_Guard_Tunnel_Text_0
+# 132 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_Guard_Tunnel_Text_1
-# 100 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 133 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	waitmessage
-# 101 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	setspeaker DiscoBasement_Guard_DJStage_Text_0
-# 102 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 134 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker DiscoBasement_Guard_Tunnel_Text_0
+# 135 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_Guard_Tunnel_Text_2
-# 103 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 136 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	waitmessage
-# 104 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	setspeaker DiscoBasement_Guard_DJStage_Text_0
-# 105 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 137 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker DiscoBasement_Guard_Tunnel_Text_0
+# 138 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_Guard_Tunnel_Text_3
-# 106 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 139 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	waitmessage
-# 107 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 140 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker DiscoBasement_Guard_Tunnel_Text_0
+# 141 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	msgbox DiscoBasement_Guard_Tunnel_Text_4, MSGBOX_AUTOCLOSE
+# 142 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmessage
+# 143 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement LOCALID_PLAYER, DiscoBasement_Guard_Tunnel_Movement_0
+# 144 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmovement
+# 146 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	releaseall
 	return
 
 
 DiscoBasement_Guard_Machoke::
-# 112 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 151 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	lockall
-# 113 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 152 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	faceplayer
-# 114 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 153 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	setspeaker DiscoBasement_Guard_Machoke_Text_0
-# 115 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 154 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_Guard_Machoke_Text_1
-# 116 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 155 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	waitmessage
-# 117 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 156 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	releaseall
+	return
+
+
+DiscoBasement_Guard_Staring::
+# 161 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	lockall
+# 162 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	faceplayer
+# 163 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker DiscoBasement_Guard_Staring_Text_0
+# 164 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	msgbox DiscoBasement_Guard_Staring_Text_1
+# 165 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmessage
+# 166 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	releaseall
 	return
 
 
 DiscoBasement_Giel::
-# 122 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	lock
-# 123 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	faceplayer
-# 124 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	setspeaker DiscoBasement_Giel_Text_0
-# 125 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	goto_if_set FLAG_GIEL_LEFT_BASEMENT, DiscoBasement_Giel_2
-# 130 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	msgbox DiscoBasement_Giel_Text_1
-# 131 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmessage
-# 132 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	msgbox DiscoBasement_Giel_Text_2
-# 133 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmessage
-# 135 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	applymovement 7, DiscoBasement_Giel_Movement_0
-# 136 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmovement
-# 137 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	delay 30
-# 138 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	msgbox DiscoBasement_Giel_Text_3
-# 139 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmessage
-# 140 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	msgbox DiscoBasement_Giel_Text_4
-# 141 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmessage
-# 143 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	playse SE_PIN
-# 144 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	applymovement 4, DiscoBasement_Giel_Movement_1
-# 145 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmovement
-# 146 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	setspeaker DiscoBasement_Giel_Text_5
-# 147 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	msgbox DiscoBasement_Giel_Text_6
-# 148 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmessage
-# 149 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	playse SE_PIN
-# 150 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	applymovement 5, DiscoBasement_Giel_Movement_1
-# 151 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmovement
-# 152 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	setspeaker DiscoBasement_Giel_Text_5
-# 153 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	msgbox DiscoBasement_Giel_Text_7
-# 154 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmessage
-# 155 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	playse SE_PIN
-# 156 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	applymovement 6, DiscoBasement_Giel_Movement_1
-# 157 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmovement
-# 158 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	setspeaker DiscoBasement_Giel_Text_5
-# 159 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	msgbox DiscoBasement_Giel_Text_8
-# 160 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmessage
-# 162 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	faceplayer
-# 163 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	setspeaker DiscoBasement_Giel_Text_0
-# 164 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	msgbox DiscoBasement_Giel_Text_9
-# 165 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmessage
-# 166 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	setspeaker DiscoBasement_Giel_Text_0
-# 167 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	msgbox DiscoBasement_Giel_Text_10
-# 168 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmessage
-# 169 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	setspeaker DiscoBasement_Giel_Text_0
 # 170 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	msgbox DiscoBasement_Giel_Text_11
+	lock
 # 171 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 172 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	faceplayer
 # 173 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	applymovement 7, DiscoBasement_Giel_Movement_2
+	setspeaker DiscoBasement_Giel_Text_0
 # 174 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmovement
-# 175 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	setflag FLAG_GIEL_LEFT_BASEMENT
-# 176 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	removeobject 7
-# 178 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	applymovement 4, DiscoBasement_Giel_Movement_3
+	goto_if_set FLAG_GIEL_LEFT_BASEMENT, DiscoBasement_Giel_2
 # 179 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	applymovement 5, DiscoBasement_Giel_Movement_3
+	setspeaker DiscoBasement_Giel_Text_0
 # 180 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	applymovement 6, DiscoBasement_Giel_Movement_3
+	msgbox DiscoBasement_Giel_Text_1
 # 181 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	waitmovement
+	waitmessage
 # 182 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	setspeaker DiscoBasement_Giel_Text_5
+	setspeaker DiscoBasement_Giel_Text_0
 # 183 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	msgbox DiscoBasement_Giel_Text_12
+	msgbox DiscoBasement_Giel_Text_2
 # 184 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	waitmessage
-# 185 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 186 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement 7, DiscoBasement_Giel_Movement_0
+# 187 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmovement
+# 188 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	compare VAR_TEMP_0, 16
+	goto_if_eq DiscoBasement_Giel_6
+DiscoBasement_Giel_4:
+# 192 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	delay 30
+# 193 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker DiscoBasement_Giel_Text_0
+# 194 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	msgbox DiscoBasement_Giel_Text_3
+# 195 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmessage
+# 196 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker DiscoBasement_Giel_Text_0
+# 197 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	msgbox DiscoBasement_Giel_Text_4
+# 198 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmessage
+# 200 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	playse SE_PIN
+# 201 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement 4, DiscoBasement_Giel_Movement_2
+# 202 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmovement
+# 203 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker NULL
+# 204 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	msgbox DiscoBasement_Giel_Text_5
+# 205 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmessage
+# 206 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	playse SE_PIN
+# 207 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement 5, DiscoBasement_Giel_Movement_2
+# 208 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmovement
+# 209 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	msgbox DiscoBasement_Giel_Text_6
+# 210 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmessage
+# 211 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	playse SE_PIN
+# 212 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement 6, DiscoBasement_Giel_Movement_2
+# 213 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmovement
+# 214 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	msgbox DiscoBasement_Giel_Text_7
+# 215 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmessage
+# 217 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	faceplayer
+# 219 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 220 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker DiscoBasement_Giel_Text_0
+# 221 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	msgbox DiscoBasement_Giel_Text_8
+# 222 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmessage
+# 223 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker DiscoBasement_Giel_Text_0
+# 224 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	msgbox DiscoBasement_Giel_Text_9
+# 225 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmessage
+# 226 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker DiscoBasement_Giel_Text_0
+# 227 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	msgbox DiscoBasement_Giel_Text_10
+# 228 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmessage
+# 230 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	compare VAR_TEMP_0, 17
+	goto_if_eq DiscoBasement_Giel_11
+DiscoBasement_Giel_9:
+# 233 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement LOCALID_PLAYER, DiscoBasement_Giel_Movement_4
+# 234 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement 7, DiscoBasement_Giel_Movement_5
+# 235 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmovement
+# 236 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setflag FLAG_GIEL_LEFT_BASEMENT
+# 237 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	removeobject 7
+# 239 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	setspeaker NULL
+# 240 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	msgbox DiscoBasement_Giel_Text_11
+# 241 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmessage
+# 242 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement 4, DiscoBasement_Giel_Movement_6
+# 243 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement 5, DiscoBasement_Giel_Movement_6
+# 244 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement 6, DiscoBasement_Giel_Movement_6
+# 245 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	waitmovement
+# 246 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	release
 	return
 
 DiscoBasement_Giel_2:
-# 127 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 176 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	releaseall
 	end
 
+DiscoBasement_Giel_5:
+# 189 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement LOCALID_PLAYER, DiscoBasement_Giel_Movement_1
+	goto DiscoBasement_Giel_4
+
+DiscoBasement_Giel_6:
+# 188 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	compare VAR_TEMP_1, 8
+	goto_if_eq DiscoBasement_Giel_5
+	goto DiscoBasement_Giel_4
+
+DiscoBasement_Giel_10:
+# 231 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	applymovement LOCALID_PLAYER, DiscoBasement_Giel_Movement_3
+	goto DiscoBasement_Giel_9
+
+DiscoBasement_Giel_11:
+# 230 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	compare VAR_TEMP_1, 9
+	goto_if_eq DiscoBasement_Giel_10
+	goto DiscoBasement_Giel_9
+
 
 DiscoBasement_Dancer_1::
-# 189 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 250 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	lockall
-# 190 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 251 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	faceplayer
-# 191 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 252 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_Dancer_1_Text_0
-# 192 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 253 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	releaseall
 	return
 
 
 DiscoBasement_Dancer_2::
-# 196 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 257 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	lockall
-# 197 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 258 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	faceplayer
-# 198 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 259 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_Dancer_2_Text_0
-# 199 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 260 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	releaseall
 	return
 
 
 DiscoBasement_Dancer_3::
-# 203 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 264 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	lockall
-# 204 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 265 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	faceplayer
-# 205 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 266 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_Dancer_3_Text_0
-# 206 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 267 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	releaseall
 	return
 
 
 DiscoBasement_Chillaxer::
-# 210 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 271 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	lockall
-# 211 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 272 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	faceplayer
-# 212 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 273 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_Chillaxer_Text_0
-# 213 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 274 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	releaseall
 	return
 
 
 DiscoBasement_AliFriend::
-# 217 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 278 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	lockall
-# 218 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 279 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	faceplayer
-# 219 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 280 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_AliFriend_Text_0
-# 220 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 281 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	releaseall
+	return
+
+
+DiscoBasement_Oldwoman::
+# 285 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	lockall
+# 286 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	faceplayer
+# 287 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	msgbox DiscoBasement_Oldwoman_Text_0
+# 288 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	releaseall
 	return
 
 
 DiscoBasement_DiscoBall::
-# 224 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 292 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	lockall
-# 225 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 293 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_DiscoBall_Text_0
-# 226 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 294 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	releaseall
 	return
 
 
 DiscoBasement_SpeakerSystem::
-# 230 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 298 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	lockall
-# 231 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 299 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_SpeakerSystem_Text_0
-# 232 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 300 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	releaseall
 	return
 
 
 DiscoBasement_VinylCollection::
-# 236 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 304 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	lockall
-# 237 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 305 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_VinylCollection_Text_0
-# 238 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 306 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	releaseall
 	return
 
 
 DiscoBasement_SecretEntrance::
-# 242 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 310 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	lockall
-# 243 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 311 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	msgbox DiscoBasement_SecretEntrance_Text_0
-# 244 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 312 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	releaseall
 	return
 
 
-# 71 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 72 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 DiscoBasement_Guard_DJStage_Movement_0:
-# 71 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	walk_left
-# 71 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	face_down
-	step_end
-
-# 135 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-DiscoBasement_Giel_Movement_0:
-# 135 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 72 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	walk_right
+# 72 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	face_left
 	step_end
 
-# 144 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-DiscoBasement_Giel_Movement_1:
-# 144 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	emote_exclamation_mark
-# 144 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	face_right
+# 74 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Guard_DJStage_Movement_1:
+# 74 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	walk_right
+# 74 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	walk_up
 	step_end
 
-# 173 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-DiscoBasement_Giel_Movement_2:
-# 173 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 76 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Guard_DJStage_Movement_2:
+# 76 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	walk_left
+# 76 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	face_down
+	step_end
+
+# 79 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Guard_DJStage_Movement_3:
+# 79 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	walk_up
+# 79 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	walk_up
+	step_end
+
+# 84 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Guard_DJStage_Movement_4:
+# 84 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	walk_down
-# 173 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 84 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	walk_down
-# 173 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	walk_down
-# 173 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	walk_down
-# 173 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	step_end
+
+# 143 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Guard_Tunnel_Movement_0:
+# 143 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	walk_right
 	step_end
 
-# 178 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 186 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Giel_Movement_0:
+# 186 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	face_left
+	step_end
+
+# 189 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Giel_Movement_1:
+# 189 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	walk_down
+# 189 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	walk_right
+# 189 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	face_left
+	step_end
+
+# 201 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Giel_Movement_2:
+# 201 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	emote_exclamation_mark
+# 201 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	face_right
+	step_end
+
+# 231 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 DiscoBasement_Giel_Movement_3:
-# 178 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 231 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	jump_right
+# 231 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	face_down
+	step_end
+
+# 233 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Giel_Movement_4:
+# 233 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	face_down
+	step_end
+
+# 234 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Giel_Movement_5:
+# 234 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	walk_down
+# 234 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	walk_down
+# 234 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	walk_down
+# 234 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	walk_down
+# 234 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	walk_right
+	step_end
+
+# 242 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Giel_Movement_6:
+# 242 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	face_up
 	step_end
 
@@ -582,40 +842,40 @@ DiscoBasement_DJ_Peter_Text_13:
 	.string "unadulterated FUNK!$"
 
 DiscoBasement_Guard_DJStage_Text_0:
-# 68 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	.string "Security Guard$"
+# 69 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	.string "Bouncer Carlo$"
 
 DiscoBasement_Guard_DJStage_Text_1:
-# 70 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 71 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Alright, you're cool.\p"
-	.string "Peter's up there doing his thing.\p"
-	.string "Just don't touch the vinyl collection!$"
+	.string "Our VIPs can go where ever they want.\p"
+	.string "Enjoy the party!$"
 
 DiscoBasement_Guard_DJStage_Text_2:
-# 74 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 91 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Hey, hold up.\p"
 	.string "Nobody gets past me without clearance.\p"
 	.string "...$"
 
 DiscoBasement_Guard_DJStage_Text_3:
-# 76 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 94 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Wait... is that Ali's stash you're\n"
 	.string "carrying?\p"
 	.string "I can smell it from here!\p"
 	.string "Damn, that's the good stuff!$"
 
 DiscoBasement_Guard_DJStage_Text_4:
-# 78 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 97 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Alright, you're clearly here on business.\p"
 	.string "Peter's gonna want to see you.\p"
 	.string "Go on through, VIP access granted!$"
 
 DiscoBasement_Guard_DJStage_Text_5:
-# 81 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 101 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Tell Peter I said what's up!$"
 
 DiscoBasement_Guard_DJStage_Text_6:
-# 85 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 121 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Hey, VIP area only past this point.\p"
 	.string "No entry without clearance from the\n"
 	.string "boss.\p"
@@ -623,7 +883,11 @@ DiscoBasement_Guard_DJStage_Text_6:
 	.string "someone.$"
 
 DiscoBasement_Guard_Tunnel_Text_0:
-# 96 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 131 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	.string "Bouncer Claudio$"
+
+DiscoBasement_Guard_Tunnel_Text_1:
+# 132 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "You see that old tunnel over there?\p"
 	.string "It used to run all the way to the Iron\n"
 	.string "Factory.\p"
@@ -632,50 +896,65 @@ DiscoBasement_Guard_Tunnel_Text_0:
 	.string "Direct link from the harbor, if you know\n"
 	.string "what I mean.$"
 
-DiscoBasement_Guard_Tunnel_Text_1:
-# 99 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Guard_Tunnel_Text_2:
+# 135 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Used to move all kinds of...\n"
 	.string "'merchandise' through there.\p"
 	.string "No customs, no questions asked.\p"
 	.string "The good old days, you know?$"
 
-DiscoBasement_Guard_Tunnel_Text_2:
-# 102 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Guard_Tunnel_Text_3:
+# 138 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "But then the Faculty took over the\n"
 	.string "factory.\p"
 	.string "They sealed the whole thing up.\p"
 	.string "Now only Peter and the Faculty have the\n"
 	.string "keys.\p"
-	.string "Rest of us are locked out for good.$"
+	.string "Rest of us are locked out for good.\p"
+	.string "Peter told me to not let anyone near it,\n"
+	.string "so... here I am, doing my part to keep\l"
+	.string "the secrets safe.\p"
+	.string "Even VIPs can't get in there, sorry.$"
 
-DiscoBasement_Guard_Tunnel_Text_3:
-# 105 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Guard_Tunnel_Text_4:
+# 141 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "It's a shame, really.\p"
 	.string "That tunnel had some history.\p"
 	.string "Now it's just another thing the Faculty\n"
 	.string "controls.$"
 
 DiscoBasement_Guard_Machoke_Text_0:
-# 114 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 153 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Machoke$"
 
 DiscoBasement_Guard_Machoke_Text_1:
-# 115 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 154 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "MACHOKE! CHOKE!$"
 
+DiscoBasement_Guard_Staring_Text_0:
+# 163 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	.string "Bouncer Alessio$"
+
+DiscoBasement_Guard_Staring_Text_1:
+# 164 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	.string "Man, look at those dancers go!\p"
+	.string "Peter really knows how to throw a\n"
+	.string "party!\p"
+	.string "I could watch them dance all night!$"
+
 DiscoBasement_Giel_Text_0:
-# 124 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 173 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Giel$"
 
 DiscoBasement_Giel_Text_1:
-# 130 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 180 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Oh hey, it's you!\p"
 	.string "Small world, right?\p"
 	.string "I got here way faster than you.\p"
 	.string "I know people, you see. Connections.$"
 
 DiscoBasement_Giel_Text_2:
-# 132 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 183 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "When you mentioned Lionsarch City back\n"
 	.string "in Siltroot Town, I got inspired.\p"
 	.string "Thought I'd check out the scene here.\p"
@@ -683,7 +962,7 @@ DiscoBasement_Giel_Text_2:
 	.string "appreciate fine conversation.$"
 
 DiscoBasement_Giel_Text_3:
-# 138 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 194 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "See those lovely ladies over there?\p"
 	.string "I've been trying to impress them with my\n"
 	.string "knowledge.\p"
@@ -692,79 +971,75 @@ DiscoBasement_Giel_Text_3:
 	.string "Fascinating stuff, really.$"
 
 DiscoBasement_Giel_Text_4:
-# 140 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 197 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "The war between Celadon and Saffron...\p"
 	.string "The trade disputes of Vermilion\n"
 	.string "Harbor...\p"
 	.string "Classic historical drama!$"
 
 DiscoBasement_Giel_Text_5:
-# 146 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
-	.string "Dancing Girl$"
-
-DiscoBasement_Giel_Text_6:
-# 147 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 204 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Ugh, this guy again?\p"
 	.string "Nobody wants to hear about ancient\n"
 	.string "wars!\p"
 	.string "We're trying to DANCE here!$"
 
-DiscoBasement_Giel_Text_7:
-# 153 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Giel_Text_6:
+# 209 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Seriously, take the hint!\p"
 	.string "You've been hovering around us all\n"
 	.string "night!\p"
 	.string "So creepy!$"
 
-DiscoBasement_Giel_Text_8:
-# 159 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Giel_Text_7:
+# 214 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Security! Can someone get this weirdo\n"
 	.string "away from us?!$"
 
-DiscoBasement_Giel_Text_9:
-# 164 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Giel_Text_8:
+# 221 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "FINE!\p"
 	.string "I see how it is!\p"
 	.string "You just can't appreciate intellectual\n"
 	.string "discourse!\p"
 	.string "This is what's wrong with society today!$"
 
-DiscoBasement_Giel_Text_10:
-# 167 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Giel_Text_9:
+# 224 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Women just don't appreciate a man who\n"
 	.string "understands history!\p"
 	.string "I try to share my knowledge and THIS is\n"
 	.string "the thanks I get?!$"
 
-DiscoBasement_Giel_Text_11:
-# 170 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Giel_Text_10:
+# 227 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "I'm done with this city!\p"
 	.string "The disco scene here is TERRIBLE\n"
 	.string "anyway!\p"
 	.string "I'm going back to Hezik City where\n"
 	.string "people actually have CULTURE!$"
 
-DiscoBasement_Giel_Text_12:
-# 183 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+DiscoBasement_Giel_Text_11:
+# 240 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Finally! Good riddance!\p"
 	.string "Now we can dance in peace!$"
 
 DiscoBasement_Dancer_1_Text_0:
-# 191 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 252 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Can you FEEL it?!\p"
 	.string "The bass is hitting different tonight!\p"
 	.string "I haven't stopped dancing for THREE\n"
 	.string "HOURS!$"
 
 DiscoBasement_Dancer_2_Text_0:
-# 198 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 259 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "This place is the best-kept secret in\n"
 	.string "Lionsarch!\p"
 	.string "No Faculty goons, no harbor noise...\p"
 	.string "Just pure vibes and disco lights!$"
 
 DiscoBasement_Dancer_3_Text_0:
-# 205 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 266 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Peter only plays vinyl.\p"
 	.string "He says digital music doesn't have the\n"
 	.string "same soul.\p"
@@ -772,40 +1047,48 @@ DiscoBasement_Dancer_3_Text_0:
 	.string "SLAPS!$"
 
 DiscoBasement_Chillaxer_Text_0:
-# 212 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 273 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "I needed this, you know?\p"
 	.string "The city above is all smog and industry.\p"
 	.string "Down here, it's like traveling back to a\n"
 	.string "better time.$"
 
 DiscoBasement_AliFriend_Text_0:
-# 219 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 280 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Ali from Siltroot Town hooks Peter up\n"
 	.string "with the good stuff.\p"
 	.string "I mean... the good MUSIC.\p"
 	.string "Yeah. Definitely just music.$"
 
+DiscoBasement_Oldwoman_Text_0:
+# 287 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+	.string "I used to come here when I was younger.\p"
+	.string "Peter's been throwing parties here for\n"
+	.string "decades!\p"
+	.string "The music's changed, but the vibe is\n"
+	.string "still the same.$"
+
 DiscoBasement_DiscoBall_Text_0:
-# 225 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 293 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "A massive disco ball spins overhead,\n"
 	.string "scattering light across the room.\p"
 	.string "It's mesmerizing...$"
 
 DiscoBasement_SpeakerSystem_Text_0:
-# 231 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 299 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "The Loudred is blasting:\n"
 	.string "'Le Freak' by Chic\p"
 	.string "'FREAK OUT!'$"
 
 DiscoBasement_VinylCollection_Text_0:
-# 237 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 305 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "Peter's vinyl collection is MASSIVE.\p"
 	.string "Hundreds of records, all meticulously\n"
 	.string "organized.\p"
 	.string "This must have cost a fortune!$"
 
 DiscoBasement_SecretEntrance_Text_0:
-# 243 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
+# 311 "data/maps/LionsarchCity_Indoor_PeterBasementParty/scripts.pory"
 	.string "A discrete entrance hidden behind a\n"
 	.string "bookshelf upstairs.\p"
 	.string "Very clever!$"
