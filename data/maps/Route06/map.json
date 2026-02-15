@@ -20,17 +20,12 @@
     },
     {
       "map": "MAP_ROUTE05",
-      "offset": 6,
+      "offset": -62,
       "direction": "left"
     },
     {
       "map": "MAP_BIKE_PARK",
-      "offset": -30,
-      "direction": "right"
-    },
-    {
-      "map": "MAP_ROUTE15",
-      "offset": 10,
+      "offset": 0,
       "direction": "right"
     }
   ],

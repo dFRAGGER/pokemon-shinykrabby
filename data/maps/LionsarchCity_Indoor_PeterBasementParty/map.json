@@ -216,15 +216,15 @@
       "x": 4,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_LIONSARCH_CITY_INDOOR_PETER_HOUSE",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_LIONSARCH_CITY_STEEL_FACTORY_B1F",
+      "dest_warp_id": "1"
     },
     {
       "x": 5,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_LIONSARCH_CITY_INDOOR_PETER_HOUSE",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_LIONSARCH_CITY_STEEL_FACTORY_B1F",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

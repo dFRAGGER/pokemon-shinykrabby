@@ -5792,7 +5792,7 @@
       "height": 75,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_Snow",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/LionsarchCity/border.bin",
       "blockdata_filepath": "data/layouts/LionsarchCity/map.bin"
@@ -5816,7 +5816,7 @@
       "height": 84,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_Snow",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/Route05/border.bin",
       "blockdata_filepath": "data/layouts/Route05/map.bin"
@@ -5825,10 +5825,10 @@
       "id": "LAYOUT_ROUTE06",
       "name": "Route06_Layout",
       "width": 50,
-      "height": 90,
+      "height": 22,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_Snow",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/Route06/border.bin",
       "blockdata_filepath": "data/layouts/Route06/map.bin"
@@ -6221,7 +6221,7 @@
       "id": "LAYOUT_ROUTE15",
       "name": "Route15_Layout",
       "width": 45,
-      "height": 155,
+      "height": 57,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -6305,13 +6305,61 @@
       "id": "LAYOUT_LIONSARCH_CITY_STEEL_FACTORY",
       "name": "LionsarchCity_Steel_Factory_Layout",
       "width": 40,
-      "height": 40,
+      "height": 38,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/LionsarchCity_Steel_Factory/border.bin",
       "blockdata_filepath": "data/layouts/LionsarchCity_Steel_Factory/map.bin"
+    },
+    {
+      "id": "LAYOUT_LIONSARCH_CITY_STEEL_FACTORY_2F",
+      "name": "LionsarchCity_Steel_Factory_2F_Layout",
+      "width": 30,
+      "height": 38,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/LionsarchCity_Steel_Factory_2F/border.bin",
+      "blockdata_filepath": "data/layouts/LionsarchCity_Steel_Factory_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_EAST_LION_MOUNTAIN_FACULTY_MINING_CAVE",
+      "name": "EastLionMountain_Faculty_Mining_Cave_Layout",
+      "width": 25,
+      "height": 16,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Snow",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/EastLionMountain_Faculty_Mining_Cave/border.bin",
+      "blockdata_filepath": "data/layouts/EastLionMountain_Faculty_Mining_Cave/map.bin"
+    },
+    {
+      "id": "LAYOUT_EAST_LION_MOUNTAIN_FACULTY_MINING_CAVE_B1F",
+      "name": "EastLionMountain_Faculty_Mining_Cave_B1F_Layout",
+      "width": 25,
+      "height": 17,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Snow",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/EastLionMountain_Faculty_Mining_Cave_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/EastLionMountain_Faculty_Mining_Cave_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_LIONSARCH_CITY_STEEL_FACTORY_B1F",
+      "name": "LionsarchCity_Steel_Factory_B1F_Layout",
+      "width": 10,
+      "height": 38,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/LionsarchCity_Steel_Factory_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/LionsarchCity_Steel_Factory_B1F/map.bin"
     }
   ]
 }

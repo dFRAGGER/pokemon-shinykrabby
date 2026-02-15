@@ -1,0 +1,135 @@
+mapscripts EastLionMountain_Faculty_Mining_Cave_B1F_MapScripts {}
+
+// =====================
+// TRAINER SCRIPTS - MINING CAVE B1F
+// 2 Faculty Members + Barry (Administrator)
+// =====================
+
+script MiningCaveB1F_Trainer_Faculty_Mary {
+    trainerbattle_single(TRAINER_MARY, MiningCaveB1F_Text_MaryIntro, MiningCaveB1F_Text_MaryDefeated)
+    msgbox(MiningCaveB1F_Text_MaryPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text MiningCaveB1F_Text_MaryIntro {
+    format("You've descended this far?\pThe Administrator won't be pleased about this intrusion!")
+}
+
+text MiningCaveB1F_Text_MaryDefeated {
+    format("The tremors... they grow stronger the deeper we dig...")
+}
+
+text MiningCaveB1F_Text_MaryPostBattle {
+    format("Can't you feel it? The mountain remembers its creator.\pRegigigas walked these caverns millennia ago, shaping its servants.\pEvery time we extract more ore, it's as if the earth itself protests.\pBut the Administrator insists we continue... The Rector demands results.")
+}
+
+script MiningCaveB1F_Trainer_Faculty_Alexia {
+    trainerbattle_single(TRAINER_ALEXIA, MiningCaveB1F_Text_AlexiaIntro, MiningCaveB1F_Text_AlexiaDefeated)
+    msgbox(MiningCaveB1F_Text_AlexiaPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text MiningCaveB1F_Text_AlexiaIntro {
+    format("This is the deepest level of the excavation!\pYou're not authorized to witness what we've discovered!")
+}
+
+text MiningCaveB1F_Text_AlexiaDefeated {
+    format("How did you defeat my team so easily?")
+}
+
+text MiningCaveB1F_Text_AlexiaPostBattle {
+    format("We've nearly collected enough primordial ore for the project.\pThe same stone Regigigas used to sculpt Regirock...\pThe same iron it drew from the magma to forge Registeel...\pOnce the Steel Factory processes it all, our control apparatus will be complete!")
+}
+
+// =====================
+// BARRY - ADMINISTRATOR BATTLE
+// =====================
+
+script MiningCaveB1F_Barry_Battle {
+    lock
+    faceplayer
+    playse(SE_PIN)
+    applymovement(VAR_LAST_TALKED, moves(emote_exclamation_mark))
+    waitmovement(0)
+    setspeaker("Barry")
+    msgbox(format("YOU again?!\pI should have known you'd stick your nose where it doesn't belong!\pDon't you understand? The Faculty stands on the threshold of greatness!\pThese mountains... Regigigas chose this very spot to create its legendary servants!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    msgbox(format("Hard rock for Regirock! Eternal ice for Regice! Volcanic iron for Registeel!\pAll the materials exist here, in perfect harmony!\pWith our control devices forged from these same ores, the Golems will have no choice but to obey!\pAnd there's nothing you can do to stop us!"))
+    waitmessage
+    trainerbattle_no_intro(TRAINER_BARRY, MiningCaveB1F_Text_BarryDefeated)
+    goto(MiningCaveB1F_Barry_PostBattle)
+}
+
+text MiningCaveB1F_Text_BarryDefeated {
+    format("NO! Not again! Why do you always have to ruin everything?!")
+}
+
+script MiningCaveB1F_Barry_PostBattle {
+    lock
+    playse(SE_M_EARTHQUAKE)
+    delay(60)
+    msgbox(format("The cave shakes violently!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(30)
+    playse(SE_PIN)
+    applymovement(VAR_LAST_TALKED, moves(emote_exclamation_mark))
+    waitmovement(0)
+    setspeaker("Barry")
+    msgbox(format("Gah! The tremors are getting worse!\pIt's as if the mountain itself rejects our presence!\p...\pActually, you know what? It doesn't matter!\pWe've already gathered enough of Regigigas's sacred materials!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(30)
+    msgbox(format("All units, fall back!\pOperation complete! Evacuate to the Steel Factory immediately!\pThe ore shipments are already en route!\pYou haven't won anything, {PLAYER}!\pWhen our apparatus is complete, the Golems will bend to our will!\pRegigigas's creations will serve the Faculty!\pMUAHAHAHA!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_BALL_THROW)
+    delay(30)
+    playse(SE_BANG)
+    fadescreen(FADE_TO_WHITE)
+    delay(60)
+    // Barry and the workers flee
+    setvar(VAR_MINING_CAVE_STATE, 1)
+    removeobject(1) // Barry
+    removeobject(2) // Worker 1
+    removeobject(3) // Worker 2
+    removeobject(4) // Worker 3
+    fadescreen(FADE_FROM_WHITE)
+    delay(60)
+    msgbox(format("Barry and the Faculty members have fled!\pThey mentioned the Steel Factory in Lionsarch City...\pYou should investigate there next!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+// =====================
+// NPC CONVERSATIONS - MINING CAVE B1F
+// Scientists explaining the Regigigas connection
+// =====================
+
+script MiningCaveB1F_Worker1_Convo {
+    lock
+    faceplayer
+    msgbox(format("Our instruments are detecting massive energy signatures below!\pThe ancient Golem chambers must be directly beneath us.\pThis is where Regigigas performed its greatest work...\pShaping life from lifeless stone, ice, and metal!"), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script MiningCaveB1F_Worker2_Convo {
+    lock
+    faceplayer
+    msgbox(format("The legends say Regigigas crafted the Golems in its own image.\pIt gathered materials from the harshest environments...\pBoulders from the mountain, never-melt ice from the frozen peaks, iron from the magma below.\pBy using these same primordial elements, our control devices will resonate with the Golems!"), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script MiningCaveB1F_Worker3_Convo {
+    lock
+    faceplayer
+    msgbox(format("The Rector has grand ambitions for the Golems.\pOnce we control Regigigas's creations, the Faculty will be unstoppable!\pRegirock for demolition, Regice for climate manipulation, Registeel for construction...\pAnd if we can locate Regigigas itself... imagine the possibilities!"), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script MiningCaveB1F_Sign_DeepMine {
+    lock
+    msgbox(format("EXTREME DANGER\nDeep Mining Zone\nSeismic Activity Detected\n...The sign looks hastily written."), MSGBOX_AUTOCLOSE)
+    release
+}

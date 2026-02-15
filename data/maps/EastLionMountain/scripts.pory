@@ -1,1 +1,89 @@
 mapscripts EastLionMountain_MapScripts {}
+
+// =====================
+// TRAINER SCRIPTS - EAST LION MOUNTAIN
+// 2 Faculty Members + 1 Regular Trainer
+// =====================
+
+// FACULTY MEMBER 1 - Guards the mining cave entrance
+script EastLionMountain_Trainer_Faculty_Albert {
+    trainerbattle_single(TRAINER_ALBERT, EastLionMountain_Text_AlbertIntro, EastLionMountain_Text_AlbertDefeated)
+    msgbox(EastLionMountain_Text_AlbertPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text EastLionMountain_Text_AlbertIntro {
+    format("Halt! This area is restricted by order of the Faculty!\pOur excavation here is of the utmost importance!")
+}
+
+text EastLionMountain_Text_AlbertDefeated {
+    format("You... You have no idea what forces you're interfering with!")
+}
+
+text EastLionMountain_Text_AlbertPostBattle {
+    format("Fine, you've beaten me, but it won't matter.\pThese mountains hold a secret older than civilization itself.\pRegigigas, the Colossal Pokemon, created its servants here!\pThe metals we need to control those ancient Golems are nearly ours!")
+}
+
+// FACULTY MEMBER 2 - Patrols the area
+script EastLionMountain_Trainer_Faculty_Samuel {
+    trainerbattle_single(TRAINER_SAMUEL, EastLionMountain_Text_SamuelIntro, EastLionMountain_Text_SamuelDefeated)
+    msgbox(EastLionMountain_Text_SamuelPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text EastLionMountain_Text_SamuelIntro {
+    format("Another intruder?\pThe Rector will not be pleased with these interruptions!")
+}
+
+text EastLionMountain_Text_SamuelDefeated {
+    format("Impossible! My calculations were perfect!")
+}
+
+text EastLionMountain_Text_SamuelPostBattle {
+    format("You don't understand what's at stake!\pThe Lion Mountains contain hard rock, eternal ice, and hidden magma...\pThe same primordial materials Regigigas used to forge its Golems!\pWith the right apparatus, we can bend Regirock, Regice, and Registeel to our will!")
+}
+
+// REGULAR TRAINER - A hiker who witnessed the Faculty
+script EastLionMountain_Trainer_Vito {
+    trainerbattle_single(TRAINER_VITO, EastLionMountain_Text_VitoIntro, EastLionMountain_Text_VitoDefeated)
+    msgbox(EastLionMountain_Text_VitoPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text EastLionMountain_Text_VitoIntro {
+    format("Hey, you look like someone who can handle themselves!\pI've been too scared to go near that cave alone.\pLet me test your strength first!")
+}
+
+text EastLionMountain_Text_VitoDefeated {
+    format("Wow, you're the real deal!")
+}
+
+text EastLionMountain_Text_VitoPostBattle {
+    format("Those people in the suits... they've been drilling day and night.\pThe tremors are getting worse.\pI overheard them talking about 'Regigigas' and 'controlling the Golems'...\pSomething about this mountain being where the Golems were created long ago.")
+}
+
+// =====================
+// NPC CONVERSATIONS - EAST LION MOUNTAIN
+// =====================
+
+script EastLionMountain_Worried_Hiker_Convo {
+    lock
+    faceplayer
+    msgbox(format("I've lived near these mountains my whole life.\pMy grandfather told me stories about Regigigas creating guardians here.\pIt shaped them from the mountain's stone, ice, and volcanic iron...\pIf those suited folks really found a way to control those ancient beings..."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script EastLionMountain_Scared_Woman_Convo {
+    lock
+    faceplayer
+    msgbox(format("My house down in the valley has been shaking every few hours!\pThe tremors started when those 'researchers' showed up.\pThey say they're studying the 'birthplace of the Golems'...\pPlease, if you're going in there, make them stop!"), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script EastLionMountain_Sign_MiningCave {
+    lock
+    msgbox(format("Faculty Excavation Site\nAuthorized Personnel Only\n...This sign looks recently installed."), MSGBOX_AUTOCLOSE)
+    release
+}

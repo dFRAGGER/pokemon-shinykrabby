@@ -1,1 +1,85 @@
 mapscripts WestLionMountain_MapScripts {}
+
+// =====================
+// TRAINER SCRIPTS - WEST LION MOUNTAIN
+// =====================
+
+script WestLionMountain_Trainer_Leroy {
+    trainerbattle_single(TRAINER_LEROY, WestLionMountain_Text_LeroyIntro, WestLionMountain_Text_LeroyDefeated)
+    msgbox(WestLionMountain_Text_LeroyPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text WestLionMountain_Text_LeroyIntro {
+    format("I've conquered every peak in this mountain range!\pYou're just another obstacle on my path to greatness!")
+}
+
+text WestLionMountain_Text_LeroyDefeated {
+    format("Maybe I should stick to climbing mountains instead of battling...")
+}
+
+text WestLionMountain_Text_LeroyPostBattle {
+    format("The tremors started about a week ago.\pAt first I thought it was just avalanches, but the pattern is too regular.\pSomething's digging deep underground.")
+}
+
+script WestLionMountain_Trainer_Wilton {
+    trainerbattle_single(TRAINER_WILTON_1, WestLionMountain_Text_WiltonIntro, WestLionMountain_Text_WiltonDefeated)
+    msgbox(WestLionMountain_Text_WiltonPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text WestLionMountain_Text_WiltonIntro {
+    format("These mountains are home to my family for generations!\pI won't let some stranger wander through without a proper challenge!")
+}
+
+text WestLionMountain_Text_WiltonDefeated {
+    format("You've proven yourself worthy of these peaks...")
+}
+
+text WestLionMountain_Text_WiltonPostBattle {
+    format("My grandfather used to tell stories about ancient guardians sleeping in these mountains.\pPokemon of immense power, sealed away long ago.\pI always thought they were just legends...")
+}
+
+script WestLionMountain_Trainer_Edgar {
+    trainerbattle_single(TRAINER_EDGAR, WestLionMountain_Text_EdgarIntro, WestLionMountain_Text_EdgarDefeated)
+    msgbox(WestLionMountain_Text_EdgarPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text WestLionMountain_Text_EdgarIntro {
+    format("You look lost, traveler!\pLet me show you the power of a true mountain dweller!")
+}
+
+text WestLionMountain_Text_EdgarDefeated {
+    format("I've underestimated you... city folk aren't as weak as I thought.")
+}
+
+text WestLionMountain_Text_EdgarPostBattle {
+    format("If you're heading east, you might run into some trouble.\pSaw some fancy-dressed folks setting up camp near a cave entrance.\pThey didn't look like regular hikers or researchers to me.")
+}
+
+// =====================
+// NPC CONVERSATIONS - WEST LION MOUNTAIN
+// =====================
+
+script WestLionMountain_Climber_Convo {
+    lock
+    faceplayer
+    msgbox(format("I've been climbing these mountains for twenty years.\pThe rocks have been shifting lately, more than I've ever seen.\pIt's like the mountain itself is... unsettled."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script WestLionMountain_Hiker_Convo {
+    lock
+    faceplayer
+    msgbox(format("Did you feel that tremor just now?\pThey've been happening more and more frequently.\pThe Pokemon Rangers are investigating, but they haven't found anything yet."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script WestLionMountain_Sign_EastMountain {
+    lock
+    msgbox(format("East Lion Mountain\nEast"), MSGBOX_AUTOCLOSE)
+    release
+}

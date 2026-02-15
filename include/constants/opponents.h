@@ -74,26 +74,26 @@
 #define TRAINER_RICKY_3                      68
 #define TRAINER_RICKY_4                      69
 #define TRAINER_RICKY_5                      70
-#define TRAINER_RANDALL                      71
-#define TRAINER_PARKER                       72
-#define TRAINER_GEORGE                       73
-#define TRAINER_BERKE                        74
-#define TRAINER_BRAXTON                      75
-#define TRAINER_VINCENT                      76
-#define TRAINER_LEROY                        77
-#define TRAINER_WILTON_1                     78
-#define TRAINER_EDGAR                        79
-#define TRAINER_ALBERT                       80
-#define TRAINER_SAMUEL                       81
-#define TRAINER_VITO                         82
-#define TRAINER_OWEN                         83
+#define TRAINER_RANDALL                      71     // Route 05 - Mountain trainer
+#define TRAINER_PARKER                       72     // Route 05 - Mountain trainer
+#define TRAINER_GEORGE                       73     // Route 05 - Mountain trainer
+#define TRAINER_BERKE                        74     // Route 05 - Mountain trainer
+#define TRAINER_BRAXTON                      75     // Route 05 - Mountain trainer
+#define TRAINER_VINCENT                      76     // Route 05 - Mountain trainer
+#define TRAINER_LEROY                        77     // West Lion Mountain - Hiker
+#define TRAINER_WILTON_1                     78     // West Lion Mountain - Hiker
+#define TRAINER_EDGAR                        79     // West Lion Mountain - Hiker
+#define TRAINER_ALBERT                       80     // East Lion Mountain - Faculty guard
+#define TRAINER_SAMUEL                       81     // East Lion Mountain - Faculty patrol
+#define TRAINER_VITO                         82     // East Lion Mountain - Hiker witness
+#define TRAINER_OWEN                         83     // Mining Cave - Faculty member
 #define TRAINER_WILTON_2                     84
 #define TRAINER_WILTON_3                     85
 #define TRAINER_WILTON_4                     86
 #define TRAINER_WILTON_5                     87
-#define TRAINER_WARREN                       88
-#define TRAINER_MARY                         89
-#define TRAINER_ALEXIA                       90
+#define TRAINER_WARREN                       88     // Mining Cave - Faculty member
+#define TRAINER_MARY                         89     // Mining Cave B1F - Faculty member
+#define TRAINER_ALEXIA                       90     // Mining Cave B1F - Faculty member
 #define TRAINER_JODY                         91
 #define TRAINER_WENDY                        92
 #define TRAINER_KEIRA                        93
@@ -166,7 +166,7 @@
 #define TRAINER_ROLAND                      160
 #define TRAINER_NOLEN                       161
 #define TRAINER_STAN                        162
-#define TRAINER_BARRY                       163
+#define TRAINER_BARRY                       163     // Mining Cave B1F - Administrator boss
 #define TRAINER_DEAN                        164
 #define TRAINER_RODNEY                      165
 #define TRAINER_RICHARD                     166

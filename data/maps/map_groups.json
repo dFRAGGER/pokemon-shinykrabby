@@ -726,7 +726,9 @@
   ],
   "gMapGroup_IndoorDungeons": [
     "Batcave",
-    "Route04_CenterCave"
+    "Route04_CenterCave",
+    "EastLionMountain_Faculty_Mining_Cave",
+    "EastLionMountain_Faculty_Mining_Cave_B1F"
   ],
   "gMapGroup_LionsarchCity": [
     "LionarchsCity_Indoor_Mart",
@@ -740,7 +742,9 @@
     "LionsarchCity_Indoor_PeterHouse",
     "LionsarchCity_Indoor_PeterBasementParty",
     "LionsarchCity_Indoor_Gym",
-    "LionsarchCity_Steel_Factory"
+    "LionsarchCity_Steel_Factory",
+    "LionsarchCity_Steel_Factory_2F",
+    "LionsarchCity_Steel_Factory_B1F"
   ],
   "gMapGroup_Indoor_Route02": [
     "Route02_Indoor_Ranger_House"

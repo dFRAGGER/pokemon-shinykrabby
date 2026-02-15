@@ -1330,3 +1330,11 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/LionsarchCity_Indoor_Gym/scripts.inc"
 
 	.include "data/maps/LionsarchCity_Steel_Factory/scripts.inc"
+
+	.include "data/maps/LionsarchCity_Steel_Factory_2F/scripts.inc"
+
+	.include "data/maps/EastLionMountain_Faculty_Mining_Cave/scripts.inc"
+
+	.include "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.inc"
+
+	.include "data/maps/LionsarchCity_Steel_Factory_B1F/scripts.inc"

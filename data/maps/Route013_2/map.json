@@ -27,6 +27,16 @@
       "map": "MAP_ROUTE014",
       "offset": 80,
       "direction": "right"
+    },
+    {
+      "map": "MAP_BIKE_PARK",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE016",
+      "offset": 40,
+      "direction": "left"
     }
   ],
   "object_events": [],

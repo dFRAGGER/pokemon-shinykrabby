@@ -1,1 +1,145 @@
 mapscripts Route05_MapScripts {}
+
+// =====================
+// TRAINER SCRIPTS - ROUTE 05
+// =====================
+
+script Route05_Trainer_Randall {
+    trainerbattle_single(TRAINER_RANDALL, Route05_Text_RandallIntro, Route05_Text_RandallDefeated)
+    msgbox(Route05_Text_RandallPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route05_Text_RandallIntro {
+    format("The cold mountain air really wakes up my Pokemon!\pThey're more energetic than ever up here!")
+}
+
+text Route05_Text_RandallDefeated {
+    format("Brr... Maybe they're TOO cold now...")
+}
+
+text Route05_Text_RandallPostBattle {
+    format("If you're heading up the mountain, be careful.\pI've heard strange rumbling sounds coming from the peaks lately.")
+}
+
+script Route05_Trainer_Parker {
+    trainerbattle_single(TRAINER_PARKER, Route05_Text_ParkerIntro, Route05_Text_ParkerDefeated)
+    msgbox(Route05_Text_ParkerPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route05_Text_ParkerIntro {
+    format("I train in these mountains every winter!\pThe harsh conditions make my Pokemon stronger!")
+}
+
+text Route05_Text_ParkerDefeated {
+    format("I guess I still have more training to do...")
+}
+
+text Route05_Text_ParkerPostBattle {
+    format("There's a group of strange people in suits heading up towards East Lion Mountain.\pThey looked like they were carrying mining equipment.")
+}
+
+script Route05_Trainer_George {
+    trainerbattle_single(TRAINER_GEORGE, Route05_Text_GeorgeIntro, Route05_Text_GeorgeDefeated)
+    msgbox(Route05_Text_GeorgePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route05_Text_GeorgeIntro {
+    format("Ha! You think you can handle the cold?\pLet me show you what real mountain trainers are made of!")
+}
+
+text Route05_Text_GeorgeDefeated {
+    format("You've got fire in your spirit, I'll give you that!")
+}
+
+text Route05_Text_GeorgePostBattle {
+    format("Watch your step on the ice patches ahead.\pThe path gets treacherous as you climb higher.")
+}
+
+script Route05_Trainer_Berke {
+    trainerbattle_single(TRAINER_BERKE, Route05_Text_BerkeIntro, Route05_Text_BerkeDefeated)
+    msgbox(Route05_Text_BerkePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route05_Text_BerkeIntro {
+    format("I've been hiking these mountains since I was a kid!\pNo one knows these paths better than me!")
+}
+
+text Route05_Text_BerkeDefeated {
+    format("Well, I may know the paths, but you know how to battle!")
+}
+
+text Route05_Text_BerkePostBattle {
+    format("The earthquakes have been getting worse lately.\pSome folks say it's natural, but I think something's causing them.")
+}
+
+script Route05_Trainer_Braxton {
+    trainerbattle_single(TRAINER_BRAXTON, Route05_Text_BraxtonIntro, Route05_Text_BraxtonDefeated)
+    msgbox(Route05_Text_BraxtonPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route05_Text_BraxtonIntro {
+    format("The mountain spirits guide my Pokemon!\pThey won't let us lose to an outsider!")
+}
+
+text Route05_Text_BraxtonDefeated {
+    format("The spirits... they've abandoned me...")
+}
+
+text Route05_Text_BraxtonPostBattle {
+    format("Legend says ancient Pokemon once slumbered beneath these mountains.\pPokemon made of rock, ice, and steel... The Golems of old.")
+}
+
+script Route05_Trainer_Vincent {
+    trainerbattle_single(TRAINER_VINCENT, Route05_Text_VincentIntro, Route05_Text_VincentDefeated)
+    msgbox(Route05_Text_VincentPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route05_Text_VincentIntro {
+    format("I'm searching for rare Ice-type Pokemon!\pBut first, let me test your skills!")
+}
+
+text Route05_Text_VincentDefeated {
+    format("You're stronger than the Pokemon I've been searching for!")
+}
+
+text Route05_Text_VincentPostBattle {
+    format("Have you seen the cave entrance on East Lion Mountain?\pSome official-looking people blocked it off recently.\pThey said it was for 'geological research' or something.")
+}
+
+// =====================
+// NPC CONVERSATIONS - ROUTE 05
+// =====================
+
+script Route05_Hiker_Convo {
+    lock
+    faceplayer
+    msgbox(format("Huff... Huff... This mountain never gets any easier to climb!\pBut the view of the Lion Mountains is always worth it.\pJust watch out for the ice patches near West Lion Mountain."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script Route05_Woman_Convo {
+    lock
+    faceplayer
+    msgbox(format("I come here every year to watch the Swinub migrate through the snow.\pThey're so adorable when they root around for food!\pBut lately, they've been acting strange... more skittish than usual."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script Route05_Sign_WestLionMountain {
+    lock
+    msgbox(format("West Lion Mountain\nAhead"), MSGBOX_AUTOCLOSE)
+    release
+}
+
+script Route05_Sign_Lionsarch {
+    lock
+    msgbox(format("Lionsarch City\nSouth"), MSGBOX_AUTOCLOSE)
+    release
+}

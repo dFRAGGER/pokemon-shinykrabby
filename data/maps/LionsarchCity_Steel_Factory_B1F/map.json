@@ -1,0 +1,35 @@
+{
+  "id": "MAP_LIONSARCH_CITY_STEEL_FACTORY_B1F",
+  "name": "LionsarchCity_Steel_Factory_B1F",
+  "layout": "LAYOUT_LIONSARCH_CITY_STEEL_FACTORY_B1F",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_LIONS_ARCH_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 2,
+      "y": 34,
+      "elevation": 0,
+      "dest_map": "MAP_LIONSARCH_CITY_STEEL_FACTORY",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_LIONSARCH_CITY_INDOOR_PETER_BASEMENT_PARTY",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}
