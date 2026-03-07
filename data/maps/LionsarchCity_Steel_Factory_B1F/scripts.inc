@@ -1,3 +1,0 @@
-LionsarchCity_Steel_Factory_B1F_MapScripts::
-	.byte 0
-

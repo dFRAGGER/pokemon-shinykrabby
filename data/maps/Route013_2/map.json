@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ROUTE013",
-      "offset": 0,
+      "offset": -57,
       "direction": "up"
     },
     {

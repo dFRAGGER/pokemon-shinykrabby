@@ -96,7 +96,29 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 50,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_WEST_LION_MOUNTAIN_CABLE_CAR",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 51,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_WEST_LION_MOUNTAIN_CABLE_CAR",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 37,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_WEST_LION_MOUNTAIN",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

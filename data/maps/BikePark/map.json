@@ -37,10 +37,23 @@
       "map": "MAP_ROUTE013_2",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE013",
+      "offset": 113,
+      "direction": "up"
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 7,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE06",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

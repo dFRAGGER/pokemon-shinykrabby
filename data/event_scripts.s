@@ -1338,3 +1338,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.inc"
 
 	.include "data/maps/LionsarchCity_Steel_Factory_B1F/scripts.inc"
+
+	.include "data/maps/WestLionMountain_CableCar/scripts.inc"

@@ -20,7 +20,7 @@
     },
     {
       "map": "MAP_SILTROOT_TOWN",
-      "offset": -10,
+      "offset": 10,
       "direction": "up"
     },
     {
