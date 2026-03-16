@@ -37,7 +37,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Mushroom_Vileplume",
       "flag": "0"
     }
   ],
@@ -58,5 +58,38 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 9,
+      "y": 4,
+      "elevation": 0,
+      "item": "ITEM_TINY_MUSHROOM",
+      "flag": "FLAG_HIDDEN_ITEM_SHROOMSHOP_TINY_MUSHROOM"
+    },
+    {
+      "type": "hidden_item",
+      "x": 2,
+      "y": 6,
+      "elevation": 0,
+      "item": "ITEM_BALMMUSHROOM",
+      "flag": "FLAG_HIDDEN_ITEM_SHROOMSHOP_BALM_MUSHROOM"
+    },
+    {
+      "type": "hidden_item",
+      "x": 10,
+      "y": 7,
+      "elevation": 0,
+      "item": "ITEM_BIG_MUSHROOM",
+      "flag": "FLAG_HIDDEN_ITEM_SHROOMSHOP_BIG_MUSHROOM"
+    },
+    {
+      "type": "hidden_item",
+      "x": 1,
+      "y": 4,
+      "elevation": 0,
+      "item": "ITEM_MAX_MUSHROOMS",
+      "flag": "FLAG_HIDDEN_ITEM_SHROOMSHOP_MAX_MUSHROOM"
+    }
+  ]
 }

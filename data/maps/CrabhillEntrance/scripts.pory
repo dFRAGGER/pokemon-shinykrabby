@@ -115,9 +115,16 @@ script Won_or_Caught{
     applymovement(21, moves(walk_slow_left walk_slow_right walk_slow_left walk_slow_right))
     waitmovement
     setobjectmovementtype(LOCALID_JACOB,MOVEMENT_TYPE_NONE)
+    getobjectxy(LOCALID_JACOB,CURRENT_POSITION,VAR_TEMP_0, VAR_TEMP_1)
     delay(120)
-    applymovement(21, moves(walk_right*3 face_up))
-    waitmovement
+    if (var(VAR_TEMP_0) == 32 && var(VAR_TEMP_1) == 13){
+        applymovement(21, moves(walk_right*3 face_up))
+        waitmovement
+    }
+    else {
+        applymovement(21, moves(walk_right*2 face_up))
+        waitmovement
+    }
     setspeaker("Jacob")
     msgbox(format("Kid! You broke the trance!\pThank Arceus... another five minutes of that and my legs would have fallen right off!\pBut did you see it?!\pThat was it!\pThat was the 'special specimen' I wanted to show you!\pA Krabby!\p The single most magnificent creature to sidle on this earth!\pPeople talk about Dragonites or Tyranitars... pshh!\pLook at that carapace!\pLook at that perfect pincer geometry!\p It is the peak of evolution!\pThe best Pokémon in the whole wide world, bar none!\pAnd a Shiny one...\na golden King...\nand it got away...\p Truly, a dark day for science.\pWait...\pHow long was I doing the side-step shuffle?\pOh no.\nOh no no no.\pI left without telling my wife!\pShe's probably barricaded the door by now!\pIf I don't get back before she realizes I've been gone for three hours without permission, she's going to be scarier than a Gyarados!\pI gotta run!\pYou are welcome to join for dinner!"),MSGBOX_AUTOCLOSE)
     applymovement(21,moves(walk_fast_down*7))

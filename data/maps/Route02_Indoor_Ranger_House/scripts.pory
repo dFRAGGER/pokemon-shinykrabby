@@ -1,1 +1,64 @@
 mapscripts Route02_Indoor_Ranger_House_MapScripts {}
+
+script Route02_Indoor_Ranger_House_Hint1 {
+    lock
+    msgbox(format("SPECIMEN LOG - WEEK 34\p'Magnetic anomalies recorded at\ngrid ref. CF-09, deep forest.\pMetallic resonance. Source unknown.\pDo not approach alone.'"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+script Route02_Indoor_Ranger_House_Hint2 {
+    lock
+    msgbox(format("NOTE - DR. VOSS\p'The readings at CF-09 are not\ngeological. Something is down there.\pIt doesn't move. It doesn't need to.\pI've requested backup.\nNobody came.'"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+script Route02_Indoor_Ranger_House_Hint3 {
+    lock
+    msgbox(format("...handwritten, barely legible...\p'Saw it again at the tree line.\pPink. Fast. Gone before I could\nfocus on it.\pVoss thinks I'm losing it.\pVoss hasn't seen what I've seen.\pI'm not logging this one.'"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+script Route02_Station_Bookcase1 {
+    lock
+    msgbox(format("CLOUD FOREST FIELD RESEARCH\nVol. 12 - Specimen Cataloguing\pDense chapters on tagging\nprocedures for grass-types.\pSomebody has underlined the\nword 'mutation' seventeen times."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+script Route02_Station_Bookcase2 {
+    lock
+    msgbox(format("FACULTY INTERNAL MEMO\nBinder - Outpost 7 Directives\pMostly budget reports and\nsafety compliance forms.\pThe last page has been torn out."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+script Route02_Station_Toolbox {
+    lock
+    msgbox(format("A rusted toolbox.\pInside: three wrenches, a\nsnapped drill bit, and a compass that spins without stopping."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+script Route02_Station_SoilCrate {
+    lock
+    msgbox(format("A crate of soil samples,\neach one labelled with a grid reference.\pThe samples from CF-09 are\na different colour than the rest.\pDark. Almost metallic."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+script Route02_Station_SpecimenJar {
+    lock
+    msgbox(format("A specimen jar in a box, empty.\pThe label reads:\n'CF-09 - organic trace, unknown.'\pWhatever was inside it\nhas been removed.\pRecently."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+script Route02_Station_Radio {
+    lock
+    msgbox(format("A broken radio receiver,\nstill plugged into the wall.\pIf you hold it to your ear\nyou can hear a low hum.\pRegular. Deep.\pLike something breathing\nvery slowly underground."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}

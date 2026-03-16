@@ -14,6 +14,13 @@ script ErpCity_Visited {
     setflag(FLAG_VISITED_ERP_CITY)
 }
 
+script ErpCity_Sign_Welcome {
+    lock
+    msgbox(format("ERPUS CITY\pTranquil and peaceful."),MSGBOX_SIGN)
+    waitmessage
+    release
+}
+
 script ErpCity_Old_Man_Boekel {
     lock
     faceplayer
@@ -26,7 +33,7 @@ script ErpCity_Old_Man_Boekel {
 script ErpCity_Woman {
     lock
     faceplayer
-    msgbox(format("I traveled here just to gaze at that lake over there!\p The water is so calm and clear it looks like a mirror."),MSGBOX_AUTOCLOSE)
+    msgbox(format("I traveled here from Meestrech just to gaze at that lake over there!\p The water is so calm and clear it looks like a mirror."),MSGBOX_AUTOCLOSE)
     waitmessage
     release
     end
@@ -50,7 +57,7 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     applymovement(5, moves(emote_question_mark))
     waitmovement
     delay(120)
-    applymovement(2, moves(walk_slow_right*2))
+    applymovement(2, moves(walk_right))
     waitmovement
     applymovement(5, moves(face_up))
     setspeaker("Prof. Birds")
@@ -58,7 +65,7 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     waitmessage
     delay(40)
     playse(SE_PIN)
-    applymovement (2, moves(emote_exclamation_mark walk_left*2))
+    applymovement (2, moves(emote_exclamation_mark walk_left))
     applymovement(5, moves(face_left))
     setspeaker("Prof. Birds")
     msgbox(format(".....DID I SAY THAT OUT LOUD?\pARGH ANYWAYS, HOW ABOUT I REHIRE YOU AGAIN TO BECOME MY DATA HOARDER....\pI MEAN MY FELLOW RESEARCHER OFCOURSE! MY BELOVED PARTNER!\pTO BECOME A REAL POKEMON MASTER WE... I MEAN YOU... NEED TO CATCH EVERY POKEMON\pAND SCAN THEM WITH THIS LITTLE DEVICE...."))
@@ -102,12 +109,12 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     waitmessage
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_question_mark face_left))
-    applymovement(5, moves(walk_fast_left*8))
-    applymovement(10,moves(jump_2_left*2))   
+    applymovement(5, moves(walk_fast_left*7 walk_fast_down*5))
+    applymovement(10,moves(jump_2_left*3))    
     waitmovement
     removeobject(5)
     applymovement(2,moves(walk_down face_left))
-    applymovement(10,moves(jump_2_left*4))
+    applymovement(10,moves(jump_2_left*2 jump_2_down*2))
     waitmovement
     removeobject(10)
     setflag (FLAG_KICKED_OUT_LAB_CONVO)
@@ -165,7 +172,7 @@ script ErpCity_Mispoes_Miauw {
 
 script ErpCity_Lab_Sign {
     lockall
-    msgbox(format("Professor Birds's Lab"))
+    msgbox(format("Professor Birds's Lab"),MSGBOX_SIGN)
     waitmessage
     releaseall
 }
@@ -260,28 +267,28 @@ script ErpCity_Receive_Running_Shoes {
 
 script ErpCity_Sign_Mailbox_ProfBirds {
     lock
-    msgbox(format("This mailbox seems to be filled to the brim, somebody should clean this thing out."))
+    msgbox(format("This mailbox seems to be filled to the brim, somebody should clean this thing out."),MSGBOX_SIGN)
     waitmessage
     release
 }
 
 script ErpCity_Sign_Mailbox_Starthouse {
     lock
-    msgbox(format("{PLAYER}'s house."))
+    msgbox(format("Home."),MSGBOX_SIGN)
     waitmessage
     release
 }
 
 script ErpCity_Sign_Mailbox_BarryHouse {
     lock
-    msgbox(format("Family Stonebakers's house."))
+    msgbox(format("Family Stonebakers's house."),MSGBOX_SIGN)
     waitmessage
     release
 }
 
 script ErpCity_Sign_Mailbox_JanVogels {
     lock
-    msgbox(format("Family Birds's house."))
+    msgbox(format("Family Birds's house."),MSGBOX_SIGN)
     waitmessage
     release
 }

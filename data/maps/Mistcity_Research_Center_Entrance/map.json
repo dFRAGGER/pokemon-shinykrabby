@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "graphics_id": "OBJ_EVENT_GFX_PICNICKER_FRLG",
       "x": 14,
       "y": 14,
       "elevation": 0,
@@ -67,7 +67,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER_FRLG",
       "x": 4,
       "y": 10,
       "elevation": 0,
@@ -171,7 +171,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER_FRLG",
       "x": 21,
       "y": 6,
       "elevation": 0,
@@ -184,7 +184,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER_FRLG",
       "x": 25,
       "y": 16,
       "elevation": 0,
@@ -197,7 +197,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER_FRLG",
       "x": 7,
       "y": 17,
       "elevation": 0,
@@ -210,7 +210,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "graphics_id": "OBJ_EVENT_GFX_PICNICKER_FRLG",
       "x": 8,
       "y": 3,
       "elevation": 0,

@@ -84,7 +84,7 @@ script Mistcity_Tourist {
 
 script Mistcity_Sign_Welcome {
     lock
-    msgbox(format("Mist City:\nThe Sanctuary in the Clouds."))
+    msgbox(format("{UP_ARROW}Mist City:\nThe Sanctuary in the Clouds."))
     waitmessage
     release
 }
@@ -105,7 +105,7 @@ script Mistcity_Sign_ResearchCenter {
 
 script Mistcity_Sign_Lookout {
     lock
-    msgbox(format("Valley Lookout Point Ahead:\nThe Deep Cloud Forest (Restricted Area)"))
+    msgbox(format("{RIGHT_ARROW} Valley Lookout Point Ahead:\nThe Deep Cloud Forest (Restricted Area)"))
     waitmessage
     release
 }
@@ -134,7 +134,7 @@ script Mistcity_Gymdoor {
 
 script Mistcity_Sign_DarkCave {
     lock
-    msgbox(format("Bat Cave\nCaution: Heavy Bat Population."))
+    msgbox(format("{LEFT_ARROW} Bat Cave\nCaution: Heavy Bat Population."))
     waitmessage
     release
 }

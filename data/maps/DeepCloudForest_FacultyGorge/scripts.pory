@@ -272,10 +272,11 @@ script Deepcloudforest_Barry_Defeated {
     waitmessage
     playse(SE_BALL_THROW)
     delay(40)
-    playse(SE_BANG)
-    fadescreen(FADE_TO_WHITE)
     setspeaker("Nash")
     msgbox(format("It's a flashbang! Don't let them get away!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_BANG)
+    fadescreenswapbuffers(FADE_TO_WHITE)    
     setflag(FLAG_RESCUED_DAAN)
     setvar(VAR_MISTCITY_RESEARCH_CENTER_LOCATION,4)
     removeobject(4)
@@ -285,7 +286,7 @@ script Deepcloudforest_Barry_Defeated {
     removeobject(13)
     removeobject(12)
     delay(60)
-    fadescreen(FADE_FROM_WHITE)
+    fadescreenswapbuffers(FADE_FROM_WHITE)
     delay(120)
     applymovement(LOCALID_PLAYER, moves(face_up))
     waitmovement

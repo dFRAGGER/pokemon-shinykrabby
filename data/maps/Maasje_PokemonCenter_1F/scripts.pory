@@ -9,17 +9,19 @@ mapscripts Maasje_PokemonCenter_1F_MapScripts {
 
 script Maasje_PokemonCenter_1F_OnTransition {
     setrespawn(HEAL_LOCATION_MAASJE)
+    setflag(FLAG_DISABLE_FOLLOWER_POKEMON)
     end
 }
 
 script Maasje_PokemonCenter_1F_EventScript_Nurse {
-	setvar(VAR_0x800B, LOCALID_MAASJE_NURSE) 
-	call (Common_EventScript_PkmnCenterNurse)
+	setvar(VAR_0x800B, LOCALID_MAASJE_NURSE)
+	call(Common_EventScript_PkmnCenterNurse)
+	setflag(FLAG_DISABLE_FOLLOWER_POKEMON)
+	callnative(UpdateFollowingPokemon)
 	waitmessage
     waitbuttonpress
     release
     end
-	
 }
 
 script Maasje_PokemonCenter_1F_Second_Nurse {

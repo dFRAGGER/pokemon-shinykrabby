@@ -156,39 +156,49 @@ script Mistcity_InsideOfTruck_Daan_Returndrive {
     msgbox(format("I can't believe it.\nThey just... took it.\pRipped a part of the forest's soul right out of the ground and fled.\pThat 'Silent Guardian'... it was meant to sleep forever."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
+    applymovement(4, moves(walk_down face_right))
     setspeaker("David")
     msgbox(format("The energy signature was off the charts.\pAll my research on ancient Pokémon points to one name...\pThey have Registeel."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
+    applymovement(5, moves(walk_left))
     setspeaker("Daan")
     msgbox(format("And they were willing to tear down an entire ecosystem just to find it.\pThis changes everything.\pThis isn't just a group of fanatics; it's a well-funded, highly organized operation."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
+    applymovement(4, moves(walk_left))
     setspeaker("David")
     msgbox(format("I... I should have been faster.\pIf I'd tracked the signal sooner, maybe we could have..."),MSGBOX_AUTOCLOSE)
     waitmessage
+    applymovement(5, moves(walk_left))
+    applymovement(4, moves(face_right))
     setspeaker("Daan")
     msgbox(format("Don't.\pYou did everything you could.\pThis is on them, not us.\pWe'll get it back."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
+    applymovement(5, moves(walk_right*2 face_left))
+    applymovement(4, moves(walk_right))
     setspeaker("Daan")
     msgbox(format("Hmmmm.....\pIt's not the first time someone's come searching for secrets in this forest, though.\pA few years back, it was that eccentric Professor. Birds.\pHe was out here for months with all sorts of weird scanners.\pSaid he was mapping 'geothermal pig habitats.'\p...Geothermal. Pig. Habitats.\pIn a forest.\pWhere there are no pigs.\pHe was just as secretive as The Faculty, but his energy felt different.\pMore curious than malicious.\pI wonder what he was really looking for..."),MSGBOX_AUTOCLOSE)
     waitmessage
-    delay(120)
+    playse(SE_PIN)
+    applymovement(5, moves(emote_exclamation_mark walk_left face_up))
+    applymovement(4, moves(walk_up face_right emote_exclamation_mark))
     setspeaker("Daan")
-    msgbox(format("But that's a mystery for another time.\pRight now, we fight back.\pTheir rot goes deep... it's even taken root in our own town.\pEleanor and Marcus, two faculty sympathizers who recently moved into town...\pMaybe we should give a little knock on their door."),MSGBOX_AUTOCLOSE)
+    msgbox(format("WHAT?!\pYOU KNOW PROFESSOR BIRDS?\pHow do you know him?\p...\pYou are his intern?\p...\p...jeeezus..."),MSGBOX_AUTOCLOSE)
+    delay(120)
+    applymovement(5, moves(walk_right face_left))
+    applymovement(4, moves(face_down))
+    setspeaker("Daan")
+    msgbox(format("We should talk about that another time...\pRight now, we fight back.\pTheir rot goes deep... it's even taken root in our own town.\pEleanor and Marcus, two faculty sympathizers who recently moved into town...\pMaybe we should give a little knock on their door."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
     setspeaker("Daan")
-    msgbox(format("Also, we've been getting strange reports from the rangers stationed up north, on the Lions Mountains.\pRecently a 'private corporation' bought up all the mining rights and has restricted access to the area.\pSounds suspiciously familiar, doesn't it?"),MSGBOX_AUTOCLOSE)
+    msgbox(format("Also, we've been getting strange reports from the rangers stationed up north, on the Lions Mountains.\pRecently a 'private corporation' bought up all the mining rights and the local steel plant.\pSounds suspiciously familiar, doesn't it?"),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
     setspeaker("David")
-    msgbox(format("He's right.\pMy long-range scanner has been picking up faint energy pulses from those mountains.\pThey're similar to the frequency they used here, but... colder.\pIf they have Registeel, I'm worried they're searching for its counterparts."),MSGBOX_AUTOCLOSE)
-    waitmessage
-    delay(120)
-    setspeaker("David")
-    msgbox(format("But even the Regis... the old texts call them 'golems.'\pAncient guardians sealed away for a reason.\pIf they have Registeel, and they're scanning for 'counterparts'...\pWhat could be so important that they need all three?\pWhat are they trying to control?"),MSGBOX_AUTOCLOSE)
+    msgbox(format("He's right.\pThe reports are concerning.\pApparently the ground is shaking from all the drilling and pokemon are acting erratically.\pThey have Registeel already, what are they looking for?"),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(120)
     setspeaker("Daan")

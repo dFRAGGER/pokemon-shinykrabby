@@ -128,7 +128,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
       "x": 37,
-      "y": 30,
+      "y": 31,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -320,6 +320,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ErpCity_Sign_Mailbox_JanVogels"
+    },
+    {
+      "type": "sign",
+      "x": 27,
+      "y": 27,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ErpCity_Sign_Welcome"
     }
   ]
 }

@@ -38,7 +38,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Route02_Indoor_Ranger_House_Hint3"
     },
     {
       "type": "sign",
@@ -46,7 +46,79 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Route02_Indoor_Ranger_House_Hint1"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route02_Indoor_Ranger_House_Hint2"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route02_Station_Toolbox"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route02_Station_Bookcase2"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route02_Station_Bookcase1"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route02_Station_Bookcase1"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route02_Station_Bookcase2"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route02_Station_Radio"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route02_Station_SoilCrate"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route02_Station_SpecimenJar"
     }
   ]
 }

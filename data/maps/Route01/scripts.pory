@@ -2,6 +2,16 @@ mapscripts Route01_MapScripts {
     
 }
 
+script Route01_Text_Route01 {
+    lock
+    msgbox(format("ROUTE 1\n{LEFT_ARROW} MEESTRECH CITY\p{RIGHT_ARROW} ERP CITY"), MSGBOX_SIGN)
+    waitmessage
+    release
+
+}
+
+
+
 script Route01_Convo_Bugcatcher {
     lock
     applymovement(4, moves(face_player))

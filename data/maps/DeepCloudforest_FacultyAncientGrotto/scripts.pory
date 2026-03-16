@@ -10,7 +10,24 @@ script DeepCloudForest_AncientGrotto_GetOutTruck {
     applymovement(LOCALID_PLAYER, moves(jump_right))
     waitmovement
     setvar(VAR_MISTCITY_RESEARCH_CENTER_LOCATION,6)
+    applymovement(14, moves(walk_left*2))
     delay(60)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_question_mark))
+    waitmovement
+    delay(40)
+    playse(SE_PIN)
+    applymovement(14, moves(walk_fast_down walk_fast_left*2 emote_question_mark))
+    waitmovement
+    delay(60)
+    playmoncry(SPECIES_MEW,CRY_MODE_ENCOUNTER)
+    waitmoncry
+    delay(40)
+    applymovement(14, moves(walk_fast_right*5))
+    waitmovement
+    delay(60)
+    msgbox(format("What even was that?\p...maybe my eyes decieved me...\p...\pThe others need me, wake up!"),MSGBOX_AUTOCLOSE)
+    waitmessage
     applymovement(LOCALID_PLAYER, moves(walk_fast_up*3 walk_fast_left*2 walk_fast_up walk_fast_left))
     waitmovement
     special(SpawnCameraObject)
@@ -91,10 +108,11 @@ script DeepCloudForest_AncientGrotto_GetOutTruck {
     msgbox(format("ELECTABUZZ, FLASH!!"), MSGBOX_AUTOCLOSE)
     setflag(FLAG_ANCIENTGROTTO_DISAPPEAR_SHIP)
     delay(40)
-    playse(SE_BANG)
-    fadescreenswapbuffers(FADE_TO_WHITE)
     setspeaker("Nash")
     msgbox(format("Goddamn, not again...\nI should have brought my sunglasses..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_BANG)
+    fadescreenswapbuffers(FADE_TO_WHITE)    
     removeobject(12)
     removeobject(7)
     removeobject(6)

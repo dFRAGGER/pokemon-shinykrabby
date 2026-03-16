@@ -11,8 +11,8 @@ script Mistcity_Indoor_FacultySympathizer_Escape {
     setspeaker("Marcus")
     msgbox(format("... I'M TELLING YOU NOTHING, YOU STUPID TREE HUGGER!!\pNOW GET OUT OF MY WAY!"),MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(LOCALID_PLAYER, moves(jump_right face_left))
-    applymovement(4, moves(walk_fast_down walk_fast_left walk_fast_down*3))
+    applymovement(LOCALID_PLAYER, moves(walk_right face_left))
+    applymovement(4, moves(walk_fast_down walk_fast_left walk_fast_down*2))
     waitmovement
     applymovement(3, moves(face_down))
     setflag(FLAG_FACULTY_SYMPATHIZERS_1)
@@ -26,7 +26,7 @@ script Mistcity_Indoor_FacultySympathizer_Escape {
     setspeaker("Eleanor")
     msgbox(format("Mph.\pI suppose you think you are some kind of hero?\pEnjoy your precious, muddy trees.\p Progress will find a way, with or without your approval."),MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(5,moves(walk_fast_down))
+    applymovement(5,moves(face_down))
     waitmovement
     removeobject(5)
     applymovement(LOCALID_PLAYER, moves(face_down))
@@ -48,7 +48,7 @@ script Mistcity_Indoor_FacultySympathizer_Escape {
         msgbox(format("I'll let you know what we find out from Prof. Birds."),MSGBOX_AUTOCLOSE)
         waitmessage
     }
-    applymovement(3, moves(walk_left walk_down*2))
+    applymovement(3, moves(walk_left walk_down))
     waitmovement
     removeobject(3)
     release

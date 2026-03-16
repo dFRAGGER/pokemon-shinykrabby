@@ -1,5 +1,12 @@
 mapscripts Route02_MapScripts {}
 
+script Route02_Sign_Middle {
+    lock
+    msgbox(format("{LEFT_ARROW} Mist City\n {RIGHT_ARROW} Meestrech City"), MSGBOX_SIGN)
+    waitmessage
+    release
+}
+
 script Route02_Trainer_Miles {
     trainerbattle_single(TRAINER_MILES, Route02_Text_MilesIntro, Route02_Text_MilesDefeated)
 	msgbox(Route02_Text_MilesPostBattle, MSGBOX_AUTOCLOSE)

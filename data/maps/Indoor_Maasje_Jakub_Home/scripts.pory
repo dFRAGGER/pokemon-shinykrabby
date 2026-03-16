@@ -134,10 +134,11 @@ script Indoor_Maasje_Jacob_Home_Sienna1 {
     applymovement(4,moves(emote_exclamation_mark))
     waitmovement
     if (flag(FLAG_SHINY_KRABBY_ENCOUNTER) == FALSE && flag(FLAG_SIENNA_CONVO) == FALSE){
+    applymovement(LOCALID_PLAYER,moves(jump_right face_left))
     setspeaker("Sienna")
     msgbox(format("EEEEK! Stay back!\p...Oh, thank goodness, you're human!\pBe queit, before they hear us!"),MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(LOCALID_PLAYER,moves(jump_right face_down))
+    applymovement(LOCALID_PLAYER,moves(face_down))
     applymovement(4,moves(walk_fast_right walk_fast_up walk_fast_right*2 walk_fast_down))
     waitmovement
     delay(120)

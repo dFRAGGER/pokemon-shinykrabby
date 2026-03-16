@@ -249,5 +249,14 @@
       "script": "Route01_Factulty_Grunts_Position4"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 57,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route01_Text_Route01"
+    }
+  ]
 }

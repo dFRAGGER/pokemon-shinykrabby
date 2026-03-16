@@ -5,12 +5,13 @@ mapscripts Maasje_MapScripts {
 }
 
 script Maasje_On_Transition {
-    setflag (FLAG_VISITED_MAASJE)
+    setflag(FLAG_VISITED_MAASJE)
+    clearflag(FLAG_DISABLE_FOLLOWER_POKEMON)
 }
 
 script Maasje_Sign_Welcome {
     lock
-    msgbox(format("MESTREECH TOWN\pHome to people, and crustaceans."),MSGBOX_AUTOCLOSE)
+    msgbox(format("MESTREECH TOWN\nHome to people, and crustaceans."),MSGBOX_SIGN)
     waitmessage
     release
 }
@@ -31,7 +32,7 @@ script Maasje_Sign_Gym {
 
 script Maasje_Sign_Hill {
     lock
-    msgbox(format("Uphill: PokeGym\n Downhill: The beach"))
+    msgbox(format("{UP_ARROW} PokeGym\n{DOWN_ARROW} The beach"))
     waitmessage
     release
 }
@@ -53,14 +54,14 @@ script Maasje_Sign_CrabHill {
 script Maasje_Tree_Boy_Cut {
     lock
     faceplayer
-    msgbox(format("The rain in Cloud Forest makes everything grow at a frightening speed.\pWe have to cut these trees down every single day because they just keep growing back!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("The rain in the Cloud Forest makes trees grow back overnight.\pLuckely you only need a POKéMON that CAN learn Cut in your party - no need to actually teach it.\pMore room for the good moves, am I right!"),MSGBOX_AUTOCLOSE)
     waitmessage
     release
 }
 
 script Maasje_Sign_NextRoute {
     lock
-    msgbox(format("The Cloud Forest:\n Enter on own risk, or with a guide."))
+    msgbox(format("{UP_ARROW} The Cloud Forest\n Enter on own risk, or with a guide."))
     waitmessage
     release
 }

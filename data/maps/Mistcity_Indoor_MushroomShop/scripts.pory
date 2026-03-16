@@ -17,27 +17,10 @@ script Mistcity_Indoor_MushroomShop_MushroomGirl {
     setspeaker("Leaf")
     msgbox(format("Well!!\pHave you found any new mushroom Pokemon?"))
     waitmessage
-    specialvar(VAR_RESULT,ScriptGetPartyMonSpecies)
-    if(var(VAR_RESULT)==SPECIES_PARAS){
-        setflag(FLAG_MISTCITY_SHOW_MUSHROOM_PARAS)
-        setspeaker("Leaf")
-        msgbox(format("Ooh, a Paras with tochukaso spores!\pA classic symbiotic relationship! Fascinating!"))
-    }
-    if(var(VAR_RESULT)==SPECIES_PARASECT){
-        setflag(FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT)
-        setspeaker("Leaf")
-        msgbox(format("YES! The fungus has taken full control of the host!\pLook at those wonderfully vacant eyes! This Parasect is perfect!"))
-    }
-    if(var(VAR_RESULT)==SPECIES_SHROOMISH){
-        setflag(FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH)
-        setspeaker("Leaf")
-        msgbox(format("A Shroomish! I love how its spores can paralyze a foe! So efficient!\pHave you found any more interesting shroom species?"))
-    }
-    if(var(VAR_RESULT)==SPECIES_BRELOOM){
-        setflag(FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM)
-        setspeaker("Leaf")
-        msgbox(format("Breloom, the apex predator of the mushroom world!\pIts toxic spores are a masterpiece of natural engineering!"))
-    }
+    call(Mistcity_CheckParasInParty)
+    call(Mistcity_CheckParasectInParty)
+    call(Mistcity_CheckShroomishInParty)
+    call(Mistcity_CheckBreloomInParty)
     if(flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARAS)&&flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT)&&flag(FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH)&&flag(FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM)) {
         setspeaker("Leaf")
         msgbox(format("YOU DID IT! YOU DID IT!\pMy Fungus Index is complete!\pI'm the happiest mycologist in the world!\pHere, I grew this for you! It's extra potent!"))
@@ -101,4 +84,85 @@ script Mistcity_Indoor_MushroomShop_MushroomGirl {
         end
     }
 }
+}
+
+script Mistcity_CheckParasInParty {
+    if(flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARAS)){
+        return
+    }
+    setvar(VAR_0x8004, 0)
+    while(var(VAR_0x8004) != PARTY_SIZE) {
+        specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+        if(var(VAR_RESULT) == SPECIES_PARAS){
+            setflag(FLAG_MISTCITY_SHOW_MUSHROOM_PARAS)
+            setspeaker("Leaf")
+            msgbox(format("Ooh, a Paras with tochukaso spores!\pA classic symbiotic relationship! Fascinating!"))
+            return
+        }
+        addvar(VAR_0x8004, 1)
+    }
+    return
+}
+
+script Mistcity_CheckParasectInParty {
+    if(flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT)){
+        return
+    }
+    setvar(VAR_0x8004, 0)
+    while(var(VAR_0x8004) != PARTY_SIZE) {
+        specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+        if(var(VAR_RESULT) == SPECIES_PARASECT){
+            setflag(FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT)
+            setspeaker("Leaf")
+            msgbox(format("YES! The fungus has taken full control of the host!\pLook at those wonderfully vacant eyes! This Parasect is perfect!"))
+            return
+        }
+        addvar(VAR_0x8004, 1)
+    }
+    return
+}
+
+script Mistcity_CheckShroomishInParty {
+    if(flag(FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH)){
+        return
+    }
+    setvar(VAR_0x8004, 0)
+    while(var(VAR_0x8004) != PARTY_SIZE) {
+        specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+        if(var(VAR_RESULT) == SPECIES_SHROOMISH){
+            setflag(FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH)
+            setspeaker("Leaf")
+            msgbox(format("A Shroomish! I love how its spores can paralyze a foe! So efficient!\pHave you found any more interesting shroom species?"))
+            return
+        }
+        addvar(VAR_0x8004, 1)
+    }
+    return
+}
+
+script Mistcity_CheckBreloomInParty {
+    if(flag(FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM)){
+        return
+    }
+    setvar(VAR_0x8004, 0)
+    while(var(VAR_0x8004) != PARTY_SIZE) {
+        specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+        if(var(VAR_RESULT) == SPECIES_BRELOOM){
+            setflag(FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM)
+            setspeaker("Leaf")
+            msgbox(format("Breloom, the apex predator of the mushroom world!\pIts toxic spores are a masterpiece of natural engineering!"))
+            return
+        }
+        addvar(VAR_0x8004, 1)
+    }
+    return
+}
+
+script Mushroom_Vileplume {
+    lock
+    faceplayer
+    playmoncry(SPECIES_VILEPLUME, CRY_MODE_NORMAL)
+    msgbox(format("Vileeee...\pPLUMEEEEE!"))
+    waitmessage
+    release
 }

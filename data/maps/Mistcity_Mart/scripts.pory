@@ -35,7 +35,7 @@ script Mistcity_Mart_Ranger {
 script Mistcity_Mart_Hiker {
     lock
     faceplayer
-    msgbox(format("I'm trying to find a backpack that is actually waterproof, because the mist here manages to soak through everything I own."))
+    msgbox(format("I'm trying to find a backpack that is actually waterproof, because the humid air here manages to soak through everything I own."))
     waitmessage
     release
 }

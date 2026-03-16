@@ -25,7 +25,7 @@ script Mistcity_PokemonCenter_1F_EventScript_Nurse {
 script Mistcity_PokemonCenter_BugCatcher {
     lock
     faceplayer
-    msgbox(format("Walking through the fog really tires you out, doesn't it?\pIt's nice to just sit here for a while and listen to the healing machine chime."))
+    msgbox(format("Walking through the rain really tires you out, doesn't it?\pIt's nice to just sit here for a while and listen to the healing machine chime."))
     waitmessage
     release
 }
@@ -33,7 +33,7 @@ script Mistcity_PokemonCenter_BugCatcher {
 script Mistcity_PokemonCenter_Hiker {
     lock
     faceplayer
-    msgbox(format("It rains almost every day in this town, so I keep my Charmander inside its Poké Ball to keep its tail flame safe."))
+    msgbox(format("It rains almost every day in this town due to permanent clouds trapped in the valley, so I keep my Charmander inside its Poké Ball to keep its tail flame safe."))
     waitmessage
     release
 }
