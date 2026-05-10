@@ -6,6 +6,7 @@
 #include "field_effect_helpers.h"
 #include "field_player_avatar.h"
 #include "field_special_scene.h"
+#include "field_screen_effect.h"
 #include "field_tasks.h"
 #include "fieldmap.h"
 #include "item.h"
@@ -48,6 +49,8 @@ struct PacifidlogMetatileOffsets
     u16 metatileId;
 };
 
+u8 gMudSlowLevel = 0;
+
 static void DummyPerStepCallback(u8);
 static void AshGrassPerStepCallback(u8);
 static void FortreeBridgePerStepCallback(u8);
@@ -55,6 +58,7 @@ static void PacifidlogBridgePerStepCallback(u8);
 static void SootopolisGymIcePerStepCallback(u8);
 static void CrackedFloorPerStepCallback(u8);
 static void IcefallCaveIcePerStepCallback(u8);
+static void MudSwampPerStepCallback(u8);
 static void Task_MuddySlope(u8);
 
 static const TaskFunc sPerStepCallbacks[] =
@@ -67,7 +71,8 @@ static const TaskFunc sPerStepCallbacks[] =
     [STEP_CB_TRUCK]             = EndTruckSequence,
     [STEP_CB_SECRET_BASE]       = SecretBasePerStepCallback,
     [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback,
-    [STEP_CB_ICEFALL_CAVE]      = IcefallCaveIcePerStepCallback
+    [STEP_CB_ICEFALL_CAVE]      = IcefallCaveIcePerStepCallback,
+    [STEP_CB_MUD_SWAMP]         = MudSwampPerStepCallback
 };
 
 // The positions of each map space with crackable ice in Icefall Cave.
@@ -211,6 +216,9 @@ void SetUpFieldTasks(void)
 
 void ActivatePerStepCallback(u8 callbackId)
 {
+    if (callbackId != STEP_CB_MUD_SWAMP)
+        gMudSlowLevel = 0;
+
     u8 taskId = FindTaskIdByFunc(Task_RunPerStepCallback);
     if (taskId != TASK_NONE)
     {
@@ -1086,3 +1094,63 @@ static void IcefallCaveIcePerStepCallback(u8 taskId)
 #undef tIceX
 #undef tIceY
 #undef tDelay
+
+// Graduated mud/swamp slowdown — step thresholds and warp-back limit
+#define MUD_STEPS_SLOW1   5    // Level 1: running disabled
+#define MUD_STEPS_SLOW2   10   // Level 2: forced slow walk
+#define MUD_STEPS_SLOW3   15   // Level 3: slow walk + pause between steps
+#define MUD_STEPS_WARP    20   // Warp back to last platform
+
+#define tPrevX     data[2]
+#define tPrevY     data[3]
+#define tStepCount data[4]
+#define tCooldown  data[5]
+
+static void MudSwampPerStepCallback(u8 taskId)
+{
+    s16 x, y;
+    s16 *data = gTasks[taskId].data;
+    PlayerGetDestCoords(&x, &y);
+
+    // Tick down the between-step pause (level 3 effect)
+    if (tCooldown > 0)
+    {
+        tCooldown--;
+        return;
+    }
+
+    // Only act when the player has actually moved
+    if (x == tPrevX && y == tPrevY)
+        return;
+
+    tPrevX = x;
+    tPrevY = y;
+    tStepCount++;
+
+    // Update slow level based on steps taken since last platform
+    if (tStepCount >= MUD_STEPS_SLOW3)
+    {
+        gMudSlowLevel = 3;
+        tCooldown = 12;
+    }
+    else if (tStepCount >= MUD_STEPS_SLOW2)
+        gMudSlowLevel = 2;
+    else if (tStepCount >= MUD_STEPS_SLOW1)
+        gMudSlowLevel = 1;
+    else
+        gMudSlowLevel = 0;
+
+    // Signal the map script to show a "stuck in mud" message and warp back.
+    // VAR_TEMP_0/1 already hold the last platform coords.
+    // VAR_TEMP_2 is set to 1 so the ON_FRAME_TABLE script can detect it.
+    if (tStepCount >= MUD_STEPS_WARP)
+    {
+        ActivatePerStepCallback(STEP_CB_DUMMY);
+        VarSet(VAR_TEMP_2, 1);
+    }
+}
+
+#undef tPrevX
+#undef tPrevY
+#undef tStepCount
+#undef tCooldown

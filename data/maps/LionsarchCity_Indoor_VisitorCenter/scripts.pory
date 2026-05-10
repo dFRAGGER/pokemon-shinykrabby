@@ -27,37 +27,37 @@ script VisitorCenter_Ranger {
 script VisitorCenter_Hiker {
     lockall
     faceplayer
-    msgbox(format("I've hiked these mountains for twenty years.\pThe Faculty's drilling has disturbed the local Pokémon.\pUrsaring and Ursaluna have been more aggressive than usual.\pStay on the marked trails!"))
+    msgbox(format("I've hiked these mountains for twenty years.\pThe Faculty's drilling has disturbed the local Pokémon.\pUrsaring have been more aggressive than usual.\pStay on the marked trails!"))
     releaseall
 }
 
 script VisitorCenter_Tourist {
     lockall
     faceplayer
-    msgbox(format("I came all the way from Marshduke City to see the Twin Lions!\pThe view from the eastern cliff route is supposed to be spectacular.\pI'm so excited!"))
+    msgbox(format("I came all the way from Marshduke City to see the Twin Lions!\pAlso the view from the eastern cliff route is supposed to be spectacular.\pI'm so excited!"))
     releaseall
 }
 
 script VisitorCenter_MapBoard {
     lockall
-    msgbox(format("A large map of the Lion Mountains region:\p- Northern Route: Steep terrain, requires Rock Climb\n- Eastern Cliff Route: Longer path to Marshduke City\n- Wildlife Warning: Ursaring, Donphan, Golem common\n- Faculty Mining Zone: RESTRICTED ACCESS"))
+    msgbox(format("A large map of the Lion Mountains region:\p- Northern Route:\nSteep terrain, requires proper footware\p- Eastern Cliff Route:\nLonger path to Marshduke City\p- Wildlife Warning:\nUrsaring, Donphan, Golem common\p- Faculty Mining Zone:\nRESTRICTED ACCESS"))
     releaseall
 }
 
 script VisitorCenter_WarningSign {
     lockall
-    msgbox(format("MOUNTAIN SAFETY WARNING\n\n- Bring plenty of Potions and Revives\n- Watch for falling rocks\n- Avoid Faculty mining zones\n- Emergency shelters marked on map\n- Report suspicious activity to rangers"))
+    msgbox(format("MOUNTAIN SAFETY WARNING:\p- Bring plenty of Potions\nand Revives\p- Watch for falling rocks\n- Avoid Faculty mining zones\p- Emergency shelters on map\p- Report suspicious activity\nto rangers"))
     releaseall
 }
 
 script VisitorCenter_BrochureRack {
     lockall
-    msgbox(format("Brochures about the Lion Mountains:\n\n'Twin Lions: A Natural Wonder'\n'Mountain Pokémon of the North'\n'Hiking Safety Guide'\n'History of Lionsarch City'"))
+    msgbox(format("Brochures about the Lion Mountains:\p- 'Twin Lions: A Natural Wonder'\n- 'Mountain Pokémon of the North'\p- 'Hiking Safety Guide'\n- 'History of Lionsarch City'"))
     releaseall
 }
 
 script VisitorCenter_DonationBox {
     lockall
-    msgbox(format("A donation box for mountain trail maintenance.\pThere's a note:\n'Help us keep the trails safe and clean!\nAll donations go to ranger programs and wildlife protection.'"))
+    msgbox(format("A donation box for mountain trail maintenance.\pThere's a note:\p'Help us keep the trails safe\nand clean!\pAll donations go to ranger programs\nand wildlife protection.'"))
     releaseall
 }

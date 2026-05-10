@@ -638,3 +638,9 @@ gSpecials::
 	def_special UpdateTrainerCardPhotoIcons
 	def_special StickerManGetBragFlags
 	def_special CheckAddCoins
+	def_special Special_PrepareHerbTreat
+	def_special Special_HasGroundMaterial
+	def_special Special_OpenCaseForRolling
+	def_special Special_LionsarchGym_StartStorm
+	def_special Special_LionsarchGym_StopStorm
+	def_special Special_LionsarchGym_RevealLeaders

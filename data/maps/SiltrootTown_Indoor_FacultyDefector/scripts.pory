@@ -9,9 +9,18 @@ script SiltrootTown_Indoor_Scott {
     msgbox(format("What are you doing in my home?!\pWho are you?!\pDid the government send you?\pAre you a drone in a human suit?!"),MSGBOX_AUTOCLOSE)
     waitmessage
     if(flag(FLAG_SILTROOTTOWN_STASH_SACK)) {
+        checkitem(ITEM_POKEBLOCK_CASE)
+        if (var(VAR_RESULT) == FALSE) {
+            setspeaker("Scott")
+            msgbox(format("...\pHmm... so Ali sent you?\pYou seem to have the inventory but nothing to prove it.\pAli would never send someone to me without the right credentials.\pYOU ARE A SPY AREN'T YOU?"),MSGBOX_AUTOCLOSE)
+            waitmessage
+            release
+            end
+        }
         getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
         setspeaker("Scott")
-        msgbox(format("...\p...\p..Ali sent you?\pAnd you have the inventory?\pHmm.\pOne sec..."))
+        msgbox(format("Wait...\pIs that Ali's Stash Case?\pThat beat-up old thing with the dent on the side?\pOnly one person in the world has that.\p...\p... so Ali sent you?\pAnd you have the inventory?\pHmm.\pOne sec..."),MSGBOX_AUTOCLOSE)
+        waitmessage
         waitmessage
         if(var(VAR_TEMP_0)==3){
             applymovement(1, moves(walk_down walk_left face_up))

@@ -1,4 +1,8 @@
-mapscripts LionsarchCity_MapScripts {}
+mapscripts LionsarchCity_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_VISITED_LIONSARCH_CITY)
+    }
+}
 
 // ========================================
 // CITY SIGNS
@@ -40,7 +44,7 @@ script LionsarchCity_Sign_LeisurePort {
 
 script LionsarchCity_DiscoPamphlet_1 {
     lockall
-    msgbox(format("A crumpled flyer is taped to the wall:\pGROOVE UNDERGROUND\nOLD SCHOOL DISCO NIGHTS\nEvery weekend!\p...The rest is too faded to read."))
+    msgbox(format("A crumpled flyer is taped to a board:\pGROOVE UNDERGROUND\nOLD SCHOOL DISCO NIGHTS\nEvery weekend!\p...The rest is too faded to read."))
     releaseall
 }
 
@@ -52,7 +56,7 @@ script LionsarchCity_DiscoPamphlet_2 {
 
 script LionsarchCity_DiscoPamphlet_3 {
     lockall
-    msgbox(format("A flyer stuck under a rock:\pDJ PETER PRESENTS:\nDISCO INFERNO\nThe funkiest beats this side of the mountains!\pFind the basement. Feel the groove."))
+    msgbox(format("A flyer stuck to a wooden pole:\pDJ PETER PRESENTS:\nDISCO INFERNO\nThe funkiest beats this side of the mountains!\pFind the basement. Feel the groove."))
     releaseall
 }
 
@@ -256,7 +260,7 @@ script LionsarchCity_NPC_OldSailor {
 script LionsarchCity_NPC_DockWorker_1 {
     lockall
     faceplayer
-    msgbox(format("Three industrial ports keep this city running.\pWe load and unload cargo ships day and night.\pIt's hard work, but the pay is good."))
+    msgbox(format("The ports keep this city running.\pWe load and unload cargo ships day and night.\pIt's hard work, but the pay is good."))
     releaseall
 }
 
@@ -319,7 +323,7 @@ script LionsarchCity_NPC_FishingEnthusiast {
 script LionsarchCity_NPC_NewsReporter {
     lockall
     faceplayer
-    msgbox(format("I'm investigating the Faculty's activities for the regional news network.\pThey claim to be mining rare metals, but their security is unusually tight.\pWhat are they really doing up there?"))
+    msgbox(format("I'm investigating the Faculty's activities for the regional news network.\pThey claim to be mining rare metals, but their security is unusually tight.\pWhat are they really doing in there?"))
     releaseall
 }
 
@@ -340,7 +344,7 @@ script LionsarchCity_NPC_ShipCaptain {
 script LionsarchCity_NPC_StreetVendor {
     lockall
     faceplayer
-    msgbox(format("The markets are the soul of Lionsarch!\pTraders from all over the region bring their goods here.\pYou can find things here that don't exist anywhere else!"))
+    msgbox(format("The markets are the soul of Lionsarch!\pTraders from all over the region bring their goods here.\pYou can find things here that don't exist anywhere else!\pI'm setting up shop right now if you want to take a look!\pI probably open my stand very soon!"))
     releaseall
 }
 

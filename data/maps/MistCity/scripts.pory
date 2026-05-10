@@ -1,4 +1,8 @@
-mapscripts MistCity_MapScripts {}
+mapscripts MistCity_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_VISITED_MIST_CITY)
+    }
+}
 
 script Mistcity_AipomGuy {
     lock

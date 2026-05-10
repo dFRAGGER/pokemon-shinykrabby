@@ -41,6 +41,43 @@
   ],
   "object_events": [],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 44,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route013_2_Platform1"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route013_2_Platform2"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 85,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route013_2_Platform3"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 101,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route013_2_Platform4"
+    }
+  ],
   "bg_events": []
 }

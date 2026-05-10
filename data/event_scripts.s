@@ -1914,3 +1914,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/LionsarchCity_Steel_Factory_B1F/scripts.inc"
 
 	.include "data/maps/WestLionMountain_CableCar/scripts.inc"
+
+	.include "data/maps/BikeShop_Jaouad/scripts.inc"
+
+	.include "data/maps/BikeRoute_House1/scripts.inc"

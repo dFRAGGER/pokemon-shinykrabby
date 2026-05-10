@@ -93,8 +93,8 @@
 #define TRAINER_WILTON_4                     86
 #define TRAINER_WILTON_5                     87
 #define TRAINER_WARREN                       88     // Mining Cave - Faculty member
-#define TRAINER_MARY                         89     // Mining Cave B1F - Faculty member
-#define TRAINER_ALEXIA                       90     // Mining Cave B1F - Faculty member
+#define TRAINER_MARY                         89
+#define TRAINER_ALEXIA                       90
 #define TRAINER_JODY                         91
 #define TRAINER_WENDY                        92
 #define TRAINER_KEIRA                        93
@@ -860,11 +860,20 @@
 #define TRAINER_BRENDAN_PLACEHOLDER         853
 #define TRAINER_MAY_PLACEHOLDER             854
 
+// Lionsarch Gym trainers
+#define TRAINER_LIONSARCH_HIKER_1           855
+#define TRAINER_LIONSARCH_HIKER_2           856
+#define TRAINER_LIONSARCH_HIKER_3           857
+#define TRAINER_LIONSARCH_HIKER_4           858
+#define TRAINER_LIONSARCH_HIKER_5           859
+#define TRAINER_LIONSARCH_LEADER1           860
+#define TRAINER_LIONSARCH_LEADER2           861
+
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_EMERALD     855
+#define TRAINERS_COUNT_EMERALD     862
 #define MAX_TRAINERS_COUNT_EMERALD 864
 
 #if IS_FRLG

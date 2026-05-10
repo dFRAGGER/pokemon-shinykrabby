@@ -20,13 +20,13 @@ script Mistcity_Indoor_FacultySympathizer_Escape {
     delay(60)
     applymovement(3, moves(face_up))
     delay(60)
-    applymovement(5,moves(walk_fast_down*3 face_right))
+    applymovement(5,moves(walk_down*2 face_right))
     waitmovement
-    applymovement(3, moves(face_down))
+    applymovement(3, moves(face_left))
     setspeaker("Eleanor")
     msgbox(format("Mph.\pI suppose you think you are some kind of hero?\pEnjoy your precious, muddy trees.\p Progress will find a way, with or without your approval."),MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(5,moves(face_down))
+    applymovement(5,moves(walk_down*2))
     waitmovement
     removeobject(5)
     applymovement(LOCALID_PLAYER, moves(face_down))
@@ -36,16 +36,37 @@ script Mistcity_Indoor_FacultySympathizer_Escape {
     applymovement(LOCALID_PLAYER, moves(face_up))
     waitmovement
     setspeaker("Daan")
-    msgbox(format("I think they're gone.\pRan like Rattata the second I started asking real questions about the excavation.\pThey knew exactly what The Faculty was doing to the forest.\p...\pWhat? There were problems in Meestreech as well?\p...\pThat device looks very similar to the ones the faculty were using in Whisperwood grove.\pBut this... this feels too big for just them.\pI can't shake this feeling about Prof. Birds.\pYou remember what I said in the truck?\pAbout him scanning the forest years ago?\pIt's too much of a coincidence.\nIm going to call Jacob.\pHe's got a way of making people talk.\pWe're going to pay the Professor a visit at his lab.\pWe need to know what he was really looking for back then.\pIf he knows anything about Registeel, we're going to get it out of him.\pWhile we handle Prof. Birds, I need you to keep chasing The Faculty.\pForget the internship for a moment, this is bigger.\pThe reports from the northern rangers are getting worse.\pSomething big is happening near Lionsarch City and the Lion Mountains.\pYou have to investigate.\pTo get there, head west through Bat Cave, towards Siltroot Town.\pIt's an old, rural trading post deep in the mangroves.\pLook for a guy named Ali.\pHe's an old friend... a brilliant herbalist.\p ...though he's usually busy sampling his own... very potent herbs.\pHe knows all the old smuggling routes and the boat captains.\pIf anyone can get you a ride to Lionsarch, it's him.\p Oh and don't forget to check out the gym before you leave!\pThe gym leader might surprise you..."))
+    msgbox(format("I think they're gone.\pRan like Rattata the second I started asking real questions about the excavation.\pThey knew exactly what The Faculty was doing to the forest.\p...\pWhat? There were problems in Meestreech as well?\p...\pThat device looks very similar to the ones the faculty were using in the forest.\pBut this... this feels too big for just them.\pI can't shake this feeling about Prof. Birds.\pYou remember what I said in the truck?\pAbout him scanning the forest years ago?\pIt's too much of a coincidence.\nI'm going to call Jacob.\pHe's got a way of making people talk... after a few drinks... if you know what I mean.\pWe're going to pay the Professor a visit at his lab.\pWe need to know what he was really looking for back then.\pIf he knows anything about Registeel, we're going to get it out of him.\pWhile we sort out Prof. Birds, I want you to start heading west, through batcave.\pForget the internship for a moment, this is bigger now."))
     waitmessage
+    setspeaker("Daan")
+    msgbox(format("Here. Take this.\pI've already added my number.\pI'll call you on the Pokénav once we've dealt with the Professor.\pThere's more I need to tell you but I'd rather not say it all out loud in here."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    if(flag(FLAG_SYS_POKENAV_GET)==FALSE){
+        playfanfare(MUS_OBTAIN_ITEM)
+        message(format("Daan handed you the Pokénav!\nHis number has been registered!"))
+        waitfanfare
+        closemessage
+        setflag(FLAG_SYS_POKENAV_GET)
+        setflag(FLAG_RECEIVED_POKENAV)
+    }
+    else{
+        playfanfare(MUS_OBTAIN_ITEM)
+        message(format("Daan's number has been\nregistered in your Pokénav!"))
+        waitfanfare
+        closemessage
+    }
+    setflag(FLAG_FACULTY_SYMPATHIZERS_2)
+    clearflag(FLAG_HIDE_ROUTE03_CLIFFSIDE_WATCHER)
+    setflag(FLAG_ADDED_MATCH_CALL_TO_POKENAV)
+    setvar(VAR_FORTREE_CITY_STATE, 1)
     if(flag(FLAG_BADGE02_GET)==TRUE){
         setspeaker("Daan")
-        msgbox(format("Oh, you already beat David?\nImpressive.\pYou're ready for the swamps, then.\pGood luck, {PLAYER}. I'll let you know what we find out from Prof. Birds."),MSGBOX_AUTOCLOSE)
+        msgbox(format("Oh, you already beat David?\nImpressive.\pYou're ready for the swamps, then.\pGood luck, {PLAYER}."),MSGBOX_AUTOCLOSE)
         waitmessage
     }
     else{
         setspeaker("Daan")
-        msgbox(format("I'll let you know what we find out from Prof. Birds."),MSGBOX_AUTOCLOSE)
+        msgbox(format("Oh, and don't skip the gym while you're in town.\pGood luck, {PLAYER}."),MSGBOX_AUTOCLOSE)
         waitmessage
     }
     applymovement(3, moves(walk_left walk_down))

@@ -1252,11 +1252,11 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Surf
 
 === TRAINER_RANDALL ===
-Name: RANDALL
-Class: Cooltrainer
-Pic: Cooltrainer M
-Gender: Male
-Music: Cool
+Name: RACHEL
+Class: Beauty Frlg
+Pic: Beauty Frlg
+Gender: Female
+Music: Female
 Double Battle: No
 AI: Basic Trainer
 
@@ -1271,8 +1271,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PARKER ===
 Name: PARKER
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Pkmn Breeder
+Pic: Pokemon Breeder M
 Gender: Male
 Music: Cool
 Double Battle: No
@@ -1288,8 +1288,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GEORGE ===
 Name: GEORGE
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Hiker
+Pic: Hiker
 Gender: Male
 Music: Cool
 Double Battle: No
@@ -1305,8 +1305,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BERKE ===
 Name: BERKE
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Hiker
+Pic: Hiker
 Gender: Male
 Music: Cool
 Double Battle: No
@@ -1322,8 +1322,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRAXTON ===
 Name: BRAXTON
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Expert
+Pic: Expert M
 Gender: Male
 Music: Cool
 Double Battle: No
@@ -1338,11 +1338,11 @@ Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_VINCENT ===
-Name: VINCENT
-Class: Cooltrainer
-Pic: Cooltrainer M
-Gender: Male
-Music: Cool
+Name: VIVIAN
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Female
 Double Battle: No
 AI: Basic Trainer
 
@@ -1356,8 +1356,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LEROY ===
 Name: LEROY
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Cool
 Double Battle: No
@@ -1369,8 +1369,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_WILTON_1 ===
 Name: WILTON
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Hiker
+Pic: Hiker
 Gender: Male
 Music: Cool
 Double Battle: No
@@ -1382,8 +1382,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_EDGAR ===
 Name: EDGAR
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Hiker
+Pic: Hiker Frlg
 Gender: Male
 Music: Cool
 Double Battle: No
@@ -1441,8 +1441,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_VITO ===
 Name: VITO
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Psychic
+Pic: Psychic M
 Gender: Male
 Music: Cool
 Double Battle: No
@@ -1467,8 +1467,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_WILTON_2 ===
 Name: WILTON
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Hiker
+Pic: Hiker FrLg
 Gender: Male
 Music: Cool
 Items: Hyper Potion
@@ -1555,8 +1555,8 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
 === TRAINER_WARREN ===
 Name: WARREN
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Gentleman
+Pic: Gentleman
 Gender: Male
 Music: Cool
 Items: Full Restore
@@ -1576,10 +1576,10 @@ Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MARY ===
-Name: MARY
+Name: MADS
 Class: Gentleman
 Pic: Gentleman
-Gender: Female
+Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -1589,10 +1589,10 @@ Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALEXIA ===
-Name: ALEXIA
+Name: AD
 Class: Gentleman
 Pic: Gentleman
-Gender: Female
+Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -16797,3 +16797,87 @@ Double Battle: No
 Kyogre
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_LIONSARCH_HIKER_1 ===
+Name: ROWAN
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Suspicious
+Double Battle: No
+
+Swinub
+Level: 22
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+=== TRAINER_LIONSARCH_HIKER_2 ===
+Name: CLIFFORD
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Suspicious
+Double Battle: No
+
+Snorunt
+Level: 22
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+=== TRAINER_LIONSARCH_HIKER_3 ===
+Name: GLEN
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Suspicious
+Double Battle: No
+
+Sneasel
+Level: 23
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+=== TRAINER_LIONSARCH_HIKER_4 ===
+Name: ANDERS
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Suspicious
+Double Battle: No
+
+Piloswine
+Level: 24
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+=== TRAINER_LIONSARCH_HIKER_5 ===
+Name: DUNN
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Suspicious
+Double Battle: No
+
+Beartic
+Level: 24
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+=== TRAINER_LIONSARCH_LEADER1 ===
+Name: ???
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Intense
+Double Battle: No
+
+Froslass
+Level: 27
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_LIONSARCH_LEADER2 ===
+Name: ???
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Intense
+Double Battle: No
+
+Weavile
+Level: 28
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe

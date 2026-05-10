@@ -348,80 +348,84 @@ Mistcity_InsideOfTruck_Daan_Returndrive::
 # 183 "data/maps/InsideOfTruck/scripts.pory"
 	waitmessage
 # 184 "data/maps/InsideOfTruck/scripts.pory"
-	playse SE_PIN
+	delay 40
 # 185 "data/maps/InsideOfTruck/scripts.pory"
-	applymovement 5, Mistcity_InsideOfTruck_Daan_Returndrive_Movement_5
+	playse SE_PIN
 # 186 "data/maps/InsideOfTruck/scripts.pory"
-	applymovement 4, Mistcity_InsideOfTruck_Daan_Returndrive_Movement_6
+	applymovement 5, Mistcity_InsideOfTruck_Daan_Returndrive_Movement_5
 # 187 "data/maps/InsideOfTruck/scripts.pory"
-	setspeaker Mistcity_InsideOfTruck_Daan_ChaseFaculty_Text_2
+	applymovement 4, Mistcity_InsideOfTruck_Daan_Returndrive_Movement_6
 # 188 "data/maps/InsideOfTruck/scripts.pory"
-	msgbox Mistcity_InsideOfTruck_Daan_Returndrive_Text_6, MSGBOX_AUTOCLOSE
+	setspeaker Mistcity_InsideOfTruck_Daan_ChaseFaculty_Text_2
 # 189 "data/maps/InsideOfTruck/scripts.pory"
-	delay 120
+	msgbox Mistcity_InsideOfTruck_Daan_Returndrive_Text_6, MSGBOX_AUTOCLOSE
 # 190 "data/maps/InsideOfTruck/scripts.pory"
-	applymovement 5, Mistcity_InsideOfTruck_Daan_Returndrive_Movement_7
-# 191 "data/maps/InsideOfTruck/scripts.pory"
-	applymovement 4, Mistcity_InsideOfTruck_Daan_Returndrive_Movement_8
-# 192 "data/maps/InsideOfTruck/scripts.pory"
-	setspeaker Mistcity_InsideOfTruck_Daan_ChaseFaculty_Text_2
-# 193 "data/maps/InsideOfTruck/scripts.pory"
-	msgbox Mistcity_InsideOfTruck_Daan_Returndrive_Text_7, MSGBOX_AUTOCLOSE
-# 194 "data/maps/InsideOfTruck/scripts.pory"
-	waitmessage
-# 195 "data/maps/InsideOfTruck/scripts.pory"
-	delay 40
-# 196 "data/maps/InsideOfTruck/scripts.pory"
-	setspeaker Mistcity_InsideOfTruck_Daan_ChaseFaculty_Text_2
-# 197 "data/maps/InsideOfTruck/scripts.pory"
-	msgbox Mistcity_InsideOfTruck_Daan_Returndrive_Text_8, MSGBOX_AUTOCLOSE
-# 198 "data/maps/InsideOfTruck/scripts.pory"
-	waitmessage
-# 199 "data/maps/InsideOfTruck/scripts.pory"
-	delay 40
-# 200 "data/maps/InsideOfTruck/scripts.pory"
-	setspeaker Miscity_InsideOfTruck_Daan_RescueMission_Text_0
-# 201 "data/maps/InsideOfTruck/scripts.pory"
-	msgbox Mistcity_InsideOfTruck_Daan_Returndrive_Text_9, MSGBOX_AUTOCLOSE
-# 202 "data/maps/InsideOfTruck/scripts.pory"
-	waitmessage
-# 203 "data/maps/InsideOfTruck/scripts.pory"
 	delay 120
-# 204 "data/maps/InsideOfTruck/scripts.pory"
+# 191 "data/maps/InsideOfTruck/scripts.pory"
+	applymovement 5, Mistcity_InsideOfTruck_Daan_Returndrive_Movement_7
+# 192 "data/maps/InsideOfTruck/scripts.pory"
+	applymovement 4, Mistcity_InsideOfTruck_Daan_Returndrive_Movement_8
+# 193 "data/maps/InsideOfTruck/scripts.pory"
 	setspeaker Mistcity_InsideOfTruck_Daan_ChaseFaculty_Text_2
-# 205 "data/maps/InsideOfTruck/scripts.pory"
-	msgbox Mistcity_InsideOfTruck_Daan_Returndrive_Text_10, MSGBOX_AUTOCLOSE
-# 206 "data/maps/InsideOfTruck/scripts.pory"
+# 194 "data/maps/InsideOfTruck/scripts.pory"
+	msgbox Mistcity_InsideOfTruck_Daan_Returndrive_Text_7, MSGBOX_AUTOCLOSE
+# 195 "data/maps/InsideOfTruck/scripts.pory"
 	waitmessage
+# 196 "data/maps/InsideOfTruck/scripts.pory"
+	delay 40
+# 197 "data/maps/InsideOfTruck/scripts.pory"
+	setspeaker Mistcity_InsideOfTruck_Daan_ChaseFaculty_Text_2
+# 198 "data/maps/InsideOfTruck/scripts.pory"
+	msgbox Mistcity_InsideOfTruck_Daan_Returndrive_Text_8, MSGBOX_AUTOCLOSE
+# 199 "data/maps/InsideOfTruck/scripts.pory"
+	waitmessage
+# 200 "data/maps/InsideOfTruck/scripts.pory"
+	delay 40
+# 201 "data/maps/InsideOfTruck/scripts.pory"
+	applymovement 4, Mistcity_InsideOfTruck_Daan_Returndrive_Movement_0
+# 202 "data/maps/InsideOfTruck/scripts.pory"
+	setspeaker Miscity_InsideOfTruck_Daan_RescueMission_Text_0
+# 203 "data/maps/InsideOfTruck/scripts.pory"
+	msgbox Mistcity_InsideOfTruck_Daan_Returndrive_Text_9, MSGBOX_AUTOCLOSE
+# 204 "data/maps/InsideOfTruck/scripts.pory"
+	waitmessage
+# 205 "data/maps/InsideOfTruck/scripts.pory"
+	delay 120
+# 206 "data/maps/InsideOfTruck/scripts.pory"
+	setspeaker Mistcity_InsideOfTruck_Daan_ChaseFaculty_Text_2
 # 207 "data/maps/InsideOfTruck/scripts.pory"
-	callnative StartTruckSlowingDownScene
+	msgbox Mistcity_InsideOfTruck_Daan_Returndrive_Text_10, MSGBOX_AUTOCLOSE
 # 208 "data/maps/InsideOfTruck/scripts.pory"
-	delay 200
+	waitmessage
 # 209 "data/maps/InsideOfTruck/scripts.pory"
-	callnative WaitForTruckToStop
+	callnative StartTruckSlowingDownScene
 # 210 "data/maps/InsideOfTruck/scripts.pory"
-	delay 60
+	delay 200
 # 211 "data/maps/InsideOfTruck/scripts.pory"
-	setflag FLAG_DAVID_TRUCK
+	callnative WaitForTruckToStop
 # 212 "data/maps/InsideOfTruck/scripts.pory"
-	setflag FLAG_DAAN_NASH_TRUCK
+	delay 60
 # 213 "data/maps/InsideOfTruck/scripts.pory"
-	setflag FLAG_NASH_ENTRANCE_RESEARCH_CENTER2
+	setflag FLAG_DAVID_TRUCK
 # 214 "data/maps/InsideOfTruck/scripts.pory"
-	clearflag FLAG_NASH_ENTRANCE_RESEARCH_CENTER1
+	setflag FLAG_DAAN_NASH_TRUCK
 # 215 "data/maps/InsideOfTruck/scripts.pory"
-	applymovement 5, Mistcity_InsideOfTruck_Daan_ChaseFaculty_Movement_1
+	setflag FLAG_NASH_ENTRANCE_RESEARCH_CENTER2
 # 216 "data/maps/InsideOfTruck/scripts.pory"
-	waitmovement
+	clearflag FLAG_NASH_ENTRANCE_RESEARCH_CENTER1
 # 217 "data/maps/InsideOfTruck/scripts.pory"
-	removeobject 5
+	applymovement 5, Mistcity_InsideOfTruck_Daan_ChaseFaculty_Movement_1
 # 218 "data/maps/InsideOfTruck/scripts.pory"
-	applymovement 4, Miscity_InsideOfTruck_Daan_RescueMission_Movement_1
-# 219 "data/maps/InsideOfTruck/scripts.pory"
 	waitmovement
+# 219 "data/maps/InsideOfTruck/scripts.pory"
+	removeobject 5
 # 220 "data/maps/InsideOfTruck/scripts.pory"
-	removeobject 4
+	applymovement 4, Mistcity_InsideOfTruck_Daan_Returndrive_Movement_9
 # 221 "data/maps/InsideOfTruck/scripts.pory"
+	waitmovement
+# 222 "data/maps/InsideOfTruck/scripts.pory"
+	removeobject 4
+# 223 "data/maps/InsideOfTruck/scripts.pory"
 	release
 	return
 
@@ -496,38 +500,48 @@ Mistcity_InsideOfTruck_Daan_Returndrive_Movement_4:
 	walk_right
 	step_end
 
-# 185 "data/maps/InsideOfTruck/scripts.pory"
+# 186 "data/maps/InsideOfTruck/scripts.pory"
 Mistcity_InsideOfTruck_Daan_Returndrive_Movement_5:
-# 185 "data/maps/InsideOfTruck/scripts.pory"
+# 186 "data/maps/InsideOfTruck/scripts.pory"
 	emote_exclamation_mark
-# 185 "data/maps/InsideOfTruck/scripts.pory"
+# 186 "data/maps/InsideOfTruck/scripts.pory"
 	walk_left
-# 185 "data/maps/InsideOfTruck/scripts.pory"
+# 186 "data/maps/InsideOfTruck/scripts.pory"
 	face_up
 	step_end
 
-# 186 "data/maps/InsideOfTruck/scripts.pory"
+# 187 "data/maps/InsideOfTruck/scripts.pory"
 Mistcity_InsideOfTruck_Daan_Returndrive_Movement_6:
-# 186 "data/maps/InsideOfTruck/scripts.pory"
+# 187 "data/maps/InsideOfTruck/scripts.pory"
 	walk_up
-# 186 "data/maps/InsideOfTruck/scripts.pory"
+# 187 "data/maps/InsideOfTruck/scripts.pory"
 	face_right
-# 186 "data/maps/InsideOfTruck/scripts.pory"
+# 187 "data/maps/InsideOfTruck/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 190 "data/maps/InsideOfTruck/scripts.pory"
+# 191 "data/maps/InsideOfTruck/scripts.pory"
 Mistcity_InsideOfTruck_Daan_Returndrive_Movement_7:
-# 190 "data/maps/InsideOfTruck/scripts.pory"
+# 191 "data/maps/InsideOfTruck/scripts.pory"
 	walk_right
-# 190 "data/maps/InsideOfTruck/scripts.pory"
+# 191 "data/maps/InsideOfTruck/scripts.pory"
 	face_left
 	step_end
 
-# 191 "data/maps/InsideOfTruck/scripts.pory"
+# 192 "data/maps/InsideOfTruck/scripts.pory"
 Mistcity_InsideOfTruck_Daan_Returndrive_Movement_8:
-# 191 "data/maps/InsideOfTruck/scripts.pory"
+# 192 "data/maps/InsideOfTruck/scripts.pory"
 	face_down
+	step_end
+
+# 220 "data/maps/InsideOfTruck/scripts.pory"
+Mistcity_InsideOfTruck_Daan_Returndrive_Movement_9:
+# 220 "data/maps/InsideOfTruck/scripts.pory"
+	walk_right
+# 220 "data/maps/InsideOfTruck/scripts.pory"
+	walk_right
+# 220 "data/maps/InsideOfTruck/scripts.pory"
+	jump_right
 	step_end
 
 Miscity_InsideOfTruck_Daan_RescueMission_Text_0:
@@ -601,9 +615,9 @@ Mistcity_InsideOfTruck_Daan_Returndrive_Text_2:
 # 166 "data/maps/InsideOfTruck/scripts.pory"
 	.string "And they were willing to tear down an\n"
 	.string "entire ecosystem just to find it.\p"
-	.string "This changes everything.\p"
-	.string "This isn't just a group of fanatics; it's\n"
-	.string "a well-funded, highly organized\l"
+	.string "I don't think these are just a group of\n"
+	.string "fanatics, they seem to be a\l"
+	.string "well-funded, highly organized\l"
 	.string "operation.$"
 
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_3:
@@ -641,7 +655,7 @@ Mistcity_InsideOfTruck_Daan_Returndrive_Text_5:
 	.string "for...$"
 
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_6:
-# 188 "data/maps/InsideOfTruck/scripts.pory"
+# 189 "data/maps/InsideOfTruck/scripts.pory"
 	.string "WHAT?!\p"
 	.string "YOU KNOW PROFESSOR BIRDS?\p"
 	.string "How do you know him?\p"
@@ -651,7 +665,7 @@ Mistcity_InsideOfTruck_Daan_Returndrive_Text_6:
 	.string "...jeeezus...$"
 
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_7:
-# 193 "data/maps/InsideOfTruck/scripts.pory"
+# 194 "data/maps/InsideOfTruck/scripts.pory"
 	.string "We should talk about that another\n"
 	.string "time...\p"
 	.string "Right now, we fight back.\p"
@@ -664,26 +678,20 @@ Mistcity_InsideOfTruck_Daan_Returndrive_Text_7:
 	.string "their door.$"
 
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_8:
-# 197 "data/maps/InsideOfTruck/scripts.pory"
-	.string "Also, we've been getting strange\n"
-	.string "reports from the rangers stationed up\l"
-	.string "north, on the Lions Mountains.\p"
-	.string "Recently a 'private corporation' bought\n"
-	.string "up all the mining rights and the local\l"
-	.string "steel plant.\p"
-	.string "Sounds suspiciously familiar, doesn't\n"
-	.string "it?$"
+# 198 "data/maps/InsideOfTruck/scripts.pory"
+	.string "...There are also reports coming in from\n"
+	.string "the north.\p"
+	.string "I don't want to say too much before\n"
+	.string "I've had a chance to look into it.\p"
+	.string "But if they're moving again... we can't\n"
+	.string "afford to be slow.$"
 
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_9:
-# 201 "data/maps/InsideOfTruck/scripts.pory"
-	.string "He's right.\p"
-	.string "The reports are concerning.\p"
-	.string "Apparently the ground is shaking from\n"
-	.string "all the drilling and pokemon are acting\l"
-	.string "erratically.\p"
-	.string "They have Registeel already, what are\n"
-	.string "they looking for?$"
+# 203 "data/maps/InsideOfTruck/scripts.pory"
+	.string "I'll keep watching the signals.\p"
+	.string "If The Faculty is active somewhere new,\n"
+	.string "we'll know.$"
 
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_10:
-# 205 "data/maps/InsideOfTruck/scripts.pory"
+# 207 "data/maps/InsideOfTruck/scripts.pory"
 	.string "We're here.$"

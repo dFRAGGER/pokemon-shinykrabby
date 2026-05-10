@@ -1,1 +1,23 @@
-mapscripts LionsarchCity_PokemonCenter_1F_MapScripts {}
+mapscripts LionsarchCity_PokemonCenter_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        call(LionsarchCity_PokemonCenter_1F_OnTransition)
+    }
+    MAP_SCRIPT_ON_RESUME {
+        call(CableClub_OnResume)
+    }
+}
+
+script LionsarchCity_PokemonCenter_1F_OnTransition {
+    setrespawn(HEAL_LOCATION_LIONSARCH_CITY)
+    end
+}
+
+script LionsarchCity_PokemonCenter_1F_EventScript_Nurse {
+	setvar(VAR_0x800B, LOCALID_MISTCITY_NURSE) 
+	call (Common_EventScript_PkmnCenterNurse)
+	waitmessage
+    waitbuttonpress
+    release
+    end
+}
+	

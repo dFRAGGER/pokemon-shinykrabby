@@ -530,7 +530,7 @@ DeepCloudForest_AncientGrotto_GetOutTruck_Text_1:
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_2:
 # 37 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	.string "Allright children, to make a long story\n"
+	.string "Allright teachers, to make a long story\n"
 	.string "short, force the golem on the ship and\l"
 	.string "lets get out of here.$"
 
@@ -566,8 +566,8 @@ DeepCloudForest_AncientGrotto_GetOutTruck_Text_8:
 # 82 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	.string "Look at you, young man.\p"
 	.string "You seem to be an intelligent kid.\p"
-	.string "Why don't you join the faculty?\n"
-	.string "At the faculty we Push Boundaries,\l"
+	.string "Why don't you join the faculty?\p"
+	.string "At the faculty we Push Boundaries,\n"
 	.string "Develop Talent and Inspire!!\p"
 	.string "You would be the perfect fit!$"
 
@@ -596,7 +596,7 @@ DeepCloudForest_AncientGrotto_GetOutTruck_Text_12:
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_13:
 # 104 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
 	.string "You will see my friend, you will see.\p"
-	.string "Children, lets get out of here.$"
+	.string "Teachers, lets get out of here.$"
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_14:
 # 108 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"

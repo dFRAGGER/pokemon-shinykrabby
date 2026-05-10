@@ -5792,7 +5792,7 @@
       "height": 75,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Snow",
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/LionsarchCity/border.bin",
       "blockdata_filepath": "data/layouts/LionsarchCity/map.bin"
@@ -5816,7 +5816,7 @@
       "height": 84,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Snow",
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/Route05/border.bin",
       "blockdata_filepath": "data/layouts/Route05/map.bin"
@@ -5828,7 +5828,7 @@
       "height": 22,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Snow",
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/Route06/border.bin",
       "blockdata_filepath": "data/layouts/Route06/map.bin"
@@ -6292,8 +6292,8 @@
     {
       "id": "LAYOUT_LIONSARCH_CITY_INDOOR_GYM",
       "name": "LionsarchCity_Indoor_Gym_Layout",
-      "width": 30,
-      "height": 30,
+      "width": 12,
+      "height": 35,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
@@ -6340,8 +6340,8 @@
     {
       "id": "LAYOUT_EAST_LION_MOUNTAIN_FACULTY_MINING_CAVE_B1F",
       "name": "EastLionMountain_Faculty_Mining_Cave_B1F_Layout",
-      "width": 25,
-      "height": 17,
+      "width": 41,
+      "height": 32,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Snow",
@@ -10818,6 +10818,30 @@
       "border_filepath": "data/layouts/OneIsland_KindleRoad_EmberSpa_Frlg/border.bin",
       "blockdata_filepath": "data/layouts/OneIsland_KindleRoad_EmberSpa_Frlg/map.bin",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_BIKE_SHOP_JAOUAD",
+      "name": "BikeShop_Jaouad_Layout",
+      "width": 16,
+      "height": 9,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BikeShop",
+      "border_filepath": "data/layouts/BikeShop_Jaouad/border.bin",
+      "blockdata_filepath": "data/layouts/BikeShop_Jaouad/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIKE_ROUTE_HOUSE1",
+      "name": "BikeRoute_House1_Layout",
+      "width": 11,
+      "height": 8,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/BikeRoute_House1/border.bin",
+      "blockdata_filepath": "data/layouts/BikeRoute_House1/map.bin"
     }
   ]
 }

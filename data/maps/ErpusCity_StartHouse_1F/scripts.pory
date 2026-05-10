@@ -54,6 +54,7 @@ script Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech {
     waitmovement
     setflag(FLAG_INTRO_SPEECH_MOM_FINISHED)
     setflag(FLAG_HIDE_INTERN_BIRDS_LAB)
+    setflag(FLAG_HIDE_ROUTE03_CLIFFSIDE_WATCHER)
     release
     end
     }

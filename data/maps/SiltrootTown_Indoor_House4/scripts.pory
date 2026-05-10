@@ -1,1 +1,84 @@
 mapscripts SiltrootTown_Indoor_House4_MapScripts {}
+
+// ─── Herb Grinder operator ──────────────────────────────────────────────────
+// Local ID 1. Fat guy who owns the Herb Grinder.
+// First visit: suspicious, slowly warms up, then offers to grind.
+// Return visits: brief greeting, straight to grinding.
+
+script SiltrootTown_House4_FatGuy {
+    lock
+    faceplayer
+
+    // ── Return visit ─────────────────────────────────────────────────────
+    if (flag(FLAG_SILTROOT_HOUSE4_FAT_GUY_TRUSTS)) {
+        msgbox(format("Oh. You again.\pFine. What do you want ground?"),MSGBOX_AUTOCLOSE)
+        waitmessage
+        goto(SiltrootTown_House4_TryGrind)
+        end
+    }
+
+    // ── First visit: no Stash Case ────────────────────────────────────────
+    checkitem(ITEM_POKEBLOCK_CASE)
+    if (var(VAR_RESULT) == FALSE) {
+        msgbox(format("Hey. HEY.\pI don't know you.\pThis is a private residence.\pWho told you about my grinder?\pActually, don't answer that.\pJust leave."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+
+    // ── First visit: has the case - the hesitant → trusting arc ──────────
+    msgbox(format("...Ugh.\pYou're still standing there."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(1, moves(emote_question_mark face_player))
+    waitmovement
+    msgbox(format("Wait.\pIs that Ali's Stash Case?\pWhere did you get that?\pDid you go into the shed?\pBecause NOBODY is supposed to go into the shed."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    msgbox(format("...Unless Ali sent you.\pDid Ali send you?\pYou know what, it doesn't matter.\pI'm not getting involved.\pI don't know anything about any shed."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(1, moves(face_away_player))
+    waitmovement
+    delay(120)
+    applymovement(1, moves(face_player))
+    waitmovement
+    msgbox(format("...Fine.\pFINE.\pYou've got the case, you've got the stash.\pYou clearly know what you're doing.\pI just... I don't normally let strangers near my grinder.\pLast time I did, some guy showed up with a bag of berries.\pOran Berries, to be precise.\pPut them straight in the grinder, apparently this is a thing in another region?\pI had to watch.\pI couldn't stop him.\pI was too stunned.\pEverybody knows a grinder needs some fresh cut buds.\pWHAT DID HE THINK WOULD HAPPEN?"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    msgbox(format("Okay.\pOkay okay okay.\pYou seem alright.\pYou've got good taste in suppliers at least.\pI'll run it for you.\pBut don't talk to me while it's going.\pAnd please, for the love of Arceus, use something decent.\pNot some homemade, self-grown, nonsense.\pOr actual Berries for god's sake."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    setflag(FLAG_SILTROOT_HOUSE4_FAT_GUY_TRUSTS)
+    goto(SiltrootTown_House4_TryGrind)
+    end
+}
+
+// ─── Shared grinding logic ──────────────────────────────────────────────────
+script SiltrootTown_House4_TryGrind {
+    // Stash Case full
+    specialvar(VAR_RESULT, GetFirstFreePokeblockSlot)
+    if (var(VAR_RESULT) == 65535) {
+        msgbox(format("Your Stash Case is packed solid.\pNo room for anything new.\pBring your grind to\lthe Rolling Table at Ali's first."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+
+    // No berries to grind
+    specialvar(VAR_RESULT, PlayerHasBerries)
+    if (var(VAR_RESULT) == FALSE) {
+        msgbox(format("You've got nothing to grind.\pCome back when you have some stash."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+
+    // Start the grinder
+    setvar(VAR_0x8009, 1)
+    copyvar(VAR_0x8004, VAR_0x8009)
+    fadescreen(FADE_TO_BLACK)
+    special(DoBerryBlending)
+    waitstate
+    msgbox(format("Not bad.\pI'll admit... you've got decent stuff.\pCome back anytime.\pJust... call ahead next time.\pI'm serious."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    releaseall
+    end
+}

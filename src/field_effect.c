@@ -4340,13 +4340,12 @@ static bool8 RockClimb_Init(struct Task *task, struct ObjectEvent *objectEvent)
 {
     LockPlayerFieldControls();
     FreezeObjectEvents();
-    // Put follower into pokeball before using Rock Climb
     HideFollowerForFieldEffect();
     gPlayerAvatar.preventStep = TRUE;
-    SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_SURFING);
+    SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_ON_FOOT);
     PlayerGetDestCoords(&task->tDestX, &task->tDestY);
     MoveCoords(gObjectEvents[gPlayerAvatar.objectEventId].movementDirection, &task->tDestX, &task->tDestY);
-    task->tState++;
+    task->tState = STATE_ROCK_CLIMB_RIDE;
     return FALSE;
 }
 
@@ -4491,7 +4490,6 @@ static bool8 RockClimb_StopRockClimbInit(struct Task *task, struct ObjectEvent *
 
     RockClimbDust(objectEvent, DIR_NONE);   //dust on final spot
     ObjectEventSetHeldMovement(objectEvent, GetJumpSpecialMovementAction(sRockClimbMovement[objectEvent->movementDirection].jumpDir));
-    SetSurfBlob_BobState(objectEvent->fieldEffectSpriteId, BOB_NONE);
     task->tState++;
     return TRUE;
 }
@@ -4509,7 +4507,6 @@ static bool8 RockClimb_WaitStopRockClimb(struct Task *task, struct ObjectEvent *
         objectEvent->noShadow = FALSE; // restore shadow
         UnfreezeObjectEvents();
         UnlockPlayerFieldControls();
-        DestroySprite(&gSprites[objectEvent->fieldEffectSpriteId]);
         FieldEffectActiveListRemove(FLDEFF_USE_ROCK_CLIMB);
         objectEvent->triggerGroundEffectsOnMove = TRUE; // e.g. if dismount on grass
         DestroyTask(FindTaskIdByFunc(Task_UseRockClimb));

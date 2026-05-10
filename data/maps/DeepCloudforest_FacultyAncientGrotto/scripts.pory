@@ -34,7 +34,7 @@ script DeepCloudForest_AncientGrotto_GetOutTruck {
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left*4))
     waitmovement
     setspeaker("The Rector")
-    msgbox(format("Allright children, to make a long story short, force the golem on the ship and lets get out of here."),MSGBOX_AUTOCLOSE)
+    msgbox(format("Allright teachers, to make a long story short, force the golem on the ship and lets get out of here."),MSGBOX_AUTOCLOSE)
     setflag(FLAG_ANCIENTGROTTO_BOARD_SHIP)
     delay(40)
     applymovement(3, moves(walk_slow_left*3))
@@ -79,7 +79,7 @@ script DeepCloudForest_AncientGrotto_GetOutTruck {
     applymovement(7, moves(walk_down*2 face_right))
     waitmovement
     setspeaker("The Rector")
-    msgbox(format("Look at you, young man.\pYou seem to be an intelligent kid.\pWhy don't you join the faculty?\nAt the faculty we Push Boundaries, Develop Talent and Inspire!!\pYou would be the perfect fit!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("Look at you, young man.\pYou seem to be an intelligent kid.\pWhy don't you join the faculty?\pAt the faculty we Push Boundaries, Develop Talent and Inspire!!\pYou would be the perfect fit!"),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
     applymovement(9, moves(emote_exclamation_mark walk_fast_left walk_fast_down*2 face_left ))
@@ -101,7 +101,7 @@ script DeepCloudForest_AncientGrotto_GetOutTruck {
     waitmessage
     applymovement(7, moves(face_up))
     setspeaker("The Rector")
-    msgbox(format("You will see my friend, you will see.\pChildren, lets get out of here."), MSGBOX_AUTOCLOSE)
+    msgbox(format("You will see my friend, you will see.\pTeachers, lets get out of here."), MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(7, moves(face_left))
     setspeaker("The Rector")

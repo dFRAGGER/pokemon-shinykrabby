@@ -1,6 +1,7 @@
 #include "global.h"
 #include "battle.h"
 #include "battle_anim.h"
+#include "pokeblock.h"
 #include "battle_ai_main.h"
 #include "battle_ai_util.h"
 #include "battle_arena.h"
@@ -5760,6 +5761,9 @@ static void WaitForEvoSceneToFinish(void)
 
 static void ReturnFromBattleToOverworld(void)
 {
+    // Clear all Herb Grinder battle flags — they last only for one battle
+    memset(gHerbEffectFlags, 0, sizeof(gHerbEffectFlags));
+
     if (!(gBattleTypeFlags & BATTLE_TYPE_LINK))
     {
         CalculatePlayerPartyCount();

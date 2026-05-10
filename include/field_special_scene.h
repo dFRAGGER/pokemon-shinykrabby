@@ -9,6 +9,7 @@ void StartTruckDrivingScene(void);
 void StartTruckSlowingDownScene(void);
 void WaitForTruckToStop(void);
 
+void StartCaveTremorScene(void);
 void ExecuteTruckSequence(void);
 void EndTruckSequence(u8 taskId);
 void FieldCB_ShowPortholeView(void);

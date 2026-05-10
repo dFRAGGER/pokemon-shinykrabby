@@ -143,6 +143,7 @@ extern const u8 gMenuText_Use[];
 extern const u8 gMenuText_Toss[];
 extern const u8 gMenuText_Give[];
 extern const u8 gMenuText_Give2[];
+extern const u8 gMenuText_Roll[];
 extern const u8 gMenuText_Register[];
 extern const u8 gMenuText_Confirm[];
 extern const u8 gMenuText_Give2[];
@@ -2203,5 +2204,6 @@ extern const u8 gText_OakThisIsListOfPokemon[];
 extern const u8 gText_Boy[];
 extern const u8 gText_Girl[];
 
+extern const u8 MatchCall_Text_Daan1[];
 
 #endif // GUARD_STRINGS_H

@@ -11,6 +11,7 @@
 #include "battle_controllers.h"
 #include "move.h"
 #include "constants/battle_move_resolution.h"
+#include "pokeblock.h"
 
 static void ValidateBattlers(void);
 static enum Move GetOriginallyUsedMove(enum Move chosenMove);
@@ -933,6 +934,11 @@ static enum CancelerResult CancelerPPDeduction(struct BattleContext *ctx)
      || gSpecialStatuses[ctx->battlerAtk].dancerUsedMove
      || gBattleStruct->bouncedMoveIsUsed
      || ctx->move == MOVE_STRUGGLE)
+        return CANCELER_RESULT_SUCCESS;
+
+    // FOCUSED herb effect: no PP is deducted for one battle (all moves are "free")
+    if (GetBattlerSide(ctx->battlerAtk) == B_SIDE_PLAYER
+     && (gHerbEffectFlags[gBattlerPartyIndexes[ctx->battlerAtk]] & HERB_FLAG_FOCUSED))
         return CANCELER_RESULT_SUCCESS;
 
     s32 ppToDeduct = 1;

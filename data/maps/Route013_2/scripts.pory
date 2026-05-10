@@ -1,1 +1,96 @@
-mapscripts Route013_2_MapScripts {}
+mapscripts Route013_2_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        call(Route013_2_OnTransition)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_2, 1: Route013_2_StuckInMud
+    ]
+}
+
+script Route013_2_OnTransition {
+    setstepcallback(STEP_CB_DUMMY)
+    return
+}
+
+# Platform 1 (trigger x=13, y=44) — first platform, activates the mud mechanic
+script Route013_2_Platform1 {
+    setvar(VAR_TEMP_0, 13)
+    setvar(VAR_TEMP_1, 43)
+    setstepcallback(STEP_CB_MUD_SWAMP)
+    end
+}
+
+# Platform 2 (trigger x=19, y=61)
+script Route013_2_Platform2 {
+    setvar(VAR_TEMP_0, 19)
+    setvar(VAR_TEMP_1, 60)
+    setstepcallback(STEP_CB_MUD_SWAMP)
+    end
+}
+
+# Platform 3 (trigger x=17, y=85)
+script Route013_2_Platform3 {
+    setvar(VAR_TEMP_0, 17)
+    setvar(VAR_TEMP_1, 84)
+    setstepcallback(STEP_CB_MUD_SWAMP)
+    end
+}
+
+# Platform 4 (trigger x=22, y=101)
+script Route013_2_Platform4 {
+    setvar(VAR_TEMP_0, 22)
+    setvar(VAR_TEMP_1, 100)
+    setstepcallback(STEP_CB_MUD_SWAMP)
+    end
+}
+
+# Shown when the player runs out of steps and gets sent back.
+# Branches on VAR_TEMP_0 (the X coord of the last platform) to pick the warp destination,
+# since script warp commands require literal coordinates.
+script Route013_2_StuckInMud {
+    lockall
+    setvar(VAR_TEMP_2, 0)
+    msgbox(Route013_2_Text_StuckInMud, MSGBOX_DEFAULT)
+    if (var(VAR_TEMP_0) == 13) {
+        goto(Route013_2_WarpBack_Platform1)
+    }
+    if (var(VAR_TEMP_0) == 19) {
+        goto(Route013_2_WarpBack_Platform2)
+    }
+    if (var(VAR_TEMP_0) == 17) {
+        goto(Route013_2_WarpBack_Platform3)
+    }
+    goto(Route013_2_WarpBack_Platform4)
+}
+
+script Route013_2_WarpBack_Platform1 {
+    warp(MAP_ROUTE013_2, 13, 43)
+    waitstate
+    releaseall
+    end
+}
+
+script Route013_2_WarpBack_Platform2 {
+    warp(MAP_ROUTE013_2, 19, 60)
+    waitstate
+    releaseall
+    end
+}
+
+script Route013_2_WarpBack_Platform3 {
+    warp(MAP_ROUTE013_2, 17, 84)
+    waitstate
+    releaseall
+    end
+}
+
+script Route013_2_WarpBack_Platform4 {
+    warp(MAP_ROUTE013_2, 22, 100)
+    waitstate
+    releaseall
+    end
+}
+
+text Route013_2_Text_StuckInMud {
+    format("You got stuck in the mud\nand had to turn back!")
+}

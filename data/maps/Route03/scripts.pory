@@ -1,4 +1,35 @@
-mapscripts Route03_MapScripts {}
+mapscripts Route03_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        call(Route03_OnLoad)
+    }
+    MAP_SCRIPT_ON_RESUME {
+        call(Route03_OnLoad)
+    }
+}
+
+script Route03_OnLoad {
+    if(flag(FLAG_FACULTY_SYMPATHIZERS_2) == FALSE) {
+        return
+    }
+    setmetatile(10, 14, 0x07C, TRUE)
+    setmetatile(10, 15, 0x079, TRUE)
+    setmetatile(10, 16, 0x274, TRUE)
+    setmetatile(10, 17, 0x27C, TRUE)
+    setmetatile(10, 18, 0x27C, TRUE)
+    return
+}
+
+script Route03_Script_CliffsideWatcher {
+    lock
+    faceplayer
+    msgbox(Route03_Text_CliffsideWatcher, MSGBOX_DEFAULT)
+    release
+    end
+}
+
+text Route03_Text_CliffsideWatcher {
+    format("Ugh...\pSome reckless trainer came sprinting through here and knocked the ladder right off the cliff.\pIn such a hurry they didn't even look where they were going!\pNow how is anyone supposed to get down there?")
+}
 
 script Route03_Trainer_Gabrielle {
     trainerbattle_single(TRAINER_GABRIELLE, Route03_Text_GabrielleIntro, Route03_Text_GabrielleDefeated)

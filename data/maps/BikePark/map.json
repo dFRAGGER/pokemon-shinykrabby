@@ -52,6 +52,20 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE06",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_BIKE_SHOP_JAOUAD",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_BIKE_ROUTE_HOUSE1",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

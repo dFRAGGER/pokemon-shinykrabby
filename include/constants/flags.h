@@ -512,7 +512,7 @@
 #define FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL 0x1D8
 #define FLAG_ENABLE_JUAN_MATCH_CALL          0x1D9
 
-#define FLAG_UNUSED_0x1DA                    0x1DA // Unused Flag
+#define FLAG_SILTROOT_HOUSE4_FAT_GUY_TRUSTS  0x1DA // Fat guy in House 4 has warmed up to the player
 
 #define FLAG_SHOWN_MYSTIC_TICKET             0x1DB
 #define FLAG_DEFEATED_HO_OH                  0x1DC
@@ -670,9 +670,9 @@
 #define FLAG_BASEMENT_DJ_STAGE_ACCESS  0x26D // Player got access to DJ stage in Peter's basement
 #define FLAG_GIEL_LEFT_BASEMENT  0x26E // Giel left Peter's basement after getting rejected
 #define FLAG_PETER_HOUSE_INTRO_DONE  0x26F // Player saw the intro scene at Peter's house
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
-#define FLAG_UNUSED_0x271  0x271 // Unused Flag
-#define FLAG_UNUSED_0x272  0x272 // Unused Flag
+#define FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN  0x270 // Unused Flag
+#define FLAG_RECEIVED_CLIMBING_ROPE  0x271 // Player received the Climbing Rope from Peter in Lionsarch City
+#define FLAG_HIDE_ROUTE03_CLIFFSIDE_WATCHER  0x272
 #define FLAG_UNUSED_0x273  0x273 // Unused Flag
 #define FLAG_UNUSED_0x274  0x274 // Unused Flag
 #define FLAG_UNUSED_0x275  0x275 // Unused Flag
@@ -1320,7 +1320,7 @@
 #define FLAG_DEFEATED_SOOTOPOLIS_GYM                                0x4F7
 #define FLAG_DEFEATED_METEOR_FALLS_STEVEN                           0x4F8
 
-#define FLAG_UNUSED_0x4F9                                           0x4F9 // Unused Flag
+#define FLAG_DEFEATED_LIONSARCH_LEADER1                             0x4F9 // Used in Lionsarch Gym: leader 1 beaten, leader 2 not yet
 #define FLAG_UNUSED_0x4FA                                           0x4FA // Unused Flag
 
 #define FLAG_DEFEATED_ELITE_4_SIDNEY                                0x4FB
@@ -1504,9 +1504,9 @@
 //Towns visited
 #define FLAG_VISITED_ERP_CITY                       (SYSTEM_FLAGS + 0x85) // Unused Flag
 #define FLAG_VISITED_MAASJE                         (SYSTEM_FLAGS + 0x86) // Unused Flag
-#define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
-#define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
-#define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag
+#define FLAG_VISITED_MIST_CITY                      (SYSTEM_FLAGS + 0x87)
+#define FLAG_VISITED_LIONSARCH_CITY                 (SYSTEM_FLAGS + 0x88)
+#define FLAG_VISITED_SILTROOT_TOWN                  (SYSTEM_FLAGS + 0x89)
 #define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag
 #define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
 #define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag
@@ -1529,7 +1529,7 @@
 #define FLAG_UNUSED_0x8FD                           (SYSTEM_FLAGS + 0x9D) // Unused Flag
 #define FLAG_UNUSED_0x8FE                           (SYSTEM_FLAGS + 0x9E) // Unused Flag
 #define FLAG_UNUSED_0x8FF                           (SYSTEM_FLAGS + 0x9F) // Unused Flag
-#define FLAG_UNUSED_0x900                           (SYSTEM_FLAGS + 0xA0) // Unused Flag
+#define FLAG_MET_ROLLING_TABLE_GUY                  (SYSTEM_FLAGS + 0xA0) // Player met the Rolling Table NPC for the first time
 #define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag
 #define FLAG_UNUSED_0x902                           (SYSTEM_FLAGS + 0xA2) // Unused Flag
 #define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag

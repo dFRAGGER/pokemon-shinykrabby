@@ -9,6 +9,7 @@
 #include "field_effect_helpers.h"
 #include "field_screen_effect.h"
 #include "field_player_avatar.h"
+#include "field_tasks.h"
 #include "fieldmap.h"
 #include "follower_npc.h"
 #include "menu.h"
@@ -918,7 +919,8 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
         return;
     }
 
-    if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER)
+    if (gMudSlowLevel == 0
+     && !(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER)
      && (heldKeys & B_BUTTON)
      && FlagGet(FLAG_SYS_B_DASH)
      && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0
@@ -933,9 +935,9 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
         gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
         return;
     }
-    else if (FlagGet(DN_FLAG_SEARCHING) && (heldKeys & A_BUTTON))
+    else if (gMudSlowLevel >= 2 || (FlagGet(DN_FLAG_SEARCHING) && (heldKeys & A_BUTTON)))
     {
-        gPlayerAvatar.creeping = TRUE;
+        gPlayerAvatar.creeping = (FlagGet(DN_FLAG_SEARCHING) != 0);
         PlayerWalkSlow(direction);
     }
     else

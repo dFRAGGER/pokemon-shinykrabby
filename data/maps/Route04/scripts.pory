@@ -1,11 +1,25 @@
-mapscripts Route04_MapScripts {}
+mapscripts Route04_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_FORTREE_CITY_STATE, 1: Route04_DaanPokenavCall
+    ]
+}
 
-script Route04_Sign_DarkCave {
+script Route04_DaanPokenavCall {
     lock
-    msgbox(format("Bat Cave\nCaution: Heavy Bat Population."))
+    setvar(VAR_FORTREE_CITY_STATE, 2)
+    pokenavcall(format("… … … … … …\n… … … … … Beep!\pDaan: {PLAYER}!\pFinally! I've been trying to\nreach you for the past hour.\pMust've been that cave I sent\nyou in, no signal there at all.\pAnyway, listen. Jacob and I\njust left Prof. Birds' lab.\pHe denied knowing anything about\nRegisteel.\pStill claims he was only running\nsensor tests for geothermal\lhabitats.\pSomething about a rare pink pig\nliving down there...\pHe refused to share his findings,\nsaid it would jeopoardize his\lsubsidies.\pI don't buy it, but that's a\nproblem for later.\pI mentioned reports from the\nnorth in the truck right?\pThe reports are coming from\nLionsarch City.\pApparently a new company has\nbought the old steel plant and\lall the mining rights.\pSounds familiar right?\pNow I'm certain. That's where\nThe Faculty is making their\lnext move.\pSo.. Where are you now?\p...\pGood.\pKeep going downhill, enter the\nMudflats, and keep pushing west.\pHot, wet and miserable, but\nyou'll make it.\pOn the other side is\nSiltroot Town.\pOld trading post, deep in\nthe mangroves.\pFind a man named Ali.\pOld friend of mine...\nbrilliant physicist.\p...though he spends most of his\ntime sampling his own very\lpotent herbs...\pHe knows every smuggling route\nand every boat captain in the\larea.\pIf anyone can get you north,\nit's him.\pStay focused, {PLAYER}.\nI'll be in touch.\p… … … … … …\n… … … … … Click!"))
     waitmessage
     release
 }
+
+script Route04_Sign_DarkCave {
+    lock
+    msgbox(format("{UP_ARROW} Bat Cave\nCaution: Heavy Bat Population."))
+    waitmessage
+    release
+}
+
+
 
 script Route04_HikerTired_Convo {
     lock

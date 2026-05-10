@@ -163,7 +163,7 @@ script Mistcity_InsideOfTruck_Daan_Returndrive {
     delay(40)
     applymovement(5, moves(walk_left))
     setspeaker("Daan")
-    msgbox(format("And they were willing to tear down an entire ecosystem just to find it.\pThis changes everything.\pThis isn't just a group of fanatics; it's a well-funded, highly organized operation."),MSGBOX_AUTOCLOSE)
+    msgbox(format("And they were willing to tear down an entire ecosystem just to find it.\pI don't think these are just a group of fanatics, they seem to be a well-funded, highly organized operation."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
     applymovement(4, moves(walk_left))
@@ -181,6 +181,7 @@ script Mistcity_InsideOfTruck_Daan_Returndrive {
     setspeaker("Daan")
     msgbox(format("Hmmmm.....\pIt's not the first time someone's come searching for secrets in this forest, though.\pA few years back, it was that eccentric Professor. Birds.\pHe was out here for months with all sorts of weird scanners.\pSaid he was mapping 'geothermal pig habitats.'\p...Geothermal. Pig. Habitats.\pIn a forest.\pWhere there are no pigs.\pHe was just as secretive as The Faculty, but his energy felt different.\pMore curious than malicious.\pI wonder what he was really looking for..."),MSGBOX_AUTOCLOSE)
     waitmessage
+    delay(40)
     playse(SE_PIN)
     applymovement(5, moves(emote_exclamation_mark walk_left face_up))
     applymovement(4, moves(walk_up face_right emote_exclamation_mark))
@@ -194,11 +195,12 @@ script Mistcity_InsideOfTruck_Daan_Returndrive {
     waitmessage
     delay(40)
     setspeaker("Daan")
-    msgbox(format("Also, we've been getting strange reports from the rangers stationed up north, on the Lions Mountains.\pRecently a 'private corporation' bought up all the mining rights and the local steel plant.\pSounds suspiciously familiar, doesn't it?"),MSGBOX_AUTOCLOSE)
+    msgbox(format("...There are also reports coming in from the north.\pI don't want to say too much before I've had a chance to look into it.\pBut if they're moving again... we can't afford to be slow."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
+    applymovement(4, moves(walk_down face_right))
     setspeaker("David")
-    msgbox(format("He's right.\pThe reports are concerning.\pApparently the ground is shaking from all the drilling and pokemon are acting erratically.\pThey have Registeel already, what are they looking for?"),MSGBOX_AUTOCLOSE)
+    msgbox(format("I'll keep watching the signals.\pIf The Faculty is active somewhere new, we'll know."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(120)
     setspeaker("Daan")
@@ -215,7 +217,7 @@ script Mistcity_InsideOfTruck_Daan_Returndrive {
     applymovement(5, moves(jump_right))
     waitmovement
     removeobject(5)
-    applymovement(4, moves(walk_down walk_right*2 jump_right))
+    applymovement(4, moves(walk_right*2 jump_right))
     waitmovement
     removeobject(4)
     release

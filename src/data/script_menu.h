@@ -1088,6 +1088,33 @@ static const struct MenuAction sMultichoiceList_HOF_Eggs_Victories_Quit[] = {
     { gText_ShopQuit }
 };
 
+// Herb Grinder: Rolling Table preparation method menu
+static const u8 sText_PrepJoint[]  = COMPOUND_STRING("Joint");
+static const u8 sText_PrepBlunt[]  = COMPOUND_STRING("Blunt");
+static const u8 sText_PrepBowl[]   = COMPOUND_STRING("Bowl");
+static const u8 sText_PrepCancel[] = COMPOUND_STRING("Cancel");
+
+static const u8 sText_GuideGrinder[]    = COMPOUND_STRING("The Grinder");
+static const u8 sText_GuideGrindTypes[] = COMPOUND_STRING("Grind types");
+static const u8 sText_GuideRolling[]    = COMPOUND_STRING("Rolling Table");
+static const u8 sText_GuidePreps[]      = COMPOUND_STRING("Joint/Blunt/Bowl");
+static const u8 sText_GuideNevermind[]  = COMPOUND_STRING("Never mind");
+
+static const struct MenuAction sMultichoiceList_HerbGuide[] = {
+    { sText_GuideGrinder    },
+    { sText_GuideGrindTypes },
+    { sText_GuideRolling    },
+    { sText_GuidePreps      },
+    { sText_GuideNevermind  },
+};
+
+static const struct MenuAction sMultichoiceList_HerbPrep[] = {
+    { sText_PrepJoint  },
+    { sText_PrepBlunt  },
+    { sText_PrepBowl   },
+    { sText_PrepCancel },
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -1260,6 +1287,8 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_HOF_VICTORIES_QUIT]                         = MULTICHOICE(sMultichoiceList_HOF_Victories_Quit),
     [MULTI_EGGS_VICTORIES_QUIT]                        = MULTICHOICE(sMultichoiceList_Eggs_Victories_Quit),
     [MULTI_HOF_EGGS_VICTORIES_QUIT]                    = MULTICHOICE(sMultichoiceList_HOF_Eggs_Victories_Quit),
+    [MULTI_HERB_PREP]                                  = MULTICHOICE(sMultichoiceList_HerbPrep),
+    [MULTI_HERB_GUIDE]                                 = MULTICHOICE(sMultichoiceList_HerbGuide),
 };
 
 const u8 *const gStdStrings[] =

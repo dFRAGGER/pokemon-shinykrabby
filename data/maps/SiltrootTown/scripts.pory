@@ -1,19 +1,46 @@
-mapscripts SiltrootTown_MapScripts {}
+mapscripts SiltrootTown_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_VISITED_SILTROOT_TOWN)
+    }
+}
 
 script SiltrootTown_Sign_AliApothecary {
     lock
-    msgbox(format(" "))
+    msgbox(format("Coffeeshop the Magical Root!\nWhere the smoke is thick and the leaves burn bright!"),MSGBOX_SIGN)
+    waitmessage
+    release
+}
+
+script SiltrootTown_Sign_Pokecenter {
+    lock
+    msgbox(format("Pokecenter Siltroot\nThe oldest medical facility in the region!"),MSGBOX_SIGN)
+    waitmessage
+    release
+}
+
+script Siltroottown_Sign_SiltrootTown {
+    lock
+    msgbox(format("{LEFT_ARROW} Siltroot Town\n Where the mud is thick and the roots are deep."), MSGBOX_SIGN)
     waitmessage
     release
 }
 
 script SiltrootTown_Scott_Boatride {
     lockall
+    checkitem(ITEM_POKEBLOCK_CASE)
+    if (var(VAR_RESULT) == FALSE) {
+        faceplayer
+        setspeaker("Scott")
+        msgbox(format("...I don't know you.\pYou got no credentials.\pGo see Ali first.\pIf he vouches for you, you'll know what to bring."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        releaseall
+        end
+    }
     setflag(FLAG_HIDE_SCOTT_LIONSARCH_CITY)
     getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
     faceplayer
     setspeaker("Scott")
-    msgbox(format("Nobody saw you right?\pLets move before the sattelite flies over.\pThe boat ride will be a rough one."),MSGBOX_AUTOCLOSE)
+    msgbox(format("Nobody saw you right?\pLets move before the satellite flies over.\pThe boat ride will be a rough one."),MSGBOX_AUTOCLOSE)
     waitmessage
     setobjectsubpriority(12, MAP_SILTROOT_TOWN, 0)
     setobjectsubpriority(LOCALID_PLAYER, MAP_SILTROOT_TOWN, 0)
@@ -51,21 +78,22 @@ script SiltrootTown_Arrive_Boatride {
     applymovement(LOCALID_PLAYER,moves(walk_fast_up*7 walk_fast_right walk_fast_up walk_fast_right face_left)) 
     call(Common_EventScript_StopBrineysBoatMusic)
     setflag(FLAG_HIDE_SCOTT_OUTSIDE_BOAT)
-    setobjectxyperm(6,9,59)
-    addobject(6)
-    setobjectsubpriority(6, MAP_SILTROOT_TOWN,0)
+    setobjectxyperm(5,9,59)
+    addobject(5)
+    setobjectsubpriority(5, MAP_SILTROOT_TOWN,0)
     clearflag(FLAG_HIDE_SCOTT_LIONSARCH_CITY)
-    applymovement(6,moves(walk_fast_up*8 walk_fast_right walk_fast_up face_right))
+    applymovement(5,moves(walk_fast_up*8 walk_fast_right walk_fast_up face_right))
     waitmovement
     resetobjectsubpriority(LOCALID_PLAYER, MAP_SILTROOT_TOWN)
-    resetobjectsubpriority(6, MAP_LIONSARCH_CITY)
+    resetobjectsubpriority(5, MAP_LIONSARCH_CITY)
     setspeaker("Scott")
     msgbox(format("Touchdown. We are in the blind spot.\pMy scanners show a gap in the harbor security grid for exactly forty-five seconds.\pListen fast because I am burning fuel right now.\pI am not going further into the city.\pToo many facial recognition towers.\pYou have to take the package to the client yourself.\pHe is a DJ.\pPeter.\pIf you hear loud, old-school disco music, that is the drop-off point.\pNow get moving!\pWalk forward and don't look back.\pIf anyone asks, we never met.\pI was never here.\pTango going dark."),MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(6, moves(walk_fast_down walk_fast_left walk_fast_down*9))
+    applymovement(5, moves(walk_fast_down walk_fast_left walk_fast_down*9))
     waitmovement
-    removeobject(6)
+    removeobject(5)
     setflag(FLAG_HIDE_SCOTT_LIONSARCH_CITY)
+    setrespawn(HEAL_LOCATION_LIONSARCH_CITY)
     end
 }
 

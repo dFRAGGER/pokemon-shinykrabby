@@ -1,5 +1,6 @@
 #include "global.h"
 #include "battle.h"
+#include "pokeblock.h"
 #include "battle_hold_effects.h"
 #include "battle_message.h"
 #include "battle_anim.h"
@@ -10876,6 +10877,14 @@ static void Cmd_handleballthrow(void)
     {
         gBallToDisplay = gLastThrownBall = gLastUsedItem;
         u32 odds = ComputeCaptureOdds(gBattlerTarget, gBattlerAttacker);
+
+        // UPLIFTED herb effect: boost catch rate by 40 for next throw
+        if (gHerbEffectFlags[gBattlerPartyIndexes[gBattlerAttacker]] & HERB_FLAG_UPLIFTED)
+        {
+            odds = (odds + 40 < 254) ? odds + 40 : 254;
+            gHerbEffectFlags[gBattlerPartyIndexes[gBattlerAttacker]] &= ~HERB_FLAG_UPLIFTED;
+        }
+
         if (gTestRunnerEnabled)
             TestRunner_Battle_RecordCatchChance(odds);
 

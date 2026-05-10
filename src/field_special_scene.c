@@ -183,6 +183,54 @@ void Task_Truck3(u8 taskId)
 #undef tMoveStep
 #undef tTimerVertical
 
+// =====================
+// CAVE TREMOR TASK
+// =====================
+
+#define TREMOR_INTERVAL  300  // frames between tremors (~5s at 60fps)
+#define TREMOR_DURATION   24  // frames of shake (~0.4s)
+
+#define tTimer data[0]
+
+static void Task_CaveTremor(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+
+    tTimer++;
+
+    if (tTimer >= TREMOR_INTERVAL)
+    {
+        s16 phase = tTimer - TREMOR_INTERVAL;
+
+        if (phase == 0)
+        {
+            SetCameraPanningCallback(NULL);
+            PlaySE(SE_M_EARTHQUAKE);
+        }
+
+        if (phase < TREMOR_DURATION)
+        {
+            s16 pan = (phase % 4 < 2) ? 2 : -2;
+            SetCameraPanning(pan, pan);
+        }
+        else
+        {
+            SetCameraPanning(0, 0);
+            InstallCameraPanAheadCallback();
+            tTimer = 0;
+        }
+    }
+}
+
+#undef tTimer
+
+void StartCaveTremorScene(void)
+{
+    if (FindTaskIdByFunc(Task_CaveTremor) != TASK_NONE)
+        return;
+    CreateTask(Task_CaveTremor, 0xA);
+}
+
 #define tState   data[0]
 #define tTimer   data[1]
 #define tTaskId1 data[2]

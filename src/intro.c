@@ -1150,7 +1150,7 @@ void CB2_InitCopyrightScreenAfterBootup(void)
         SetPokemonCryStereo(gSaveBlock2Ptr->optionsSound);
         InitHeap(gHeap, HEAP_SIZE);
     }
-    CB2_InitMainMenu();
+    SetMainCallback2(CB2_InitTitleScreen);
 }
 
 void CB2_InitCopyrightScreenAfterTitleScreen(void)
