@@ -94,25 +94,27 @@ Mistcity_Indoor_FacultySympathizer_Escape_1:
 # 58 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	setflag FLAG_FACULTY_SYMPATHIZERS_2
 # 59 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	setflag FLAG_ADDED_MATCH_CALL_TO_POKENAV
+	clearflag FLAG_HIDE_ROUTE03_CLIFFSIDE_WATCHER
 # 60 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	setvar VAR_FORTREE_CITY_STATE, 1
+	setflag FLAG_ADDED_MATCH_CALL_TO_POKENAV
 # 61 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+	setvar VAR_FORTREE_CITY_STATE, 1
+# 62 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	goto_if_set FLAG_BADGE02_GET, Mistcity_Indoor_FacultySympathizer_Escape_6
-# 67 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	setspeaker Mistcity_Indoor_FacultySympathizer_Escape_Text_4
 # 68 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	msgbox Mistcity_Indoor_FacultySympathizer_Escape_Text_10, MSGBOX_AUTOCLOSE
+	setspeaker Mistcity_Indoor_FacultySympathizer_Escape_Text_4
 # 69 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+	msgbox Mistcity_Indoor_FacultySympathizer_Escape_Text_10, MSGBOX_AUTOCLOSE
+# 70 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	waitmessage
 Mistcity_Indoor_FacultySympathizer_Escape_5:
-# 71 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	applymovement 3, Mistcity_Indoor_FacultySympathizer_Escape_Movement_7
 # 72 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	waitmovement
+	applymovement 3, Mistcity_Indoor_FacultySympathizer_Escape_Movement_7
 # 73 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	removeobject 3
+	waitmovement
 # 74 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+	removeobject 3
+# 75 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	release
 	return
 
@@ -132,79 +134,79 @@ Mistcity_Indoor_FacultySympathizer_Escape_2:
 	goto Mistcity_Indoor_FacultySympathizer_Escape_1
 
 Mistcity_Indoor_FacultySympathizer_Escape_6:
-# 62 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	setspeaker Mistcity_Indoor_FacultySympathizer_Escape_Text_4
 # 63 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	msgbox Mistcity_Indoor_FacultySympathizer_Escape_Text_9, MSGBOX_AUTOCLOSE
+	setspeaker Mistcity_Indoor_FacultySympathizer_Escape_Text_4
 # 64 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+	msgbox Mistcity_Indoor_FacultySympathizer_Escape_Text_9, MSGBOX_AUTOCLOSE
+# 65 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	waitmessage
 	goto Mistcity_Indoor_FacultySympathizer_Escape_5
 
 
 Mistcity_Indoor_Faculty_Husband::
-# 78 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	lock
 # 79 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	faceplayer
+	lock
 # 80 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+	faceplayer
+# 81 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	goto_if_unset FLAG_HELPED_DAN_BEAT_FACULTY, Mistcity_Indoor_Faculty_Husband_2
-# 87 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+# 88 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	goto_if_set FLAG_HELPED_DAN_BEAT_FACULTY, Mistcity_Indoor_Faculty_Husband_4
 	return
 
 Mistcity_Indoor_Faculty_Husband_2:
-# 81 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	setspeaker Mistcity_Indoor_FacultySympathizer_Escape_Text_0
 # 82 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	msgbox Mistcity_Indoor_Faculty_Husband_Text_0
+	setspeaker Mistcity_Indoor_FacultySympathizer_Escape_Text_0
 # 83 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	waitmessage
+	msgbox Mistcity_Indoor_Faculty_Husband_Text_0
 # 84 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+	waitmessage
+# 85 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	release
 	end
 
 Mistcity_Indoor_Faculty_Husband_4:
-# 88 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	setspeaker Mistcity_Indoor_FacultySympathizer_Escape_Text_0
 # 89 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	msgbox Mistcity_Indoor_Faculty_Husband_Text_1
+	setspeaker Mistcity_Indoor_FacultySympathizer_Escape_Text_0
 # 90 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	waitmessage
+	msgbox Mistcity_Indoor_Faculty_Husband_Text_1
 # 91 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+	waitmessage
+# 92 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	release
 	end
 
 
 Mistcity_Indoor_Faculty_Wife::
-# 97 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	lock
 # 98 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	faceplayer
+	lock
 # 99 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+	faceplayer
+# 100 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	goto_if_unset FLAG_HELPED_DAN_BEAT_FACULTY, Mistcity_Indoor_Faculty_Wife_2
-# 106 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+# 107 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	goto_if_set FLAG_HELPED_DAN_BEAT_FACULTY, Mistcity_Indoor_Faculty_Wife_4
 	return
 
 Mistcity_Indoor_Faculty_Wife_2:
-# 100 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	setspeaker Mistcity_Indoor_FacultySympathizer_Escape_Text_2
 # 101 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	msgbox Mistcity_Indoor_Faculty_Wife_Text_0
+	setspeaker Mistcity_Indoor_FacultySympathizer_Escape_Text_2
 # 102 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	waitmessage
+	msgbox Mistcity_Indoor_Faculty_Wife_Text_0
 # 103 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+	waitmessage
+# 104 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	release
 	end
 
 Mistcity_Indoor_Faculty_Wife_4:
-# 107 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	setspeaker Mistcity_Indoor_FacultySympathizer_Escape_Text_2
 # 108 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	msgbox Mistcity_Indoor_Faculty_Wife_Text_1
+	setspeaker Mistcity_Indoor_FacultySympathizer_Escape_Text_2
 # 109 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	waitmessage
+	msgbox Mistcity_Indoor_Faculty_Wife_Text_1
 # 110 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+	waitmessage
+# 111 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	release
 	end
 
@@ -265,11 +267,11 @@ Mistcity_Indoor_FacultySympathizer_Escape_Movement_6:
 	walk_down
 	step_end
 
-# 71 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+# 72 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 Mistcity_Indoor_FacultySympathizer_Escape_Movement_7:
-# 71 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+# 72 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	walk_left
-# 71 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+# 72 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	walk_down
 	step_end
 
@@ -359,20 +361,20 @@ Mistcity_Indoor_FacultySympathizer_Escape_Text_8:
 	.string "registered in your Pokénav!$"
 
 Mistcity_Indoor_FacultySympathizer_Escape_Text_9:
-# 63 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+# 64 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	.string "Oh, you already beat David?\n"
 	.string "Impressive.\p"
 	.string "You're ready for the swamps, then.\p"
 	.string "Good luck, {PLAYER}.$"
 
 Mistcity_Indoor_FacultySympathizer_Escape_Text_10:
-# 68 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+# 69 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	.string "Oh, and don't skip the gym while you're\n"
 	.string "in town.\p"
 	.string "Good luck, {PLAYER}.$"
 
 Mistcity_Indoor_Faculty_Husband_Text_0:
-# 82 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+# 83 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	.string "Welcome to the future site of progress.\p"
 	.string "My name is {COLOR BLUE}Marcus{COLOR DARK_GRAY}.\p"
 	.string "The Faculty transferred me here to\n"
@@ -384,7 +386,7 @@ Mistcity_Indoor_Faculty_Husband_Text_0:
 	.string "efficiency.$"
 
 Mistcity_Indoor_Faculty_Husband_Text_1:
-# 89 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+# 90 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	.string "You.\p"
 	.string "So you're the hooligan who interfered\n"
 	.string "with our work.\p"
@@ -394,7 +396,7 @@ Mistcity_Indoor_Faculty_Husband_Text_1:
 	.string "sentimental rabble-rousers.$"
 
 Mistcity_Indoor_Faculty_Wife_Text_0:
-# 101 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+# 102 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	.string "Oh, hello.\p"
 	.string "A new face?\p"
 	.string "I'm {COLOR BLUE}Eleanor{COLOR DARK_GRAY}.\p"
@@ -409,7 +411,7 @@ Mistcity_Indoor_Faculty_Wife_Text_0:
 	.string "You can't stop the future.$"
 
 Mistcity_Indoor_Faculty_Wife_Text_1:
-# 108 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
+# 109 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	.string "Mph.\p"
 	.string "I suppose you think you're some kind of\n"
 	.string "hero.\p"

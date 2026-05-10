@@ -44,23 +44,23 @@ Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech::
 	lock
 # 29 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	goto_if_unset FLAG_INTRO_SPEECH_MOM_FINISHED, Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_1
-# 61 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	playse SE_PIN
 # 62 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	applymovement LOCALID_PLAYER, Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Movement_1
+	playse SE_PIN
 # 63 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	waitmovement
+	applymovement LOCALID_PLAYER, Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Movement_1
 # 64 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	setspeaker Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_0
-# 65 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	msgbox Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_3, MSGBOX_AUTOCLOSE
-# 66 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	waitmessage
-# 67 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	applymovement LOCALID_PLAYER, Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Movement_7
-# 68 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	waitmovement
+# 65 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	setspeaker Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_0
+# 66 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	msgbox Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_3, MSGBOX_AUTOCLOSE
+# 67 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	waitmessage
+# 68 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	applymovement LOCALID_PLAYER, Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Movement_7
 # 69 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	waitmovement
+# 70 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	release
 	end
 
@@ -114,6 +114,8 @@ Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_14:
 # 56 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	setflag FLAG_HIDE_INTERN_BIRDS_LAB
 # 57 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	setflag FLAG_HIDE_ROUTE03_CLIFFSIDE_WATCHER
+# 58 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	release
 	end
 
@@ -152,71 +154,71 @@ Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_16:
 
 
 Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech::
-# 76 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	lock
 # 77 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	faceplayer
+	lock
 # 78 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	faceplayer
+# 79 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	goto_if_unset FLAG_SYS_NATIONAL_DEX, Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_2
-# 84 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	setspeaker Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_0
 # 85 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	msgbox Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_0
-# 86 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	waitmessage
-# 87 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	setspeaker Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_0
-# 88 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	msgbox Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_1, MSGBOX_YESNO
-# 89 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+# 86 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	msgbox Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_0
+# 87 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	waitmessage
+# 88 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	setspeaker Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_0
+# 89 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	msgbox Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_1, MSGBOX_YESNO
 # 90 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	waitmessage
+# 91 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_5
-# 105 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	setspeaker Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_0
 # 106 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	msgbox Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_4
+	setspeaker Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_0
 # 107 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	msgbox Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_4
+# 108 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	waitmessage
 Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_1:
-# 111 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+# 112 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	release
 	return
 
 Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_2:
-# 79 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	setspeaker Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_0
 # 80 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	msgbox Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_3
+	setspeaker Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_0
 # 81 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	msgbox Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_3
+# 82 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	waitmessage
 	goto Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_1
 
 Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_5:
-# 91 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	setspeaker Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_0
 # 92 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	msgbox Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_2, MSGBOX_AUTOCLOSE
-# 93 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	waitmessage
-# 94 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 95 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	playse MUS_HEAL
-# 96 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	waitse
-# 97 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	special HealPlayerParty
-# 98 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	delay 40
-# 99 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	fadescreen FADE_FROM_BLACK
-# 100 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	setspeaker Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_0
+# 93 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	msgbox Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_2, MSGBOX_AUTOCLOSE
+# 94 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	waitmessage
+# 95 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 96 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	playse MUS_HEAL
+# 97 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	waitse
+# 98 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	special HealPlayerParty
+# 99 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	delay 40
+# 100 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	fadescreen FADE_FROM_BLACK
 # 101 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	msgbox Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_3, MSGBOX_AUTOCLOSE
+	setspeaker Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_0
 # 102 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+	msgbox Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_3, MSGBOX_AUTOCLOSE
+# 103 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	waitmessage
 	goto Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_1
 
@@ -291,9 +293,9 @@ Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Movement_6:
 	walk_right
 	step_end
 
-# 67 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+# 68 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Movement_7:
-# 67 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+# 68 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	walk_down
 	step_end
 
@@ -346,30 +348,30 @@ Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_2:
 	.string "Your dad would be proud!$"
 
 Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_3:
-# 65 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+# 66 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	.string "{PLAYER} I won't say it again, come on,\n"
 	.string "the lab will be fun for you!$"
 
 Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_0:
-# 85 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+# 86 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	.string "So, you are going on an adventure?\p"
 	.string "I knew you had it in you, dad would have\n"
 	.string "been proud!\p"
 	.string "Let me know if you ever need rest!$"
 
 Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_1:
-# 88 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+# 89 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	.string "Do you need rest right now?$"
 
 Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_2:
-# 92 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+# 93 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	.string "Let me take care of you.$"
 
 Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_3:
-# 101 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+# 102 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	.string "There you go! Good luck on your\n"
 	.string "adventure!$"
 
 Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech_Text_4:
-# 106 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
+# 107 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
 	.string "You can come back any time you want!$"
