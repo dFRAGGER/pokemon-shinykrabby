@@ -673,27 +673,27 @@
 #define FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN  0x270 // Unused Flag
 #define FLAG_RECEIVED_CLIMBING_ROPE  0x271 // Player received the Climbing Rope from Peter in Lionsarch City
 #define FLAG_HIDE_ROUTE03_CLIFFSIDE_WATCHER  0x272
-#define FLAG_UNUSED_0x273  0x273 // Unused Flag
-#define FLAG_UNUSED_0x274  0x274 // Unused Flag
-#define FLAG_UNUSED_0x275  0x275 // Unused Flag
-#define FLAG_UNUSED_0x276  0x276 // Unused Flag
-#define FLAG_UNUSED_0x277  0x277 // Unused Flag
-#define FLAG_UNUSED_0x278  0x278 // Unused Flag
-#define FLAG_UNUSED_0x279  0x279 // Unused Flag
-#define FLAG_UNUSED_0x27A  0x27A // Unused Flag
-#define FLAG_UNUSED_0x27B  0x27B // Unused Flag
-#define FLAG_UNUSED_0x27C  0x27C // Unused Flag
-#define FLAG_UNUSED_0x27D  0x27D // Unused Flag
-#define FLAG_UNUSED_0x27E  0x27E // Unused Flag
-#define FLAG_UNUSED_0x27F  0x27F // Unused Flag
-#define FLAG_UNUSED_0x280  0x280 // Unused Flag
-#define FLAG_UNUSED_0x281  0x281 // Unused Flag
-#define FLAG_UNUSED_0x282  0x282 // Unused Flag
-#define FLAG_UNUSED_0x283  0x283 // Unused Flag
-#define FLAG_UNUSED_0x284  0x284 // Unused Flag
-#define FLAG_UNUSED_0x285  0x285 // Unused Flag
-#define FLAG_UNUSED_0x286  0x286 // Unused Flag
-#define FLAG_UNUSED_0x287  0x287 // Unused Flag
+#define FLAG_HOUSE1_STARDUST_GIVEN     0x273 // Marta in House1 gave the player a Stardust
+#define FLAG_HOUSE2_NETBALL_GIVEN      0x274 // Felix in House2 gave the player a Net Ball
+#define FLAG_HOUSE3_FOUND_COMPASS      0x275 // Player found Olaf's hidden compass in House3
+#define FLAG_HOUSE3_FOUND_CLAMSHELL    0x276 // Player found Olaf's hidden clamshell in House3
+#define FLAG_HOUSE3_FOUND_BUTTON       0x277 // Player found Olaf's hidden brass button in House3
+#define FLAG_HOUSE3_ITEMFINDER_GIVEN   0x278 // Olaf in House3 gave the player the Dowsing Machine
+#define FLAG_STEEL_FACTORY_TUNNEL_OPEN     0x279 // Peter unlocked the smuggling tunnel to the Steel Factory
+#define FLAG_STEEL_FACTORY_GUARD_B1F_1     0x27A // B1F tunnel guard 1 defeated
+#define FLAG_STEEL_FACTORY_GUARD_B1F_2     0x27B // B1F tunnel guard 2 defeated
+#define FLAG_STEEL_FACTORY_SCIENTIST_1     0x27C // 1F scientist trainer 1 defeated
+#define FLAG_STEEL_FACTORY_SCIENTIST_2     0x27D // 1F scientist trainer 2 defeated
+#define FLAG_STEEL_FACTORY_OFFICIAL_1      0x27E // 1F faculty official trainer 1 defeated
+#define FLAG_STEEL_FACTORY_OFFICIAL_2      0x27F // 1F faculty official trainer 2 defeated
+#define FLAG_STEEL_FACTORY_OFFICIAL_3      0x280 // 1F gate official defeated (guards 2F stairs)
+#define FLAG_STEEL_FACTORY_CHOICE_MADE     0x281 // Player interacted with the Pokemon control panel
+#define FLAG_STEEL_FACTORY_FREED_POKEMON   0x282 // Player chose to free the enslaved Pokemon
+#define FLAG_STEEL_FACTORY_BARRY_DEFEATED  0x283 // Barry (Rector's protege) defeated on 2F
+#define FLAG_STEEL_FACTORY_RECTOR_DEFEATED 0x284 // Director Harkon (Rector) defeated on 2F
+#define FLAG_STEEL_FACTORY_COMPLETE        0x285 // Full Steel Factory story arc finished
+#define FLAG_MEW_SAW_FACTORY_FREED         0x286 // Mew witnessed the Pokemon being freed
+#define FLAG_MEW_SAW_FACTORY_NOT_FREED     0x287 // Mew witnessed the Pokemon not being freed
 #define FLAG_UNUSED_0x288  0x288 // Unused Flag
 #define FLAG_UNUSED_0x289  0x289 // Unused Flag
 #define FLAG_UNUSED_0x28A  0x28A // Unused Flag
@@ -1321,7 +1321,7 @@
 #define FLAG_DEFEATED_METEOR_FALLS_STEVEN                           0x4F8
 
 #define FLAG_DEFEATED_LIONSARCH_LEADER1                             0x4F9 // Used in Lionsarch Gym: leader 1 beaten, leader 2 not yet
-#define FLAG_UNUSED_0x4FA                                           0x4FA // Unused Flag
+#define FLAG_LIONSARCH_GYM_GUIDE_GAVE_WATER                         0x4FA // Used in Lionsarch Gym: guide gave Fresh Water to player
 
 #define FLAG_DEFEATED_ELITE_4_SIDNEY                                0x4FB
 #define FLAG_DEFEATED_ELITE_4_PHOEBE                                0x4FC

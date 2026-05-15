@@ -1,1 +1,53 @@
-mapscripts LionsarchCity_Steel_Factory_B1F_MapScripts {}
+mapscripts LionsarchCity_Steel_Factory_B1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        call(SteelFactory_B1F_OnTransition)
+    }
+}
+
+// Block entry without tunnel access - safety net in case someone warps in directly
+script SteelFactory_B1F_OnTransition {
+    if (flag(FLAG_STEEL_FACTORY_TUNNEL_OPEN) == FALSE) {
+        warpsilent(MAP_LIONSARCH_CITY_INDOOR_PETER_BASEMENT_PARTY, 2)
+    }
+    end
+}
+
+// ─── FACULTY GUARDS ───
+
+script SteelFactory_B1F_Guard1 {
+    trainerbattle_single(TRAINER_FACULTY_GUARD_B1F_1, SteelFactory_B1F_Guard1_Intro, SteelFactory_B1F_Guard1_Defeat)
+    msgbox(SteelFactory_B1F_Guard1_PostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script SteelFactory_B1F_Guard2 {
+    trainerbattle_single(TRAINER_FACULTY_GUARD_B1F_2, SteelFactory_B1F_Guard2_Intro, SteelFactory_B1F_Guard2_Defeat)
+    msgbox(SteelFactory_B1F_Guard2_PostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+// ─── TEXT ───
+
+text SteelFactory_B1F_Guard1_Intro {
+    format("Intruder!\nNobody passes through this tunnel without Faculty clearance!\pThis facility is SEALED for a reason!")
+}
+
+text SteelFactory_B1F_Guard1_Defeat {
+    format("How... this is a restricted zone!\pHow can someone like you even GET IN here?!")
+}
+
+text SteelFactory_B1F_Guard1_PostBattle {
+    format("The tunnel reeks of that old disco basement.\pPeter...{PAUSE 30}")
+}
+
+text SteelFactory_B1F_Guard2_Intro {
+    format("You're not Faculty.\nTurn around. NOW.\pThis is your only warning.")
+}
+
+text SteelFactory_B1F_Guard2_Defeat {
+    format("Fine. Keep walking.\pSee how far you get upstairs.")
+}
+
+text SteelFactory_B1F_Guard2_PostBattle {
+    format("The upper floors will eat you alive.\pThe Rector doesn't tolerate intrusions.")
+}

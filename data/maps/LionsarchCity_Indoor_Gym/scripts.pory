@@ -1,38 +1,35 @@
 mapscripts LionsarchCity_Indoor_Gym_MapScripts {
-    MAP_SCRIPT_ON_LOAD:   LionsarchGym_OnLoad
-    MAP_SCRIPT_ON_RESUME: LionsarchGym_OnResume
 }
 
-script LionsarchGym_OnLoad {
-    special(Special_LionsarchGym_StartStorm)
-    end
-}
+# ─── GYM GUIDE ───────────────────────────────────────────────────────────────
 
-script LionsarchGym_OnResume {
-    if (flag(FLAG_BADGE03_GET) == FALSE) {
-        special(Special_LionsarchGym_StartStorm)
-    }
-    end
-}
-
-# ─── LEADER REVEAL ────────────────────────────────────────────────────────────
-# Triggered by coord events at y=8.
-# Plays the animated storm-clear (BLDY 16 -> 0) revealing the two leaders.
-# No-ops once the badge has been earned (storm permanently cleared).
-
-script LionsarchGym_LeaderReveal {
+script LionsarchGym_Guide {
+    lock
+    faceplayer
     if (flag(FLAG_BADGE03_GET) == TRUE) {
+        msgbox(format("You actually conquered both peaks!\pI knew sending you in there was the right call.\pStay warm out there!"))
+        waitmessage
+        release
         end
     }
-    special(Special_LionsarchGym_RevealLeaders)
-    waitstate
+    if (flag(FLAG_LIONSARCH_GYM_GUIDE_GAVE_WATER) == FALSE) {
+        setflag(FLAG_LIONSARCH_GYM_GUIDE_GAVE_WATER)
+        msgbox(format("Welcome to the Lionsarch Gym!\pAlready visited those two mountains up north? The Lion Mountains. This whole gym is inspired by them.\pWe've got two leaders - one for each peak. You have to beat both to earn the badge.\pWhich one should you challenge first? Great question. I always forget.\pI want to say... left? Maybe right? You know what, just trust your gut.\pEither way, take this. You're going to want it in there."))
+        waitmessage
+        giveitem(ITEM_FRESH_WATER)
+        waitmessage
+        msgbox(format("Good luck!\pAnd please don't freeze to death in there - the paperwork alone would ruin my entire week."))
+        waitmessage
+        release
+        end
+    }
+    msgbox(format("Two leaders, two peaks - that's the Lion Mountains for you.\pI still can't remember which one you're supposed to face first. Just try both!\pGood luck out there. And seriously, don't freeze to death."))
+    waitmessage
+    release
     end
 }
 
 # ─── GYM LEADERS ─────────────────────────────────────────────────────────────
-# Two leaders at y=7 representing West Lion Mountain (Leader1, x=5)
-# and East Lion Mountain (Leader2, x=6).
-# Names TBD - replace "???" with their actual names.
 
 script LionsarchGym_Leader1 {
     lock

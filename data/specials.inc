@@ -641,6 +641,3 @@ gSpecials::
 	def_special Special_PrepareHerbTreat
 	def_special Special_HasGroundMaterial
 	def_special Special_OpenCaseForRolling
-	def_special Special_LionsarchGym_StartStorm
-	def_special Special_LionsarchGym_StopStorm
-	def_special Special_LionsarchGym_RevealLeaders

@@ -869,12 +869,22 @@
 #define TRAINER_LIONSARCH_LEADER1           860
 #define TRAINER_LIONSARCH_LEADER2           861
 
-// NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
-//       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
-//       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
+// Steel Factory — Faculty trainers
+#define TRAINER_FACULTY_GUARD_B1F_1         862
+#define TRAINER_FACULTY_GUARD_B1F_2         863
+#define TRAINER_FACULTY_SCIENTIST_1         864
+#define TRAINER_FACULTY_SCIENTIST_2         865
+#define TRAINER_FACULTY_OFFICIAL_1          866
+#define TRAINER_FACULTY_OFFICIAL_2          867
+#define TRAINER_FACULTY_OFFICIAL_3          868
+#define TRAINER_FACULTY_BARRY               869
+#define TRAINER_FACULTY_RECTOR              870
 
-#define TRAINERS_COUNT_EMERALD     862
-#define MAX_TRAINERS_COUNT_EMERALD 864
+// NOTE: Increasing MAX_TRAINERS_COUNT_EMERALD shifts SYSTEM_FLAGS in flags.h
+//       (each trainer uses one flag slot for defeat tracking)
+//       Increasing MAX requires adjusting saveblock layout — acceptable during development
+#define TRAINERS_COUNT_EMERALD     871
+#define MAX_TRAINERS_COUNT_EMERALD 880
 
 #if IS_FRLG
 #define TRAINERS_COUNT                      TRAINERS_COUNT_FRLG

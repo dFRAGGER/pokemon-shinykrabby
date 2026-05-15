@@ -142,6 +142,9 @@ static const struct WeatherCallbacks sWeatherFuncs[] =
     [WEATHER_DOWNPOUR]           = {Downpour_InitVars,      Thunderstorm_Main,  Downpour_InitAll,      Thunderstorm_Finish},
     [WEATHER_UNDERWATER_BUBBLES] = {Bubbles_InitVars,       Bubbles_Main,       Bubbles_InitAll,       Bubbles_Finish},
     [WEATHER_CLUB_LIGHTS]        = {ClubLights_InitVars,   ClubLights_Main,    ClubLights_InitAll,    ClubLights_Finish},
+    [WEATHER_SNOW_LIGHT]         = {SnowLight_InitVars,    Snow_Main,          SnowLight_InitAll,     Snow_Finish},
+    [WEATHER_SNOW_HEAVY]         = {SnowHeavy_InitVars,    Snow_Main,          SnowHeavy_InitAll,     Snow_Finish},
+    [WEATHER_SNOW_BLIZZARD]      = {SnowBlizzard_InitVars, Snow_Main,          SnowBlizzard_InitAll,  Snow_Finish},
 };
 
 void (*const gWeatherPalStateFuncs[])(void) =
@@ -387,6 +390,9 @@ static void FadeInScreenWithWeather(void)
         }
         break;
     case WEATHER_SNOW:
+    case WEATHER_SNOW_LIGHT:
+    case WEATHER_SNOW_HEAVY:
+    case WEATHER_SNOW_BLIZZARD:
     case WEATHER_VOLCANIC_ASH:
     case WEATHER_SANDSTORM:
     case WEATHER_FOG_DIAGONAL:
@@ -1199,6 +1205,9 @@ static const u8 sWeatherNames[WEATHER_COUNT][24] = {
     [WEATHER_SUNNY]              = _("SUNNY"),
     [WEATHER_RAIN]               = _("RAIN"),
     [WEATHER_SNOW]               = _("SNOW"),
+    [WEATHER_SNOW_LIGHT]         = _("SNOW (LIGHT)"),
+    [WEATHER_SNOW_HEAVY]         = _("SNOW (HEAVY)"),
+    [WEATHER_SNOW_BLIZZARD]      = _("BLIZZARD"),
     [WEATHER_RAIN_THUNDERSTORM]  = _("RAIN THUNDERSTORM"),
     [WEATHER_FOG_HORIZONTAL]     = _("FOG HORIZONTAL"),
     [WEATHER_VOLCANIC_ASH]       = _("VOLCANIC ASH"),

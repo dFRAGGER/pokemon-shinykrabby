@@ -13,11 +13,35 @@ script LionsarchCity_PokemonCenter_1F_OnTransition {
 }
 
 script LionsarchCity_PokemonCenter_1F_EventScript_Nurse {
-	setvar(VAR_0x800B, LOCALID_MISTCITY_NURSE) 
+	setvar(VAR_0x800B, LOCALID_MISTCITY_NURSE)
 	call (Common_EventScript_PkmnCenterNurse)
 	waitmessage
     waitbuttonpress
     release
     end
 }
-	
+
+// Sailor Rik - cargo hand on the northern freight routes.
+// Came in after a bad crossing last night. Sits by the bench to rest.
+script LionsarchCity_PokemonCenter_1F_SailorRik {
+    lock
+    faceplayer
+    msgbox(format("Rough crossing last night.\pSwell coming in from the northwest, four meters easy.\pMy Tentacruel got knocked around something fierce trying to steady the hull.\pNurse says he'll be right as rain in a few minutes.\pMe, I'll need a bit longer."))
+    waitmessage
+    msgbox(format("You heading north?\pI'd wait a day if I were you.\pThere's a cold front sitting right over the straits.\pSea's the color of iron out there.\pBeautiful in a horrible sort of way."))
+    waitmessage
+    release
+}
+
+// Courier Bette - runs deliveries between Lionsarch and the southern towns.
+// Always rushing, but stopped to charge her Pokémon and get out of the cold.
+script LionsarchCity_PokemonCenter_1F_CourierBette {
+    lock
+    faceplayer
+    msgbox(format("Ugh, this city.\pDon't get me wrong, I love the work, but Lionsarch is always so COLD.\pI came up from Siltroot this morning and I can't feel my fingers.\pMy Ponyta hated every second of it too.\pShe kept trying to turn around."))
+    waitmessage
+    msgbox(format("Three more drops to make before sundown.\pA crate to the factory, something sealed for the harbor master,\nand a small parcel to someone on the east side.\pI don't ask what's in the parcels.\pYou learn that fast in this job."))
+    waitmessage
+    release
+}
+

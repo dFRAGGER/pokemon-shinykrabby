@@ -16881,3 +16881,164 @@ Double Battle: No
 Weavile
 Level: 28
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_FACULTY_GUARD_B1F_1 ===
+Name: CORVIN
+Class: Gentleman
+Pic: Magma Grunt M
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Basic Trainer
+
+Aron
+Level: 18
+IVs: 5 HP / 5 Atk / 5 Def / 5 SpA / 5 SpD / 5 Spe
+
+Magnemite
+Level: 18
+IVs: 5 HP / 5 Atk / 5 Def / 5 SpA / 5 SpD / 5 Spe
+
+=== TRAINER_FACULTY_GUARD_B1F_2 ===
+Name: VANCE
+Class: Gentleman
+Pic: Magma Grunt M
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Basic Trainer
+
+Koffing
+Level: 19
+IVs: 5 HP / 5 Atk / 5 Def / 5 SpA / 5 SpD / 5 Spe
+
+Nosepass
+Level: 20
+IVs: 5 HP / 5 Atk / 5 Def / 5 SpA / 5 SpD / 5 Spe
+
+=== TRAINER_FACULTY_SCIENTIST_1 ===
+Name: DR. HARLOW
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Basic Trainer
+
+Magnemite
+Level: 20
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+
+Beldum
+Level: 20
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+
+=== TRAINER_FACULTY_SCIENTIST_2 ===
+Name: DR. PELL
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Basic Trainer
+
+Aron
+Level: 20
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+
+Magneton
+Level: 22
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+
+=== TRAINER_FACULTY_OFFICIAL_1 ===
+Name: ALDRIC
+Class: Gentleman
+Pic: Gentleman
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Basic Trainer
+
+Torkoal
+Level: 21
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Lairon
+Level: 22
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+=== TRAINER_FACULTY_OFFICIAL_2 ===
+Name: LORENZ
+Class: Gentleman
+Pic: Gentleman
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Basic Trainer
+
+Mawile
+Level: 22
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Forretress
+Level: 22
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+=== TRAINER_FACULTY_OFFICIAL_3 ===
+Name: SEVAN
+Class: Gentleman
+Pic: Gentleman
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer
+
+Skarmory
+Level: 23
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Steelix
+Level: 24
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+=== TRAINER_FACULTY_BARRY ===
+Name: BARRY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer
+
+Metang
+Level: 26
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Magneton
+Level: 26
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Aggron
+Level: 28
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+=== TRAINER_FACULTY_RECTOR ===
+Name: HARKON
+Class: Leader
+Pic: Leader Juan
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Smart Trainer
+
+Aggron
+Level: 30
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Steelix
+Level: 30
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Registeel
+Level: 34
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe

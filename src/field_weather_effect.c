@@ -775,23 +775,85 @@ void Snow_InitVars(void)
     gWeatherPtr->weatherGfxLoaded = FALSE;
     gWeatherPtr->targetColorMapIndex = 0;
     gWeatherPtr->colorMapStepDelay = 20;
-    gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES;
+    gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES_STANDARD;
     gWeatherPtr->snowflakeVisibleCounter = 0;
+    gWeatherPtr->snowflakeTimer = 36;
     Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
     gWeatherPtr->noShadows = FALSE;
 }
 
-void Snow_InitAll(void)
+void SnowLight_InitVars(void)
+{
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->weatherGfxLoaded = FALSE;
+    gWeatherPtr->targetColorMapIndex = 0;
+    gWeatherPtr->colorMapStepDelay = 30;
+    gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES_LIGHT;
+    gWeatherPtr->snowflakeVisibleCounter = 0;
+    gWeatherPtr->snowflakeTimer = 72;
+    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY);
+    gWeatherPtr->noShadows = FALSE;
+}
+
+void SnowHeavy_InitVars(void)
+{
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->weatherGfxLoaded = FALSE;
+    gWeatherPtr->targetColorMapIndex = 0;
+    gWeatherPtr->colorMapStepDelay = 12;
+    gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES_HEAVY;
+    gWeatherPtr->snowflakeVisibleCounter = 0;
+    gWeatherPtr->snowflakeTimer = 6;
+    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY);
+    gWeatherPtr->noShadows = FALSE;
+}
+
+void SnowBlizzard_InitVars(void)
+{
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->weatherGfxLoaded = FALSE;
+    gWeatherPtr->targetColorMapIndex = 0;
+    gWeatherPtr->colorMapStepDelay = 8;
+    gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES_BLIZZARD;
+    gWeatherPtr->snowflakeVisibleCounter = 0;
+    gWeatherPtr->snowflakeTimer = 2;
+    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY);
+    gWeatherPtr->noShadows = FALSE;
+}
+
+static void SnowInitAllCommon(void)
 {
     u16 i;
-
-    Snow_InitVars();
     while (gWeatherPtr->weatherGfxLoaded == FALSE)
     {
         Snow_Main();
         for (i = 0; i < gWeatherPtr->snowflakeSpriteCount; i++)
             UpdateSnowflakeSprite(gWeatherPtr->sprites.s1.snowflakeSprites[i]);
     }
+}
+
+void Snow_InitAll(void)
+{
+    Snow_InitVars();
+    SnowInitAllCommon();
+}
+
+void SnowLight_InitAll(void)
+{
+    SnowLight_InitVars();
+    SnowInitAllCommon();
+}
+
+void SnowHeavy_InitAll(void)
+{
+    SnowHeavy_InitVars();
+    SnowInitAllCommon();
+}
+
+void SnowBlizzard_InitAll(void)
+{
+    SnowBlizzard_InitVars();
+    SnowInitAllCommon();
 }
 
 void Snow_Main(void)
@@ -829,11 +891,14 @@ static bool8 UpdateVisibleSnowflakeSprites(void)
     if (gWeatherPtr->snowflakeSpriteCount == gWeatherPtr->targetSnowflakeSpriteCount)
         return FALSE;
 
-    if (++gWeatherPtr->snowflakeVisibleCounter > 36)
+    if (++gWeatherPtr->snowflakeVisibleCounter > gWeatherPtr->snowflakeTimer)
     {
         gWeatherPtr->snowflakeVisibleCounter = 0;
         if (gWeatherPtr->snowflakeSpriteCount < gWeatherPtr->targetSnowflakeSpriteCount)
-            CreateSnowflakeSprite();
+        {
+            if (!CreateSnowflakeSprite())
+                gWeatherPtr->targetSnowflakeSpriteCount = gWeatherPtr->snowflakeSpriteCount;
+        }
         else
             DestroySnowflakeSprite();
     }
@@ -935,11 +1000,25 @@ static void InitSnowflakeSpriteMovement(struct Sprite *sprite)
     sprite->tPosY = sprite->y * 128;
     sprite->x2 = 0;
     rand = Random();
-    sprite->tDeltaY = (rand & 3) * 5 + 64;
+    {
+        u16 baseSpeed;
+        if (gWeatherPtr->targetSnowflakeSpriteCount <= NUM_SNOWFLAKE_SPRITES_LIGHT)
+            baseSpeed = 40;
+        else if (gWeatherPtr->targetSnowflakeSpriteCount <= NUM_SNOWFLAKE_SPRITES_STANDARD)
+            baseSpeed = 64;
+        else if (gWeatherPtr->targetSnowflakeSpriteCount <= NUM_SNOWFLAKE_SPRITES_HEAVY)
+            baseSpeed = 128;
+        else
+            baseSpeed = 384;
+        sprite->tDeltaY = (rand & 3) * 16 + baseSpeed;
+    }
     sprite->tDeltaY2 = sprite->tDeltaY;
     StartSpriteAnim(sprite, (rand & 1) ? 0 : 1);
     sprite->tWaveIndex = 0;
-    sprite->tWaveDelta = ((rand & 3) == 0) ? 2 : 1;
+    if (gWeatherPtr->targetSnowflakeSpriteCount > NUM_SNOWFLAKE_SPRITES_HEAVY)
+        sprite->tWaveDelta = ((rand & 1) == 0) ? 4 : 3;
+    else
+        sprite->tWaveDelta = ((rand & 3) == 0) ? 2 : 1;
     sprite->tFallDuration = (rand & 0x1F) + 210;
     sprite->tFallCounter = 0;
 }
@@ -2715,6 +2794,9 @@ static u8 TranslateWeatherNum(u8 weather)
     case WEATHER_UNDERWATER_BUBBLES: return WEATHER_UNDERWATER_BUBBLES;
     case WEATHER_CLUB_LIGHTS:        return WEATHER_CLUB_LIGHTS;
     case WEATHER_ABNORMAL:           return WEATHER_ABNORMAL;
+    case WEATHER_SNOW_LIGHT:         return WEATHER_SNOW_LIGHT;
+    case WEATHER_SNOW_HEAVY:         return WEATHER_SNOW_HEAVY;
+    case WEATHER_SNOW_BLIZZARD:      return WEATHER_SNOW_BLIZZARD;
     case WEATHER_ROUTE119_CYCLE:     return sWeatherCycleRoute119[gSaveBlock1Ptr->weatherCycleStage];
     case WEATHER_ROUTE123_CYCLE:     return sWeatherCycleRoute123[gSaveBlock1Ptr->weatherCycleStage];
     default:                         return WEATHER_NONE;

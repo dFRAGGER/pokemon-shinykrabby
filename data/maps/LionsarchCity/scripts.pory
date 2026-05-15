@@ -192,36 +192,60 @@ mart LionsarchCity_Mart_Treasures {
 
 script LionsarchCity_FacultyGrunt_1 {
     lockall
+    msgbox(format("...if this ore shipment is late again the whole schedule slips... phase two can't start without it..."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(20)
+    playse(SE_PIN)
     faceplayer
-    msgbox(format("The Faculty's mining operation in the Lion Mountains is proceeding ahead of schedule.\pWe're extracting rare metals that'll change everything."))
+    applymovement(15, moves(emote_exclamation_mark))
+    msgbox(format("Hey - HEY! Who are you?!\pThis is a RESTRICTED Faculty dock! How did you even get in here?!\pLeave. NOW."), MSGBOX_AUTOCLOSE)
+    waitmessage
     releaseall
 }
 
 script LionsarchCity_FacultyGrunt_2 {
     lockall
+    msgbox(format("...processing units load first, shielding on top... boss needs it all at the plant by Thursday..."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(20)
+    playse(SE_PIN)
     faceplayer
-    msgbox(format("Move along, kid.\pThis is Faculty business.\pWe've got authorization from the regional board to transport our equipment through this harbor."))
+    applymovement(16, moves(emote_exclamation_mark))
+    msgbox(format("Wh- a KID?! On our dock?!\pDon't touch ANYTHING! These crates need to reach the ship by nightfall!\pGet OUT of here, right now!"), MSGBOX_AUTOCLOSE)
+    waitmessage
     releaseall
 }
 
 script LionsarchCity_FacultyGrunt_3 {
     lockall
+    msgbox(format("...they keep saying the steel can block it... block what exactly... I just load the ships..."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(20)
+    playse(SE_PIN)
     faceplayer
-    msgbox(format("These crates contain prototype containment units.\pNot that it's any of your concern.\pThe Faculty is doing important work in the northern peaks."))
+    applymovement(13, moves(emote_exclamation_mark))
+    msgbox(format("You've got some NERVE showing up here!\pThis is Faculty property - no civilians, no visitors, NOTHING!\pTake a hike before you see something you'll regret!"))
+    waitmessage
     releaseall
 }
 
 script LionsarchCity_FacultyGrunt_4 {
     lockall
+    msgbox(format("...dampening alloy, check... containment frames, check... boss is gonna love this batch..."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(20)
+    playse(SE_PIN)
     faceplayer
-    msgbox(format("Did you know certain metals can suppress psychic and electromagnetic frequencies?\pFascinating stuff.\pThe mountains up north are full of them."))
+    applymovement(14, moves(emote_exclamation_mark))
+    msgbox(format("What in the - get OUT! Right NOW!\pThis dock is authorized Faculty personnel only!\pYou better not have seen anything - scram!"), MSGBOX_AUTOCLOSE)
+    waitmessage
     releaseall
 }
 
 script LionsarchCity_FacultyWorker_Suspicious {
     lockall
     faceplayer
-    msgbox(format("Another truck of drilling equipment heading north tomorrow.\pThe boss says we're close to a breakthrough.\pSomething about 'legendary containment protocols'... whatever that means."))
+    msgbox(format("HALT! Don't you DARE take another step!\pThis is the Faculty Steel Plant entrance - there's a MACHAMP right here and I will use it!\pYou have NO idea where you've walked into.\pTurn around and forget you ever saw this place. NOW."), MSGBOX_AUTOCLOSE)
     releaseall
 }
 
