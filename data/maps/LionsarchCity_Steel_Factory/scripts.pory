@@ -130,8 +130,7 @@ script SteelFactory_1F_ControlPanel {
     }
     msgbox(SteelFactory_1F_Panel_Prompt, MSGBOX_YESNO)
     if (var(VAR_RESULT) == YES) {
-        playfanfare(MUS_OBTAIN_ITEM)
-        waitfanfare
+        playse(SE_SUCCESS)
         msgbox(SteelFactory_1F_Panel_FreeSequence)
         waitmessage
         setflag(FLAG_STEEL_FACTORY_FREED_POKEMON)
@@ -157,39 +156,39 @@ script SteelFactory_1F_ControlPanel {
 // ─── TEXT ───
 
 text SteelFactory_1F_Scientist_Lore1_Text {
-    format("The Regi-Metal alloy is our greatest\lachievement.\pBy replicating the elemental forging\lprocess Regigigas used in Lions Mountains,\lwe create a material that channels\llegendary energy.\pThe Faculty will bring true order to\lTeressa. Diversity has had its chance.\lNow it is structure's turn.")
+    format("The Regi-Metal alloy is our greatest achievement.\pBy replicating the elemental forging process Regigigas used in Lions Mountains, we create a material that channels legendary energy.\pThe Faculty will bring true order to Teressa. Diversity has had its chance. Now it is structure's turn.")
 }
 
 text SteelFactory_1F_Scientist_Lore2_Text {
-    format("This is a restricted area!\pLeave immediately or I'm calling\lsecurity!")
+    format("This is a restricted area!\pLeave immediately or I'm calling security!")
 }
 
 text SteelFactory_1F_Scientist_Lore3_Text {
-    format("The ore from Lions Mountains is unlike\lanything we've catalogued.\pDense with ancient energy.\pThe Pokemon here can sense it -\lit makes them... compliant.\pThat's what the Director calls it.\lCompliant.")
+    format("The ore from Lions Mountains is unlike anything we've catalogued.\pDense with ancient energy.\pThe Pokemon here can sense it - it makes them... compliant.\pThat's what The Rector calls it. Compliant.")
 }
 
 text SteelFactory_1F_Scientist_Lore4_Text {
-    format("Registeel is the linchpin of the\lwhole operation.\pWithout it, the entire synthesis\lbreaks down.\pThe Director found a way to\lincentivize it.\pI try not to think about the details.")
+    format("Registeel is now the linchpin of the whole operation.\pWithout it, the entire synthesis breaks down.\pThe Rector found a way to incentivize it.\pI try not to think about the details.")
 }
 
 text SteelFactory_1F_Scientist_Lore5_Text {
-    format("The electro-magnetic resonance from\lthe Magnemite cluster amplifies the\lmetal's conductivity tenfold.\pAdd Registeel to the equation and\lwe're not just making metal.\pWe're making something the Regis would\lrecognize as their own.")
+    format("The electro-magnetic resonance from the Magnemite cluster amplifies the metal's conductivity tenfold.\pAdd Registeel to the equation and we're making something the Regis would recognize as their own.")
 }
 
 text SteelFactory_1F_Official_Lore1_Text {
-    format("Teressa is a beautiful region.\pBut it's wasted on chaos.\pDozens of cultures, dozens of types,\lno cohesion, no direction.\pWe are going to change that.\pOne processed metric ton at a time.")
+    format("Teressa is a beautiful region.\pBut it's wasted on chaos.\pDozens of mutations, dozens of types, no cohesion, no direction.\pWe are going to change that.\pOne processed metric ton at a time.")
 }
 
 text SteelFactory_1F_Official_Lore2_Text {
-    format("The Faculty doesn't destroy diversity.\pWe organize it.\pEverything in its right place.\pEveryone with a clear role.\pIs that really so terrible?")
+    format("The Faculty destroying diversity?\pWe organize it.\pEverything in its right place.\pEveryone with a clear role.\pIs that really so terrible?")
 }
 
 text SteelFactory_1F_Official_Lore3_Text {
-    format("The Pokemon working here are fed,\lsheltered, and given purpose.\pThat's more than most wild Pokemon get.\pIt's not cruelty. It's efficiency.\pAt least... that's what we tell\lourselves.")
+    format("The Pokemon working here are fed, sheltered, and given purpose.\pThat's more than most wild Pokemon get.\pIt's not cruelty. It's efficiency.\pAt least... that's what we tell ourselves.")
 }
 
 text SteelFactory_1F_Scientist1_Intro {
-    format("A trespasser?!\pI'll neutralize you with cold,\lhard science!")
+    format("A trespasser?!\pI'll neutralize you with cold, hard science!")
 }
 
 text SteelFactory_1F_Scientist1_Defeat {
@@ -197,7 +196,7 @@ text SteelFactory_1F_Scientist1_Defeat {
 }
 
 text SteelFactory_1F_Scientist1_PostBattle {
-    format("How can something that disorganized\ldefeat me?!")
+    format("How can something that disorganized defeat me?!")
 }
 
 text SteelFactory_1F_Scientist2_Intro {
@@ -209,23 +208,23 @@ text SteelFactory_1F_Scientist2_Defeat {
 }
 
 text SteelFactory_1F_Scientist2_PostBattle {
-    format("The Director is going to hear about\lthis data anomaly.")
+    format("The Rector is going to hear about this data anomaly.")
 }
 
 text SteelFactory_1F_Official1_Intro {
-    format("Nobody disrupts Faculty operations\land walks away, intruder.\pOrder will be maintained!\pStarting with you!")
+    format("Nobody disrupts Faculty operations and walks away, intruder.\pOrder will be maintained!\pStarting with you!")
 }
 
 text SteelFactory_1F_Official1_Defeat {
-    format("Extraordinary.\pYou've upended three months of\lproduction schedules.")
+    format("Extraordinary.\pYou've upended three months of production schedules.")
 }
 
 text SteelFactory_1F_Official1_PostBattle {
-    format("...\pYou'll want to turn around before you\lreach the upper floors.")
+    format("...\pYou'll want to turn around before you reach the upper floors.")
 }
 
 text SteelFactory_1F_Official2_Intro {
-    format("I don't know who let you in, but\lyour little tour ends here.\pThe Faculty's order demands it!")
+    format("I don't know who let you in, but your little tour ends here.\pThe Faculty's order demands it!")
 }
 
 text SteelFactory_1F_Official2_Defeat {
@@ -237,7 +236,7 @@ text SteelFactory_1F_Official2_PostBattle {
 }
 
 text SteelFactory_1F_Official3_Intro {
-    format("Nobody reaches the Director's floor\lwithout going through me.\pThe Faculty's order demands it.\pAnd I am very orderly.")
+    format("Nobody reaches The Rector's floor without going through me.\pThe Faculty's order demands it.\pAnd I am very orderly.")
 }
 
 text SteelFactory_1F_Official3_Defeat {
@@ -245,23 +244,23 @@ text SteelFactory_1F_Official3_Defeat {
 }
 
 text SteelFactory_1F_Official3_PostBattle {
-    format("The Director is on the second floor.\lFace him, if you dare.")
+    format("The Rector is on the second floor. Face him, if you dare.")
 }
 
 text SteelFactory_1F_Official3_After {
-    format("...The Director is upstairs.\pJust go.")
+    format("...The Rector is upstairs.\pJust go.")
 }
 
 text SteelFactory_1F_Panel_Prompt {
-    format("POKEMON CONTAINMENT OVERRIDE\l- EMERGENCY RELEASE -\pDecades of Pokemon are held in these\lbays, forced to power the facility.\lMachop, Aron, Magnemite...\land something much larger.\pDo you release them?")
+    format("POKEMON CONTAINMENT OVERRIDE - EMERGENCY RELEASE -\pDecades of Pokemon are held in these bays, forced to power the facility. Machop, Aron, Magnemite... and something much larger.\pDo you release them?")
 }
 
 text SteelFactory_1F_Panel_FreeSequence {
-    format("You engage the override.\pA deep rumble moves through the floor.\pThe bay doors grind open.\pOne by one, the Pokemon stir -\lconfused, then alert.\pThey look at you.\pThen they scatter into the vents and\lcorridors, gone in seconds.\pThe machines fall silent.")
+    format("You engage the override.\pA deep rumble moves through the floor.\pThe bay doors grind open.\pOne by one, the Pokemon stir - confused, then alert.\pThey look at you.\pThen they scatter into the vents and corridors, gone in seconds.\pThe machines fall silent.")
 }
 
 text SteelFactory_1F_Panel_MewFree {
-    format("A soft cry echoes from somewhere deep\lin the factory walls.\pYou sense something watching.\pSomething that has been watching for\la very long time.")
+    format("A soft cry echoes from somewhere deep in the factory walls.\pYou sense something watching.\pSomething that has been watching for a very long time.")
 }
 
 text SteelFactory_1F_Panel_Left {
@@ -269,7 +268,7 @@ text SteelFactory_1F_Panel_Left {
 }
 
 text SteelFactory_1F_Panel_MewLeft {
-    format("A faint cry carries through the\lsteel walls.\pYou almost missed it.")
+    format("A faint cry carries through the steel walls.\pYou almost missed it.")
 }
 
 text SteelFactory_1F_Panel_AlreadyFreed {

@@ -1,14 +1,19 @@
-mapscripts EastLionMountain_Faculty_Mining_Cave_MapScripts {}
+mapscripts EastLionMountain_Faculty_Mining_Cave_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_MINING_CAVE_STATE, 1: MiningCave_WakeUp
+    ]
+}
 
-// =====================
-// TRAINER SCRIPTS - MINING CAVE ENTRANCE
-// 2 Faculty Member Trainers
-// =====================
-
-
-// =====================
-// NPC CONVERSATIONS - MINING CAVE ENTRANCE
-// Scientists explaining their operation
-// =====================
-
-
+script MiningCave_WakeUp {
+    lock
+    setvar(VAR_MINING_CAVE_STATE, 2)
+    delay(60)
+    msgbox(format("...Ugh."), MSGBOX_DEFAULT)
+    msgbox(format("Where am I...\pEverything's pitch black.\pMy head is pounding."), MSGBOX_DEFAULT)
+    msgbox(format("...Wait.\pThe crevice. Barry pushed me in."), MSGBOX_DEFAULT)
+    msgbox(format("He's heading to Lionsarch...\pthe Steel Factory.\pI have to get out of here."), MSGBOX_DEFAULT)    
+    waitmessage
+    release
+    
+    end
+}

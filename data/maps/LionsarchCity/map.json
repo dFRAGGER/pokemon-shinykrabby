@@ -5,7 +5,7 @@
   "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_LIONS_ARCH_CITY",
   "requires_flash": false,
-  "weather": "WEATHER_SHADE",
+  "weather": "WEATHER_SNOW_LIGHT",
   "map_type": "MAP_TYPE_CITY",
   "allow_cycling": true,
   "allow_escaping": false,
@@ -24,11 +24,6 @@
       "direction": "up"
     },
     {
-      "map": "MAP_ROUTE012",
-      "offset": 10,
-      "direction": "down"
-    },
-    {
       "map": "MAP_ROUTE15",
       "offset": 18,
       "direction": "right"
@@ -37,6 +32,16 @@
       "map": "MAP_BIKE_PARK",
       "offset": -22,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE01205",
+      "offset": 10,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE012",
+      "offset": 10,
+      "direction": "down"
     }
   ],
   "object_events": [

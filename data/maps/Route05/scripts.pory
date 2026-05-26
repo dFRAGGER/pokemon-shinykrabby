@@ -6,7 +6,11 @@ mapscripts Route05_MapScripts {}
 
 script Route05_Trainer_Randall {
     trainerbattle_single(TRAINER_RANDALL, Route05_Text_RandallIntro, Route05_Text_RandallDefeated)
-    msgbox(Route05_Text_RandallPostBattle, MSGBOX_AUTOCLOSE)
+    if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
+        msgbox(Route05_Text_RandallPostBattle_After, MSGBOX_AUTOCLOSE)
+    } else {
+        msgbox(Route05_Text_RandallPostBattle, MSGBOX_AUTOCLOSE)
+    }
     end
 }
 
@@ -22,9 +26,17 @@ text Route05_Text_RandallPostBattle {
     format("If you're heading up the mountain, be careful.\pI've heard strange rumbling sounds coming from the peaks lately.")
 }
 
+text Route05_Text_RandallPostBattle_After {
+    format("The mountains have gone quiet again.\pWhatever was making that rumbling up there has stopped.\pThe air feels different now. Calmer somehow.")
+}
+
 script Route05_Trainer_Parker {
     trainerbattle_single(TRAINER_PARKER, Route05_Text_ParkerIntro, Route05_Text_ParkerDefeated)
-    msgbox(Route05_Text_ParkerPostBattle, MSGBOX_AUTOCLOSE)
+    if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
+        msgbox(Route05_Text_ParkerPostBattle_After, MSGBOX_AUTOCLOSE)
+    } else {
+        msgbox(Route05_Text_ParkerPostBattle, MSGBOX_AUTOCLOSE)
+    }
     end
 }
 
@@ -38,6 +50,10 @@ text Route05_Text_ParkerDefeated {
 
 text Route05_Text_ParkerPostBattle {
     format("There's a group of strange people in suits heading up towards East Lion Mountain.\pThey looked like they were carrying mining equipment.")
+}
+
+text Route05_Text_ParkerPostBattle_After {
+    format("Remember those suited people I mentioned heading up the mountain?\pSaw them coming back down with barely any gear.\pLooked like they left in a hurry too.")
 }
 
 script Route05_Trainer_George {
@@ -60,7 +76,11 @@ text Route05_Text_GeorgePostBattle {
 
 script Route05_Trainer_Berke {
     trainerbattle_single(TRAINER_BERKE, Route05_Text_BerkeIntro, Route05_Text_BerkeDefeated)
-    msgbox(Route05_Text_BerkePostBattle, MSGBOX_AUTOCLOSE)
+    if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
+        msgbox(Route05_Text_BerkePostBattle_After, MSGBOX_AUTOCLOSE)
+    } else {
+        msgbox(Route05_Text_BerkePostBattle, MSGBOX_AUTOCLOSE)
+    }
     end
 }
 
@@ -74,6 +94,10 @@ text Route05_Text_BerkeDefeated {
 
 text Route05_Text_BerkePostBattle {
     format("The earthquakes have been getting worse lately.\pSome folks say it's natural, but I think something's causing them.")
+}
+
+text Route05_Text_BerkePostBattle_After {
+    format("The earthquakes stopped completely.\pTurns out I was right - something WAS causing them.\pStill don't know exactly what, but they're gone now.\pThat's good enough for me.")
 }
 
 script Route05_Trainer_Braxton {
@@ -96,7 +120,11 @@ text Route05_Text_BraxtonPostBattle {
 
 script Route05_Trainer_Vincent {
     trainerbattle_single(TRAINER_VINCENT, Route05_Text_VincentIntro, Route05_Text_VincentDefeated)
-    msgbox(Route05_Text_VincentPostBattle, MSGBOX_AUTOCLOSE)
+    if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
+        msgbox(Route05_Text_VincentPostBattle_After, MSGBOX_AUTOCLOSE)
+    } else {
+        msgbox(Route05_Text_VincentPostBattle, MSGBOX_AUTOCLOSE)
+    }
     end
 }
 
@@ -110,6 +138,10 @@ text Route05_Text_VincentDefeated {
 
 text Route05_Text_VincentPostBattle {
     format("Have you seen the cave entrance on East Lion Mountain?\pSome official-looking people blocked it off recently.\pThey said it was for 'geological research' or something.")
+}
+
+text Route05_Text_VincentPostBattle_After {
+    format("That blockade on East Lion Mountain is gone.\pThe people who put it up just vanished overnight.\pI finally got a proper look at that cave entrance.\pIt goes really deep...")
 }
 
 // =====================
@@ -127,7 +159,11 @@ script Route05_Hiker_Convo {
 script Route05_Woman_Convo {
     lock
     faceplayer
-    msgbox(format("I come here every year to watch the Swinub migrate through the snow.\pThey're so adorable when they root around for food!\pBut lately, they've been acting strange... more skittish than usual."), MSGBOX_AUTOCLOSE)
+    if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
+        msgbox(format("I come here every year to watch the Swinub migrate through the snow.\pThey're back to their normal routine!\pRooting around happily like nothing ever happened.\pAnimals always know when something is wrong."), MSGBOX_AUTOCLOSE)
+    } else {
+        msgbox(format("I come here every year to watch the Swinub migrate through the snow.\pThey're so adorable when they root around for food!\pBut lately, they've been acting strange... more skittish than usual."), MSGBOX_AUTOCLOSE)
+    }
     release
     end
 }

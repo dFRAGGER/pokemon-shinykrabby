@@ -1918,3 +1918,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/BikeShop_Jaouad/scripts.inc"
 
 	.include "data/maps/BikeRoute_House1/scripts.inc"
+
+	.include "data/maps/LionMountain_CaveSystem_Entrance/scripts.inc"
+
+	.include "data/maps/Route01205/scripts.inc"

@@ -29,7 +29,7 @@ script SteelFactory_B1F_Guard2 {
 // ─── TEXT ───
 
 text SteelFactory_B1F_Guard1_Intro {
-    format("Intruder!\nNobody passes through this tunnel without Faculty clearance!\pThis facility is SEALED for a reason!")
+    format("Intruder!\nHow did you get in here?\pNobody passes through this tunnel without Faculty clearance!")
 }
 
 text SteelFactory_B1F_Guard1_Defeat {
@@ -37,11 +37,11 @@ text SteelFactory_B1F_Guard1_Defeat {
 }
 
 text SteelFactory_B1F_Guard1_PostBattle {
-    format("The tunnel reeks of that old disco basement.\pPeter...{PAUSE 30}")
+    format("The tunnel now reeks of that old disco basement.\pMust have been Peter that let you in...")
 }
 
 text SteelFactory_B1F_Guard2_Intro {
-    format("You're not Faculty.\nTurn around. NOW.\pThis is your only warning.")
+    format("Wait, what?\nYou're not Faculty.\pTurn around. NOW.\pThis is your only warning.")
 }
 
 text SteelFactory_B1F_Guard2_Defeat {

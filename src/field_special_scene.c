@@ -231,6 +231,16 @@ void StartCaveTremorScene(void)
     CreateTask(Task_CaveTremor, 0xA);
 }
 
+void StopCaveTremorScene(void)
+{
+    u8 taskId = FindTaskIdByFunc(Task_CaveTremor);
+    if (taskId == TASK_NONE)
+        return;
+    SetCameraPanning(0, 0);
+    InstallCameraPanAheadCallback();
+    DestroyTask(taskId);
+}
+
 #define tState   data[0]
 #define tTimer   data[1]
 #define tTaskId1 data[2]
@@ -483,4 +493,11 @@ void LookThroughPorthole(void)
     SetDynamicWarp(0, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum, WARP_ID_NONE);
     TrySetPortholeWarpDestination();
     DoPortholeWarp();
+}
+
+void Special_ReloadPrimaryTileset(void)
+{
+    CopyPrimaryTilesetToVram(gMapHeader.mapLayout);
+    LoadMapTilesetPalettes(gMapHeader.mapLayout);
+    DrawWholeMapView();
 }

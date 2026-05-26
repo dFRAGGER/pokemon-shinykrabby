@@ -3,6 +3,9 @@ mapscripts EastLionMountain_Faculty_Mining_Cave_B1F_MapScripts {
 }
 
 script MiningCaveB1F_StartTremors {
+    if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
+        end
+    }
     callnative(StartCaveTremorScene)
     end
 }
@@ -108,32 +111,44 @@ text MiningCaveB1F_Text_BarryDefeated {
 
 script MiningCaveB1F_Barry_PostBattle {
     lock
+    setflag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)
     playse(SE_M_EARTHQUAKE)
     delay(60)
-    msgbox(format("The cave shakes violently!"), MSGBOX_AUTOCLOSE)
-    waitmessage
-    delay(30)
     playse(SE_PIN)
-    applymovement(VAR_LAST_TALKED, moves(emote_exclamation_mark))
+    applymovement(1, moves(emote_exclamation_mark))
     waitmovement(0)
     setspeaker("Barry")
-    msgbox(format("Gah! This entire section is destabilizing!\p...\pPull back! We've got everything we need.\pThe shipment goes ahead on schedule!\pMove the materials to the factory!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("Gah! This entire section is destabilizing!\pWe might have digged to deep..."), MSGBOX_AUTOCLOSE)
     waitmessage
+    applymovement(LOCALID_PLAYER, moves(face_right lock_facing_direction walk_left unlock_facing_direction walk_right face_up))
+    applymovement(1, moves(walk_fast_up*3))
+    waitmovement
+    applymovement(2, moves(face_down))
     delay(30)
+    msgbox(format("We gotta go!\pGather the others and move the materials to the factory!"), MSGBOX_AUTOCLOSE)
+    waitmessage    
+    applymovement(2, moves(walk_fast_left walk_fast_up*5))
+    waitmovement
+    removeobject(2)
+    setflag(FLAG_HIDE_MINING_CAVE_B1F_SCIENTIST)
+    callnative(StopCaveTremorScene)
+    applymovement(1, moves(face_down))
+    delay(60)
+    applymovement(1, moves(walk_fast_down))
+    waitmovement
+    applymovement(1, moves(walk_fast_down*2))
+    applymovement(LOCALID_PLAYER, moves(face_up lock_facing_direction walk_fast_down*2 unlock_facing_direction))
+    waitmovement
+    setspeaker("Barry")
+    msgbox(format("You honestely think I would let you leave and try to ruin our plans again?\pTake this, stupid intern!"), MSGBOX_AUTOCLOSE)
+    waitmessage
     playse(SE_BALL_THROW)
-    delay(30)
-    playse(SE_BANG)
-    fadescreen(FADE_TO_WHITE)
-    delay(60)
+    applymovement(LOCALID_PLAYER, moves(face_up lock_facing_direction jump_2_down unlock_facing_direction))
+    delay(15)
+    fadescreen(FADE_TO_BLACK)
     setvar(VAR_MINING_CAVE_STATE, 1)
-    removeobject(1) // Barry
-    removeobject(2) // Worker 1
-    removeobject(3) // Worker 2
-    removeobject(4) // Worker 3
-    fadescreen(FADE_FROM_WHITE)
-    delay(60)
-    msgbox(format("Barry signals his men and they pull back into the shadows.\pA gruff voice echoes from the dark: 'Get it to the factory - move!'\pThe rumble of cart wheels fades into the tunnel...\pThen silence."), MSGBOX_AUTOCLOSE)
-    waitmessage
+    delay(120)
+    warpsilent(MAP_EAST_LION_MOUNTAIN_FACULTY_MINING_CAVE, 9, 10)
     release
     end
 }

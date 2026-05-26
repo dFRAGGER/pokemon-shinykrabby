@@ -10,8 +10,10 @@ void StartTruckSlowingDownScene(void);
 void WaitForTruckToStop(void);
 
 void StartCaveTremorScene(void);
+void StopCaveTremorScene(void);
 void ExecuteTruckSequence(void);
 void EndTruckSequence(u8 taskId);
 void FieldCB_ShowPortholeView(void);
+void Special_ReloadPrimaryTileset(void);
 
 #endif // GUARD_FIELD_SPECIAL_SCENE_H

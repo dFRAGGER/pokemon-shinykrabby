@@ -694,8 +694,8 @@
 #define FLAG_STEEL_FACTORY_COMPLETE        0x285 // Full Steel Factory story arc finished
 #define FLAG_MEW_SAW_FACTORY_FREED         0x286 // Mew witnessed the Pokemon being freed
 #define FLAG_MEW_SAW_FACTORY_NOT_FREED     0x287 // Mew witnessed the Pokemon not being freed
-#define FLAG_UNUSED_0x288  0x288 // Unused Flag
-#define FLAG_UNUSED_0x289  0x289 // Unused Flag
+#define FLAG_HIDE_FACULTY_AT_WESTLION_MINE  0x288 // Unused Flag
+#define FLAG_HIDE_MINING_CAVE_B1F_SCIENTIST  0x289
 #define FLAG_UNUSED_0x28A  0x28A // Unused Flag
 #define FLAG_UNUSED_0x28B  0x28B // Unused Flag
 #define FLAG_UNUSED_0x28C  0x28C // Unused Flag
@@ -1331,7 +1331,7 @@
 #define FLAG_UNUSED_0x4FF                                           0x4FF // Unused Flag
 
 // Trainer Flags
-// Trainer flags occupy 0x500 - 0x85F, the last 9 of which are unused
+// Trainer flags occupy 0x500 - 0x85F, the last 2 of which are unused
 // See constants/opponents.h. The values there + FLAG_TRAINER_FLAG_START are the flag IDs
 
 #define TRAINER_FLAGS_START                                         0x500

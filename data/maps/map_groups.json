@@ -707,7 +707,8 @@
     "Route016",
     "Route013",
     "Route013_2",
-    "Route017"
+    "Route017",
+    "Route01205"
   ],
   "gMapGroup_IndooErpusCity": [
     "LabJariIndoor",
@@ -770,7 +771,8 @@
     "Batcave",
     "Route04_CenterCave",
     "EastLionMountain_Faculty_Mining_Cave",
-    "EastLionMountain_Faculty_Mining_Cave_B1F"
+    "EastLionMountain_Faculty_Mining_Cave_B1F",
+    "LionMountain_CaveSystem_Entrance"
   ],
   "gMapGroup_LionsarchCity": [
     "LionarchsCity_Indoor_Mart",

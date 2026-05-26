@@ -46,7 +46,11 @@ text EastLionMountain_Text_SamuelPostBattle {
 // REGULAR TRAINER - A hiker who witnessed the Faculty
 script EastLionMountain_Trainer_Vito {
     trainerbattle_single(TRAINER_VITO, EastLionMountain_Text_VitoIntro, EastLionMountain_Text_VitoDefeated)
-    msgbox(EastLionMountain_Text_VitoPostBattle, MSGBOX_AUTOCLOSE)
+    if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
+        msgbox(EastLionMountain_Text_VitoPostBattle_After, MSGBOX_AUTOCLOSE)
+    } else {
+        msgbox(EastLionMountain_Text_VitoPostBattle, MSGBOX_AUTOCLOSE)
+    }
     end
 }
 
@@ -62,6 +66,10 @@ text EastLionMountain_Text_VitoPostBattle {
     format("Those people in the suits... they've been drilling day and night.\pThe tremors are getting worse.\pI overheard them talking about 'Regigigas' and 'controlling the Golems'...\pSomething about this mountain being where the Golems were created long ago.")
 }
 
+text EastLionMountain_Text_VitoPostBattle_After {
+    format("Those brown-suited folks are gone!\pI finally worked up the nerve to walk past that cave entrance.\pWhatever went on in there... I'm just glad it's over.")
+}
+
 // =====================
 // NPC CONVERSATIONS - EAST LION MOUNTAIN
 // =====================
@@ -69,7 +77,11 @@ text EastLionMountain_Text_VitoPostBattle {
 script EastLionMountain_Worried_Hiker_Convo {
     lock
     faceplayer
-    msgbox(format("I've lived near these mountains my whole life.\pMy grandfather told me stories about Regigigas creating guardians here.\pIt shaped them from the mountain's stone, ice, and volcanic iron...\pIf those suited folks really found a way to control those ancient beings..."), MSGBOX_AUTOCLOSE)
+    if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
+        msgbox(format("Those suited folks left empty-handed, it seems.\pWhatever they were searching for in these mountains...\pthe mountain kept its secrets.\pMy grandfather would be relieved to hear it."), MSGBOX_AUTOCLOSE)
+    } else {
+        msgbox(format("I've lived near these mountains my whole life.\pMy grandfather told me stories about Regigigas creating guardians here.\pIt shaped them from the mountain's stone, ice, and volcanic iron...\pIf those suited folks really found a way to control those ancient beings..."), MSGBOX_AUTOCLOSE)
+    }
     release
     end
 }
@@ -77,7 +89,11 @@ script EastLionMountain_Worried_Hiker_Convo {
 script EastLionMountain_Scared_Woman_Convo {
     lock
     faceplayer
-    msgbox(format("My house down in the valley has been shaking every few hours!\pThe tremors started when those 'researchers' showed up.\pThey say they're studying the 'birthplace of the Golems'...\pPlease, if you're going in there, make them stop!"), MSGBOX_AUTOCLOSE)
+    if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
+        msgbox(format("The tremors stopped!\pNot a single one since those researchers packed up and left.\pI actually slept through the night for the first time in weeks.\pThank you, whoever you are!"), MSGBOX_AUTOCLOSE)
+    } else {
+        msgbox(format("My house down in the valley has been shaking every few hours!\pThe tremors started when those 'researchers' showed up.\pThey say they're studying the 'birthplace of the Golems'...\pPlease, if you're going in there, make them stop!"), MSGBOX_AUTOCLOSE)
+    }
     release
     end
 }

@@ -59,7 +59,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER_FRLG",
       "x": 25,
-      "y": 64,
+      "y": 63,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -135,22 +135,7 @@
       "flag": "0"
     }
   ],
-  "warp_events": [
-    {
-      "x": 19,
-      "y": 2,
-      "elevation": 0,
-      "dest_map": "MAP_WEST_LION_MOUNTAIN",
-      "dest_warp_id": "3"
-    },
-    {
-      "x": 20,
-      "y": 2,
-      "elevation": 0,
-      "dest_map": "MAP_WEST_LION_MOUNTAIN",
-      "dest_warp_id": "4"
-    }
-  ],
+  "warp_events": [],
   "coord_events": [],
   "bg_events": []
 }

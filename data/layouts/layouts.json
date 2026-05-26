@@ -4650,8 +4650,8 @@
       "name": "MirageTower_4F_Layout",
       "width": 13,
       "height": 10,
-      "border_width": 0,
-      "border_height": 0,
+      "border_width": 2,
+      "border_height": 2,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_MirageTower",
       "border_filepath": "data/layouts/MirageTower_4F/border.bin",
@@ -5792,7 +5792,7 @@
       "height": 75,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_Snow",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/LionsarchCity/border.bin",
       "blockdata_filepath": "data/layouts/LionsarchCity/map.bin"
@@ -5816,7 +5816,7 @@
       "height": 84,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_Snow",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/Route05/border.bin",
       "blockdata_filepath": "data/layouts/Route05/map.bin"
@@ -6328,11 +6328,11 @@
     {
       "id": "LAYOUT_EAST_LION_MOUNTAIN_FACULTY_MINING_CAVE",
       "name": "EastLionMountain_Faculty_Mining_Cave_Layout",
-      "width": 25,
-      "height": 16,
+      "width": 14,
+      "height": 15,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Snow",
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/EastLionMountain_Faculty_Mining_Cave/border.bin",
       "blockdata_filepath": "data/layouts/EastLionMountain_Faculty_Mining_Cave/map.bin"
@@ -10842,6 +10842,30 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/BikeRoute_House1/border.bin",
       "blockdata_filepath": "data/layouts/BikeRoute_House1/map.bin"
+    },
+    {
+      "id": "LAYOUT_LION_MOUNTAIN_CAVE_SYSTEM_ENTRANCE",
+      "name": "LionMountain_CaveSystem_Entrance_Layout",
+      "width": 40,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/LionMountain_CaveSystem_Entrance/border.bin",
+      "blockdata_filepath": "data/layouts/LionMountain_CaveSystem_Entrance/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE01205",
+      "name": "Route01205_Layout",
+      "width": 46,
+      "height": 12,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Snow",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/Route01205/border.bin",
+      "blockdata_filepath": "data/layouts/Route01205/map.bin"
     }
   ]
 }

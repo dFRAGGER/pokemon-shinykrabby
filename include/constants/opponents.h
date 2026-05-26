@@ -869,22 +869,22 @@
 #define TRAINER_LIONSARCH_LEADER1           860
 #define TRAINER_LIONSARCH_LEADER2           861
 
-// Steel Factory — Faculty trainers
-#define TRAINER_FACULTY_GUARD_B1F_1         862
-#define TRAINER_FACULTY_GUARD_B1F_2         863
-#define TRAINER_FACULTY_SCIENTIST_1         864
-#define TRAINER_FACULTY_SCIENTIST_2         865
-#define TRAINER_FACULTY_OFFICIAL_1          866
-#define TRAINER_FACULTY_OFFICIAL_2          867
-#define TRAINER_FACULTY_OFFICIAL_3          868
-#define TRAINER_FACULTY_BARRY               869
-#define TRAINER_FACULTY_RECTOR              870
+// Steel Factory — Faculty trainers (repurposed IDs from unused Hoenn routes)
+#define TRAINER_FACULTY_GUARD_B1F_1         TRAINER_FOSTER      // ID 46
+#define TRAINER_FACULTY_GUARD_B1F_2         TRAINER_CINDY_1     // ID 114
+#define TRAINER_FACULTY_SCIENTIST_1         TRAINER_DOMINIK     // ID 152
+#define TRAINER_FACULTY_SCIENTIST_2         TRAINER_BILLY       // ID 319
+#define TRAINER_FACULTY_OFFICIAL_1          TRAINER_BEVERLY     // ID 441
+#define TRAINER_FACULTY_OFFICIAL_2          TRAINER_TIANA       // ID 603
+#define TRAINER_FACULTY_OFFICIAL_3          TRAINER_DARIAN      // ID 696
+#define TRAINER_FACULTY_BARRY               TRAINER_RHETT       // ID 703
+#define TRAINER_FACULTY_RECTOR              TRAINER_ANDRES_1    // ID 737
 
-// NOTE: Increasing MAX_TRAINERS_COUNT_EMERALD shifts SYSTEM_FLAGS in flags.h
-//       (each trainer uses one flag slot for defeat tracking)
-//       Increasing MAX requires adjusting saveblock layout — acceptable during development
-#define TRAINERS_COUNT_EMERALD     871
-#define MAX_TRAINERS_COUNT_EMERALD 880
+// NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space
+//       for 2 additional trainers before trainer flag space overflows
+//       More space can be made by shifting flags around in constants/flags.h
+#define TRAINERS_COUNT_EMERALD     862
+#define MAX_TRAINERS_COUNT_EMERALD 864
 
 #if IS_FRLG
 #define TRAINERS_COUNT                      TRAINERS_COUNT_FRLG
