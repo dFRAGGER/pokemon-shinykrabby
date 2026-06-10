@@ -13,8 +13,32 @@ script DiscoBasement_DJ_Peter {
             setspeaker("DJ Peter")
             if (flag(FLAG_STEEL_FACTORY_TUNNEL_OPEN)) {
                 msgbox(format("Welcome back to the GROOVE ZONE!\pYou making progress in there?\pThat factory's been giving me the creeps for years.\pGood to know someone's finally poking around."))
+            } elif (flag(FLAG_PETER_GAVE_TUNNEL_PERMISSION)) {
+                msgbox(format("Tunnel's still open on our end.\pPaolo will let you through.\pGet in there and find out what they're really building."))
+            } elif (flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)) {
+                msgbox(format("Hey... you're back.\pYou've got that look.\pLike you've just been somewhere you weren't supposed to be.\p...What happened?"))
+                waitmessage
+                setspeaker("DJ Peter")
+                msgbox(format("...\pThey pushed you into a CREVASSE?!\pI always knew the Faculty played dirty.\pBut throwing someone into a pit..."))
+                waitmessage
+                setspeaker("DJ Peter")
+                msgbox(format("And they've already moved everything to the factory.\pThis is escalating faster than I thought."))
+                waitmessage
+                setspeaker("DJ Peter")
+                msgbox(format("I've been watching those people dig into those mountains for months.\pEvery week the shipments get bigger.\pEvery week the tremors get worse."))
+                waitmessage
+                setspeaker("DJ Peter")
+                msgbox(format("I can't sit on this anymore.\pYou need to get into that factory.\pLuckely I know a way in that the Faculty doesn't."))
+                waitmessage
+                setspeaker("DJ Peter")
+                msgbox(format("There's a tunnel running from this basement straight to the factory's lower level.\pOld smuggling route.\pThe Faculty thinks they sealed their end years ago.\pThey didn't seal ours."))
+                waitmessage
+                setspeaker("DJ Peter")
+                msgbox(format("Paolo guards the entrance down here.\pI'll tell him you have my blessing to go through.\pGet in there.\pFind out what they're really building.\pAnd be careful."))
+                waitmessage
+                setflag(FLAG_PETER_GAVE_TUNNEL_PERMISSION)
             } else {
-                msgbox(format("Welcome back!\pHey - you know that old tunnel Paolo guards?\pI told him to let you through.\pThat tunnel goes straight into the Steel Factory basement.\pBeen sealed for years, but I still have my ways.\pThe Faculty thinks they control everything around here.\pThey don't control Peter."))
+                msgbox(format("Hey, you're still kicking around Lionsarch!\pGood to see you.\pSomething's been feeling off up in those mountains lately.\pStay funky out there."))
             }
         } else {
             // This shouldn't happen, but handle it
@@ -136,16 +160,10 @@ script DiscoBasement_Guard_Tunnel {
         releaseall
         end
     }
-    if (flag(FLAG_RECEIVED_CLIMBING_ROPE)) {
-        msgbox(format("Hey, you're the one Peter was talking about.\pSaid you did him a solid.\pHe asked me to let you through the tunnel - personally cleared the bypass on his end."))
+    if (flag(FLAG_PETER_GAVE_TUNNEL_PERMISSION)) {
+        msgbox(format("Just got the clearance over the radio from Peter.\pSaid you did him a solid.\pHe asked me to let you through the tunnel, the keys are in the door.\p Be careful in there, alright?"), MSGBOX_AUTOCLOSE)
         waitmessage
-        setspeaker("Bouncer Paolo")
-        msgbox(format("Just so you know - the Faculty sealed their side a while back.\pBut Peter's had a workaround for years.\pOld smuggler's trick. Don't ask me how it works."))
-        waitmessage
-        setspeaker("Bouncer Paolo")
-        msgbox(format("The Steel Factory's through there.\pTough place. Be careful.\pAnd hey - if you find anything... interesting in there, Peter would want to know."), MSGBOX_AUTOCLOSE)
-        waitmessage
-        setflag(FLAG_STEEL_FACTORY_TUNNEL_OPEN)
+        setflag(FLAG_STEEL_FACTORY_TUNNEL_OPEN)     
         releaseall
         end
     }
@@ -155,13 +173,8 @@ script DiscoBasement_Guard_Tunnel {
     msgbox(format("Used to move all kinds of... 'merchandise' through there.\pNo customs, no questions asked.\pThe good old days, you know?"))
     waitmessage
     setspeaker("Bouncer Paolo")
-    msgbox(format("But then the Faculty took over the factory.\pThey sealed the whole thing up.\pNow only Peter and the Faculty have the keys.\pRest of us are locked out for good.\pPeter told me to not let anyone near it, so... here I am, doing my part to keep the secrets safe.\pEven VIPs can't get in there, sorry."))
+    msgbox(format("But then the Faculty took over the factory.\pThey sealed the whole thing up.\pNow only Peter and the Faculty have the keys.\pRest of us are locked out for good.\pPeter told me to not let anyone near it, so... here I am, doing my part to keep the secrets safe."), MSGBOX_AUTOCLOSE)
     waitmessage
-    setspeaker("Bouncer Paolo")
-    msgbox(format("It's a shame, really.\pThat tunnel had some history.\pNow it's just another thing the Faculty controls."), MSGBOX_AUTOCLOSE)
-    waitmessage
-    applymovement(LOCALID_PLAYER, moves(walk_right))
-    waitmovement
     releaseall
 }
 
@@ -322,6 +335,22 @@ script DiscoBasement_VinylCollection {
     lockall
     msgbox(format("Peter's vinyl collection is MASSIVE.\pHundreds of records, all meticulously organized.\pThis must have cost a fortune!"))
     releaseall
+}
+
+script DiscoBasement_TunnelEntrance_Check {
+    if (flag(FLAG_STEEL_FACTORY_TUNNEL_OPEN)) {
+        end
+    }
+    lockall
+    playse(SE_PIN)
+    applymovement(13, moves(emote_exclamation_mark))
+    waitmovement
+    setspeaker("Bouncer Paolo")
+    msgbox(format("Hey! You can't just walk in there.\pThat tunnel is off-limits.\pIf you want access, talk to me first."), MSGBOX_AUTOCLOSE)
+    applymovement(LOCALID_PLAYER, moves(walk_up))
+    waitmovement
+    releaseall
+    end
 }
 
 script DiscoBasement_SecretEntrance {

@@ -1,4 +1,114 @@
-mapscripts LionsarchCity_Steel_Factory_MapScripts {}
+mapscripts LionsarchCity_Steel_Factory_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        call(SteelFactory_1F_OnTransition)
+    }
+}
+
+script SteelFactory_1F_OnTransition {
+    if (flag(FLAG_STEEL_FACTORY_ALL_WIRES_PULLED) == TRUE) {
+        setmetatile(5, 20, 0x229, FALSE)
+        setmetatile(6, 20, 0x229, FALSE)
+        setmetatile(7, 20, 0x229, FALSE)
+        setmetatile(5, 21, 0x229, FALSE)
+        setmetatile(6, 21, 0x229, FALSE)
+        setmetatile(7, 21, 0x229, FALSE)
+    }
+    if (flag(FLAG_STEEL_FACTORY_ARON_INTRO_DONE) == FALSE) {
+        setflag(FLAG_STEEL_FACTORY_ARON_HIDDEN)
+        setobjectxyperm(18, 4, 12)
+        end
+    }
+    if (flag(FLAG_STEEL_FACTORY_ARON_GUIDING) == FALSE) {
+        setflag(FLAG_STEEL_FACTORY_ARON_HIDDEN)
+        end
+    }
+    if (flag(FLAG_STEEL_FACTORY_ALL_WIRES_PULLED) == TRUE) {
+        setflag(FLAG_STEEL_FACTORY_ARON_HIDDEN)
+        end
+    }
+    clearflag(FLAG_STEEL_FACTORY_ARON_HIDDEN)
+    if (flag(FLAG_STEEL_FACTORY_WIRE_1_PULLED) == FALSE) {
+        setobjectxyperm(18, 2, 13)
+        end
+    }
+    if (flag(FLAG_STEEL_FACTORY_WIRE_2_PULLED) == FALSE) {
+        setobjectxyperm(18, 12, 7)
+        end
+    }
+    if (flag(FLAG_STEEL_FACTORY_WIRE_3_PULLED) == FALSE) {
+        setobjectxyperm(18, 21, 23)
+        end
+    }
+    if (flag(FLAG_STEEL_FACTORY_WIRE_4_PULLED) == FALSE) {
+        setobjectxyperm(18, 25, 10)
+        end
+    }
+    setobjectxyperm(18, 35, 16)
+    end
+}
+
+// ─── ARON INTERACTION ───
+
+script SteelFactory_1F_Aron_Interact {
+    lock
+    faceplayer
+    playse(SE_PIN)
+    applymovement(18, moves(emote_question_mark jump_in_place_down))
+    waitmovement(18)
+    msgbox(SteelFactory_Aron_Interact_Text,MSGBOX_AUTOCLOSE)
+    release
+}
+
+// ─── ARON INTRO TRIGGER ───
+
+script SteelFactory_1F_AronIntro {
+    if (flag(FLAG_STEEL_FACTORY_ARON_INTRO_DONE) == TRUE) {
+        end
+    }
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    setflag(FLAG_STEEL_FACTORY_ARON_INTRO_DONE)
+    lockall
+    addobject(18)
+    if(var(VAR_TEMP_0) == 1){
+    applymovement(18, moves(walk_fast_up * 2 walk_fast_left*2 walk_fast_up*4 face_left))
+    waitmovement
+    applymovement(LOCALID_PLAYER, moves(face_right))
+    waitmovement(0)
+    }
+    if(var(VAR_TEMP_0) == 2){
+    applymovement(18, moves(walk_fast_up * 2 walk_fast_left*2 walk_fast_up*3 face_up))
+    waitmovement
+    applymovement(LOCALID_PLAYER, moves(face_down))
+    waitmovement(0)
+    }   
+    playse(SE_PIN)
+    applymovement(18, moves(emote_question_mark))    
+    waitmovement(0)
+    msgbox(SteelFactory_AronIntro_Text, MSGBOX_YESNO)
+    msgbox(format("The Aron scuttled away!"), MSGBOX_AUTOCLOSE)
+    if (var(VAR_RESULT) == YES) {
+        setflag(FLAG_STEEL_FACTORY_ARON_GUIDING)
+        if(var(VAR_TEMP_0) == 1){
+        applymovement(18, moves(walk_fast_down * 3 walk_fast_right *2 walk_fast_down*5 walk_fast_left*2 walk_fast_up face_left))
+        applymovement(LOCALID_PLAYER, moves(walk_right walk_down * 3 walk_right *2 walk_down*5 walk_left*3 face_up))
+        waitmovement(0)
+        }
+        if(var(VAR_TEMP_0) == 2){
+        applymovement(18, moves(walk_fast_down * 2 walk_fast_right *2 walk_fast_down*5 walk_fast_left*2 walk_fast_up face_left))
+        applymovement(LOCALID_PLAYER, moves(walk_down * 3 walk_right *2 walk_down*5 walk_left*3 face_up))
+        waitmovement(0)
+        }
+        msgbox(SteelFactory_AronFollow_Text)
+        waitmovement(0)
+    } else {
+        applymovement(18, moves(walk_fast_down * 3 walk_fast_right *2 walk_fast_down*6))
+        waitmovement(0)
+        msgbox(SteelFactory_AronLeave_Text)
+        removeobject(18)
+        setflag(FLAG_STEEL_FACTORY_ARON_HIDDEN)
+    }
+    releaseall
+}
 
 // ─── LORE SCIENTISTS ───
 
@@ -88,31 +198,244 @@ script SteelFactory_1F_Official_Battle2 {
     end
 }
 
-// Gate guard - must be defeated before the 2F stairs become accessible
 script SteelFactory_1F_Official_Battle3 {
-    lock
-    faceplayer
-    if (flag(FLAG_STEEL_FACTORY_OFFICIAL_3) == TRUE) {
-        setspeaker("Faculty Official")
-        msgbox(SteelFactory_1F_Official3_After)
-        waitmessage
-        setspeaker(NULL)
-        release
-        end
-    }
-    trainerbattle_single(TRAINER_FACULTY_OFFICIAL_3, SteelFactory_1F_Official3_Intro, SteelFactory_1F_Official3_Defeat, SteelFactory_1F_Official3_Defeated)
+    trainerbattle_single(TRAINER_FACULTY_OFFICIAL_3, SteelFactory_1F_Official3_Intro, SteelFactory_1F_Official3_Defeat)
+    msgbox(SteelFactory_1F_Official3_PostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
-script SteelFactory_1F_Official3_Defeated {
+// ─── MACHINE WIRES ───
+
+script SteelFactory_1F_Wire1 {
     lock
-    setspeaker("Faculty Official")
-    msgbox(SteelFactory_1F_Official3_PostBattle)
-    waitmessage
-    setspeaker(NULL)
-    setflag(FLAG_STEEL_FACTORY_OFFICIAL_3)
+    if (flag(FLAG_STEEL_FACTORY_WIRE_1_PULLED) == TRUE) {
+        msgbox(SteelFactory_Wire_AlreadyPulled)
+        release
+        end
+    }
+    if (flag(FLAG_STEEL_FACTORY_ARON_GUIDING) == FALSE) {
+        msgbox(SteelFactory_Wire_NotReady)
+        release
+        end
+    }
+    msgbox(SteelFactory_Wire_Prompt, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        setflag(FLAG_STEEL_FACTORY_WIRE_1_PULLED)
+        playse(SE_CLICK)
+        waitse
+        msgbox(SteelFactory_Wire1_PulledText)
+        if (flag(FLAG_STEEL_FACTORY_ARON_GUIDING) == TRUE) {
+            playse(SE_PIN)
+            applymovement(18, moves(emote_exclamation_mark))
+            waitmovement(0)
+            msgbox(SteelFactory_AronNextMachine_Text,MSGBOX_AUTOCLOSE)
+            applymovement(18, moves(walk_fast_down walk_fast_right*3 walk_fast_up*3 walk_fast_right*8))
+            waitmovement(18)
+            removeobject(18)
+            setobjectxyperm(18, 12, 7)
+            setobjectmovementtype(18, MOVEMENT_TYPE_FACE_RIGHT)
+            clearflag(FLAG_STEEL_FACTORY_ARON_HIDDEN)
+            addobject(18)
+
+
+        }
+        call(SteelFactory_CheckAllWires)
+    }
     release
-    end
+}
+
+script SteelFactory_1F_Wire2 {
+    lock
+    if (flag(FLAG_STEEL_FACTORY_WIRE_2_PULLED) == TRUE) {
+        msgbox(SteelFactory_Wire_AlreadyPulled)
+        release
+        end
+    }
+    if (flag(FLAG_STEEL_FACTORY_ARON_GUIDING) == FALSE) {
+        msgbox(SteelFactory_Wire_NotReady)
+        release
+        end
+    }
+    if (flag(FLAG_STEEL_FACTORY_WIRE_1_PULLED) == FALSE) {
+        msgbox(SteelFactory_Wire_NotReady)
+        release
+        end
+    }
+    msgbox(SteelFactory_Wire_Prompt, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        setflag(FLAG_STEEL_FACTORY_WIRE_2_PULLED)
+        playse(SE_CLICK)
+        waitse
+        msgbox(SteelFactory_Wire2_PulledText)
+        if (flag(FLAG_STEEL_FACTORY_ARON_GUIDING) == TRUE) {
+            playse(SE_PIN)
+            applymovement(18, moves(emote_exclamation_mark))
+            waitmovement(0)
+            msgbox(SteelFactory_AronNextMachine_Text,MSGBOX_AUTOCLOSE)
+            applymovement(18, moves(walk_fast_down*8))
+            waitmovement(18)
+            removeobject(18)
+            setobjectxyperm(18, 21, 23)
+            setobjectmovementtype(18, MOVEMENT_TYPE_FACE_DOWN)
+            clearflag(FLAG_STEEL_FACTORY_ARON_HIDDEN)
+            addobject(18)
+        }
+        call(SteelFactory_CheckAllWires)
+    }
+    release
+}
+
+script SteelFactory_1F_Wire3 {
+    lockall
+    if (flag(FLAG_STEEL_FACTORY_WIRE_3_PULLED) == TRUE) {
+        msgbox(SteelFactory_Wire_AlreadyPulled)
+        releaseall
+        end
+    }
+    if (flag(FLAG_STEEL_FACTORY_ARON_GUIDING) == FALSE) {
+        msgbox(SteelFactory_Wire_NotReady)
+        releaseall
+        end
+    }
+    if (flag(FLAG_STEEL_FACTORY_WIRE_2_PULLED) == FALSE) {
+        msgbox(SteelFactory_Wire_NotReady)
+        releaseall
+        end
+    }
+    msgbox(SteelFactory_Wire_Prompt, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        setflag(FLAG_STEEL_FACTORY_WIRE_3_PULLED)
+        playse(SE_CLICK)
+        waitse
+        msgbox(SteelFactory_Wire3_PulledText)
+        if (flag(FLAG_STEEL_FACTORY_ARON_GUIDING) == TRUE) {
+            playse(SE_PIN)
+            applymovement(18, moves(emote_exclamation_mark))
+            waitmovement(0)
+            msgbox(SteelFactory_AronNextMachine_Text,MSGBOX_AUTOCLOSE)
+            applymovement(18, moves(walk_fast_up*10))
+            waitmovement(18)
+            removeobject(18)
+            setobjectxyperm(18, 25, 10)
+            setobjectmovementtype(18, MOVEMENT_TYPE_FACE_RIGHT)
+            clearflag(FLAG_STEEL_FACTORY_ARON_HIDDEN)
+            addobject(18)
+        }
+        call(SteelFactory_CheckAllWires)
+    }
+    releaseall
+}
+
+script SteelFactory_1F_Wire4 {
+    lock
+    if (flag(FLAG_STEEL_FACTORY_WIRE_4_PULLED) == TRUE) {
+        msgbox(SteelFactory_Wire_AlreadyPulled)
+        release
+        end
+    }
+    if (flag(FLAG_STEEL_FACTORY_ARON_GUIDING) == FALSE) {
+        msgbox(SteelFactory_Wire_NotReady)
+        release
+        end
+    }
+    if (flag(FLAG_STEEL_FACTORY_WIRE_3_PULLED) == FALSE) {
+        msgbox(SteelFactory_Wire_NotReady)
+        release
+        end
+    }
+    msgbox(SteelFactory_Wire_Prompt, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        setflag(FLAG_STEEL_FACTORY_WIRE_4_PULLED)
+        playse(SE_CLICK)
+        waitse
+        msgbox(SteelFactory_Wire4_PulledText)
+        if (flag(FLAG_STEEL_FACTORY_ARON_GUIDING) == TRUE) {
+            playse(SE_PIN)
+            applymovement(18, moves(emote_exclamation_mark))
+            waitmovement(0)
+            msgbox(SteelFactory_AronNextMachine_Text,MSGBOX_AUTOCLOSE)
+            applymovement(18, moves(walk_fast_down*3 walk_fast_right*6 walk_fast_down*5))
+            waitmovement(18)
+            removeobject(18)
+            setobjectxyperm(18, 35, 16)
+            setobjectmovementtype(18, MOVEMENT_TYPE_FACE_LEFT)
+            clearflag(FLAG_STEEL_FACTORY_ARON_HIDDEN)
+            addobject(18)
+        }
+        call(SteelFactory_CheckAllWires)
+    }
+    release
+}
+
+script SteelFactory_1F_Wire5 {
+    lock
+    if (flag(FLAG_STEEL_FACTORY_WIRE_5_PULLED) == TRUE) {
+        msgbox(SteelFactory_Wire_AlreadyPulled)
+        release
+        end
+    }
+    if (flag(FLAG_STEEL_FACTORY_ARON_GUIDING) == FALSE) {
+        msgbox(SteelFactory_Wire_NotReady)
+        release
+        end
+    }
+    if (flag(FLAG_STEEL_FACTORY_WIRE_4_PULLED) == FALSE) {
+        msgbox(SteelFactory_Wire_NotReady)
+        release
+        end
+    }
+    msgbox(SteelFactory_Wire_Prompt, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        setflag(FLAG_STEEL_FACTORY_WIRE_5_PULLED)
+        playse(SE_CLICK)
+        waitse
+        msgbox(SteelFactory_Wire5_PulledText)
+        if (flag(FLAG_STEEL_FACTORY_ARON_GUIDING) == TRUE) {
+            playse(SE_PIN)
+            applymovement(18, moves(emote_exclamation_mark jump_in_place_down face_left))
+            waitmovement(18)
+            msgbox(SteelFactory_AronFarewell_Text,MSGBOX_AUTOCLOSE)
+            applymovement(18, moves(walk_fast_down*3 walk_fast_left*4 walk_fast_up*6 walk_fast_left*6))
+            waitmovement(18)
+            removeobject(18)
+            setflag(FLAG_STEEL_FACTORY_ARON_HIDDEN)
+            clearflag(FLAG_STEEL_FACTORY_ARON_GUIDING)
+        }
+        call(SteelFactory_CheckAllWires)
+    }
+    release
+}
+
+script SteelFactory_CheckAllWires {
+    if (flag(FLAG_STEEL_FACTORY_WIRE_1_PULLED) == FALSE) {
+        return
+    }
+    if (flag(FLAG_STEEL_FACTORY_WIRE_2_PULLED) == FALSE) {
+        return
+    }
+    if (flag(FLAG_STEEL_FACTORY_WIRE_3_PULLED) == FALSE) {
+        return
+    }
+    if (flag(FLAG_STEEL_FACTORY_WIRE_4_PULLED) == FALSE) {
+        return
+    }
+    if (flag(FLAG_STEEL_FACTORY_WIRE_5_PULLED) == FALSE) {
+        return
+    }
+    if (flag(FLAG_STEEL_FACTORY_ALL_WIRES_PULLED) == TRUE) {
+        return
+    }
+    setflag(FLAG_STEEL_FACTORY_ALL_WIRES_PULLED)
+    setmetatile(5, 20, 0x229, FALSE)
+    setmetatile(6, 20, 0x229, FALSE)
+    setmetatile(7, 20, 0x229, FALSE)
+    setmetatile(5, 21, 0x229, FALSE)
+    setmetatile(6, 21, 0x229, FALSE)
+    setmetatile(7, 21, 0x229, FALSE)
+    playse(SE_DOOR)
+    waitse
+    msgbox(SteelFactory_AllWires_Text)
+    return
 }
 
 // ─── CONTROL PANEL - THE CORE CHOICE ───
@@ -168,11 +491,11 @@ text SteelFactory_1F_Scientist_Lore3_Text {
 }
 
 text SteelFactory_1F_Scientist_Lore4_Text {
-    format("Registeel is now the linchpin of the whole operation.\pWithout it, the entire synthesis breaks down.\pThe Rector found a way to incentivize it.\pI try not to think about the details.")
+    format("Registeel is just a small piece of the puzzle.\pHowever, it does help us build metal structures that can bring order to even the most chaotic places.\pThe Rector seems to have found a way to incentivize it.\pI try not to think about the details.")
 }
 
 text SteelFactory_1F_Scientist_Lore5_Text {
-    format("The electro-magnetic resonance from the Magnemite cluster amplifies the metal's conductivity tenfold.\pAdd Registeel to the equation and we're making something the Regis would recognize as their own.")
+    format("The electro-magnetic resonance from the Magnemite cluster amplifies the metal's conductivity tenfold.\pAdd the origin of the ore to the equation and we're making something the Regis would recognize as their own.")
 }
 
 text SteelFactory_1F_Official_Lore1_Text {
@@ -247,9 +570,6 @@ text SteelFactory_1F_Official3_PostBattle {
     format("The Rector is on the second floor. Face him, if you dare.")
 }
 
-text SteelFactory_1F_Official3_After {
-    format("...The Rector is upstairs.\pJust go.")
-}
 
 text SteelFactory_1F_Panel_Prompt {
     format("POKEMON CONTAINMENT OVERRIDE - EMERGENCY RELEASE -\pDecades of Pokemon are held in these bays, forced to power the facility. Machop, Aron, Magnemite... and something much larger.\pDo you release them?")
@@ -277,4 +597,64 @@ text SteelFactory_1F_Panel_AlreadyFreed {
 
 text SteelFactory_1F_Panel_AlreadyLeft {
     format("The panel flickers.\pThe Pokemon continue their labor.")
+}
+
+text SteelFactory_Wire_Prompt {
+    format("A thick cable runs from this machine into the wall.\pIt looks like it keeps something running.\pDisconnect the wire?")
+}
+
+text SteelFactory_Wire_AlreadyPulled {
+    format("The wire hangs loose from the machine.\pIt's already been disconnected.")
+}
+
+text SteelFactory_Wire_NotReady {
+    format("A thick cable runs from this machine into the wall.\pYou leave it alone.")
+}
+
+text SteelFactory_Wire1_PulledText {
+    format("You grip the cable and pull.\pIt comes free with a sharp click.\pThe machine goes dark.")
+}
+
+text SteelFactory_Wire2_PulledText {
+    format("The cable resists briefly, then snaps free. Click.\pAnother machine falls silent.")
+}
+
+text SteelFactory_Wire3_PulledText {
+    format("You work the cable loose from its housing. Click.\pThe hum in this corner of the factory dies.")
+}
+
+text SteelFactory_Wire4_PulledText {
+    format("The thick cable pulls free with a hollow click.\pSomewhere above, a light flickers out.")
+}
+
+text SteelFactory_Wire5_PulledText {
+    format("The last cable.\pYou pull it free. Click.\pA deep silence falls over the machines around you.")
+}
+
+text SteelFactory_AllWires_Text {
+    format("A low groan of shifting metal...\pDeep in the factory, something heavy has moved.")
+}
+
+text SteelFactory_Aron_Interact_Text {
+    format("The Aron glances up at you, then turns back to the machine.")
+}
+
+text SteelFactory_AronIntro_Text {
+    format("... the small Aron seems stressed.\pIt seems desperate to show you something.\pFollow it? The Rector might escape...")
+}
+
+text SteelFactory_AronFollow_Text {
+    format("Hmm... must be something with the machine...\pIt's trying to pull something from the machine.\pIt looks like it's trying to disconnect a wire?")
+}
+
+text SteelFactory_AronLeave_Text {
+    format("The Aron's head droops.\pIt retreats behind some steel beams.\pThe factory keeps humming.")
+}
+
+text SteelFactory_AronNextMachine_Text {
+    format("The Aron looks pleased. It scurries ahead to the next machine.")
+}
+
+text SteelFactory_AronFarewell_Text {
+    format("The Aron seems grateful for your help.\pWhat could it be trying to say?\pI think it's wanting me to follow it one last time...")
 }

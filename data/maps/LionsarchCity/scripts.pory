@@ -1,13 +1,18 @@
 mapscripts LionsarchCity_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_VISITED_LIONSARCH_CITY)
-        special(Special_ReloadPrimaryTileset)
     }
 }
 
 // ========================================
 // CITY SIGNS
 // ========================================
+
+script LionsarchCity_Sign_Route06 {
+    lockall
+    msgbox(format("Upana Cave System\nPath to Marshduke City\pBeware of falling Geodudes!"))
+    releaseall
+}
 
 script LionsarchCity_Sign_CityName {
     lockall

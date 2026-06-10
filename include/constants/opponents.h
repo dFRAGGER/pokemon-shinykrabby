@@ -41,9 +41,9 @@
 #define TRAINER_ARCHIE                       34     //TRAINER_ARCHIE
 #define TRAINER_LEAH                         35     //TRAINER_LEAH --> Stays
 #define TRAINER_DAISY                        36     //TRAINER_DAISY --> Stays
-#define TRAINER_ROSE_1                       37     //TRAINER_ROSE_1
-#define TRAINER_FELIX                        38     //TRAINER_FELIX
-#define TRAINER_VIOLET                       39
+#define TRAINER_FACULTY_2F_SCIENTIST_1       37
+#define TRAINER_FACULTY_2F_GRUNT             38
+#define TRAINER_FACULTY_2F_SCIENTIST_2       39
 #define TRAINER_ROSE_2                       40
 #define TRAINER_ROSE_3                       41
 #define TRAINER_ROSE_4                       42
@@ -869,14 +869,14 @@
 #define TRAINER_LIONSARCH_LEADER1           860
 #define TRAINER_LIONSARCH_LEADER2           861
 
-// Steel Factory — Faculty trainers (repurposed IDs from unused Hoenn routes)
-#define TRAINER_FACULTY_GUARD_B1F_1         TRAINER_FOSTER      // ID 46
-#define TRAINER_FACULTY_GUARD_B1F_2         TRAINER_CINDY_1     // ID 114
-#define TRAINER_FACULTY_SCIENTIST_1         TRAINER_DOMINIK     // ID 152
-#define TRAINER_FACULTY_SCIENTIST_2         TRAINER_BILLY       // ID 319
-#define TRAINER_FACULTY_OFFICIAL_1          TRAINER_BEVERLY     // ID 441
-#define TRAINER_FACULTY_OFFICIAL_2          TRAINER_TIANA       // ID 603
-#define TRAINER_FACULTY_OFFICIAL_3          TRAINER_DARIAN      // ID 696
+// Steel Factory — Faculty trainers
+#define TRAINER_FACULTY_GUARD_B1F_1         46
+#define TRAINER_FACULTY_GUARD_B1F_2         114
+#define TRAINER_FACULTY_SCIENTIST_1         152
+#define TRAINER_FACULTY_SCIENTIST_2         319
+#define TRAINER_FACULTY_OFFICIAL_1          441
+#define TRAINER_FACULTY_OFFICIAL_2          603
+#define TRAINER_FACULTY_OFFICIAL_3          696
 #define TRAINER_FACULTY_BARRY               TRAINER_RHETT       // ID 703
 #define TRAINER_FACULTY_RECTOR              TRAINER_ANDRES_1    // ID 737
 

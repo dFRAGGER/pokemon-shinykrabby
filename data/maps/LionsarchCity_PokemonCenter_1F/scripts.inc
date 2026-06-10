@@ -46,28 +46,20 @@ LionsarchCity_PokemonCenter_1F_SailorRik::
 # 30 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
 	waitmessage
 # 31 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
-	msgbox LionsarchCity_PokemonCenter_1F_SailorRik_Text_1
-# 32 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
-	waitmessage
-# 33 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
 	release
 	return
 
 
 LionsarchCity_PokemonCenter_1F_CourierBette::
-# 39 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
+# 37 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
 	lock
-# 40 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
+# 38 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
 	faceplayer
-# 41 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
+# 39 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
 	msgbox LionsarchCity_PokemonCenter_1F_CourierBette_Text_0
-# 42 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
+# 40 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
 	waitmessage
-# 43 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
-	msgbox LionsarchCity_PokemonCenter_1F_CourierBette_Text_1
-# 44 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
-	waitmessage
-# 45 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
+# 41 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
 	release
 	return
 
@@ -84,32 +76,13 @@ LionsarchCity_PokemonCenter_1F_SailorRik_Text_0:
 	.string "few minutes.\p"
 	.string "Me, I'll need a bit longer.$"
 
-LionsarchCity_PokemonCenter_1F_SailorRik_Text_1:
-# 31 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
-	.string "You heading north?\p"
-	.string "I'd wait a day if I were you.\p"
-	.string "There's a cold front sitting right over\n"
-	.string "the straits.\p"
-	.string "Sea's the color of iron out there.\p"
-	.string "Beautiful in a horrible sort of way.$"
-
 LionsarchCity_PokemonCenter_1F_CourierBette_Text_0:
-# 41 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
+# 39 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
 	.string "Ugh, this city.\p"
 	.string "Don't get me wrong, I love the work, but\n"
 	.string "Lionsarch is always so COLD.\p"
-	.string "I came up from Siltroot this morning and\n"
-	.string "I can't feel my fingers.\p"
+	.string "I came up in a boat from Siltroot this\n"
+	.string "morning and I can't feel my fingers.\p"
 	.string "My Ponyta hated every second of it too.\p"
-	.string "She kept trying to turn around.$"
-
-LionsarchCity_PokemonCenter_1F_CourierBette_Text_1:
-# 43 "data/maps/LionsarchCity_PokemonCenter_1F/scripts.pory"
-	.string "Three more drops to make before\n"
-	.string "sundown.\p"
-	.string "A crate to the factory, something\n"
-	.string "sealed for the harbor master,\n"
-	.string "and a small parcel to someone on the\l"
-	.string "east side.\p"
-	.string "I don't ask what's in the parcels.\p"
-	.string "You learn that fast in this job.$"
+	.string "She stayed in her pokeball the whole\n"
+	.string "time.$"

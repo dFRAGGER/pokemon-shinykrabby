@@ -174,7 +174,7 @@
     {
       "type": "weather",
       "x": 21,
-      "y": 24,
+      "y": 21,
       "elevation": 0,
       "weather": "COORD_EVENT_WEATHER_SNOW_BLIZZARD"
     }

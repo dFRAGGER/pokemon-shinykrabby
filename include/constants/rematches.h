@@ -2,7 +2,6 @@
 #define GUARD_REMATCHES_H
 
 enum {
-    REMATCH_ROSE,
     REMATCH_ANDRES,
     REMATCH_DUSTY,
     REMATCH_LOLA,

@@ -36,7 +36,7 @@ script House1_Marta {
 
 script House1_FishingTrophy {
     lockall
-    msgbox(format("A weathered bronze plaque rests on a small shelf:\p'1ST PLACE - LIONSARCH HARBOR CATCH CUP\nYear 42\p  Winner: S. BRANDERS\n  One Gyarados, 580 lbs'\pBelow it, a faded photograph of a much younger Sven\nhoisting a bent rod with both arms, grinning wildly."))
+    msgbox(format("A weathered bronze plaque rests on a small shelf:\p'1ST PLACE - LIONSARCH HARBOR CATCH CUP\pYear 42\p  Winner: S. BRANDERS\p  One Gyarados, 580 lbs'\pBelow it, a faded photograph of a much younger Sven hoisting a bent rod with both arms, grinning wildly."))
     releaseall
 }
 

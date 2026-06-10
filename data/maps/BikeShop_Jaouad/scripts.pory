@@ -1,1 +1,126 @@
 mapscripts BikeShop_Jaouad_MapScripts {}
+
+script BikeShop_Jaouad_EventScript_Kasmi {
+    lock
+    faceplayer
+    if (flag(FLAG_RECEIVED_BIKE) == TRUE) {
+        goto(BikeShop_Jaouad_EventScript_ReturnGreeting)
+    }
+    msgbox(format("Oh! A customer! Come in, come in!\pThe name is Kasmi. Mr. Kasmi. My real surname has four vowels in a row.\pNobody can say it right.\pSo. Kasmi it is."), MSGBOX_DEFAULT)
+    msgbox(format("Before all this? I was a transfer pricing specialist. Corporate tax structures, intercompany deals, profit shifting across borders.\pI was good at it. Very good. But I did it for myself, not for them.\pLet's just say I left with more than I arrived with.\pLegally.\p Mostly...\pOne day I looked at the numbers and thought: enough. I bought a motorcycle and left."), MSGBOX_DEFAULT)
+    msgbox(format("War zones. Remote lands. Eventually I found these vast temperate steppes...\pJust grass and sky, horizon to horizon. Completely alone.\pThen love called me home. You know the deal.\pNow I fix these things. Simple machines. But they get the job done."), MSGBOX_DEFAULT)
+    goto(BikeShop_Jaouad_EventScript_MainMenu)
+}
+
+script BikeShop_Jaouad_EventScript_ReturnGreeting {
+    msgbox(format("Back again? I was just thinking about a mountain pass I once crossed.\pFixed a cracked frame with a strip of steel and two bolts ordered from three countries.\pAnyway."), MSGBOX_DEFAULT)
+    goto(BikeShop_Jaouad_EventScript_MainMenu)
+}
+
+script BikeShop_Jaouad_EventScript_MainMenu {
+    msgbox(format("So. What can I do for you?"), MSGBOX_DEFAULT)
+    multichoice(0, 0, MULTI_KASMI_MENU, TRUE)
+    if (var(VAR_RESULT) == 0) {
+        goto(BikeShop_Jaouad_EventScript_TaxTips)
+    }
+    if (var(VAR_RESULT) == 1) {
+        goto(BikeShop_Jaouad_EventScript_BikeSection)
+    }
+    release
+    end
+}
+
+script BikeShop_Jaouad_EventScript_TaxTips {
+    msgbox(format("You want to know my secrets? Fine. Listen carefully.\pFirst: everything is a business expense. This shop. My tools. My home. All of it.\pSecond: register a holding company somewhere with no tax treaty. Name it something boring.\pThird: pay yourself just below the income threshold. The rest stays in the company.\pThe tax code was written by people. And people leave gaps.\pI found mine a long time ago. I do alright for myself."), MSGBOX_DEFAULT)
+    goto(BikeShop_Jaouad_EventScript_MainMenu)
+}
+
+script BikeShop_Jaouad_EventScript_BikeSection {
+    if (flag(FLAG_RECEIVED_BIKE) == TRUE) {
+        goto(BikeShop_Jaouad_EventScript_SwitchPrompt)
+    }
+    msgbox(format("I've got two kinds: the MACH BIKE and the ACRO BIKE.\pMACH BIKE is pure speed. Great for steep sandy slopes.\pACRO BIKE is more technical. Hops, tricks, tight spots.\pTake one. I do alright for myself.\pWhich one will it be?"), MSGBOX_DEFAULT)
+    multichoice(21, 8, MULTI_BIKE, TRUE)
+    if (var(VAR_RESULT) == 0) {
+        goto(BikeShop_Jaouad_EventScript_GetMachBike)
+    }
+    if (var(VAR_RESULT) == 1) {
+        goto(BikeShop_Jaouad_EventScript_GetAcroBike)
+    }
+    goto(BikeShop_Jaouad_EventScript_MainMenu)
+}
+
+script BikeShop_Jaouad_EventScript_GetMachBike {
+    msgbox(format("{PLAYER} chose the MACH BIKE."), MSGBOX_DEFAULT)
+    giveitem(ITEM_MACH_BIKE)
+    if (var(VAR_RESULT) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+    setflag(FLAG_RECEIVED_BIKE)
+    goto(BikeShop_Jaouad_EventScript_AfterGive)
+}
+
+script BikeShop_Jaouad_EventScript_GetAcroBike {
+    msgbox(format("{PLAYER} chose the ACRO BIKE."), MSGBOX_DEFAULT)
+    giveitem(ITEM_ACRO_BIKE)
+    if (var(VAR_RESULT) == FALSE) {
+        goto(Common_EventScript_ShowBagIsFull)
+    }
+    setflag(FLAG_RECEIVED_BIKE)
+    goto(BikeShop_Jaouad_EventScript_AfterGive)
+}
+
+script BikeShop_Jaouad_EventScript_AfterGive {
+    msgbox(format("Come back any time you want the other one. I'll swap it out for you."), MSGBOX_DEFAULT)
+    special(SwapRegisteredBike)
+    release
+    end
+}
+
+script BikeShop_Jaouad_EventScript_SwitchPrompt {
+    msgbox(format("Want to switch BIKES?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        goto(BikeShop_Jaouad_EventScript_SwitchBikes)
+    }
+    msgbox(format("Good choice. It'll serve you well."), MSGBOX_DEFAULT)
+    release
+    end
+}
+
+script BikeShop_Jaouad_EventScript_SwitchBikes {
+    msgbox(format("Sure. Hand it over."), MSGBOX_DEFAULT)
+    checkitem(ITEM_ACRO_BIKE)
+    if (var(VAR_RESULT) == TRUE) {
+        goto(BikeShop_Jaouad_EventScript_SwitchAcroForMach)
+    }
+    checkitem(ITEM_MACH_BIKE)
+    if (var(VAR_RESULT) == TRUE) {
+        goto(BikeShop_Jaouad_EventScript_SwitchMachForAcro)
+    }
+    msgbox(format("Your BIKE is in PC storage? Hmm.\pTake it out first. Then we can swap."), MSGBOX_DEFAULT)
+    release
+    end
+}
+
+script BikeShop_Jaouad_EventScript_SwitchAcroForMach {
+    incrementgamestat(GAME_STAT_TRADED_BIKES)
+    removeitem(ITEM_ACRO_BIKE)
+    giveitem(ITEM_MACH_BIKE)
+    msgbox(format("{PLAYER} swapped the ACRO BIKE for a MACH BIKE."), MSGBOX_DEFAULT)
+    goto(BikeShop_Jaouad_EventScript_AfterSwap)
+}
+
+script BikeShop_Jaouad_EventScript_SwitchMachForAcro {
+    incrementgamestat(GAME_STAT_TRADED_BIKES)
+    removeitem(ITEM_MACH_BIKE)
+    giveitem(ITEM_ACRO_BIKE)
+    msgbox(format("{PLAYER} swapped the MACH BIKE for an ACRO BIKE."), MSGBOX_DEFAULT)
+    goto(BikeShop_Jaouad_EventScript_AfterSwap)
+}
+
+script BikeShop_Jaouad_EventScript_AfterSwap {
+    msgbox(format("Come back any time you want the other one. I'll swap it out for you."), MSGBOX_DEFAULT)
+    special(SwapRegisteredBike)
+    release
+    end
+}

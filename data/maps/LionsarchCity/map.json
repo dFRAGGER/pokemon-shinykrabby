@@ -34,11 +34,6 @@
       "direction": "right"
     },
     {
-      "map": "MAP_ROUTE01205",
-      "offset": 10,
-      "direction": "down"
-    },
-    {
       "map": "MAP_ROUTE012",
       "offset": 10,
       "direction": "down"
@@ -564,6 +559,20 @@
       "elevation": 0,
       "dest_map": "MAP_LIONSARCH_CITY_INDOOR_HOUSE3",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_LIONSARCH_CITY_STEEL_FACTORY_2F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 15,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_LIONSARCH_CITY_STEEL_FACTORY_2F",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],
@@ -622,7 +631,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "LionsarchCity_Sign_Route06"
     },
     {
       "type": "sign",

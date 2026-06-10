@@ -494,10 +494,3 @@ void LookThroughPorthole(void)
     TrySetPortholeWarpDestination();
     DoPortholeWarp();
 }
-
-void Special_ReloadPrimaryTileset(void)
-{
-    CopyPrimaryTilesetToVram(gMapHeader.mapLayout);
-    LoadMapTilesetPalettes(gMapHeader.mapLayout);
-    DrawWholeMapView();
-}

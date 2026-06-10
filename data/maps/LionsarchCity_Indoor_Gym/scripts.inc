@@ -129,9 +129,9 @@ LionsarchGym_Leader2::
 # 103 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	faceplayer
 # 104 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	setspeaker LionsarchGym_Leader1_Text_0
+	setspeaker LionsarchGym_Leader2_Text_0
 # 105 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	msgbox LionsarchGym_Leader2_Text_2
+	msgbox LionsarchGym_Leader2_Text_3
 # 106 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	waitmessage
 # 107 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
@@ -146,9 +146,9 @@ LionsarchGym_Leader2_2:
 # 86 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	faceplayer
 # 87 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	setspeaker LionsarchGym_Leader1_Text_0
+	setspeaker LionsarchGym_Leader2_Text_0
 # 88 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	msgbox LionsarchGym_Leader2_Text_0
+	msgbox LionsarchGym_Leader2_Text_1
 # 89 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	waitmessage
 # 90 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
@@ -161,9 +161,9 @@ LionsarchGym_Leader2_5:
 # 95 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	faceplayer
 # 96 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	setspeaker LionsarchGym_Leader1_Text_0
+	setspeaker LionsarchGym_Leader2_Text_0
 # 97 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	msgbox LionsarchGym_Leader2_Text_1
+	msgbox LionsarchGym_Leader2_Text_2
 # 98 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	waitmessage
 # 99 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
@@ -177,7 +177,7 @@ LionsarchGym_Leader2_Defeated::
 # 114 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	lock
 # 115 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	setspeaker LionsarchGym_Leader1_Text_0
+	setspeaker LionsarchGym_Leader2_Text_0
 # 116 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	msgbox LionsarchGym_Leader2_Defeated_Text_0
 # 117 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
@@ -193,7 +193,7 @@ LionsarchGym_Leader2_Defeated::
 # 122 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	waitmessage
 # 123 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	setspeaker LionsarchGym_Leader1_Text_0
+	setspeaker LionsarchGym_Leader2_Text_0
 # 124 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	msgbox LionsarchGym_Leader2_Defeated_Text_2
 # 125 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
@@ -304,7 +304,7 @@ LionsarchGym_Guide_Text_3:
 
 LionsarchGym_Leader1_Text_0:
 # 38 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	.string "???$"
+	.string "Tanya$"
 
 LionsarchGym_Leader1_Text_1:
 # 39 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
@@ -329,16 +329,20 @@ LionsarchGym_Leader1_Defeated_Text_0:
 	.string "east!$"
 
 LionsarchGym_Leader2_Text_0:
+# 87 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+	.string "Tara$"
+
+LionsarchGym_Leader2_Text_1:
 # 88 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "Two peaks stand as one.\n"
 	.string "You have earned our respect.$"
 
-LionsarchGym_Leader2_Text_1:
+LionsarchGym_Leader2_Text_2:
 # 97 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "You must face the west mountain first.\n"
 	.string "The east will wait.$"
 
-LionsarchGym_Leader2_Text_2:
+LionsarchGym_Leader2_Text_3:
 # 105 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "You overcame the west.\n"
 	.string "Now face the fury of the east mountain!$"

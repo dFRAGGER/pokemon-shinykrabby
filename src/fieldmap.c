@@ -1081,3 +1081,14 @@ void LoadMapTilesetPalettes(struct MapLayout const *mapLayout)
         LoadSecondaryTilesetPalette(mapLayout, FALSE);
     }
 }
+
+// Like LoadMapTilesetPalettes but writes only to gPlttBufferUnfaded, leaving
+// gPlttBufferFaded untouched so day/night tints applied by the gamma system persist.
+void LoadMapTilesetPalettesSkipFaded(struct MapLayout const *mapLayout)
+{
+    if (mapLayout)
+    {
+        LoadTilesetPalette(mapLayout->primaryTileset, 0, GetNumPalsInPrimary(mapLayout) * PLTT_SIZE_4BPP, TRUE, GetNumPalsInPrimary(mapLayout));
+        LoadSecondaryTilesetPalette(mapLayout, TRUE);
+    }
+}

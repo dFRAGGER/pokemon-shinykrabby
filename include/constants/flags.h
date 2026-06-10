@@ -383,7 +383,6 @@
 // Some Match Call entries (like those for gym leaders, Wally, and all non-trainer NPCs like Prof. Birch)
 // have their own separate flag that needs to be set to be enabled; see src/pokenav_match_call_data.c
 #define TRAINER_REGISTERED_FLAGS_START       0x15C
-#define FLAG_REGISTERED_ROSE                 (TRAINER_REGISTERED_FLAGS_START + REMATCH_ROSE)
 #define FLAG_REGISTERED_ANDRES               (TRAINER_REGISTERED_FLAGS_START + REMATCH_ANDRES)
 #define FLAG_REGISTERED_DUSTY                (TRAINER_REGISTERED_FLAGS_START + REMATCH_DUSTY)
 #define FLAG_REGISTERED_LOLA                 (TRAINER_REGISTERED_FLAGS_START + REMATCH_LOLA)
@@ -696,19 +695,19 @@
 #define FLAG_MEW_SAW_FACTORY_NOT_FREED     0x287 // Mew witnessed the Pokemon not being freed
 #define FLAG_HIDE_FACULTY_AT_WESTLION_MINE  0x288 // Unused Flag
 #define FLAG_HIDE_MINING_CAVE_B1F_SCIENTIST  0x289
-#define FLAG_UNUSED_0x28A  0x28A // Unused Flag
-#define FLAG_UNUSED_0x28B  0x28B // Unused Flag
-#define FLAG_UNUSED_0x28C  0x28C // Unused Flag
-#define FLAG_UNUSED_0x28D  0x28D // Unused Flag
-#define FLAG_UNUSED_0x28E  0x28E // Unused Flag
-#define FLAG_UNUSED_0x28F  0x28F // Unused Flag
-#define FLAG_UNUSED_0x290  0x290 // Unused Flag
-#define FLAG_UNUSED_0x291  0x291 // Unused Flag
-#define FLAG_UNUSED_0x292  0x292 // Unused Flag
-#define FLAG_UNUSED_0x293  0x293 // Unused Flag
-#define FLAG_UNUSED_0x294  0x294 // Unused Flag
-#define FLAG_UNUSED_0x295  0x295 // Unused Flag
-#define FLAG_UNUSED_0x296  0x296 // Unused Flag
+#define FLAG_PETER_GAVE_TUNNEL_PERMISSION  0x28A // Peter revealed the tunnel after hearing about the mine incident
+#define FLAG_STEEL_FACTORY_2F_SCIENTIST_1  0x28B // 2F scientist trainer 1 defeated
+#define FLAG_STEEL_FACTORY_2F_GRUNT        0x28C // 2F faculty grunt defeated
+#define FLAG_STEEL_FACTORY_2F_SCIENTIST_2  0x28D // 2F scientist trainer 2 defeated
+#define FLAG_STEEL_FACTORY_WIRE_1_PULLED    0x28E // Machine wire 1 disconnected
+#define FLAG_STEEL_FACTORY_WIRE_2_PULLED    0x28F // Machine wire 2 disconnected
+#define FLAG_STEEL_FACTORY_WIRE_3_PULLED    0x290 // Machine wire 3 disconnected
+#define FLAG_STEEL_FACTORY_WIRE_4_PULLED    0x291 // Machine wire 4 disconnected
+#define FLAG_STEEL_FACTORY_WIRE_5_PULLED    0x292 // Machine wire 5 disconnected
+#define FLAG_STEEL_FACTORY_ALL_WIRES_PULLED 0x293 // All 5 wires disconnected, hidden passage opened
+#define FLAG_STEEL_FACTORY_ARON_HIDDEN      0x294 // Hides Aron when SET (object event flag)
+#define FLAG_STEEL_FACTORY_ARON_INTRO_DONE  0x295 // Aron intro trigger fired once
+#define FLAG_STEEL_FACTORY_ARON_GUIDING     0x296 // Player chose YES, Aron actively guides
 #define FLAG_UNUSED_0x297  0x297 // Unused Flag
 #define FLAG_UNUSED_0x298  0x298 // Unused Flag
 #define FLAG_UNUSED_0x299  0x299 // Unused Flag

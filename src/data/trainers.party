@@ -633,63 +633,47 @@ SPECIES_SMOOCHUM
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_ROSE_1 ===
-Name: ROSE
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Roselia
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Shroomish
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Roselia
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_FELIX ===
-Name: FELIX
-Class: Cooltrainer
-Pic: Cooltrainer M
+=== TRAINER_FACULTY_2F_SCIENTIST_1 ===
+Name: DR. VOSS
+Class: Scientist FrLg
+Pic: Scientist FrLg
 Gender: Male
-Music: Cool
-Items: Full Restore
+Music: Rich
 Double Battle: No
 AI: Basic Trainer
 
-Medicham
-Level: 43
+Magneton
+Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Psychic
 
-Claydol
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Skill Swap
-- Earthquake
-
-=== TRAINER_VIOLET ===
-Name: VIOLET
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
+=== TRAINER_FACULTY_2F_GRUNT ===
+Name: HARKIN
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Rich
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Roselia
-Level: 26
+Lairon
+Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Gloom
-Level: 26
+Lairon
+Level: 16
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_FACULTY_2F_SCIENTIST_2 ===
+Name: DR. VALE
+Class: Scientist FrLg
+Pic: Scientist FrLg
+Gender: Male
+Music: Rich
+Double Battle: No
+AI: Basic Trainer
+
+Metang
+Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ROSE_2 ===
@@ -822,22 +806,22 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Sand Attack
 - Poison Sting
 
-=== TRAINER_FOSTER ===
-Name: CORVIN
+=== TRAINER_FACULTY_GUARD_B1F_1 ===
+Name: ADDIE
 Class: Gentleman
-Pic: Magma Grunt M
+Pic: Gentleman
 Gender: Male
 Music: Rich
 Double Battle: No
 AI: Basic Trainer
 
 Aron
-Level: 18
-IVs: 5 HP / 5 Atk / 5 Def / 5 SpA / 5 SpD / 5 Spe
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Magnemite
-Level: 18
-IVs: 5 HP / 5 Atk / 5 Def / 5 SpA / 5 SpD / 5 Spe
+Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DUSTY_2 ===
 Name: DUSTY
@@ -1252,7 +1236,7 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Rhyhorn
+Swinub
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2025,22 +2009,38 @@ Grumpig
 Level: 42
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-=== TRAINER_CINDY_1 ===
-Name: VANCE
+=== TRAINER_FACULTY_GUARD_B1F_2 ===
+Name: AD DICE
 Class: Gentleman
-Pic: Magma Grunt M
+Pic: Gentleman
 Gender: Male
 Music: Rich
 Double Battle: No
 AI: Basic Trainer
 
-Koffing
-Level: 19
-IVs: 5 HP / 5 Atk / 5 Def / 5 SpA / 5 SpD / 5 Spe
+Magnemite
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Nosepass
-Level: 20
-IVs: 5 HP / 5 Atk / 5 Def / 5 SpA / 5 SpD / 5 Spe
+Magnemite
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Magnemite
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Magnemite
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Magnemite
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Magnemite
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DAPHNE ===
 Name: DAPHNE
@@ -2670,22 +2670,22 @@ Carvanha
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_DOMINIK ===
+=== TRAINER_FACULTY_SCIENTIST_1 ===
 Name: DR. HARLOW
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Scientist FrLg
+Pic: Scientist FrLg
 Gender: Male
 Music: Rich
 Double Battle: No
 AI: Basic Trainer
 
 Magnemite
-Level: 20
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Level: 14
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Beldum
-Level: 20
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Level: 14
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DOUGLAS ===
 Name: DOUGLAS
@@ -5876,22 +5876,18 @@ Poochyena
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_BILLY ===
+=== TRAINER_FACULTY_SCIENTIST_2 ===
 Name: DR. PELL
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Scientist FrLg
+Pic: Scientist FrLg
 Gender: Male
 Music: Rich
 Double Battle: No
 AI: Basic Trainer
 
-Aron
-Level: 20
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-
-Magneton
-Level: 22
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Magnemite
+Level: 16
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JOSH ===
 Name: JOSH
@@ -8026,7 +8022,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Earthquake
 - Sunny Day
 
-=== TRAINER_BEVERLY ===
+=== TRAINER_FACULTY_OFFICIAL_1 ===
 Name: ALDRIC
 Class: Gentleman
 Pic: Gentleman
@@ -8036,12 +8032,16 @@ Double Battle: No
 AI: Basic Trainer
 
 Torkoal
-Level: 21
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Level: 14
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Lairon
-Level: 22
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Level: 14
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Aron
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_IMANI ===
 Name: IMANI
@@ -10967,7 +10967,7 @@ Camerupt
 Level: 25
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_TIANA ===
+=== TRAINER_FACULTY_OFFICIAL_2 ===
 Name: LORENZ
 Class: Gentleman
 Pic: Gentleman
@@ -10976,13 +10976,17 @@ Music: Rich
 Double Battle: No
 AI: Basic Trainer
 
-Mawile
-Level: 22
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Aron
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Forretress
-Level: 22
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Aron
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Lairon
+Level: 14
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HALEY_1 ===
 Name: HALEY
@@ -12890,7 +12894,7 @@ Zigzagoon @ Nugget
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_DARIAN ===
+=== TRAINER_FACULTY_OFFICIAL_3 ===
 Name: SEVAN
 Class: Gentleman
 Pic: Gentleman
@@ -12900,12 +12904,8 @@ Double Battle: No
 AI: Basic Trainer
 
 Skarmory
-Level: 23
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Steelix
-Level: 24
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HAILEY ===
 Name: HAILEY
@@ -16822,8 +16822,12 @@ Music: Suspicious
 Double Battle: No
 
 Swinub
-Level: 22
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Level: 17
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Swinub
+Level: 17
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_LIONSARCH_HIKER_2 ===
 Name: CLIFFORD
@@ -16833,9 +16837,13 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 
+Smoochum
+Level: 17
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
 Snorunt
-Level: 22
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Level: 17
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_LIONSARCH_HIKER_3 ===
 Name: GLEN
@@ -16845,9 +16853,13 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 
+Swinub
+Level: 17
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
 Sneasel
-Level: 23
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Level: 17
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_LIONSARCH_HIKER_4 ===
 Name: ANDERS
@@ -16857,9 +16869,9 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 
-Piloswine
-Level: 24
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Delibird
+Level: 20
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_LIONSARCH_HIKER_5 ===
 Name: DUNN
@@ -16869,30 +16881,58 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 
-Beartic
-Level: 24
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Spheal
+Level: 17
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Seel
+Level: 17
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_LIONSARCH_LEADER1 ===
-Name: ???
+Name: TANYA
 Class: Leader
 Pic: Leader Winona
 Gender: Female
 Music: Intense
 Double Battle: No
 
-Froslass
-Level: 27
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Snorunt
+Level: 20
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+Jynx
+Level: 20
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+Glalie
+Level: 22
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+
+Piloswine @ Sitrus Berry
+Level: 24
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 === TRAINER_LIONSARCH_LEADER2 ===
-Name: ???
+Name: TARA
 Class: Leader
 Pic: Leader Winona
 Gender: Female
 Music: Intense
 Double Battle: No
 
-Weavile
-Level: 28
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Swinub
+Level: 20
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+Spheal
+Level: 20
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+Sealeo
+Level: 22
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+
+Lapras @ Sitrus Berry
+Level: 24
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe

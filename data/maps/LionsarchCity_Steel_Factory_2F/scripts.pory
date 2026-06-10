@@ -1,5 +1,85 @@
 mapscripts LionsarchCity_Steel_Factory_2F_MapScripts {}
 
+// ─── 2F TRAINERS ───
+
+script SteelFactory_2F_Scientist_Battle1 {
+    trainerbattle_single(TRAINER_FACULTY_2F_SCIENTIST_1, SteelFactory_2F_Scientist1_Intro, SteelFactory_2F_Scientist1_Defeat)
+    msgbox(SteelFactory_2F_Scientist1_PostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script SteelFactory_2F_Grunt_Battle {
+    trainerbattle_single(TRAINER_FACULTY_2F_GRUNT, SteelFactory_2F_Grunt_Intro, SteelFactory_2F_Grunt_Defeat)
+    msgbox(SteelFactory_2F_Grunt_PostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script SteelFactory_2F_Scientist_Battle2 {
+    trainerbattle_single(TRAINER_FACULTY_2F_SCIENTIST_2, SteelFactory_2F_Scientist2_Intro, SteelFactory_2F_Scientist2_Defeat)
+    msgbox(SteelFactory_2F_Scientist2_PostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text SteelFactory_2F_Scientist1_Intro {
+    format("You've made it this far?\pThe Director will hear about this intrusion.")
+}
+
+text SteelFactory_2F_Scientist1_Defeat {
+    format("Impossible.\pMy calculations were... flawless.")
+}
+
+text SteelFactory_2F_Scientist1_PostBattle {
+    format("Keep moving.\pYou've already disrupted weeks of research.")
+}
+
+text SteelFactory_2F_Grunt_Intro {
+    format("Nobody gets past this floor without Faculty clearance.\pThat means you.")
+}
+
+text SteelFactory_2F_Grunt_Defeat {
+    format("How...?\pYou're just a kid!")
+}
+
+text SteelFactory_2F_Grunt_PostBattle {
+    format("The Rector's going to hear about every single one of you.")
+}
+
+text SteelFactory_2F_Scientist2_Intro {
+    format("Turn around.\pThis floor is restricted.\pI won't ask twice.")
+}
+
+text SteelFactory_2F_Scientist2_Defeat {
+    format("My containment protocol...\pIt failed.")
+}
+
+text SteelFactory_2F_Scientist2_PostBattle {
+    format("You'll regret reaching that door.")
+}
+
+// ─── 2F LORE NPCS ───
+
+script SteelFactory_2F_Scientist_Lore1 {
+    lockall
+    faceplayer
+    msgbox(SteelFactory_2F_Scientist_Lore1_Text)
+    releaseall
+}
+
+script SteelFactory_2F_Grunt_Lore1 {
+    lockall
+    faceplayer
+    msgbox(SteelFactory_2F_Grunt_Lore1_Text)
+    releaseall
+}
+
+text SteelFactory_2F_Scientist_Lore1_Text {
+    format("This floor handles Faculty coordination.\pThe Rector reviews all field reports personally.\pWe don't get many... visitors.")
+}
+
+text SteelFactory_2F_Grunt_Lore1_Text {
+    format("I just make sure the floor stays clear.\pThe researchers up here don't like being disturbed.\pNeither does the Director.")
+}
+
 // ─── BARRY - RECTOR'S PROTEGE ───
 
 script SteelFactory_2F_Barry {
@@ -43,7 +123,7 @@ script SteelFactory_2F_Rector {
     lock
     faceplayer
     if (flag(FLAG_STEEL_FACTORY_RECTOR_DEFEATED) == TRUE) {
-        setspeaker("Director Harkon")
+        setspeaker("The Rector")
         msgbox(SteelFactory_2F_Rector_After)
         waitmessage
         setspeaker(NULL)
@@ -51,20 +131,20 @@ script SteelFactory_2F_Rector {
         end
     }
     if (flag(FLAG_STEEL_FACTORY_BARRY_DEFEATED) == FALSE) {
-        setspeaker("Director Harkon")
+        setspeaker("The Rector")
         msgbox(SteelFactory_2F_Rector_BarryNotDefeated)
         waitmessage
         setspeaker(NULL)
         release
         end
     }
-    setspeaker("Director Harkon")
+    setspeaker("The Rector")
     msgbox(SteelFactory_2F_Rector_Intro1)
     waitmessage
-    setspeaker("Director Harkon")
+    setspeaker("The Rector")
     msgbox(SteelFactory_2F_Rector_Intro2)
     waitmessage
-    setspeaker("Director Harkon")
+    setspeaker("The Rector")
     msgbox(SteelFactory_2F_Rector_Intro3)
     waitmessage
     setspeaker(NULL)
@@ -76,28 +156,28 @@ script SteelFactory_2F_Rector {
 
 script SteelFactory_2F_Rector_Defeated {
     lock
-    setspeaker("Director Harkon")
+    setspeaker("The Rector")
     msgbox(SteelFactory_2F_Rector_DefeatedText)
     waitmessage
     playse(SE_DOOR)
     setspeaker("Faculty Agent")
     msgbox(SteelFactory_2F_Agent_Alert)
     waitmessage
-    setspeaker("Director Harkon")
+    setspeaker("The Rector")
     msgbox(SteelFactory_2F_Rector_Evacuation)
     waitmessage
     fadescreen(FADE_TO_BLACK)
     delay(60)
     fadescreen(FADE_FROM_BLACK)
-    setspeaker("Director Harkon")
+    setspeaker("The Rector")
     msgbox(SteelFactory_2F_Rector_Monologue)
     waitmessage
     if (flag(FLAG_STEEL_FACTORY_FREED_POKEMON) == TRUE) {
-        setspeaker("Director Harkon")
+        setspeaker("The Rector")
         msgbox(SteelFactory_2F_Rector_OutroFreed)
         waitmessage
     } else {
-        setspeaker("Director Harkon")
+        setspeaker("The Rector")
         msgbox(SteelFactory_2F_Rector_OutroNotFreed)
         waitmessage
     }
@@ -121,27 +201,27 @@ script SteelFactory_2F_Rector_Defeated {
 // ─── TEXT ───
 
 text SteelFactory_2F_Barry_Intro {
-    format("You made it this far.\pImpressive. The Director chose well\lwhen he took me on.\pBut this is where your run ends.\pI've trained every day for this moment.\lI'm not going to waste it.")
+    format("You made it this far.\pImpressive. The Director chose well when he took me on.\pBut this is where your run ends.\pThat stupid fish finally became something usefull. You'll be surprised.")
 }
 
 text SteelFactory_2F_Barry_BattleIntro {
-    format("You've made it to the Director's floor.\pThat ends here!")
+    format("You've made it to The Rector's floor.\pThat ends here!")
 }
 
 text SteelFactory_2F_Barry_BattleDefeat {
-    format("I... I don't understand.\pI've trained every day for this.")
+    format("I... I don't understand.\pEven that stupid fish.. did not work?")
 }
 
 text SteelFactory_2F_Barry_DefeatedText {
-    format("I was supposed to be the wall between\lyou and the Director.\pI failed.")
+    format("I was supposed to be the wall between you and The Rector.\pI failed.")
 }
 
 text SteelFactory_2F_Barry_StepAside {
-    format("...Go. He's waiting.\pBut whatever you think you're stopping\lhere - the Faculty's reach goes further\lthan this building.\pFar further.")
+    format("...Go. He's waiting.\pBut whatever you think you're stopping here, the Faculty's reach goes further than this building.\pFar further.")
 }
 
 text SteelFactory_2F_Barry_After {
-    format("The Director is behind that door.\pHe's not going to run.\lHe never does.")
+    format("The Rector is behind that door.\pHe's not going to run.\lHe never does.")
 }
 
 text SteelFactory_2F_Rector_BarryNotDefeated {
@@ -153,11 +233,11 @@ text SteelFactory_2F_Rector_After {
 }
 
 text SteelFactory_2F_Rector_Intro1 {
-    format("So you're the one.\pI've had reports of an outsider\ldisrupting my facility all morning.\pTell me - do you even understand\lwhat we are building here?")
+    format("So you're the one.\pI've had reports of an outsider disrupting my facility all morning.\pTell me, do you even understand what we are building here?")
 }
 
 text SteelFactory_2F_Rector_Intro2 {
-    format("Regigigas didn't create the golems\lout of kindness.\pIt created ORDER.\pStone for strength.\lIron for structure.\lIce for stillness.\pThe Teressa region has forgotten\lthat lesson.\pWe are here to remind it.")
+    format("Regigigas didn't create the golems out of kindness.\pIt created ORDER.\pStone for strength.\pIron for structure.\pIce for stillness.\pThe Teressa region has forgotten that lesson.\pWe are here to remind it.")
 }
 
 text SteelFactory_2F_Rector_Intro3 {
@@ -165,7 +245,7 @@ text SteelFactory_2F_Rector_Intro3 {
 }
 
 text SteelFactory_2F_Rector_BattleIntro {
-    format("Come then. Show me what passes for\lstrength in this chaotic region.")
+    format("Come then. Show me what passes for strength in this chaotic region.")
 }
 
 text SteelFactory_2F_Rector_BattleDefeat {
@@ -177,7 +257,7 @@ text SteelFactory_2F_Rector_DefeatedText {
 }
 
 text SteelFactory_2F_Agent_Alert {
-    format("Director! The extraction team is\lready.\pWe need to move - NOW.")
+    format("Rector! The extraction team is ready.\pWe need to move - NOW.")
 }
 
 text SteelFactory_2F_Rector_Evacuation {
@@ -185,15 +265,15 @@ text SteelFactory_2F_Rector_Evacuation {
 }
 
 text SteelFactory_2F_Rector_Monologue {
-    format("You won a battle, child.\pThe Faculty has already won\lthe campaign.\pThe Regi-Metal is gone.\lEvery last gram.\pYou'll understand the scale of what\lyou've failed to stop... eventually.")
+    format("You won a battle, child.\pThe Faculty has already won the campaign.\pThe Regi-Metal is gone. Every last gram.\pYou'll understand the scale of what you've failed to stop... eventually.")
 }
 
 text SteelFactory_2F_Rector_OutroFreed {
-    format("...I see you opened the containment\lbays.\pSentimental.\pEnjoy your small mercy.")
+    format("...I see you opened the containment bays.\pSentimental.\pEnjoy your small mercy.")
 }
 
 text SteelFactory_2F_Rector_OutroNotFreed {
-    format("The Pokemon below are yours now,\lI suppose.\pCongratulations on your rescue\loperation.\pOr lack thereof.")
+    format("The Pokemon below are yours now, I suppose.\pCongratulations on your rescue operation.\pOr lack thereof.")
 }
 
 text SteelFactory_2F_Mew_Warm {

@@ -138,14 +138,13 @@ House1_FishingTrophy_Text_0:
 	.string "A weathered bronze plaque rests on a\n"
 	.string "small shelf:\p"
 	.string "'1ST PLACE - LIONSARCH HARBOR CATCH\n"
-	.string "CUP\n"
+	.string "CUP\p"
 	.string "Year 42\p"
-	.string "Winner: S. BRANDERS\n"
+	.string "Winner: S. BRANDERS\p"
 	.string "One Gyarados, 580 lbs'\p"
 	.string "Below it, a faded photograph of a much\n"
-	.string "younger Sven\n"
-	.string "hoisting a bent rod with both arms,\l"
-	.string "grinning wildly.$"
+	.string "younger Sven hoisting a bent rod with\l"
+	.string "both arms, grinning wildly.$"
 
 House1_ShippingMap_Text_0:
 # 45 "data/maps/LionsarchCity_Indoor_House1/scripts.pory"

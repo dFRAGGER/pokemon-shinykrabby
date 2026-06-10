@@ -169,6 +169,7 @@
 #define MULTI_HOF_EGGS_VICTORIES_QUIT                    158
 #define MULTI_HERB_PREP                                  159
 #define MULTI_HERB_GUIDE                                 160
+#define MULTI_KASMI_MENU                                 161
 
 #define MULTI_NONE 255
 

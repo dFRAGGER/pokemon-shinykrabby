@@ -35,7 +35,7 @@ script LionsarchGym_Leader1 {
     lock
     if (flag(FLAG_BADGE03_GET) == TRUE) {
         faceplayer
-        setspeaker("???")
+        setspeaker("Tanya")
         msgbox(format("Two peaks stand as one.\nYou have proven yourself."))
         waitmessage
         setspeaker(NULL)
@@ -44,7 +44,7 @@ script LionsarchGym_Leader1 {
     }
     if (flag(FLAG_DEFEATED_LIONSARCH_LEADER1) == FALSE) {
         faceplayer
-        setspeaker("???")
+        setspeaker("Tanya")
         msgbox(format("You made it through the storm?\nThe west mountain does not yield so easily..."))
         waitmessage
         setspeaker(NULL)
@@ -52,7 +52,7 @@ script LionsarchGym_Leader1 {
     }
     else {
         faceplayer
-        setspeaker("???")
+        setspeaker("Tanya")
         msgbox(format("Defeat my partner, then claim your prize."))
         waitmessage
         setspeaker(NULL)
@@ -63,7 +63,7 @@ script LionsarchGym_Leader1 {
 
 script LionsarchGym_Leader1_Defeated {
     lock
-    setspeaker("???")
+    setspeaker("Tanya")
     msgbox(format("The west peak bows to your strength.\nMy partner still stands - face the east!"))
     waitmessage
     setspeaker(NULL)
@@ -84,7 +84,7 @@ script LionsarchGym_Leader2 {
     lock
     if (flag(FLAG_BADGE03_GET) == TRUE) {
         faceplayer
-        setspeaker("???")
+        setspeaker("Tara")
         msgbox(format("Two peaks stand as one.\nYou have earned our respect."))
         waitmessage
         setspeaker(NULL)
@@ -93,7 +93,7 @@ script LionsarchGym_Leader2 {
     }
     if (flag(FLAG_DEFEATED_LIONSARCH_LEADER1) == FALSE) {
         faceplayer
-        setspeaker("???")
+        setspeaker("Tara")
         msgbox(format("You must face the west mountain first.\nThe east will wait."))
         waitmessage
         setspeaker(NULL)
@@ -101,7 +101,7 @@ script LionsarchGym_Leader2 {
         end
     }
     faceplayer
-    setspeaker("???")
+    setspeaker("Tara")
     msgbox(format("You overcame the west.\nNow face the fury of the east mountain!"))
     waitmessage
     setspeaker(NULL)
@@ -112,7 +112,7 @@ script LionsarchGym_Leader2 {
 
 script LionsarchGym_Leader2_Defeated {
     lock
-    setspeaker("???")
+    setspeaker("Tara")
     msgbox(format("The east peak falls too...\pYou have conquered both Lion Mountains."))
     waitmessage
     call(Common_EventScript_PlayGymBadgeFanfare)
@@ -120,7 +120,7 @@ script LionsarchGym_Leader2_Defeated {
     setspeaker(NULL)
     msgbox(format("You received the PEAK BADGE!"))
     waitmessage
-    setspeaker("???")
+    setspeaker("Tara")
     msgbox(format("The PEAK BADGE lets all Pokémon up to level 40 obey without question.\pYou may now use STRENGTH outside of battle.\pMay your path lead you over many mountains."))
     waitmessage
     giveitem(ITEM_HM04)

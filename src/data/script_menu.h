@@ -1115,6 +1115,16 @@ static const struct MenuAction sMultichoiceList_HerbPrep[] = {
     { sText_PrepCancel },
 };
 
+static const u8 sText_KasmiTaxTricks[]  = COMPOUND_STRING("Tax tricks");
+static const u8 sText_KasmiBike[]       = COMPOUND_STRING("Bike");
+static const u8 sText_KasmiNevermind[]  = COMPOUND_STRING("Never mind");
+
+static const struct MenuAction sMultichoiceList_KasmiMenu[] = {
+    { sText_KasmiTaxTricks },
+    { sText_KasmiBike      },
+    { sText_KasmiNevermind },
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -1289,6 +1299,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_HOF_EGGS_VICTORIES_QUIT]                    = MULTICHOICE(sMultichoiceList_HOF_Eggs_Victories_Quit),
     [MULTI_HERB_PREP]                                  = MULTICHOICE(sMultichoiceList_HerbPrep),
     [MULTI_HERB_GUIDE]                                 = MULTICHOICE(sMultichoiceList_HerbGuide),
+    [MULTI_KASMI_MENU]                                 = MULTICHOICE(sMultichoiceList_KasmiMenu),
 };
 
 const u8 *const gStdStrings[] =

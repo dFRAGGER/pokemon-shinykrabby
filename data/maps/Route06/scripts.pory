@@ -1,1 +1,8 @@
 mapscripts Route06_MapScripts {}
+
+script Route06_Sign_EndofBeta {
+    lock
+    msgbox(format("This is the end of the beta test.\pThank you for playing!\pPlease report any bugs you find to the developer."))
+    waitmessage
+    release
+}
