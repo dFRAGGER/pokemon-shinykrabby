@@ -10,6 +10,23 @@ mapscripts ErpCity_MapScripts {
     
 }
 
+script ErpCity_SpearowFearow_Flyby {
+    setvar(VAR_TEMP_0,1)
+    setobjectsubpriority(11, MAP_ERP_CITY, 0)
+    setobjectsubpriority(12, MAP_ERP_CITY, 0)
+    setobjectsubpriority(13, MAP_ERP_CITY, 0)
+    applymovement(13, moves(jump_2_down walk_fast_down*12))
+    applymovement(12, moves(jump_2_down walk_fast_down*12))
+    applymovement(11, moves(jump_2_down walk_fast_down*12))
+    waitmovement(11)
+    setflag(FLAG_TEMP_1)
+    setflag(FLAG_TEMP_2)
+    setflag(FLAG_TEMP_3)
+    removeobject(13)
+    removeobject(12)
+    removeobject(11)
+}
+
 script ErpCity_Visited {
     setflag(FLAG_VISITED_ERP_CITY)
 }

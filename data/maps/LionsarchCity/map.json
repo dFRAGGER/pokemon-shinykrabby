@@ -11,7 +11,7 @@
   "allow_escaping": false,
   "allow_running": true,
   "show_map_name": true,
-  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "battle_scene": "MAP_BATTLE_SCENE_GLACIA",
   "connections": [
     {
       "map": "MAP_ROUTE05",
@@ -68,7 +68,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
-      "x": 19,
+      "x": 18,
       "y": 51,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -77,7 +77,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_LIONSARCH_FACULTY_SHIPS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
@@ -90,7 +90,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_LIONSARCH_FACULTY_SHIPS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCOTT",
@@ -194,7 +194,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LionsarchCity_FacultyWorker_Suspicious",
-      "flag": "0"
+      "flag": "FLAG_HIDE_LIONSARCH_FACULTY_SHIPS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
@@ -207,7 +207,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LionsarchCity_FacultyGrunt_3",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
@@ -220,7 +220,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LionsarchCity_FacultyGrunt_4",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
@@ -233,7 +233,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LionsarchCity_FacultyGrunt_1",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
@@ -246,7 +246,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LionsarchCity_FacultyGrunt_2",
-      "flag": "0"
+      "flag": "FLAG_HIDE_LIONSARCH_FACULTY_SHIPS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MACHAMP)",
@@ -259,7 +259,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_LIONSARCH_FACULTY_SHIPS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
@@ -494,6 +494,84 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LionsarchCity_NPC_StreetVendor",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_JUAN",
+      "x": 14,
+      "y": 38,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_LIONSARCH_RECTOR_SENDOFF"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKARMORY)",
+      "x": 14,
+      "y": 35,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_LIONSARCH_RECTOR_SENDOFF"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+      "x": 19,
+      "y": 48,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_LIONSARCH_BARRY_SENDOFF"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_FRLG",
+      "x": 19,
+      "y": 49,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_LIONSARCH_CONRECTOR_SENDOFF"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MEW",
+      "x": 4,
+      "y": 38,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_LIONSARCH_RECTOR_SENDOFF"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAGIKARP)",
+      "x": 20,
+      "y": 48,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_LIONSARCH_BARRY_SENDOFF"
     }
   ],
   "warp_events": [

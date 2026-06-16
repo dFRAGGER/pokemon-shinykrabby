@@ -1,7 +1,15 @@
 mapscripts LionsarchCity_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_VISITED_LIONSARCH_CITY)
+        if(flag(FLAG_STEEL_FACTORY_COMPLETE)==FALSE) {
+            setflag(FLAG_HIDE_LIONSARCH_RECTOR_SENDOFF)
+            setflag(FLAG_HIDE_LIONSARCH_BARRY_SENDOFF)
+            setflag(FLAG_HIDE_LIONSARCH_CONRECTOR_SENDOFF)
+        }
     }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_LIONSARCH_CITY_STATE, 1: LionsarchCity_RectorSendoff
+    ]
 }
 
 // ========================================
@@ -10,7 +18,7 @@ mapscripts LionsarchCity_MapScripts {
 
 script LionsarchCity_Sign_Route06 {
     lockall
-    msgbox(format("Upana Cave System\nPath to Marshduke City\pBeware of falling Geodudes!"))
+    msgbox(format("{UP_ARROW} Upana Cave System\nPath to Marshduke City\pBeware of falling Geodudes!"))
     releaseall
 }
 
@@ -353,6 +361,11 @@ script LionsarchCity_NPC_FishingEnthusiast {
 script LionsarchCity_NPC_NewsReporter {
     lockall
     faceplayer
+    if (flag(FLAG_STEEL_FACTORY_COMPLETE) == TRUE) {
+        msgbox(format("Those Faculty ships were gone by the time I got my camera.\pI had a source. Cargo manifests, loading schedules, the lot.\pMy editor killed the story this morning. Said there wasn't enough public interest.\pTwenty years in this job... I've never had a story pulled that fast."))
+        releaseall
+        end
+    }
     msgbox(format("I'm investigating the Faculty's activities for the regional news network.\pThey claim to be mining rare metals, but their security is unusually tight.\pWhat are they really doing in there?"))
     releaseall
 }
@@ -385,6 +398,146 @@ script LionsarchCity_NPC_StreetVendor {
 script LionsarchCity_Scott_ArrivalPoint {
     lockall
     msgbox(format("The industrial dock stretches out before you.\pThe smell of saltwater and diesel fills the air."))
+    releaseall
+}
+
+// ========================================
+// RECTOR SENDOFF CUTSCENE
+// Triggers once after defeating the Rector in Steel Factory 2F
+// ========================================
+
+script LionsarchCity_RectorSendoff {
+    setvar(VAR_LIONSARCH_CITY_STATE, 2)
+    lockall
+    clearflag(FLAG_HIDE_LIONSARCH_RECTOR_SENDOFF)
+    addobject(36)
+    delay(30)
+
+    setspeaker("The Rector")
+    msgbox(format("You fought hard in there.\pYou are lucky my strongest pokemon are on another mission...\pBut it looks like I stalled you long enough for the ships to depart."), MSGBOX_AUTOCLOSE)
+    waitmessage
+
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down*11))
+    waitmovement
+    setflag(FLAG_HIDE_LIONSARCH_FACULTY_SHIPS)
+    applymovement(38, moves(walk_fast_left*7 face_up))
+    waitmovement
+    playse(SE_PIN)
+    applymovement(16, moves(walk_fast_up walk_fast_right face_down emote_exclamation_mark))
+    setspeaker("Barry")
+    msgbox(format("YOU THERE, WE HAVE ENOUGH MATERIALS, LETS MOVE!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(16, moves(walk_fast_right*4 walk_fast_down*3))
+    waitmovement
+    removeobject(16)
+    applymovement(38, moves(walk_fast_right*2 walk_fast_up*2))
+    waitmovement
+    setspeaker("Barry")
+    msgbox(format("AND YOU TWO, LETS KEEP THOSE MUSCLES MOVING!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(17, moves(walk_fast_down*2 walk_fast_right walk_fast_down*4))
+    applymovement(12, moves(walk_fast_right walk_fast_down*2 walk_fast_right walk_fast_down*4))
+    waitmovement(12)
+    removeobject(12)
+    removeobject(17)
+    applymovement(38, moves(walk_fast_right walk_fast_down*2 walk_fast_right*2))
+    applymovement(39, moves(walk_up walk_left))
+    waitmovement(39)
+    setspeaker("The Conrector")
+    msgbox(format("Good job Barr...Wouter. After you."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(38, moves(walk_down))
+    waitmovement
+    removeobject(38)
+    applymovement(39,moves(walk_left walk_down))
+    waitmovement
+    removeobject(39)
+    delay(30)
+    setspeaker("The Rector")
+    msgbox(format("Would you look at that young man, he has a bright future.\pHe is Pushing Boundaries, Developing his Talent and an Inspiration!!\pEverything The Faculty needs."), MSGBOX_AUTOCLOSE)
+    waitmessage
+
+    delay(60)
+    setflag(FLAG_HIDE_LIONSARCH_FACULTY_SHIPS)
+    applymovement(4, moves(walk_slow_down*5))
+    applymovement(3, moves(walk_slow_diag_southwest*2 walk_slow_down*5))
+    waitmovement(3)
+    removeobject(3)
+    removeobject(4)
+    playse(SE_PIN)
+    applymovement(41, moves(emote_exclamation_mark))
+    waitmovement
+    delay(30)
+    applymovement(41, moves(jump_2_down))
+    waitmovement(41)
+    removeobject(41)
+
+    delay(90)
+
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up*11))
+    waitmovement
+    special(RemoveCameraObject)
+    delay(30)
+
+    applymovement(36, moves(face_right))
+    applymovement(LOCALID_PLAYER, moves(face_left))
+    setspeaker("The Rector")
+    msgbox(format("The Faculty is not a building or a plan.\pIt is an understanding, an idea.\pAnd ideas cannot be destroyed."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(120)
+    applymovement(36, moves(face_down))
+    setspeaker("The Rector")
+    msgbox(format("To make a long story short:\nOrder will always prevail.\pIn the end...\pthat is what counts the most.\pSkarmory! Lets go!"), MSGBOX_AUTOCLOSE)
+    waitmessage 
+
+    playmoncry(SPECIES_SKARMORY, CRY_MODE_NORMAL)
+    applymovement(37, moves(jump_down jump_2_down))
+    waitmovement
+    removeobject(37)
+    applymovement(36, moves(fly_up))
+    waitmovement
+    removeobject(36)
+    delay(60)
+    addobject(40)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_question_mark))
+    applymovement(40, moves(walk_fast_right*6 walk_diag_southeast))
+    waitmovement
+    applymovement(40, moves(face_up lock_facing_direction walk_right*4 unlock_facing_direction))
+    waitmovement
+    applymovement(LOCALID_PLAYER, moves(face_down))
+    waitmovement
+    if(flag(FLAG_STEEL_FACTORY_POKEMON_CAGED)) {
+        playmoncry(SPECIES_MEW, CRY_MODE_NORMAL)
+        waitmoncry
+        applymovement(40, moves(emote_heart))
+        waitmovement
+        setspeaker(NULL)
+        msgbox(format("...what are you...?\nYou look happy!"),MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    if(!flag(FLAG_STEEL_FACTORY_POKEMON_CAGED)) {
+        playmoncry(SPECIES_MEW, CRY_MODE_NORMAL)
+        waitmoncry
+        applymovement(40, moves(emote_x))
+        waitmovement
+        setspeaker(NULL)
+        msgbox(format("...what are you...?\nYou look angry..."),MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    delay(90)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_question_mark))
+    applymovement(40, moves(walk_faster_down*8))
+    waitmovement
+    removeobject(40)        
+    delay(60)
+    setflag(FLAG_HIDE_LIONSARCH_RECTOR_SENDOFF)
+    delay(60)
+    pokenavcall(format("… … … … … …\n… … … … … Beep!\pDaan: {PLAYER}.\nYou're in Lionsarch?\pGood. Talk to me.\nWhat is happening there?\p...\p...\p...\pThey just LEFT?\nWith all of it?\p...\pOkay. Okay okay okay.\nI'm not panicking.\p...I might be panicking\na little.\pWe had no idea they were\neven making these things.\pThe materials are gone and we\ndon't even know what they\l are for.\pDid you see where that Skarmory was headed?\pNorth? East? Out to sea?\p...\pAllright...\nthen we have nothing to go on.\p...\pYou're right. You're right.\nThere's nothing left to do\lthere.\pYou stopped them using that\nfactory. That matters.\pHead east for now.\nMarshduke City. Your next\lgym is there.\pKeep moving. Jacob, Ali and I\nare going to go through\leverything you've told us.\pShipping routes, contacts,\nthe Rector's name...\lthere has to be something.\pWe'll be in touch,\n{PLAYER}. Stay safe.\p… … … … … …\n… … … … … Click!"))
+    waitmessage
+    setspeaker(NULL)
     releaseall
 }
 

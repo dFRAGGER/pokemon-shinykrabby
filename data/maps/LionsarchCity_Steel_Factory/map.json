@@ -25,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SteelFactory_1F_Scientist_Lore1",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
@@ -38,7 +38,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "SteelFactory_1F_Scientist_Battle1",
-      "flag": "FLAG_STEEL_FACTORY_SCIENTIST_1"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
@@ -51,7 +51,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SteelFactory_1F_Scientist_Lore2",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
@@ -64,20 +64,20 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SteelFactory_1F_Scientist_Lore3",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
-      "x": 6,
-      "y": 35,
+      "x": 9,
+      "y": 42,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SteelFactory_1F_Scientist_Lore4",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_FREED_POKEMON"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
@@ -90,7 +90,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "SteelFactory_1F_Scientist_Battle2",
-      "flag": "FLAG_STEEL_FACTORY_SCIENTIST_2"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
@@ -103,7 +103,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SteelFactory_1F_Official_Lore1",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
@@ -116,7 +116,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "SteelFactory_1F_Official_Battle1",
-      "flag": "FLAG_STEEL_FACTORY_OFFICIAL_1"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
@@ -129,7 +129,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SteelFactory_1F_Official_Lore2",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
@@ -142,7 +142,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "SteelFactory_1F_Official_Battle3",
-      "flag": "FLAG_STEEL_FACTORY_OFFICIAL_3"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
@@ -155,7 +155,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SteelFactory_1F_Official_Lore3",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
@@ -168,7 +168,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
       "script": "SteelFactory_1F_Official_Battle2",
-      "flag": "FLAG_STEEL_FACTORY_OFFICIAL_2"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
@@ -181,7 +181,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SteelFactory_1F_Scientist_Lore5",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX",
@@ -194,7 +194,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX",
@@ -207,13 +207,13 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TRUCK",
       "x": 18,
-      "y": 25,
-      "elevation": 4,
+      "y": 27,
+      "elevation": 5,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -225,8 +225,8 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TRUCK",
       "x": 18,
-      "y": 27,
-      "elevation": 5,
+      "y": 25,
+      "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -259,7 +259,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAGNEMITE)",
@@ -272,7 +272,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAGNEMITE)",
@@ -285,7 +285,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAGNEMITE)",
@@ -298,7 +298,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAGNEMITE)",
@@ -311,7 +311,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAGNEMITE)",
@@ -324,20 +324,124 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ARON)",
-      "x": 10,
-      "y": 41,
+      "x": 6,
+      "y": 36,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
       "movement_range_x": 1,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
+      "script": "SteelFactory_1F_CellPanel",
+      "flag": "FLAG_STEEL_FACTORY_CELL_ARON_HIDDEN"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ARON)",
+      "x": 3,
+      "y": 40,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_STEEL_FACTORY_POKEMON_CAGED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LAIRON)",
+      "x": 2,
+      "y": 40,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_STEEL_FACTORY_POKEMON_CAGED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ARON)",
+      "x": 9,
+      "y": 39,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_STEEL_FACTORY_POKEMON_CAGED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LAIRON)",
+      "x": 10,
+      "y": 39,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_STEEL_FACTORY_POKEMON_CAGED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LAIRON)",
+      "x": 2,
+      "y": 33,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_STEEL_FACTORY_POKEMON_CAGED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LAIRON)",
+      "x": 9,
+      "y": 32,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_STEEL_FACTORY_POKEMON_CAGED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ARON)",
+      "x": 10,
+      "y": 32,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_STEEL_FACTORY_POKEMON_CAGED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MACHAMP)",
+      "x": 20,
+      "y": 28,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     }
   ],
   "warp_events": [
@@ -371,24 +475,6 @@
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 20,
-      "y": 28,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "NULL"
-    },
-    {
-      "type": "trigger",
-      "x": 21,
-      "y": 28,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "NULL"
-    },
     {
       "type": "trigger",
       "x": 1,

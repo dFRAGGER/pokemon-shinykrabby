@@ -121,10 +121,16 @@ script LionsarchGym_Leader2_Defeated {
     msgbox(format("You received the PEAK BADGE!"))
     waitmessage
     setspeaker("Tara")
-    msgbox(format("The PEAK BADGE lets all Pokémon up to level 40 obey without question.\pYou may now use STRENGTH outside of battle.\pMay your path lead you over many mountains."))
+    msgbox(format("The PEAK BADGE lets all Pokémon up to level 40 obey without question.\pYou may now use ROCK SMASH outside of battle.\pAnd take this.\pWe are ice queens.\pWe do not give out Strength."))
     waitmessage
-    giveitem(ITEM_HM04)
+    giveitem(ITEM_TM07)
+    waitmessage
+    setspeaker("Tara")
+    msgbox(format("That is TM HAIL.\pSummon a blizzard that batters every Pokémon on the field for five turns.\pEvery Ice-type move hits without fail while the storm rages.\pWe have trained in these mountains our entire lives.\pThe cold is not a condition to us.\pIt is a weapon.\pUse it like one."))
+    waitmessage
+    setspeaker(NULL)
     setflag(FLAG_DEFEATED_MAUVILLE_GYM)
+
     call(LionsarchGym_SetTrainerFlags)
     release
     end

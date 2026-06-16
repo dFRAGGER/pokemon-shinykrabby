@@ -1433,7 +1433,7 @@ u16 GetSlotMachineId(void)
 bool8 FoundAbandonedShipRoom1Key(void)
 {
     u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_1_KEY;
+    u16 flag = FLAG_UNUSED_HIDDEN_ITEM_0x1F;
     *specVar = flag;
     if (!FlagGet(flag))
         return FALSE;
@@ -1444,7 +1444,7 @@ bool8 FoundAbandonedShipRoom1Key(void)
 bool8 FoundAbandonedShipRoom2Key(void)
 {
     u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_2_KEY;
+    u16 flag = FLAG_UNUSED_HIDDEN_ITEM_0x20;
     *specVar = flag;
     if (!FlagGet(flag))
         return FALSE;
@@ -1455,7 +1455,7 @@ bool8 FoundAbandonedShipRoom2Key(void)
 bool8 FoundAbandonedShipRoom4Key(void)
 {
     u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_4_KEY;
+    u16 flag = FLAG_UNUSED_HIDDEN_ITEM_0x21;
     *specVar = flag;
     if (!FlagGet(flag))
         return FALSE;
@@ -1466,7 +1466,7 @@ bool8 FoundAbandonedShipRoom4Key(void)
 bool8 FoundAbandonedShipRoom6Key(void)
 {
     u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_6_KEY;
+    u16 flag = FLAG_UNUSED_HIDDEN_ITEM_0x22;
     *specVar = flag;
     if (!FlagGet(flag))
         return FALSE;
@@ -1610,7 +1610,7 @@ static void StopCameraShake(u8 taskId)
 
 bool8 FoundBlackGlasses(void)
 {
-    return FlagGet(FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES);
+    return FlagGet(FLAG_UNUSED_HIDDEN_ITEM_0x60);
 }
 
 void SetRoute119Weather(void)

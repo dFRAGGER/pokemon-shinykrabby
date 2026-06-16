@@ -4,6 +4,63 @@ mapscripts SiltrootTown_MapScripts {
     }
 }
 
+script Siltroottown_Joris_UpToTheWhiteLight {
+    lock
+    faceplayer
+    setflag(FLAG_UP_TO_THE_WHITELIGHT_SILTROOTTOWN)
+    getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
+    msgbox(format("..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(26, moves(walk_in_place_fast_down))
+    delay(40)
+    setspeaker("?????")
+    msgbox(format("UP TO THE WHITELIGHT!!!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER,moves(emote_question_mark))
+    delay(40)
+    if(var(VAR_TEMP_0)== 51 && var(VAR_TEMP_1)== 55){
+        applymovement(2, moves(walk_fast_right walk_fast_down*12))
+    }
+    else{
+        applymovement(2, moves(walk_fast_down*12))
+    }
+    waitmovement
+    removeobject(2)
+    release
+    
+}
+
+script SiltrootTown_Corsola_Jump1 {
+    lock
+    playse(SE_PIN)
+    applymovement(23, moves(emote_exclamation_mark jump_2_left))
+    waitmovement
+    setflag(FLAG_TEMP_1)
+    removeobject(23)
+    release
+}
+
+script SiltrootTown_Corsola_Jump2 {
+    lock
+    playse(SE_PIN)
+    applymovement(24, moves(emote_exclamation_mark jump_2_left))
+    waitmovement
+    setflag(FLAG_TEMP_2)
+    removeobject(24)
+    release
+}
+
+script SiltrootTown_Corsola_Jump3 {
+    lock
+    playse(SE_PIN)
+    applymovement(25, moves(emote_exclamation_mark jump_2_left))
+    waitmovement
+    setflag(FLAG_TEMP_2)
+    removeobject(25)
+    release
+}
+
 script SiltrootTown_Sign_AliApothecary {
     lock
     msgbox(format("Coffeeshop the Magical Root!\nWhere the smoke is thick and the leaves burn bright!"),MSGBOX_SIGN)

@@ -648,8 +648,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_FACULTY_2F_GRUNT ===
 Name: HARKIN
-Class: Cooltrainer
-Pic: Cooltrainer M
+Class: Gentleman
+Pic: Gentleman
 Gender: Male
 Music: Rich
 Double Battle: No
@@ -676,22 +676,22 @@ Metang
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_ROSE_2 ===
-Name: ROSE
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
+=== TRAINER_FACULTY_SCIENTIST_FACTORY1 ===
+Name: BRAM
+Class: Scientist FRLG
+Pic: Scientist FRLG
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer
 
-Shroomish
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Magnemite
+Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Roselia
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Magnemite
+Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ROSE_3 ===
 Name: ROSE
@@ -13509,25 +13509,25 @@ Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ANDRES_1 ===
-Name: HARKON
-Class: Leader
+Name: THE RECTOR
+Class: Gentleman
 Pic: Leader Juan
 Gender: Male
 Music: Intense
 Double Battle: No
 AI: Smart Trainer
 
-Aggron
-Level: 30
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Skarmory
+Level: 20
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-Steelix
-Level: 30
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Metang
+Level: 22
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-Registeel
-Level: 34
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Electabuzz
+Level: 24
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_JOSUE ===
 Name: JOSUE
@@ -16900,18 +16900,22 @@ Double Battle: No
 Snorunt
 Level: 20
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Hail
 
 Jynx
 Level: 20
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Hail
 
 Glalie
 Level: 22
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Hail
 
 Piloswine @ Sitrus Berry
 Level: 24
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Hail
 
 === TRAINER_LIONSARCH_LEADER2 ===
 Name: TARA
@@ -16924,15 +16928,19 @@ Double Battle: No
 Swinub
 Level: 20
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Hail
 
 Spheal
 Level: 20
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Hail
 
 Sealeo
 Level: 22
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Hail
 
 Lapras @ Sitrus Berry
 Level: 24
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Hail

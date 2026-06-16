@@ -21,7 +21,7 @@ script SteelFactory_2F_Scientist_Battle2 {
 }
 
 text SteelFactory_2F_Scientist1_Intro {
-    format("You've made it this far?\pThe Director will hear about this intrusion.")
+    format("You've made it this far?\pThe Rector will hear about this intrusion.")
 }
 
 text SteelFactory_2F_Scientist1_Defeat {
@@ -53,7 +53,7 @@ text SteelFactory_2F_Scientist2_Defeat {
 }
 
 text SteelFactory_2F_Scientist2_PostBattle {
-    format("You'll regret reaching that door.")
+    format("You'll regret reaching The Rector.")
 }
 
 // ─── 2F LORE NPCS ───
@@ -65,221 +65,336 @@ script SteelFactory_2F_Scientist_Lore1 {
     releaseall
 }
 
-script SteelFactory_2F_Grunt_Lore1 {
-    lockall
-    faceplayer
-    msgbox(SteelFactory_2F_Grunt_Lore1_Text)
-    releaseall
-}
-
 text SteelFactory_2F_Scientist_Lore1_Text {
     format("This floor handles Faculty coordination.\pThe Rector reviews all field reports personally.\pWe don't get many... visitors.")
 }
 
-text SteelFactory_2F_Grunt_Lore1_Text {
-    format("I just make sure the floor stays clear.\pThe researchers up here don't like being disturbed.\pNeither does the Director.")
-}
+// ─── RECTOR FALLBACK (direct NPC touch) ───
 
-// ─── BARRY - RECTOR'S PROTEGE ───
-
-script SteelFactory_2F_Barry {
-    lock
-    faceplayer
-    if (flag(FLAG_STEEL_FACTORY_BARRY_DEFEATED) == TRUE) {
-        setspeaker("Barry")
-        msgbox(SteelFactory_2F_Barry_After)
-        waitmessage
-        setspeaker(NULL)
-        release
-        end
+script SteelFactory_2F_Rector_Fallback {
+    lockall
+    getplayerxy(VAR_TEMP_2, VAR_TEMP_3)
+    if (var(VAR_TEMP_2) == 8 && var(VAR_TEMP_3) == 21) {
+        applymovement(LOCALID_PLAYER, moves(walk_right walk_down face_left))
+        waitmovement
     }
-    setspeaker("Barry")
-    msgbox(SteelFactory_2F_Barry_Intro)
-    waitmessage
-    setspeaker(NULL)
-    trainerbattle_single(TRAINER_FACULTY_BARRY, SteelFactory_2F_Barry_BattleIntro, SteelFactory_2F_Barry_BattleDefeat, SteelFactory_2F_Barry_Defeated)
-    end
-}
-
-script SteelFactory_2F_Barry_Defeated {
-    lock
-    setspeaker("Barry")
-    msgbox(SteelFactory_2F_Barry_DefeatedText)
-    waitmessage
-    applymovement(2, moves(walk_right walk_right))
-    waitmovement
-    setspeaker("Barry")
-    msgbox(SteelFactory_2F_Barry_StepAside)
-    waitmessage
-    setspeaker(NULL)
-    setflag(FLAG_STEEL_FACTORY_BARRY_DEFEATED)
-    release
-    end
-}
-
-// ─── DIRECTOR HARKON - THE RECTOR ───
-
-script SteelFactory_2F_Rector {
-    lock
+    if (var(VAR_TEMP_2) == 9 && var(VAR_TEMP_3) == 22) {
+        applymovement(LOCALID_PLAYER, moves(face_left))
+        waitmovement
+    }
+    if (var(VAR_TEMP_2) == 8 && var(VAR_TEMP_3) == 23) {
+        applymovement(LOCALID_PLAYER, moves(walk_right walk_up face_left))
+        waitmovement
+    }
     faceplayer
     if (flag(FLAG_STEEL_FACTORY_RECTOR_DEFEATED) == TRUE) {
         setspeaker("The Rector")
         msgbox(SteelFactory_2F_Rector_After)
         waitmessage
         setspeaker(NULL)
-        release
+        releaseall
         end
     }
-    if (flag(FLAG_STEEL_FACTORY_BARRY_DEFEATED) == FALSE) {
+    if (flag(FLAG_STEEL_FACTORY_RECTOR_CUTSCENE_TRIGGERED) == TRUE) {
         setspeaker("The Rector")
-        msgbox(SteelFactory_2F_Rector_BarryNotDefeated)
+        msgbox(SteelFactory_2F_Rector_WaitingLine)
         waitmessage
         setspeaker(NULL)
-        release
+        trainerbattle_no_intro(TRAINER_FACULTY_RECTOR, SteelFactory_2F_Rector_BattleDefeat)
+        call(SteelFactory_2F_Rector_Defeated)
+        releaseall
         end
     }
-    setspeaker("The Rector")
-    msgbox(SteelFactory_2F_Rector_Intro1)
-    waitmessage
-    setspeaker("The Rector")
-    msgbox(SteelFactory_2F_Rector_Intro2)
-    waitmessage
-    setspeaker("The Rector")
-    msgbox(SteelFactory_2F_Rector_Intro3)
-    waitmessage
-    setspeaker(NULL)
-    trainerbattle_single(TRAINER_FACULTY_RECTOR, SteelFactory_2F_Rector_BattleIntro, SteelFactory_2F_Rector_BattleDefeat, SteelFactory_2F_Rector_Defeated)
+    releaseall
     end
 }
 
-// ─── FINALE CUTSCENE ───
+// ─── OVERHEARD CONVERSATION CUTSCENE ───
+
+script SteelFactory_2F_OverhearCutscene {
+    if (flag(FLAG_STEEL_FACTORY_RECTOR_DEFEATED) == TRUE) { end }
+    if (flag(FLAG_STEEL_FACTORY_RECTOR_CUTSCENE_TRIGGERED) == TRUE) { end }
+    setflag(FLAG_STEEL_FACTORY_RECTOR_CUTSCENE_TRIGGERED)
+    setvar(VAR_TEMP_0, 1)
+    lockall
+    getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+    if (var(VAR_TEMP_1) == 13 && var(VAR_TEMP_2) == 16) {
+        applymovement(LOCALID_PLAYER, moves(walk_right face_down))
+        waitmovement    
+    }
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down*6 walk_left*5))
+    waitmovement
+
+    // ── Rector opens the meeting ──
+    setspeaker("The Rector")
+    msgbox(SteelFactory_2F_Rector_OpensMeeting)
+    waitmessage
+
+    // ── ConRector: iron ore / Lairon report ──
+    applymovement(8, moves(walk_up))
+    if (flag(FLAG_STEEL_FACTORY_FREED_POKEMON) == TRUE) {
+        setspeaker("The Conrector")
+        msgbox(SteelFactory_2F_Conrector_LaironsFreed,MSGBOX_AUTOCLOSE)
+        waitmessage
+    } else {
+        setspeaker("The Conrector")
+        msgbox(SteelFactory_2F_Conrector_LaironsGood,MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    applymovement(8, moves(walk_down face_up))
+    delay(60)
+
+    // ── Rector suggests electric shocks for Magikarp ──
+    applymovement(2, moves(walk_up))
+    setspeaker("The Rector")
+    msgbox(SteelFactory_2F_Rector_ShockSuggestion,MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(2, moves(face_down emote_question_mark))
+    delay(120)
+
+    // ── Barry hesitates and declines with pathetic excuse ──
+    applymovement(2, moves(face_up))
+    setspeaker("Barry")
+    msgbox(SteelFactory_2F_Barry_ShockDecline,MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+
+    // ── Barry: mining report ──
+    setspeaker("Barry")
+    msgbox(SteelFactory_2F_Barry_MiningReport,MSGBOX_AUTOCLOSE)
+    waitmessage
+
+    // ── Pan back to player, player steps in ──
+    setspeaker(NULL)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right*5 walk_up*6))
+    waitmovement
+    special(RemoveCameraObject)
+    applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_down*5 walk_left*2))
+    waitmovement
+    playse(SE_PIN)
+    applymovement(1, moves(face_right emote_question_mark))
+    applymovement(2, moves(face_right emote_double_exclamation_mark))
+    applymovement(8, moves(face_right emote_question_mark))
+
+
+    // ── Rector confrontation ──
+    setspeaker("The Rector")
+    msgbox(SteelFactory_2F_Rector_Recognises,MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_FAILURE)
+    applymovement(1, moves(face_down emote_x))
+    applymovement(8, moves(face_up emote_exclamation_mark))
+    setspeaker("The Rector")
+    msgbox(SteelFactory_2F_Rector_TurnsOnConrector,MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(2,moves(face_up))
+    setspeaker("The Rector")
+    msgbox(SteelFactory_2F_Rector_AngryOrders,MSGBOX_AUTOCLOSE)
+    waitmessage
+
+    // ── Barry and Conrector flee ──
+    applymovement(8, moves(walk_fast_right*3 walk_fast_down walk_fast_right*2 walk_fast_up*10))
+    applymovement(LOCALID_PLAYER, moves(face_down lock_facing_direction jump_up unlock_facing_direction))
+    applymovement(2, moves(walk_fast_right*6 walk_fast_up*10))
+    applymovement(10, moves(jump_2_up jump_2_right*3 jump_right jump_2_up*2))    
+    waitmovement
+    applymovement(2, moves(walk_fast_down*5))
+    waitmovement
+    setspeaker("Barry")
+    msgbox(format("Come on you stupid fish, let's get out of here!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(2, moves(walk_fast_up*4))
+    applymovement(10, moves(jump_2_up*4))
+    waitmovement(10)
+    removeobject(2)
+    removeobject(8)
+    removeobject(10)
+    applymovement(7, moves(walk_down*2 walk_right walk_down walk_right))
+    applymovement(1, moves(walk_left*3 walk_down*3 walk_right*2))
+    applymovement(LOCALID_PLAYER, moves(face_left))
+    delay(60)
+    applymovement(LOCALID_PLAYER, moves(walk_down*2 walk_left*3))
+    waitmovement
+
+    // ── Rector addresses player ──
+    setspeaker("The Rector")
+    msgbox(SteelFactory_2F_Rector_BattleChallenge)
+    waitmessage
+    setspeaker(NULL)
+    clearflag(FLAG_HIDE_RECTOR_ELECTABUZZ_AFTER_BATTLE)
+    trainerbattle_no_intro(TRAINER_FACULTY_RECTOR, SteelFactory_2F_Rector_BattleDefeat)
+    call(SteelFactory_2F_Rector_Defeated)
+    end
+}
+
+// ─── POST-BATTLE ───
 
 script SteelFactory_2F_Rector_Defeated {
-    lock
     setspeaker("The Rector")
-    msgbox(SteelFactory_2F_Rector_DefeatedText)
-    waitmessage
-    playse(SE_DOOR)
-    setspeaker("Faculty Agent")
-    msgbox(SteelFactory_2F_Agent_Alert)
+    msgbox(SteelFactory_2F_Rector_DefeatedText1)
     waitmessage
     setspeaker("The Rector")
-    msgbox(SteelFactory_2F_Rector_Evacuation)
+    msgbox(SteelFactory_2F_Rector_DefeatedText2,MSGBOX_AUTOCLOSE)
     waitmessage
-    fadescreen(FADE_TO_BLACK)
-    delay(60)
-    fadescreen(FADE_FROM_BLACK)
-    setspeaker("The Rector")
-    msgbox(SteelFactory_2F_Rector_Monologue)
-    waitmessage
-    if (flag(FLAG_STEEL_FACTORY_FREED_POKEMON) == TRUE) {
-        setspeaker("The Rector")
-        msgbox(SteelFactory_2F_Rector_OutroFreed)
-        waitmessage
-    } else {
-        setspeaker("The Rector")
-        msgbox(SteelFactory_2F_Rector_OutroNotFreed)
-        waitmessage
-    }
-    applymovement(1, moves(walk_left walk_left walk_down walk_down walk_down))
-    waitmovement
     setspeaker(NULL)
-    playmoncry(SPECIES_MEW, CRY_MODE_ENCOUNTER)
-    waitmoncry
-    if (flag(FLAG_STEEL_FACTORY_FREED_POKEMON) == TRUE) {
-        msgbox(SteelFactory_2F_Mew_Warm)
-    } else {
-        msgbox(SteelFactory_2F_Mew_Quiet)
-    }
-    waitmessage
+    applymovement(7, moves(enter_pokeball))
+    applymovement(12, moves(enter_pokeball))
+    waitmovement(7)
+    waitmovement(12)
+    setflag(FLAG_HIDE_RECTOR_ELECTABUZZ_AFTER_BATTLE)
+    applymovement(11, moves(walk_down*2))
+    applymovement(1, moves(walk_down*2))
+    waitmovement(11)
+    waitmovement(1)
+    removeobject(11)
+    removeobject(12)
+    removeobject(7)
+    removeobject(1)
     setflag(FLAG_STEEL_FACTORY_RECTOR_DEFEATED)
     setflag(FLAG_STEEL_FACTORY_COMPLETE)
-    release
+    clearflag(FLAG_HIDE_LIONSARCH_RECTOR_SENDOFF)
+    clearflag(FLAG_HIDE_LIONSARCH_BARRY_SENDOFF)
+    clearflag(FLAG_HIDE_LIONSARCH_CONRECTOR_SENDOFF)
+    delay(30)
+    applymovement(LOCALID_PLAYER, moves(walk_down*2))
+    waitmovement
+    playse(SE_SLIDING_DOOR)
+    setvar(VAR_LIONSARCH_CITY_STATE, 1)
+    warpsilent(MAP_LIONSARCH_CITY,10)
+    releaseall
     end
 }
 
 // ─── TEXT ───
 
-text SteelFactory_2F_Barry_Intro {
-    format("You made it this far.\pImpressive. The Director chose well when he took me on.\pBut this is where your run ends.\pThat stupid fish finally became something usefull. You'll be surprised.")
-}
-
-text SteelFactory_2F_Barry_BattleIntro {
-    format("You've made it to The Rector's floor.\pThat ends here!")
-}
-
-text SteelFactory_2F_Barry_BattleDefeat {
-    format("I... I don't understand.\pEven that stupid fish.. did not work?")
-}
-
-text SteelFactory_2F_Barry_DefeatedText {
-    format("I was supposed to be the wall between you and The Rector.\pI failed.")
-}
-
-text SteelFactory_2F_Barry_StepAside {
-    format("...Go. He's waiting.\pBut whatever you think you're stopping here, the Faculty's reach goes further than this building.\pFar further.")
-}
-
-text SteelFactory_2F_Barry_After {
-    format("The Rector is behind that door.\pHe's not going to run.\lHe never does.")
-}
-
-text SteelFactory_2F_Rector_BarryNotDefeated {
-    format("You haven't even gotten past Barry.\pDon't waste my time.")
+text SteelFactory_2F_Rector_WaitingLine {
+    format("So you came back? I was hoping you would.")
 }
 
 text SteelFactory_2F_Rector_After {
     format("The Faculty endures.\pThis was one facility.\pThere are others.")
 }
 
-text SteelFactory_2F_Rector_Intro1 {
-    format("So you're the one.\pI've had reports of an outsider disrupting my facility all morning.\pTell me, do you even understand what we are building here?")
+text SteelFactory_2F_Rector_OpensMeeting {
+    format("Looks like the iron processing is ahead of schedule.\pYou've both performed adequately this quarter, the yield figures are impressive.\p To make a long story short: Order wins, chaos loses.")
 }
 
-text SteelFactory_2F_Rector_Intro2 {
-    format("Regigigas didn't create the golems out of kindness.\pIt created ORDER.\pStone for strength.\pIron for structure.\pIce for stillness.\pThe Teressa region has forgotten that lesson.\pWe are here to remind it.")
+text SteelFactory_2F_Conrector_LaironsFreed {
+    format("Indeed, the processing yield was exceptional, sir.\pThere was one small hiccup with the Lairon containment unit this morning, but I managed the issue, no problems at all sir.\pYou see, the specimens had become unreliable. Diminishing returns. Worn teeth. Stress fractures.\pI made the executive call to release them before the voyage.\pNot worth shipping livestock that can't perform. Absolutely nothing to worry about, sir.")
 }
 
-text SteelFactory_2F_Rector_Intro3 {
-    format("You want to fight me?\pThen fight.\pBut you cannot defeat an idea.")
+text SteelFactory_2F_Conrector_LaironsGood {
+    format("Processing is complete, sir. Excellent yield.\pThe Lairon unit consumed all impurity-heavy ore as intended.\pOnly the highest-grade iron remains.\pOne little Aron escaped this morning, but we managed to contain it.\pI've arranged for the specimens to be loaded onto the transport vessels in any moment.")
+}
+
+text SteelFactory_2F_Rector_ShockSuggestion {
+    format("How about you Barr.. Wouter?\pI notice your Magikarp is still not giving you any value?\pWhen my pokemon don't contribute, I let my Electabuzz handle them.\pA good shock now and then makes expectations very clear.\pMaybe Electabuzz could help you out with that?")
+}
+
+text SteelFactory_2F_Barry_ShockDecline {
+    format("I... appreciate the suggestion, sir.\pBut Magikarp are quite sensitive to electricity. Apparently it discolors their scales.\pI wouldn't want to damage the...  specimen quality.\p...That would be irresponsible.")
+}
+
+text SteelFactory_2F_Barry_MiningReport {
+    format("The mining operation hit every target,  sir.\pWe did have a brief evacuation. A civilian wandered into the tunnels.\pI handled it personally. Pushed them into a deep dark crevice.\pHazard of the mine, really. Nothing special.")
+}
+
+text SteelFactory_2F_Rector_Recognises {
+    format("...You?\pWhat are you doing here?\p...\pWait... you're the one who tried to stop us in the Cloud Forest as well?\p You just don't know when to quit, do you?\p")
+}
+
+text SteelFactory_2F_Rector_TurnsOnConrector {
+    format("And the Lairon.\p'Stress fractures'\p'Diminishing returns.'\pHow convenient.")
+}
+
+text SteelFactory_2F_Rector_AngryOrders {
+    format("Load the boats.\pBoth of you. NOW.  I want neither of you on this floor when I am finished.")
+}
+
+text SteelFactory_2F_Rector_BattleChallenge {
+    format("You've become quite the nuisance.\pFirst the Cloud Forest, now our factory?\pYou would be a great student of mine.")
 }
 
 text SteelFactory_2F_Rector_BattleIntro {
-    format("Come then. Show me what passes for strength in this chaotic region.")
+    format("Show me what you are capable of. I will not hold back.")
 }
 
 text SteelFactory_2F_Rector_BattleDefeat {
     format("...")
 }
 
-text SteelFactory_2F_Rector_DefeatedText {
-    format("Impressive.\pTruly.")
+text SteelFactory_2F_Rector_DefeatedText1 {
+    format("...\p...How.")
 }
 
-text SteelFactory_2F_Agent_Alert {
-    format("Rector! The extraction team is ready.\pWe need to move - NOW.")
+text SteelFactory_2F_Rector_DefeatedText2 {
+    format("This changes nothing.\pThe Faculty's reach goes further than this building.\pFar further.\pFollow me.")
 }
 
-text SteelFactory_2F_Rector_Evacuation {
-    format("Yes.\pLoad everything.\pLeave nothing for them to study.")
+text SteelFactory_2F_Barry_After {
+    format("The Rector is behind that door.\pHe's not going to run.  He never does.")
 }
 
-text SteelFactory_2F_Rector_Monologue {
-    format("You won a battle, child.\pThe Faculty has already won the campaign.\pThe Regi-Metal is gone. Every last gram.\pYou'll understand the scale of what you've failed to stop... eventually.")
+// ─── 2F SIGNS ───
+
+script SteelFactory_2F_PC_Research {
+    lock
+    msgbox(SteelFactory_2F_PC_Research_Text)
+    release
 }
 
-text SteelFactory_2F_Rector_OutroFreed {
-    format("...I see you opened the containment bays.\pSentimental.\pEnjoy your small mercy.")
+script SteelFactory_2F_PC_Logistics {
+    lock
+    msgbox(SteelFactory_2F_PC_Logistics_Text)
+    release
 }
 
-text SteelFactory_2F_Rector_OutroNotFreed {
-    format("The Pokemon below are yours now, I suppose.\pCongratulations on your rescue operation.\pOr lack thereof.")
+script SteelFactory_2F_PC_Locked {
+    lock
+    msgbox(SteelFactory_2F_PC_Locked_Text)
+    release
 }
 
-text SteelFactory_2F_Mew_Warm {
-    format("The cry is warm.\pSomething remembers what you did here.")
+script SteelFactory_2F_Blueprint_Materials {
+    lock
+    msgbox(SteelFactory_2F_Blueprint_Materials_Text)
+    release
 }
 
-text SteelFactory_2F_Mew_Quiet {
-    format("The cry is quiet.\pSomewhere, something is still watching.")
+script SteelFactory_2F_Blueprint_Assembly {
+    lock
+    msgbox(SteelFactory_2F_Blueprint_Assembly_Text)
+    release
+}
+
+text SteelFactory_2F_PC_Research_Text {
+    format("FACULTY INTERNAL - CYCLE 14 SUMMARY\p- Output targets exceeded by 12%%.\pSpecimen endurance remains within acceptable range.\pNote: biological variance in batch 7 requires monitoring.\pRector review pending. -")
+}
+
+text SteelFactory_2F_PC_Logistics_Text {
+    format("TRANSPORT MANIFEST - PENDING DISPATCH\p- Three shipments awaiting clearance.\pContents: processed material, grade A.\pDestination: redacted.\pEstimated transit: 4 days by sea.\pAll documentation has been filed under Rector authorization. -")
+}
+
+text SteelFactory_2F_PC_Locked_Text {
+    format("FACULTY ACCESS ONLY\pThis terminal is locked.\pYou cannot interact with it.")
+}
+
+text SteelFactory_2F_Blueprint_Materials_Text {
+    format("COMPONENT SPECIFICATION - DRAFT 9\p- Primary substrate: high-density ore, origin Lions Mountains.\pSecondary binding agent: unspecified biological compound, sourced on-site.\pAlloy stability under sustained resonance: 94%%.\pWarning: do not substitute substrate without Rector approval. -")
+}
+
+text SteelFactory_2F_Blueprint_Assembly_Text {
+    format("ASSEMBLY PHASE - STRUCTURAL OVERVIEW\p- Layer configuration classified. See Rector annex.\pCore channel dimensions have been adjusted per Cycle 11 findings.\pNote from lead researcher: the material responds differently than anticipated.\pFurther testing required before full production begins. -")
+}
+
+script SteelFactory_2F_Blueprint_RockSmash {
+    lock
+    msgbox(SteelFactory_2F_Blueprint_RockSmash_Text)
+    release
+}
+
+text SteelFactory_2F_Blueprint_RockSmash_Text {
+    format("FIELD OBSERVATION - MINING DIVISION\p- During extraction operations in the lower ore deposits, repeated application of concentrated force against the rock face produced a consistent fracture response.\pPokemon involved in the drilling process began replicating the motion instinctively.\pThe technique has been documented and encoded.\pSee attached disc for move data: ROCK SMASH. -")
 }

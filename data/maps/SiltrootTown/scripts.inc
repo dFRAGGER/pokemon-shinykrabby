@@ -9,600 +9,596 @@ SiltrootTown_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	return
 
 
-SiltrootTown_Sign_AliApothecary::
+Siltroottown_Joris_UpToTheWhiteLight::
 # 8 "data/maps/SiltrootTown/scripts.pory"
 	lock
 # 9 "data/maps/SiltrootTown/scripts.pory"
-	msgbox SiltrootTown_Sign_AliApothecary_Text_0, MSGBOX_SIGN
+	faceplayer
 # 10 "data/maps/SiltrootTown/scripts.pory"
-	waitmessage
+	setflag FLAG_UP_TO_THE_WHITELIGHT_SILTROOTTOWN
 # 11 "data/maps/SiltrootTown/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 12 "data/maps/SiltrootTown/scripts.pory"
+	msgbox Siltroottown_Joris_UpToTheWhiteLight_Text_0, MSGBOX_AUTOCLOSE
+# 13 "data/maps/SiltrootTown/scripts.pory"
+	waitmessage
+# 14 "data/maps/SiltrootTown/scripts.pory"
+	applymovement 26, Siltroottown_Joris_UpToTheWhiteLight_Movement_0
+# 15 "data/maps/SiltrootTown/scripts.pory"
+	delay 40
+# 16 "data/maps/SiltrootTown/scripts.pory"
+	setspeaker Siltroottown_Joris_UpToTheWhiteLight_Text_1
+# 17 "data/maps/SiltrootTown/scripts.pory"
+	msgbox Siltroottown_Joris_UpToTheWhiteLight_Text_2, MSGBOX_AUTOCLOSE
+# 18 "data/maps/SiltrootTown/scripts.pory"
+	waitmessage
+# 19 "data/maps/SiltrootTown/scripts.pory"
+	playse SE_PIN
+# 20 "data/maps/SiltrootTown/scripts.pory"
+	applymovement LOCALID_PLAYER, Siltroottown_Joris_UpToTheWhiteLight_Movement_1
+# 21 "data/maps/SiltrootTown/scripts.pory"
+	delay 40
+# 22 "data/maps/SiltrootTown/scripts.pory"
+	compare VAR_TEMP_0, 51
+	goto_if_eq Siltroottown_Joris_UpToTheWhiteLight_4
+Siltroottown_Joris_UpToTheWhiteLight_3:
+# 26 "data/maps/SiltrootTown/scripts.pory"
+	applymovement 2, Siltroottown_Joris_UpToTheWhiteLight_Movement_3
+Siltroottown_Joris_UpToTheWhiteLight_1:
+# 28 "data/maps/SiltrootTown/scripts.pory"
+	waitmovement
+# 29 "data/maps/SiltrootTown/scripts.pory"
+	removeobject 2
+# 30 "data/maps/SiltrootTown/scripts.pory"
+	release
+	return
+
+Siltroottown_Joris_UpToTheWhiteLight_2:
+# 23 "data/maps/SiltrootTown/scripts.pory"
+	applymovement 2, Siltroottown_Joris_UpToTheWhiteLight_Movement_2
+	goto Siltroottown_Joris_UpToTheWhiteLight_1
+
+Siltroottown_Joris_UpToTheWhiteLight_4:
+# 22 "data/maps/SiltrootTown/scripts.pory"
+	compare VAR_TEMP_1, 55
+	goto_if_eq Siltroottown_Joris_UpToTheWhiteLight_2
+	goto Siltroottown_Joris_UpToTheWhiteLight_3
+
+
+SiltrootTown_Corsola_Jump1::
+# 35 "data/maps/SiltrootTown/scripts.pory"
+	lock
+# 36 "data/maps/SiltrootTown/scripts.pory"
+	playse SE_PIN
+# 37 "data/maps/SiltrootTown/scripts.pory"
+	applymovement 23, SiltrootTown_Corsola_Jump1_Movement_0
+# 38 "data/maps/SiltrootTown/scripts.pory"
+	waitmovement
+# 39 "data/maps/SiltrootTown/scripts.pory"
+	setflag FLAG_TEMP_1
+# 40 "data/maps/SiltrootTown/scripts.pory"
+	removeobject 23
+# 41 "data/maps/SiltrootTown/scripts.pory"
+	release
+	return
+
+
+SiltrootTown_Corsola_Jump2::
+# 45 "data/maps/SiltrootTown/scripts.pory"
+	lock
+# 46 "data/maps/SiltrootTown/scripts.pory"
+	playse SE_PIN
+# 47 "data/maps/SiltrootTown/scripts.pory"
+	applymovement 24, SiltrootTown_Corsola_Jump1_Movement_0
+# 48 "data/maps/SiltrootTown/scripts.pory"
+	waitmovement
+# 49 "data/maps/SiltrootTown/scripts.pory"
+	setflag FLAG_TEMP_2
+# 50 "data/maps/SiltrootTown/scripts.pory"
+	removeobject 24
+# 51 "data/maps/SiltrootTown/scripts.pory"
+	release
+	return
+
+
+SiltrootTown_Corsola_Jump3::
+# 55 "data/maps/SiltrootTown/scripts.pory"
+	lock
+# 56 "data/maps/SiltrootTown/scripts.pory"
+	playse SE_PIN
+# 57 "data/maps/SiltrootTown/scripts.pory"
+	applymovement 25, SiltrootTown_Corsola_Jump1_Movement_0
+# 58 "data/maps/SiltrootTown/scripts.pory"
+	waitmovement
+# 59 "data/maps/SiltrootTown/scripts.pory"
+	setflag FLAG_TEMP_2
+# 60 "data/maps/SiltrootTown/scripts.pory"
+	removeobject 25
+# 61 "data/maps/SiltrootTown/scripts.pory"
+	release
+	return
+
+
+SiltrootTown_Sign_AliApothecary::
+# 65 "data/maps/SiltrootTown/scripts.pory"
+	lock
+# 66 "data/maps/SiltrootTown/scripts.pory"
+	msgbox SiltrootTown_Sign_AliApothecary_Text_0, MSGBOX_SIGN
+# 67 "data/maps/SiltrootTown/scripts.pory"
+	waitmessage
+# 68 "data/maps/SiltrootTown/scripts.pory"
 	release
 	return
 
 
 SiltrootTown_Sign_Pokecenter::
-# 15 "data/maps/SiltrootTown/scripts.pory"
+# 72 "data/maps/SiltrootTown/scripts.pory"
 	lock
-# 16 "data/maps/SiltrootTown/scripts.pory"
+# 73 "data/maps/SiltrootTown/scripts.pory"
 	msgbox SiltrootTown_Sign_Pokecenter_Text_0, MSGBOX_SIGN
-# 17 "data/maps/SiltrootTown/scripts.pory"
+# 74 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 18 "data/maps/SiltrootTown/scripts.pory"
+# 75 "data/maps/SiltrootTown/scripts.pory"
 	release
 	return
 
 
 Siltroottown_Sign_SiltrootTown::
-# 22 "data/maps/SiltrootTown/scripts.pory"
+# 79 "data/maps/SiltrootTown/scripts.pory"
 	lock
-# 23 "data/maps/SiltrootTown/scripts.pory"
+# 80 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Sign_SiltrootTown_Text_0, MSGBOX_SIGN
-# 24 "data/maps/SiltrootTown/scripts.pory"
+# 81 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 25 "data/maps/SiltrootTown/scripts.pory"
+# 82 "data/maps/SiltrootTown/scripts.pory"
 	release
 	return
 
 
 SiltrootTown_Scott_Boatride::
-# 29 "data/maps/SiltrootTown/scripts.pory"
+# 86 "data/maps/SiltrootTown/scripts.pory"
 	lockall
-# 30 "data/maps/SiltrootTown/scripts.pory"
+# 87 "data/maps/SiltrootTown/scripts.pory"
 	checkitem ITEM_POKEBLOCK_CASE
-# 31 "data/maps/SiltrootTown/scripts.pory"
+# 88 "data/maps/SiltrootTown/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq SiltrootTown_Scott_Boatride_2
-# 39 "data/maps/SiltrootTown/scripts.pory"
+# 96 "data/maps/SiltrootTown/scripts.pory"
 	setflag FLAG_HIDE_SCOTT_LIONSARCH_CITY
-# 40 "data/maps/SiltrootTown/scripts.pory"
+# 97 "data/maps/SiltrootTown/scripts.pory"
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-# 41 "data/maps/SiltrootTown/scripts.pory"
+# 98 "data/maps/SiltrootTown/scripts.pory"
 	faceplayer
-# 42 "data/maps/SiltrootTown/scripts.pory"
+# 99 "data/maps/SiltrootTown/scripts.pory"
 	setspeaker SiltrootTown_Scott_Boatride_Text_0
-# 43 "data/maps/SiltrootTown/scripts.pory"
+# 100 "data/maps/SiltrootTown/scripts.pory"
 	msgbox SiltrootTown_Scott_Boatride_Text_2, MSGBOX_AUTOCLOSE
-# 44 "data/maps/SiltrootTown/scripts.pory"
+# 101 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 45 "data/maps/SiltrootTown/scripts.pory"
+# 102 "data/maps/SiltrootTown/scripts.pory"
 	setobjectsubpriority 12, MAP_SILTROOT_TOWN, 0
-# 46 "data/maps/SiltrootTown/scripts.pory"
+# 103 "data/maps/SiltrootTown/scripts.pory"
 	setobjectsubpriority LOCALID_PLAYER, MAP_SILTROOT_TOWN, 0
-# 47 "data/maps/SiltrootTown/scripts.pory"
+# 104 "data/maps/SiltrootTown/scripts.pory"
 	applymovement 12, SiltrootTown_Scott_Boatride_Movement_0
-# 48 "data/maps/SiltrootTown/scripts.pory"
+# 105 "data/maps/SiltrootTown/scripts.pory"
 	waitmovement
-# 49 "data/maps/SiltrootTown/scripts.pory"
+# 106 "data/maps/SiltrootTown/scripts.pory"
 	removeobject 12
-# 50 "data/maps/SiltrootTown/scripts.pory"
+# 107 "data/maps/SiltrootTown/scripts.pory"
 	compare VAR_TEMP_0, 22
 	goto_if_eq SiltrootTown_Scott_Boatride_14
 SiltrootTown_Scott_Boatride_12:
-# 53 "data/maps/SiltrootTown/scripts.pory"
+# 110 "data/maps/SiltrootTown/scripts.pory"
 	compare VAR_TEMP_0, 23
 	goto_if_eq SiltrootTown_Scott_Boatride_11
 SiltrootTown_Scott_Boatride_9:
-# 56 "data/maps/SiltrootTown/scripts.pory"
+# 113 "data/maps/SiltrootTown/scripts.pory"
 	compare VAR_TEMP_0, 23
 	goto_if_eq SiltrootTown_Scott_Boatride_8
 SiltrootTown_Scott_Boatride_4:
-# 59 "data/maps/SiltrootTown/scripts.pory"
+# 116 "data/maps/SiltrootTown/scripts.pory"
 	waitmovement
-# 60 "data/maps/SiltrootTown/scripts.pory"
+# 117 "data/maps/SiltrootTown/scripts.pory"
 	hideobjectat LOCALID_PLAYER, MAP_SILTROOT_TOWN
-# 61 "data/maps/SiltrootTown/scripts.pory"
+# 118 "data/maps/SiltrootTown/scripts.pory"
 	setflag FLAG_DONT_TRANSITION_MUSIC
-# 62 "data/maps/SiltrootTown/scripts.pory"
+# 119 "data/maps/SiltrootTown/scripts.pory"
 	playbgm MUS_SAILING, FALSE
-# 63 "data/maps/SiltrootTown/scripts.pory"
+# 120 "data/maps/SiltrootTown/scripts.pory"
 	applymovement 1, Siltroottown_Boat_Ride_To_Lionsarch
-# 64 "data/maps/SiltrootTown/scripts.pory"
+# 121 "data/maps/SiltrootTown/scripts.pory"
 	applymovement LOCALID_PLAYER, Siltroottown_Boat_Ride_To_Lionsarch
-# 65 "data/maps/SiltrootTown/scripts.pory"
+# 122 "data/maps/SiltrootTown/scripts.pory"
 	waitmovement
-# 66 "data/maps/SiltrootTown/scripts.pory"
+# 123 "data/maps/SiltrootTown/scripts.pory"
 	goto SiltrootTown_Arrive_Boatride
 	return
 
 SiltrootTown_Scott_Boatride_2:
-# 32 "data/maps/SiltrootTown/scripts.pory"
+# 89 "data/maps/SiltrootTown/scripts.pory"
 	faceplayer
-# 33 "data/maps/SiltrootTown/scripts.pory"
+# 90 "data/maps/SiltrootTown/scripts.pory"
 	setspeaker SiltrootTown_Scott_Boatride_Text_0
-# 34 "data/maps/SiltrootTown/scripts.pory"
+# 91 "data/maps/SiltrootTown/scripts.pory"
 	msgbox SiltrootTown_Scott_Boatride_Text_1, MSGBOX_AUTOCLOSE
-# 35 "data/maps/SiltrootTown/scripts.pory"
+# 92 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 36 "data/maps/SiltrootTown/scripts.pory"
+# 93 "data/maps/SiltrootTown/scripts.pory"
 	releaseall
 	end
 
 SiltrootTown_Scott_Boatride_5:
-# 51 "data/maps/SiltrootTown/scripts.pory"
+# 108 "data/maps/SiltrootTown/scripts.pory"
 	applymovement LOCALID_PLAYER, SiltrootTown_Scott_Boatride_Movement_1
 	goto SiltrootTown_Scott_Boatride_4
 
 SiltrootTown_Scott_Boatride_6:
-# 54 "data/maps/SiltrootTown/scripts.pory"
+# 111 "data/maps/SiltrootTown/scripts.pory"
 	applymovement LOCALID_PLAYER, SiltrootTown_Scott_Boatride_Movement_2
 	goto SiltrootTown_Scott_Boatride_4
 
 SiltrootTown_Scott_Boatride_7:
-# 57 "data/maps/SiltrootTown/scripts.pory"
+# 114 "data/maps/SiltrootTown/scripts.pory"
 	applymovement LOCALID_PLAYER, SiltrootTown_Scott_Boatride_Movement_3
 	goto SiltrootTown_Scott_Boatride_4
 
 SiltrootTown_Scott_Boatride_8:
-# 56 "data/maps/SiltrootTown/scripts.pory"
+# 113 "data/maps/SiltrootTown/scripts.pory"
 	compare VAR_TEMP_1, 21
 	goto_if_eq SiltrootTown_Scott_Boatride_7
 	goto SiltrootTown_Scott_Boatride_4
 
 SiltrootTown_Scott_Boatride_11:
-# 53 "data/maps/SiltrootTown/scripts.pory"
+# 110 "data/maps/SiltrootTown/scripts.pory"
 	compare VAR_TEMP_1, 19
 	goto_if_eq SiltrootTown_Scott_Boatride_6
 	goto SiltrootTown_Scott_Boatride_9
 
 SiltrootTown_Scott_Boatride_14:
-# 50 "data/maps/SiltrootTown/scripts.pory"
+# 107 "data/maps/SiltrootTown/scripts.pory"
 	compare VAR_TEMP_1, 20
 	goto_if_eq SiltrootTown_Scott_Boatride_5
 	goto SiltrootTown_Scott_Boatride_12
 
 
 SiltrootTown_Arrive_Boatride::
-# 70 "data/maps/SiltrootTown/scripts.pory"
+# 127 "data/maps/SiltrootTown/scripts.pory"
 	delay 50
-# 71 "data/maps/SiltrootTown/scripts.pory"
+# 128 "data/maps/SiltrootTown/scripts.pory"
 	setspeaker SiltrootTown_Scott_Boatride_Text_0
-# 72 "data/maps/SiltrootTown/scripts.pory"
+# 129 "data/maps/SiltrootTown/scripts.pory"
 	msgbox SiltrootTown_Arrive_Boatride_Text_0, MSGBOX_AUTOCLOSE
-# 73 "data/maps/SiltrootTown/scripts.pory"
+# 130 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 74 "data/maps/SiltrootTown/scripts.pory"
+# 131 "data/maps/SiltrootTown/scripts.pory"
 	applymovement LOCALID_PLAYER, SiltrootTown_Arrive_Boatride_Movement_0
-# 75 "data/maps/SiltrootTown/scripts.pory"
+# 132 "data/maps/SiltrootTown/scripts.pory"
 	waitmovement
-# 76 "data/maps/SiltrootTown/scripts.pory"
+# 133 "data/maps/SiltrootTown/scripts.pory"
 	call Common_EventScript_StopBrineysBoatMusic
-# 77 "data/maps/SiltrootTown/scripts.pory"
+# 134 "data/maps/SiltrootTown/scripts.pory"
 	showobjectat LOCALID_PLAYER, MAP_SILTROOT_TOWN
-# 78 "data/maps/SiltrootTown/scripts.pory"
+# 135 "data/maps/SiltrootTown/scripts.pory"
 	applymovement LOCALID_PLAYER, SiltrootTown_Arrive_Boatride_Movement_1
-# 79 "data/maps/SiltrootTown/scripts.pory"
+# 136 "data/maps/SiltrootTown/scripts.pory"
 	call Common_EventScript_StopBrineysBoatMusic
-# 80 "data/maps/SiltrootTown/scripts.pory"
+# 137 "data/maps/SiltrootTown/scripts.pory"
 	setflag FLAG_HIDE_SCOTT_OUTSIDE_BOAT
-# 81 "data/maps/SiltrootTown/scripts.pory"
+# 138 "data/maps/SiltrootTown/scripts.pory"
 	setobjectxyperm 5, 9, 59
-# 82 "data/maps/SiltrootTown/scripts.pory"
+# 139 "data/maps/SiltrootTown/scripts.pory"
 	addobject 5
-# 83 "data/maps/SiltrootTown/scripts.pory"
+# 140 "data/maps/SiltrootTown/scripts.pory"
 	setobjectsubpriority 5, MAP_SILTROOT_TOWN, 0
-# 84 "data/maps/SiltrootTown/scripts.pory"
+# 141 "data/maps/SiltrootTown/scripts.pory"
 	clearflag FLAG_HIDE_SCOTT_LIONSARCH_CITY
-# 85 "data/maps/SiltrootTown/scripts.pory"
+# 142 "data/maps/SiltrootTown/scripts.pory"
 	applymovement 5, SiltrootTown_Arrive_Boatride_Movement_2
-# 86 "data/maps/SiltrootTown/scripts.pory"
+# 143 "data/maps/SiltrootTown/scripts.pory"
 	waitmovement
-# 87 "data/maps/SiltrootTown/scripts.pory"
+# 144 "data/maps/SiltrootTown/scripts.pory"
 	resetobjectsubpriority LOCALID_PLAYER, MAP_SILTROOT_TOWN
-# 88 "data/maps/SiltrootTown/scripts.pory"
+# 145 "data/maps/SiltrootTown/scripts.pory"
 	resetobjectsubpriority 5, MAP_LIONSARCH_CITY
-# 89 "data/maps/SiltrootTown/scripts.pory"
+# 146 "data/maps/SiltrootTown/scripts.pory"
 	setspeaker SiltrootTown_Scott_Boatride_Text_0
-# 90 "data/maps/SiltrootTown/scripts.pory"
+# 147 "data/maps/SiltrootTown/scripts.pory"
 	msgbox SiltrootTown_Arrive_Boatride_Text_1, MSGBOX_AUTOCLOSE
-# 91 "data/maps/SiltrootTown/scripts.pory"
+# 148 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 92 "data/maps/SiltrootTown/scripts.pory"
+# 149 "data/maps/SiltrootTown/scripts.pory"
 	applymovement 5, SiltrootTown_Arrive_Boatride_Movement_3
-# 93 "data/maps/SiltrootTown/scripts.pory"
+# 150 "data/maps/SiltrootTown/scripts.pory"
 	waitmovement
-# 94 "data/maps/SiltrootTown/scripts.pory"
+# 151 "data/maps/SiltrootTown/scripts.pory"
 	removeobject 5
-# 95 "data/maps/SiltrootTown/scripts.pory"
+# 152 "data/maps/SiltrootTown/scripts.pory"
 	setflag FLAG_HIDE_SCOTT_LIONSARCH_CITY
-# 96 "data/maps/SiltrootTown/scripts.pory"
+# 153 "data/maps/SiltrootTown/scripts.pory"
 	setrespawn HEAL_LOCATION_LIONSARCH_CITY
 	end
 
 
 Siltroottown_Youth_Outide_Ali_Shop_1::
-# 103 "data/maps/SiltrootTown/scripts.pory"
+# 160 "data/maps/SiltrootTown/scripts.pory"
 	lock
-# 104 "data/maps/SiltrootTown/scripts.pory"
+# 161 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Youth_Outide_Ali_Shop_1_Text_0, MSGBOX_AUTOCLOSE
-# 105 "data/maps/SiltrootTown/scripts.pory"
+# 162 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 106 "data/maps/SiltrootTown/scripts.pory"
+# 163 "data/maps/SiltrootTown/scripts.pory"
 	playse SE_PIN
-# 107 "data/maps/SiltrootTown/scripts.pory"
+# 164 "data/maps/SiltrootTown/scripts.pory"
 	applymovement 14, Siltroottown_Youth_Outide_Ali_Shop_1_Movement_0
-# 108 "data/maps/SiltrootTown/scripts.pory"
+# 165 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Youth_Outide_Ali_Shop_1_Text_1
-# 109 "data/maps/SiltrootTown/scripts.pory"
+# 166 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 110 "data/maps/SiltrootTown/scripts.pory"
+# 167 "data/maps/SiltrootTown/scripts.pory"
 	release
 	end
 
 
 Siltroottown_Youth_Outide_Ali_Shop_2::
-# 115 "data/maps/SiltrootTown/scripts.pory"
+# 172 "data/maps/SiltrootTown/scripts.pory"
 	lock
-# 116 "data/maps/SiltrootTown/scripts.pory"
+# 173 "data/maps/SiltrootTown/scripts.pory"
 	faceplayer
-# 117 "data/maps/SiltrootTown/scripts.pory"
+# 174 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Youth_Outide_Ali_Shop_2_Text_0
-# 118 "data/maps/SiltrootTown/scripts.pory"
+# 175 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 119 "data/maps/SiltrootTown/scripts.pory"
+# 176 "data/maps/SiltrootTown/scripts.pory"
 	release
 	end
 
 
 Siltroottown_Youth_Outide_Ali_Shop_3::
-# 124 "data/maps/SiltrootTown/scripts.pory"
+# 181 "data/maps/SiltrootTown/scripts.pory"
 	lock
-# 125 "data/maps/SiltrootTown/scripts.pory"
+# 182 "data/maps/SiltrootTown/scripts.pory"
 	faceplayer
-# 126 "data/maps/SiltrootTown/scripts.pory"
+# 183 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Youth_Outide_Ali_Shop_3_Text_0
-# 127 "data/maps/SiltrootTown/scripts.pory"
+# 184 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 128 "data/maps/SiltrootTown/scripts.pory"
+# 185 "data/maps/SiltrootTown/scripts.pory"
 	release
 	end
 
 
 Siltroottown_Stoned_Dude_Outside::
-# 133 "data/maps/SiltrootTown/scripts.pory"
+# 190 "data/maps/SiltrootTown/scripts.pory"
 	lock
-# 134 "data/maps/SiltrootTown/scripts.pory"
+# 191 "data/maps/SiltrootTown/scripts.pory"
 	faceplayer
-# 135 "data/maps/SiltrootTown/scripts.pory"
+# 192 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Stoned_Dude_Outside_Text_0
-# 136 "data/maps/SiltrootTown/scripts.pory"
+# 193 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 137 "data/maps/SiltrootTown/scripts.pory"
+# 194 "data/maps/SiltrootTown/scripts.pory"
 	release
 	end
 
 
 Siltroottown_Old_Lady::
-# 143 "data/maps/SiltrootTown/scripts.pory"
+# 200 "data/maps/SiltrootTown/scripts.pory"
 	lock
-# 144 "data/maps/SiltrootTown/scripts.pory"
+# 201 "data/maps/SiltrootTown/scripts.pory"
 	faceplayer
-# 145 "data/maps/SiltrootTown/scripts.pory"
+# 202 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Old_Lady_Text_0
-# 146 "data/maps/SiltrootTown/scripts.pory"
+# 203 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 147 "data/maps/SiltrootTown/scripts.pory"
+# 204 "data/maps/SiltrootTown/scripts.pory"
 	release
 	end
 
 
 Siltroottown_Fat_Man::
-# 152 "data/maps/SiltrootTown/scripts.pory"
+# 209 "data/maps/SiltrootTown/scripts.pory"
 	lock
-# 153 "data/maps/SiltrootTown/scripts.pory"
+# 210 "data/maps/SiltrootTown/scripts.pory"
 	faceplayer
-# 154 "data/maps/SiltrootTown/scripts.pory"
+# 211 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Fat_Man_Text_0
-# 155 "data/maps/SiltrootTown/scripts.pory"
+# 212 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 156 "data/maps/SiltrootTown/scripts.pory"
+# 213 "data/maps/SiltrootTown/scripts.pory"
 	release
 	end
 
 
 Siltroottown_Children_Boy::
-# 161 "data/maps/SiltrootTown/scripts.pory"
+# 218 "data/maps/SiltrootTown/scripts.pory"
 	lock
-# 163 "data/maps/SiltrootTown/scripts.pory"
+# 220 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Children_Boy_Text_0
-# 164 "data/maps/SiltrootTown/scripts.pory"
+# 221 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 165 "data/maps/SiltrootTown/scripts.pory"
+# 222 "data/maps/SiltrootTown/scripts.pory"
 	release
 	end
 
 
 Siltroottown_Children_Girl::
-# 170 "data/maps/SiltrootTown/scripts.pory"
+# 227 "data/maps/SiltrootTown/scripts.pory"
 	lock
-# 171 "data/maps/SiltrootTown/scripts.pory"
+# 228 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Children_Girl_Text_0
-# 172 "data/maps/SiltrootTown/scripts.pory"
+# 229 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 173 "data/maps/SiltrootTown/scripts.pory"
+# 230 "data/maps/SiltrootTown/scripts.pory"
 	release
 	end
 
 
 Siltroottown_Sailor_Biodiversity::
-# 178 "data/maps/SiltrootTown/scripts.pory"
+# 235 "data/maps/SiltrootTown/scripts.pory"
 	lock
-# 179 "data/maps/SiltrootTown/scripts.pory"
+# 236 "data/maps/SiltrootTown/scripts.pory"
 	faceplayer
-# 180 "data/maps/SiltrootTown/scripts.pory"
+# 237 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Sailor_Biodiversity_Text_0
-# 181 "data/maps/SiltrootTown/scripts.pory"
+# 238 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 182 "data/maps/SiltrootTown/scripts.pory"
+# 239 "data/maps/SiltrootTown/scripts.pory"
 	release
 	end
 
 
 Siltroottown_Fisher_Sad::
-# 187 "data/maps/SiltrootTown/scripts.pory"
+# 244 "data/maps/SiltrootTown/scripts.pory"
 	lock
-# 188 "data/maps/SiltrootTown/scripts.pory"
+# 245 "data/maps/SiltrootTown/scripts.pory"
 	faceplayer
-# 189 "data/maps/SiltrootTown/scripts.pory"
+# 246 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Fisher_Sad_Text_0
-# 190 "data/maps/SiltrootTown/scripts.pory"
+# 247 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 191 "data/maps/SiltrootTown/scripts.pory"
+# 248 "data/maps/SiltrootTown/scripts.pory"
 	release
 	end
 
 
 Siltroottown_Guard_shed::
-# 196 "data/maps/SiltrootTown/scripts.pory"
+# 253 "data/maps/SiltrootTown/scripts.pory"
 	lock
-# 197 "data/maps/SiltrootTown/scripts.pory"
+# 254 "data/maps/SiltrootTown/scripts.pory"
 	faceplayer
-# 198 "data/maps/SiltrootTown/scripts.pory"
+# 255 "data/maps/SiltrootTown/scripts.pory"
 	goto_if_unset FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1, Siltroottown_Guard_shed_11
 Siltroottown_Guard_shed_9:
-# 204 "data/maps/SiltrootTown/scripts.pory"
+# 261 "data/maps/SiltrootTown/scripts.pory"
 	goto_if_set FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1, Siltroottown_Guard_shed_8
 Siltroottown_Guard_shed_6:
-# 234 "data/maps/SiltrootTown/scripts.pory"
+# 291 "data/maps/SiltrootTown/scripts.pory"
 	goto_if_set FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1, Siltroottown_Guard_shed_5
 Siltroottown_Guard_shed_1:
-# 240 "data/maps/SiltrootTown/scripts.pory"
+# 297 "data/maps/SiltrootTown/scripts.pory"
 	release
 	end
 
 Siltroottown_Guard_shed_2:
-# 199 "data/maps/SiltrootTown/scripts.pory"
+# 256 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Guard_shed_Text_0, MSGBOX_AUTOCLOSE
-# 200 "data/maps/SiltrootTown/scripts.pory"
+# 257 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 201 "data/maps/SiltrootTown/scripts.pory"
+# 258 "data/maps/SiltrootTown/scripts.pory"
 	release
 	end
 
 Siltroottown_Guard_shed_3:
-# 205 "data/maps/SiltrootTown/scripts.pory"
+# 262 "data/maps/SiltrootTown/scripts.pory"
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-# 206 "data/maps/SiltrootTown/scripts.pory"
+# 263 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Guard_shed_Text_0, MSGBOX_AUTOCLOSE
-# 207 "data/maps/SiltrootTown/scripts.pory"
+# 264 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 208 "data/maps/SiltrootTown/scripts.pory"
+# 265 "data/maps/SiltrootTown/scripts.pory"
 	delay 60
-# 209 "data/maps/SiltrootTown/scripts.pory"
+# 266 "data/maps/SiltrootTown/scripts.pory"
 	playse SE_PIN
-# 210 "data/maps/SiltrootTown/scripts.pory"
+# 267 "data/maps/SiltrootTown/scripts.pory"
 	applymovement 20, Siltroottown_Guard_shed_Movement_0
-# 211 "data/maps/SiltrootTown/scripts.pory"
+# 268 "data/maps/SiltrootTown/scripts.pory"
 	waitmovement
-# 212 "data/maps/SiltrootTown/scripts.pory"
+# 269 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Guard_shed_Text_1, MSGBOX_AUTOCLOSE
-# 213 "data/maps/SiltrootTown/scripts.pory"
+# 270 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 214 "data/maps/SiltrootTown/scripts.pory"
+# 271 "data/maps/SiltrootTown/scripts.pory"
 	compare VAR_TEMP_0, 62
 	goto_if_eq Siltroottown_Guard_shed_20
 Siltroottown_Guard_shed_18:
-# 220 "data/maps/SiltrootTown/scripts.pory"
+# 277 "data/maps/SiltrootTown/scripts.pory"
 	compare VAR_TEMP_0, 61
 	goto_if_eq Siltroottown_Guard_shed_17
 Siltroottown_Guard_shed_14:
-# 226 "data/maps/SiltrootTown/scripts.pory"
+# 283 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Guard_shed_Text_2, MSGBOX_AUTOCLOSE
-# 227 "data/maps/SiltrootTown/scripts.pory"
+# 284 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 228 "data/maps/SiltrootTown/scripts.pory"
+# 285 "data/maps/SiltrootTown/scripts.pory"
 	applymovement LOCALID_PLAYER, Siltroottown_Guard_shed_Movement_5
-# 229 "data/maps/SiltrootTown/scripts.pory"
+# 286 "data/maps/SiltrootTown/scripts.pory"
 	waitmovement
-# 230 "data/maps/SiltrootTown/scripts.pory"
+# 287 "data/maps/SiltrootTown/scripts.pory"
 	setflag FLAG_HIDE_SILTROOTTOWN_SHED_GUARD
-# 231 "data/maps/SiltrootTown/scripts.pory"
+# 288 "data/maps/SiltrootTown/scripts.pory"
 	release
 	end
 
 Siltroottown_Guard_shed_4:
-# 235 "data/maps/SiltrootTown/scripts.pory"
+# 292 "data/maps/SiltrootTown/scripts.pory"
 	msgbox Siltroottown_Guard_shed_Text_3, MSGBOX_AUTOCLOSE
-# 236 "data/maps/SiltrootTown/scripts.pory"
+# 293 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
-# 237 "data/maps/SiltrootTown/scripts.pory"
+# 294 "data/maps/SiltrootTown/scripts.pory"
 	release
 	end
 
 Siltroottown_Guard_shed_5:
-# 234 "data/maps/SiltrootTown/scripts.pory"
+# 291 "data/maps/SiltrootTown/scripts.pory"
 	goto_if_set FLAG_HIDE_SILTROOTTOWN_SHED_GUARD, Siltroottown_Guard_shed_4
 	goto Siltroottown_Guard_shed_1
 
 Siltroottown_Guard_shed_8:
-# 204 "data/maps/SiltrootTown/scripts.pory"
+# 261 "data/maps/SiltrootTown/scripts.pory"
 	goto_if_unset FLAG_HIDE_SILTROOTTOWN_SHED_GUARD, Siltroottown_Guard_shed_3
 	goto Siltroottown_Guard_shed_6
 
 Siltroottown_Guard_shed_11:
-# 198 "data/maps/SiltrootTown/scripts.pory"
+# 255 "data/maps/SiltrootTown/scripts.pory"
 	goto_if_unset FLAG_HIDE_SILTROOTTOWN_SHED_GUARD, Siltroottown_Guard_shed_2
 	goto Siltroottown_Guard_shed_9
 
 Siltroottown_Guard_shed_15:
-# 215 "data/maps/SiltrootTown/scripts.pory"
+# 272 "data/maps/SiltrootTown/scripts.pory"
 	applymovement 20, Siltroottown_Guard_shed_Movement_1
-# 216 "data/maps/SiltrootTown/scripts.pory"
+# 273 "data/maps/SiltrootTown/scripts.pory"
 	waitmovement
-# 217 "data/maps/SiltrootTown/scripts.pory"
+# 274 "data/maps/SiltrootTown/scripts.pory"
 	applymovement LOCALID_PLAYER, Siltroottown_Guard_shed_Movement_2
-# 218 "data/maps/SiltrootTown/scripts.pory"
+# 275 "data/maps/SiltrootTown/scripts.pory"
 	waitmovement
 	goto Siltroottown_Guard_shed_14
 
 Siltroottown_Guard_shed_16:
-# 221 "data/maps/SiltrootTown/scripts.pory"
+# 278 "data/maps/SiltrootTown/scripts.pory"
 	applymovement 20, Siltroottown_Guard_shed_Movement_3
-# 222 "data/maps/SiltrootTown/scripts.pory"
+# 279 "data/maps/SiltrootTown/scripts.pory"
 	waitmovement
-# 223 "data/maps/SiltrootTown/scripts.pory"
+# 280 "data/maps/SiltrootTown/scripts.pory"
 	applymovement LOCALID_PLAYER, Siltroottown_Guard_shed_Movement_4
-# 224 "data/maps/SiltrootTown/scripts.pory"
+# 281 "data/maps/SiltrootTown/scripts.pory"
 	waitmovement
 	goto Siltroottown_Guard_shed_14
 
 Siltroottown_Guard_shed_17:
-# 220 "data/maps/SiltrootTown/scripts.pory"
+# 277 "data/maps/SiltrootTown/scripts.pory"
 	compare VAR_TEMP_1, 66
 	goto_if_eq Siltroottown_Guard_shed_16
 	goto Siltroottown_Guard_shed_14
 
 Siltroottown_Guard_shed_20:
-# 214 "data/maps/SiltrootTown/scripts.pory"
+# 271 "data/maps/SiltrootTown/scripts.pory"
 	compare VAR_TEMP_1, 65
 	goto_if_eq Siltroottown_Guard_shed_15
 	goto Siltroottown_Guard_shed_18
 
 
-# 244 "data/maps/SiltrootTown/scripts.pory"
-Siltroottown_Boat_Ride_To_Lionsarch:
-# 245 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
-# 246 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
-# 247 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
-# 248 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
-# 249 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 250 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 251 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 252 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 253 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
-# 254 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
-# 255 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
-# 256 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
-# 257 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
-# 258 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
-# 259 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
-# 260 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
-# 261 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
-# 262 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
-# 263 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
-# 264 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 265 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 266 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 267 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 268 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 269 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 270 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 271 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 272 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 273 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 274 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 275 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 276 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 277 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 278 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 279 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 280 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 281 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 282 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 283 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 284 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 285 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 286 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 287 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 288 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 289 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 290 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 291 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 292 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 293 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 294 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 295 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 296 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 297 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 298 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
-# 299 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
-# 300 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
 # 301 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+Siltroottown_Boat_Ride_To_Lionsarch:
 # 302 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_up
 # 303 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_up
 # 304 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_up
 # 305 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_up
 # 306 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
 # 307 "data/maps/SiltrootTown/scripts.pory"
@@ -610,23 +606,23 @@ Siltroottown_Boat_Ride_To_Lionsarch:
 # 308 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
 # 309 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
+	walk_fast_up
 # 310 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
+	walk_faster_up
 # 311 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
+	walk_faster_up
 # 312 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
+	walk_faster_up
 # 313 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
+	walk_faster_up
 # 314 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 315 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 316 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 317 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 318 "data/maps/SiltrootTown/scripts.pory"
 	walk_faster_up
 # 319 "data/maps/SiltrootTown/scripts.pory"
@@ -634,81 +630,81 @@ Siltroottown_Boat_Ride_To_Lionsarch:
 # 320 "data/maps/SiltrootTown/scripts.pory"
 	walk_faster_up
 # 321 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 322 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 323 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 324 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 325 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 326 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 327 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 328 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 329 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 330 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 331 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 332 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 333 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 334 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 335 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 336 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 337 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 338 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 339 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 340 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 341 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 342 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 343 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 344 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 345 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 346 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 347 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 348 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 349 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 350 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 351 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 352 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 353 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 354 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 355 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 356 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 357 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 358 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 359 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
 # 360 "data/maps/SiltrootTown/scripts.pory"
@@ -718,29 +714,29 @@ Siltroottown_Boat_Ride_To_Lionsarch:
 # 362 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
 # 363 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_right
+	walk_fast_up
 # 364 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_right
+	walk_fast_up
 # 365 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_right
+	walk_fast_up
 # 366 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_right
+	walk_fast_left
 # 367 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_right
+	walk_fast_left
 # 368 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 369 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 370 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 371 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 372 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 373 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 374 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 375 "data/maps/SiltrootTown/scripts.pory"
 	walk_faster_up
 # 376 "data/maps/SiltrootTown/scripts.pory"
@@ -760,23 +756,23 @@ Siltroottown_Boat_Ride_To_Lionsarch:
 # 383 "data/maps/SiltrootTown/scripts.pory"
 	walk_faster_up
 # 384 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 385 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 386 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 387 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 388 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_right
+	walk_faster_up
 # 389 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 390 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 391 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 392 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 393 "data/maps/SiltrootTown/scripts.pory"
 	walk_faster_up
 # 394 "data/maps/SiltrootTown/scripts.pory"
@@ -824,7 +820,7 @@ Siltroottown_Boat_Ride_To_Lionsarch:
 # 415 "data/maps/SiltrootTown/scripts.pory"
 	walk_faster_up
 # 416 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 417 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
 # 418 "data/maps/SiltrootTown/scripts.pory"
@@ -832,41 +828,41 @@ Siltroottown_Boat_Ride_To_Lionsarch:
 # 419 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
 # 420 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_fast_right
 # 421 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_right
 # 422 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_fast_right
 # 423 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_fast_right
 # 424 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_fast_right
 # 425 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 426 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 427 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 428 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 429 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 430 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
+	walk_faster_up
 # 431 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
+	walk_faster_up
 # 432 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
+	walk_faster_up
 # 433 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_left
+	walk_faster_up
 # 434 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 435 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 436 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 437 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 438 "data/maps/SiltrootTown/scripts.pory"
 	walk_faster_up
 # 439 "data/maps/SiltrootTown/scripts.pory"
@@ -874,23 +870,23 @@ Siltroottown_Boat_Ride_To_Lionsarch:
 # 440 "data/maps/SiltrootTown/scripts.pory"
 	walk_faster_up
 # 441 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 442 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 443 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 444 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 445 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_right
 # 446 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 447 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 448 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 449 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 450 "data/maps/SiltrootTown/scripts.pory"
 	walk_faster_up
 # 451 "data/maps/SiltrootTown/scripts.pory"
@@ -940,47 +936,47 @@ Siltroottown_Boat_Ride_To_Lionsarch:
 # 473 "data/maps/SiltrootTown/scripts.pory"
 	walk_faster_up
 # 474 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 475 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 476 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 477 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 478 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_right
 # 479 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 480 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 481 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 482 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 483 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 484 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 485 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 486 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 487 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 488 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 489 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 490 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_left
 # 491 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 492 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 493 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 494 "data/maps/SiltrootTown/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 495 "data/maps/SiltrootTown/scripts.pory"
 	walk_faster_up
 # 496 "data/maps/SiltrootTown/scripts.pory"
@@ -1000,127 +996,127 @@ Siltroottown_Boat_Ride_To_Lionsarch:
 # 503 "data/maps/SiltrootTown/scripts.pory"
 	walk_faster_up
 # 504 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 505 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 506 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 507 "data/maps/SiltrootTown/scripts.pory"
-	walk_fast_up
+	walk_faster_up
 # 508 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 509 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 510 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 511 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 512 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 513 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 514 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 515 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 516 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 517 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 518 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 519 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 520 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 521 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 522 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 523 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 524 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 525 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 526 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 527 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 528 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 529 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 530 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 531 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 532 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 533 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 534 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 535 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 536 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 537 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 538 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 539 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 540 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 541 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 542 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 543 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 544 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 545 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 546 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 547 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 548 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 549 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 550 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 551 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 552 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_faster_up
 # 553 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 554 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 555 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 556 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 557 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 558 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 559 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 560 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_faster_up
 # 561 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_fast_up
 # 562 "data/maps/SiltrootTown/scripts.pory"
-	walk_left
+	walk_fast_up
 # 563 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_fast_up
 # 564 "data/maps/SiltrootTown/scripts.pory"
-	walk_up
+	walk_fast_up
 # 565 "data/maps/SiltrootTown/scripts.pory"
 	walk_up
 # 566 "data/maps/SiltrootTown/scripts.pory"
@@ -1128,198 +1124,402 @@ Siltroottown_Boat_Ride_To_Lionsarch:
 # 567 "data/maps/SiltrootTown/scripts.pory"
 	walk_up
 # 568 "data/maps/SiltrootTown/scripts.pory"
-	step_end
-
-# 47 "data/maps/SiltrootTown/scripts.pory"
-SiltrootTown_Scott_Boatride_Movement_0:
-# 47 "data/maps/SiltrootTown/scripts.pory"
-	walk_right
-	step_end
-
-# 51 "data/maps/SiltrootTown/scripts.pory"
-SiltrootTown_Scott_Boatride_Movement_1:
-# 51 "data/maps/SiltrootTown/scripts.pory"
-	walk_right
-# 51 "data/maps/SiltrootTown/scripts.pory"
-	walk_right
-	step_end
-
-# 54 "data/maps/SiltrootTown/scripts.pory"
-SiltrootTown_Scott_Boatride_Movement_2:
-# 54 "data/maps/SiltrootTown/scripts.pory"
-	walk_down
-# 54 "data/maps/SiltrootTown/scripts.pory"
-	walk_right
-	step_end
-
-# 57 "data/maps/SiltrootTown/scripts.pory"
-SiltrootTown_Scott_Boatride_Movement_3:
-# 57 "data/maps/SiltrootTown/scripts.pory"
 	walk_up
-# 57 "data/maps/SiltrootTown/scripts.pory"
+# 569 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 570 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 571 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 572 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 573 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 574 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 575 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 576 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 577 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 578 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 579 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 580 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 581 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 582 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 583 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 584 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 585 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 586 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 587 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 588 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 589 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 590 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 591 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 592 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 593 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 594 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 595 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 596 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 597 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 598 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 599 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 600 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 601 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 602 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 603 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 604 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 605 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 606 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 607 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 608 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 609 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 610 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 611 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 612 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 613 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 614 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 615 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 616 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 617 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 618 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 619 "data/maps/SiltrootTown/scripts.pory"
+	walk_left
+# 620 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 621 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 622 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 623 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 624 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 625 "data/maps/SiltrootTown/scripts.pory"
+	step_end
+
+# 14 "data/maps/SiltrootTown/scripts.pory"
+Siltroottown_Joris_UpToTheWhiteLight_Movement_0:
+# 14 "data/maps/SiltrootTown/scripts.pory"
+	walk_in_place_fast_down
+	step_end
+
+# 20 "data/maps/SiltrootTown/scripts.pory"
+Siltroottown_Joris_UpToTheWhiteLight_Movement_1:
+# 20 "data/maps/SiltrootTown/scripts.pory"
+	emote_question_mark
+	step_end
+
+# 23 "data/maps/SiltrootTown/scripts.pory"
+Siltroottown_Joris_UpToTheWhiteLight_Movement_2:
+# 23 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_right
+# 23 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 23 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 23 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 23 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 23 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 23 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 23 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 23 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 23 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 23 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 23 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 23 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+	step_end
+
+# 26 "data/maps/SiltrootTown/scripts.pory"
+Siltroottown_Joris_UpToTheWhiteLight_Movement_3:
+# 26 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 26 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 26 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 26 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 26 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 26 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 26 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 26 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 26 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 26 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 26 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+# 26 "data/maps/SiltrootTown/scripts.pory"
+	walk_fast_down
+	step_end
+
+# 37 "data/maps/SiltrootTown/scripts.pory"
+SiltrootTown_Corsola_Jump1_Movement_0:
+# 37 "data/maps/SiltrootTown/scripts.pory"
+	emote_exclamation_mark
+# 37 "data/maps/SiltrootTown/scripts.pory"
+	jump_2_left
+	step_end
+
+# 104 "data/maps/SiltrootTown/scripts.pory"
+SiltrootTown_Scott_Boatride_Movement_0:
+# 104 "data/maps/SiltrootTown/scripts.pory"
 	walk_right
 	step_end
 
-# 74 "data/maps/SiltrootTown/scripts.pory"
+# 108 "data/maps/SiltrootTown/scripts.pory"
+SiltrootTown_Scott_Boatride_Movement_1:
+# 108 "data/maps/SiltrootTown/scripts.pory"
+	walk_right
+# 108 "data/maps/SiltrootTown/scripts.pory"
+	walk_right
+	step_end
+
+# 111 "data/maps/SiltrootTown/scripts.pory"
+SiltrootTown_Scott_Boatride_Movement_2:
+# 111 "data/maps/SiltrootTown/scripts.pory"
+	walk_down
+# 111 "data/maps/SiltrootTown/scripts.pory"
+	walk_right
+	step_end
+
+# 114 "data/maps/SiltrootTown/scripts.pory"
+SiltrootTown_Scott_Boatride_Movement_3:
+# 114 "data/maps/SiltrootTown/scripts.pory"
+	walk_up
+# 114 "data/maps/SiltrootTown/scripts.pory"
+	walk_right
+	step_end
+
+# 131 "data/maps/SiltrootTown/scripts.pory"
 SiltrootTown_Arrive_Boatride_Movement_0:
-# 74 "data/maps/SiltrootTown/scripts.pory"
+# 131 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 78 "data/maps/SiltrootTown/scripts.pory"
+# 135 "data/maps/SiltrootTown/scripts.pory"
 SiltrootTown_Arrive_Boatride_Movement_1:
-# 78 "data/maps/SiltrootTown/scripts.pory"
+# 135 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 78 "data/maps/SiltrootTown/scripts.pory"
+# 135 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 78 "data/maps/SiltrootTown/scripts.pory"
+# 135 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 78 "data/maps/SiltrootTown/scripts.pory"
+# 135 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 78 "data/maps/SiltrootTown/scripts.pory"
+# 135 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 78 "data/maps/SiltrootTown/scripts.pory"
+# 135 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 78 "data/maps/SiltrootTown/scripts.pory"
+# 135 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 78 "data/maps/SiltrootTown/scripts.pory"
+# 135 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_right
-# 78 "data/maps/SiltrootTown/scripts.pory"
+# 135 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 78 "data/maps/SiltrootTown/scripts.pory"
+# 135 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_right
-# 78 "data/maps/SiltrootTown/scripts.pory"
+# 135 "data/maps/SiltrootTown/scripts.pory"
 	face_left
 	step_end
 
-# 85 "data/maps/SiltrootTown/scripts.pory"
+# 142 "data/maps/SiltrootTown/scripts.pory"
 SiltrootTown_Arrive_Boatride_Movement_2:
-# 85 "data/maps/SiltrootTown/scripts.pory"
+# 142 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 85 "data/maps/SiltrootTown/scripts.pory"
+# 142 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 85 "data/maps/SiltrootTown/scripts.pory"
+# 142 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 85 "data/maps/SiltrootTown/scripts.pory"
+# 142 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 85 "data/maps/SiltrootTown/scripts.pory"
+# 142 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 85 "data/maps/SiltrootTown/scripts.pory"
+# 142 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 85 "data/maps/SiltrootTown/scripts.pory"
+# 142 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 85 "data/maps/SiltrootTown/scripts.pory"
+# 142 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 85 "data/maps/SiltrootTown/scripts.pory"
+# 142 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_right
-# 85 "data/maps/SiltrootTown/scripts.pory"
+# 142 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_up
-# 85 "data/maps/SiltrootTown/scripts.pory"
+# 142 "data/maps/SiltrootTown/scripts.pory"
 	face_right
 	step_end
 
-# 92 "data/maps/SiltrootTown/scripts.pory"
+# 149 "data/maps/SiltrootTown/scripts.pory"
 SiltrootTown_Arrive_Boatride_Movement_3:
-# 92 "data/maps/SiltrootTown/scripts.pory"
+# 149 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_down
-# 92 "data/maps/SiltrootTown/scripts.pory"
+# 149 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_left
-# 92 "data/maps/SiltrootTown/scripts.pory"
+# 149 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_down
-# 92 "data/maps/SiltrootTown/scripts.pory"
+# 149 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_down
-# 92 "data/maps/SiltrootTown/scripts.pory"
+# 149 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_down
-# 92 "data/maps/SiltrootTown/scripts.pory"
+# 149 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_down
-# 92 "data/maps/SiltrootTown/scripts.pory"
+# 149 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_down
-# 92 "data/maps/SiltrootTown/scripts.pory"
+# 149 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_down
-# 92 "data/maps/SiltrootTown/scripts.pory"
+# 149 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_down
-# 92 "data/maps/SiltrootTown/scripts.pory"
+# 149 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_down
-# 92 "data/maps/SiltrootTown/scripts.pory"
+# 149 "data/maps/SiltrootTown/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 107 "data/maps/SiltrootTown/scripts.pory"
+# 164 "data/maps/SiltrootTown/scripts.pory"
 Siltroottown_Youth_Outide_Ali_Shop_1_Movement_0:
-# 107 "data/maps/SiltrootTown/scripts.pory"
+# 164 "data/maps/SiltrootTown/scripts.pory"
 	emote_exclamation_mark
-# 107 "data/maps/SiltrootTown/scripts.pory"
+# 164 "data/maps/SiltrootTown/scripts.pory"
 	face_player
 	step_end
 
-# 210 "data/maps/SiltrootTown/scripts.pory"
+# 267 "data/maps/SiltrootTown/scripts.pory"
 Siltroottown_Guard_shed_Movement_0:
-# 210 "data/maps/SiltrootTown/scripts.pory"
+# 267 "data/maps/SiltrootTown/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 215 "data/maps/SiltrootTown/scripts.pory"
+# 272 "data/maps/SiltrootTown/scripts.pory"
 Siltroottown_Guard_shed_Movement_1:
-# 215 "data/maps/SiltrootTown/scripts.pory"
+# 272 "data/maps/SiltrootTown/scripts.pory"
 	walk_down
-# 215 "data/maps/SiltrootTown/scripts.pory"
+# 272 "data/maps/SiltrootTown/scripts.pory"
 	face_up
 	step_end
 
-# 217 "data/maps/SiltrootTown/scripts.pory"
+# 274 "data/maps/SiltrootTown/scripts.pory"
 Siltroottown_Guard_shed_Movement_2:
-# 217 "data/maps/SiltrootTown/scripts.pory"
+# 274 "data/maps/SiltrootTown/scripts.pory"
 	walk_left
-# 217 "data/maps/SiltrootTown/scripts.pory"
+# 274 "data/maps/SiltrootTown/scripts.pory"
 	face_down
 	step_end
 
-# 221 "data/maps/SiltrootTown/scripts.pory"
+# 278 "data/maps/SiltrootTown/scripts.pory"
 Siltroottown_Guard_shed_Movement_3:
-# 221 "data/maps/SiltrootTown/scripts.pory"
+# 278 "data/maps/SiltrootTown/scripts.pory"
 	walk_right
-# 221 "data/maps/SiltrootTown/scripts.pory"
+# 278 "data/maps/SiltrootTown/scripts.pory"
 	face_left
 	step_end
 
-# 223 "data/maps/SiltrootTown/scripts.pory"
+# 280 "data/maps/SiltrootTown/scripts.pory"
 Siltroottown_Guard_shed_Movement_4:
-# 223 "data/maps/SiltrootTown/scripts.pory"
+# 280 "data/maps/SiltrootTown/scripts.pory"
 	walk_up
-# 223 "data/maps/SiltrootTown/scripts.pory"
+# 280 "data/maps/SiltrootTown/scripts.pory"
 	face_right
 	step_end
 
-# 228 "data/maps/SiltrootTown/scripts.pory"
+# 285 "data/maps/SiltrootTown/scripts.pory"
 Siltroottown_Guard_shed_Movement_5:
-# 228 "data/maps/SiltrootTown/scripts.pory"
+# 285 "data/maps/SiltrootTown/scripts.pory"
 	face_up
 	step_end
 
+Siltroottown_Joris_UpToTheWhiteLight_Text_0:
+# 12 "data/maps/SiltrootTown/scripts.pory"
+	.string "...$"
+
+Siltroottown_Joris_UpToTheWhiteLight_Text_1:
+# 16 "data/maps/SiltrootTown/scripts.pory"
+	.string "?????$"
+
+Siltroottown_Joris_UpToTheWhiteLight_Text_2:
+# 17 "data/maps/SiltrootTown/scripts.pory"
+	.string "UP TO THE WHITELIGHT!!!$"
+
 SiltrootTown_Sign_AliApothecary_Text_0:
-# 9 "data/maps/SiltrootTown/scripts.pory"
+# 66 "data/maps/SiltrootTown/scripts.pory"
 	.string "Coffeeshop the Magical Root!\n"
 	.string "Where the smoke is thick and the leaves\l"
 	.string "burn bright!$"
 
 SiltrootTown_Sign_Pokecenter_Text_0:
-# 16 "data/maps/SiltrootTown/scripts.pory"
+# 73 "data/maps/SiltrootTown/scripts.pory"
 	.string "Pokecenter Siltroot\n"
 	.string "The oldest medical facility in the\l"
 	.string "region!$"
 
 Siltroottown_Sign_SiltrootTown_Text_0:
-# 23 "data/maps/SiltrootTown/scripts.pory"
+# 80 "data/maps/SiltrootTown/scripts.pory"
 	.string "{LEFT_ARROW} Siltroot Town\n"
 	.string "Where the mud is thick and the roots\l"
 	.string "are deep.$"
 
 SiltrootTown_Scott_Boatride_Text_0:
-# 33 "data/maps/SiltrootTown/scripts.pory"
+# 90 "data/maps/SiltrootTown/scripts.pory"
 	.string "Scott$"
 
 SiltrootTown_Scott_Boatride_Text_1:
-# 34 "data/maps/SiltrootTown/scripts.pory"
+# 91 "data/maps/SiltrootTown/scripts.pory"
 	.string "...I don't know you.\p"
 	.string "You got no credentials.\p"
 	.string "Go see Ali first.\p"
@@ -1327,14 +1527,14 @@ SiltrootTown_Scott_Boatride_Text_1:
 	.string "to bring.$"
 
 SiltrootTown_Scott_Boatride_Text_2:
-# 43 "data/maps/SiltrootTown/scripts.pory"
+# 100 "data/maps/SiltrootTown/scripts.pory"
 	.string "Nobody saw you right?\p"
 	.string "Lets move before the satellite flies\n"
 	.string "over.\p"
 	.string "The boat ride will be a rough one.$"
 
 SiltrootTown_Arrive_Boatride_Text_0:
-# 72 "data/maps/SiltrootTown/scripts.pory"
+# 129 "data/maps/SiltrootTown/scripts.pory"
 	.string "Bravo, Tango here.\p"
 	.string "Ready to disembark?\p"
 	.string "...\p"
@@ -1342,7 +1542,7 @@ SiltrootTown_Arrive_Boatride_Text_0:
 	.string "Let's move!$"
 
 SiltrootTown_Arrive_Boatride_Text_1:
-# 90 "data/maps/SiltrootTown/scripts.pory"
+# 147 "data/maps/SiltrootTown/scripts.pory"
 	.string "Touchdown. We are in the blind spot.\p"
 	.string "My scanners show a gap in the harbor\n"
 	.string "security grid for exactly forty-five\l"
@@ -1364,12 +1564,12 @@ SiltrootTown_Arrive_Boatride_Text_1:
 	.string "Tango going dark.$"
 
 Siltroottown_Youth_Outide_Ali_Shop_1_Text_0:
-# 104 "data/maps/SiltrootTown/scripts.pory"
+# 161 "data/maps/SiltrootTown/scripts.pory"
 	.string "Yo Charmander, give your tail here, I\n"
 	.string "need to light my joint as we...$"
 
 Siltroottown_Youth_Outide_Ali_Shop_1_Text_1:
-# 108 "data/maps/SiltrootTown/scripts.pory"
+# 165 "data/maps/SiltrootTown/scripts.pory"
 	.string "!!\p"
 	.string "...as well as my incense!\p"
 	.string "Yes, purely medicinal incense.\p"
@@ -1377,7 +1577,7 @@ Siltroottown_Youth_Outide_Ali_Shop_1_Text_1:
 	.string "Please don't tell Officer Jenny.$"
 
 Siltroottown_Youth_Outide_Ali_Shop_2_Text_0:
-# 117 "data/maps/SiltrootTown/scripts.pory"
+# 174 "data/maps/SiltrootTown/scripts.pory"
 	.string "Dude, be cool!\p"
 	.string "Stop looking at me!\p"
 	.string "If you stare, they'll know we aren't\n"
@@ -1388,7 +1588,7 @@ Siltroottown_Youth_Outide_Ali_Shop_2_Text_0:
 	.string "forgot.$"
 
 Siltroottown_Youth_Outide_Ali_Shop_3_Text_0:
-# 126 "data/maps/SiltrootTown/scripts.pory"
+# 183 "data/maps/SiltrootTown/scripts.pory"
 	.string "Ali really knows his botany...\p"
 	.string "I feel like a Hoppip floating on a\n"
 	.string "breeze.\p"
@@ -1396,21 +1596,21 @@ Siltroottown_Youth_Outide_Ali_Shop_3_Text_0:
 	.string "I would kill for a Lava Cookie right now.$"
 
 Siltroottown_Stoned_Dude_Outside_Text_0:
-# 135 "data/maps/SiltrootTown/scripts.pory"
+# 192 "data/maps/SiltrootTown/scripts.pory"
 	.string "I came outside for some fresh air, but\n"
 	.string "the air feels... really loud right now.\p"
 	.string "I think I'm just going to stare at the\n"
 	.string "sand for a while.$"
 
 Siltroottown_Old_Lady_Text_0:
-# 145 "data/maps/SiltrootTown/scripts.pory"
+# 202 "data/maps/SiltrootTown/scripts.pory"
 	.string "All this beautiful nature, and the youth\n"
 	.string "only care about those dreadful herbs.\p"
 	.string "They should be burying their noses in\n"
 	.string "books, not clouds of smoke.$"
 
 Siltroottown_Fat_Man_Text_0:
-# 154 "data/maps/SiltrootTown/scripts.pory"
+# 211 "data/maps/SiltrootTown/scripts.pory"
 	.string "Everyone claims the hunger comes from\n"
 	.string "the special grass, but that is total\l"
 	.string "nonsense.\p"
@@ -1419,7 +1619,7 @@ Siltroottown_Fat_Man_Text_0:
 	.string "survive.$"
 
 Siltroottown_Children_Boy_Text_0:
-# 163 "data/maps/SiltrootTown/scripts.pory"
+# 220 "data/maps/SiltrootTown/scripts.pory"
 	.string "Hey, cut it out! Janine!\p"
 	.string "I am trying to look for a Magikarp down\n"
 	.string "here and you are scaring them away!\p"
@@ -1427,7 +1627,7 @@ Siltroottown_Children_Boy_Text_0:
 	.string "even hot!$"
 
 Siltroottown_Children_Girl_Text_0:
-# 171 "data/maps/SiltrootTown/scripts.pory"
+# 228 "data/maps/SiltrootTown/scripts.pory"
 	.string "Take that! Adrian!\p"
 	.string "I bet you can't catch me, even with\n"
 	.string "those floaties on!\p"
@@ -1435,7 +1635,7 @@ Siltroottown_Children_Girl_Text_0:
 	.string "mad or anything.$"
 
 Siltroottown_Sailor_Biodiversity_Text_0:
-# 180 "data/maps/SiltrootTown/scripts.pory"
+# 237 "data/maps/SiltrootTown/scripts.pory"
 	.string "Back in the day, you couldn't cast a line\n"
 	.string "into these mangroves without hooking\l"
 	.string "something rare.\p"
@@ -1449,7 +1649,7 @@ Siltroottown_Sailor_Biodiversity_Text_0:
 	.string "this empty.$"
 
 Siltroottown_Fisher_Sad_Text_0:
-# 189 "data/maps/SiltrootTown/scripts.pory"
+# 246 "data/maps/SiltrootTown/scripts.pory"
 	.string "They say the fish are gone because of\n"
 	.string "'overfishing,' but that is total rubbish.\p"
 	.string "It is the bureaucrats and their endless\n"
@@ -1460,21 +1660,21 @@ Siltroottown_Fisher_Sad_Text_0:
 	.string "decent catch these days!$"
 
 Siltroottown_Guard_shed_Text_0:
-# 199 "data/maps/SiltrootTown/scripts.pory"
+# 256 "data/maps/SiltrootTown/scripts.pory"
 	.string "Whoa, hold your Ponyta.\p"
 	.string "This is a restricted agricultural\n"
 	.string "facility.\p"
 	.string "Strictly authorized personnel only.$"
 
 Siltroottown_Guard_shed_Text_1:
-# 212 "data/maps/SiltrootTown/scripts.pory"
+# 269 "data/maps/SiltrootTown/scripts.pory"
 	.string "...\p"
 	.string "Oh? Ali sent you?\p"
 	.string "For the 'Project Star-Shot' shipment?\p"
 	.string "Alright, you're clear.$"
 
 Siltroottown_Guard_shed_Text_2:
-# 226 "data/maps/SiltrootTown/scripts.pory"
+# 283 "data/maps/SiltrootTown/scripts.pory"
 	.string "But listen carefully.\p"
 	.string "The production team is inside right now.\p"
 	.string "It's a bunch of Slowbros.\p"
@@ -1488,7 +1688,7 @@ Siltroottown_Guard_shed_Text_2:
 	.string "Move like a ghost, kid.$"
 
 Siltroottown_Guard_shed_Text_3:
-# 235 "data/maps/SiltrootTown/scripts.pory"
+# 292 "data/maps/SiltrootTown/scripts.pory"
 	.string "Remember, don't let the Slowbro's see\n"
 	.string "you.\p"
 	.string "The bag is in the back.\p"

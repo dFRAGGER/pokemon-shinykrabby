@@ -11,7 +11,27 @@ script DiscoBasement_DJ_Peter {
         // Already delivered, check if got Dancing Boots
         if (flag(FLAG_RECEIVED_CLIMBING_ROPE)) {
             setspeaker("DJ Peter")
-            if (flag(FLAG_STEEL_FACTORY_TUNNEL_OPEN)) {
+            if (flag(FLAG_STEEL_FACTORY_COMPLETE)) {
+                if (flag(FLAG_PETER_GAVE_FACTORY_REWARD)) {
+                    msgbox(format("Seriously, you did it.\pThe Faculty's gone, the factory's quiet, and I can finally breathe again.\pParty's louder than ever down here.\pThat's all thanks to you."))
+                } else {
+                    msgbox(format("You actually did it.\pI didn't think... I mean, I KNEW you could do it.\pBut still.\pThe Faculty. Gone. From my city."))
+                    waitmessage
+                    setspeaker("DJ Peter")
+                    msgbox(format("Do you know what this means for me?\pI can go back to running this place full time.\pParties every night.\pNo more looking over my shoulder.\pFree to... you know.\pSmuggle.\p...\pI mean PARTY.\pFull time partying.\pThat's what I said."))
+                    waitmessage
+                    setspeaker("DJ Peter")
+                    msgbox(format("Look, I owe you.\pI had this stashed away for a while.\pGot it the hard way, if you know what I mean.\pThere was a period in my life where I ran a little... HOT.\pToo hot.\pLike, everything-on-fire-including-myself hot.\pNot my proudest chapter."))
+                    waitmessage
+                    setspeaker("DJ Peter")
+                    msgbox(format("Point is, I learned a thing or two about Overheat.\pNot the kind you want to experience personally, trust me.\pBut the kind your Pokemon can actually USE?\pThat's a different story.\pHere. Take the TM.\pYou'll do more good with it than I ever did."))
+                    waitmessage
+                    giveitem(ITEM_TM38)
+                    setflag(FLAG_PETER_GAVE_FACTORY_REWARD)
+                    setspeaker("DJ Peter")
+                    msgbox(format("Now get back out there.\pAnd hey... stay funky."))
+                }
+            } elif (flag(FLAG_STEEL_FACTORY_TUNNEL_OPEN)) {
                 msgbox(format("Welcome back to the GROOVE ZONE!\pYou making progress in there?\pThat factory's been giving me the creeps for years.\pGood to know someone's finally poking around."))
             } elif (flag(FLAG_PETER_GAVE_TUNNEL_PERMISSION)) {
                 msgbox(format("Tunnel's still open on our end.\pPaolo will let you through.\pGet in there and find out what they're really building."))
@@ -37,6 +57,7 @@ script DiscoBasement_DJ_Peter {
                 msgbox(format("Paolo guards the entrance down here.\pI'll tell him you have my blessing to go through.\pGet in there.\pFind out what they're really building.\pAnd be careful."))
                 waitmessage
                 setflag(FLAG_PETER_GAVE_TUNNEL_PERMISSION)
+                setflag(FLAG_HIDE_RECTOR_ELECTABUZZ_AFTER_BATTLE)
             } else {
                 msgbox(format("Hey, you're still kicking around Lionsarch!\pGood to see you.\pSomething's been feeling off up in those mountains lately.\pStay funky out there."))
             }

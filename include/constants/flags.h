@@ -45,69 +45,69 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_RECEIVED_STARTER_CHARMANDER  0x20 // Unused Flag
-#define FLAG_RECEIVED_STARTER_BULBASAUR   0x21 // Unused Flag
-#define FLAG_RECEIVED_STARTER_SQUIRTLE    0x22 // Unused Flag
-#define FLAG_RECEIVED_STARTER_CYNDAQUIL   0x23 // Unused Flag
-#define FLAG_RECEIVED_STARTER_CHIKORITA    0x24 // Unused Flag
-#define FLAG_RECEIVED_STARTER_TOTODILE    0x25 // Unused Flag
-#define FLAG_RECEIVED_STARTER_TORCHIC    0x26 // Unused Flag
-#define FLAG_RECEIVED_STARTER_TREECKO    0x27 // Unused Flag
-#define FLAG_RECEIVED_STARTER_MUDKIP   0x28 // Unused Flag
-#define FLAG_RECEIVED_STARTER_CHOICE    0x29 // Unused Flag
-#define FLAG_PROFESSOR_BIRDS_DISCOVERY    0x2A // Unused Flag
-#define FLAG_KICKED_OUT_LAB_CONVO    0x2B // Unused Flag
-#define FLAG_HIDE_INTERN_BIRDS_LAB   0x2C // Unused Flag
-#define FLAG_HIDE_MOM_SHOES   0x2D // Unused Flag
-#define FLAG_SHINY_KRABBY_ENCOUNTER    0x2E // Unused Flag
-#define FLAG_FACULTY_GRUNTS_ROUT01    0x2F // Unused Flag
-#define FLAG_RECEIVED_ESCAPE_ROPE   0x30 // Unused Flag
-#define FLAG_DISABLE_FOLLOWER_POKEMON    0x31 // Unused Flag
-#define FLAG_HIDE_PETELONGFELLOW    0x32 // Unused Flag
-#define FLAG_JAKUB_CONVO            0x33 // Unused Flag
-#define FLAG_JAKUB_CONVO_2    0x34 // Unused Flag
-#define FLAG_UP_TO_THE_WHITELIGHT_MAASJE    0x35 // Unused Flag
-#define FLAG_INTERN_BOXES_ASSIGNMENT    0x36 // Unused Flag
-#define FLAG_ENTRANCE_JARI_POKEBAL_LAB  0x37 // Unused Flag
-#define FLAG_MOM_CALLING_UPSTAIRS    0x38 // Unused Flag
-#define FLAG_INTRO_SPEECH_MOM_FINISHED    0x39 // Unused Flag
-#define FLAG_HELPED_DAN_BEAT_FACULTY   0x3A // Unused Flag
-#define FLAG_MOSSWOOD_MISSION_STARTED    0x3B // Unused Flag
-#define FLAG_MOSSWOOD_MISSION_COMPLETED    0x3C // Unused Flag
-#define FLAG_MUSHROOM_MISSION_STARTED   0x3D // Unused Flag
-#define FLAG_MUSHROOM_MISSION_COMPLETED    0x3E // Unused Flag
-#define FLAG_MISTCITY_SHOW_MUSHROOM_PARAS    0x3F // Unused Flag
-#define FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT    0x40 // Unused Flag
-#define FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH    0x41 // Unused Flag
-#define FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM    0x42 // Unused Flag
-#define FLAG_RESCUED_DAAN   0x43 // Unused Flag
-#define FLAG_HIDE_NASH_DAVID    0x44 // Unused Flag
-#define FLAG_DAVID_TRUCK   0x45 // Unused Flag
-#define FLAG_FACULTY_GORGE_NASH1    0x46 // Unused Flag
-#define FLAG_FACULTY_GORGE_NASH2    0x47 // Unused Flag
-#define FLAG_DAAN_NASH_TRUCK    0x48 // Unused Flag
-#define FLAG_ANCIENTGROTTO_BOARD_SHIP    0x49 // Unused Flag
-#define FLAG_ANCIENTGROTTO_DISAPPEAR_SHIP    0x4A // Unused Flag
-#define FLAG_NASH_ENTRANCE_RESEARCH_CENTER1    0x4B // Unused Flag
-#define FLAG_NASH_ENTRANCE_RESEARCH_CENTER2    0x4C // Unused Flag
-#define FLAG_FACULTY_SYMPATHIZERS_1    0x4D // Unused Flag
-#define FLAG_FACULTY_SYMPATHIZERS_2     0x4E // Unused Flag
-#define FLAG_HIDE_JACOB_SIENNA    0x4F // Unused Flag
+#define FLAG_RECEIVED_STARTER_CHARMANDER    0x20 // SK: Set in LabJariIndoorF0 when the player picks Charmander as their starter.
+#define FLAG_RECEIVED_STARTER_BULBASAUR     0x21 // SK: Set in LabJariIndoorF0 when the player picks Bulbasaur as their starter.
+#define FLAG_RECEIVED_STARTER_SQUIRTLE      0x22 // SK: Set in LabJariIndoorF0 when the player picks Squirtle as their starter.
+#define FLAG_RECEIVED_STARTER_CYNDAQUIL     0x23 // SK: Set in LabJariIndoorF0 when the player picks Cyndaquil as their starter.
+#define FLAG_RECEIVED_STARTER_CHIKORITA     0x24 // SK: Set in LabJariIndoorF0 when the player picks Chikorita as their starter.
+#define FLAG_RECEIVED_STARTER_TOTODILE      0x25 // SK: Set in LabJariIndoorF0 when the player picks Totodile as their starter.
+#define FLAG_RECEIVED_STARTER_TORCHIC       0x26 // SK: Set in LabJariIndoorF0 when the player picks Torchic as their starter.
+#define FLAG_RECEIVED_STARTER_TREECKO       0x27 // SK: Set in LabJariIndoorF0 when the player picks Treecko as their starter.
+#define FLAG_RECEIVED_STARTER_MUDKIP        0x28 // SK: Set in LabJariIndoorF0 when the player picks Mudkip as their starter.
+#define FLAG_RECEIVED_STARTER_CHOICE        0x29 // SK: Set after any starter is chosen in LabJariIndoorF0; prevents the player from picking a second starter.
+#define FLAG_PROFESSOR_BIRDS_DISCOVERY      0x2A // SK: Set during the starter selection cutscene in LabJariIndoorF0; disables the follower Pokemon for the duration of the event.
+#define FLAG_KICKED_OUT_LAB_CONVO           0x2B // SK: Controls intern dialogue state in ErpCity after the player has been kicked out of the lab.
+#define FLAG_HIDE_INTERN_BIRDS_LAB          0x2C // SK: Hides the intern bird NPC; toggled by scripts in ErpCity and the lab maps.
+#define FLAG_HIDE_MOM_SHOES                 0x2D // SK: Controls mom's visibility state in ErpCity scripts based on story progression.
+#define FLAG_SHINY_KRABBY_ENCOUNTER         0x2E // SK: Set in CrabhillEntrance when the player encounters the shiny Krabby; gates story dialogue across multiple maps.
+#define FLAG_FACULTY_GRUNTS_ROUT01          0x2F // SK: Set after defeating the faculty grunts on Route 01; controls NPC visibility after the battles.
+#define FLAG_RECEIVED_ESCAPE_ROPE           0x30 // SK: Set in Maasje after receiving the Escape Rope item; prevents it from being given again.
+#define FLAG_DISABLE_FOLLOWER_POKEMON       0x31 // SK: Temporarily disables the follower Pokemon during cutscenes in multiple maps (lab, Maasje, MistCity).
+#define FLAG_HIDE_PETELONGFELLOW            0x32 // SK: Set after defeating gym leader Petelongfellow in Maasje_Gym; hides the NPC from the map.
+#define FLAG_JAKUB_CONVO                    0x33 // SK: Set on the first conversation with Jakub in his home (Indoor_Maasje_Jakub_Home); gates the initial dialogue branch.
+#define FLAG_JAKUB_CONVO_2                  0x34 // SK: Set for the second conversation state with Jakub in Indoor_Maasje_Jakub_Home based on other story flags.
+#define FLAG_UP_TO_THE_WHITELIGHT_MAASJE    0x35 // SK: Set in Maasje after a story event; gates progression toward the Whitelight location.
+#define FLAG_INTERN_BOXES_ASSIGNMENT        0x36 // SK: Set in LabJariIndoor after the player completes the intern's boxes assignment.
+#define FLAG_ENTRANCE_JARI_POKEBAL_LAB      0x37 // SK: Reserved for a Pokebal Lab entrance event (not yet implemented in scripts).
+#define FLAG_MOM_CALLING_UPSTAIRS           0x38 // SK: Reserved for the event where mom calls the player upstairs (not yet implemented in scripts).
+#define FLAG_INTRO_SPEECH_MOM_FINISHED      0x39 // SK: Set in ErpusCity_StartHouse_1F after mom's intro speech completes; prevents the opening cutscene from replaying.
+#define FLAG_HELPED_DAN_BEAT_FACULTY        0x3A // SK: Set in Mistcity_Research_Center after helping Dan defeat the faculty; major gate for NPC dialogue across MistCity.
+#define FLAG_MOSSWOOD_MISSION_STARTED       0x3B // SK: Set in Mistcity_Indoor_Woodwork_Shop when the player accepts the mosswood mission.
+#define FLAG_MOSSWOOD_MISSION_COMPLETED     0x3C // SK: Set in Mistcity_Indoor_Woodwork_Shop when the mosswood mission is completed and rewards are given.
+#define FLAG_MUSHROOM_MISSION_STARTED       0x3D // SK: Set in Mistcity_Indoor_MushroomShop when the player talks to Leaf to start the fungus index collection task.
+#define FLAG_MUSHROOM_MISSION_COMPLETED     0x3E // SK: Set in Mistcity_Indoor_MushroomShop after all four mushroom Pokemon are shown to Leaf; gates rewards.
+#define FLAG_MISTCITY_SHOW_MUSHROOM_PARAS    0x3F // SK: Set in Mistcity_Indoor_MushroomShop when Paras is shown to Leaf for the fungus index.
+#define FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT    0x40 // SK: Set in Mistcity_Indoor_MushroomShop when Parasect is shown to Leaf for the fungus index.
+#define FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH    0x41 // SK: Set in Mistcity_Indoor_MushroomShop when Shroomish is shown to Leaf for the fungus index.
+#define FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM    0x42 // SK: Set in Mistcity_Indoor_MushroomShop when Breloom is shown to Leaf for the fungus index.
+#define FLAG_RESCUED_DAAN                   0x43 // SK: Set in DeepCloudForest_FacultyGorge after rescuing Daan; major story gate affecting NPC visibility across MistCity.
+#define FLAG_HIDE_NASH_DAVID                0x44 // SK: Set in Mistcity_Research_Center_Entrance after a cutscene; hides Nash and David NPCs.
+#define FLAG_DAVID_TRUCK                    0x45 // SK: Controls truck interior state and NPC visibility across InsideOfTruck and DeepCloudForest_FacultyGorge.
+#define FLAG_FACULTY_GORGE_NASH1            0x46 // SK: Set during the first Nash encounter in DeepCloudForest_FacultyGorge.
+#define FLAG_FACULTY_GORGE_NASH2            0x47 // SK: Controls the second Nash encounter state across InsideOfTruck and DeepCloudForest_FacultyGorge.
+#define FLAG_DAAN_NASH_TRUCK                0x48 // SK: Controls Nash and Daan's interaction state in InsideOfTruck and gates events in Mistcity_Research_Center.
+#define FLAG_ANCIENTGROTTO_BOARD_SHIP       0x49 // SK: Set when boarding the ship in DeepCloudforest_FacultyAncientGrotto; triggers the boarding cutscene.
+#define FLAG_ANCIENTGROTTO_DISAPPEAR_SHIP   0x4A // SK: Set after the ship disappears in DeepCloudforest_FacultyAncientGrotto; hides the ship and related NPCs.
+#define FLAG_NASH_ENTRANCE_RESEARCH_CENTER1 0x4B // SK: Controls Nash's position at Mistcity_Research_Center_Entrance after arriving by truck.
+#define FLAG_NASH_ENTRANCE_RESEARCH_CENTER2 0x4C // SK: Controls the alternate Nash encounter state during the truck ending in Mistcity_Research_Center.
+#define FLAG_FACULTY_SYMPATHIZERS_1         0x4D // SK: Set after the Maasje gym battle; controls faculty sympathizer NPC visibility in Mistcity and DeepCloudForest.
+#define FLAG_FACULTY_SYMPATHIZERS_2         0x4E // SK: Set during sympathizer dialogue in Mistcity_Indoor_FacultySympathizer; also enables a PokéNav match call on Route 03.
+#define FLAG_HIDE_JACOB_SIENNA              0x4F // SK: Controls visibility of Jacob and Sienna NPCs across ErpCity, CrabhillEntrance, and Indoor_Maasje_Jakub_Home.
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
-#define FLAG_SET_WALL_CLOCK                      0x51
+#define FLAG_SET_WALL_CLOCK                      0x51   // SK: Used in starting house
 #define FLAG_RESCUED_BIRCH                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
-#define FLAG_SHINY_ENCOUNTER                 0x54  // Unused Flag
-#define FLAG_NOCATCH_ENCOUNTER                 0x55  // Unused Flag
+#define FLAG_SHINY_ENCOUNTER                 0x54  // SK: Shiny Encounter Flag
+#define FLAG_NOCATCH_ENCOUNTER               0x55  // SK: No catch Encounter Flag
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
 #define FLAG_MET_RIVAL_MOM                   0x57
 #define FLAG_BIRCH_AIDE_MET                  0x58
 #define FLAG_DECLINED_BIKE                   0x59
-#define FLAG_RECEIVED_BIKE                   0x5A
+#define FLAG_RECEIVED_BIKE                   0x5A // SK: Set in BikeShop_Jaouad when the player receives the bike; prevents giving the bike again.
 #define FLAG_WATTSON_REMATCH_AVAILABLE       0x5B
 #define FLAG_COLLECTED_ALL_SILVER_SYMBOLS    0x5C
 #define FLAG_GOOD_LUCK_SAFARI_ZONE           0x5D // Set after talking to NPC blocking Safari Zone entrance/exit once.
@@ -122,13 +122,13 @@
 #define FLAG_MOSSDEEP_GYM_SWITCH_3           0x66 //
 #define FLAG_MOSSDEEP_GYM_SWITCH_4           0x67 //
 
-#define FLAG_SIENNA_CONVO                   0x68  // Unused Flag
+#define FLAG_SIENNA_CONVO                    0x68  // SK: Set in Indoor_Maasje_Jakub_Home after first talking to Sienna; gates follow-up dialogue based on shiny Krabby encounter state.
 
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
 #define FLAG_RECEIVED_HM_ROCK_SMASH          0x6B
 #define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player cant white out from poison before receiving Go Goggles
-#define FLAG_RECEIVED_HM_FLASH               0x6D
+#define FLAG_RECEIVED_HM_FLASH               0x6D // SK: Set in Mistcity_Indoor_Gym when the player receives HM Flash from the gym.
 #define FLAG_RECEIVED_HM_FLY                 0x6E
 #define FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT  0x6F
 #define FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE  0x70
@@ -158,7 +158,7 @@
 #define FLAG_PENDING_DAYCARE_EGG             0x86
 #define FLAG_THANKED_FOR_PLAYING_WITH_WALLY  0x87
 #define FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL 0x88 // Set after defeating Wally outside Mauville Gym. Will activate a call later to register Wally.
-#define FLAG_RECEIVED_HM_CUT                 0x89
+#define FLAG_RECEIVED_HM_CUT                 0x89 // SK: Set in Indoor_Maasje_Beekeeper_Geurts when the player receives HM Cut from Beekeeper Geurts.
 #define FLAG_SCOTT_CALL_FORTREE_GYM          0x8A // Triggers call from Scott after defeating Winona
 #define FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY   0x8B
 #define FLAG_RECEIVED_6_SODA_POP             0x8C
@@ -209,7 +209,7 @@
 #define FLAG_DECORATION_12                   0xB9
 #define FLAG_DECORATION_13                   0xBA
 #define FLAG_DECORATION_14                   0xBB
-#define FLAG_RECEIVED_POKENAV                0xBC
+#define FLAG_RECEIVED_POKENAV                0xBC // SK: Set in Mistcity_Indoor_FacultySympathizer when the player receives the PokéNav.
 #define FLAG_DELIVERED_STEVEN_LETTER         0xBD
 #define FLAG_DEFEATED_WALLY_MAUVILLE         0xBE
 #define FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F  0xBF
@@ -257,7 +257,7 @@
 #define FLAG_RECEIVED_TM_ROAR                0xE7
 #define FLAG_RECEIVED_TM_GIGA_DRAIN          0xE8
 
-#define FLAG_HIDE_SCOTT_LIONSARCH_CITY         0xE9 // Unused Flag
+#define FLAG_HIDE_SCOTT_LIONSARCH_CITY         0xE9 // SK: Object event flag in LionsarchCity; set/cleared in SiltrootTown scripts to control Scott's visibility in Lionsarch City.
 
 #define FLAG_RECEIVED_TM_REST                0xEA
 #define FLAG_RECEIVED_TM_ATTRACT             0xEB
@@ -299,7 +299,7 @@
 #define FLAG_EVIL_TEAM_ESCAPED_STERN_SPOKE   0x10F
 #define FLAG_RECEIVED_EXP_SHARE              0x110
 #define FLAG_POKERUS_EXPLAINED               0x111
-#define FLAG_RECEIVED_RUNNING_SHOES          0x112
+#define FLAG_RECEIVED_RUNNING_SHOES          0x112 // SK: 
 #define FLAG_RECEIVED_QUICK_CLAW             0x113
 #define FLAG_RECEIVED_KINGS_ROCK             0x114
 #define FLAG_RECEIVED_MACHO_BRACE            0x115
@@ -511,18 +511,18 @@
 #define FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL 0x1D8
 #define FLAG_ENABLE_JUAN_MATCH_CALL          0x1D9
 
-#define FLAG_SILTROOT_HOUSE4_FAT_GUY_TRUSTS  0x1DA // Fat guy in House 4 has warmed up to the player
+#define FLAG_SILTROOT_HOUSE4_FAT_GUY_TRUSTS  0x1DA // SK: Fat guy in House 4 has warmed up to the player
 
 #define FLAG_SHOWN_MYSTIC_TICKET             0x1DB
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1    0x1DE // Unused Flag
-#define FLAG_HIDE_SILTROOTTOWN_SHED_GUARD                   0x1DF // Unused Flag
-#define FLAG_SILTROOTTOWN_STASH_SACK                   0x1E0 // Unused Flag
-#define FLAG_HIDE_SCOTT_AFTER_CONVO                  0x1E1 // Unused Flag
-#define FLAG_HIDE_SCOTT_OUTSIDE_BOAT                   0x1E2 // Unused Flag
-#define FLAG_DELIVERED_ALIS_PACKAGE_TO_PETER         0x1E3 // Player delivered Ali's package to Peter in Lionsarch City
+#define FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1    0x1DE // SK: Set in SiltrootTown_Indoor_Ali_Apothecary after talking to Ali/Giel; checked in SiltrootTown to gate the shed guard dialogue.
+#define FLAG_HIDE_SILTROOTTOWN_SHED_GUARD    0x1DF // SK: Set in SiltrootTown when the shed guard is dismissed; branches Scott dialogue when combined with FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1.
+#define FLAG_SILTROOTTOWN_STASH_SACK         0x1E0 // SK: Set in SiltrootTown_Indoor_Shed when the stash sack is found; checked in the Defector and Apothecary maps to branch Scott dialogue.
+#define FLAG_HIDE_SCOTT_AFTER_CONVO          0x1E1 // SK: Set in SiltrootTown_Indoor_FacultyDefector after talking to Scott; hides Scott from the map and shifts Apothecary dialogue.
+#define FLAG_HIDE_SCOTT_OUTSIDE_BOAT         0x1E2 // SK: Set in ErpusCity_StartHouse_2F and SiltrootTown; cleared in SiltrootTown_Indoor_FacultyDefector once Scott is met.
+#define FLAG_DELIVERED_ALIS_PACKAGE_TO_PETER 0x1E3 // SK: Player delivered Ali's package to Peter in Lionsarch City
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
@@ -544,178 +544,182 @@
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x1F4
-#define FLAG_HIDDEN_ITEM_LAVARIDGE_TOWN_ICE_HEAL             (FLAG_HIDDEN_ITEMS_START + 0x00)
-#define FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET                  (FLAG_HIDDEN_ITEMS_START + 0x01)
-#define FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST                  (FLAG_HIDDEN_ITEMS_START + 0x02)
-#define FLAG_HIDDEN_ITEM_ROUTE_113_ETHER                     (FLAG_HIDDEN_ITEMS_START + 0x03)
-#define FLAG_HIDDEN_ITEM_ROUTE_114_CARBOS                    (FLAG_HIDDEN_ITEMS_START + 0x04)
-#define FLAG_HIDDEN_ITEM_ROUTE_119_CALCIUM                   (FLAG_HIDDEN_ITEMS_START + 0x05)
-#define FLAG_HIDDEN_ITEM_ROUTE_119_ULTRA_BALL                (FLAG_HIDDEN_ITEMS_START + 0x06)
-#define FLAG_HIDDEN_ITEM_ROUTE_123_SUPER_REPEL               (FLAG_HIDDEN_ITEMS_START + 0x07)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_CARBOS               (FLAG_HIDDEN_ITEMS_START + 0x08)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_GREEN_SHARD          (FLAG_HIDDEN_ITEMS_START + 0x09)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_PEARL                (FLAG_HIDDEN_ITEMS_START + 0x0A)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_BIG_PEARL            (FLAG_HIDDEN_ITEMS_START + 0x0B)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_BLUE_SHARD           (FLAG_HIDDEN_ITEMS_START + 0x0C)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_1        (FLAG_HIDDEN_ITEMS_START + 0x0D)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_HEART_SCALE          (FLAG_HIDDEN_ITEMS_START + 0x0E)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_ULTRA_BALL           (FLAG_HIDDEN_ITEMS_START + 0x0F)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_STARDUST             (FLAG_HIDDEN_ITEMS_START + 0x10)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_PEARL                (FLAG_HIDDEN_ITEMS_START + 0x11)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_YELLOW_SHARD         (FLAG_HIDDEN_ITEMS_START + 0x12)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_IRON                 (FLAG_HIDDEN_ITEMS_START + 0x13)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_BIG_PEARL            (FLAG_HIDDEN_ITEMS_START + 0x14)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_127_STAR_PIECE           (FLAG_HIDDEN_ITEMS_START + 0x15)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_127_HP_UP                (FLAG_HIDDEN_ITEMS_START + 0x16)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_127_HEART_SCALE          (FLAG_HIDDEN_ITEMS_START + 0x17)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_127_RED_SHARD            (FLAG_HIDDEN_ITEMS_START + 0x18)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_128_PROTEIN              (FLAG_HIDDEN_ITEMS_START + 0x19)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_128_PEARL                (FLAG_HIDDEN_ITEMS_START + 0x1A)
-#define FLAG_HIDDEN_ITEM_LILYCOVE_CITY_HEART_SCALE           (FLAG_HIDDEN_ITEMS_START + 0x1B)
-#define FLAG_HIDDEN_ITEM_FALLARBOR_TOWN_NUGGET               (FLAG_HIDDEN_ITEMS_START + 0x1C)
-#define FLAG_HIDDEN_ITEM_MT_PYRE_EXTERIOR_ULTRA_BALL         (FLAG_HIDDEN_ITEMS_START + 0x1D)
-#define FLAG_HIDDEN_ITEM_ROUTE_113_TM_DOUBLE_TEAM            (FLAG_HIDDEN_ITEMS_START + 0x1E)
-#define FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_1_KEY             (FLAG_HIDDEN_ITEMS_START + 0x1F)
-#define FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_2_KEY             (FLAG_HIDDEN_ITEMS_START + 0x20)
-#define FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_4_KEY             (FLAG_HIDDEN_ITEMS_START + 0x21)
-#define FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_6_KEY             (FLAG_HIDDEN_ITEMS_START + 0x22)
-#define FLAG_HIDDEN_ITEM_SS_TIDAL_LOWER_DECK_LEFTOVERS       (FLAG_HIDDEN_ITEMS_START + 0x23)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_CALCIUM              (FLAG_HIDDEN_ITEMS_START + 0x24)
-#define FLAG_HIDDEN_ITEM_ROUTE_104_POTION                    (FLAG_HIDDEN_ITEMS_START + 0x25)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_2        (FLAG_HIDDEN_ITEMS_START + 0x26)
-#define FLAG_HIDDEN_ITEM_ROUTE_121_HP_UP                     (FLAG_HIDDEN_ITEMS_START + 0x27)
-#define FLAG_HIDDEN_ITEM_ROUTE_121_NUGGET                    (FLAG_HIDDEN_ITEMS_START + 0x28)
-#define FLAG_HIDDEN_ITEM_ROUTE_123_REVIVE                    (FLAG_HIDDEN_ITEMS_START + 0x29)
-#define FLAG_HIDDEN_ITEM_ROUTE_114_REVIVE                    (FLAG_HIDDEN_ITEMS_START + 0x2A)
-#define FLAG_HIDDEN_ITEM_LILYCOVE_CITY_PP_UP                 (FLAG_HIDDEN_ITEMS_START + 0x2B)
-#define FLAG_HIDDEN_ITEM_ROUTE_104_SUPER_POTION              (FLAG_HIDDEN_ITEMS_START + 0x2C)
-#define FLAG_HIDDEN_ITEM_ROUTE_116_SUPER_POTION              (FLAG_HIDDEN_ITEMS_START + 0x2D)
-#define FLAG_HIDDEN_ITEM_ROUTE_106_STARDUST                  (FLAG_HIDDEN_ITEMS_START + 0x2E)
-#define FLAG_HIDDEN_ITEM_ROUTE_106_HEART_SCALE               (FLAG_HIDDEN_ITEMS_START + 0x2F)
-#define FLAG_HIDDEN_ITEM_GRANITE_CAVE_B2F_EVERSTONE_1        (FLAG_HIDDEN_ITEMS_START + 0x30)
-#define FLAG_HIDDEN_ITEM_GRANITE_CAVE_B2F_EVERSTONE_2        (FLAG_HIDDEN_ITEMS_START + 0x31)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_REVIVE                    (FLAG_HIDDEN_ITEMS_START + 0x32)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_GREAT_BALL                (FLAG_HIDDEN_ITEMS_START + 0x33)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_1             (FLAG_HIDDEN_ITEMS_START + 0x34)
-#define FLAG_HIDDEN_ITEM_ROUTE_110_GREAT_BALL                (FLAG_HIDDEN_ITEMS_START + 0x35)
-#define FLAG_HIDDEN_ITEM_ROUTE_110_REVIVE                    (FLAG_HIDDEN_ITEMS_START + 0x36)
-#define FLAG_HIDDEN_ITEM_ROUTE_110_FULL_HEAL                 (FLAG_HIDDEN_ITEMS_START + 0x37)
-#define FLAG_HIDDEN_ITEM_ROUTE_111_PROTEIN                   (FLAG_HIDDEN_ITEMS_START + 0x38)
-#define FLAG_HIDDEN_ITEM_ROUTE_111_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x39)
-#define FLAG_HIDDEN_ITEM_PETALBURG_WOODS_POTION              (FLAG_HIDDEN_ITEMS_START + 0x3A)
-#define FLAG_HIDDEN_ITEM_PETALBURG_WOODS_TINY_MUSHROOM_1     (FLAG_HIDDEN_ITEMS_START + 0x3B)
-#define FLAG_HIDDEN_ITEM_PETALBURG_WOODS_TINY_MUSHROOM_2     (FLAG_HIDDEN_ITEMS_START + 0x3C)
-#define FLAG_HIDDEN_ITEM_PETALBURG_WOODS_POKE_BALL           (FLAG_HIDDEN_ITEMS_START + 0x3D)
-#define FLAG_HIDDEN_ITEM_ROUTE_104_POKE_BALL                 (FLAG_HIDDEN_ITEMS_START + 0x3E)
-#define FLAG_HIDDEN_ITEM_ROUTE_106_POKE_BALL                 (FLAG_HIDDEN_ITEMS_START + 0x3F)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_ETHER                     (FLAG_HIDDEN_ITEMS_START + 0x40)
-#define FLAG_HIDDEN_ITEM_ROUTE_110_POKE_BALL                 (FLAG_HIDDEN_ITEMS_START + 0x41)
-#define FLAG_HIDDEN_ITEM_ROUTE_118_HEART_SCALE               (FLAG_HIDDEN_ITEMS_START + 0x42)
-#define FLAG_HIDDEN_ITEM_ROUTE_118_IRON                      (FLAG_HIDDEN_ITEMS_START + 0x43)
-#define FLAG_HIDDEN_ITEM_ROUTE_119_FULL_HEAL                 (FLAG_HIDDEN_ITEMS_START + 0x44)
-#define FLAG_HIDDEN_ITEM_ROUTE_120_RARE_CANDY_2              (FLAG_HIDDEN_ITEMS_START + 0x45)
-#define FLAG_HIDDEN_ITEM_ROUTE_120_ZINC                      (FLAG_HIDDEN_ITEMS_START + 0x46)
-#define FLAG_HIDDEN_ITEM_ROUTE_120_RARE_CANDY_1              (FLAG_HIDDEN_ITEMS_START + 0x47)
-#define FLAG_HIDDEN_ITEM_ROUTE_117_REPEL                     (FLAG_HIDDEN_ITEMS_START + 0x48)
-#define FLAG_HIDDEN_ITEM_ROUTE_121_FULL_HEAL                 (FLAG_HIDDEN_ITEMS_START + 0x49)
-#define FLAG_HIDDEN_ITEM_ROUTE_123_HYPER_POTION              (FLAG_HIDDEN_ITEMS_START + 0x4A)
-#define FLAG_HIDDEN_ITEM_LILYCOVE_CITY_POKE_BALL             (FLAG_HIDDEN_ITEMS_START + 0x4B)
-#define FLAG_HIDDEN_ITEM_JAGGED_PASS_GREAT_BALL              (FLAG_HIDDEN_ITEMS_START + 0x4C)
-#define FLAG_HIDDEN_ITEM_JAGGED_PASS_FULL_HEAL               (FLAG_HIDDEN_ITEMS_START + 0x4D)
-#define FLAG_HIDDEN_ITEM_MT_PYRE_EXTERIOR_MAX_ETHER          (FLAG_HIDDEN_ITEMS_START + 0x4E)
-#define FLAG_HIDDEN_ITEM_MT_PYRE_SUMMIT_ZINC                 (FLAG_HIDDEN_ITEMS_START + 0x4F)
-#define FLAG_HIDDEN_ITEM_MT_PYRE_SUMMIT_RARE_CANDY           (FLAG_HIDDEN_ITEMS_START + 0x50)
-#define FLAG_HIDDEN_ITEM_VICTORY_ROAD_1F_ULTRA_BALL          (FLAG_HIDDEN_ITEMS_START + 0x51)
-#define FLAG_HIDDEN_ITEM_VICTORY_ROAD_B2F_ELIXIR             (FLAG_HIDDEN_ITEMS_START + 0x52)
-#define FLAG_HIDDEN_ITEM_VICTORY_ROAD_B2F_MAX_REPEL          (FLAG_HIDDEN_ITEMS_START + 0x53)
-#define FLAG_HIDDEN_ITEM_ROUTE_120_REVIVE                    (FLAG_HIDDEN_ITEMS_START + 0x54)
-#define FLAG_HIDDEN_ITEM_ROUTE_104_ANTIDOTE                  (FLAG_HIDDEN_ITEMS_START + 0x55)
-#define FLAG_HIDDEN_ITEM_ROUTE_108_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x56)
-#define FLAG_HIDDEN_ITEM_ROUTE_119_MAX_ETHER                 (FLAG_HIDDEN_ITEMS_START + 0x57)
-#define FLAG_HIDDEN_ITEM_ROUTE_104_HEART_SCALE               (FLAG_HIDDEN_ITEMS_START + 0x58)
-#define FLAG_HIDDEN_ITEM_ROUTE_105_HEART_SCALE               (FLAG_HIDDEN_ITEMS_START + 0x59)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_2             (FLAG_HIDDEN_ITEMS_START + 0x5A)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_3             (FLAG_HIDDEN_ITEMS_START + 0x5B)
-#define FLAG_HIDDEN_ITEM_ROUTE_128_HEART_SCALE_1             (FLAG_HIDDEN_ITEMS_START + 0x5C)
-#define FLAG_HIDDEN_ITEM_ROUTE_128_HEART_SCALE_2             (FLAG_HIDDEN_ITEMS_START + 0x5D)
-#define FLAG_HIDDEN_ITEM_ROUTE_128_HEART_SCALE_3             (FLAG_HIDDEN_ITEMS_START + 0x5E)
-#define FLAG_HIDDEN_ITEM_PETALBURG_CITY_RARE_CANDY           (FLAG_HIDDEN_ITEMS_START + 0x5F)
-#define FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES             (FLAG_HIDDEN_ITEMS_START + 0x60)
-#define FLAG_HIDDEN_ITEM_ROUTE_115_HEART_SCALE               (FLAG_HIDDEN_ITEMS_START + 0x61)
-#define FLAG_HIDDEN_ITEM_ROUTE_113_NUGGET                    (FLAG_HIDDEN_ITEMS_START + 0x62)
-#define FLAG_HIDDEN_ITEM_ROUTE_123_PP_UP                     (FLAG_HIDDEN_ITEMS_START + 0x63)
-#define FLAG_HIDDEN_ITEM_ROUTE_121_MAX_REVIVE                (FLAG_HIDDEN_ITEMS_START + 0x64)
-#define FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_CALCIUM            (FLAG_HIDDEN_ITEMS_START + 0x65)
-#define FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_ZINC               (FLAG_HIDDEN_ITEMS_START + 0x66)
-#define FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_PROTEIN            (FLAG_HIDDEN_ITEMS_START + 0x67)
-#define FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_IRON               (FLAG_HIDDEN_ITEMS_START + 0x68)
-#define FLAG_HIDDEN_ITEM_SAFARI_ZONE_SOUTH_EAST_FULL_RESTORE (FLAG_HIDDEN_ITEMS_START + 0x69)
-#define FLAG_HIDDEN_ITEM_SAFARI_ZONE_NORTH_EAST_RARE_CANDY   (FLAG_HIDDEN_ITEMS_START + 0x6A)
-#define FLAG_HIDDEN_ITEM_SAFARI_ZONE_NORTH_EAST_ZINC         (FLAG_HIDDEN_ITEMS_START + 0x6B)
-#define FLAG_HIDDEN_ITEM_SAFARI_ZONE_SOUTH_EAST_PP_UP        (FLAG_HIDDEN_ITEMS_START + 0x6C)
-#define FLAG_HIDDEN_ITEM_NAVEL_ROCK_TOP_SACRED_ASH           (FLAG_HIDDEN_ITEMS_START + 0x6D)
-#define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
-#define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F) //used in Maasje_Cooastal_Cave3
 
-#define FLAG_CLEAR_BEEHIVE_01  0x264 // Unused Flag
-#define FLAG_CLEAR_BEEHIVE_02 0x265 // Unused Flag
-#define FLAG_CLEAR_BEEHIVE_03 0x266 // Unused Flag
-#define FLAG_CLEAR_BEEHIVE_04  0x267 // Unused Flag
-#define FLAG_CLEAR_BEEHIVE_05 0x268 // Unused Flag
-#define FLAG_CLEAR_BEEHIVE_06 0x269 // Unused Flag
-#define FLAG_CLEAR_BEEHIVE_07  0x26A // Unused Flag
-#define FLAG_CLEAR_BEEHIVE_08  0x26B // Unused Flag
-#define FLAG_START_COLLECTING_HONEY  0x26C // Unused Flag
-#define FLAG_BASEMENT_DJ_STAGE_ACCESS  0x26D // Player got access to DJ stage in Peter's basement
-#define FLAG_GIEL_LEFT_BASEMENT  0x26E // Giel left Peter's basement after getting rejected
-#define FLAG_PETER_HOUSE_INTRO_DONE  0x26F // Player saw the intro scene at Peter's house
-#define FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN  0x270 // Unused Flag
-#define FLAG_RECEIVED_CLIMBING_ROPE  0x271 // Player received the Climbing Rope from Peter in Lionsarch City
-#define FLAG_HIDE_ROUTE03_CLIFFSIDE_WATCHER  0x272
-#define FLAG_HOUSE1_STARDUST_GIVEN     0x273 // Marta in House1 gave the player a Stardust
-#define FLAG_HOUSE2_NETBALL_GIVEN      0x274 // Felix in House2 gave the player a Net Ball
-#define FLAG_HOUSE3_FOUND_COMPASS      0x275 // Player found Olaf's hidden compass in House3
-#define FLAG_HOUSE3_FOUND_CLAMSHELL    0x276 // Player found Olaf's hidden clamshell in House3
-#define FLAG_HOUSE3_FOUND_BUTTON       0x277 // Player found Olaf's hidden brass button in House3
-#define FLAG_HOUSE3_ITEMFINDER_GIVEN   0x278 // Olaf in House3 gave the player the Dowsing Machine
-#define FLAG_STEEL_FACTORY_TUNNEL_OPEN     0x279 // Peter unlocked the smuggling tunnel to the Steel Factory
-#define FLAG_STEEL_FACTORY_GUARD_B1F_1     0x27A // B1F tunnel guard 1 defeated
-#define FLAG_STEEL_FACTORY_GUARD_B1F_2     0x27B // B1F tunnel guard 2 defeated
-#define FLAG_STEEL_FACTORY_SCIENTIST_1     0x27C // 1F scientist trainer 1 defeated
-#define FLAG_STEEL_FACTORY_SCIENTIST_2     0x27D // 1F scientist trainer 2 defeated
-#define FLAG_STEEL_FACTORY_OFFICIAL_1      0x27E // 1F faculty official trainer 1 defeated
-#define FLAG_STEEL_FACTORY_OFFICIAL_2      0x27F // 1F faculty official trainer 2 defeated
-#define FLAG_STEEL_FACTORY_OFFICIAL_3      0x280 // 1F gate official defeated (guards 2F stairs)
-#define FLAG_STEEL_FACTORY_CHOICE_MADE     0x281 // Player interacted with the Pokemon control panel
-#define FLAG_STEEL_FACTORY_FREED_POKEMON   0x282 // Player chose to free the enslaved Pokemon
-#define FLAG_STEEL_FACTORY_BARRY_DEFEATED  0x283 // Barry (Rector's protege) defeated on 2F
-#define FLAG_STEEL_FACTORY_RECTOR_DEFEATED 0x284 // Director Harkon (Rector) defeated on 2F
-#define FLAG_STEEL_FACTORY_COMPLETE        0x285 // Full Steel Factory story arc finished
-#define FLAG_MEW_SAW_FACTORY_FREED         0x286 // Mew witnessed the Pokemon being freed
-#define FLAG_MEW_SAW_FACTORY_NOT_FREED     0x287 // Mew witnessed the Pokemon not being freed
-#define FLAG_HIDE_FACULTY_AT_WESTLION_MINE  0x288 // Unused Flag
-#define FLAG_HIDE_MINING_CAVE_B1F_SCIENTIST  0x289
-#define FLAG_PETER_GAVE_TUNNEL_PERMISSION  0x28A // Peter revealed the tunnel after hearing about the mine incident
-#define FLAG_STEEL_FACTORY_2F_SCIENTIST_1  0x28B // 2F scientist trainer 1 defeated
-#define FLAG_STEEL_FACTORY_2F_GRUNT        0x28C // 2F faculty grunt defeated
-#define FLAG_STEEL_FACTORY_2F_SCIENTIST_2  0x28D // 2F scientist trainer 2 defeated
-#define FLAG_STEEL_FACTORY_WIRE_1_PULLED    0x28E // Machine wire 1 disconnected
-#define FLAG_STEEL_FACTORY_WIRE_2_PULLED    0x28F // Machine wire 2 disconnected
-#define FLAG_STEEL_FACTORY_WIRE_3_PULLED    0x290 // Machine wire 3 disconnected
-#define FLAG_STEEL_FACTORY_WIRE_4_PULLED    0x291 // Machine wire 4 disconnected
-#define FLAG_STEEL_FACTORY_WIRE_5_PULLED    0x292 // Machine wire 5 disconnected
-#define FLAG_STEEL_FACTORY_ALL_WIRES_PULLED 0x293 // All 5 wires disconnected, hidden passage opened
-#define FLAG_STEEL_FACTORY_ARON_HIDDEN      0x294 // Hides Aron when SET (object event flag)
-#define FLAG_STEEL_FACTORY_ARON_INTRO_DONE  0x295 // Aron intro trigger fired once
-#define FLAG_STEEL_FACTORY_ARON_GUIDING     0x296 // Player chose YES, Aron actively guides
-#define FLAG_UNUSED_0x297  0x297 // Unused Flag
-#define FLAG_UNUSED_0x298  0x298 // Unused Flag
-#define FLAG_UNUSED_0x299  0x299 // Unused Flag
-#define FLAG_UNUSED_0x29A  0x29A // Unused Flag
-#define FLAG_UNUSED_0x29B  0x29B // Unused Flag
-#define FLAG_UNUSED_0x29C  0x29C // Unused Flag
-#define FLAG_UNUSED_0x29D  0x29D // Unused Flag
-#define FLAG_UNUSED_0x29E  0x29E // Unused Flag
+// SK: Custom ShinyKrabby hidden items (slots 0x00-0x0C)
+#define FLAG_HIDDEN_ITEM_ROUTE_02_ANTIDOTE                          (FLAG_HIDDEN_ITEMS_START + 0x00) // SK: Tracks the hidden Antidote on Route 02; found with Dowsing Machine.
+#define FLAG_HIDDEN_ITEM_ROUTE_02_POTION                            (FLAG_HIDDEN_ITEMS_START + 0x01) // SK: Tracks the hidden Potion on Route 02; found with Dowsing Machine.
+#define FLAG_HIDDEN_ITEM_ROUTE_02_HEART_SCALE                       (FLAG_HIDDEN_ITEMS_START + 0x02) // SK: Tracks the hidden Heart Scale on Route 02; found with Dowsing Machine.
+#define FLAG_HIDDEN_ITEM_ROUTE_03_GREAT_BALL                        (FLAG_HIDDEN_ITEMS_START + 0x03) // SK: Tracks the hidden Great Ball on Route 03; found with Dowsing Machine.
+#define FLAG_HIDDEN_ITEM_ROUTE_03_POKE_BALL                         (FLAG_HIDDEN_ITEMS_START + 0x04) // SK: Tracks the hidden Poké Ball on Route 03; found with Dowsing Machine.
+#define FLAG_HIDDEN_ITEM_ROUTE_03_PARLYZ_HEAL                       (FLAG_HIDDEN_ITEMS_START + 0x05) // SK: Tracks the hidden Parlyz Heal on Route 03; found with Dowsing Machine.
+#define FLAG_HIDDEN_ITEM_MISTCITY_SUPER_POTION                      (FLAG_HIDDEN_ITEMS_START + 0x06) // SK: Tracks the hidden Super Potion in MistCity; found with Dowsing Machine.
+#define FLAG_HIDDEN_ITEM_MISTCITY_POKE_BALL                         (FLAG_HIDDEN_ITEMS_START + 0x07) // SK: Tracks the hidden Poké Ball in MistCity; found with Dowsing Machine.
+#define FLAG_HIDDEN_ITEM_BAT_CAVE_EVER_STONE                        (FLAG_HIDDEN_ITEMS_START + 0x08) // SK: Tracks the hidden Everstone in Bat Cave; found with Dowsing Machine.
+#define FLAG_HIDDEN_ITEM_SHROOMSHOP_TINY_MUSHROOM                   (FLAG_HIDDEN_ITEMS_START + 0x09) // SK: Tracks the hidden Tiny Mushroom in the Shroomshop; found with Dowsing Machine.
+#define FLAG_HIDDEN_ITEM_SHROOMSHOP_BIG_MUSHROOM                    (FLAG_HIDDEN_ITEMS_START + 0x0A) // SK: Tracks the hidden Big Mushroom in the Shroomshop; found with Dowsing Machine.
+#define FLAG_HIDDEN_ITEM_SHROOMSHOP_MAX_MUSHROOM                    (FLAG_HIDDEN_ITEMS_START + 0x0B) // SK: Tracks the hidden Max Mushroom in the Shroomshop; found with Dowsing Machine.
+#define FLAG_HIDDEN_ITEM_SHROOMSHOP_BALM_MUSHROOM                   (FLAG_HIDDEN_ITEMS_START + 0x0C) // SK: Tracks the hidden Balm Mushroom in the Shroomshop; found with Dowsing Machine.
+
+// SK: Free hidden item slots — assign these to new custom hidden items
+#define FLAG_UNUSED_HIDDEN_ITEM_0x0D  (FLAG_HIDDEN_ITEMS_START + 0x0D)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x0E  (FLAG_HIDDEN_ITEMS_START + 0x0E)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x0F  (FLAG_HIDDEN_ITEMS_START + 0x0F)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x10  (FLAG_HIDDEN_ITEMS_START + 0x10)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x11  (FLAG_HIDDEN_ITEMS_START + 0x11)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x12  (FLAG_HIDDEN_ITEMS_START + 0x12)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x13  (FLAG_HIDDEN_ITEMS_START + 0x13)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x14  (FLAG_HIDDEN_ITEMS_START + 0x14)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x15  (FLAG_HIDDEN_ITEMS_START + 0x15)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x16  (FLAG_HIDDEN_ITEMS_START + 0x16)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x17  (FLAG_HIDDEN_ITEMS_START + 0x17)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x18  (FLAG_HIDDEN_ITEMS_START + 0x18)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x19  (FLAG_HIDDEN_ITEMS_START + 0x19)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x1A  (FLAG_HIDDEN_ITEMS_START + 0x1A)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x1B  (FLAG_HIDDEN_ITEMS_START + 0x1B)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x1C  (FLAG_HIDDEN_ITEMS_START + 0x1C)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x1D  (FLAG_HIDDEN_ITEMS_START + 0x1D)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x1E  (FLAG_HIDDEN_ITEMS_START + 0x1E)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x1F  (FLAG_HIDDEN_ITEMS_START + 0x1F)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x20  (FLAG_HIDDEN_ITEMS_START + 0x20)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x21  (FLAG_HIDDEN_ITEMS_START + 0x21)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x22  (FLAG_HIDDEN_ITEMS_START + 0x22)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x23  (FLAG_HIDDEN_ITEMS_START + 0x23)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x24  (FLAG_HIDDEN_ITEMS_START + 0x24)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x25  (FLAG_HIDDEN_ITEMS_START + 0x25)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x26  (FLAG_HIDDEN_ITEMS_START + 0x26)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x27  (FLAG_HIDDEN_ITEMS_START + 0x27)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x28  (FLAG_HIDDEN_ITEMS_START + 0x28)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x29  (FLAG_HIDDEN_ITEMS_START + 0x29)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x2A  (FLAG_HIDDEN_ITEMS_START + 0x2A)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x2B  (FLAG_HIDDEN_ITEMS_START + 0x2B)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x2C  (FLAG_HIDDEN_ITEMS_START + 0x2C)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x2D  (FLAG_HIDDEN_ITEMS_START + 0x2D)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x2E  (FLAG_HIDDEN_ITEMS_START + 0x2E)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x2F  (FLAG_HIDDEN_ITEMS_START + 0x2F)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x30  (FLAG_HIDDEN_ITEMS_START + 0x30)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x31  (FLAG_HIDDEN_ITEMS_START + 0x31)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x32  (FLAG_HIDDEN_ITEMS_START + 0x32)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x33  (FLAG_HIDDEN_ITEMS_START + 0x33)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x34  (FLAG_HIDDEN_ITEMS_START + 0x34)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x35  (FLAG_HIDDEN_ITEMS_START + 0x35)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x36  (FLAG_HIDDEN_ITEMS_START + 0x36)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x37  (FLAG_HIDDEN_ITEMS_START + 0x37)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x38  (FLAG_HIDDEN_ITEMS_START + 0x38)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x39  (FLAG_HIDDEN_ITEMS_START + 0x39)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x3A  (FLAG_HIDDEN_ITEMS_START + 0x3A)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x3B  (FLAG_HIDDEN_ITEMS_START + 0x3B)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x3C  (FLAG_HIDDEN_ITEMS_START + 0x3C)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x3D  (FLAG_HIDDEN_ITEMS_START + 0x3D)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x3E  (FLAG_HIDDEN_ITEMS_START + 0x3E)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x3F  (FLAG_HIDDEN_ITEMS_START + 0x3F)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x40  (FLAG_HIDDEN_ITEMS_START + 0x40)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x41  (FLAG_HIDDEN_ITEMS_START + 0x41)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x42  (FLAG_HIDDEN_ITEMS_START + 0x42)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x43  (FLAG_HIDDEN_ITEMS_START + 0x43)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x44  (FLAG_HIDDEN_ITEMS_START + 0x44)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x45  (FLAG_HIDDEN_ITEMS_START + 0x45)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x46  (FLAG_HIDDEN_ITEMS_START + 0x46)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x47  (FLAG_HIDDEN_ITEMS_START + 0x47)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x48  (FLAG_HIDDEN_ITEMS_START + 0x48)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x49  (FLAG_HIDDEN_ITEMS_START + 0x49)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x4A  (FLAG_HIDDEN_ITEMS_START + 0x4A)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x4B  (FLAG_HIDDEN_ITEMS_START + 0x4B)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x4C  (FLAG_HIDDEN_ITEMS_START + 0x4C)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x4D  (FLAG_HIDDEN_ITEMS_START + 0x4D)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x4E  (FLAG_HIDDEN_ITEMS_START + 0x4E)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x4F  (FLAG_HIDDEN_ITEMS_START + 0x4F)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x50  (FLAG_HIDDEN_ITEMS_START + 0x50)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x51  (FLAG_HIDDEN_ITEMS_START + 0x51)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x52  (FLAG_HIDDEN_ITEMS_START + 0x52)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x53  (FLAG_HIDDEN_ITEMS_START + 0x53)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x54  (FLAG_HIDDEN_ITEMS_START + 0x54)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x55  (FLAG_HIDDEN_ITEMS_START + 0x55)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x56  (FLAG_HIDDEN_ITEMS_START + 0x56)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x57  (FLAG_HIDDEN_ITEMS_START + 0x57)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x58  (FLAG_HIDDEN_ITEMS_START + 0x58)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x59  (FLAG_HIDDEN_ITEMS_START + 0x59)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x5A  (FLAG_HIDDEN_ITEMS_START + 0x5A)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x5B  (FLAG_HIDDEN_ITEMS_START + 0x5B)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x5C  (FLAG_HIDDEN_ITEMS_START + 0x5C)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x5D  (FLAG_HIDDEN_ITEMS_START + 0x5D)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x5E  (FLAG_HIDDEN_ITEMS_START + 0x5E)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x5F  (FLAG_HIDDEN_ITEMS_START + 0x5F)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x60  (FLAG_HIDDEN_ITEMS_START + 0x60)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x61  (FLAG_HIDDEN_ITEMS_START + 0x61)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x62  (FLAG_HIDDEN_ITEMS_START + 0x62)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x63  (FLAG_HIDDEN_ITEMS_START + 0x63)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x64  (FLAG_HIDDEN_ITEMS_START + 0x64)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x65  (FLAG_HIDDEN_ITEMS_START + 0x65)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x66  (FLAG_HIDDEN_ITEMS_START + 0x66)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x67  (FLAG_HIDDEN_ITEMS_START + 0x67)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x68  (FLAG_HIDDEN_ITEMS_START + 0x68)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x69  (FLAG_HIDDEN_ITEMS_START + 0x69)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x6A  (FLAG_HIDDEN_ITEMS_START + 0x6A)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x6B  (FLAG_HIDDEN_ITEMS_START + 0x6B)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x6C  (FLAG_HIDDEN_ITEMS_START + 0x6C)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x6D  (FLAG_HIDDEN_ITEMS_START + 0x6D)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x6E  (FLAG_HIDDEN_ITEMS_START + 0x6E)
+#define FLAG_UNUSED_HIDDEN_ITEM_0x6F  (FLAG_HIDDEN_ITEMS_START + 0x6F)
+
+#define FLAG_CLEAR_BEEHIVE_01               0x264 // SK: Set in Maasje when beehive 1 is cleared during the honey collection task; one of 8 beehives tracked per-flag.
+#define FLAG_CLEAR_BEEHIVE_02               0x265 // SK: Set in Maasje when beehive 2 is cleared during the honey collection task; one of 8 beehives tracked per-flag.
+#define FLAG_CLEAR_BEEHIVE_03               0x266 // SK: Set in Maasje when beehive 3 is cleared during the honey collection task; one of 8 beehives tracked per-flag.
+#define FLAG_CLEAR_BEEHIVE_04               0x267 // SK: Set in Maasje when beehive 4 is cleared during the honey collection task; one of 8 beehives tracked per-flag.
+#define FLAG_CLEAR_BEEHIVE_05               0x268 // SK: Set in Maasje when beehive 5 is cleared during the honey collection task; one of 8 beehives tracked per-flag.
+#define FLAG_CLEAR_BEEHIVE_06               0x269 // SK: Set in Maasje when beehive 6 is cleared during the honey collection task; one of 8 beehives tracked per-flag.
+#define FLAG_CLEAR_BEEHIVE_07               0x26A // SK: Set in Maasje when beehive 7 is cleared during the honey collection task; one of 8 beehives tracked per-flag.
+#define FLAG_CLEAR_BEEHIVE_08               0x26B // SK: Set in Maasje when beehive 8 is cleared during the honey collection task; one of 8 beehives tracked per-flag.
+#define FLAG_START_COLLECTING_HONEY         0x26C // SK: Set in Indoor_Maasje_Beekeeper_Geurts when the player accepts Geurts' honey task; gates beehive interactions in Maasje.
+#define FLAG_BASEMENT_DJ_STAGE_ACCESS       0x26D // SK: Player got access to DJ stage in Peter's basement
+#define FLAG_GIEL_LEFT_BASEMENT             0x26E // SK: Giel left Peter's basement after getting rejected
+#define FLAG_PETER_HOUSE_INTRO_DONE         0x26F // SK: Player saw the intro scene at Peter's house
+#define FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN 0x270 // SK: Object event flag in SiltrootTown; when set, shows the shed guard NPC.
+#define FLAG_RECEIVED_CLIMBING_ROPE         0x271 // SK: Player received the Climbing Rope from Peter in Lionsarch City
+#define FLAG_HIDE_ROUTE03_CLIFFSIDE_WATCHER 0x272 // SK: Set in ErpusCity_StartHouse_1F; cleared in Mistcity_Indoor_FacultySympathizer; controls visibility of the cliffside watcher NPC on Route 03.
+#define FLAG_HOUSE1_STARDUST_GIVEN          0x273 // SK: Marta in House1 gave the player a Stardust
+#define FLAG_HOUSE2_NETBALL_GIVEN           0x274 // SK: Felix in House2 gave the player a Net Ball
+#define FLAG_HOUSE3_FOUND_COMPASS           0x275 // SK: Player found Olaf's hidden compass in House3
+#define FLAG_HOUSE3_FOUND_CLAMSHELL         0x276 // SK: Player found Olaf's hidden clamshell in House3
+#define FLAG_HOUSE3_FOUND_BUTTON            0x277 // SK: Player found Olaf's hidden brass button in House3
+#define FLAG_HOUSE3_ITEMFINDER_GIVEN        0x278 // SK: Olaf in House3 gave the player the Dowsing Machine
+#define FLAG_STEEL_FACTORY_TUNNEL_OPEN      0x279 // SK: Peter unlocked the smuggling tunnel to the Steel Factory
+#define FLAG_STEEL_FACTORY_GUARD_B1F_1      0x27A // SK: B1F tunnel guard 1 defeated
+#define FLAG_STEEL_FACTORY_GUARD_B1F_2      0x27B // SK: B1F tunnel guard 2 defeated
+#define FLAG_STEEL_FACTORY_SCIENTIST_1      0x27C // SK: 1F scientist trainer 1 defeated
+#define FLAG_STEEL_FACTORY_SCIENTIST_2      0x27D // SK: 1F scientist trainer 2 defeated
+#define FLAG_STEEL_FACTORY_OFFICIAL_1       0x27E // SK: 1F faculty official trainer 1 defeated
+#define FLAG_STEEL_FACTORY_OFFICIAL_2       0x27F // SK: 1F faculty official trainer 2 defeated
+#define FLAG_STEEL_FACTORY_OFFICIAL_3       0x280 // SK: 1F gate official defeated (guards 2F stairs)
+#define FLAG_STEEL_FACTORY_CHOICE_MADE      0x281 // SK: Player interacted with the Pokemon control panel
+#define FLAG_STEEL_FACTORY_FREED_POKEMON    0x282 // SK: Player chose to free the enslaved Pokemon
+#define FLAG_STEEL_FACTORY_BARRY_DEFEATED   0x283 // SK: Barry (Rector's protege) defeated on 2F
+#define FLAG_STEEL_FACTORY_RECTOR_DEFEATED  0x284 // SK: Director Harkon (Rector) defeated on 2F
+#define FLAG_STEEL_FACTORY_COMPLETE         0x285 // SK: Full Steel Factory story arc finished
+#define FLAG_MEW_SAW_FACTORY_FREED          0x286 // SK: Mew witnessed the Pokemon being freed
+#define FLAG_MEW_SAW_FACTORY_NOT_FREED      0x287 // SK: Mew witnessed the Pokemon not being freed
+#define FLAG_HIDE_FACULTY_AT_WESTLION_MINE  0x288 // SK: Set in EastLionMountain_Faculty_Mining_Cave_B1F after the mine incident; hides faculty NPCs across EastLionMountain, WestLionMountain, and Route05.
+#define FLAG_HIDE_MINING_CAVE_B1F_SCIENTIST 0x289 // SK: Set in EastLionMountain_Faculty_Mining_Cave_B1F after defeating the scientist; hides the scientist NPC from the map.
+#define FLAG_PETER_GAVE_TUNNEL_PERMISSION   0x28A // SK: Peter revealed the tunnel after hearing about the mine incident
+#define FLAG_STEEL_FACTORY_2F_SCIENTIST_1   0x28B // SK: 2F scientist trainer 1 defeated
+#define FLAG_STEEL_FACTORY_2F_GRUNT         0x28C // SK: 2F faculty grunt defeated
+#define FLAG_STEEL_FACTORY_2F_SCIENTIST_2   0x28D // SK: 2F scientist trainer 2 defeated
+#define FLAG_STEEL_FACTORY_WIRE_1_PULLED    0x28E // SK: Machine wire 1 disconnected
+#define FLAG_STEEL_FACTORY_WIRE_2_PULLED    0x28F // SK: Machine wire 2 disconnected
+#define FLAG_STEEL_FACTORY_WIRE_3_PULLED    0x290 // SK: Machine wire 3 disconnected
+#define FLAG_STEEL_FACTORY_WIRE_4_PULLED    0x291 // SK: Machine wire 4 disconnected
+#define FLAG_STEEL_FACTORY_WIRE_5_PULLED    0x292 // SK: Machine wire 5 disconnected
+#define FLAG_STEEL_FACTORY_ALL_WIRES_PULLED 0x293 // SK: All 5 wires disconnected, hidden passage opened
+#define FLAG_STEEL_FACTORY_ARON_HIDDEN      0x294 // SK: Hides Aron when SET (object event flag)
+#define FLAG_STEEL_FACTORY_ARON_INTRO_DONE  0x295 // SK: Aron intro trigger fired once
+#define FLAG_STEEL_FACTORY_ARON_GUIDING     0x296 // SK: Player chose YES, Aron actively guides
+#define FLAG_STEEL_FACTORY_CELL_ARON_HIDDEN 0x297 // SK: Hides Aron at cell panel (object 25) when SET
+#define FLAG_STEEL_FACTORY_POKEMON_CAGED    0x298 // SK: Hides placeholder freed pokemon when SET
+#define FLAG_STEEL_FACTORY_RECTOR_CUTSCENE_TRIGGERED  0x299 // SK: Overheard conversation cutscene has played
+#define FLAG_HIDE_RECTOR_ELECTABUZZ_AFTER_BATTLE  0x29A // SK: To hide the Rector and Electabuzz in the cutscene after the battle if the player won, since they flee if the player loses
+#define FLAG_HIDE_LIONSARCH_RECTOR_SENDOFF  0x29B // SK: Hides Rector + Skarmory objects in LionsarchCity; cleared during sendoff cutscene
+#define FLAG_HIDE_LIONSARCH_FACULTY_SHIPS   0x29C // SK: Hides industrial dock ships after Faculty departure cutscene
+#define FLAG_PETER_GAVE_FACTORY_REWARD      0x29D // SK: Peter gave the player a reward after the Steel Factory was cleared
+#define FLAG_UP_TO_THE_WHITELIGHT_SILTROOTTOWN  0x29E // SK: Joris on the beach at siltroottown.
 #define FLAG_UNUSED_0x29F  0x29F // Unused Flag
 #define FLAG_UNUSED_0x2A0  0x2A0 // Unused Flag
 #define FLAG_UNUSED_0x2A1  0x2A1 // Unused Flag
@@ -729,8 +733,8 @@
 #define FLAG_UNUSED_0x2A9  0x2A9 // Unused Flag
 #define FLAG_UNUSED_0x2AA  0x2AA // Unused Flag
 #define FLAG_UNUSED_0x2AB  0x2AB // Unused Flag
-#define FLAG_UNUSED_0x2AC  0x2AC // Unused Flag
-#define FLAG_UNUSED_0x2AD  0x2AD // Unused Flag
+#define FLAG_HIDE_LIONSARCH_BARRY_SENDOFF       0x2AC // SK: Hides Barry (Wally) in LionsarchCity sendoff; cleared before sendoff, set by removeobject during cutscene
+#define FLAG_HIDE_LIONSARCH_CONRECTOR_SENDOFF   0x2AD // SK: Hides Conrector in LionsarchCity sendoff; cleared before sendoff, set by removeobject during cutscene
 #define FLAG_UNUSED_0x2AE  0x2AE // Unused Flag
 #define FLAG_UNUSED_0x2AF  0x2AF // Unused Flag
 #define FLAG_UNUSED_0x2B0  0x2B0 // Unused Flag
@@ -747,499 +751,504 @@
 #define FLAG_UNUSED_0x2BB  0x2BB // Unused Flag
 
 // Event Flags
-#define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC
-#define FLAG_HIDE_APPRENTICE                                        0x2BD
-#define FLAG_HIDE_POKEMON_CENTER_2F_MYSTERY_GIFT_MAN                0x2BE
-#define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_1               0x2C7
-#define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_2               0x2C8
-#define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_3               0x2C9
-#define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_4               0x2CA
-#define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_5               0x2CB
-#define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_6               0x2CC
-#define FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS            0x2CD
-#define FLAG_HIDE_MEW                                               0x2CE
-#define FLAG_HIDE_ROUTE_104_RIVAL                                   0x2CF
-#define FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE                  0x2D0
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH                  0x2D1
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM          0x2D2
-#define FLAG_HIDE_ROUTE_103_RIVAL                                   0x2D3
-#define FLAG_HIDE_PETALBURG_WOODS_DEVON_EMPLOYEE                    0x2D4
-#define FLAG_HIDE_PETALBURG_WOODS_AQUA_GRUNT                        0x2D5
-#define FLAG_HIDE_PETALBURG_CITY_WALLY                              0x2D6
-#define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_INVISIBLE_NINJA_BOY   0x2D7
-#define FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM                         0x2D8
-
-#define FLAG_UNUSED_0x2D9                                           0x2D9 // Unused Flag
-
-#define FLAG_HIDE_LILYCOVE_FAN_CLUB_INTERVIEWER                     0x2DA
-#define FLAG_HIDE_RUSTBORO_CITY_AQUA_GRUNT                          0x2DB
-#define FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1                    0x2DC
-#define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE_ASLEEP              0x2DD
-#define FLAG_HIDE_PLAYERS_HOUSE_DAD                                 0x2DE
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_SIBLING      0x2DF
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_SIBLING          0x2E0
-#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_MAGMA_NOTE             0x2E1
-#define FLAG_HIDE_ROUTE_104_MR_BRINEY                               0x2E2
-#define FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY                           0x2E3
-#define FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN                            0x2E4
-#define FLAG_HIDE_ROUTE_109_MR_BRINEY                               0x2E5
-#define FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT                          0x2E6
-#define FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN                       0x2E7
-#define FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT                          0x2E8
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_BRENDAN            0x2E9
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MAY                    0x2EA
-#define FLAG_HIDE_SAFARI_ZONE_SOUTH_EAST_EXPANSION                  0x2EB
-#define FLAG_HIDE_LILYCOVE_HARBOR_EVENT_TICKET_TAKER                0x2EC
-#define FLAG_HIDE_SLATEPORT_CITY_SCOTT                              0x2ED
-#define FLAG_HIDE_ROUTE_101_ZIGZAGOON                               0x2EE
-#define FLAG_HIDE_VICTORY_ROAD_EXIT_WALLY                           0x2EF
-#define FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE                       0x2F0
-#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_STEVEN              0x2F1
-#define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_1          0x2F2
-#define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_2          0x2F3
-#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA          0x2F4
-#define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_BEDROOM_MOM               0x2F5
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM                0x2F6
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM                    0x2F7
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM      0x2F8
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK              0x2F9
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK                  0x2FA
-#define FLAG_HIDE_DEOXYS                                            0x2FB
-#define FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE                      0x2FC
-#define FLAG_HIDE_MAUVILLE_CITY_SCOTT                               0x2FD
-#define FLAG_HIDE_VERDANTURF_TOWN_SCOTT                             0x2FE
-#define FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT                  0x2FF
-#define FLAG_HIDE_ROUTE_111_VICTOR_WINSTRATE                        0x300
-#define FLAG_HIDE_ROUTE_111_VICTORIA_WINSTRATE                      0x301
-#define FLAG_HIDE_ROUTE_111_VIVI_WINSTRATE                          0x302
-#define FLAG_HIDE_ROUTE_111_VICKY_WINSTRATE                         0x303
-#define FLAG_HIDE_PETALBURG_GYM_NORMAN                              0x304
-#define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA                           0x305
-#define FLAG_HIDE_LILYCOVE_CONTEST_HALL_CONTEST_ATTENDANT_1         0x306
-#define FLAG_HIDE_LILYCOVE_MUSEUM_CURATOR                           0x307
-#define FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_1                          0x308
-#define FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_2                          0x309
-#define FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_3                          0x30A
-#define FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_4                          0x30B
-#define FLAG_HIDE_LILYCOVE_MUSEUM_TOURISTS                          0x30C
-#define FLAG_HIDE_PETALBURG_GYM_GREETER                             0x30D
-#define FLAG_HIDE_MARINE_CAVE_KYOGRE                                0x30E
-#define FLAG_HIDE_TERRA_CAVE_GROUDON                                0x30F
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM          0x310
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM              0x311
-#define FLAG_HIDE_ROUTE_119_SCOTT                                   0x312
-#define FLAG_HIDE_LILYCOVE_MOTEL_SCOTT                              0x313
-#define FLAG_HIDE_MOSSDEEP_CITY_SCOTT                               0x314
-#define FLAG_HIDE_FANCLUB_OLD_LADY                                  0x315
-#define FLAG_HIDE_FANCLUB_BOY                                       0x316
-#define FLAG_HIDE_FANCLUB_LITTLE_BOY                                0x317
-#define FLAG_HIDE_FANCLUB_LADY                                      0x318
-#define FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT               0x319
-#define FLAG_HIDE_LITTLEROOT_TOWN_RIVAL                             0x31A
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCH                             0x31B
-#define FLAG_HIDE_ROUTE_111_GABBY_AND_TY_1                          0x31C
-#define FLAG_HIDE_ROUTE_118_GABBY_AND_TY_1                          0x31D
-#define FLAG_HIDE_ROUTE_120_GABBY_AND_TY_1                          0x31E
-#define FLAG_HIDE_ROUTE_111_GABBY_AND_TY_2                          0x31F
-#define FLAG_HIDE_LUGIA                                             0x320
-#define FLAG_HIDE_HO_OH                                             0x321
-#define FLAG_HIDE_LILYCOVE_CONTEST_HALL_REPORTER                    0x322
-#define FLAG_HIDE_SLATEPORT_CITY_CONTEST_REPORTER                   0x323
-#define FLAG_HIDE_MAUVILLE_CITY_WALLY                               0x324
-#define FLAG_HIDE_MAUVILLE_CITY_WALLYS_UNCLE                        0x325
-#define FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLY                0x326
-#define FLAG_HIDE_RUSTURF_TUNNEL_WANDAS_BOYFRIEND                   0x327
-#define FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WANDAS_BOYFRIEND     0x328
-#define FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLYS_UNCLE         0x329
-#define FLAG_HIDE_SS_TIDAL_CORRIDOR_SCOTT                           0x32A
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CYNDAQUIL     0x32B
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_TOTODILE      0x32C
-#define FLAG_HIDE_ROUTE_116_DROPPED_GLASSES_MAN                     0x32D
-#define FLAG_HIDE_RUSTBORO_CITY_RIVAL                               0x32E
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_SWABLU_DOLL     0x32F
-#define FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE                           0x330
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL       0x331
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL           0x332
-#define FLAG_HIDE_ROUTE_112_TEAM_MAGMA                              0x333
-#define FLAG_HIDE_CAVE_OF_ORIGIN_B1F_WALLACE                        0x334
-#define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_1_BLOCKING_ENTRANCE         0x335
-#define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_2_BLOCKING_ENTRANCE         0x336
-#define FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA                          0x337
-#define FLAG_HIDE_PETALBURG_GYM_WALLYS_DAD                          0x338
-#define FLAG_HIDE_LEGEND_MON_CAVE_OF_ORIGIN                         0x339 // Unused, leftover from R/S
-#define FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE                            0x33A
-#define FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE                             0x33B
-#define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_ARCHIE                     0x33C
-#define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_MAXIE                      0x33D
-#define FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD                         0x33E
-#define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_MAGMA_GRUNTS               0x33F
-#define FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER                0x340
-#define FLAG_HIDE_GRANITE_CAVE_STEVEN                               0x341
-#define FLAG_HIDE_ROUTE_128_STEVEN                                  0x342
-#define FLAG_HIDE_SLATEPORT_CITY_GABBY_AND_TY                       0x343
-#define FLAG_HIDE_BATTLE_FRONTIER_RECEPTION_GATE_SCOTT              0x344
-#define FLAG_HIDE_ROUTE_110_BIRCH                                   0x345
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CHIKORITA     0x346
-#define FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1                             0x347
-#define FLAG_HIDE_SLATEPORT_CITY_CAPTAIN_STERN                      0x348
-#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_CAPTAIN_STERN               0x349
-#define FLAG_HIDE_BATTLE_FRONTIER_SUDOWOODO                         0x34A
-#define FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY                      0x34B
-#define FLAG_HIDE_RUSTBORO_CITY_SCIENTIST                           0x34C
-#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_AQUA_GRUNT                  0x34D
-#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_ARCHIE                      0x34E
-#define FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD                           0x34F
-#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_SUBMARINE_SHADOW            0x350
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_PICHU_DOLL          0x351
-#define FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON_ASLEEP                   0x352
-#define FLAG_HIDE_ROUTE_119_RIVAL                                   0x353
-#define FLAG_HIDE_LILYCOVE_CITY_AQUA_GRUNTS                         0x354
-#define FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON                          0x355
-#define FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS                         0x356
-#define FLAG_HIDE_SKY_PILLAR_WALLACE                                0x357
-#define FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE                              0x358
-#define FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS                              0x359
-#define FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY                       0x35A
-#define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE                     0x35B
-#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_SS_TIDAL                    0x35C
-#define FLAG_HIDE_LILYCOVE_HARBOR_SSTIDAL                           0x35D
-#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_TEAM_MAGMA          0x35E
-#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_STEVEN              0x35F
-#define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_1           0x360
-#define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_2           0x361
-#define FLAG_HIDE_PETALBURG_GYM_WALLY                               0x362
-#define FLAG_UNKNOWN_0x363                                          0x363 // Set, however has no purpose.
-#define FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN                           0x364
-#define FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY          0x365
-#define FLAG_HIDE_LANETTES_HOUSE_LANETTE                            0x366
-#define FLAG_HIDE_FALLARBOR_POKEMON_CENTER_LANETTE                  0x367
-#define FLAG_HIDE_TRICK_HOUSE_ENTRANCE_MAN                          0x368
-#define FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER_REPLACEMENT    0x369
-#define FLAG_HIDE_DESERT_UNDERPASS_FOSSIL                           0x36A
-#define FLAG_HIDE_ROUTE_111_PLAYER_DESCENT                          0x36B
-#define FLAG_HIDE_ROUTE_111_DESERT_FOSSIL                           0x36C
-#define FLAG_HIDE_MT_CHIMNEY_TRAINERS                               0x36D
-#define FLAG_HIDE_RUSTURF_TUNNEL_AQUA_GRUNT                         0x36E
-#define FLAG_HIDE_RUSTURF_TUNNEL_BRINEY                             0x36F
-#define FLAG_HIDE_RUSTURF_TUNNEL_PEEKO                              0x370
-#define FLAG_HIDE_BRINEYS_HOUSE_PEEKO                               0x371
-#define FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA                          0x372
-#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_AQUA_GRUNTS         0x373
-#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_2F_AQUA_GRUNT_1     0x374
-#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_2F_AQUA_GRUNT_2     0x375
-#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_2F_ARCHIE           0x376
-#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_2F_CAPTAIN_STERN    0x377
-#define FLAG_HIDE_BATTLE_TOWER_OPPONENT                             0x378
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL                  0x379
-#define FLAG_HIDE_ROUTE_119_TEAM_AQUA                               0x37A
-#define FLAG_HIDE_ROUTE_116_MR_BRINEY                               0x37B
-#define FLAG_HIDE_WEATHER_INSTITUTE_1F_WORKERS                      0x37C
-#define FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS                      0x37D
-#define FLAG_HIDE_ROUTE_116_WANDAS_BOYFRIEND                        0x37E
-#define FLAG_HIDE_LILYCOVE_CONTEST_HALL_CONTEST_ATTENDANT_2         0x37F
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_UNKNOWN_0x380          0x380
-#define FLAG_HIDE_ROUTE_101_BIRCH                                   0x381
-#define FLAG_HIDE_ROUTE_103_BIRCH                                   0x382
-#define FLAG_HIDE_TRICK_HOUSE_END_MAN                               0x383
-#define FLAG_HIDE_ROUTE_110_TEAM_AQUA                               0x384
-#define FLAG_HIDE_ROUTE_118_GABBY_AND_TY_2                          0x385
-#define FLAG_HIDE_ROUTE_120_GABBY_AND_TY_2                          0x386
-#define FLAG_HIDE_ROUTE_111_GABBY_AND_TY_3                          0x387
-#define FLAG_HIDE_ROUTE_118_GABBY_AND_TY_3                          0x388
-#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_PATRONS                     0x389
-#define FLAG_HIDE_ROUTE_104_WHITE_HERB_FLORIST                      0x38A
-#define FLAG_HIDE_FALLARBOR_AZURILL                                 0x38B
-#define FLAG_HIDE_LILYCOVE_HARBOR_FERRY_ATTENDANT                   0x38C
-#define FLAG_HIDE_LILYCOVE_HARBOR_FERRY_SAILOR                      0x38D
-#define FLAG_HIDE_SOUTHERN_ISLAND_EON_STONE                         0x38E
-#define FLAG_HIDE_SOUTHERN_ISLAND_UNCHOSEN_EON_DUO_MON              0x38F
-#define FLAG_HIDE_MAUVILLE_CITY_WATTSON                             0x390
-#define FLAG_HIDE_MAUVILLE_GYM_WATTSON                              0x391
-#define FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS                        0x392
-#define FLAG_UNKNOWN_0x393                                          0x393 // Set, however has no purpose.
-#define FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE                             0x394
-#define FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA                          0x395
-#define FLAG_HIDE_BATTLE_TOWER_REPORTER                             0x396
-#define FLAG_HIDE_ROUTE_110_RIVAL                                   0x397
-#define FLAG_HIDE_CHAMPIONS_ROOM_RIVAL                              0x398
-#define FLAG_HIDE_CHAMPIONS_ROOM_BIRCH                              0x399
-#define FLAG_HIDE_ROUTE_110_RIVAL_ON_BIKE                           0x39A
-#define FLAG_HIDE_ROUTE_119_RIVAL_ON_BIKE                           0x39B
-#define FLAG_HIDE_AQUA_HIDEOUT_GRUNTS                               0x39C
-#define FLAG_HIDE_LILYCOVE_MOTEL_GAME_DESIGNERS                     0x39D
-#define FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA                              0x39E
-#define FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA                             0x39F
-#define FLAG_HIDE_FALLARBOR_HOUSE_PROF_COZMO                        0x3A0
-#define FLAG_HIDE_LAVARIDGE_TOWN_RIVAL                              0x3A1
-#define FLAG_HIDE_LAVARIDGE_TOWN_RIVAL_ON_BIKE                      0x3A2
-#define FLAG_HIDE_RUSTURF_TUNNEL_ROCK_1                             0x3A3
-#define FLAG_HIDE_RUSTURF_TUNNEL_ROCK_2                             0x3A4
-#define FLAG_HIDE_FORTREE_CITY_HOUSE_4_WINGULL                      0x3A5
-#define FLAG_HIDE_MOSSDEEP_CITY_HOUSE_2_WINGULL                     0x3A6
-#define FLAG_HIDE_REGIROCK                                          0x3A7
-#define FLAG_HIDE_REGICE                                            0x3A8
-#define FLAG_HIDE_REGISTEEL                                         0x3A9
-#define FLAG_HIDE_METEOR_FALLS_TEAM_AQUA                            0x3AA
-#define FLAG_HIDE_METEOR_FALLS_TEAM_MAGMA                           0x3AB
-#define FLAG_HIDE_DEWFORD_HALL_SLUDGE_BOMB_MAN                      0x3AC
-#define FLAG_HIDE_SEAFLOOR_CAVERN_ENTRANCE_AQUA_GRUNT               0x3AD
-#define FLAG_HIDE_METEOR_FALLS_1F_1R_COZMO                          0x3AE
-#define FLAG_HIDE_AQUA_HIDEOUT_B2F_SUBMARINE_SHADOW                 0x3AF
-#define FLAG_HIDE_ROUTE_128_ARCHIE                                  0x3B0
-#define FLAG_HIDE_ROUTE_128_MAXIE                                   0x3B1
-#define FLAG_HIDE_SEAFLOOR_CAVERN_AQUA_GRUNTS                       0x3B2
-#define FLAG_HIDE_ROUTE_116_DEVON_EMPLOYEE                          0x3B3
-#define FLAG_HIDE_SLATEPORT_CITY_TM_SALESMAN                        0x3B4
-#define FLAG_HIDE_RUSTBORO_CITY_DEVON_CORP_3F_EMPLOYEE              0x3B5
-#define FLAG_HIDE_SS_TIDAL_CORRIDOR_MR_BRINEY                       0x3B6
-#define FLAG_HIDE_SS_TIDAL_ROOMS_SNATCH_GIVER                       0x3B7
-#define FLAG_RECEIVED_SHOAL_SALT_1                                  0x3B8
-#define FLAG_RECEIVED_SHOAL_SALT_2                                  0x3B9
-#define FLAG_RECEIVED_SHOAL_SALT_3                                  0x3BA
-#define FLAG_RECEIVED_SHOAL_SALT_4                                  0x3BB
-#define FLAG_RECEIVED_SHOAL_SHELL_1                                 0x3BC
-#define FLAG_RECEIVED_SHOAL_SHELL_2                                 0x3BD
-#define FLAG_RECEIVED_SHOAL_SHELL_3                                 0x3BE
-#define FLAG_RECEIVED_SHOAL_SHELL_4                                 0x3BF
-#define FLAG_HIDE_ROUTE_111_SECRET_POWER_MAN                        0x3C0
-#define FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION                       0x3C1
-#define FLAG_HIDE_LILYCOVE_DEPARTMENT_STORE_ROOFTOP_SALE_WOMAN      0x3C2
-#define FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL                          0x3C3
-#define FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL                          0x3C4
-#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_FAMILIAR_AQUA_GRUNT 0x3C5
-#define FLAG_HIDE_ROUTE_118_STEVEN                                  0x3C6
-#define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_STEVEN                0x3C7
-#define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_BELDUM_POKEBALL       0x3C8
-#define FLAG_HIDE_FORTREE_CITY_KECLEON                              0x3C9
-#define FLAG_HIDE_ROUTE_120_KECLEON_BRIDGE                          0x3CA
-#define FLAG_HIDE_LILYCOVE_CITY_RIVAL                               0x3CB
-#define FLAG_HIDE_ROUTE_120_STEVEN                                  0x3CC
-#define FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN                            0x3CD
-#define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1                            0x3CE
-#define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2                            0x3CF
-#define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3                            0x3D0
-#define FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_1                      0x3D1
-#define FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_2                      0x3D2
-#define FLAG_HIDE_OLDALE_TOWN_RIVAL                                 0x3D3
-#define FLAG_HIDE_UNDERWATER_SEA_FLOOR_CAVERN_STOLEN_SUBMARINE      0x3D4
-#define FLAG_HIDE_ROUTE_120_KECLEON_BRIDGE_SHADOW                   0x3D5
-#define FLAG_HIDE_ROUTE_120_KECLEON_1                               0x3D6
-#define FLAG_HIDE_RUSTURF_TUNNEL_WANDA                              0x3D7
-#define FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WANDA                0x3D8
-#define FLAG_HIDE_ROUTE_120_KECLEON_2                               0x3D9
-#define FLAG_HIDE_ROUTE_120_KECLEON_3                               0x3DA
-#define FLAG_HIDE_ROUTE_120_KECLEON_4                               0x3DB
-#define FLAG_HIDE_ROUTE_120_KECLEON_5                               0x3DC
-#define FLAG_HIDE_ROUTE_119_KECLEON_1                               0x3DD
-#define FLAG_HIDE_ROUTE_119_KECLEON_2                               0x3DE
-#define FLAG_HIDE_ROUTE_101_BOY                                     0x3DF
-#define FLAG_HIDE_WEATHER_INSTITUTE_2F_AQUA_GRUNT_M                 0x3E0
-#define FLAG_HIDE_LILYCOVE_POKEMON_CENTER_CONTEST_LADY_MON          0x3E1
-#define FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY                       0x3E2
-#define FLAG_HIDE_PETALBURG_CITY_SCOTT                              0x3E3
-#define FLAG_HIDE_SOOTOPOLIS_CITY_RAYQUAZA                          0x3E4
-#define FLAG_HIDE_SOOTOPOLIS_CITY_KYOGRE                            0x3E5
-#define FLAG_HIDE_SOOTOPOLIS_CITY_GROUDON                           0x3E6
-#define FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT                0x3E7
+#define FLAG_UNUSED_EVENT_0x2BC                      0x2BC // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2BD                      0x2BD // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2BE                      0x2BE // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2BF                      0x2BF // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2C0                      0x2C0 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2C1                      0x2C1 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2C2                      0x2C2 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2C3                      0x2C3 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2C4                      0x2C4 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2C5                      0x2C5 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2C6                      0x2C6 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2C7                      0x2C7 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2C8                      0x2C8 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2C9                      0x2C9 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2CA                      0x2CA // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2CB                      0x2CB // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2CC                      0x2CC // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2CD                      0x2CD // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2CE                      0x2CE // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2CF                      0x2CF // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2D0                      0x2D0 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2D1                      0x2D1 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2D2                      0x2D2 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2D3                      0x2D3 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2D4                      0x2D4 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2D5                      0x2D5 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2D6                      0x2D6 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2D7                      0x2D7 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2D8                      0x2D8 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2D9                      0x2D9 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2DA                      0x2DA // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2DB                      0x2DB // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2DC                      0x2DC // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2DD                      0x2DD // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2DE                      0x2DE // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2DF                      0x2DF // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2E0                      0x2E0 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2E1                      0x2E1 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2E2                      0x2E2 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2E3                      0x2E3 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2E4                      0x2E4 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2E5                      0x2E5 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2E6                      0x2E6 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2E7                      0x2E7 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2E8                      0x2E8 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2E9                      0x2E9 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2EA                      0x2EA // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2EB                      0x2EB // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2EC                      0x2EC // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2ED                      0x2ED // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2EE                      0x2EE // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2EF                      0x2EF // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2F0                      0x2F0 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2F1                      0x2F1 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2F2                      0x2F2 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2F3                      0x2F3 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2F4                      0x2F4 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2F5                      0x2F5 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2F6                      0x2F6 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2F7                      0x2F7 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2F8                      0x2F8 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2F9                      0x2F9 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2FA                      0x2FA // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2FB                      0x2FB // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2FC                      0x2FC // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2FD                      0x2FD // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2FE                      0x2FE // Unused Flag
+#define FLAG_UNUSED_EVENT_0x2FF                      0x2FF // Unused Flag
+#define FLAG_UNUSED_EVENT_0x300                      0x300 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x301                      0x301 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x302                      0x302 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x303                      0x303 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x304                      0x304 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x305                      0x305 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x306                      0x306 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x307                      0x307 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x308                      0x308 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x309                      0x309 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x30A                      0x30A // Unused Flag
+#define FLAG_UNUSED_EVENT_0x30B                      0x30B // Unused Flag
+#define FLAG_UNUSED_EVENT_0x30C                      0x30C // Unused Flag
+#define FLAG_UNUSED_EVENT_0x30D                      0x30D // Unused Flag
+#define FLAG_UNUSED_EVENT_0x30E                      0x30E // Unused Flag
+#define FLAG_UNUSED_EVENT_0x30F                      0x30F // Unused Flag
+#define FLAG_UNUSED_EVENT_0x310                      0x310 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x311                      0x311 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x312                      0x312 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x313                      0x313 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x314                      0x314 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x315                      0x315 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x316                      0x316 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x317                      0x317 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x318                      0x318 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x319                      0x319 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x31A                      0x31A // Unused Flag
+#define FLAG_UNUSED_EVENT_0x31B                      0x31B // Unused Flag
+#define FLAG_UNUSED_EVENT_0x31C                      0x31C // Unused Flag
+#define FLAG_UNUSED_EVENT_0x31D                      0x31D // Unused Flag
+#define FLAG_UNUSED_EVENT_0x31E                      0x31E // Unused Flag
+#define FLAG_UNUSED_EVENT_0x31F                      0x31F // Unused Flag
+#define FLAG_UNUSED_EVENT_0x320                      0x320 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x321                      0x321 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x322                      0x322 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x323                      0x323 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x324                      0x324 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x325                      0x325 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x326                      0x326 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x327                      0x327 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x328                      0x328 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x329                      0x329 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x32A                      0x32A // Unused Flag
+#define FLAG_UNUSED_EVENT_0x32B                      0x32B // Unused Flag
+#define FLAG_UNUSED_EVENT_0x32C                      0x32C // Unused Flag
+#define FLAG_UNUSED_EVENT_0x32D                      0x32D // Unused Flag
+#define FLAG_UNUSED_EVENT_0x32E                      0x32E // Unused Flag
+#define FLAG_UNUSED_EVENT_0x32F                      0x32F // Unused Flag
+#define FLAG_UNUSED_EVENT_0x330                      0x330 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x331                      0x331 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x332                      0x332 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x333                      0x333 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x334                      0x334 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x335                      0x335 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x336                      0x336 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x337                      0x337 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x338                      0x338 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x339                      0x339 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x33A                      0x33A // Unused Flag
+#define FLAG_UNUSED_EVENT_0x33B                      0x33B // Unused Flag
+#define FLAG_UNUSED_EVENT_0x33C                      0x33C // Unused Flag
+#define FLAG_UNUSED_EVENT_0x33D                      0x33D // Unused Flag
+#define FLAG_UNUSED_EVENT_0x33E                      0x33E // Unused Flag
+#define FLAG_UNUSED_EVENT_0x33F                      0x33F // Unused Flag
+#define FLAG_UNUSED_EVENT_0x340                      0x340 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x341                      0x341 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x342                      0x342 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x343                      0x343 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x344                      0x344 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x345                      0x345 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x346                      0x346 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x347                      0x347 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x348                      0x348 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x349                      0x349 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x34A                      0x34A // Unused Flag
+#define FLAG_UNUSED_EVENT_0x34B                      0x34B // Unused Flag
+#define FLAG_UNUSED_EVENT_0x34C                      0x34C // Unused Flag
+#define FLAG_UNUSED_EVENT_0x34D                      0x34D // Unused Flag
+#define FLAG_UNUSED_EVENT_0x34E                      0x34E // Unused Flag
+#define FLAG_UNUSED_EVENT_0x34F                      0x34F // Unused Flag
+#define FLAG_UNUSED_EVENT_0x350                      0x350 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x351                      0x351 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x352                      0x352 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x353                      0x353 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x354                      0x354 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x355                      0x355 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x356                      0x356 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x357                      0x357 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x358                      0x358 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x359                      0x359 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x35A                      0x35A // Unused Flag
+#define FLAG_UNUSED_EVENT_0x35B                      0x35B // Unused Flag
+#define FLAG_UNUSED_EVENT_0x35C                      0x35C // Unused Flag
+#define FLAG_UNUSED_EVENT_0x35D                      0x35D // Unused Flag
+#define FLAG_UNUSED_EVENT_0x35E                      0x35E // Unused Flag
+#define FLAG_UNUSED_EVENT_0x35F                      0x35F // Unused Flag
+#define FLAG_UNUSED_EVENT_0x360                      0x360 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x361                      0x361 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x362                      0x362 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x363                      0x363 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x364                      0x364 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x365                      0x365 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x366                      0x366 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x367                      0x367 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x368                      0x368 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x369                      0x369 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x36A                      0x36A // Unused Flag
+#define FLAG_UNUSED_EVENT_0x36B                      0x36B // Unused Flag
+#define FLAG_UNUSED_EVENT_0x36C                      0x36C // Unused Flag
+#define FLAG_UNUSED_EVENT_0x36D                      0x36D // Unused Flag
+#define FLAG_UNUSED_EVENT_0x36E                      0x36E // Unused Flag
+#define FLAG_UNUSED_EVENT_0x36F                      0x36F // Unused Flag
+#define FLAG_UNUSED_EVENT_0x370                      0x370 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x371                      0x371 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x372                      0x372 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x373                      0x373 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x374                      0x374 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x375                      0x375 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x376                      0x376 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x377                      0x377 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x378                      0x378 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x379                      0x379 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x37A                      0x37A // Unused Flag
+#define FLAG_UNUSED_EVENT_0x37B                      0x37B // Unused Flag
+#define FLAG_UNUSED_EVENT_0x37C                      0x37C // Unused Flag
+#define FLAG_UNUSED_EVENT_0x37D                      0x37D // Unused Flag
+#define FLAG_UNUSED_EVENT_0x37E                      0x37E // Unused Flag
+#define FLAG_UNUSED_EVENT_0x37F                      0x37F // Unused Flag
+#define FLAG_UNUSED_EVENT_0x380                      0x380 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x381                      0x381 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x382                      0x382 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x383                      0x383 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x384                      0x384 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x385                      0x385 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x386                      0x386 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x387                      0x387 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x388                      0x388 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x389                      0x389 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x38A                      0x38A // Unused Flag
+#define FLAG_UNUSED_EVENT_0x38B                      0x38B // Unused Flag
+#define FLAG_UNUSED_EVENT_0x38C                      0x38C // Unused Flag
+#define FLAG_UNUSED_EVENT_0x38D                      0x38D // Unused Flag
+#define FLAG_UNUSED_EVENT_0x38E                      0x38E // Unused Flag
+#define FLAG_UNUSED_EVENT_0x38F                      0x38F // Unused Flag
+#define FLAG_UNUSED_EVENT_0x390                      0x390 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x391                      0x391 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x392                      0x392 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x393                      0x393 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x394                      0x394 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x395                      0x395 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x396                      0x396 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x397                      0x397 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x398                      0x398 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x399                      0x399 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x39A                      0x39A // Unused Flag
+#define FLAG_UNUSED_EVENT_0x39B                      0x39B // Unused Flag
+#define FLAG_UNUSED_EVENT_0x39C                      0x39C // Unused Flag
+#define FLAG_UNUSED_EVENT_0x39D                      0x39D // Unused Flag
+#define FLAG_UNUSED_EVENT_0x39E                      0x39E // Unused Flag
+#define FLAG_UNUSED_EVENT_0x39F                      0x39F // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3A0                      0x3A0 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3A1                      0x3A1 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3A2                      0x3A2 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3A3                      0x3A3 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3A4                      0x3A4 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3A5                      0x3A5 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3A6                      0x3A6 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3A7                      0x3A7 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3A8                      0x3A8 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3A9                      0x3A9 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3AA                      0x3AA // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3AB                      0x3AB // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3AC                      0x3AC // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3AD                      0x3AD // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3AE                      0x3AE // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3AF                      0x3AF // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3B0                      0x3B0 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3B1                      0x3B1 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3B2                      0x3B2 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3B3                      0x3B3 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3B4                      0x3B4 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3B5                      0x3B5 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3B6                      0x3B6 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3B7                      0x3B7 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3B8                      0x3B8 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3B9                      0x3B9 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3BA                      0x3BA // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3BB                      0x3BB // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3BC                      0x3BC // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3BD                      0x3BD // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3BE                      0x3BE // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3BF                      0x3BF // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3C0                      0x3C0 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3C1                      0x3C1 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3C2                      0x3C2 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3C3                      0x3C3 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3C4                      0x3C4 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3C5                      0x3C5 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3C6                      0x3C6 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3C7                      0x3C7 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3C8                      0x3C8 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3C9                      0x3C9 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3CA                      0x3CA // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3CB                      0x3CB // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3CC                      0x3CC // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3CD                      0x3CD // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3CE                      0x3CE // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3CF                      0x3CF // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3D0                      0x3D0 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3D1                      0x3D1 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3D2                      0x3D2 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3D3                      0x3D3 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3D4                      0x3D4 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3D5                      0x3D5 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3D6                      0x3D6 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3D7                      0x3D7 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3D8                      0x3D8 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3D9                      0x3D9 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3DA                      0x3DA // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3DB                      0x3DB // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3DC                      0x3DC // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3DD                      0x3DD // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3DE                      0x3DE // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3DF                      0x3DF // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3E0                      0x3E0 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3E1                      0x3E1 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3E2                      0x3E2 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3E3                      0x3E3 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3E4                      0x3E4 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3E5                      0x3E5 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3E6                      0x3E6 // Unused Flag
+#define FLAG_UNUSED_EVENT_0x3E7                      0x3E7 // Unused Flag
 
 // Item Ball Flags
-#define FLAG_ITEM_ROUTE_102_POTION                                  0x3E8
-#define FLAG_ITEM_ROUTE_116_X_SPECIAL                               0x3E9
-#define FLAG_ITEM_ROUTE_104_PP_UP                                   0x3EA
-#define FLAG_ITEM_ROUTE_105_IRON                                    0x3EB
-#define FLAG_ITEM_ROUTE_106_PROTEIN                                 0x3EC
-#define FLAG_ITEM_ROUTE_109_PP_UP                                   0x3ED
-#define FLAG_ITEM_ROUTE_110_RARE_CANDY                              0x3EE
-#define FLAG_ITEM_ROUTE_110_DIRE_HIT                                0x3EF
-#define FLAG_ITEM_ROUTE_111_TM_SANDSTORM                            0x3F0
-#define FLAG_ITEM_ROUTE_111_STARDUST                                0x3F1
-#define FLAG_ITEM_ROUTE_111_HP_UP                                   0x3F2
-#define FLAG_ITEM_ROUTE_112_NUGGET                                  0x3F3
-#define FLAG_ITEM_ROUTE_113_MAX_ETHER                               0x3F4
-#define FLAG_ITEM_ROUTE_113_SUPER_REPEL                             0x3F5
-#define FLAG_ITEM_ROUTE_114_RARE_CANDY                              0x3F6
-#define FLAG_ITEM_ROUTE_114_PROTEIN                                 0x3F7
-#define FLAG_ITEM_ROUTE_115_SUPER_POTION                            0x3F8
-#define FLAG_ITEM_ROUTE_115_TM_FOCUS_PUNCH                          0x3F9
-#define FLAG_ITEM_ROUTE_115_IRON                                    0x3FA
-#define FLAG_ITEM_ROUTE_116_ETHER                                   0x3FB
-#define FLAG_ITEM_ROUTE_116_REPEL                                   0x3FC
-#define FLAG_ITEM_ROUTE_116_HP_UP                                   0x3FD
-#define FLAG_ITEM_ROUTE_117_GREAT_BALL                              0x3FE
-#define FLAG_ITEM_ROUTE_117_REVIVE                                  0x3FF
-#define FLAG_ITEM_ROUTE_119_SUPER_REPEL                             0x400
-#define FLAG_ITEM_ROUTE_119_ZINC                                    0x401
-#define FLAG_ITEM_ROUTE_119_ELIXIR_1                                0x402
-#define FLAG_ITEM_ROUTE_119_LEAF_STONE                              0x403
-#define FLAG_ITEM_ROUTE_119_RARE_CANDY                              0x404
-#define FLAG_ITEM_ROUTE_119_HYPER_POTION_1                          0x405
-#define FLAG_ITEM_ROUTE_120_NUGGET                                  0x406
-#define FLAG_ITEM_ROUTE_120_FULL_HEAL                               0x407
-#define FLAG_ITEM_ROUTE_123_CALCIUM                                 0x408
-#define FLAG_ITEM_ROUTE_123_RARE_CANDY                              0x409 // Unused Flag, leftover from R/S. In Emerald this is a hidden item and uses a different flag
-#define FLAG_ITEM_ROUTE_127_ZINC                                    0x40A
-#define FLAG_ITEM_ROUTE_127_CARBOS                                  0x40B
-#define FLAG_ITEM_ROUTE_132_RARE_CANDY                              0x40C
-#define FLAG_ITEM_ROUTE_133_BIG_PEARL                               0x40D
-#define FLAG_ITEM_ROUTE_133_STAR_PIECE                              0x40E
-#define FLAG_ITEM_PETALBURG_CITY_MAX_REVIVE                         0x40F
-#define FLAG_ITEM_PETALBURG_CITY_ETHER                              0x410
-#define FLAG_ITEM_RUSTBORO_CITY_X_DEFEND                            0x411
-#define FLAG_ITEM_LILYCOVE_CITY_MAX_REPEL                           0x412
-#define FLAG_ITEM_MOSSDEEP_CITY_NET_BALL                            0x413
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_IRON_TAIL                   0x414
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_FULL_HEAL                      0x415
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_MOON_STONE                     0x416
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_PP_UP                          0x417
-#define FLAG_ITEM_RUSTURF_TUNNEL_POKE_BALL                          0x418
-#define FLAG_ITEM_RUSTURF_TUNNEL_MAX_ETHER                          0x419
-#define FLAG_ITEM_GRANITE_CAVE_1F_ESCAPE_ROPE                       0x41A
-#define FLAG_ITEM_GRANITE_CAVE_B1F_POKE_BALL                        0x41B
-#define FLAG_ITEM_MT_PYRE_5F_LAX_INCENSE                            0x41C
-#define FLAG_ITEM_GRANITE_CAVE_B2F_REPEL                            0x41D
-#define FLAG_ITEM_GRANITE_CAVE_B2F_RARE_CANDY                       0x41E
-#define FLAG_ITEM_PETALBURG_WOODS_X_ATTACK                          0x41F
-#define FLAG_ITEM_PETALBURG_WOODS_GREAT_BALL                        0x420
-#define FLAG_ITEM_ROUTE_104_POKE_BALL                               0x421
-#define FLAG_ITEM_PETALBURG_WOODS_ETHER                             0x422
-#define FLAG_ITEM_MAGMA_HIDEOUT_3F_3R_ECAPE_ROPE                    0x423
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_1_ORANGE_MAIL                  0x424
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_2_HARBOR_MAIL                  0x425
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_2_WAVE_MAIL                    0x426
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_SHADOW_MAIL                  0x427
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_WOOD_MAIL                    0x428
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_4_MECH_MAIL                    0x429
-#define FLAG_ITEM_ROUTE_124_YELLOW_SHARD                            0x42A
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_6_GLITTER_MAIL                 0x42B
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_7_TROPIC_MAIL                  0x42C
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_8_BEAD_MAIL                    0x42D
-#define FLAG_ITEM_JAGGED_PASS_BURN_HEAL                             0x42E
-#define FLAG_ITEM_AQUA_HIDEOUT_B1F_MAX_ELIXIR                       0x42F
-#define FLAG_ITEM_AQUA_HIDEOUT_B2F_NEST_BALL                        0x430
-#define FLAG_ITEM_MT_PYRE_EXTERIOR_MAX_POTION                       0x431
-#define FLAG_ITEM_MT_PYRE_EXTERIOR_TM_SKILL_SWAP                    0x432
-#define FLAG_ITEM_NEW_MAUVILLE_ULTRA_BALL                           0x433
-#define FLAG_ITEM_NEW_MAUVILLE_ESCAPE_ROPE                          0x434
-#define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_6_LUXURY_BALL    0x435
-#define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_2_SCANNER        0x436
-#define FLAG_ITEM_SCORCHED_SLAB_TM_SUNNY_DAY                        0x437
-#define FLAG_ITEM_METEOR_FALLS_B1F_2R_TM_DRAGON_CLAW                0x438
-#define FLAG_ITEM_SHOAL_CAVE_ENTRANCE_BIG_PEARL                     0x439
-#define FLAG_ITEM_SHOAL_CAVE_INNER_ROOM_RARE_CANDY                  0x43A
-#define FLAG_ITEM_SHOAL_CAVE_STAIRS_ROOM_ICE_HEAL                   0x43B
-#define FLAG_ITEM_VICTORY_ROAD_1F_MAX_ELIXIR                        0x43C
-#define FLAG_ITEM_VICTORY_ROAD_1F_PP_UP                             0x43D
-#define FLAG_ITEM_VICTORY_ROAD_B1F_TM_PSYCHIC                       0x43E
-#define FLAG_ITEM_VICTORY_ROAD_B1F_FULL_RESTORE                     0x43F
-#define FLAG_ITEM_VICTORY_ROAD_B2F_FULL_HEAL                        0x440
-#define FLAG_ITEM_MT_PYRE_6F_TM_SHADOW_BALL                         0x441
-#define FLAG_ITEM_SEAFLOOR_CAVERN_ROOM_9_TM_EARTHQUAKE              0x442
-#define FLAG_ITEM_FIERY_PATH_TM_TOXIC                               0x443
-#define FLAG_ITEM_ROUTE_124_RED_SHARD                               0x444
-#define FLAG_ITEM_ROUTE_124_BLUE_SHARD                              0x445
-#define FLAG_ITEM_SAFARI_ZONE_NORTH_WEST_TM_SOLAR_BEAM              0x446
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_1F_HARBOR_MAIL               0x447
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_ESCAPE_ROPE              0x448
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_B1F_DIVE_BALL              0x449
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_TM_ICE_BEAM              0x44A
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_1F_REVIVE                  0x44B
-#define FLAG_ITEM_ABANDONED_SHIP_CAPTAINS_OFFICE_STORAGE_KEY        0x44C
-#define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_3_WATER_STONE    0x44D
-#define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_1_TM_RAIN_DANCE  0x44E
-#define FLAG_ITEM_ROUTE_121_CARBOS                                  0x44F
-#define FLAG_ITEM_ROUTE_123_ULTRA_BALL                              0x450
-#define FLAG_ITEM_ROUTE_126_GREEN_SHARD                             0x451
-#define FLAG_ITEM_ROUTE_119_HYPER_POTION_2                          0x452
-#define FLAG_ITEM_ROUTE_120_HYPER_POTION                            0x453
-#define FLAG_ITEM_ROUTE_120_NEST_BALL                               0x454
-#define FLAG_ITEM_ROUTE_123_ELIXIR                                  0x455
-#define FLAG_ITEM_NEW_MAUVILLE_THUNDER_STONE                        0x456
-#define FLAG_ITEM_FIERY_PATH_FIRE_STONE                             0x457
-#define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_TM_HAIL                       0x458
-#define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_NEVER_MELT_ICE                0x459
-#define FLAG_ITEM_ROUTE_103_GUARD_SPEC                              0x45A
-#define FLAG_ITEM_ROUTE_104_X_ACCURACY                              0x45B
-#define FLAG_ITEM_MAUVILLE_CITY_X_SPEED                             0x45C
-#define FLAG_ITEM_PETALBURG_WOODS_PARALYZE_HEAL                     0x45D
-#define FLAG_ITEM_ROUTE_115_GREAT_BALL                              0x45E
-#define FLAG_ITEM_SAFARI_ZONE_NORTH_CALCIUM                         0x45F
-#define FLAG_ITEM_MT_PYRE_3F_SUPER_REPEL                            0x460
-#define FLAG_ITEM_ROUTE_118_HYPER_POTION                            0x461
-#define FLAG_ITEM_NEW_MAUVILLE_FULL_HEAL                            0x462
-#define FLAG_ITEM_NEW_MAUVILLE_PARALYZE_HEAL                        0x463
-#define FLAG_ITEM_AQUA_HIDEOUT_B1F_MASTER_BALL                      0x464
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MASTER_BALL                 0x465 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MAX_ELIXIR                  0x466 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B2F_NEST_BALL                   0x467 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_UNUSED_0x468                                           0x468 // Unused Flag
-#define FLAG_ITEM_MT_PYRE_2F_ULTRA_BALL                             0x469
-#define FLAG_ITEM_MT_PYRE_4F_SEA_INCENSE                            0x46A
-#define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_MAX_REVIVE                 0x46B
-#define FLAG_ITEM_AQUA_HIDEOUT_B1F_NUGGET                           0x46C
-#define FLAG_ITEM_MOSSDEEP_STEVENS_HOUSE_HM08                       0x46D // Unused Flag, leftover from R/S. HM08 is given to the player directly in Emerald
-#define FLAG_ITEM_ROUTE_119_NUGGET                                  0x46E
-#define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
-#define FLAG_UNUSED_0x470                                           0x470 // Unused Flag
-#define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
-#define FLAG_UNUSED_0x472                                           0x472 // Unused Flag
-#define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
-#define FLAG_ITEM_ROUTE_109_POTION                                  0x474
-#define FLAG_ITEM_ROUTE_110_ELIXIR                                  0x475
-#define FLAG_ITEM_ROUTE_111_ELIXIR                                  0x476
-#define FLAG_ITEM_ROUTE_113_HYPER_POTION                            0x477
-#define FLAG_ITEM_ROUTE_115_HEAL_POWDER                             0x478
-#define FLAG_UNUSED_0x479                                           0x479 // Unused Flag
-#define FLAG_ITEM_ROUTE_116_POTION                                  0x47A
-#define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
-#define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C
-#define FLAG_ITEM_ROUTE_121_REVIVE                                  0x47D
-#define FLAG_ITEM_ROUTE_121_ZINC                                    0x47E
-#define FLAG_ITEM_MAGMA_HIDEOUT_1F_RARE_CANDY                       0x47F
-#define FLAG_ITEM_ROUTE_123_PP_UP                                   0x480
-#define FLAG_ITEM_ROUTE_123_REVIVAL_HERB                            0x481
-#define FLAG_ITEM_ROUTE_125_BIG_PEARL                               0x482
-#define FLAG_ITEM_ROUTE_127_RARE_CANDY                              0x483
-#define FLAG_ITEM_ROUTE_132_PROTEIN                                 0x484
-#define FLAG_ITEM_ROUTE_133_MAX_REVIVE                              0x485
-#define FLAG_ITEM_ROUTE_134_CARBOS                                  0x486
-#define FLAG_ITEM_ROUTE_134_STAR_PIECE                              0x487
-#define FLAG_ITEM_ROUTE_114_ENERGY_POWDER                           0x488
-#define FLAG_ITEM_ROUTE_115_PP_UP                                   0x489
-#define FLAG_ITEM_ARTISAN_CAVE_B1F_HP_UP                            0x48A
-#define FLAG_ITEM_ARTISAN_CAVE_1F_CARBOS                            0x48B
-#define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_MAX_ELIXIR                    0x48C
-#define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_FULL_RESTORE                  0x48D
-#define FLAG_ITEM_MAGMA_HIDEOUT_3F_1R_NUGGET                        0x48E
-#define FLAG_ITEM_MAGMA_HIDEOUT_3F_2R_PP_MAX                        0x48F
-#define FLAG_ITEM_MAGMA_HIDEOUT_4F_MAX_REVIVE                       0x490
-#define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
-#define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
-
-#define FLAG_ITEM_MAASJE_COASTAL_CAVE1                              0x493 // Unused Flag
-#define FLAG_ITEM_FRESH_WATER_GYM1                                  0x494 // Unused Flag
-#define FLAG_ITEM_TRADED_DOME_FOSSIL                                          0x495 // Unused Flag
-#define FLAG_ITEM_TM23_IRON_TAIL                                         0x496 // Unused Flag
-#define FLAG_ITEM_ROOT_FOSSIL                                           0x497 // Unused Flag
-#define FLAG_ITEM_FRESH_WATER_GYM2                                          0x498 // Unused Flag
-#define FLAG_ITEM_ROUTE_02_POKE_BALL                                          0x499 // Unused Flag
-#define FLAG_HIDDEN_ITEM_ROUTE_02_ANTIDOTE                                          0x49A // Unused Flag
-#define FLAG_HIDDEN_ITEM_ROUTE_02_POTION                                          0x49B // Unused Flag
-#define FLAG_HIDDEN_ITEM_ROUTE_02_HEART_SCALE                                            0x49C // Unused Flag
-#define FLAG_ITEM_ROUTE_03_ETHER                                          0x49D // Unused Flag
-#define FLAG_HIDDEN_ITEM_ROUTE_03_GREAT_BALL                                         0x49E // Unused Flag
-#define FLAG_HIDDEN_ITEM_ROUTE_03_POKE_BALL                                          0x49F // Unused Flag
-#define FLAG_HIDDEN_ITEM_ROUTE_03_PARLYZ_HEAL                                          0x4A0 // Unused Flag
-#define FLAG_ITEM_ROUTE_03_GREAT_BALL                                          0x4A1 // Unused Flag
-#define FLAG_HIDDEN_ITEM_MISTCITY_SUPER_POTION                                          0x4A2 // Unused Flag
-#define FLAG_HIDDEN_ITEM_MISTCITY_POKE_BALL                                       0x4A3 // Unused Flag
-#define FLAG_ITEM_MISTCITY_POTION                                       0x4A4 // Unused Flag
-#define FLAG_ITEM_MISTCITY_X_DEFENSE                                           0x4A5 // Unused Flag
-#define FLAG_HIDDEN_ITEM_BAT_CAVE_EVER_STONE                                           0x4A6 // Unused Flag
-#define FLAG_ITEM_BAT_CAVE_POKE_BALL                                          0x4A7 // Unused Flag
-#define FLAG_HIDDEN_ITEM_SHROOMSHOP_TINY_MUSHROOM                                         0x4A8 // Unused Flag
-#define FLAG_HIDDEN_ITEM_SHROOMSHOP_BIG_MUSHROOM                                             0x4A9 // Unused Flag
-#define FLAG_HIDDEN_ITEM_SHROOMSHOP_MAX_MUSHROOM                                              0x4AA // Unused Flag
-#define FLAG_HIDDEN_ITEM_SHROOMSHOP_BALM_MUSHROOM                                              0x4AB // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3E8                       0x3E8 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3E9                       0x3E9 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3EA                       0x3EA // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3EB                       0x3EB // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3EC                       0x3EC // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3ED                       0x3ED // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3EE                       0x3EE // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3EF                       0x3EF // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3F0                       0x3F0 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3F1                       0x3F1 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3F2                       0x3F2 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3F3                       0x3F3 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3F4                       0x3F4 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3F5                       0x3F5 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3F6                       0x3F6 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3F7                       0x3F7 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3F8                       0x3F8 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3F9                       0x3F9 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3FA                       0x3FA // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3FB                       0x3FB // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3FC                       0x3FC // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3FD                       0x3FD // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3FE                       0x3FE // Unused Flag
+#define FLAG_UNUSED_ITEM_0x3FF                       0x3FF // Unused Flag
+#define FLAG_UNUSED_ITEM_0x400                       0x400 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x401                       0x401 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x402                       0x402 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x403                       0x403 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x404                       0x404 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x405                       0x405 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x406                       0x406 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x407                       0x407 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x408                       0x408 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x409                       0x409 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x40A                       0x40A // Unused Flag
+#define FLAG_UNUSED_ITEM_0x40B                       0x40B // Unused Flag
+#define FLAG_UNUSED_ITEM_0x40C                       0x40C // Unused Flag
+#define FLAG_UNUSED_ITEM_0x40D                       0x40D // Unused Flag
+#define FLAG_UNUSED_ITEM_0x40E                       0x40E // Unused Flag
+#define FLAG_UNUSED_ITEM_0x40F                       0x40F // Unused Flag
+#define FLAG_UNUSED_ITEM_0x410                       0x410 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x411                       0x411 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x412                       0x412 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x413                       0x413 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x414                       0x414 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x415                       0x415 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x416                       0x416 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x417                       0x417 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x418                       0x418 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x419                       0x419 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x41A                       0x41A // Unused Flag
+#define FLAG_UNUSED_ITEM_0x41B                       0x41B // Unused Flag
+#define FLAG_UNUSED_ITEM_0x41C                       0x41C // Unused Flag
+#define FLAG_UNUSED_ITEM_0x41D                       0x41D // Unused Flag
+#define FLAG_UNUSED_ITEM_0x41E                       0x41E // Unused Flag
+#define FLAG_UNUSED_ITEM_0x41F                       0x41F // Unused Flag
+#define FLAG_UNUSED_ITEM_0x420                       0x420 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x421                       0x421 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x422                       0x422 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x423                       0x423 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x424                       0x424 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x425                       0x425 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x426                       0x426 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x427                       0x427 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x428                       0x428 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x429                       0x429 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x42A                       0x42A // Unused Flag
+#define FLAG_UNUSED_ITEM_0x42B                       0x42B // Unused Flag
+#define FLAG_UNUSED_ITEM_0x42C                       0x42C // Unused Flag
+#define FLAG_UNUSED_ITEM_0x42D                       0x42D // Unused Flag
+#define FLAG_UNUSED_ITEM_0x42E                       0x42E // Unused Flag
+#define FLAG_UNUSED_ITEM_0x42F                       0x42F // Unused Flag
+#define FLAG_UNUSED_ITEM_0x430                       0x430 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x431                       0x431 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x432                       0x432 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x433                       0x433 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x434                       0x434 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x435                       0x435 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x436                       0x436 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x437                       0x437 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x438                       0x438 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x439                       0x439 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x43A                       0x43A // Unused Flag
+#define FLAG_UNUSED_ITEM_0x43B                       0x43B // Unused Flag
+#define FLAG_UNUSED_ITEM_0x43C                       0x43C // Unused Flag
+#define FLAG_UNUSED_ITEM_0x43D                       0x43D // Unused Flag
+#define FLAG_UNUSED_ITEM_0x43E                       0x43E // Unused Flag
+#define FLAG_UNUSED_ITEM_0x43F                       0x43F // Unused Flag
+#define FLAG_UNUSED_ITEM_0x440                       0x440 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x441                       0x441 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x442                       0x442 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x443                       0x443 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x444                       0x444 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x445                       0x445 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x446                       0x446 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x447                       0x447 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x448                       0x448 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x449                       0x449 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x44A                       0x44A // Unused Flag
+#define FLAG_UNUSED_ITEM_0x44B                       0x44B // Unused Flag
+#define FLAG_UNUSED_ITEM_0x44C                       0x44C // Unused Flag
+#define FLAG_UNUSED_ITEM_0x44D                       0x44D // Unused Flag
+#define FLAG_UNUSED_ITEM_0x44E                       0x44E // Unused Flag
+#define FLAG_UNUSED_ITEM_0x44F                       0x44F // Unused Flag
+#define FLAG_UNUSED_ITEM_0x450                       0x450 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x451                       0x451 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x452                       0x452 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x453                       0x453 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x454                       0x454 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x455                       0x455 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x456                       0x456 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x457                       0x457 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x458                       0x458 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x459                       0x459 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x45A                       0x45A // Unused Flag
+#define FLAG_UNUSED_ITEM_0x45B                       0x45B // Unused Flag
+#define FLAG_UNUSED_ITEM_0x45C                       0x45C // Unused Flag
+#define FLAG_UNUSED_ITEM_0x45D                       0x45D // Unused Flag
+#define FLAG_UNUSED_ITEM_0x45E                       0x45E // Unused Flag
+#define FLAG_UNUSED_ITEM_0x45F                       0x45F // Unused Flag
+#define FLAG_UNUSED_ITEM_0x460                       0x460 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x461                       0x461 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x462                       0x462 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x463                       0x463 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x464                       0x464 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x465                       0x465 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x466                       0x466 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x467                       0x467 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x468                       0x468 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x469                       0x469 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x46A                       0x46A // Unused Flag
+#define FLAG_UNUSED_ITEM_0x46B                       0x46B // Unused Flag
+#define FLAG_UNUSED_ITEM_0x46C                       0x46C // Unused Flag
+#define FLAG_UNUSED_ITEM_0x46D                       0x46D // Unused Flag
+#define FLAG_UNUSED_ITEM_0x46E                       0x46E // Unused Flag
+#define FLAG_UNUSED_ITEM_0x46F                       0x46F // Unused Flag
+#define FLAG_UNUSED_ITEM_0x470                       0x470 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x471                       0x471 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x472                       0x472 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x473                       0x473 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x474                       0x474 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x475                       0x475 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x476                       0x476 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x477                       0x477 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x478                       0x478 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x479                       0x479 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x47A                       0x47A // Unused Flag
+#define FLAG_UNUSED_ITEM_0x47B                       0x47B // Unused Flag
+#define FLAG_UNUSED_ITEM_0x47C                       0x47C // Unused Flag
+#define FLAG_UNUSED_ITEM_0x47D                       0x47D // Unused Flag
+#define FLAG_UNUSED_ITEM_0x47E                       0x47E // Unused Flag
+#define FLAG_UNUSED_ITEM_0x47F                       0x47F // Unused Flag
+#define FLAG_UNUSED_ITEM_0x480                       0x480 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x481                       0x481 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x482                       0x482 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x483                       0x483 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x484                       0x484 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x485                       0x485 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x486                       0x486 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x487                       0x487 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x488                       0x488 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x489                       0x489 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x48A                       0x48A // Unused Flag
+#define FLAG_UNUSED_ITEM_0x48B                       0x48B // Unused Flag
+#define FLAG_UNUSED_ITEM_0x48C                       0x48C // Unused Flag
+#define FLAG_UNUSED_ITEM_0x48D                       0x48D // Unused Flag
+#define FLAG_UNUSED_ITEM_0x48E                       0x48E // Unused Flag
+#define FLAG_UNUSED_ITEM_0x48F                       0x48F // Unused Flag
+#define FLAG_UNUSED_ITEM_0x490                       0x490 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x491                       0x491 // Unused Flag
+#define FLAG_UNUSED_ITEM_0x492                       0x492 // Unused Flag
+#define FLAG_ITEM_MAASJE_COASTAL_CAVE1                              0x493 // SK: Tracks the visible item pickup in Maasje Coastal Cave 1.
+#define FLAG_ITEM_FRESH_WATER_GYM1                                  0x494 // SK: Tracks the Fresh Water pickup in Gym 1.
+#define FLAG_ITEM_TRADED_DOME_FOSSIL                                0x495 // SK: Tracks whether the Dome Fossil has been obtained via trade.
+#define FLAG_ITEM_TM23_IRON_TAIL                                    0x496 // SK: Tracks the TM23 Iron Tail pickup.
+#define FLAG_ITEM_ROOT_FOSSIL                                       0x497 // SK: Tracks the Root Fossil pickup.
+#define FLAG_ITEM_FRESH_WATER_GYM2                                  0x498 // SK: Tracks the Fresh Water pickup in Gym 2.
+#define FLAG_ITEM_ROUTE_02_POKE_BALL                                0x499 // SK: Tracks the visible Poké Ball pickup on Route 02.
+#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
+#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
+#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
+#define FLAG_ITEM_ROUTE_03_ETHER                                    0x49D // SK: Tracks the visible Ether pickup on Route 03.
+#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
+#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
+#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
+#define FLAG_ITEM_ROUTE_03_GREAT_BALL                               0x4A1 // SK: Tracks the visible Great Ball pickup on Route 03.
+#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
+#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
+#define FLAG_ITEM_MISTCITY_POTION                                   0x4A4 // SK: Tracks the visible Potion pickup in MistCity.
+#define FLAG_ITEM_MISTCITY_X_DEFENSE                                0x4A5 // SK: Tracks the visible X Defense pickup in MistCity.
+#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
+#define FLAG_ITEM_BAT_CAVE_POKE_BALL                                0x4A7 // SK: Tracks the visible Poké Ball pickup in Bat Cave.
+#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
+#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
+#define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
+#define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
 #define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
 #define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
 #define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
@@ -1309,8 +1318,8 @@
 #define FLAG_UNUSED_0x4EE                                           0x4EE // Unused Flag
 #define FLAG_UNUSED_0x4EF                                           0x4EF // Unused Flag
 
-#define FLAG_DEFEATED_RUSTBORO_GYM                                  0x4F0 //used in Maasje Gym
-#define FLAG_DEFEATED_DEWFORD_GYM                                   0x4F1 //used in Mistcity Gym
+#define FLAG_DEFEATED_RUSTBORO_GYM                                  0x4F0 // SK: used in Maasje Gym
+#define FLAG_DEFEATED_DEWFORD_GYM                                   0x4F1 // SK: used in Mistcity Gym
 #define FLAG_DEFEATED_MAUVILLE_GYM                                  0x4F2
 #define FLAG_DEFEATED_LAVARIDGE_GYM                                 0x4F3
 #define FLAG_DEFEATED_PETALBURG_GYM                                 0x4F4
@@ -1319,8 +1328,8 @@
 #define FLAG_DEFEATED_SOOTOPOLIS_GYM                                0x4F7
 #define FLAG_DEFEATED_METEOR_FALLS_STEVEN                           0x4F8
 
-#define FLAG_DEFEATED_LIONSARCH_LEADER1                             0x4F9 // Used in Lionsarch Gym: leader 1 beaten, leader 2 not yet
-#define FLAG_LIONSARCH_GYM_GUIDE_GAVE_WATER                         0x4FA // Used in Lionsarch Gym: guide gave Fresh Water to player
+#define FLAG_DEFEATED_LIONSARCH_LEADER1                             0x4F9 // SK: Used in Lionsarch Gym: leader 1 beaten, leader 2 not yet
+#define FLAG_LIONSARCH_GYM_GUIDE_GAVE_WATER                         0x4FA // SK: Used in Lionsarch Gym: guide gave Fresh Water to player
 
 #define FLAG_DEFEATED_ELITE_4_SIDNEY                                0x4FB
 #define FLAG_DEFEATED_ELITE_4_PHOEBE                                0x4FC
@@ -1501,11 +1510,11 @@
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
 //Towns visited
-#define FLAG_VISITED_ERP_CITY                       (SYSTEM_FLAGS + 0x85) // Unused Flag
-#define FLAG_VISITED_MAASJE                         (SYSTEM_FLAGS + 0x86) // Unused Flag
-#define FLAG_VISITED_MIST_CITY                      (SYSTEM_FLAGS + 0x87)
-#define FLAG_VISITED_LIONSARCH_CITY                 (SYSTEM_FLAGS + 0x88)
-#define FLAG_VISITED_SILTROOT_TOWN                  (SYSTEM_FLAGS + 0x89)
+#define FLAG_VISITED_ERP_CITY                       (SYSTEM_FLAGS + 0x85) // SK: Set when the player first visits Erp City; checked in region_map.c to unlock Fly for that city.
+#define FLAG_VISITED_MAASJE                         (SYSTEM_FLAGS + 0x86) // SK: Set when the player first visits Maasje; checked in region_map.c to unlock Fly for that city.
+#define FLAG_VISITED_MIST_CITY                      (SYSTEM_FLAGS + 0x87) // SK: Set when the player first visits Mist City; checked in region_map.c to unlock Fly for that city.
+#define FLAG_VISITED_LIONSARCH_CITY                 (SYSTEM_FLAGS + 0x88) // SK: Set when the player first visits Lionsarch City; checked in region_map.c to unlock Fly for that city.
+#define FLAG_VISITED_SILTROOT_TOWN                  (SYSTEM_FLAGS + 0x89) // SK: Set when the player first visits Siltroot Town; checked in region_map.c to unlock Fly for that town.
 #define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag
 #define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
 #define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag
@@ -1528,7 +1537,7 @@
 #define FLAG_UNUSED_0x8FD                           (SYSTEM_FLAGS + 0x9D) // Unused Flag
 #define FLAG_UNUSED_0x8FE                           (SYSTEM_FLAGS + 0x9E) // Unused Flag
 #define FLAG_UNUSED_0x8FF                           (SYSTEM_FLAGS + 0x9F) // Unused Flag
-#define FLAG_MET_ROLLING_TABLE_GUY                  (SYSTEM_FLAGS + 0xA0) // Player met the Rolling Table NPC for the first time
+#define FLAG_MET_ROLLING_TABLE_GUY                  (SYSTEM_FLAGS + 0xA0) // SK: Player met the Rolling Table NPC for the first time
 #define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag
 #define FLAG_UNUSED_0x902                           (SYSTEM_FLAGS + 0xA2) // Unused Flag
 #define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag
@@ -1654,6 +1663,591 @@
 #define FLAG_TEMP_REGICE_PUZZLE_FAILED          FLAG_TEMP_3
 #define FLAG_TEMP_HIDE_FOLLOWER                 FLAG_TEMP_E
 #define FLAG_TEMP_HIDE_MIRAGE_ISLAND_BERRY_TREE FLAG_TEMP_11
+
+// Aliases OG Emerald
+
+// Vanilla Hoenn/FRLG hidden item compatibility aliases.
+// Slots 0x00-0x0C are claimed by SK custom hidden items;
+// vanilla maps sharing those slots are not used in this game.
+#define FLAG_HIDDEN_ITEM_LAVARIDGE_TOWN_ICE_HEAL             FLAG_HIDDEN_ITEM_ROUTE_02_ANTIDOTE  // slot 0x00, claimed by SK
+#define FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET                  FLAG_HIDDEN_ITEM_ROUTE_02_POTION  // slot 0x01, claimed by SK
+#define FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST                  FLAG_HIDDEN_ITEM_ROUTE_02_HEART_SCALE  // slot 0x02, claimed by SK
+#define FLAG_HIDDEN_ITEM_ROUTE_113_ETHER                     FLAG_HIDDEN_ITEM_ROUTE_03_GREAT_BALL  // slot 0x03, claimed by SK
+#define FLAG_HIDDEN_ITEM_ROUTE_114_CARBOS                    FLAG_HIDDEN_ITEM_ROUTE_03_POKE_BALL  // slot 0x04, claimed by SK
+#define FLAG_HIDDEN_ITEM_ROUTE_119_CALCIUM                   FLAG_HIDDEN_ITEM_ROUTE_03_PARLYZ_HEAL  // slot 0x05, claimed by SK
+#define FLAG_HIDDEN_ITEM_ROUTE_119_ULTRA_BALL                FLAG_HIDDEN_ITEM_MISTCITY_SUPER_POTION  // slot 0x06, claimed by SK
+#define FLAG_HIDDEN_ITEM_ROUTE_123_SUPER_REPEL               FLAG_HIDDEN_ITEM_MISTCITY_POKE_BALL  // slot 0x07, claimed by SK
+#define FLAG_HIDDEN_ITEM_UNDERWATER_124_CARBOS               FLAG_HIDDEN_ITEM_BAT_CAVE_EVER_STONE  // slot 0x08, claimed by SK
+#define FLAG_HIDDEN_ITEM_UNDERWATER_124_GREEN_SHARD          FLAG_HIDDEN_ITEM_SHROOMSHOP_TINY_MUSHROOM  // slot 0x09, claimed by SK
+#define FLAG_HIDDEN_ITEM_UNDERWATER_124_PEARL                FLAG_HIDDEN_ITEM_SHROOMSHOP_BIG_MUSHROOM  // slot 0x0A, claimed by SK
+#define FLAG_HIDDEN_ITEM_UNDERWATER_124_BIG_PEARL            FLAG_HIDDEN_ITEM_SHROOMSHOP_MAX_MUSHROOM  // slot 0x0B, claimed by SK
+#define FLAG_HIDDEN_ITEM_UNDERWATER_126_BLUE_SHARD           FLAG_HIDDEN_ITEM_SHROOMSHOP_BALM_MUSHROOM  // slot 0x0C, claimed by SK
+#define FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_1        FLAG_UNUSED_HIDDEN_ITEM_0x0D
+#define FLAG_HIDDEN_ITEM_UNDERWATER_126_HEART_SCALE          FLAG_UNUSED_HIDDEN_ITEM_0x0E
+#define FLAG_HIDDEN_ITEM_UNDERWATER_126_ULTRA_BALL           FLAG_UNUSED_HIDDEN_ITEM_0x0F
+#define FLAG_HIDDEN_ITEM_UNDERWATER_126_STARDUST             FLAG_UNUSED_HIDDEN_ITEM_0x10
+#define FLAG_HIDDEN_ITEM_UNDERWATER_126_PEARL                FLAG_UNUSED_HIDDEN_ITEM_0x11
+#define FLAG_HIDDEN_ITEM_UNDERWATER_126_YELLOW_SHARD         FLAG_UNUSED_HIDDEN_ITEM_0x12
+#define FLAG_HIDDEN_ITEM_UNDERWATER_126_IRON                 FLAG_UNUSED_HIDDEN_ITEM_0x13
+#define FLAG_HIDDEN_ITEM_UNDERWATER_126_BIG_PEARL            FLAG_UNUSED_HIDDEN_ITEM_0x14
+#define FLAG_HIDDEN_ITEM_UNDERWATER_127_STAR_PIECE           FLAG_UNUSED_HIDDEN_ITEM_0x15
+#define FLAG_HIDDEN_ITEM_UNDERWATER_127_HP_UP                FLAG_UNUSED_HIDDEN_ITEM_0x16
+#define FLAG_HIDDEN_ITEM_UNDERWATER_127_HEART_SCALE          FLAG_UNUSED_HIDDEN_ITEM_0x17
+#define FLAG_HIDDEN_ITEM_UNDERWATER_127_RED_SHARD            FLAG_UNUSED_HIDDEN_ITEM_0x18
+#define FLAG_HIDDEN_ITEM_UNDERWATER_128_PROTEIN              FLAG_UNUSED_HIDDEN_ITEM_0x19
+#define FLAG_HIDDEN_ITEM_UNDERWATER_128_PEARL                FLAG_UNUSED_HIDDEN_ITEM_0x1A
+#define FLAG_HIDDEN_ITEM_LILYCOVE_CITY_HEART_SCALE           FLAG_UNUSED_HIDDEN_ITEM_0x1B
+#define FLAG_HIDDEN_ITEM_FALLARBOR_TOWN_NUGGET               FLAG_UNUSED_HIDDEN_ITEM_0x1C
+#define FLAG_HIDDEN_ITEM_MT_PYRE_EXTERIOR_ULTRA_BALL         FLAG_UNUSED_HIDDEN_ITEM_0x1D
+#define FLAG_HIDDEN_ITEM_ROUTE_113_TM_DOUBLE_TEAM            FLAG_UNUSED_HIDDEN_ITEM_0x1E
+#define FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_1_KEY             FLAG_UNUSED_HIDDEN_ITEM_0x1F
+#define FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_2_KEY             FLAG_UNUSED_HIDDEN_ITEM_0x20
+#define FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_4_KEY             FLAG_UNUSED_HIDDEN_ITEM_0x21
+#define FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_6_KEY             FLAG_UNUSED_HIDDEN_ITEM_0x22
+#define FLAG_HIDDEN_ITEM_SS_TIDAL_LOWER_DECK_LEFTOVERS       FLAG_UNUSED_HIDDEN_ITEM_0x23
+#define FLAG_HIDDEN_ITEM_UNDERWATER_124_CALCIUM              FLAG_UNUSED_HIDDEN_ITEM_0x24
+#define FLAG_HIDDEN_ITEM_ROUTE_104_POTION                    FLAG_UNUSED_HIDDEN_ITEM_0x25
+#define FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_2        FLAG_UNUSED_HIDDEN_ITEM_0x26
+#define FLAG_HIDDEN_ITEM_ROUTE_121_HP_UP                     FLAG_UNUSED_HIDDEN_ITEM_0x27
+#define FLAG_HIDDEN_ITEM_ROUTE_121_NUGGET                    FLAG_UNUSED_HIDDEN_ITEM_0x28
+#define FLAG_HIDDEN_ITEM_ROUTE_123_REVIVE                    FLAG_UNUSED_HIDDEN_ITEM_0x29
+#define FLAG_HIDDEN_ITEM_ROUTE_114_REVIVE                    FLAG_UNUSED_HIDDEN_ITEM_0x2A
+#define FLAG_HIDDEN_ITEM_LILYCOVE_CITY_PP_UP                 FLAG_UNUSED_HIDDEN_ITEM_0x2B
+#define FLAG_HIDDEN_ITEM_ROUTE_104_SUPER_POTION              FLAG_UNUSED_HIDDEN_ITEM_0x2C
+#define FLAG_HIDDEN_ITEM_ROUTE_116_SUPER_POTION              FLAG_UNUSED_HIDDEN_ITEM_0x2D
+#define FLAG_HIDDEN_ITEM_ROUTE_106_STARDUST                  FLAG_UNUSED_HIDDEN_ITEM_0x2E
+#define FLAG_HIDDEN_ITEM_ROUTE_106_HEART_SCALE               FLAG_UNUSED_HIDDEN_ITEM_0x2F
+#define FLAG_HIDDEN_ITEM_GRANITE_CAVE_B2F_EVERSTONE_1        FLAG_UNUSED_HIDDEN_ITEM_0x30
+#define FLAG_HIDDEN_ITEM_GRANITE_CAVE_B2F_EVERSTONE_2        FLAG_UNUSED_HIDDEN_ITEM_0x31
+#define FLAG_HIDDEN_ITEM_ROUTE_109_REVIVE                    FLAG_UNUSED_HIDDEN_ITEM_0x32
+#define FLAG_HIDDEN_ITEM_ROUTE_109_GREAT_BALL                FLAG_UNUSED_HIDDEN_ITEM_0x33
+#define FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_1             FLAG_UNUSED_HIDDEN_ITEM_0x34
+#define FLAG_HIDDEN_ITEM_ROUTE_110_GREAT_BALL                FLAG_UNUSED_HIDDEN_ITEM_0x35
+#define FLAG_HIDDEN_ITEM_ROUTE_110_REVIVE                    FLAG_UNUSED_HIDDEN_ITEM_0x36
+#define FLAG_HIDDEN_ITEM_ROUTE_110_FULL_HEAL                 FLAG_UNUSED_HIDDEN_ITEM_0x37
+#define FLAG_HIDDEN_ITEM_ROUTE_111_PROTEIN                   FLAG_UNUSED_HIDDEN_ITEM_0x38
+#define FLAG_HIDDEN_ITEM_ROUTE_111_RARE_CANDY                FLAG_UNUSED_HIDDEN_ITEM_0x39
+#define FLAG_HIDDEN_ITEM_PETALBURG_WOODS_POTION              FLAG_UNUSED_HIDDEN_ITEM_0x3A
+#define FLAG_HIDDEN_ITEM_PETALBURG_WOODS_TINY_MUSHROOM_1     FLAG_UNUSED_HIDDEN_ITEM_0x3B
+#define FLAG_HIDDEN_ITEM_PETALBURG_WOODS_TINY_MUSHROOM_2     FLAG_UNUSED_HIDDEN_ITEM_0x3C
+#define FLAG_HIDDEN_ITEM_PETALBURG_WOODS_POKE_BALL           FLAG_UNUSED_HIDDEN_ITEM_0x3D
+#define FLAG_HIDDEN_ITEM_ROUTE_104_POKE_BALL                 FLAG_UNUSED_HIDDEN_ITEM_0x3E
+#define FLAG_HIDDEN_ITEM_ROUTE_106_POKE_BALL                 FLAG_UNUSED_HIDDEN_ITEM_0x3F
+#define FLAG_HIDDEN_ITEM_ROUTE_109_ETHER                     FLAG_UNUSED_HIDDEN_ITEM_0x40
+#define FLAG_HIDDEN_ITEM_ROUTE_110_POKE_BALL                 FLAG_UNUSED_HIDDEN_ITEM_0x41
+#define FLAG_HIDDEN_ITEM_ROUTE_118_HEART_SCALE               FLAG_UNUSED_HIDDEN_ITEM_0x42
+#define FLAG_HIDDEN_ITEM_ROUTE_118_IRON                      FLAG_UNUSED_HIDDEN_ITEM_0x43
+#define FLAG_HIDDEN_ITEM_ROUTE_119_FULL_HEAL                 FLAG_UNUSED_HIDDEN_ITEM_0x44
+#define FLAG_HIDDEN_ITEM_ROUTE_120_RARE_CANDY_2              FLAG_UNUSED_HIDDEN_ITEM_0x45
+#define FLAG_HIDDEN_ITEM_ROUTE_120_ZINC                      FLAG_UNUSED_HIDDEN_ITEM_0x46
+#define FLAG_HIDDEN_ITEM_ROUTE_120_RARE_CANDY_1              FLAG_UNUSED_HIDDEN_ITEM_0x47
+#define FLAG_HIDDEN_ITEM_ROUTE_117_REPEL                     FLAG_UNUSED_HIDDEN_ITEM_0x48
+#define FLAG_HIDDEN_ITEM_ROUTE_121_FULL_HEAL                 FLAG_UNUSED_HIDDEN_ITEM_0x49
+#define FLAG_HIDDEN_ITEM_ROUTE_123_HYPER_POTION              FLAG_UNUSED_HIDDEN_ITEM_0x4A
+#define FLAG_HIDDEN_ITEM_LILYCOVE_CITY_POKE_BALL             FLAG_UNUSED_HIDDEN_ITEM_0x4B
+#define FLAG_HIDDEN_ITEM_JAGGED_PASS_GREAT_BALL              FLAG_UNUSED_HIDDEN_ITEM_0x4C
+#define FLAG_HIDDEN_ITEM_JAGGED_PASS_FULL_HEAL               FLAG_UNUSED_HIDDEN_ITEM_0x4D
+#define FLAG_HIDDEN_ITEM_MT_PYRE_EXTERIOR_MAX_ETHER          FLAG_UNUSED_HIDDEN_ITEM_0x4E
+#define FLAG_HIDDEN_ITEM_MT_PYRE_SUMMIT_ZINC                 FLAG_UNUSED_HIDDEN_ITEM_0x4F
+#define FLAG_HIDDEN_ITEM_MT_PYRE_SUMMIT_RARE_CANDY           FLAG_UNUSED_HIDDEN_ITEM_0x50
+#define FLAG_HIDDEN_ITEM_VICTORY_ROAD_1F_ULTRA_BALL          FLAG_UNUSED_HIDDEN_ITEM_0x51
+#define FLAG_HIDDEN_ITEM_VICTORY_ROAD_B2F_ELIXIR             FLAG_UNUSED_HIDDEN_ITEM_0x52
+#define FLAG_HIDDEN_ITEM_VICTORY_ROAD_B2F_MAX_REPEL          FLAG_UNUSED_HIDDEN_ITEM_0x53
+#define FLAG_HIDDEN_ITEM_ROUTE_120_REVIVE                    FLAG_UNUSED_HIDDEN_ITEM_0x54
+#define FLAG_HIDDEN_ITEM_ROUTE_104_ANTIDOTE                  FLAG_UNUSED_HIDDEN_ITEM_0x55
+#define FLAG_HIDDEN_ITEM_ROUTE_108_RARE_CANDY                FLAG_UNUSED_HIDDEN_ITEM_0x56
+#define FLAG_HIDDEN_ITEM_ROUTE_119_MAX_ETHER                 FLAG_UNUSED_HIDDEN_ITEM_0x57
+#define FLAG_HIDDEN_ITEM_ROUTE_104_HEART_SCALE               FLAG_UNUSED_HIDDEN_ITEM_0x58
+#define FLAG_HIDDEN_ITEM_ROUTE_105_HEART_SCALE               FLAG_UNUSED_HIDDEN_ITEM_0x59
+#define FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_2             FLAG_UNUSED_HIDDEN_ITEM_0x5A
+#define FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_3             FLAG_UNUSED_HIDDEN_ITEM_0x5B
+#define FLAG_HIDDEN_ITEM_ROUTE_128_HEART_SCALE_1             FLAG_UNUSED_HIDDEN_ITEM_0x5C
+#define FLAG_HIDDEN_ITEM_ROUTE_128_HEART_SCALE_2             FLAG_UNUSED_HIDDEN_ITEM_0x5D
+#define FLAG_HIDDEN_ITEM_ROUTE_128_HEART_SCALE_3             FLAG_UNUSED_HIDDEN_ITEM_0x5E
+#define FLAG_HIDDEN_ITEM_PETALBURG_CITY_RARE_CANDY           FLAG_UNUSED_HIDDEN_ITEM_0x5F
+#define FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES             FLAG_UNUSED_HIDDEN_ITEM_0x60
+#define FLAG_HIDDEN_ITEM_ROUTE_115_HEART_SCALE               FLAG_UNUSED_HIDDEN_ITEM_0x61
+#define FLAG_HIDDEN_ITEM_ROUTE_113_NUGGET                    FLAG_UNUSED_HIDDEN_ITEM_0x62
+#define FLAG_HIDDEN_ITEM_ROUTE_123_PP_UP                     FLAG_UNUSED_HIDDEN_ITEM_0x63
+#define FLAG_HIDDEN_ITEM_ROUTE_121_MAX_REVIVE                FLAG_UNUSED_HIDDEN_ITEM_0x64
+#define FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_CALCIUM            FLAG_UNUSED_HIDDEN_ITEM_0x65
+#define FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_ZINC               FLAG_UNUSED_HIDDEN_ITEM_0x66
+#define FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_PROTEIN            FLAG_UNUSED_HIDDEN_ITEM_0x67
+#define FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_IRON               FLAG_UNUSED_HIDDEN_ITEM_0x68
+#define FLAG_HIDDEN_ITEM_SAFARI_ZONE_SOUTH_EAST_FULL_RESTORE FLAG_UNUSED_HIDDEN_ITEM_0x69
+#define FLAG_HIDDEN_ITEM_SAFARI_ZONE_NORTH_EAST_RARE_CANDY   FLAG_UNUSED_HIDDEN_ITEM_0x6A
+#define FLAG_HIDDEN_ITEM_SAFARI_ZONE_NORTH_EAST_ZINC         FLAG_UNUSED_HIDDEN_ITEM_0x6B
+#define FLAG_HIDDEN_ITEM_SAFARI_ZONE_SOUTH_EAST_PP_UP        FLAG_UNUSED_HIDDEN_ITEM_0x6C
+#define FLAG_HIDDEN_ITEM_NAVEL_ROCK_TOP_SACRED_ASH           FLAG_UNUSED_HIDDEN_ITEM_0x6D
+#define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                FLAG_UNUSED_HIDDEN_ITEM_0x6E
+#define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 FLAG_UNUSED_HIDDEN_ITEM_0x6F
+
+// Vanilla Hoenn event flag compatibility aliases
+#define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG               FLAG_UNUSED_EVENT_0x2BC
+#define FLAG_HIDE_APPRENTICE                                 FLAG_UNUSED_EVENT_0x2BD
+#define FLAG_HIDE_POKEMON_CENTER_2F_MYSTERY_GIFT_MAN         FLAG_UNUSED_EVENT_0x2BE
+#define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_1        FLAG_UNUSED_EVENT_0x2C7
+#define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_2        FLAG_UNUSED_EVENT_0x2C8
+#define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_3        FLAG_UNUSED_EVENT_0x2C9
+#define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_4        FLAG_UNUSED_EVENT_0x2CA
+#define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_5        FLAG_UNUSED_EVENT_0x2CB
+#define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_6        FLAG_UNUSED_EVENT_0x2CC
+#define FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS     FLAG_UNUSED_EVENT_0x2CD
+#define FLAG_HIDE_MEW                                        FLAG_UNUSED_EVENT_0x2CE
+#define FLAG_HIDE_ROUTE_104_RIVAL                            FLAG_UNUSED_EVENT_0x2CF
+#define FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE           FLAG_UNUSED_EVENT_0x2D0
+#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH           FLAG_UNUSED_EVENT_0x2D1
+#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM   FLAG_UNUSED_EVENT_0x2D2
+#define FLAG_HIDE_ROUTE_103_RIVAL                            FLAG_UNUSED_EVENT_0x2D3
+#define FLAG_HIDE_PETALBURG_WOODS_DEVON_EMPLOYEE             FLAG_UNUSED_EVENT_0x2D4
+#define FLAG_HIDE_PETALBURG_WOODS_AQUA_GRUNT                 FLAG_UNUSED_EVENT_0x2D5
+#define FLAG_HIDE_PETALBURG_CITY_WALLY                       FLAG_UNUSED_EVENT_0x2D6
+#define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_INVISIBLE_NINJA_BOY FLAG_UNUSED_EVENT_0x2D7
+#define FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM                  FLAG_UNUSED_EVENT_0x2D8
+#define FLAG_UNUSED_0x2D9                                    FLAG_UNUSED_EVENT_0x2D9
+#define FLAG_HIDE_LILYCOVE_FAN_CLUB_INTERVIEWER              FLAG_UNUSED_EVENT_0x2DA
+#define FLAG_HIDE_RUSTBORO_CITY_AQUA_GRUNT                   FLAG_UNUSED_EVENT_0x2DB
+#define FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1             FLAG_UNUSED_EVENT_0x2DC
+#define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE_ASLEEP       FLAG_UNUSED_EVENT_0x2DD
+#define FLAG_HIDE_PLAYERS_HOUSE_DAD                          FLAG_UNUSED_EVENT_0x2DE
+#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_SIBLING FLAG_UNUSED_EVENT_0x2DF
+#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_SIBLING   FLAG_UNUSED_EVENT_0x2E0
+#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_MAGMA_NOTE      FLAG_UNUSED_EVENT_0x2E1
+#define FLAG_HIDE_ROUTE_104_MR_BRINEY                        FLAG_UNUSED_EVENT_0x2E2
+#define FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY                    FLAG_UNUSED_EVENT_0x2E3
+#define FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN                     FLAG_UNUSED_EVENT_0x2E4
+#define FLAG_HIDE_ROUTE_109_MR_BRINEY                        FLAG_UNUSED_EVENT_0x2E5
+#define FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT                   FLAG_UNUSED_EVENT_0x2E6
+#define FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN                FLAG_UNUSED_EVENT_0x2E7
+#define FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT                   FLAG_UNUSED_EVENT_0x2E8
+#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_BRENDAN     FLAG_UNUSED_EVENT_0x2E9
+#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MAY             FLAG_UNUSED_EVENT_0x2EA
+#define FLAG_HIDE_SAFARI_ZONE_SOUTH_EAST_EXPANSION           FLAG_UNUSED_EVENT_0x2EB
+#define FLAG_HIDE_LILYCOVE_HARBOR_EVENT_TICKET_TAKER         FLAG_UNUSED_EVENT_0x2EC
+#define FLAG_HIDE_SLATEPORT_CITY_SCOTT                       FLAG_UNUSED_EVENT_0x2ED
+#define FLAG_HIDE_ROUTE_101_ZIGZAGOON                        FLAG_UNUSED_EVENT_0x2EE
+#define FLAG_HIDE_VICTORY_ROAD_EXIT_WALLY                    FLAG_UNUSED_EVENT_0x2EF
+#define FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE                FLAG_UNUSED_EVENT_0x2F0
+#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_STEVEN       FLAG_UNUSED_EVENT_0x2F1
+#define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_1   FLAG_UNUSED_EVENT_0x2F2
+#define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_2   FLAG_UNUSED_EVENT_0x2F3
+#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA   FLAG_UNUSED_EVENT_0x2F4
+#define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_BEDROOM_MOM        FLAG_UNUSED_EVENT_0x2F5
+#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM         FLAG_UNUSED_EVENT_0x2F6
+#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM             FLAG_UNUSED_EVENT_0x2F7
+#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM FLAG_UNUSED_EVENT_0x2F8
+#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK       FLAG_UNUSED_EVENT_0x2F9
+#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK           FLAG_UNUSED_EVENT_0x2FA
+#define FLAG_HIDE_DEOXYS                                     FLAG_UNUSED_EVENT_0x2FB
+#define FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE               FLAG_UNUSED_EVENT_0x2FC
+#define FLAG_HIDE_MAUVILLE_CITY_SCOTT                        FLAG_UNUSED_EVENT_0x2FD
+#define FLAG_HIDE_VERDANTURF_TOWN_SCOTT                      FLAG_UNUSED_EVENT_0x2FE
+#define FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT           FLAG_UNUSED_EVENT_0x2FF
+#define FLAG_HIDE_ROUTE_111_VICTOR_WINSTRATE                 FLAG_UNUSED_EVENT_0x300
+#define FLAG_HIDE_ROUTE_111_VICTORIA_WINSTRATE               FLAG_UNUSED_EVENT_0x301
+#define FLAG_HIDE_ROUTE_111_VIVI_WINSTRATE                   FLAG_UNUSED_EVENT_0x302
+#define FLAG_HIDE_ROUTE_111_VICKY_WINSTRATE                  FLAG_UNUSED_EVENT_0x303
+#define FLAG_HIDE_PETALBURG_GYM_NORMAN                       FLAG_UNUSED_EVENT_0x304
+#define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA                    FLAG_UNUSED_EVENT_0x305
+#define FLAG_HIDE_LILYCOVE_CONTEST_HALL_CONTEST_ATTENDANT_1  FLAG_UNUSED_EVENT_0x306
+#define FLAG_HIDE_LILYCOVE_MUSEUM_CURATOR                    FLAG_UNUSED_EVENT_0x307
+#define FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_1                   FLAG_UNUSED_EVENT_0x308
+#define FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_2                   FLAG_UNUSED_EVENT_0x309
+#define FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_3                   FLAG_UNUSED_EVENT_0x30A
+#define FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_4                   FLAG_UNUSED_EVENT_0x30B
+#define FLAG_HIDE_LILYCOVE_MUSEUM_TOURISTS                   FLAG_UNUSED_EVENT_0x30C
+#define FLAG_HIDE_PETALBURG_GYM_GREETER                      FLAG_UNUSED_EVENT_0x30D
+#define FLAG_HIDE_MARINE_CAVE_KYOGRE                         FLAG_UNUSED_EVENT_0x30E
+#define FLAG_HIDE_TERRA_CAVE_GROUDON                         FLAG_UNUSED_EVENT_0x30F
+#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM   FLAG_UNUSED_EVENT_0x310
+#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM       FLAG_UNUSED_EVENT_0x311
+#define FLAG_HIDE_ROUTE_119_SCOTT                            FLAG_UNUSED_EVENT_0x312
+#define FLAG_HIDE_LILYCOVE_MOTEL_SCOTT                       FLAG_UNUSED_EVENT_0x313
+#define FLAG_HIDE_MOSSDEEP_CITY_SCOTT                        FLAG_UNUSED_EVENT_0x314
+#define FLAG_HIDE_FANCLUB_OLD_LADY                           FLAG_UNUSED_EVENT_0x315
+#define FLAG_HIDE_FANCLUB_BOY                                FLAG_UNUSED_EVENT_0x316
+#define FLAG_HIDE_FANCLUB_LITTLE_BOY                         FLAG_UNUSED_EVENT_0x317
+#define FLAG_HIDE_FANCLUB_LADY                               FLAG_UNUSED_EVENT_0x318
+#define FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT        FLAG_UNUSED_EVENT_0x319
+#define FLAG_HIDE_LITTLEROOT_TOWN_RIVAL                      FLAG_UNUSED_EVENT_0x31A
+#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCH                      FLAG_UNUSED_EVENT_0x31B
+#define FLAG_HIDE_ROUTE_111_GABBY_AND_TY_1                   FLAG_UNUSED_EVENT_0x31C
+#define FLAG_HIDE_ROUTE_118_GABBY_AND_TY_1                   FLAG_UNUSED_EVENT_0x31D
+#define FLAG_HIDE_ROUTE_120_GABBY_AND_TY_1                   FLAG_UNUSED_EVENT_0x31E
+#define FLAG_HIDE_ROUTE_111_GABBY_AND_TY_2                   FLAG_UNUSED_EVENT_0x31F
+#define FLAG_HIDE_LUGIA                                      FLAG_UNUSED_EVENT_0x320
+#define FLAG_HIDE_HO_OH                                      FLAG_UNUSED_EVENT_0x321
+#define FLAG_HIDE_LILYCOVE_CONTEST_HALL_REPORTER             FLAG_UNUSED_EVENT_0x322
+#define FLAG_HIDE_SLATEPORT_CITY_CONTEST_REPORTER            FLAG_UNUSED_EVENT_0x323
+#define FLAG_HIDE_MAUVILLE_CITY_WALLY                        FLAG_UNUSED_EVENT_0x324
+#define FLAG_HIDE_MAUVILLE_CITY_WALLYS_UNCLE                 FLAG_UNUSED_EVENT_0x325
+#define FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLY         FLAG_UNUSED_EVENT_0x326
+#define FLAG_HIDE_RUSTURF_TUNNEL_WANDAS_BOYFRIEND            FLAG_UNUSED_EVENT_0x327
+#define FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WANDAS_BOYFRIEND FLAG_UNUSED_EVENT_0x328
+#define FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLYS_UNCLE  FLAG_UNUSED_EVENT_0x329
+#define FLAG_HIDE_SS_TIDAL_CORRIDOR_SCOTT                    FLAG_UNUSED_EVENT_0x32A
+#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CYNDAQUIL FLAG_UNUSED_EVENT_0x32B
+#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_TOTODILE FLAG_UNUSED_EVENT_0x32C
+#define FLAG_HIDE_ROUTE_116_DROPPED_GLASSES_MAN              FLAG_UNUSED_EVENT_0x32D
+#define FLAG_HIDE_RUSTBORO_CITY_RIVAL                        FLAG_UNUSED_EVENT_0x32E
+#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_SWABLU_DOLL FLAG_UNUSED_EVENT_0x32F
+#define FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE                    FLAG_UNUSED_EVENT_0x330
+#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL FLAG_UNUSED_EVENT_0x331
+#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL    FLAG_UNUSED_EVENT_0x332
+#define FLAG_HIDE_ROUTE_112_TEAM_MAGMA                       FLAG_UNUSED_EVENT_0x333
+#define FLAG_HIDE_CAVE_OF_ORIGIN_B1F_WALLACE                 FLAG_UNUSED_EVENT_0x334
+#define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_1_BLOCKING_ENTRANCE  FLAG_UNUSED_EVENT_0x335
+#define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_2_BLOCKING_ENTRANCE  FLAG_UNUSED_EVENT_0x336
+#define FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA                   FLAG_UNUSED_EVENT_0x337
+#define FLAG_HIDE_PETALBURG_GYM_WALLYS_DAD                   FLAG_UNUSED_EVENT_0x338
+#define FLAG_HIDE_LEGEND_MON_CAVE_OF_ORIGIN                  FLAG_UNUSED_EVENT_0x339
+#define FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE                     FLAG_UNUSED_EVENT_0x33A
+#define FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE                      FLAG_UNUSED_EVENT_0x33B
+#define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_ARCHIE              FLAG_UNUSED_EVENT_0x33C
+#define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_MAXIE               FLAG_UNUSED_EVENT_0x33D
+#define FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD                  FLAG_UNUSED_EVENT_0x33E
+#define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_MAGMA_GRUNTS        FLAG_UNUSED_EVENT_0x33F
+#define FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER         FLAG_UNUSED_EVENT_0x340
+#define FLAG_HIDE_GRANITE_CAVE_STEVEN                        FLAG_UNUSED_EVENT_0x341
+#define FLAG_HIDE_ROUTE_128_STEVEN                           FLAG_UNUSED_EVENT_0x342
+#define FLAG_HIDE_SLATEPORT_CITY_GABBY_AND_TY                FLAG_UNUSED_EVENT_0x343
+#define FLAG_HIDE_BATTLE_FRONTIER_RECEPTION_GATE_SCOTT       FLAG_UNUSED_EVENT_0x344
+#define FLAG_HIDE_ROUTE_110_BIRCH                            FLAG_UNUSED_EVENT_0x345
+#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CHIKORITA FLAG_UNUSED_EVENT_0x346
+#define FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1                      FLAG_UNUSED_EVENT_0x347
+#define FLAG_HIDE_SLATEPORT_CITY_CAPTAIN_STERN               FLAG_UNUSED_EVENT_0x348
+#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_CAPTAIN_STERN        FLAG_UNUSED_EVENT_0x349
+#define FLAG_HIDE_BATTLE_FRONTIER_SUDOWOODO                  FLAG_UNUSED_EVENT_0x34A
+#define FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY               FLAG_UNUSED_EVENT_0x34B
+#define FLAG_HIDE_RUSTBORO_CITY_SCIENTIST                    FLAG_UNUSED_EVENT_0x34C
+#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_AQUA_GRUNT           FLAG_UNUSED_EVENT_0x34D
+#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_ARCHIE               FLAG_UNUSED_EVENT_0x34E
+#define FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD                    FLAG_UNUSED_EVENT_0x34F
+#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_SUBMARINE_SHADOW     FLAG_UNUSED_EVENT_0x350
+#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_PICHU_DOLL   FLAG_UNUSED_EVENT_0x351
+#define FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON_ASLEEP            FLAG_UNUSED_EVENT_0x352
+#define FLAG_HIDE_ROUTE_119_RIVAL                            FLAG_UNUSED_EVENT_0x353
+#define FLAG_HIDE_LILYCOVE_CITY_AQUA_GRUNTS                  FLAG_UNUSED_EVENT_0x354
+#define FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON                   FLAG_UNUSED_EVENT_0x355
+#define FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS                  FLAG_UNUSED_EVENT_0x356
+#define FLAG_HIDE_SKY_PILLAR_WALLACE                         FLAG_UNUSED_EVENT_0x357
+#define FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE                       FLAG_UNUSED_EVENT_0x358
+#define FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS                       FLAG_UNUSED_EVENT_0x359
+#define FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY                FLAG_UNUSED_EVENT_0x35A
+#define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE              FLAG_UNUSED_EVENT_0x35B
+#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_SS_TIDAL             FLAG_UNUSED_EVENT_0x35C
+#define FLAG_HIDE_LILYCOVE_HARBOR_SSTIDAL                    FLAG_UNUSED_EVENT_0x35D
+#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_TEAM_MAGMA   FLAG_UNUSED_EVENT_0x35E
+#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_STEVEN       FLAG_UNUSED_EVENT_0x35F
+#define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_1    FLAG_UNUSED_EVENT_0x360
+#define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_2    FLAG_UNUSED_EVENT_0x361
+#define FLAG_HIDE_PETALBURG_GYM_WALLY                        FLAG_UNUSED_EVENT_0x362
+#define FLAG_UNKNOWN_0x363                                   FLAG_UNUSED_EVENT_0x363
+#define FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN                    FLAG_UNUSED_EVENT_0x364
+#define FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY   FLAG_UNUSED_EVENT_0x365
+#define FLAG_HIDE_LANETTES_HOUSE_LANETTE                     FLAG_UNUSED_EVENT_0x366
+#define FLAG_HIDE_FALLARBOR_POKEMON_CENTER_LANETTE           FLAG_UNUSED_EVENT_0x367
+#define FLAG_HIDE_TRICK_HOUSE_ENTRANCE_MAN                   FLAG_UNUSED_EVENT_0x368
+#define FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER_REPLACEMENT FLAG_UNUSED_EVENT_0x369
+#define FLAG_HIDE_DESERT_UNDERPASS_FOSSIL                    FLAG_UNUSED_EVENT_0x36A
+#define FLAG_HIDE_ROUTE_111_PLAYER_DESCENT                   FLAG_UNUSED_EVENT_0x36B
+#define FLAG_HIDE_ROUTE_111_DESERT_FOSSIL                    FLAG_UNUSED_EVENT_0x36C
+#define FLAG_HIDE_MT_CHIMNEY_TRAINERS                        FLAG_UNUSED_EVENT_0x36D
+#define FLAG_HIDE_RUSTURF_TUNNEL_AQUA_GRUNT                  FLAG_UNUSED_EVENT_0x36E
+#define FLAG_HIDE_RUSTURF_TUNNEL_BRINEY                      FLAG_UNUSED_EVENT_0x36F
+#define FLAG_HIDE_RUSTURF_TUNNEL_PEEKO                       FLAG_UNUSED_EVENT_0x370
+#define FLAG_HIDE_BRINEYS_HOUSE_PEEKO                        FLAG_UNUSED_EVENT_0x371
+#define FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA                   FLAG_UNUSED_EVENT_0x372
+#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_AQUA_GRUNTS  FLAG_UNUSED_EVENT_0x373
+#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_2F_AQUA_GRUNT_1 FLAG_UNUSED_EVENT_0x374
+#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_2F_AQUA_GRUNT_2 FLAG_UNUSED_EVENT_0x375
+#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_2F_ARCHIE    FLAG_UNUSED_EVENT_0x376
+#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_2F_CAPTAIN_STERN FLAG_UNUSED_EVENT_0x377
+#define FLAG_HIDE_BATTLE_TOWER_OPPONENT                      FLAG_UNUSED_EVENT_0x378
+#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL           FLAG_UNUSED_EVENT_0x379
+#define FLAG_HIDE_ROUTE_119_TEAM_AQUA                        FLAG_UNUSED_EVENT_0x37A
+#define FLAG_HIDE_ROUTE_116_MR_BRINEY                        FLAG_UNUSED_EVENT_0x37B
+#define FLAG_HIDE_WEATHER_INSTITUTE_1F_WORKERS               FLAG_UNUSED_EVENT_0x37C
+#define FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS               FLAG_UNUSED_EVENT_0x37D
+#define FLAG_HIDE_ROUTE_116_WANDAS_BOYFRIEND                 FLAG_UNUSED_EVENT_0x37E
+#define FLAG_HIDE_LILYCOVE_CONTEST_HALL_CONTEST_ATTENDANT_2  FLAG_UNUSED_EVENT_0x37F
+#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_UNKNOWN_0x380   FLAG_UNUSED_EVENT_0x380
+#define FLAG_HIDE_ROUTE_101_BIRCH                            FLAG_UNUSED_EVENT_0x381
+#define FLAG_HIDE_ROUTE_103_BIRCH                            FLAG_UNUSED_EVENT_0x382
+#define FLAG_HIDE_TRICK_HOUSE_END_MAN                        FLAG_UNUSED_EVENT_0x383
+#define FLAG_HIDE_ROUTE_110_TEAM_AQUA                        FLAG_UNUSED_EVENT_0x384
+#define FLAG_HIDE_ROUTE_118_GABBY_AND_TY_2                   FLAG_UNUSED_EVENT_0x385
+#define FLAG_HIDE_ROUTE_120_GABBY_AND_TY_2                   FLAG_UNUSED_EVENT_0x386
+#define FLAG_HIDE_ROUTE_111_GABBY_AND_TY_3                   FLAG_UNUSED_EVENT_0x387
+#define FLAG_HIDE_ROUTE_118_GABBY_AND_TY_3                   FLAG_UNUSED_EVENT_0x388
+#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_PATRONS              FLAG_UNUSED_EVENT_0x389
+#define FLAG_HIDE_ROUTE_104_WHITE_HERB_FLORIST               FLAG_UNUSED_EVENT_0x38A
+#define FLAG_HIDE_FALLARBOR_AZURILL                          FLAG_UNUSED_EVENT_0x38B
+#define FLAG_HIDE_LILYCOVE_HARBOR_FERRY_ATTENDANT            FLAG_UNUSED_EVENT_0x38C
+#define FLAG_HIDE_LILYCOVE_HARBOR_FERRY_SAILOR               FLAG_UNUSED_EVENT_0x38D
+#define FLAG_HIDE_SOUTHERN_ISLAND_EON_STONE                  FLAG_UNUSED_EVENT_0x38E
+#define FLAG_HIDE_SOUTHERN_ISLAND_UNCHOSEN_EON_DUO_MON       FLAG_UNUSED_EVENT_0x38F
+#define FLAG_HIDE_MAUVILLE_CITY_WATTSON                      FLAG_UNUSED_EVENT_0x390
+#define FLAG_HIDE_MAUVILLE_GYM_WATTSON                       FLAG_UNUSED_EVENT_0x391
+#define FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS                 FLAG_UNUSED_EVENT_0x392
+#define FLAG_UNKNOWN_0x393                                   FLAG_UNUSED_EVENT_0x393
+#define FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE                      FLAG_UNUSED_EVENT_0x394
+#define FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA                   FLAG_UNUSED_EVENT_0x395
+#define FLAG_HIDE_BATTLE_TOWER_REPORTER                      FLAG_UNUSED_EVENT_0x396
+#define FLAG_HIDE_ROUTE_110_RIVAL                            FLAG_UNUSED_EVENT_0x397
+#define FLAG_HIDE_CHAMPIONS_ROOM_RIVAL                       FLAG_UNUSED_EVENT_0x398
+#define FLAG_HIDE_CHAMPIONS_ROOM_BIRCH                       FLAG_UNUSED_EVENT_0x399
+#define FLAG_HIDE_ROUTE_110_RIVAL_ON_BIKE                    FLAG_UNUSED_EVENT_0x39A
+#define FLAG_HIDE_ROUTE_119_RIVAL_ON_BIKE                    FLAG_UNUSED_EVENT_0x39B
+#define FLAG_HIDE_AQUA_HIDEOUT_GRUNTS                        FLAG_UNUSED_EVENT_0x39C
+#define FLAG_HIDE_LILYCOVE_MOTEL_GAME_DESIGNERS              FLAG_UNUSED_EVENT_0x39D
+#define FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA                       FLAG_UNUSED_EVENT_0x39E
+#define FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA                      FLAG_UNUSED_EVENT_0x39F
+#define FLAG_HIDE_FALLARBOR_HOUSE_PROF_COZMO                 FLAG_UNUSED_EVENT_0x3A0
+#define FLAG_HIDE_LAVARIDGE_TOWN_RIVAL                       FLAG_UNUSED_EVENT_0x3A1
+#define FLAG_HIDE_LAVARIDGE_TOWN_RIVAL_ON_BIKE               FLAG_UNUSED_EVENT_0x3A2
+#define FLAG_HIDE_RUSTURF_TUNNEL_ROCK_1                      FLAG_UNUSED_EVENT_0x3A3
+#define FLAG_HIDE_RUSTURF_TUNNEL_ROCK_2                      FLAG_UNUSED_EVENT_0x3A4
+#define FLAG_HIDE_FORTREE_CITY_HOUSE_4_WINGULL               FLAG_UNUSED_EVENT_0x3A5
+#define FLAG_HIDE_MOSSDEEP_CITY_HOUSE_2_WINGULL              FLAG_UNUSED_EVENT_0x3A6
+#define FLAG_HIDE_REGIROCK                                   FLAG_UNUSED_EVENT_0x3A7
+#define FLAG_HIDE_REGICE                                     FLAG_UNUSED_EVENT_0x3A8
+#define FLAG_HIDE_REGISTEEL                                  FLAG_UNUSED_EVENT_0x3A9
+#define FLAG_HIDE_METEOR_FALLS_TEAM_AQUA                     FLAG_UNUSED_EVENT_0x3AA
+#define FLAG_HIDE_METEOR_FALLS_TEAM_MAGMA                    FLAG_UNUSED_EVENT_0x3AB
+#define FLAG_HIDE_DEWFORD_HALL_SLUDGE_BOMB_MAN               FLAG_UNUSED_EVENT_0x3AC
+#define FLAG_HIDE_SEAFLOOR_CAVERN_ENTRANCE_AQUA_GRUNT        FLAG_UNUSED_EVENT_0x3AD
+#define FLAG_HIDE_METEOR_FALLS_1F_1R_COZMO                   FLAG_UNUSED_EVENT_0x3AE
+#define FLAG_HIDE_AQUA_HIDEOUT_B2F_SUBMARINE_SHADOW          FLAG_UNUSED_EVENT_0x3AF
+#define FLAG_HIDE_ROUTE_128_ARCHIE                           FLAG_UNUSED_EVENT_0x3B0
+#define FLAG_HIDE_ROUTE_128_MAXIE                            FLAG_UNUSED_EVENT_0x3B1
+#define FLAG_HIDE_SEAFLOOR_CAVERN_AQUA_GRUNTS                FLAG_UNUSED_EVENT_0x3B2
+#define FLAG_HIDE_ROUTE_116_DEVON_EMPLOYEE                   FLAG_UNUSED_EVENT_0x3B3
+#define FLAG_HIDE_SLATEPORT_CITY_TM_SALESMAN                 FLAG_UNUSED_EVENT_0x3B4
+#define FLAG_HIDE_RUSTBORO_CITY_DEVON_CORP_3F_EMPLOYEE       FLAG_UNUSED_EVENT_0x3B5
+#define FLAG_HIDE_SS_TIDAL_CORRIDOR_MR_BRINEY                FLAG_UNUSED_EVENT_0x3B6
+#define FLAG_HIDE_SS_TIDAL_ROOMS_SNATCH_GIVER                FLAG_UNUSED_EVENT_0x3B7
+#define FLAG_RECEIVED_SHOAL_SALT_1                           FLAG_UNUSED_EVENT_0x3B8
+#define FLAG_RECEIVED_SHOAL_SALT_2                           FLAG_UNUSED_EVENT_0x3B9
+#define FLAG_RECEIVED_SHOAL_SALT_3                           FLAG_UNUSED_EVENT_0x3BA
+#define FLAG_RECEIVED_SHOAL_SALT_4                           FLAG_UNUSED_EVENT_0x3BB
+#define FLAG_RECEIVED_SHOAL_SHELL_1                          FLAG_UNUSED_EVENT_0x3BC
+#define FLAG_RECEIVED_SHOAL_SHELL_2                          FLAG_UNUSED_EVENT_0x3BD
+#define FLAG_RECEIVED_SHOAL_SHELL_3                          FLAG_UNUSED_EVENT_0x3BE
+#define FLAG_RECEIVED_SHOAL_SHELL_4                          FLAG_UNUSED_EVENT_0x3BF
+#define FLAG_HIDE_ROUTE_111_SECRET_POWER_MAN                 FLAG_UNUSED_EVENT_0x3C0
+#define FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION                FLAG_UNUSED_EVENT_0x3C1
+#define FLAG_HIDE_LILYCOVE_DEPARTMENT_STORE_ROOFTOP_SALE_WOMAN FLAG_UNUSED_EVENT_0x3C2
+#define FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL                   FLAG_UNUSED_EVENT_0x3C3
+#define FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL                   FLAG_UNUSED_EVENT_0x3C4
+#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_FAMILIAR_AQUA_GRUNT FLAG_UNUSED_EVENT_0x3C5
+#define FLAG_HIDE_ROUTE_118_STEVEN                           FLAG_UNUSED_EVENT_0x3C6
+#define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_STEVEN         FLAG_UNUSED_EVENT_0x3C7
+#define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_BELDUM_POKEBALL FLAG_UNUSED_EVENT_0x3C8
+#define FLAG_HIDE_FORTREE_CITY_KECLEON                       FLAG_UNUSED_EVENT_0x3C9
+#define FLAG_HIDE_ROUTE_120_KECLEON_BRIDGE                   FLAG_UNUSED_EVENT_0x3CA
+#define FLAG_HIDE_LILYCOVE_CITY_RIVAL                        FLAG_UNUSED_EVENT_0x3CB
+#define FLAG_HIDE_ROUTE_120_STEVEN                           FLAG_UNUSED_EVENT_0x3CC
+#define FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN                     FLAG_UNUSED_EVENT_0x3CD
+#define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1                     FLAG_UNUSED_EVENT_0x3CE
+#define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2                     FLAG_UNUSED_EVENT_0x3CF
+#define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3                     FLAG_UNUSED_EVENT_0x3D0
+#define FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_1               FLAG_UNUSED_EVENT_0x3D1
+#define FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_2               FLAG_UNUSED_EVENT_0x3D2
+#define FLAG_HIDE_OLDALE_TOWN_RIVAL                          FLAG_UNUSED_EVENT_0x3D3
+#define FLAG_HIDE_UNDERWATER_SEA_FLOOR_CAVERN_STOLEN_SUBMARINE FLAG_UNUSED_EVENT_0x3D4
+#define FLAG_HIDE_ROUTE_120_KECLEON_BRIDGE_SHADOW            FLAG_UNUSED_EVENT_0x3D5
+#define FLAG_HIDE_ROUTE_120_KECLEON_1                        FLAG_UNUSED_EVENT_0x3D6
+#define FLAG_HIDE_RUSTURF_TUNNEL_WANDA                       FLAG_UNUSED_EVENT_0x3D7
+#define FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WANDA         FLAG_UNUSED_EVENT_0x3D8
+#define FLAG_HIDE_ROUTE_120_KECLEON_2                        FLAG_UNUSED_EVENT_0x3D9
+#define FLAG_HIDE_ROUTE_120_KECLEON_3                        FLAG_UNUSED_EVENT_0x3DA
+#define FLAG_HIDE_ROUTE_120_KECLEON_4                        FLAG_UNUSED_EVENT_0x3DB
+#define FLAG_HIDE_ROUTE_120_KECLEON_5                        FLAG_UNUSED_EVENT_0x3DC
+#define FLAG_HIDE_ROUTE_119_KECLEON_1                        FLAG_UNUSED_EVENT_0x3DD
+#define FLAG_HIDE_ROUTE_119_KECLEON_2                        FLAG_UNUSED_EVENT_0x3DE
+#define FLAG_HIDE_ROUTE_101_BOY                              FLAG_UNUSED_EVENT_0x3DF
+#define FLAG_HIDE_WEATHER_INSTITUTE_2F_AQUA_GRUNT_M          FLAG_UNUSED_EVENT_0x3E0
+#define FLAG_HIDE_LILYCOVE_POKEMON_CENTER_CONTEST_LADY_MON   FLAG_UNUSED_EVENT_0x3E1
+#define FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY                FLAG_UNUSED_EVENT_0x3E2
+#define FLAG_HIDE_PETALBURG_CITY_SCOTT                       FLAG_UNUSED_EVENT_0x3E3
+#define FLAG_HIDE_SOOTOPOLIS_CITY_RAYQUAZA                   FLAG_UNUSED_EVENT_0x3E4
+#define FLAG_HIDE_SOOTOPOLIS_CITY_KYOGRE                     FLAG_UNUSED_EVENT_0x3E5
+#define FLAG_HIDE_SOOTOPOLIS_CITY_GROUDON                    FLAG_UNUSED_EVENT_0x3E6
+#define FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT         FLAG_UNUSED_EVENT_0x3E7
+
+// Vanilla Hoenn item ball compatibility aliases — kept so vanilla map.json files keep building.
+#define FLAG_ITEM_ROUTE_102_POTION                           FLAG_UNUSED_ITEM_0x3E8
+#define FLAG_ITEM_ROUTE_116_X_SPECIAL                        FLAG_UNUSED_ITEM_0x3E9
+#define FLAG_ITEM_ROUTE_104_PP_UP                            FLAG_UNUSED_ITEM_0x3EA
+#define FLAG_ITEM_ROUTE_105_IRON                             FLAG_UNUSED_ITEM_0x3EB
+#define FLAG_ITEM_ROUTE_106_PROTEIN                          FLAG_UNUSED_ITEM_0x3EC
+#define FLAG_ITEM_ROUTE_109_PP_UP                            FLAG_UNUSED_ITEM_0x3ED
+#define FLAG_ITEM_ROUTE_110_RARE_CANDY                       FLAG_UNUSED_ITEM_0x3EE
+#define FLAG_ITEM_ROUTE_110_DIRE_HIT                         FLAG_UNUSED_ITEM_0x3EF
+#define FLAG_ITEM_ROUTE_111_TM_SANDSTORM                     FLAG_UNUSED_ITEM_0x3F0
+#define FLAG_ITEM_ROUTE_111_STARDUST                         FLAG_UNUSED_ITEM_0x3F1
+#define FLAG_ITEM_ROUTE_111_HP_UP                            FLAG_UNUSED_ITEM_0x3F2
+#define FLAG_ITEM_ROUTE_112_NUGGET                           FLAG_UNUSED_ITEM_0x3F3
+#define FLAG_ITEM_ROUTE_113_MAX_ETHER                        FLAG_UNUSED_ITEM_0x3F4
+#define FLAG_ITEM_ROUTE_113_SUPER_REPEL                      FLAG_UNUSED_ITEM_0x3F5
+#define FLAG_ITEM_ROUTE_114_RARE_CANDY                       FLAG_UNUSED_ITEM_0x3F6
+#define FLAG_ITEM_ROUTE_114_PROTEIN                          FLAG_UNUSED_ITEM_0x3F7
+#define FLAG_ITEM_ROUTE_115_SUPER_POTION                     FLAG_UNUSED_ITEM_0x3F8
+#define FLAG_ITEM_ROUTE_115_TM_FOCUS_PUNCH                   FLAG_UNUSED_ITEM_0x3F9
+#define FLAG_ITEM_ROUTE_115_IRON                             FLAG_UNUSED_ITEM_0x3FA
+#define FLAG_ITEM_ROUTE_116_ETHER                            FLAG_UNUSED_ITEM_0x3FB
+#define FLAG_ITEM_ROUTE_116_REPEL                            FLAG_UNUSED_ITEM_0x3FC
+#define FLAG_ITEM_ROUTE_116_HP_UP                            FLAG_UNUSED_ITEM_0x3FD
+#define FLAG_ITEM_ROUTE_117_GREAT_BALL                       FLAG_UNUSED_ITEM_0x3FE
+#define FLAG_ITEM_ROUTE_117_REVIVE                           FLAG_UNUSED_ITEM_0x3FF
+#define FLAG_ITEM_ROUTE_119_SUPER_REPEL                      FLAG_UNUSED_ITEM_0x400
+#define FLAG_ITEM_ROUTE_119_ZINC                             FLAG_UNUSED_ITEM_0x401
+#define FLAG_ITEM_ROUTE_119_ELIXIR_1                         FLAG_UNUSED_ITEM_0x402
+#define FLAG_ITEM_ROUTE_119_LEAF_STONE                       FLAG_UNUSED_ITEM_0x403
+#define FLAG_ITEM_ROUTE_119_RARE_CANDY                       FLAG_UNUSED_ITEM_0x404
+#define FLAG_ITEM_ROUTE_119_HYPER_POTION_1                   FLAG_UNUSED_ITEM_0x405
+#define FLAG_ITEM_ROUTE_120_NUGGET                           FLAG_UNUSED_ITEM_0x406
+#define FLAG_ITEM_ROUTE_120_FULL_HEAL                        FLAG_UNUSED_ITEM_0x407
+#define FLAG_ITEM_ROUTE_123_CALCIUM                          FLAG_UNUSED_ITEM_0x408
+#define FLAG_ITEM_ROUTE_123_RARE_CANDY                       FLAG_UNUSED_ITEM_0x409  // Unused Flag, leftover from R/S. In Emerald this is a hidden item and uses a different flag
+#define FLAG_ITEM_ROUTE_127_ZINC                             FLAG_UNUSED_ITEM_0x40A
+#define FLAG_ITEM_ROUTE_127_CARBOS                           FLAG_UNUSED_ITEM_0x40B
+#define FLAG_ITEM_ROUTE_132_RARE_CANDY                       FLAG_UNUSED_ITEM_0x40C
+#define FLAG_ITEM_ROUTE_133_BIG_PEARL                        FLAG_UNUSED_ITEM_0x40D
+#define FLAG_ITEM_ROUTE_133_STAR_PIECE                       FLAG_UNUSED_ITEM_0x40E
+#define FLAG_ITEM_PETALBURG_CITY_MAX_REVIVE                  FLAG_UNUSED_ITEM_0x40F
+#define FLAG_ITEM_PETALBURG_CITY_ETHER                       FLAG_UNUSED_ITEM_0x410
+#define FLAG_ITEM_RUSTBORO_CITY_X_DEFEND                     FLAG_UNUSED_ITEM_0x411
+#define FLAG_ITEM_LILYCOVE_CITY_MAX_REPEL                    FLAG_UNUSED_ITEM_0x412
+#define FLAG_ITEM_MOSSDEEP_CITY_NET_BALL                     FLAG_UNUSED_ITEM_0x413
+#define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_IRON_TAIL            FLAG_UNUSED_ITEM_0x414
+#define FLAG_ITEM_METEOR_FALLS_1F_1R_FULL_HEAL               FLAG_UNUSED_ITEM_0x415
+#define FLAG_ITEM_METEOR_FALLS_1F_1R_MOON_STONE              FLAG_UNUSED_ITEM_0x416
+#define FLAG_ITEM_METEOR_FALLS_1F_1R_PP_UP                   FLAG_UNUSED_ITEM_0x417
+#define FLAG_ITEM_RUSTURF_TUNNEL_POKE_BALL                   FLAG_UNUSED_ITEM_0x418
+#define FLAG_ITEM_RUSTURF_TUNNEL_MAX_ETHER                   FLAG_UNUSED_ITEM_0x419
+#define FLAG_ITEM_GRANITE_CAVE_1F_ESCAPE_ROPE                FLAG_UNUSED_ITEM_0x41A
+#define FLAG_ITEM_GRANITE_CAVE_B1F_POKE_BALL                 FLAG_UNUSED_ITEM_0x41B
+#define FLAG_ITEM_MT_PYRE_5F_LAX_INCENSE                     FLAG_UNUSED_ITEM_0x41C
+#define FLAG_ITEM_GRANITE_CAVE_B2F_REPEL                     FLAG_UNUSED_ITEM_0x41D
+#define FLAG_ITEM_GRANITE_CAVE_B2F_RARE_CANDY                FLAG_UNUSED_ITEM_0x41E
+#define FLAG_ITEM_PETALBURG_WOODS_X_ATTACK                   FLAG_UNUSED_ITEM_0x41F
+#define FLAG_ITEM_PETALBURG_WOODS_GREAT_BALL                 FLAG_UNUSED_ITEM_0x420
+#define FLAG_ITEM_ROUTE_104_POKE_BALL                        FLAG_UNUSED_ITEM_0x421
+#define FLAG_ITEM_PETALBURG_WOODS_ETHER                      FLAG_UNUSED_ITEM_0x422
+#define FLAG_ITEM_MAGMA_HIDEOUT_3F_3R_ECAPE_ROPE             FLAG_UNUSED_ITEM_0x423
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_1_ORANGE_MAIL           FLAG_UNUSED_ITEM_0x424
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_2_HARBOR_MAIL           FLAG_UNUSED_ITEM_0x425
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_2_WAVE_MAIL             FLAG_UNUSED_ITEM_0x426
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_SHADOW_MAIL           FLAG_UNUSED_ITEM_0x427
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_WOOD_MAIL             FLAG_UNUSED_ITEM_0x428
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_4_MECH_MAIL             FLAG_UNUSED_ITEM_0x429
+#define FLAG_ITEM_ROUTE_124_YELLOW_SHARD                     FLAG_UNUSED_ITEM_0x42A
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_6_GLITTER_MAIL          FLAG_UNUSED_ITEM_0x42B
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_7_TROPIC_MAIL           FLAG_UNUSED_ITEM_0x42C
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_8_BEAD_MAIL             FLAG_UNUSED_ITEM_0x42D
+#define FLAG_ITEM_JAGGED_PASS_BURN_HEAL                      FLAG_UNUSED_ITEM_0x42E
+#define FLAG_ITEM_AQUA_HIDEOUT_B1F_MAX_ELIXIR                FLAG_UNUSED_ITEM_0x42F
+#define FLAG_ITEM_AQUA_HIDEOUT_B2F_NEST_BALL                 FLAG_UNUSED_ITEM_0x430
+#define FLAG_ITEM_MT_PYRE_EXTERIOR_MAX_POTION                FLAG_UNUSED_ITEM_0x431
+#define FLAG_ITEM_MT_PYRE_EXTERIOR_TM_SKILL_SWAP             FLAG_UNUSED_ITEM_0x432
+#define FLAG_ITEM_NEW_MAUVILLE_ULTRA_BALL                    FLAG_UNUSED_ITEM_0x433
+#define FLAG_ITEM_NEW_MAUVILLE_ESCAPE_ROPE                   FLAG_UNUSED_ITEM_0x434
+#define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_6_LUXURY_BALL FLAG_UNUSED_ITEM_0x435
+#define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_2_SCANNER FLAG_UNUSED_ITEM_0x436
+#define FLAG_ITEM_SCORCHED_SLAB_TM_SUNNY_DAY                 FLAG_UNUSED_ITEM_0x437
+#define FLAG_ITEM_METEOR_FALLS_B1F_2R_TM_DRAGON_CLAW         FLAG_UNUSED_ITEM_0x438
+#define FLAG_ITEM_SHOAL_CAVE_ENTRANCE_BIG_PEARL              FLAG_UNUSED_ITEM_0x439
+#define FLAG_ITEM_SHOAL_CAVE_INNER_ROOM_RARE_CANDY           FLAG_UNUSED_ITEM_0x43A
+#define FLAG_ITEM_SHOAL_CAVE_STAIRS_ROOM_ICE_HEAL            FLAG_UNUSED_ITEM_0x43B
+#define FLAG_ITEM_VICTORY_ROAD_1F_MAX_ELIXIR                 FLAG_UNUSED_ITEM_0x43C
+#define FLAG_ITEM_VICTORY_ROAD_1F_PP_UP                      FLAG_UNUSED_ITEM_0x43D
+#define FLAG_ITEM_VICTORY_ROAD_B1F_TM_PSYCHIC                FLAG_UNUSED_ITEM_0x43E
+#define FLAG_ITEM_VICTORY_ROAD_B1F_FULL_RESTORE              FLAG_UNUSED_ITEM_0x43F
+#define FLAG_ITEM_VICTORY_ROAD_B2F_FULL_HEAL                 FLAG_UNUSED_ITEM_0x440
+#define FLAG_ITEM_MT_PYRE_6F_TM_SHADOW_BALL                  FLAG_UNUSED_ITEM_0x441
+#define FLAG_ITEM_SEAFLOOR_CAVERN_ROOM_9_TM_EARTHQUAKE       FLAG_UNUSED_ITEM_0x442
+#define FLAG_ITEM_FIERY_PATH_TM_TOXIC                        FLAG_UNUSED_ITEM_0x443
+#define FLAG_ITEM_ROUTE_124_RED_SHARD                        FLAG_UNUSED_ITEM_0x444
+#define FLAG_ITEM_ROUTE_124_BLUE_SHARD                       FLAG_UNUSED_ITEM_0x445
+#define FLAG_ITEM_SAFARI_ZONE_NORTH_WEST_TM_SOLAR_BEAM       FLAG_UNUSED_ITEM_0x446
+#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_1F_HARBOR_MAIL        FLAG_UNUSED_ITEM_0x447
+#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_ESCAPE_ROPE       FLAG_UNUSED_ITEM_0x448
+#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_B1F_DIVE_BALL       FLAG_UNUSED_ITEM_0x449
+#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_TM_ICE_BEAM       FLAG_UNUSED_ITEM_0x44A
+#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_1F_REVIVE           FLAG_UNUSED_ITEM_0x44B
+#define FLAG_ITEM_ABANDONED_SHIP_CAPTAINS_OFFICE_STORAGE_KEY FLAG_UNUSED_ITEM_0x44C
+#define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_3_WATER_STONE FLAG_UNUSED_ITEM_0x44D
+#define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_1_TM_RAIN_DANCE FLAG_UNUSED_ITEM_0x44E
+#define FLAG_ITEM_ROUTE_121_CARBOS                           FLAG_UNUSED_ITEM_0x44F
+#define FLAG_ITEM_ROUTE_123_ULTRA_BALL                       FLAG_UNUSED_ITEM_0x450
+#define FLAG_ITEM_ROUTE_126_GREEN_SHARD                      FLAG_UNUSED_ITEM_0x451
+#define FLAG_ITEM_ROUTE_119_HYPER_POTION_2                   FLAG_UNUSED_ITEM_0x452
+#define FLAG_ITEM_ROUTE_120_HYPER_POTION                     FLAG_UNUSED_ITEM_0x453
+#define FLAG_ITEM_ROUTE_120_NEST_BALL                        FLAG_UNUSED_ITEM_0x454
+#define FLAG_ITEM_ROUTE_123_ELIXIR                           FLAG_UNUSED_ITEM_0x455
+#define FLAG_ITEM_NEW_MAUVILLE_THUNDER_STONE                 FLAG_UNUSED_ITEM_0x456
+#define FLAG_ITEM_FIERY_PATH_FIRE_STONE                      FLAG_UNUSED_ITEM_0x457
+#define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_TM_HAIL                FLAG_UNUSED_ITEM_0x458
+#define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_NEVER_MELT_ICE         FLAG_UNUSED_ITEM_0x459
+#define FLAG_ITEM_ROUTE_103_GUARD_SPEC                       FLAG_UNUSED_ITEM_0x45A
+#define FLAG_ITEM_ROUTE_104_X_ACCURACY                       FLAG_UNUSED_ITEM_0x45B
+#define FLAG_ITEM_MAUVILLE_CITY_X_SPEED                      FLAG_UNUSED_ITEM_0x45C
+#define FLAG_ITEM_PETALBURG_WOODS_PARALYZE_HEAL              FLAG_UNUSED_ITEM_0x45D
+#define FLAG_ITEM_ROUTE_115_GREAT_BALL                       FLAG_UNUSED_ITEM_0x45E
+#define FLAG_ITEM_SAFARI_ZONE_NORTH_CALCIUM                  FLAG_UNUSED_ITEM_0x45F
+#define FLAG_ITEM_MT_PYRE_3F_SUPER_REPEL                     FLAG_UNUSED_ITEM_0x460
+#define FLAG_ITEM_ROUTE_118_HYPER_POTION                     FLAG_UNUSED_ITEM_0x461
+#define FLAG_ITEM_NEW_MAUVILLE_FULL_HEAL                     FLAG_UNUSED_ITEM_0x462
+#define FLAG_ITEM_NEW_MAUVILLE_PARALYZE_HEAL                 FLAG_UNUSED_ITEM_0x463
+#define FLAG_ITEM_AQUA_HIDEOUT_B1F_MASTER_BALL               FLAG_UNUSED_ITEM_0x464
+#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MASTER_BALL          FLAG_UNUSED_ITEM_0x465  // Unused Flag, leftover from the Ruby Magma hideout
+#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MAX_ELIXIR           FLAG_UNUSED_ITEM_0x466  // Unused Flag, leftover from the Ruby Magma hideout
+#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B2F_NEST_BALL            FLAG_UNUSED_ITEM_0x467  // Unused Flag, leftover from the Ruby Magma hideout
+#define FLAG_UNUSED_0x468                                    FLAG_UNUSED_ITEM_0x468  // Unused Flag
+#define FLAG_ITEM_MT_PYRE_2F_ULTRA_BALL                      FLAG_UNUSED_ITEM_0x469
+#define FLAG_ITEM_MT_PYRE_4F_SEA_INCENSE                     FLAG_UNUSED_ITEM_0x46A
+#define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_MAX_REVIVE          FLAG_UNUSED_ITEM_0x46B
+#define FLAG_ITEM_AQUA_HIDEOUT_B1F_NUGGET                    FLAG_UNUSED_ITEM_0x46C
+#define FLAG_ITEM_MOSSDEEP_STEVENS_HOUSE_HM08                FLAG_UNUSED_ITEM_0x46D  // Unused Flag, leftover from R/S. HM08 is given to the player directly in Emerald
+#define FLAG_ITEM_ROUTE_119_NUGGET                           FLAG_UNUSED_ITEM_0x46E
+#define FLAG_ITEM_ROUTE_104_POTION                           FLAG_UNUSED_ITEM_0x46F
+#define FLAG_UNUSED_0x470                                    FLAG_UNUSED_ITEM_0x470  // Unused Flag
+#define FLAG_ITEM_ROUTE_103_PP_UP                            FLAG_UNUSED_ITEM_0x471
+#define FLAG_UNUSED_0x472                                    FLAG_UNUSED_ITEM_0x472  // Unused Flag
+#define FLAG_ITEM_ROUTE_108_STAR_PIECE                       FLAG_UNUSED_ITEM_0x473
+#define FLAG_ITEM_ROUTE_109_POTION                           FLAG_UNUSED_ITEM_0x474
+#define FLAG_ITEM_ROUTE_110_ELIXIR                           FLAG_UNUSED_ITEM_0x475
+#define FLAG_ITEM_ROUTE_111_ELIXIR                           FLAG_UNUSED_ITEM_0x476
+#define FLAG_ITEM_ROUTE_113_HYPER_POTION                     FLAG_UNUSED_ITEM_0x477
+#define FLAG_ITEM_ROUTE_115_HEAL_POWDER                      FLAG_UNUSED_ITEM_0x478
+#define FLAG_UNUSED_0x479                                    FLAG_UNUSED_ITEM_0x479  // Unused Flag
+#define FLAG_ITEM_ROUTE_116_POTION                           FLAG_UNUSED_ITEM_0x47A
+#define FLAG_ITEM_ROUTE_119_ELIXIR_2                         FLAG_UNUSED_ITEM_0x47B
+#define FLAG_ITEM_ROUTE_120_REVIVE                           FLAG_UNUSED_ITEM_0x47C
+#define FLAG_ITEM_ROUTE_121_REVIVE                           FLAG_UNUSED_ITEM_0x47D
+#define FLAG_ITEM_ROUTE_121_ZINC                             FLAG_UNUSED_ITEM_0x47E
+#define FLAG_ITEM_MAGMA_HIDEOUT_1F_RARE_CANDY                FLAG_UNUSED_ITEM_0x47F
+#define FLAG_ITEM_ROUTE_123_PP_UP                            FLAG_UNUSED_ITEM_0x480
+#define FLAG_ITEM_ROUTE_123_REVIVAL_HERB                     FLAG_UNUSED_ITEM_0x481
+#define FLAG_ITEM_ROUTE_125_BIG_PEARL                        FLAG_UNUSED_ITEM_0x482
+#define FLAG_ITEM_ROUTE_127_RARE_CANDY                       FLAG_UNUSED_ITEM_0x483
+#define FLAG_ITEM_ROUTE_132_PROTEIN                          FLAG_UNUSED_ITEM_0x484
+#define FLAG_ITEM_ROUTE_133_MAX_REVIVE                       FLAG_UNUSED_ITEM_0x485
+#define FLAG_ITEM_ROUTE_134_CARBOS                           FLAG_UNUSED_ITEM_0x486
+#define FLAG_ITEM_ROUTE_134_STAR_PIECE                       FLAG_UNUSED_ITEM_0x487
+#define FLAG_ITEM_ROUTE_114_ENERGY_POWDER                    FLAG_UNUSED_ITEM_0x488
+#define FLAG_ITEM_ROUTE_115_PP_UP                            FLAG_UNUSED_ITEM_0x489
+#define FLAG_ITEM_ARTISAN_CAVE_B1F_HP_UP                     FLAG_UNUSED_ITEM_0x48A
+#define FLAG_ITEM_ARTISAN_CAVE_1F_CARBOS                     FLAG_UNUSED_ITEM_0x48B
+#define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_MAX_ELIXIR             FLAG_UNUSED_ITEM_0x48C
+#define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_FULL_RESTORE           FLAG_UNUSED_ITEM_0x48D
+#define FLAG_ITEM_MAGMA_HIDEOUT_3F_1R_NUGGET                 FLAG_UNUSED_ITEM_0x48E
+#define FLAG_ITEM_MAGMA_HIDEOUT_3F_2R_PP_MAX                 FLAG_UNUSED_ITEM_0x48F
+#define FLAG_ITEM_MAGMA_HIDEOUT_4F_MAX_REVIVE                FLAG_UNUSED_ITEM_0x490
+#define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET              FLAG_UNUSED_ITEM_0x491
+#define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL           FLAG_UNUSED_ITEM_0x492
 
 // FRLG flags
 

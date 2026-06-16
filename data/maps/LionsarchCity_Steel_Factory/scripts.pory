@@ -5,6 +5,42 @@ mapscripts LionsarchCity_Steel_Factory_MapScripts {
 }
 
 script SteelFactory_1F_OnTransition {
+    // Cell Aron (object 25): visible only after all wires pulled and before cells freed
+    if (flag(FLAG_STEEL_FACTORY_ALL_WIRES_PULLED) == FALSE) {
+        setflag(FLAG_STEEL_FACTORY_CELL_ARON_HIDDEN)
+    }
+    if (flag(FLAG_STEEL_FACTORY_ALL_WIRES_PULLED) == TRUE) {
+        if (flag(FLAG_STEEL_FACTORY_FREED_POKEMON) == FALSE) {
+            clearflag(FLAG_STEEL_FACTORY_CELL_ARON_HIDDEN)
+        }
+        if (flag(FLAG_STEEL_FACTORY_FREED_POKEMON) == TRUE) {
+            setflag(FLAG_STEEL_FACTORY_CELL_ARON_HIDDEN)
+        }
+    }
+    // Placeholder pokemon (objects 26+): keep hidden on every map load via flag
+    // addobject in the cutscene shows them temporarily without clearing this flag
+    if (flag(FLAG_STEEL_FACTORY_FREED_POKEMON) == FALSE) {
+        setflag(FLAG_STEEL_FACTORY_POKEMON_CAGED)
+    }
+    // Restore 4 cell gates (2x2 each = 16 tiles) if already freed
+    if (flag(FLAG_STEEL_FACTORY_FREED_POKEMON) == TRUE) {
+        setmetatile(2, 33, 0x200, FALSE)
+        setmetatile(3, 33, 0x200, FALSE)
+        setmetatile(2, 34, 0x200, FALSE)
+        setmetatile(3, 34, 0x200, FALSE)
+        setmetatile(9, 32, 0x200, FALSE)
+        setmetatile(10, 32, 0x200, FALSE)
+        setmetatile(9, 33, 0x200, FALSE)
+        setmetatile(10, 33, 0x200, FALSE)
+        setmetatile(2, 40, 0x200, FALSE)
+        setmetatile(3, 40, 0x200, FALSE)
+        setmetatile(2, 41, 0x200, FALSE)
+        setmetatile(3, 41, 0x200, FALSE)
+        setmetatile(9, 39, 0x200, FALSE)
+        setmetatile(10, 39, 0x200, FALSE)
+        setmetatile(9, 40, 0x200, FALSE)
+        setmetatile(10, 40, 0x200, FALSE)
+    }
     if (flag(FLAG_STEEL_FACTORY_ALL_WIRES_PULLED) == TRUE) {
         setmetatile(5, 20, 0x229, FALSE)
         setmetatile(6, 20, 0x229, FALSE)
@@ -50,13 +86,9 @@ script SteelFactory_1F_OnTransition {
 // ─── ARON INTERACTION ───
 
 script SteelFactory_1F_Aron_Interact {
-    lock
-    faceplayer
-    playse(SE_PIN)
-    applymovement(18, moves(emote_question_mark jump_in_place_down))
-    waitmovement(18)
-    msgbox(SteelFactory_Aron_Interact_Text,MSGBOX_AUTOCLOSE)
-    release
+    
+    call(SteelFactory_1F_CellPanel)
+    end
 }
 
 // ─── ARON INTRO TRIGGER ───
@@ -438,45 +470,181 @@ script SteelFactory_CheckAllWires {
     return
 }
 
-// ─── CONTROL PANEL - THE CORE CHOICE ───
+// ─── ARON CELL PANEL — THE LIBERATION ───
 
-script SteelFactory_1F_ControlPanel {
+script SteelFactory_1F_CellPanel {
     lockall
-    if (flag(FLAG_STEEL_FACTORY_CHOICE_MADE) == TRUE) {
-        if (flag(FLAG_STEEL_FACTORY_FREED_POKEMON) == TRUE) {
-            msgbox(SteelFactory_1F_Panel_AlreadyFreed)
-        } else {
-            msgbox(SteelFactory_1F_Panel_AlreadyLeft)
-        }
+    faceplayer
+    playse(SE_PIN)
+    applymovement(25, moves(emote_question_mark jump_in_place_down))
+    waitmovement(25)
+    delay(120)
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if (flag(FLAG_STEEL_FACTORY_FREED_POKEMON) == TRUE) {
+        msgbox(SteelFactory_1F_CellPanel_AlreadyFreed)
         releaseall
         end
     }
-    msgbox(SteelFactory_1F_Panel_Prompt, MSGBOX_YESNO)
-    if (var(VAR_RESULT) == YES) {
-        playse(SE_SUCCESS)
-        msgbox(SteelFactory_1F_Panel_FreeSequence)
-        waitmessage
-        setflag(FLAG_STEEL_FACTORY_FREED_POKEMON)
-        setflag(FLAG_MEW_SAW_FACTORY_FREED)
-        playmoncry(SPECIES_MEW, CRY_MODE_ENCOUNTER)
-        waitmoncry
-        msgbox(SteelFactory_1F_Panel_MewFree)
-        waitmessage
+    if (flag(FLAG_STEEL_FACTORY_ALL_WIRES_PULLED) == FALSE) {
+        msgbox(SteelFactory_1F_CellPanel_NotReady)
+        releaseall
+        end
     }
+    applymovement(25, moves(face_up))
+    waitmovement(25)
+    playse(SE_PIN)
+    applymovement(25, moves(emote_exclamation_mark))
+    waitmovement(25)
+    if (var(VAR_TEMP_0) == 5 && var(VAR_TEMP_1) == 36) {
+        applymovement(25, moves(walk_down face_up))
+        applymovement(LOCALID_PLAYER, moves(walk_right face_up))
+        waitmovement(0)
+    }
+    if (var(VAR_TEMP_0) == 6 && var(VAR_TEMP_1) == 37) {
+        applymovement(25, moves(walk_left walk_down walk_right face_up))
+        applymovement(LOCALID_PLAYER, moves(walk_up face_up))
+        waitmovement(0)
+    }
+    if (var(VAR_TEMP_0) == 7 && var(VAR_TEMP_1) == 36) {
+        applymovement(25, moves(walk_down face_up))
+        applymovement(LOCALID_PLAYER, moves(walk_left face_up))
+        waitmovement(0)
+    }
+    msgbox(SteelFactory_1F_CellPanel_Prompt, MSGBOX_YESNO)
     if (var(VAR_RESULT) == NO) {
-        msgbox(SteelFactory_1F_Panel_Left)
-        waitmessage
-        setflag(FLAG_MEW_SAW_FACTORY_NOT_FREED)
-        playmoncry(SPECIES_MEW, CRY_MODE_ENCOUNTER)
-        waitmoncry
-        msgbox(SteelFactory_1F_Panel_MewLeft)
-        waitmessage
+        msgbox(SteelFactory_1F_CellPanel_NoRelease, MSGBOX_AUTOCLOSE)
+        applymovement(LOCALID_PLAYER, moves(walk_down))
+        applymovement(25, moves(walk_left walk_up walk_right face_up))
+        waitmovement(25)
+        playse(SE_PIN)
+        applymovement(25, moves(emote_double_exclamation_mark))
+        waitmovement(25)
+        releaseall
+        end
     }
+    
+    // Scientist (object 5) runs in from (9, 42) to stop you
+    applymovement(5, moves(walk_fast_left*3 walk_fast_up*4 walk_fast_right walk_fast_up*2 face_left))
+    waitmovement(5)
+    applymovement(LOCALID_PLAYER, moves(face_right))
+    playse(SE_PIN)
+    applymovement(5, moves(emote_double_exclamation_mark))
+    waitmovement(5)
+    msgbox(SteelFactory_1F_CellPanel_ScientistStop)
+    trainerbattle_no_intro(TRAINER_FACULTY_SCIENTIST_FACTORY1, SteelFactory_1F_CellPanel_ScientistDefeat)
+    goto(SteelFactory_1F_CellPanel_PostBattle)
+    
+}
+
+script SteelFactory_1F_CellPanel_PostBattle {
+    playse(SE_PIN)
+    applymovement(5, moves(walk_fast_up*3 walk_fast_left face_down emote_exclamation_mark))
+    waitmovement(5)
+    applymovement(LOCALID_PLAYER, moves(face_up))
+    msgbox(format("I'm telling you, don't do it!"), MSGBOX_AUTOCLOSE)
+    delay(60)
+    msgbox(SteelFactory_1F_CellPanel_PressButton)
+    playse(SE_CLICK)
+    waitse
+    // Power flicker + all four cell gates open
+    playse(SE_THUNDER)
+    fadescreen(FADE_TO_BLACK)
+    delay(30)
+    setmetatile(2, 33, 0x200, FALSE)
+    setmetatile(3, 33, 0x200, FALSE)
+    setmetatile(2, 34, 0x200, FALSE)
+    setmetatile(3, 34, 0x200, FALSE)
+    setmetatile(9, 32, 0x200, FALSE)
+    setmetatile(10, 32, 0x200, FALSE)
+    setmetatile(9, 33, 0x200, FALSE)
+    setmetatile(10, 33, 0x200, FALSE)
+    setmetatile(2, 40, 0x200, FALSE)
+    setmetatile(3, 40, 0x200, FALSE)
+    setmetatile(2, 41, 0x200, FALSE)
+    setmetatile(3, 41, 0x200, FALSE)
+    setmetatile(9, 39, 0x200, FALSE)
+    setmetatile(10, 39, 0x200, FALSE)
+    setmetatile(9, 40, 0x200, FALSE)
+    setmetatile(10, 40, 0x200, FALSE)
+    special(DrawWholeMapView)
+    setobjectmovementtype(5, MOVEMENT_TYPE_FACE_DOWN)
+    delay(30)
+    fadescreen(FADE_FROM_BLACK)
+    playse(SE_DOOR)
+    waitse
+    // Aron reacts — reuniting with family
+    applymovement(25, moves(emote_heart jump_in_place_down face_down))
+    waitmovement(25)
+    // Mew's faint, happy cry
+    playmoncry(SPECIES_MEW, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(face_down emote_question_mark))
+    msgbox(SteelFactory_1F_CellPanel_MewCry,MSGBOX_AUTOCLOSE)
+    delay(60)
+    // Set flags
+    setflag(FLAG_STEEL_FACTORY_FREED_POKEMON)
+    setflag(FLAG_MEW_SAW_FACTORY_FREED)
     setflag(FLAG_STEEL_FACTORY_CHOICE_MADE)
+    // Cell Aron leaves with family
+    setflag(FLAG_STEEL_FACTORY_CELL_ARON_HIDDEN)
+    // Placeholder pokemon run out — addobject without clearflag so they stay hidden on map reload
+    addobject(26)
+    addobject(27)
+    addobject(28)
+    addobject(29)
+    addobject(30)
+    addobject(31)
+    addobject(32)
+    applymovement(26, moves(walk_fast_down*2 walk_fast_right*3 walk_fast_up*4 walk_fast_left walk_fast_up*4 walk_fast_right walk_fast_up*5))
+    applymovement(27, moves(walk_fast_down*2 walk_fast_right*4 walk_fast_up*4 walk_fast_left walk_fast_up*4 walk_fast_right walk_fast_up*5))
+    applymovement(28, moves(walk_fast_down*2 walk_fast_left*3 walk_fast_up*3 walk_fast_left walk_fast_up*4 walk_fast_right walk_fast_up*5))
+    applymovement(29, moves(walk_fast_down*3 walk_fast_left*4 walk_fast_up*3 walk_fast_left walk_fast_up*4 walk_fast_right walk_fast_up*5))
+    applymovement(32, moves(walk_fast_down*2 walk_fast_left*3 walk_fast_up face_left))
+    applymovement(31, moves(walk_fast_down*2 walk_fast_left*3 face_up))
+    applymovement(30, moves(walk_down*2 walk_right))
+    waitmovement(31)
+    waitmovement(32)
+    applymovement(32, moves(walk_fast_left walk_fast_up *5))
+    applymovement(31, moves(walk_fast_up *5))
+    applymovement(5, moves(jump_2_up jump_2_up))
+    waitmovement(5)
+    delay(120)
+    removeobject(26)
+    removeobject(27)
+    removeobject(28)
+    removeobject(29)
+    removeobject(31)
+    removeobject(32)
+    removeobject(5)
+    playse(SE_PIN)
+    applymovement(25, moves(walk_fast_left walk_fast_up*2 walk_fast_left emote_heart jump_in_place_left))
+    applymovement(LOCALID_PLAYER, moves(face_left))
+    delay(120)
+    applymovement(25, moves(walk_down face_right emote_heart))
+    delay(120)
+    applymovement(25, moves(walk_fast_right walk_fast_up*2 walk_fast_right walk_fast_up*5))
+    applymovement(30, moves(walk_right*2 walk_fast_up walk_fast_right walk_fast_up*5))
+    waitmovement(30)
+    removeobject(25)
+    removeobject(30)
+    setflag(FLAG_STEEL_FACTORY_POKEMON_CAGED)
     releaseall
 }
 
+// ─── CONTROL PANEL - THE CORE CHOICE ───
+
+script SteelFactory_1F_ControlPanel {
+    lock
+    msgbox(SteelFactory_1F_ControlPanel_Text)
+    release
+}
+
 // ─── TEXT ───
+
+text SteelFactory_1F_ControlPanel_Text {
+    format("SPECIMEN MANAGEMENT REPORT - LAIRON UNIT\p- Lairon specimens are bred on-site across three generation cycles.\pPrimary function: consumption of impurity-heavy ore.\pDigestive processing yields a refined iron output that exceeds all known industrial alternatives.\pSpecimens are housed in sealed containment bays.\pDeployment to the work floor occurs in scheduled intervals only.\pExtended unsupervised contact with personnel is not permitted.\p- Compliance protocol: Magnemite units are stationed at the main entrance.\pSpecimens that resist handling or refuse to process ore are subject to low-voltage deterrent discharge.\pRate of non-compliance has decreased significantly since protocol implementation.\pNote: specimens show elevated stress indicators during transition periods.\pThis is expected and does not affect output quality.-")
+}
 
 text SteelFactory_1F_Scientist_Lore1_Text {
     format("The Regi-Metal alloy is our greatest achievement.\pBy replicating the elemental forging process Regigigas used in Lions Mountains, we create a material that channels legendary energy.\pThe Faculty will bring true order to Teressa. Diversity has had its chance. Now it is structure's turn.")
@@ -657,4 +825,44 @@ text SteelFactory_AronNextMachine_Text {
 
 text SteelFactory_AronFarewell_Text {
     format("The Aron seems grateful for your help.\pWhat could it be trying to say?\pI think it's wanting me to follow it one last time...")
+}
+
+text SteelFactory_1F_CellPanel_AlreadyFreed {
+    format("The cell doors hang open.\pThere's nothing left to release.")
+}
+
+text SteelFactory_1F_CellPanel_NotReady {
+    format("A reinforced control panel.\pIt's on lockdown. The internal power must still be running.")
+}
+
+text SteelFactory_1F_CellPanel_Prompt {
+    format("The Aron stares at the release panel, unblinking.\pI think it wants me to push the buttons.\pPress RELEASE?")
+}
+
+text SteelFactory_1F_CellPanel_NoRelease {
+    format("You step back from the panel.\pThe Aron's gaze drops to the floor.")
+}
+
+text SteelFactory_1F_CellPanel_ScientistStop {
+    format("WAIT!\pYou have no idea what you're doing!\pThose specimens are irreplaceable research assets!")
+}
+
+text SteelFactory_1F_CellPanel_ScientistBattle {
+    format("I will not let you touch that panel!")
+}
+
+text SteelFactory_1F_CellPanel_ScientistDefeat {
+    format("No... the research... all of it...")
+}
+
+text SteelFactory_1F_CellPanel_ScientistNeedTwo {
+    format("You need at least two Pokemon\nto take on this battle!")
+}
+
+text SteelFactory_1F_CellPanel_PressButton {
+    format("You press RELEASE.\pA deep shudder runs through the floor.")
+}
+
+text SteelFactory_1F_CellPanel_MewCry {
+    format("...\pWhat was that sound?")
 }
