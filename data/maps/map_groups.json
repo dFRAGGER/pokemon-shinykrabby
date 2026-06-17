@@ -773,7 +773,9 @@
     "Route04_CenterCave",
     "EastLionMountain_Faculty_Mining_Cave",
     "EastLionMountain_Faculty_Mining_Cave_B1F",
-    "LionMountain_CaveSystem_Entrance"
+    "LionMountain_CaveSystem_Entrance",
+    "Route06_UpanaCave_WestEntrance",
+    "Route06_UpanaCave_MainRoom"
   ],
   "gMapGroup_LionsarchCity": [
     "LionarchsCity_Indoor_Mart",

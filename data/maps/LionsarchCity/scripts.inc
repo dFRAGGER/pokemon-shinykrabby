@@ -631,300 +631,322 @@ LionsarchCity_NPC_GymTrainer::
 # 375 "data/maps/LionsarchCity/scripts.pory"
 	faceplayer
 # 376 "data/maps/LionsarchCity/scripts.pory"
-	msgbox LionsarchCity_NPC_GymTrainer_Text_0
-# 377 "data/maps/LionsarchCity/scripts.pory"
+	goto_if_unset FLAG_ITEM_LIONSARCH_GYM_SNOWBALL, LionsarchCity_NPC_GymTrainer_2
+# 386 "data/maps/LionsarchCity/scripts.pory"
+	msgbox LionsarchCity_NPC_GymTrainer_Text_2, MSGBOX_AUTOCLOSE
+# 387 "data/maps/LionsarchCity/scripts.pory"
+	waitmessage
+LionsarchCity_NPC_GymTrainer_1:
+# 389 "data/maps/LionsarchCity/scripts.pory"
 	releaseall
 	return
 
+LionsarchCity_NPC_GymTrainer_2:
+# 377 "data/maps/LionsarchCity/scripts.pory"
+	msgbox LionsarchCity_NPC_GymTrainer_Text_0
+# 378 "data/maps/LionsarchCity/scripts.pory"
+	waitmessage
+# 379 "data/maps/LionsarchCity/scripts.pory"
+	giveitem ITEM_SNOWBALL
+# 380 "data/maps/LionsarchCity/scripts.pory"
+	waitmessage
+# 381 "data/maps/LionsarchCity/scripts.pory"
+	setflag FLAG_ITEM_LIONSARCH_GYM_SNOWBALL
+# 382 "data/maps/LionsarchCity/scripts.pory"
+	msgbox LionsarchCity_NPC_GymTrainer_Text_1
+# 383 "data/maps/LionsarchCity/scripts.pory"
+	waitmessage
+	goto LionsarchCity_NPC_GymTrainer_1
+
 
 LionsarchCity_NPC_ShipCaptain::
-# 381 "data/maps/LionsarchCity/scripts.pory"
+# 393 "data/maps/LionsarchCity/scripts.pory"
 	lockall
-# 382 "data/maps/LionsarchCity/scripts.pory"
+# 394 "data/maps/LionsarchCity/scripts.pory"
 	faceplayer
-# 383 "data/maps/LionsarchCity/scripts.pory"
+# 395 "data/maps/LionsarchCity/scripts.pory"
 	msgbox LionsarchCity_NPC_ShipCaptain_Text_0
-# 384 "data/maps/LionsarchCity/scripts.pory"
+# 396 "data/maps/LionsarchCity/scripts.pory"
 	releaseall
 	return
 
 
 LionsarchCity_NPC_StreetVendor::
-# 388 "data/maps/LionsarchCity/scripts.pory"
+# 400 "data/maps/LionsarchCity/scripts.pory"
 	lockall
-# 389 "data/maps/LionsarchCity/scripts.pory"
+# 401 "data/maps/LionsarchCity/scripts.pory"
 	faceplayer
-# 390 "data/maps/LionsarchCity/scripts.pory"
+# 402 "data/maps/LionsarchCity/scripts.pory"
 	msgbox LionsarchCity_NPC_StreetVendor_Text_0
-# 391 "data/maps/LionsarchCity/scripts.pory"
+# 403 "data/maps/LionsarchCity/scripts.pory"
 	releaseall
 	return
 
 
 LionsarchCity_Scott_ArrivalPoint::
-# 399 "data/maps/LionsarchCity/scripts.pory"
+# 411 "data/maps/LionsarchCity/scripts.pory"
 	lockall
-# 400 "data/maps/LionsarchCity/scripts.pory"
+# 412 "data/maps/LionsarchCity/scripts.pory"
 	msgbox LionsarchCity_Scott_ArrivalPoint_Text_0
-# 401 "data/maps/LionsarchCity/scripts.pory"
+# 413 "data/maps/LionsarchCity/scripts.pory"
 	releaseall
 	return
 
 
 LionsarchCity_RectorSendoff::
-# 410 "data/maps/LionsarchCity/scripts.pory"
-	setvar VAR_LIONSARCH_CITY_STATE, 2
-# 411 "data/maps/LionsarchCity/scripts.pory"
-	lockall
-# 412 "data/maps/LionsarchCity/scripts.pory"
-	clearflag FLAG_HIDE_LIONSARCH_RECTOR_SENDOFF
-# 413 "data/maps/LionsarchCity/scripts.pory"
-	addobject 36
-# 414 "data/maps/LionsarchCity/scripts.pory"
-	delay 30
-# 416 "data/maps/LionsarchCity/scripts.pory"
-	setspeaker LionsarchCity_RectorSendoff_Text_0
-# 417 "data/maps/LionsarchCity/scripts.pory"
-	msgbox LionsarchCity_RectorSendoff_Text_1, MSGBOX_AUTOCLOSE
-# 418 "data/maps/LionsarchCity/scripts.pory"
-	waitmessage
-# 420 "data/maps/LionsarchCity/scripts.pory"
-	special SpawnCameraObject
-# 421 "data/maps/LionsarchCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, LionsarchCity_RectorSendoff_Movement_0
 # 422 "data/maps/LionsarchCity/scripts.pory"
-	waitmovement
+	setvar VAR_LIONSARCH_CITY_STATE, 2
 # 423 "data/maps/LionsarchCity/scripts.pory"
-	setflag FLAG_HIDE_LIONSARCH_FACULTY_SHIPS
+	lockall
 # 424 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 38, LionsarchCity_RectorSendoff_Movement_1
+	clearflag FLAG_HIDE_LIONSARCH_RECTOR_SENDOFF
 # 425 "data/maps/LionsarchCity/scripts.pory"
-	waitmovement
+	addobject 36
 # 426 "data/maps/LionsarchCity/scripts.pory"
-	playse SE_PIN
-# 427 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 16, LionsarchCity_RectorSendoff_Movement_2
+	delay 30
 # 428 "data/maps/LionsarchCity/scripts.pory"
-	setspeaker LionsarchCity_RectorSendoff_Text_2
+	setspeaker LionsarchCity_RectorSendoff_Text_0
 # 429 "data/maps/LionsarchCity/scripts.pory"
-	msgbox LionsarchCity_RectorSendoff_Text_3, MSGBOX_AUTOCLOSE
+	msgbox LionsarchCity_RectorSendoff_Text_1, MSGBOX_AUTOCLOSE
 # 430 "data/maps/LionsarchCity/scripts.pory"
 	waitmessage
-# 431 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 16, LionsarchCity_RectorSendoff_Movement_3
 # 432 "data/maps/LionsarchCity/scripts.pory"
-	waitmovement
+	special SpawnCameraObject
 # 433 "data/maps/LionsarchCity/scripts.pory"
-	removeobject 16
+	applymovement OBJ_EVENT_ID_CAMERA, LionsarchCity_RectorSendoff_Movement_0
 # 434 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 38, LionsarchCity_RectorSendoff_Movement_4
+	waitmovement
 # 435 "data/maps/LionsarchCity/scripts.pory"
-	waitmovement
-# 436 "data/maps/LionsarchCity/scripts.pory"
-	setspeaker LionsarchCity_RectorSendoff_Text_2
-# 437 "data/maps/LionsarchCity/scripts.pory"
-	msgbox LionsarchCity_RectorSendoff_Text_4, MSGBOX_AUTOCLOSE
-# 438 "data/maps/LionsarchCity/scripts.pory"
-	waitmessage
-# 439 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 17, LionsarchCity_RectorSendoff_Movement_5
-# 440 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 12, LionsarchCity_RectorSendoff_Movement_6
-# 441 "data/maps/LionsarchCity/scripts.pory"
-	waitmovement 12
-# 442 "data/maps/LionsarchCity/scripts.pory"
-	removeobject 12
-# 443 "data/maps/LionsarchCity/scripts.pory"
-	removeobject 17
-# 444 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 38, LionsarchCity_RectorSendoff_Movement_7
-# 445 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 39, LionsarchCity_RectorSendoff_Movement_8
-# 446 "data/maps/LionsarchCity/scripts.pory"
-	waitmovement 39
-# 447 "data/maps/LionsarchCity/scripts.pory"
-	setspeaker LionsarchCity_RectorSendoff_Text_5
-# 448 "data/maps/LionsarchCity/scripts.pory"
-	msgbox LionsarchCity_RectorSendoff_Text_6, MSGBOX_AUTOCLOSE
-# 449 "data/maps/LionsarchCity/scripts.pory"
-	waitmessage
-# 450 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 38, LionsarchCity_RectorSendoff_Movement_9
-# 451 "data/maps/LionsarchCity/scripts.pory"
-	waitmovement
-# 452 "data/maps/LionsarchCity/scripts.pory"
-	removeobject 38
-# 453 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 39, LionsarchCity_RectorSendoff_Movement_10
-# 454 "data/maps/LionsarchCity/scripts.pory"
-	waitmovement
-# 455 "data/maps/LionsarchCity/scripts.pory"
-	removeobject 39
-# 456 "data/maps/LionsarchCity/scripts.pory"
-	delay 30
-# 457 "data/maps/LionsarchCity/scripts.pory"
-	setspeaker LionsarchCity_RectorSendoff_Text_0
-# 458 "data/maps/LionsarchCity/scripts.pory"
-	msgbox LionsarchCity_RectorSendoff_Text_7, MSGBOX_AUTOCLOSE
-# 459 "data/maps/LionsarchCity/scripts.pory"
-	waitmessage
-# 461 "data/maps/LionsarchCity/scripts.pory"
-	delay 60
-# 462 "data/maps/LionsarchCity/scripts.pory"
 	setflag FLAG_HIDE_LIONSARCH_FACULTY_SHIPS
+# 436 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 38, LionsarchCity_RectorSendoff_Movement_1
+# 437 "data/maps/LionsarchCity/scripts.pory"
+	waitmovement
+# 438 "data/maps/LionsarchCity/scripts.pory"
+	playse SE_PIN
+# 439 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 16, LionsarchCity_RectorSendoff_Movement_2
+# 440 "data/maps/LionsarchCity/scripts.pory"
+	setspeaker LionsarchCity_RectorSendoff_Text_2
+# 441 "data/maps/LionsarchCity/scripts.pory"
+	msgbox LionsarchCity_RectorSendoff_Text_3, MSGBOX_AUTOCLOSE
+# 442 "data/maps/LionsarchCity/scripts.pory"
+	waitmessage
+# 443 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 16, LionsarchCity_RectorSendoff_Movement_3
+# 444 "data/maps/LionsarchCity/scripts.pory"
+	waitmovement
+# 445 "data/maps/LionsarchCity/scripts.pory"
+	removeobject 16
+# 446 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 38, LionsarchCity_RectorSendoff_Movement_4
+# 447 "data/maps/LionsarchCity/scripts.pory"
+	waitmovement
+# 448 "data/maps/LionsarchCity/scripts.pory"
+	setspeaker LionsarchCity_RectorSendoff_Text_2
+# 449 "data/maps/LionsarchCity/scripts.pory"
+	msgbox LionsarchCity_RectorSendoff_Text_4, MSGBOX_AUTOCLOSE
+# 450 "data/maps/LionsarchCity/scripts.pory"
+	waitmessage
+# 451 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 17, LionsarchCity_RectorSendoff_Movement_5
+# 452 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 12, LionsarchCity_RectorSendoff_Movement_6
+# 453 "data/maps/LionsarchCity/scripts.pory"
+	waitmovement 12
+# 454 "data/maps/LionsarchCity/scripts.pory"
+	removeobject 12
+# 455 "data/maps/LionsarchCity/scripts.pory"
+	removeobject 17
+# 456 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 38, LionsarchCity_RectorSendoff_Movement_7
+# 457 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 39, LionsarchCity_RectorSendoff_Movement_8
+# 458 "data/maps/LionsarchCity/scripts.pory"
+	waitmovement 39
+# 459 "data/maps/LionsarchCity/scripts.pory"
+	setspeaker LionsarchCity_RectorSendoff_Text_5
+# 460 "data/maps/LionsarchCity/scripts.pory"
+	msgbox LionsarchCity_RectorSendoff_Text_6, MSGBOX_AUTOCLOSE
+# 461 "data/maps/LionsarchCity/scripts.pory"
+	waitmessage
+# 462 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 38, LionsarchCity_RectorSendoff_Movement_9
 # 463 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 4, LionsarchCity_RectorSendoff_Movement_11
+	waitmovement
 # 464 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 3, LionsarchCity_RectorSendoff_Movement_12
+	removeobject 38
 # 465 "data/maps/LionsarchCity/scripts.pory"
-	waitmovement 3
+	applymovement 39, LionsarchCity_RectorSendoff_Movement_10
 # 466 "data/maps/LionsarchCity/scripts.pory"
-	removeobject 3
+	waitmovement
 # 467 "data/maps/LionsarchCity/scripts.pory"
-	removeobject 4
+	removeobject 39
 # 468 "data/maps/LionsarchCity/scripts.pory"
-	playse SE_PIN
+	delay 30
 # 469 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 41, LionsarchCity_FacultyGrunt_1_Movement_0
+	setspeaker LionsarchCity_RectorSendoff_Text_0
 # 470 "data/maps/LionsarchCity/scripts.pory"
-	waitmovement
+	msgbox LionsarchCity_RectorSendoff_Text_7, MSGBOX_AUTOCLOSE
 # 471 "data/maps/LionsarchCity/scripts.pory"
-	delay 30
-# 472 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 41, LionsarchCity_RectorSendoff_Movement_13
+	waitmessage
 # 473 "data/maps/LionsarchCity/scripts.pory"
-	waitmovement 41
-# 474 "data/maps/LionsarchCity/scripts.pory"
-	removeobject 41
-# 476 "data/maps/LionsarchCity/scripts.pory"
-	delay 90
-# 478 "data/maps/LionsarchCity/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, LionsarchCity_RectorSendoff_Movement_14
-# 479 "data/maps/LionsarchCity/scripts.pory"
-	waitmovement
-# 480 "data/maps/LionsarchCity/scripts.pory"
-	special RemoveCameraObject
-# 481 "data/maps/LionsarchCity/scripts.pory"
-	delay 30
-# 483 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 36, LionsarchCity_RectorSendoff_Movement_15
-# 484 "data/maps/LionsarchCity/scripts.pory"
-	applymovement LOCALID_PLAYER, LionsarchCity_RectorSendoff_Movement_16
-# 485 "data/maps/LionsarchCity/scripts.pory"
-	setspeaker LionsarchCity_RectorSendoff_Text_0
-# 486 "data/maps/LionsarchCity/scripts.pory"
-	msgbox LionsarchCity_RectorSendoff_Text_8, MSGBOX_AUTOCLOSE
-# 487 "data/maps/LionsarchCity/scripts.pory"
-	waitmessage
-# 488 "data/maps/LionsarchCity/scripts.pory"
-	delay 120
-# 489 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 36, LionsarchCity_RectorSendoff_Movement_17
-# 490 "data/maps/LionsarchCity/scripts.pory"
-	setspeaker LionsarchCity_RectorSendoff_Text_0
-# 491 "data/maps/LionsarchCity/scripts.pory"
-	msgbox LionsarchCity_RectorSendoff_Text_9, MSGBOX_AUTOCLOSE
-# 492 "data/maps/LionsarchCity/scripts.pory"
-	waitmessage
-# 494 "data/maps/LionsarchCity/scripts.pory"
-	playmoncry SPECIES_SKARMORY, CRY_MODE_NORMAL
-# 495 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 37, LionsarchCity_RectorSendoff_Movement_18
-# 496 "data/maps/LionsarchCity/scripts.pory"
-	waitmovement
-# 497 "data/maps/LionsarchCity/scripts.pory"
-	removeobject 37
-# 498 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 36, LionsarchCity_RectorSendoff_Movement_19
-# 499 "data/maps/LionsarchCity/scripts.pory"
-	waitmovement
-# 500 "data/maps/LionsarchCity/scripts.pory"
-	removeobject 36
-# 501 "data/maps/LionsarchCity/scripts.pory"
 	delay 60
-# 502 "data/maps/LionsarchCity/scripts.pory"
-	addobject 40
-# 503 "data/maps/LionsarchCity/scripts.pory"
+# 474 "data/maps/LionsarchCity/scripts.pory"
+	setflag FLAG_HIDE_LIONSARCH_FACULTY_SHIPS
+# 475 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 4, LionsarchCity_RectorSendoff_Movement_11
+# 476 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 3, LionsarchCity_RectorSendoff_Movement_12
+# 477 "data/maps/LionsarchCity/scripts.pory"
+	waitmovement 3
+# 478 "data/maps/LionsarchCity/scripts.pory"
+	removeobject 3
+# 479 "data/maps/LionsarchCity/scripts.pory"
+	removeobject 4
+# 480 "data/maps/LionsarchCity/scripts.pory"
 	playse SE_PIN
-# 504 "data/maps/LionsarchCity/scripts.pory"
-	applymovement LOCALID_PLAYER, LionsarchCity_RectorSendoff_Movement_20
-# 505 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 40, LionsarchCity_RectorSendoff_Movement_21
-# 506 "data/maps/LionsarchCity/scripts.pory"
+# 481 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 41, LionsarchCity_FacultyGrunt_1_Movement_0
+# 482 "data/maps/LionsarchCity/scripts.pory"
 	waitmovement
+# 483 "data/maps/LionsarchCity/scripts.pory"
+	delay 30
+# 484 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 41, LionsarchCity_RectorSendoff_Movement_13
+# 485 "data/maps/LionsarchCity/scripts.pory"
+	waitmovement 41
+# 486 "data/maps/LionsarchCity/scripts.pory"
+	removeobject 41
+# 488 "data/maps/LionsarchCity/scripts.pory"
+	delay 90
+# 490 "data/maps/LionsarchCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, LionsarchCity_RectorSendoff_Movement_14
+# 491 "data/maps/LionsarchCity/scripts.pory"
+	waitmovement
+# 492 "data/maps/LionsarchCity/scripts.pory"
+	special RemoveCameraObject
+# 493 "data/maps/LionsarchCity/scripts.pory"
+	delay 30
+# 495 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 36, LionsarchCity_RectorSendoff_Movement_15
+# 496 "data/maps/LionsarchCity/scripts.pory"
+	applymovement LOCALID_PLAYER, LionsarchCity_RectorSendoff_Movement_16
+# 497 "data/maps/LionsarchCity/scripts.pory"
+	setspeaker LionsarchCity_RectorSendoff_Text_0
+# 498 "data/maps/LionsarchCity/scripts.pory"
+	msgbox LionsarchCity_RectorSendoff_Text_8, MSGBOX_AUTOCLOSE
+# 499 "data/maps/LionsarchCity/scripts.pory"
+	waitmessage
+# 500 "data/maps/LionsarchCity/scripts.pory"
+	delay 120
+# 501 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 36, LionsarchCity_RectorSendoff_Movement_17
+# 502 "data/maps/LionsarchCity/scripts.pory"
+	setspeaker LionsarchCity_RectorSendoff_Text_0
+# 503 "data/maps/LionsarchCity/scripts.pory"
+	msgbox LionsarchCity_RectorSendoff_Text_9, MSGBOX_AUTOCLOSE
+# 504 "data/maps/LionsarchCity/scripts.pory"
+	waitmessage
+# 506 "data/maps/LionsarchCity/scripts.pory"
+	playmoncry SPECIES_SKARMORY, CRY_MODE_NORMAL
 # 507 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 40, LionsarchCity_RectorSendoff_Movement_22
+	applymovement 37, LionsarchCity_RectorSendoff_Movement_18
 # 508 "data/maps/LionsarchCity/scripts.pory"
 	waitmovement
 # 509 "data/maps/LionsarchCity/scripts.pory"
-	applymovement LOCALID_PLAYER, LionsarchCity_RectorSendoff_Movement_17
+	removeobject 37
 # 510 "data/maps/LionsarchCity/scripts.pory"
-	waitmovement
+	applymovement 36, LionsarchCity_RectorSendoff_Movement_19
 # 511 "data/maps/LionsarchCity/scripts.pory"
+	waitmovement
+# 512 "data/maps/LionsarchCity/scripts.pory"
+	removeobject 36
+# 513 "data/maps/LionsarchCity/scripts.pory"
+	delay 60
+# 514 "data/maps/LionsarchCity/scripts.pory"
+	addobject 40
+# 515 "data/maps/LionsarchCity/scripts.pory"
+	playse SE_PIN
+# 516 "data/maps/LionsarchCity/scripts.pory"
+	applymovement LOCALID_PLAYER, LionsarchCity_RectorSendoff_Movement_20
+# 517 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 40, LionsarchCity_RectorSendoff_Movement_21
+# 518 "data/maps/LionsarchCity/scripts.pory"
+	waitmovement
+# 519 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 40, LionsarchCity_RectorSendoff_Movement_22
+# 520 "data/maps/LionsarchCity/scripts.pory"
+	waitmovement
+# 521 "data/maps/LionsarchCity/scripts.pory"
+	applymovement LOCALID_PLAYER, LionsarchCity_RectorSendoff_Movement_17
+# 522 "data/maps/LionsarchCity/scripts.pory"
+	waitmovement
+# 523 "data/maps/LionsarchCity/scripts.pory"
 	goto_if_set FLAG_STEEL_FACTORY_POKEMON_CAGED, LionsarchCity_RectorSendoff_2
 LionsarchCity_RectorSendoff_1:
-# 520 "data/maps/LionsarchCity/scripts.pory"
+# 532 "data/maps/LionsarchCity/scripts.pory"
 	goto_if_unset FLAG_STEEL_FACTORY_POKEMON_CAGED, LionsarchCity_RectorSendoff_5
 LionsarchCity_RectorSendoff_4:
-# 529 "data/maps/LionsarchCity/scripts.pory"
-	delay 90
-# 530 "data/maps/LionsarchCity/scripts.pory"
-	playse SE_PIN
-# 531 "data/maps/LionsarchCity/scripts.pory"
-	applymovement LOCALID_PLAYER, LionsarchCity_RectorSendoff_Movement_20
-# 532 "data/maps/LionsarchCity/scripts.pory"
-	applymovement 40, LionsarchCity_RectorSendoff_Movement_25
-# 533 "data/maps/LionsarchCity/scripts.pory"
-	waitmovement
-# 534 "data/maps/LionsarchCity/scripts.pory"
-	removeobject 40
-# 535 "data/maps/LionsarchCity/scripts.pory"
-	delay 60
-# 536 "data/maps/LionsarchCity/scripts.pory"
-	setflag FLAG_HIDE_LIONSARCH_RECTOR_SENDOFF
-# 537 "data/maps/LionsarchCity/scripts.pory"
-	delay 60
-# 538 "data/maps/LionsarchCity/scripts.pory"
-	pokenavcall LionsarchCity_RectorSendoff_Text_12
-# 539 "data/maps/LionsarchCity/scripts.pory"
-	waitmessage
-# 540 "data/maps/LionsarchCity/scripts.pory"
-	setspeaker NULL
 # 541 "data/maps/LionsarchCity/scripts.pory"
+	delay 90
+# 542 "data/maps/LionsarchCity/scripts.pory"
+	playse SE_PIN
+# 543 "data/maps/LionsarchCity/scripts.pory"
+	applymovement LOCALID_PLAYER, LionsarchCity_RectorSendoff_Movement_20
+# 544 "data/maps/LionsarchCity/scripts.pory"
+	applymovement 40, LionsarchCity_RectorSendoff_Movement_25
+# 545 "data/maps/LionsarchCity/scripts.pory"
+	waitmovement
+# 546 "data/maps/LionsarchCity/scripts.pory"
+	removeobject 40
+# 547 "data/maps/LionsarchCity/scripts.pory"
+	delay 60
+# 548 "data/maps/LionsarchCity/scripts.pory"
+	setflag FLAG_HIDE_LIONSARCH_RECTOR_SENDOFF
+# 549 "data/maps/LionsarchCity/scripts.pory"
+	delay 60
+# 550 "data/maps/LionsarchCity/scripts.pory"
+	pokenavcall LionsarchCity_RectorSendoff_Text_12
+# 551 "data/maps/LionsarchCity/scripts.pory"
+	waitmessage
+# 552 "data/maps/LionsarchCity/scripts.pory"
+	setspeaker NULL
+# 553 "data/maps/LionsarchCity/scripts.pory"
 	releaseall
 	return
 
 LionsarchCity_RectorSendoff_2:
-# 512 "data/maps/LionsarchCity/scripts.pory"
+# 524 "data/maps/LionsarchCity/scripts.pory"
 	playmoncry SPECIES_MEW, CRY_MODE_NORMAL
-# 513 "data/maps/LionsarchCity/scripts.pory"
+# 525 "data/maps/LionsarchCity/scripts.pory"
 	waitmoncry
-# 514 "data/maps/LionsarchCity/scripts.pory"
+# 526 "data/maps/LionsarchCity/scripts.pory"
 	applymovement 40, LionsarchCity_RectorSendoff_Movement_23
-# 515 "data/maps/LionsarchCity/scripts.pory"
+# 527 "data/maps/LionsarchCity/scripts.pory"
 	waitmovement
-# 516 "data/maps/LionsarchCity/scripts.pory"
+# 528 "data/maps/LionsarchCity/scripts.pory"
 	setspeaker NULL
-# 517 "data/maps/LionsarchCity/scripts.pory"
+# 529 "data/maps/LionsarchCity/scripts.pory"
 	msgbox LionsarchCity_RectorSendoff_Text_10, MSGBOX_AUTOCLOSE
-# 518 "data/maps/LionsarchCity/scripts.pory"
+# 530 "data/maps/LionsarchCity/scripts.pory"
 	waitmessage
 	goto LionsarchCity_RectorSendoff_1
 
 LionsarchCity_RectorSendoff_5:
-# 521 "data/maps/LionsarchCity/scripts.pory"
+# 533 "data/maps/LionsarchCity/scripts.pory"
 	playmoncry SPECIES_MEW, CRY_MODE_NORMAL
-# 522 "data/maps/LionsarchCity/scripts.pory"
+# 534 "data/maps/LionsarchCity/scripts.pory"
 	waitmoncry
-# 523 "data/maps/LionsarchCity/scripts.pory"
+# 535 "data/maps/LionsarchCity/scripts.pory"
 	applymovement 40, LionsarchCity_RectorSendoff_Movement_24
-# 524 "data/maps/LionsarchCity/scripts.pory"
+# 536 "data/maps/LionsarchCity/scripts.pory"
 	waitmovement
-# 525 "data/maps/LionsarchCity/scripts.pory"
+# 537 "data/maps/LionsarchCity/scripts.pory"
 	setspeaker NULL
-# 526 "data/maps/LionsarchCity/scripts.pory"
+# 538 "data/maps/LionsarchCity/scripts.pory"
 	msgbox LionsarchCity_RectorSendoff_Text_11, MSGBOX_AUTOCLOSE
-# 527 "data/maps/LionsarchCity/scripts.pory"
+# 539 "data/maps/LionsarchCity/scripts.pory"
 	waitmessage
 	goto LionsarchCity_RectorSendoff_4
 
@@ -935,335 +957,335 @@ LionsarchCity_FacultyGrunt_1_Movement_0:
 	emote_exclamation_mark
 	step_end
 
-# 421 "data/maps/LionsarchCity/scripts.pory"
+# 433 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_0:
-# 421 "data/maps/LionsarchCity/scripts.pory"
+# 433 "data/maps/LionsarchCity/scripts.pory"
 	walk_down
-# 421 "data/maps/LionsarchCity/scripts.pory"
+# 433 "data/maps/LionsarchCity/scripts.pory"
 	walk_down
-# 421 "data/maps/LionsarchCity/scripts.pory"
+# 433 "data/maps/LionsarchCity/scripts.pory"
 	walk_down
-# 421 "data/maps/LionsarchCity/scripts.pory"
+# 433 "data/maps/LionsarchCity/scripts.pory"
 	walk_down
-# 421 "data/maps/LionsarchCity/scripts.pory"
+# 433 "data/maps/LionsarchCity/scripts.pory"
 	walk_down
-# 421 "data/maps/LionsarchCity/scripts.pory"
+# 433 "data/maps/LionsarchCity/scripts.pory"
 	walk_down
-# 421 "data/maps/LionsarchCity/scripts.pory"
+# 433 "data/maps/LionsarchCity/scripts.pory"
 	walk_down
-# 421 "data/maps/LionsarchCity/scripts.pory"
+# 433 "data/maps/LionsarchCity/scripts.pory"
 	walk_down
-# 421 "data/maps/LionsarchCity/scripts.pory"
+# 433 "data/maps/LionsarchCity/scripts.pory"
 	walk_down
-# 421 "data/maps/LionsarchCity/scripts.pory"
+# 433 "data/maps/LionsarchCity/scripts.pory"
 	walk_down
-# 421 "data/maps/LionsarchCity/scripts.pory"
+# 433 "data/maps/LionsarchCity/scripts.pory"
 	walk_down
 	step_end
 
-# 424 "data/maps/LionsarchCity/scripts.pory"
+# 436 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_1:
-# 424 "data/maps/LionsarchCity/scripts.pory"
+# 436 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_left
-# 424 "data/maps/LionsarchCity/scripts.pory"
+# 436 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_left
-# 424 "data/maps/LionsarchCity/scripts.pory"
+# 436 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_left
-# 424 "data/maps/LionsarchCity/scripts.pory"
+# 436 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_left
-# 424 "data/maps/LionsarchCity/scripts.pory"
+# 436 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_left
-# 424 "data/maps/LionsarchCity/scripts.pory"
+# 436 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_left
-# 424 "data/maps/LionsarchCity/scripts.pory"
+# 436 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_left
-# 424 "data/maps/LionsarchCity/scripts.pory"
+# 436 "data/maps/LionsarchCity/scripts.pory"
 	face_up
 	step_end
 
-# 427 "data/maps/LionsarchCity/scripts.pory"
+# 439 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_2:
-# 427 "data/maps/LionsarchCity/scripts.pory"
+# 439 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_up
-# 427 "data/maps/LionsarchCity/scripts.pory"
+# 439 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 427 "data/maps/LionsarchCity/scripts.pory"
+# 439 "data/maps/LionsarchCity/scripts.pory"
 	face_down
-# 427 "data/maps/LionsarchCity/scripts.pory"
+# 439 "data/maps/LionsarchCity/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 431 "data/maps/LionsarchCity/scripts.pory"
+# 443 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_3:
-# 431 "data/maps/LionsarchCity/scripts.pory"
+# 443 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 431 "data/maps/LionsarchCity/scripts.pory"
+# 443 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 431 "data/maps/LionsarchCity/scripts.pory"
+# 443 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 431 "data/maps/LionsarchCity/scripts.pory"
+# 443 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 431 "data/maps/LionsarchCity/scripts.pory"
+# 443 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
-# 431 "data/maps/LionsarchCity/scripts.pory"
+# 443 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
-# 431 "data/maps/LionsarchCity/scripts.pory"
+# 443 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 434 "data/maps/LionsarchCity/scripts.pory"
+# 446 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_4:
-# 434 "data/maps/LionsarchCity/scripts.pory"
+# 446 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 434 "data/maps/LionsarchCity/scripts.pory"
+# 446 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 434 "data/maps/LionsarchCity/scripts.pory"
+# 446 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_up
-# 434 "data/maps/LionsarchCity/scripts.pory"
+# 446 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 439 "data/maps/LionsarchCity/scripts.pory"
+# 451 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_5:
-# 439 "data/maps/LionsarchCity/scripts.pory"
+# 451 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
-# 439 "data/maps/LionsarchCity/scripts.pory"
+# 451 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
-# 439 "data/maps/LionsarchCity/scripts.pory"
+# 451 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 439 "data/maps/LionsarchCity/scripts.pory"
+# 451 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
-# 439 "data/maps/LionsarchCity/scripts.pory"
+# 451 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
-# 439 "data/maps/LionsarchCity/scripts.pory"
+# 451 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
-# 439 "data/maps/LionsarchCity/scripts.pory"
+# 451 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 440 "data/maps/LionsarchCity/scripts.pory"
+# 452 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_6:
-# 440 "data/maps/LionsarchCity/scripts.pory"
+# 452 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 440 "data/maps/LionsarchCity/scripts.pory"
+# 452 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
-# 440 "data/maps/LionsarchCity/scripts.pory"
+# 452 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
-# 440 "data/maps/LionsarchCity/scripts.pory"
+# 452 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 440 "data/maps/LionsarchCity/scripts.pory"
+# 452 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
-# 440 "data/maps/LionsarchCity/scripts.pory"
+# 452 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
-# 440 "data/maps/LionsarchCity/scripts.pory"
+# 452 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
-# 440 "data/maps/LionsarchCity/scripts.pory"
+# 452 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 444 "data/maps/LionsarchCity/scripts.pory"
+# 456 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_7:
-# 444 "data/maps/LionsarchCity/scripts.pory"
+# 456 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 444 "data/maps/LionsarchCity/scripts.pory"
+# 456 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
-# 444 "data/maps/LionsarchCity/scripts.pory"
+# 456 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_down
-# 444 "data/maps/LionsarchCity/scripts.pory"
+# 456 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 444 "data/maps/LionsarchCity/scripts.pory"
+# 456 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 445 "data/maps/LionsarchCity/scripts.pory"
+# 457 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_8:
-# 445 "data/maps/LionsarchCity/scripts.pory"
+# 457 "data/maps/LionsarchCity/scripts.pory"
 	walk_up
-# 445 "data/maps/LionsarchCity/scripts.pory"
+# 457 "data/maps/LionsarchCity/scripts.pory"
 	walk_left
 	step_end
 
-# 450 "data/maps/LionsarchCity/scripts.pory"
+# 462 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_9:
-# 450 "data/maps/LionsarchCity/scripts.pory"
+# 462 "data/maps/LionsarchCity/scripts.pory"
 	walk_down
 	step_end
 
-# 453 "data/maps/LionsarchCity/scripts.pory"
+# 465 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_10:
-# 453 "data/maps/LionsarchCity/scripts.pory"
+# 465 "data/maps/LionsarchCity/scripts.pory"
 	walk_left
-# 453 "data/maps/LionsarchCity/scripts.pory"
+# 465 "data/maps/LionsarchCity/scripts.pory"
 	walk_down
 	step_end
 
-# 463 "data/maps/LionsarchCity/scripts.pory"
+# 475 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_11:
-# 463 "data/maps/LionsarchCity/scripts.pory"
+# 475 "data/maps/LionsarchCity/scripts.pory"
 	walk_slow_down
-# 463 "data/maps/LionsarchCity/scripts.pory"
+# 475 "data/maps/LionsarchCity/scripts.pory"
 	walk_slow_down
-# 463 "data/maps/LionsarchCity/scripts.pory"
+# 475 "data/maps/LionsarchCity/scripts.pory"
 	walk_slow_down
-# 463 "data/maps/LionsarchCity/scripts.pory"
+# 475 "data/maps/LionsarchCity/scripts.pory"
 	walk_slow_down
-# 463 "data/maps/LionsarchCity/scripts.pory"
+# 475 "data/maps/LionsarchCity/scripts.pory"
 	walk_slow_down
 	step_end
 
-# 464 "data/maps/LionsarchCity/scripts.pory"
+# 476 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_12:
-# 464 "data/maps/LionsarchCity/scripts.pory"
+# 476 "data/maps/LionsarchCity/scripts.pory"
 	walk_slow_diag_southwest
-# 464 "data/maps/LionsarchCity/scripts.pory"
+# 476 "data/maps/LionsarchCity/scripts.pory"
 	walk_slow_diag_southwest
-# 464 "data/maps/LionsarchCity/scripts.pory"
+# 476 "data/maps/LionsarchCity/scripts.pory"
 	walk_slow_down
-# 464 "data/maps/LionsarchCity/scripts.pory"
+# 476 "data/maps/LionsarchCity/scripts.pory"
 	walk_slow_down
-# 464 "data/maps/LionsarchCity/scripts.pory"
+# 476 "data/maps/LionsarchCity/scripts.pory"
 	walk_slow_down
-# 464 "data/maps/LionsarchCity/scripts.pory"
+# 476 "data/maps/LionsarchCity/scripts.pory"
 	walk_slow_down
-# 464 "data/maps/LionsarchCity/scripts.pory"
+# 476 "data/maps/LionsarchCity/scripts.pory"
 	walk_slow_down
 	step_end
 
-# 472 "data/maps/LionsarchCity/scripts.pory"
+# 484 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_13:
-# 472 "data/maps/LionsarchCity/scripts.pory"
+# 484 "data/maps/LionsarchCity/scripts.pory"
 	jump_2_down
 	step_end
 
-# 478 "data/maps/LionsarchCity/scripts.pory"
+# 490 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_14:
-# 478 "data/maps/LionsarchCity/scripts.pory"
+# 490 "data/maps/LionsarchCity/scripts.pory"
 	walk_up
-# 478 "data/maps/LionsarchCity/scripts.pory"
+# 490 "data/maps/LionsarchCity/scripts.pory"
 	walk_up
-# 478 "data/maps/LionsarchCity/scripts.pory"
+# 490 "data/maps/LionsarchCity/scripts.pory"
 	walk_up
-# 478 "data/maps/LionsarchCity/scripts.pory"
+# 490 "data/maps/LionsarchCity/scripts.pory"
 	walk_up
-# 478 "data/maps/LionsarchCity/scripts.pory"
+# 490 "data/maps/LionsarchCity/scripts.pory"
 	walk_up
-# 478 "data/maps/LionsarchCity/scripts.pory"
+# 490 "data/maps/LionsarchCity/scripts.pory"
 	walk_up
-# 478 "data/maps/LionsarchCity/scripts.pory"
+# 490 "data/maps/LionsarchCity/scripts.pory"
 	walk_up
-# 478 "data/maps/LionsarchCity/scripts.pory"
+# 490 "data/maps/LionsarchCity/scripts.pory"
 	walk_up
-# 478 "data/maps/LionsarchCity/scripts.pory"
+# 490 "data/maps/LionsarchCity/scripts.pory"
 	walk_up
-# 478 "data/maps/LionsarchCity/scripts.pory"
+# 490 "data/maps/LionsarchCity/scripts.pory"
 	walk_up
-# 478 "data/maps/LionsarchCity/scripts.pory"
+# 490 "data/maps/LionsarchCity/scripts.pory"
 	walk_up
 	step_end
 
-# 483 "data/maps/LionsarchCity/scripts.pory"
+# 495 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_15:
-# 483 "data/maps/LionsarchCity/scripts.pory"
+# 495 "data/maps/LionsarchCity/scripts.pory"
 	face_right
 	step_end
 
-# 484 "data/maps/LionsarchCity/scripts.pory"
+# 496 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_16:
-# 484 "data/maps/LionsarchCity/scripts.pory"
+# 496 "data/maps/LionsarchCity/scripts.pory"
 	face_left
 	step_end
 
-# 489 "data/maps/LionsarchCity/scripts.pory"
+# 501 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_17:
-# 489 "data/maps/LionsarchCity/scripts.pory"
+# 501 "data/maps/LionsarchCity/scripts.pory"
 	face_down
 	step_end
 
-# 495 "data/maps/LionsarchCity/scripts.pory"
+# 507 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_18:
-# 495 "data/maps/LionsarchCity/scripts.pory"
+# 507 "data/maps/LionsarchCity/scripts.pory"
 	jump_down
-# 495 "data/maps/LionsarchCity/scripts.pory"
+# 507 "data/maps/LionsarchCity/scripts.pory"
 	jump_2_down
 	step_end
 
-# 498 "data/maps/LionsarchCity/scripts.pory"
+# 510 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_19:
-# 498 "data/maps/LionsarchCity/scripts.pory"
+# 510 "data/maps/LionsarchCity/scripts.pory"
 	fly_up
 	step_end
 
-# 504 "data/maps/LionsarchCity/scripts.pory"
+# 516 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_20:
-# 504 "data/maps/LionsarchCity/scripts.pory"
+# 516 "data/maps/LionsarchCity/scripts.pory"
 	emote_question_mark
 	step_end
 
-# 505 "data/maps/LionsarchCity/scripts.pory"
+# 517 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_21:
-# 505 "data/maps/LionsarchCity/scripts.pory"
+# 517 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 505 "data/maps/LionsarchCity/scripts.pory"
+# 517 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 505 "data/maps/LionsarchCity/scripts.pory"
+# 517 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 505 "data/maps/LionsarchCity/scripts.pory"
+# 517 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 505 "data/maps/LionsarchCity/scripts.pory"
+# 517 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 505 "data/maps/LionsarchCity/scripts.pory"
+# 517 "data/maps/LionsarchCity/scripts.pory"
 	walk_fast_right
-# 505 "data/maps/LionsarchCity/scripts.pory"
+# 517 "data/maps/LionsarchCity/scripts.pory"
 	walk_diag_southeast
 	step_end
 
-# 507 "data/maps/LionsarchCity/scripts.pory"
+# 519 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_22:
-# 507 "data/maps/LionsarchCity/scripts.pory"
+# 519 "data/maps/LionsarchCity/scripts.pory"
 	face_up
-# 507 "data/maps/LionsarchCity/scripts.pory"
+# 519 "data/maps/LionsarchCity/scripts.pory"
 	lock_facing_direction
-# 507 "data/maps/LionsarchCity/scripts.pory"
+# 519 "data/maps/LionsarchCity/scripts.pory"
 	walk_right
-# 507 "data/maps/LionsarchCity/scripts.pory"
+# 519 "data/maps/LionsarchCity/scripts.pory"
 	walk_right
-# 507 "data/maps/LionsarchCity/scripts.pory"
+# 519 "data/maps/LionsarchCity/scripts.pory"
 	walk_right
-# 507 "data/maps/LionsarchCity/scripts.pory"
+# 519 "data/maps/LionsarchCity/scripts.pory"
 	walk_right
-# 507 "data/maps/LionsarchCity/scripts.pory"
+# 519 "data/maps/LionsarchCity/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 514 "data/maps/LionsarchCity/scripts.pory"
+# 526 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_23:
-# 514 "data/maps/LionsarchCity/scripts.pory"
+# 526 "data/maps/LionsarchCity/scripts.pory"
 	emote_heart
 	step_end
 
-# 523 "data/maps/LionsarchCity/scripts.pory"
+# 535 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_24:
-# 523 "data/maps/LionsarchCity/scripts.pory"
+# 535 "data/maps/LionsarchCity/scripts.pory"
 	emote_x
 	step_end
 
-# 532 "data/maps/LionsarchCity/scripts.pory"
+# 544 "data/maps/LionsarchCity/scripts.pory"
 LionsarchCity_RectorSendoff_Movement_25:
-# 532 "data/maps/LionsarchCity/scripts.pory"
+# 544 "data/maps/LionsarchCity/scripts.pory"
 	walk_faster_down
-# 532 "data/maps/LionsarchCity/scripts.pory"
+# 544 "data/maps/LionsarchCity/scripts.pory"
 	walk_faster_down
-# 532 "data/maps/LionsarchCity/scripts.pory"
+# 544 "data/maps/LionsarchCity/scripts.pory"
 	walk_faster_down
-# 532 "data/maps/LionsarchCity/scripts.pory"
+# 544 "data/maps/LionsarchCity/scripts.pory"
 	walk_faster_down
-# 532 "data/maps/LionsarchCity/scripts.pory"
+# 544 "data/maps/LionsarchCity/scripts.pory"
 	walk_faster_down
-# 532 "data/maps/LionsarchCity/scripts.pory"
+# 544 "data/maps/LionsarchCity/scripts.pory"
 	walk_faster_down
-# 532 "data/maps/LionsarchCity/scripts.pory"
+# 544 "data/maps/LionsarchCity/scripts.pory"
 	walk_faster_down
-# 532 "data/maps/LionsarchCity/scripts.pory"
+# 544 "data/maps/LionsarchCity/scripts.pory"
 	walk_faster_down
 	step_end
 
@@ -1575,15 +1597,30 @@ LionsarchCity_NPC_NewsReporter_Text_1:
 	.string "What are they really doing in there?$"
 
 LionsarchCity_NPC_GymTrainer_Text_0:
-# 376 "data/maps/LionsarchCity/scripts.pory"
-	.string "Petra's Gym specializes in\n"
-	.string "mountain-dwelling Pokémon.\p"
-	.string "Ursaring, Golem, Donphan... they're all\n"
-	.string "incredibly tough!\p"
-	.string "You better come prepared.$"
+# 377 "data/maps/LionsarchCity/scripts.pory"
+	.string "You're heading into the Ice Gym?\p"
+	.string "Two leaders in there, Tanya and Tara,\n"
+	.string "both weather setters, both dangerous.\p"
+	.string "The trainers inside all run Ice-types,\n"
+	.string "so bring Fire, Fighting, or Rock.\p"
+	.string "Oh, and take this.$"
+
+LionsarchCity_NPC_GymTrainer_Text_1:
+# 382 "data/maps/LionsarchCity/scripts.pory"
+	.string "A Snowball. Let a Pokemon hold it and it\n"
+	.string "boosts their Attack when they get hit\l"
+	.string "by an Ice move.\p"
+	.string "In a Hail team mirror it can flip a fight\n"
+	.string "fast.\p"
+	.string "Good luck in there.$"
+
+LionsarchCity_NPC_GymTrainer_Text_2:
+# 386 "data/maps/LionsarchCity/scripts.pory"
+	.string "Two leaders, two weather teams.\p"
+	.string "Fire, Fighting, Rock. You've got this.$"
 
 LionsarchCity_NPC_ShipCaptain_Text_0:
-# 383 "data/maps/LionsarchCity/scripts.pory"
+# 395 "data/maps/LionsarchCity/scripts.pory"
 	.string "My vessel sails between here and\n"
 	.string "Siltroot Town regularly.\p"
 	.string "The harbor's always busy with cargo\n"
@@ -1591,7 +1628,7 @@ LionsarchCity_NPC_ShipCaptain_Text_0:
 	.string "It's what keeps this city alive.$"
 
 LionsarchCity_NPC_StreetVendor_Text_0:
-# 390 "data/maps/LionsarchCity/scripts.pory"
+# 402 "data/maps/LionsarchCity/scripts.pory"
 	.string "The markets are the soul of Lionsarch!\p"
 	.string "Traders from all over the region bring\n"
 	.string "their goods here.\p"
@@ -1602,18 +1639,18 @@ LionsarchCity_NPC_StreetVendor_Text_0:
 	.string "I probably open my stand very soon!$"
 
 LionsarchCity_Scott_ArrivalPoint_Text_0:
-# 400 "data/maps/LionsarchCity/scripts.pory"
+# 412 "data/maps/LionsarchCity/scripts.pory"
 	.string "The industrial dock stretches out\n"
 	.string "before you.\p"
 	.string "The smell of saltwater and diesel fills\n"
 	.string "the air.$"
 
 LionsarchCity_RectorSendoff_Text_0:
-# 416 "data/maps/LionsarchCity/scripts.pory"
+# 428 "data/maps/LionsarchCity/scripts.pory"
 	.string "The Rector$"
 
 LionsarchCity_RectorSendoff_Text_1:
-# 417 "data/maps/LionsarchCity/scripts.pory"
+# 429 "data/maps/LionsarchCity/scripts.pory"
 	.string "You fought hard in there.\p"
 	.string "You are lucky my strongest pokemon are\n"
 	.string "on another mission...\p"
@@ -1621,29 +1658,29 @@ LionsarchCity_RectorSendoff_Text_1:
 	.string "enough for the ships to depart.$"
 
 LionsarchCity_RectorSendoff_Text_2:
-# 428 "data/maps/LionsarchCity/scripts.pory"
+# 440 "data/maps/LionsarchCity/scripts.pory"
 	.string "Barry$"
 
 LionsarchCity_RectorSendoff_Text_3:
-# 429 "data/maps/LionsarchCity/scripts.pory"
+# 441 "data/maps/LionsarchCity/scripts.pory"
 	.string "YOU THERE, WE HAVE ENOUGH MATERIALS,\n"
 	.string "LETS MOVE!$"
 
 LionsarchCity_RectorSendoff_Text_4:
-# 437 "data/maps/LionsarchCity/scripts.pory"
+# 449 "data/maps/LionsarchCity/scripts.pory"
 	.string "AND YOU TWO, LETS KEEP THOSE MUSCLES\n"
 	.string "MOVING!$"
 
 LionsarchCity_RectorSendoff_Text_5:
-# 447 "data/maps/LionsarchCity/scripts.pory"
+# 459 "data/maps/LionsarchCity/scripts.pory"
 	.string "The Conrector$"
 
 LionsarchCity_RectorSendoff_Text_6:
-# 448 "data/maps/LionsarchCity/scripts.pory"
+# 460 "data/maps/LionsarchCity/scripts.pory"
 	.string "Good job Barr...Wouter. After you.$"
 
 LionsarchCity_RectorSendoff_Text_7:
-# 458 "data/maps/LionsarchCity/scripts.pory"
+# 470 "data/maps/LionsarchCity/scripts.pory"
 	.string "Would you look at that young man, he\n"
 	.string "has a bright future.\p"
 	.string "He is Pushing Boundaries, Developing\n"
@@ -1651,13 +1688,13 @@ LionsarchCity_RectorSendoff_Text_7:
 	.string "Everything The Faculty needs.$"
 
 LionsarchCity_RectorSendoff_Text_8:
-# 486 "data/maps/LionsarchCity/scripts.pory"
+# 498 "data/maps/LionsarchCity/scripts.pory"
 	.string "The Faculty is not a building or a plan.\p"
 	.string "It is an understanding, an idea.\p"
 	.string "And ideas cannot be destroyed.$"
 
 LionsarchCity_RectorSendoff_Text_9:
-# 491 "data/maps/LionsarchCity/scripts.pory"
+# 503 "data/maps/LionsarchCity/scripts.pory"
 	.string "To make a long story short:\n"
 	.string "Order will always prevail.\p"
 	.string "In the end...\p"
@@ -1665,17 +1702,17 @@ LionsarchCity_RectorSendoff_Text_9:
 	.string "Skarmory! Lets go!$"
 
 LionsarchCity_RectorSendoff_Text_10:
-# 517 "data/maps/LionsarchCity/scripts.pory"
+# 529 "data/maps/LionsarchCity/scripts.pory"
 	.string "...what are you...?\n"
 	.string "You look happy!$"
 
 LionsarchCity_RectorSendoff_Text_11:
-# 526 "data/maps/LionsarchCity/scripts.pory"
+# 538 "data/maps/LionsarchCity/scripts.pory"
 	.string "...what are you...?\n"
 	.string "You look angry...$"
 
 LionsarchCity_RectorSendoff_Text_12:
-# 538 "data/maps/LionsarchCity/scripts.pory"
+# 550 "data/maps/LionsarchCity/scripts.pory"
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
 	.string "Daan: {PLAYER}.\n"

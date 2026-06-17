@@ -151,7 +151,17 @@ text Route05_Text_VincentPostBattle_After {
 script Route05_Hiker_Convo {
     lock
     faceplayer
-    msgbox(format("Huff... Huff... This mountain never gets any easier to climb!\pBut the view of the Lion Mountains is always worth it.\pJust watch out for the ice patches near West Lion Mountain."), MSGBOX_AUTOCLOSE)
+    if (flag(FLAG_ITEM_ROUTE05_NEVER_MELT_ICE) == FALSE) {
+        msgbox(format("Huff... Huff... This mountain never gets any easier to climb!\pThe ice patches near West Lion Mountain are brutal this time of year.\pFound this chunk frozen into the rock face up there, never melts, even in summer.\pNo use to me with these heavy boots.\pHere, it'll do more for a Pokémon than it ever will for my ankles."))
+        waitmessage
+        giveitem(ITEM_NEVER_MELT_ICE)
+        waitmessage
+        setflag(FLAG_ITEM_ROUTE05_NEVER_MELT_ICE)
+    }
+    else {
+        msgbox(format("Huff... Huff... Still going...\pWatch those ice patches near West Lion Mountain."), MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
     release
     end
 }

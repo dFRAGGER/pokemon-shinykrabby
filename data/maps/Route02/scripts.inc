@@ -62,10 +62,55 @@ Route02_Trainer_Denton::
 	end
 
 
+Route02_Researcher_BulletSeed::
+# 119 "data/maps/Route02/scripts.pory"
+	lock
+# 120 "data/maps/Route02/scripts.pory"
+	faceplayer
+# 121 "data/maps/Route02/scripts.pory"
+	goto_if_unset FLAG_ITEM_ROUTE02_TM_BULLET_SEED, Route02_Researcher_BulletSeed_2
+# 129 "data/maps/Route02/scripts.pory"
+	msgbox Route02_Researcher_BulletSeed_Text_1, MSGBOX_AUTOCLOSE
+# 130 "data/maps/Route02/scripts.pory"
+	waitmessage
+Route02_Researcher_BulletSeed_1:
+# 132 "data/maps/Route02/scripts.pory"
+	release
+	return
+
+Route02_Researcher_BulletSeed_2:
+# 122 "data/maps/Route02/scripts.pory"
+	msgbox Route02_Researcher_BulletSeed_Text_0
+# 123 "data/maps/Route02/scripts.pory"
+	waitmessage
+# 124 "data/maps/Route02/scripts.pory"
+	giveitem ITEM_TM_BULLET_SEED
+# 125 "data/maps/Route02/scripts.pory"
+	waitmessage
+# 126 "data/maps/Route02/scripts.pory"
+	setflag FLAG_ITEM_ROUTE02_TM_BULLET_SEED
+	goto Route02_Researcher_BulletSeed_1
+
+
 Route02_Sign_Middle_Text_0:
 # 5 "data/maps/Route02/scripts.pory"
 	.string "{LEFT_ARROW} Mist City\n"
 	.string "{RIGHT_ARROW} Meestrech City$"
+
+Route02_Researcher_BulletSeed_Text_0:
+# 122 "data/maps/Route02/scripts.pory"
+	.string "I've been studying the grass-types\n"
+	.string "along this route for months.\p"
+	.string "The way they fire seeds is remarkable -\n"
+	.string "precise, rapid, relentless.\p"
+	.string "I documented it all into this TM.\p"
+	.string "Here, take it. I have my notes.$"
+
+Route02_Researcher_BulletSeed_Text_1:
+# 129 "data/maps/Route02/scripts.pory"
+	.string "The seed velocity data alone took me\n"
+	.string "three weeks to record.\p"
+	.string "You'll put that TM to good use, I hope.$"
 
 Route02_Text_MilesIntro::
 # 16 "data/maps/Route02/scripts.pory"

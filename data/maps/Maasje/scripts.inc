@@ -646,6 +646,14 @@ Maasje_Eventscript_Maniac_1:
 	end
 
 
+Maasje_EventScript_Tiana::
+# 371 "data/maps/Maasje/scripts.pory"
+	trainerbattle_single TRAINER_TIANA, Maasje_Text_TianaIntro, Maasje_Text_TianaDefeated
+# 372 "data/maps/Maasje/scripts.pory"
+	msgbox Maasje_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
 # 82 "data/maps/Maasje/scripts.pory"
 Maasje_Advice_Fisher_Crabhill_Movement_0:
 # 82 "data/maps/Maasje/scripts.pory"
@@ -831,3 +839,18 @@ Maasje_Eventscript_Maniac_Text_1:
 	.string "You won't seem them outside very often.\p"
 	.string "Hopefully one day everyting will be\n"
 	.string "back to normal.$"
+
+Maasje_Text_TianaIntro::
+# 376 "data/maps/Maasje/scripts.pory"
+	.string "I'm going to keep winning and aim\n"
+	.string "to be the best TRAINER.\p"
+	.string "Help me further my career!$"
+
+Maasje_Text_TianaDefeated::
+# 380 "data/maps/Maasje/scripts.pory"
+	.string "I ended up furthering your career…$"
+
+Maasje_Text_TianaPostBattle::
+# 384 "data/maps/Maasje/scripts.pory"
+	.string "To keep winning my way up, I see that\n"
+	.string "I have to catch more POKéMON.$"

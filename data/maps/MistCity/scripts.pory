@@ -15,8 +15,17 @@ script Mistcity_AipomGuy {
 script Mistcity_LotadGuy {
     lock
     faceplayer
-    msgbox(format("My Lotad collects fresh rainwater in its leaf for my tea every morning\p Nothing beats the taste of pure cloud forest dew."))
-    waitmessage
+    if (flag(FLAG_RECEIVED_WAILMER_PAIL) == FALSE) {
+        msgbox(format("My Lotad collects fresh rainwater in that leaf of its every morning.\pI grow a few special plants - good for the knees, you know how it is.\pBefore I had Lotad I had to water them myself with a big old pail.\pTook me half the morning with these joints.\pNow Lotad does it better than I ever could.\pHere, take the pail. It will do more good with a young trainer."))
+        waitmessage
+        giveitem(ITEM_WAILMER_PAIL)
+        waitmessage
+        setflag(FLAG_RECEIVED_WAILMER_PAIL)
+    }
+    else {
+        msgbox(format("Lotad was out early again this morning.\pThose plants are doing better than ever.\pGood for the knees."), MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
     release
 }
 

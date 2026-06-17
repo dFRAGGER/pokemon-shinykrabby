@@ -173,3 +173,21 @@ script Crabhill_Faculty_Lost_grunt {
 }
 
 
+
+script CrabhillEntrance_EventScript_Lyle {
+    trainerbattle_single(TRAINER_LYLE, CrabhillEntrance_Text_LyleIntro, CrabhillEntrance_Text_LyleDefeated)
+    msgbox(CrabhillEntrance_Text_LylePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text CrabhillEntrance_Text_LyleIntro {
+    format("I caught a whole bunch of POKéMON!\pGo, go, go!\nMy CRUSTACEAN POKéMON team!")
+}
+
+text CrabhillEntrance_Text_LyleDefeated {
+    format("I have all these POKéMON,\nbut I couldn't win…")
+}
+
+text CrabhillEntrance_Text_LylePostBattle {
+    format("I caught a bunch of POKéMON.\nNow I'm out of POKé BALLS.")
+}

@@ -159,3 +159,38 @@ text Route01_Loss_Ton_Cross {
 text Route01_Loss_Ad_Dice {
     format("Being a janitor or losing a battle?\p I'd rather lose a battle than spend another minute with my old colleagues.")
 }
+script Route01_EventScript_Calvin {
+    trainerbattle_single(TRAINER_CALVIN_1, Route01_Text_CalvinIntro, Route01_Text_CalvinDefeated)
+    msgbox(Route01_Text_CalvinPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script Route01_EventScript_James {
+    trainerbattle_single(TRAINER_JAMES_1, Route01_Text_JamesIntro, Route01_Text_JamesDefeated)
+    msgbox(Route01_Text_JamesPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route01_Text_CalvinIntro {
+    format("If you have POKéMON with you, then\nyou're an official POKéMON TRAINER!\lYou can't say no to my challenge!")
+}
+
+text Route01_Text_CalvinDefeated {
+    format("Arrgh, I lost…\nI should have trained mine more…")
+}
+
+text Route01_Text_CalvinPostBattle {
+    format("Listen, you. If you're strong,\nyou should have told me before!")
+}
+
+text Route01_Text_JamesIntro {
+    format("If you take BUG POKéMON to school,\nyou get to be instantly popular!")
+}
+
+text Route01_Text_JamesDefeated {
+    format("I can't be popular if I lose.")
+}
+
+text Route01_Text_JamesPostBattle {
+    format("If you have a big BUG POKéMON,\npeople respect you for it.")
+}

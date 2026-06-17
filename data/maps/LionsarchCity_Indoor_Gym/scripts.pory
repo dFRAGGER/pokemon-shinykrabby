@@ -45,7 +45,7 @@ script LionsarchGym_Leader1 {
     if (flag(FLAG_DEFEATED_LIONSARCH_LEADER1) == FALSE) {
         faceplayer
         setspeaker("Tanya")
-        msgbox(format("You made it through the storm?\nThe west mountain does not yield so easily..."))
+        msgbox(format("You made it to the west peak.\pSome call snow just frozen rain.\pThey are wrong.\pSnow is water set free. It falls where it chooses, covers the world in silence, and leaves nothing the same as it was.\pNo two flakes ever alike.\pIt is the most beautiful thing water can become.\pNow, let us see if you can stand in the middle of it."))
         waitmessage
         setspeaker(NULL)
         trainerbattle_single(TRAINER_LIONSARCH_LEADER1, LionsarchGym_Leader1_IntroText, LionsarchGym_Leader1_DefeatText, LionsarchGym_Leader1_Defeated)
@@ -64,7 +64,7 @@ script LionsarchGym_Leader1 {
 script LionsarchGym_Leader1_Defeated {
     lock
     setspeaker("Tanya")
-    msgbox(format("The west peak bows to your strength.\nMy partner still stands - face the east!"))
+    msgbox(format("The west peak quiets.\pSnow yields, but what lies beneath it does not.\pMy partner is waiting. She is the ice under the snow."))
     waitmessage
     setspeaker(NULL)
     setflag(FLAG_DEFEATED_LIONSARCH_LEADER1)
@@ -73,11 +73,11 @@ script LionsarchGym_Leader1_Defeated {
 }
 
 text LionsarchGym_Leader1_IntroText {
-    format("I am the voice of the west mountain!\nFeel the cold of the peak!")
+    format("Snow falls where it chooses!\pNo peak can hold it, and neither can you!")
 }
 
 text LionsarchGym_Leader1_DefeatText {
-    format("The summit... recedes from me.")
+    format("The snow... drifts away.")
 }
 
 script LionsarchGym_Leader2 {
@@ -94,7 +94,7 @@ script LionsarchGym_Leader2 {
     if (flag(FLAG_DEFEATED_LIONSARCH_LEADER1) == FALSE) {
         faceplayer
         setspeaker("Tara")
-        msgbox(format("You must face the west mountain first.\nThe east will wait."))
+        msgbox(format("You must face the west mountain first.\pThe east is ice, it holds its shape. It will wait."))
         waitmessage
         setspeaker(NULL)
         release
@@ -102,7 +102,7 @@ script LionsarchGym_Leader2 {
     }
     faceplayer
     setspeaker("Tara")
-    msgbox(format("You overcame the west.\nNow face the fury of the east mountain!"))
+    msgbox(format("You endured the snow.\pShe will tell you snow is the most beautiful thing water can become. She has always believed that.\pBut I have stood on this peak my whole life, and I know what remains when the snow melts.\pIce.\pClear. Still. Holding its form through everything.\pThat is the most beautiful thing water can become.\pNow, stand against something that does not yield."))
     waitmessage
     setspeaker(NULL)
     trainerbattle_single(TRAINER_LIONSARCH_LEADER2, LionsarchGym_Leader2_IntroText, LionsarchGym_Leader2_DefeatText, LionsarchGym_Leader2_Defeated)
@@ -113,7 +113,7 @@ script LionsarchGym_Leader2 {
 script LionsarchGym_Leader2_Defeated {
     lock
     setspeaker("Tara")
-    msgbox(format("The east peak falls too...\pYou have conquered both Lion Mountains."))
+    msgbox(format("Both peaks... brought down.\pYou have conquered the Lion Mountains."))
     waitmessage
     call(Common_EventScript_PlayGymBadgeFanfare)
     setflag(FLAG_BADGE03_GET)
@@ -121,12 +121,15 @@ script LionsarchGym_Leader2_Defeated {
     msgbox(format("You received the PEAK BADGE!"))
     waitmessage
     setspeaker("Tara")
-    msgbox(format("The PEAK BADGE lets all Pokémon up to level 40 obey without question.\pYou may now use ROCK SMASH outside of battle.\pAnd take this.\pWe are ice queens.\pWe do not give out Strength."))
+    msgbox(format("She will say snow is the most beautiful.\pI will say ice is.\pWe have argued about this our whole lives.\pAnd every time, we arrive at the same answer.\pThey need each other.\pSnow falls free and covers the world in silence.\pIce holds firm long after the snow is gone.\pNeither is complete without the other.\pLook at the Lion Mountains.\pThe west peak and the east peak.\pStand one alone, and it is just a mountain.\pStand both together, and the whole valley below is sheltered.\pWe are the same.\pAnd so, it seems, are you and your team."))
+    waitmessage
+    setspeaker("Tara")
+    msgbox(format("The PEAK BADGE lets all Pokémon up to level 40 obey without question.\pYou may now use ROCK SMASH outside of battle.\pAnd take this."))
     waitmessage
     giveitem(ITEM_TM07)
     waitmessage
     setspeaker("Tara")
-    msgbox(format("That is TM HAIL.\pSummon a blizzard that batters every Pokémon on the field for five turns.\pEvery Ice-type move hits without fail while the storm rages.\pWe have trained in these mountains our entire lives.\pThe cold is not a condition to us.\pIt is a weapon.\pUse it like one."))
+    msgbox(format("That is TM HAIL.\pSummon a blizzard that batters every Pokémon on the field for five turns.\pEvery Ice-type move hits without fail while the storm rages.\pWe have trained on these peaks our entire lives.\pThe cold is not a condition to us.\pIt is home.\pUse it like one."))
     waitmessage
     setspeaker(NULL)
     setflag(FLAG_DEFEATED_MAUVILLE_GYM)
@@ -137,11 +140,11 @@ script LionsarchGym_Leader2_Defeated {
 }
 
 text LionsarchGym_Leader2_IntroText {
-    format("The east wind howls for you!\nThis peak has never been climbed!")
+    format("Ice holds what snow cannot!\nThis is where you stop!")
 }
 
 text LionsarchGym_Leader2_DefeatText {
-    format("The east peak... is silent.")
+    format("The ice... gives way.")
 }
 
 # ─── TRAINERS ─────────────────────────────────────────────────────────────────

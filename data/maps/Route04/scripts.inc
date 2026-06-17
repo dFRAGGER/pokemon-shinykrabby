@@ -41,35 +41,37 @@ Route04_HikerTired_Convo::
 # 26 "data/maps/Route04/scripts.pory"
 	faceplayer
 # 27 "data/maps/Route04/scripts.pory"
-	msgbox Route04_HikerTired_Convo_Text_0
-# 28 "data/maps/Route04/scripts.pory"
-	waitmessage
-# 29 "data/maps/Route04/scripts.pory"
-	release
-	end
-
-
-Route04_OldLady_Convo::
-# 34 "data/maps/Route04/scripts.pory"
-	lock
+	goto_if_unset FLAG_ITEM_ROUTE04_SILK_SCARF, Route04_HikerTired_Convo_2
 # 35 "data/maps/Route04/scripts.pory"
-	faceplayer
+	msgbox Route04_HikerTired_Convo_Text_1, MSGBOX_AUTOCLOSE
 # 36 "data/maps/Route04/scripts.pory"
-	msgbox Route04_OldLady_Convo_Text_0, MSGBOX_AUTOCLOSE
-# 37 "data/maps/Route04/scripts.pory"
 	waitmessage
+Route04_HikerTired_Convo_1:
 # 38 "data/maps/Route04/scripts.pory"
 	release
 	end
 
+Route04_HikerTired_Convo_2:
+# 28 "data/maps/Route04/scripts.pory"
+	msgbox Route04_HikerTired_Convo_Text_0
+# 29 "data/maps/Route04/scripts.pory"
+	waitmessage
+# 30 "data/maps/Route04/scripts.pory"
+	giveitem ITEM_SILK_SCARF
+# 31 "data/maps/Route04/scripts.pory"
+	waitmessage
+# 32 "data/maps/Route04/scripts.pory"
+	setflag FLAG_ITEM_ROUTE04_SILK_SCARF
+	goto Route04_HikerTired_Convo_1
 
-Route04_ElderMen_Convo::
+
+Route04_OldLady_Convo::
 # 43 "data/maps/Route04/scripts.pory"
 	lock
 # 44 "data/maps/Route04/scripts.pory"
 	faceplayer
 # 45 "data/maps/Route04/scripts.pory"
-	msgbox Route04_ElderMen_Convo_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Route04_OldLady_Convo_Text_0, MSGBOX_AUTOCLOSE
 # 46 "data/maps/Route04/scripts.pory"
 	waitmessage
 # 47 "data/maps/Route04/scripts.pory"
@@ -77,13 +79,13 @@ Route04_ElderMen_Convo::
 	end
 
 
-Route04_Totodile_Convo::
+Route04_ElderMen_Convo::
 # 52 "data/maps/Route04/scripts.pory"
 	lock
 # 53 "data/maps/Route04/scripts.pory"
 	faceplayer
 # 54 "data/maps/Route04/scripts.pory"
-	msgbox Route04_Totodile_Convo_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Route04_ElderMen_Convo_Text_0, MSGBOX_AUTOCLOSE
 # 55 "data/maps/Route04/scripts.pory"
 	waitmessage
 # 56 "data/maps/Route04/scripts.pory"
@@ -91,13 +93,13 @@ Route04_Totodile_Convo::
 	end
 
 
-Route04_LadySwimming_Convo::
+Route04_Totodile_Convo::
 # 61 "data/maps/Route04/scripts.pory"
 	lock
 # 62 "data/maps/Route04/scripts.pory"
 	faceplayer
 # 63 "data/maps/Route04/scripts.pory"
-	msgbox Route04_LadySwimming_Convo_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Route04_Totodile_Convo_Text_0, MSGBOX_AUTOCLOSE
 # 64 "data/maps/Route04/scripts.pory"
 	waitmessage
 # 65 "data/maps/Route04/scripts.pory"
@@ -105,13 +107,13 @@ Route04_LadySwimming_Convo::
 	end
 
 
-Route04_MenLost_Convo::
+Route04_LadySwimming_Convo::
 # 70 "data/maps/Route04/scripts.pory"
 	lock
 # 71 "data/maps/Route04/scripts.pory"
 	faceplayer
 # 72 "data/maps/Route04/scripts.pory"
-	msgbox Route04_MenLost_Convo_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Route04_LadySwimming_Convo_Text_0, MSGBOX_AUTOCLOSE
 # 73 "data/maps/Route04/scripts.pory"
 	waitmessage
 # 74 "data/maps/Route04/scripts.pory"
@@ -119,82 +121,96 @@ Route04_MenLost_Convo::
 	end
 
 
-Route04_Trainer_Alfred::
+Route04_MenLost_Convo::
 # 79 "data/maps/Route04/scripts.pory"
-	trainerbattle_single TRAINER_ALFRED, Route04_Text_AlfredIntro, Route04_Text_AlfredDefeated
+	lock
 # 80 "data/maps/Route04/scripts.pory"
+	faceplayer
+# 81 "data/maps/Route04/scripts.pory"
+	msgbox Route04_MenLost_Convo_Text_0, MSGBOX_AUTOCLOSE
+# 82 "data/maps/Route04/scripts.pory"
+	waitmessage
+# 83 "data/maps/Route04/scripts.pory"
+	release
+	end
+
+
+Route04_Trainer_Alfred::
+# 88 "data/maps/Route04/scripts.pory"
+	trainerbattle_single TRAINER_ALFRED, Route04_Text_AlfredIntro, Route04_Text_AlfredDefeated
+# 89 "data/maps/Route04/scripts.pory"
 	msgbox Route04_Text_AlfredPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route04_Trainer_Deryck::
-# 97 "data/maps/Route04/scripts.pory"
+# 106 "data/maps/Route04/scripts.pory"
 	trainerbattle_single TRAINER_DERYCK, Route04_Text_DeryckIntro, Route04_Text_DeryckDefeated
-# 98 "data/maps/Route04/scripts.pory"
+# 107 "data/maps/Route04/scripts.pory"
 	msgbox Route04_Text_DeryckPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route04_Trainer_Leah::
-# 115 "data/maps/Route04/scripts.pory"
+# 124 "data/maps/Route04/scripts.pory"
 	trainerbattle_single TRAINER_LEAH, Route04_Text_LeahIntro, Route04_Text_LeahDefeated
-# 116 "data/maps/Route04/scripts.pory"
+# 125 "data/maps/Route04/scripts.pory"
 	msgbox Route04_Text_LeahPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route04_Trainer_Fredrick::
-# 133 "data/maps/Route04/scripts.pory"
+# 142 "data/maps/Route04/scripts.pory"
 	trainerbattle_single TRAINER_FREDRICK, Route04_Text_FredrickIntro, Route04_Text_FredrickDefeated
-# 134 "data/maps/Route04/scripts.pory"
+# 143 "data/maps/Route04/scripts.pory"
 	msgbox Route04_Text_FredrickPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route04_Trainer_Matt::
-# 151 "data/maps/Route04/scripts.pory"
+# 160 "data/maps/Route04/scripts.pory"
 	trainerbattle_single TRAINER_MATT, Route04_Text_MattIntro, Route04_Text_MattDefeated
-# 152 "data/maps/Route04/scripts.pory"
+# 161 "data/maps/Route04/scripts.pory"
 	msgbox Route04_Text_MattPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route04_Trainer_Daisy::
-# 169 "data/maps/Route04/scripts.pory"
+# 178 "data/maps/Route04/scripts.pory"
 	trainerbattle_single TRAINER_DAISY, Route04_Text_DaisyIntro, Route04_Text_DaisyDefeated
-# 170 "data/maps/Route04/scripts.pory"
+# 179 "data/maps/Route04/scripts.pory"
 	msgbox Route04_Text_DaisyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route04_Trainer_Zander::
-# 187 "data/maps/Route04/scripts.pory"
+# 196 "data/maps/Route04/scripts.pory"
 	trainerbattle_single TRAINER_ZANDER, Route04_Text_ZanderIntro, Route04_Text_ZanderDefeated
-# 188 "data/maps/Route04/scripts.pory"
+# 197 "data/maps/Route04/scripts.pory"
 	msgbox Route04_Text_ZanderPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route04_Trainer_Arielle::
-# 205 "data/maps/Route04/scripts.pory"
+# 214 "data/maps/Route04/scripts.pory"
 	trainerbattle_single TRAINER_ARIELLE, Route04_Text_ArielleIntro, Route04_Text_ArielleDefeated
-# 206 "data/maps/Route04/scripts.pory"
+# 215 "data/maps/Route04/scripts.pory"
 	msgbox Route04_Text_AriellePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route04_Trainer_Archie::
-# 223 "data/maps/Route04/scripts.pory"
+# 232 "data/maps/Route04/scripts.pory"
 	trainerbattle_single TRAINER_ARCHIE, Route04_Text_ArchieIntro, Route04_Text_ArchieDefeated
-# 224 "data/maps/Route04/scripts.pory"
+# 233 "data/maps/Route04/scripts.pory"
 	msgbox Route04_Text_ArchiePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route04_Trainer_Edgard::
-# 241 "data/maps/Route04/scripts.pory"
+# 250 "data/maps/Route04/scripts.pory"
 	trainerbattle_single TRAINER_EDGARD, Route04_Text_EdgardIntro, Route04_Text_EdgardDefeated
-# 242 "data/maps/Route04/scripts.pory"
+# 251 "data/maps/Route04/scripts.pory"
 	msgbox Route04_Text_EdgardPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -266,15 +282,29 @@ Route04_Sign_DarkCave_Text_0:
 	.string "Caution: Heavy Bat Population.$"
 
 Route04_HikerTired_Convo_Text_0:
-# 27 "data/maps/Route04/scripts.pory"
+# 28 "data/maps/Route04/scripts.pory"
 	.string "I thought...... escaping the mud would be\n"
 	.string "the hard part......\p"
 	.string "But gravity is winning this battle! My\n"
 	.string "belly is pulling me down faster than my\l"
-	.string "legs can push up!$"
+	.string "legs can push up!\p"
+	.string "Hey, you're heading down to the\n"
+	.string "mudflats aren't you?\p"
+	.string "Take this. It's a Silk Scarf.\p"
+	.string "Out on the open flats the sun just\n"
+	.string "hammers you.\p"
+	.string "No shade, no shelter, nothing.\p"
+	.string "I'm going up the mountain from here,\n"
+	.string "won't be needing it anymore.\p"
+	.string "Stay cool out there.$"
+
+Route04_HikerTired_Convo_Text_1:
+# 35 "data/maps/Route04/scripts.pory"
+	.string "Still... fighting... gravity......\p"
+	.string "How are those mudflats treating you?$"
 
 Route04_OldLady_Convo_Text_0:
-# 36 "data/maps/Route04/scripts.pory"
+# 45 "data/maps/Route04/scripts.pory"
 	.string "It is pitch black inside that cave!\p"
 	.string "I can hear the flapping of a thousand\n"
 	.string "Zubat wings echoing from the entrance.\p"
@@ -282,7 +312,7 @@ Route04_OldLady_Convo_Text_0:
 	.string "sun somehow rises underground.$"
 
 Route04_ElderMen_Convo_Text_0:
-# 45 "data/maps/Route04/scripts.pory"
+# 54 "data/maps/Route04/scripts.pory"
 	.string "You see that dark cave mouth over\n"
 	.string "there? The water runs deep inside it.\p"
 	.string "Legend says it was a sanctuary for\n"
@@ -296,7 +326,7 @@ Route04_ElderMen_Convo_Text_0:
 	.string "was just a boy.$"
 
 Route04_Totodile_Convo_Text_0:
-# 54 "data/maps/Route04/scripts.pory"
+# 63 "data/maps/Route04/scripts.pory"
 	.string "Hey, watch your ankles while you walk\n"
 	.string "through here.\p"
 	.string "I swear I saw some little blue monsters\n"
@@ -307,7 +337,7 @@ Route04_Totodile_Convo_Text_0:
 	.string "like this.$"
 
 Route04_LadySwimming_Convo_Text_0:
-# 63 "data/maps/Route04/scripts.pory"
+# 72 "data/maps/Route04/scripts.pory"
 	.string "Oh, hello there dearie! Don't look at me\n"
 	.string "like that!\p"
 	.string "The mud in these mangroves is\n"
@@ -317,7 +347,7 @@ Route04_LadySwimming_Convo_Text_0:
 	.string "hop in? It is only a little bit slimy!$"
 
 Route04_MenLost_Convo_Text_0:
-# 72 "data/maps/Route04/scripts.pory"
+# 81 "data/maps/Route04/scripts.pory"
 	.string "Ugh, squish, squash... My socks are\n"
 	.string "completely soaked!\p"
 	.string "I am just trying to find the dry path to\n"
@@ -328,162 +358,162 @@ Route04_MenLost_Convo_Text_0:
 	.string "here?$"
 
 Route04_Text_AlfredIntro::
-# 84 "data/maps/Route04/scripts.pory"
+# 93 "data/maps/Route04/scripts.pory"
 	.string "I spotted these little guys in the\n"
 	.string "mangrove from way up here!$"
 
 Route04_Text_AlfredDefeated::
-# 88 "data/maps/Route04/scripts.pory"
+# 97 "data/maps/Route04/scripts.pory"
 	.string "My new team was not ready for the climb!$"
 
 Route04_Text_AlfredPostBattle::
-# 92 "data/maps/Route04/scripts.pory"
+# 101 "data/maps/Route04/scripts.pory"
 	.string "The mangrove roots below are full of\n"
 	.string "life. You should go take a look if you\l"
 	.string "are not afraid of getting muddy.$"
 
 Route04_Text_DeryckIntro::
-# 102 "data/maps/Route04/scripts.pory"
+# 111 "data/maps/Route04/scripts.pory"
 	.string "Hiyah! Ouch! This rock is harder than it\n"
 	.string "looks. Hey, you look like a good target\l"
 	.string "practice!$"
 
 Route04_Text_DeryckDefeated::
-# 106 "data/maps/Route04/scripts.pory"
+# 115 "data/maps/Route04/scripts.pory"
 	.string "You shattered my confidence faster\n"
 	.string "than I shatter rocks.$"
 
 Route04_Text_DeryckPostBattle::
-# 110 "data/maps/Route04/scripts.pory"
+# 119 "data/maps/Route04/scripts.pory"
 	.string "I am training my fists to be as hard as\n"
 	.string "steel. One day I will punch through a\l"
 	.string "mountain!$"
 
 Route04_Text_LeahIntro::
-# 120 "data/maps/Route04/scripts.pory"
+# 129 "data/maps/Route04/scripts.pory"
 	.string "My Eevee has so much potential, just\n"
 	.string "watch!$"
 
 Route04_Text_LeahDefeated::
-# 124 "data/maps/Route04/scripts.pory"
+# 133 "data/maps/Route04/scripts.pory"
 	.string "We still have a lot of growing to do.$"
 
 Route04_Text_LeahPostBattle::
-# 128 "data/maps/Route04/scripts.pory"
+# 137 "data/maps/Route04/scripts.pory"
 	.string "I cannot decide what I want my Eevee to\n"
 	.string "evolve into. There are just too many\l"
 	.string "choices!$"
 
 Route04_Text_FredrickIntro::
-# 138 "data/maps/Route04/scripts.pory"
+# 147 "data/maps/Route04/scripts.pory"
 	.string "Shh! Keep your voice down. I think I saw\n"
 	.string "a rare bug crawling in the mudflats.$"
 
 Route04_Text_FredrickDefeated::
-# 142 "data/maps/Route04/scripts.pory"
+# 151 "data/maps/Route04/scripts.pory"
 	.string "Aww, all the commotion scared it away!$"
 
 Route04_Text_FredrickPostBattle::
-# 146 "data/maps/Route04/scripts.pory"
+# 155 "data/maps/Route04/scripts.pory"
 	.string "Some bugs love the tall grass, but the\n"
 	.string "really interesting ones like to hide in\l"
 	.string "the sticky mud. You just have to get\l"
 	.string "your hands dirty.$"
 
 Route04_Text_MattIntro::
-# 156 "data/maps/Route04/scripts.pory"
+# 165 "data/maps/Route04/scripts.pory"
 	.string "Feel the resistance! Running on sand\n"
 	.string "builds explosive leg muscles!$"
 
 Route04_Text_MattDefeated::
-# 160 "data/maps/Route04/scripts.pory"
+# 169 "data/maps/Route04/scripts.pory"
 	.string "I hit the wall! No energy left.$"
 
 Route04_Text_MattPostBattle::
-# 164 "data/maps/Route04/scripts.pory"
+# 173 "data/maps/Route04/scripts.pory"
 	.string "The sand sinks under your feet, making\n"
 	.string "you work twice as hard. That is the\l"
 	.string "secret to my speed.$"
 
 Route04_Text_DaisyIntro::
-# 174 "data/maps/Route04/scripts.pory"
+# 183 "data/maps/Route04/scripts.pory"
 	.string "I am doing interval training. Let's see\n"
 	.string "if a battle can keep my heart rate up!$"
 
 Route04_Text_DaisyDefeated::
-# 178 "data/maps/Route04/scripts.pory"
+# 187 "data/maps/Route04/scripts.pory"
 	.string "Phew! That was a high-intensity\n"
 	.string "workout.$"
 
 Route04_Text_DaisyPostBattle::
-# 182 "data/maps/Route04/scripts.pory"
+# 191 "data/maps/Route04/scripts.pory"
 	.string "My boyfriend Matt is training further\n"
 	.string "down the beach. He says the sand is\l"
 	.string "good for his calves, but I think he just\l"
 	.string "likes the view.$"
 
 Route04_Text_ZanderIntro::
-# 192 "data/maps/Route04/scripts.pory"
+# 201 "data/maps/Route04/scripts.pory"
 	.string "I stepped off my ship to stretch my\n"
 	.string "legs and found these two wriggling in\l"
 	.string "the mud!$"
 
 Route04_Text_ZanderDefeated::
-# 196 "data/maps/Route04/scripts.pory"
+# 205 "data/maps/Route04/scripts.pory"
 	.string "Abandon ship! My fresh catch was not\n"
 	.string "ready for battle.$"
 
 Route04_Text_ZanderPostBattle::
-# 200 "data/maps/Route04/scripts.pory"
+# 209 "data/maps/Route04/scripts.pory"
 	.string "The mud in these mangroves is thick and\n"
 	.string "sticky. It is perfect for Barboach, but\l"
 	.string "terrible for my boots.$"
 
 Route04_Text_ArielleIntro::
-# 210 "data/maps/Route04/scripts.pory"
+# 219 "data/maps/Route04/scripts.pory"
 	.string "Hey! You are blocking my view. I am\n"
 	.string "trying to focus on that waterfall.$"
 
 Route04_Text_ArielleDefeated::
-# 214 "data/maps/Route04/scripts.pory"
+# 223 "data/maps/Route04/scripts.pory"
 	.string "My vision is blurry now...$"
 
 Route04_Text_AriellePostBattle::
-# 218 "data/maps/Route04/scripts.pory"
+# 227 "data/maps/Route04/scripts.pory"
 	.string "Look closely at the water crashing down\n"
 	.string "in the distance. I swear I saw a shadow\l"
 	.string "slip behind the curtain of water. Is\l"
 	.string "there a cave entrance back there?$"
 
 Route04_Text_ArchieIntro::
-# 228 "data/maps/Route04/scripts.pory"
+# 237 "data/maps/Route04/scripts.pory"
 	.string "Fufufu! One day, the sea will cover\n"
 	.string "everything, and I will be its king!\l"
 	.string "Behold the power of the tides!$"
 
 Route04_Text_ArchieDefeated::
-# 232 "data/maps/Route04/scripts.pory"
+# 241 "data/maps/Route04/scripts.pory"
 	.string "Grrr! The land... it is too much land!$"
 
 Route04_Text_ArchiePostBattle::
-# 236 "data/maps/Route04/scripts.pory"
+# 245 "data/maps/Route04/scripts.pory"
 	.string "I am going to form a super cool team\n"
 	.string "when I grow up. We will wear blue\l"
 	.string "bandanas and worship the ancient gods\l"
 	.string "of the sea! You will see!$"
 
 Route04_Text_EdgardIntro::
-# 246 "data/maps/Route04/scripts.pory"
+# 255 "data/maps/Route04/scripts.pory"
 	.string "Sacre bleu! Do not step on ze\n"
 	.string "ingredients! I am looking for ze\l"
 	.string "perfect catch for my bisque.$"
 
 Route04_Text_EdgardDefeated::
-# 250 "data/maps/Route04/scripts.pory"
+# 259 "data/maps/Route04/scripts.pory"
 	.string "My soufflé has collapsed!$"
 
 Route04_Text_EdgardPostBattle::
-# 254 "data/maps/Route04/scripts.pory"
+# 263 "data/maps/Route04/scripts.pory"
 	.string "Zis Qwilfish is exquisite, no? One must\n"
 	.string "be very careful preparing it, or zap! Ze\l"
 	.string "poison will get you. A true chef loves a\l"

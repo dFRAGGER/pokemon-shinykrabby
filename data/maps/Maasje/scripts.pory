@@ -367,3 +367,20 @@ script Maasje_Eventscript_Maniac {
         end
     }
 }
+script Maasje_EventScript_Tiana {
+    trainerbattle_single(TRAINER_TIANA, Maasje_Text_TianaIntro, Maasje_Text_TianaDefeated)
+    msgbox(Maasje_Text_TianaPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Maasje_Text_TianaIntro {
+    format("I'm going to keep winning and aim\nto be the best TRAINER.\pHelp me further my career!")
+}
+
+text Maasje_Text_TianaDefeated {
+    format("I ended up furthering your career…")
+}
+
+text Maasje_Text_TianaPostBattle {
+    format("To keep winning my way up, I see that\nI have to catch more POKéMON.")
+}

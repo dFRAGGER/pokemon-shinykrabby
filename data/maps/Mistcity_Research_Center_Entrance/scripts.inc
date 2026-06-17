@@ -556,60 +556,73 @@ Mistcity_Research_Center_Entrance_LeadScientist::
 # 273 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	faceplayer
 # 274 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
-	goto_if_set FLAG_RESCUED_DAAN, Mistcity_Research_Center_Entrance_LeadScientist_2
-Mistcity_Research_Center_Entrance_LeadScientist_1:
-# 278 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
-	goto_if_unset FLAG_RESCUED_DAAN, Mistcity_Research_Center_Entrance_LeadScientist_5
-Mistcity_Research_Center_Entrance_LeadScientist_4:
-# 282 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+	setspeaker Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_0
+# 275 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+	goto_if_unset FLAG_RESCUED_DAAN, Mistcity_Research_Center_Entrance_LeadScientist_2
+# 280 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+	goto_if_unset FLAG_ITEM_RESEARCH_CENTER_EXP_SHARE, Mistcity_Research_Center_Entrance_LeadScientist_5
+# 290 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+	msgbox Mistcity_Research_Center_Entrance_LeadScientist_Text_3, MSGBOX_AUTOCLOSE
+# 291 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	waitmessage
-# 283 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+Mistcity_Research_Center_Entrance_LeadScientist_1:
+# 294 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	release
 	return
 
 Mistcity_Research_Center_Entrance_LeadScientist_2:
-# 275 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
-	setspeaker Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_0
 # 276 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	msgbox Mistcity_Research_Center_Entrance_LeadScientist_Text_0
+# 277 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+	waitmessage
 	goto Mistcity_Research_Center_Entrance_LeadScientist_1
 
 Mistcity_Research_Center_Entrance_LeadScientist_5:
-# 279 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
-	setspeaker Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_0
-# 280 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+# 281 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	msgbox Mistcity_Research_Center_Entrance_LeadScientist_Text_1
-	goto Mistcity_Research_Center_Entrance_LeadScientist_4
+# 282 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+	waitmessage
+# 283 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+	giveitem ITEM_EXP_SHARE
+# 284 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+	waitmessage
+# 285 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+	msgbox Mistcity_Research_Center_Entrance_LeadScientist_Text_2, MSGBOX_AUTOCLOSE
+# 286 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+	waitmessage
+# 287 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+	setflag FLAG_ITEM_RESEARCH_CENTER_EXP_SHARE
+	goto Mistcity_Research_Center_Entrance_LeadScientist_1
 
 
 Mistcity_Research_Center_Entrance_ScientistPlatform::
-# 287 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+# 298 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	lock
-# 288 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+# 299 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	faceplayer
-# 289 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+# 300 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	goto_if_set FLAG_RESCUED_DAAN, Mistcity_Research_Center_Entrance_ScientistPlatform_2
 Mistcity_Research_Center_Entrance_ScientistPlatform_1:
-# 293 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+# 304 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	goto_if_unset FLAG_RESCUED_DAAN, Mistcity_Research_Center_Entrance_ScientistPlatform_5
 Mistcity_Research_Center_Entrance_ScientistPlatform_4:
-# 297 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+# 308 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	waitmessage
-# 298 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+# 309 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	release
 	return
 
 Mistcity_Research_Center_Entrance_ScientistPlatform_2:
-# 290 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+# 301 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	setspeaker Mistcity_Research_Center_Entrance_Scientist_Mist_Text_0
-# 291 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+# 302 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	msgbox Mistcity_Research_Center_Entrance_ScientistPlatform_Text_0
 	goto Mistcity_Research_Center_Entrance_ScientistPlatform_1
 
 Mistcity_Research_Center_Entrance_ScientistPlatform_5:
-# 294 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+# 305 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	setspeaker Mistcity_Research_Center_Entrance_Scientist_Mist_Text_0
-# 295 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+# 306 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	msgbox Mistcity_Research_Center_Entrance_ScientistPlatform_Text_1
 	goto Mistcity_Research_Center_Entrance_ScientistPlatform_4
 
@@ -1130,30 +1143,75 @@ Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_15:
 
 Mistcity_Research_Center_Entrance_LeadScientist_Text_0:
 # 276 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+	.string "Don't be afraid.\p"
+	.string "Nash & David are the best people we\n"
+	.string "got.\p"
+	.string "Make sure you heal your Pokémon and\n"
+	.string "stock up on potions, the forest can be\l"
+	.string "a very harsh place.\p"
+	.string "I'll keep in contact through the radio.\p"
+	.string "Nash and David are waiting for you\n"
+	.string "downstairs.$"
+
+Mistcity_Research_Center_Entrance_LeadScientist_Text_1:
+# 281 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	.string "You actually did it.\p"
 	.string "Daan is safe, and the seismic\n"
 	.string "disturbances have completely ceased.\p"
 	.string "Nash and David said you handled\n"
 	.string "yourself like a veteran out there.\p"
-	.string "To think that strange group was\n"
-	.string "operating right under our noses...\p"
 	.string "We owe you a great debt, {PLAYER}.\p"
-	.string "The forest can finally heal.$"
+	.string "The forest can finally heal.\p"
+	.string "As a reward, I want to give you a piece\n"
+	.string "of technology we've been developing\l"
+	.string "here.\p"
+	.string "We call it Experience Sharing, or in\n"
+	.string "short Exp. Share.\p"
+	.string "The idea came from studying Venusaur's\n"
+	.string "in their natural habitat.\p"
+	.string "You probably know that Venusaur's\n"
+	.string "collect solar energy through the flower\l"
+	.string "on their back right?\p"
+	.string "Turns out, that this energy is not only\n"
+	.string "going to its own body, but is shared\l"
+	.string "among every living thing around the\l"
+	.string "Venusaur through tiny roots in his\l"
+	.string "foots.\p"
+	.string "Fascinating right?\p"
+	.string "Sometimes new technology is not the\n"
+	.string "answer, but just looking at what nature\l"
+	.string "is doing around us and take that as an\l"
+	.string "example.\p"
+	.string "After all, Pokémon have been on this\n"
+	.string "planet far longer than us.\p"
+	.string "They've already solved problems we're\n"
+	.string "still scribbling equations for.\p"
+	.string "We just have to pay attention.\p"
+	.string "This technology does the same thing, it\n"
+	.string "shares the experience of battle across\l"
+	.string "your whole team.\p"
+	.string "Take it.$"
 
-Mistcity_Research_Center_Entrance_LeadScientist_Text_1:
-# 280 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
-	.string "Don't be afraid.\p"
-	.string "Nash & David are the best people we\n"
-	.string "got.\p"
-	.string "Make sure you heal your Pokémon and\n"
-	.string "stack up on some potions, the forest\l"
-	.string "can be a very harsh place.\p"
-	.string "I'll keep in contact trough the radio.\p"
-	.string "Nash and David are waiting for you\n"
-	.string "downstairs.$"
+Mistcity_Research_Center_Entrance_LeadScientist_Text_2:
+# 285 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+	.string "One more thing, you can turn it off any\n"
+	.string "time.\p"
+	.string "Sometimes the best thing for a Pokémon\n"
+	.string "is to face a battle alone.\p"
+	.string "There's a bond that forms when it's just\n"
+	.string "the two of you out there.\p"
+	.string "Or if you want a harder road, well... the\n"
+	.string "forest will respect that too.$"
+
+Mistcity_Research_Center_Entrance_LeadScientist_Text_3:
+# 290 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+	.string "To think that group was operating right\n"
+	.string "under our noses...\p"
+	.string "The forest is quiet again.\p"
+	.string "We won't take that for granted.$"
 
 Mistcity_Research_Center_Entrance_ScientistPlatform_Text_0:
-# 291 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+# 302 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	.string "The anomaly just... vanished.\p"
 	.string "Look at the monitor.\p"
 	.string "The interference pattern flatlined\n"
@@ -1164,7 +1222,7 @@ Mistcity_Research_Center_Entrance_ScientistPlatform_Text_0:
 	.string "source and pulled the plug.$"
 
 Mistcity_Research_Center_Entrance_ScientistPlatform_Text_1:
-# 295 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
+# 306 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	.string "This doesn't make any sense.\p"
 	.string "The seismic needles are jumping every\n"
 	.string "thirty seconds exactly.\p"

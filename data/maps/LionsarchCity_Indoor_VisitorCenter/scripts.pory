@@ -5,6 +5,12 @@ mapscripts LionsarchCity_Indoor_VisitorCenter_MapScripts {}
 script VisitorCenter_Receptionist {
     lockall
     faceplayer
+    if (flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)) {
+        msgbox(format("Welcome to the Twin Lions Visitor Center!\pThe Faculty has cleared out of the mountains.\pThings have been a lot quieter up there since you dealt with them.\pFeel free to explore, the trails are open again!"))
+        waitmessage
+        releaseall
+        end
+    }
     msgbox(format("Welcome to the Twin Lions Visitor Center!\pWe provide information and supplies for travelers heading north to the Lion Mountains.\pHow can I help you today?"))
     waitmessage
     releaseall
@@ -13,20 +19,49 @@ script VisitorCenter_Receptionist {
 script VisitorCenter_MountainGuide {
     lockall
     faceplayer
-    msgbox(format("The Lion Mountains are named after the twin peaks that resemble two lions facing each other.\pThe northern route is challenging but offers incredible views.\pMake sure you're prepared - the weather can change quickly up there!"))
+    if (flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)) {
+        msgbox(format("The Lion Mountains are named after the twin peaks that resemble two lions facing each other.\pNow that the Faculty's drilling has stopped, the trails are peaceful again.\pThe wildlife is already starting to settle down. It's a good time to head up there!"))
+        waitmessage
+        releaseall
+        end
+    }
+    msgbox(format("The Lion Mountains are named after the twin peaks that resemble two lions facing each other.\pThe northern route is challenging but offers incredible views.\pMake sure you're prepared, the weather can change quickly up there!"))
     releaseall
 }
 
 script VisitorCenter_Ranger {
     lockall
     faceplayer
-    msgbox(format("I'm a ranger stationed in the mountains.\pWe've noticed increased activity from the Faculty lately.\pThey claim to have mining permits, but something feels... off.\pPlease be careful if you head up there."))
+    if (flag(FLAG_ITEM_LIONSARCH_VISITOR_CENTER_FULL_HEAL)) {
+        if (flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)) {
+            msgbox(format("You actually stopped the Faculty operation.\pI filed three reports about those permits and got nothing back.\pWhatever you did up there, thank you.\pThe mountains are ours again."))
+            waitmessage
+            releaseall
+            end
+        }
+        msgbox(format("I'm a ranger stationed in the mountains.\pWe've noticed increased activity from the Faculty lately.\pThey claim to have mining permits, but something feels... off.\pPlease be careful if you head up there."))
+        waitmessage
+        releaseall
+        end
+    }
+    msgbox(format("I'm a ranger stationed in the mountains.\pWe've noticed increased activity from the Faculty lately.\pThey claim to have mining permits, but something feels... off.\pHere, take this before you head up."))
+    waitmessage
+    giveitem(ITEM_FULL_HEAL)
+    setflag(FLAG_ITEM_LIONSARCH_VISITOR_CENTER_FULL_HEAL)
+    msgbox(format("Stay safe out there, and report anything suspicious."))
+    waitmessage
     releaseall
 }
 
 script VisitorCenter_Hiker {
     lockall
     faceplayer
+    if (flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)) {
+        msgbox(format("I've hiked these mountains for twenty years.\pThe difference already... the Ursaring have calmed right down.\pWhen the drilling stopped, it was like the whole mountain exhaled.\pFirst decent hike I've had in months."))
+        waitmessage
+        releaseall
+        end
+    }
     msgbox(format("I've hiked these mountains for twenty years.\pThe Faculty's drilling has disturbed the local Pokémon.\pUrsaring have been more aggressive than usual.\pStay on the marked trails!"))
     releaseall
 }
@@ -34,25 +69,43 @@ script VisitorCenter_Hiker {
 script VisitorCenter_Tourist {
     lockall
     faceplayer
+    if (flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)) {
+        msgbox(format("I came all the way from Marshduke City to see the Twin Lions!\pI heard the Faculty was causing trouble up here, but it looks like that's sorted now.\pThe eastern cliff route is absolutely stunning.\pSo worth the trip!"))
+        waitmessage
+        releaseall
+        end
+    }
     msgbox(format("I came all the way from Marshduke City to see the Twin Lions!\pAlso the view from the eastern cliff route is supposed to be spectacular.\pI'm so excited!"))
     releaseall
 }
 
 script VisitorCenter_MapBoard {
     lockall
-    msgbox(format("A large map of the Lion Mountains region:\p- Northern Route:\nSteep terrain, requires proper footware\p- Eastern Cliff Route:\nLonger path to Marshduke City\p- Wildlife Warning:\nUrsaring, Donphan, Golem common\p- Faculty Mining Zone:\nRESTRICTED ACCESS"))
+    if (flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)) {
+        msgbox(format("A large map of the Lion Mountains region:\p, Northern Route:\nSteep terrain, requires proper footware\p, Eastern Cliff Route:\nLonger path to Marshduke City\p, Wildlife Warning:\nUrsaring, Donphan, Golem common\p, Faculty Mining Zone:\nOPERATION CEASED"))
+        waitmessage
+        releaseall
+        end
+    }
+    msgbox(format("A large map of the Lion Mountains region:\p, Northern Route:\nSteep terrain, requires proper footware\p, Eastern Cliff Route:\nLonger path to Marshduke City\p, Wildlife Warning:\nUrsaring, Donphan, Golem common\p, Faculty Mining Zone:\nRESTRICTED ACCESS"))
     releaseall
 }
 
 script VisitorCenter_WarningSign {
     lockall
-    msgbox(format("MOUNTAIN SAFETY WARNING:\p- Bring plenty of Potions\nand Revives\p- Watch for falling rocks\n- Avoid Faculty mining zones\p- Emergency shelters on map\p- Report suspicious activity\nto rangers"))
+    if (flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)) {
+        msgbox(format("MOUNTAIN SAFETY WARNING:\p, Bring plenty of Potions\nand Revives\p, Watch for falling rocks\n, Avoid old Faculty mining zones\p, Emergency shelters on map\p, Faculty operation cleared.\nTrails now fully open."))
+        waitmessage
+        releaseall
+        end
+    }
+    msgbox(format("MOUNTAIN SAFETY WARNING:\p, Bring plenty of Potions\nand Revives\p, Watch for falling rocks\n, Avoid Faculty mining zones\p, Emergency shelters on map\p, Report suspicious activity\nto rangers"))
     releaseall
 }
 
 script VisitorCenter_BrochureRack {
     lockall
-    msgbox(format("Brochures about the Lion Mountains:\p- 'Twin Lions: A Natural Wonder'\n- 'Mountain Pokémon of the North'\p- 'Hiking Safety Guide'\n- 'History of Lionsarch City'"))
+    msgbox(format("Brochures about the Lion Mountains:\p, 'Twin Lions: A Natural Wonder'\n, 'Mountain Pokémon of the North'\p, 'Hiking Safety Guide'\n, 'History of Lionsarch City'"))
     releaseall
 }
 

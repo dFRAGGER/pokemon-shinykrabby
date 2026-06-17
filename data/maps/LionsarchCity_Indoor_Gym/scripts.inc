@@ -199,76 +199,82 @@ LionsarchGym_Leader2_Defeated::
 # 125 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	waitmessage
 # 126 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	giveitem ITEM_TM07
-# 127 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	waitmessage
-# 128 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	setspeaker LionsarchGym_Leader2_Text_0
-# 129 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 127 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	msgbox LionsarchGym_Leader2_Defeated_Text_3
+# 128 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+	waitmessage
+# 129 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+	giveitem ITEM_TM07
 # 130 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	waitmessage
 # 131 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	setspeaker NULL
+	setspeaker LionsarchGym_Leader2_Text_0
 # 132 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	setflag FLAG_DEFEATED_MAUVILLE_GYM
+	msgbox LionsarchGym_Leader2_Defeated_Text_4
+# 133 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+	waitmessage
 # 134 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	call LionsarchGym_SetTrainerFlags
+	setspeaker NULL
 # 135 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+	setflag FLAG_DEFEATED_MAUVILLE_GYM
+# 137 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+	call LionsarchGym_SetTrainerFlags
+# 138 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	release
 	end
 
 
 LionsarchGym_Trainer_Hiker1::
-# 150 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 153 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	trainerbattle_single TRAINER_LIONSARCH_HIKER_1, LionsarchGym_Hiker1_Intro, LionsarchGym_Hiker1_Defeat
-# 151 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 154 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	msgbox LionsarchGym_Hiker1_PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 LionsarchGym_Trainer_Hiker2::
-# 168 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 171 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	trainerbattle_single TRAINER_LIONSARCH_HIKER_2, LionsarchGym_Hiker2_Intro, LionsarchGym_Hiker2_Defeat
-# 169 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 172 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	msgbox LionsarchGym_Hiker2_PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 LionsarchGym_Trainer_Hiker3::
-# 186 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 189 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	trainerbattle_single TRAINER_LIONSARCH_HIKER_3, LionsarchGym_Hiker3_Intro, LionsarchGym_Hiker3_Defeat
-# 187 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 190 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	msgbox LionsarchGym_Hiker3_PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 LionsarchGym_Trainer_Hiker4::
-# 204 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 207 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	trainerbattle_single TRAINER_LIONSARCH_HIKER_4, LionsarchGym_Hiker4_Intro, LionsarchGym_Hiker4_Defeat
-# 205 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 208 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	msgbox LionsarchGym_Hiker4_PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 LionsarchGym_Trainer_Hiker5::
-# 222 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 225 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	trainerbattle_single TRAINER_LIONSARCH_HIKER_5, LionsarchGym_Hiker5_Intro, LionsarchGym_Hiker5_Defeat
-# 223 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 226 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	msgbox LionsarchGym_Hiker5_PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 LionsarchGym_SetTrainerFlags::
-# 240 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	settrainerflag TRAINER_LIONSARCH_HIKER_1
-# 241 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	settrainerflag TRAINER_LIONSARCH_HIKER_2
-# 242 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	settrainerflag TRAINER_LIONSARCH_HIKER_3
 # 243 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	settrainerflag TRAINER_LIONSARCH_HIKER_4
+	settrainerflag TRAINER_LIONSARCH_HIKER_1
 # 244 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+	settrainerflag TRAINER_LIONSARCH_HIKER_2
+# 245 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+	settrainerflag TRAINER_LIONSARCH_HIKER_3
+# 246 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+	settrainerflag TRAINER_LIONSARCH_HIKER_4
+# 247 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	settrainerflag TRAINER_LIONSARCH_HIKER_5
 	return
 
@@ -323,9 +329,17 @@ LionsarchGym_Leader1_Text_1:
 
 LionsarchGym_Leader1_Text_2:
 # 48 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	.string "You made it through the storm?\n"
-	.string "The west mountain does not yield so\l"
-	.string "easily...$"
+	.string "You made it to the west peak.\p"
+	.string "Some call snow just frozen rain.\p"
+	.string "They are wrong.\p"
+	.string "Snow is water set free. It falls where it\n"
+	.string "chooses, covers the world in silence,\l"
+	.string "and leaves nothing the same as it was.\p"
+	.string "No two flakes ever alike.\p"
+	.string "It is the most beautiful thing water\n"
+	.string "can become.\p"
+	.string "Now, let us see if you can stand in the\n"
+	.string "middle of it.$"
 
 LionsarchGym_Leader1_Text_3:
 # 56 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
@@ -334,9 +348,11 @@ LionsarchGym_Leader1_Text_3:
 
 LionsarchGym_Leader1_Defeated_Text_0:
 # 67 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	.string "The west peak bows to your strength.\n"
-	.string "My partner still stands - face the\l"
-	.string "east!$"
+	.string "The west peak quiets.\p"
+	.string "Snow yields, but what lies beneath it\n"
+	.string "does not.\p"
+	.string "My partner is waiting. She is the ice\n"
+	.string "under the snow.$"
 
 LionsarchGym_Leader2_Text_0:
 # 87 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
@@ -349,19 +365,31 @@ LionsarchGym_Leader2_Text_1:
 
 LionsarchGym_Leader2_Text_2:
 # 97 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	.string "You must face the west mountain first.\n"
-	.string "The east will wait.$"
+	.string "You must face the west mountain first.\p"
+	.string "The east is ice, it holds its shape. It\n"
+	.string "will wait.$"
 
 LionsarchGym_Leader2_Text_3:
 # 105 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	.string "You overcame the west.\n"
-	.string "Now face the fury of the east mountain!$"
+	.string "You endured the snow.\p"
+	.string "She will tell you snow is the most\n"
+	.string "beautiful thing water can become. She\l"
+	.string "has always believed that.\p"
+	.string "But I have stood on this peak my whole\n"
+	.string "life, and I know what remains when the\l"
+	.string "snow melts.\p"
+	.string "Ice.\p"
+	.string "Clear. Still. Holding its form through\n"
+	.string "everything.\p"
+	.string "That is the most beautiful thing water\n"
+	.string "can become.\p"
+	.string "Now, stand against something that does\n"
+	.string "not yield.$"
 
 LionsarchGym_Leader2_Defeated_Text_0:
 # 116 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	.string "The east peak falls too...\p"
-	.string "You have conquered both Lion\n"
-	.string "Mountains.$"
+	.string "Both peaks... brought down.\p"
+	.string "You have conquered the Lion Mountains.$"
 
 LionsarchGym_Leader2_Defeated_Text_1:
 # 121 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
@@ -369,110 +397,132 @@ LionsarchGym_Leader2_Defeated_Text_1:
 
 LionsarchGym_Leader2_Defeated_Text_2:
 # 124 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+	.string "She will say snow is the most beautiful.\p"
+	.string "I will say ice is.\p"
+	.string "We have argued about this our whole\n"
+	.string "lives.\p"
+	.string "And every time, we arrive at the same\n"
+	.string "answer.\p"
+	.string "They need each other.\p"
+	.string "Snow falls free and covers the world in\n"
+	.string "silence.\p"
+	.string "Ice holds firm long after the snow is\n"
+	.string "gone.\p"
+	.string "Neither is complete without the other.\p"
+	.string "Look at the Lion Mountains.\p"
+	.string "The west peak and the east peak.\p"
+	.string "Stand one alone, and it is just a\n"
+	.string "mountain.\p"
+	.string "Stand both together, and the whole\n"
+	.string "valley below is sheltered.\p"
+	.string "We are the same.\p"
+	.string "And so, it seems, are you and your team.$"
+
+LionsarchGym_Leader2_Defeated_Text_3:
+# 127 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "The PEAK BADGE lets all Pokémon up to\n"
 	.string "level 40 obey without question.\p"
 	.string "You may now use ROCK SMASH outside of\n"
 	.string "battle.\p"
-	.string "And take this.\p"
-	.string "We are ice queens.\p"
-	.string "We do not give out Strength.$"
+	.string "And take this.$"
 
-LionsarchGym_Leader2_Defeated_Text_3:
-# 129 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+LionsarchGym_Leader2_Defeated_Text_4:
+# 132 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "That is TM HAIL.\p"
 	.string "Summon a blizzard that batters every\n"
 	.string "Pokémon on the field for five turns.\p"
 	.string "Every Ice-type move hits without fail\n"
 	.string "while the storm rages.\p"
-	.string "We have trained in these mountains our\n"
+	.string "We have trained on these peaks our\n"
 	.string "entire lives.\p"
 	.string "The cold is not a condition to us.\p"
-	.string "It is a weapon.\p"
+	.string "It is home.\p"
 	.string "Use it like one.$"
 
 LionsarchGym_Leader1_IntroText::
 # 75 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	.string "I am the voice of the west mountain!\n"
-	.string "Feel the cold of the peak!$"
+	.string "Snow falls where it chooses!\p"
+	.string "No peak can hold it, and neither can\n"
+	.string "you!$"
 
 LionsarchGym_Leader1_DefeatText::
 # 79 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	.string "The summit... recedes from me.$"
+	.string "The snow... drifts away.$"
 
 LionsarchGym_Leader2_IntroText::
-# 139 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	.string "The east wind howls for you!\n"
-	.string "This peak has never been climbed!$"
+# 142 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+	.string "Ice holds what snow cannot!\n"
+	.string "This is where you stop!$"
 
 LionsarchGym_Leader2_DefeatText::
-# 143 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	.string "The east peak... is silent.$"
+# 146 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+	.string "The ice... gives way.$"
 
 LionsarchGym_Hiker1_Intro::
-# 155 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 158 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "You won't get past me in this blizzard!$"
 
 LionsarchGym_Hiker1_Defeat::
-# 159 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 162 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "The cold got to me first...$"
 
 LionsarchGym_Hiker1_PostBattle::
-# 163 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 166 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "Keep pushing north. The storm only gets\n"
 	.string "worse.$"
 
 LionsarchGym_Hiker2_Intro::
-# 173 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 176 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "The lion mountains guard their secrets\n"
 	.string "fiercely!$"
 
 LionsarchGym_Hiker2_Defeat::
-# 177 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 180 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "Even the mountain fell today...$"
 
 LionsarchGym_Hiker2_PostBattle::
-# 181 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 184 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "I've barely seen the leaders myself -\n"
 	.string "just shapes in the white.$"
 
 LionsarchGym_Hiker3_Intro::
-# 191 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 194 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "The blizzard is my ally - I'll freeze you\n"
 	.string "in your tracks!$"
 
 LionsarchGym_Hiker3_Defeat::
-# 195 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 198 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "The storm can't save me now...$"
 
 LionsarchGym_Hiker3_PostBattle::
-# 199 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 202 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "They say when the two leaders stand\n"
 	.string "together, the storm obeys them.$"
 
 LionsarchGym_Hiker4_Intro::
-# 209 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 212 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "Every step closer to the top is a step\n"
 	.string "into oblivion!$"
 
 LionsarchGym_Hiker4_Defeat::
-# 213 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 216 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "The peak is yours today...$"
 
 LionsarchGym_Hiker4_PostBattle::
-# 217 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 220 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "When the whiteout hits, follow the cold\n"
 	.string "wind north.$"
 
 LionsarchGym_Hiker5_Intro::
-# 227 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 230 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "The lion mountains have two eyes - and\n"
 	.string "both are watching you!$"
 
 LionsarchGym_Hiker5_Defeat::
-# 231 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 234 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "I couldn't hold the pass...$"
 
 LionsarchGym_Hiker5_PostBattle::
-# 235 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
+# 238 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
 	.string "I've never actually seen the leaders\n"
 	.string "clearly. Just shapes in the white.$"

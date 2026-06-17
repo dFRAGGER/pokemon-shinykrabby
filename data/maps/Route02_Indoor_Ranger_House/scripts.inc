@@ -90,22 +90,38 @@ Route02_Station_SpecimenJar::
 # 53 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
 	lock
 # 54 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
-	msgbox Route02_Station_SpecimenJar_Text_0, MSGBOX_AUTOCLOSE
-# 55 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
+	goto_if_unset FLAG_ITEM_ROUTE02_STATION_MIRACLE_SEED, Route02_Station_SpecimenJar_2
+# 62 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
+	msgbox Route02_Station_SpecimenJar_Text_1, MSGBOX_AUTOCLOSE
+# 63 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
 	waitmessage
-# 56 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
+Route02_Station_SpecimenJar_1:
+# 65 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
 	release
 	return
 
+Route02_Station_SpecimenJar_2:
+# 55 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
+	msgbox Route02_Station_SpecimenJar_Text_0
+# 56 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
+	waitmessage
+# 57 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
+	giveitem ITEM_MIRACLE_SEED
+# 58 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
+	waitmessage
+# 59 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
+	setflag FLAG_ITEM_ROUTE02_STATION_MIRACLE_SEED
+	goto Route02_Station_SpecimenJar_1
+
 
 Route02_Station_Radio::
-# 60 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
+# 69 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
 	lock
-# 61 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
+# 70 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
 	msgbox Route02_Station_Radio_Text_0, MSGBOX_AUTOCLOSE
-# 62 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
+# 71 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
 	waitmessage
-# 63 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
+# 72 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
 	release
 	return
 
@@ -170,16 +186,24 @@ Route02_Station_SoilCrate_Text_0:
 	.string "Dark. Almost metallic.$"
 
 Route02_Station_SpecimenJar_Text_0:
-# 54 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
+# 55 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
+	.string "A specimen jar in a box.\p"
+	.string "The label reads:\n"
+	.string "'CF-09 - organic trace, unknown.'\p"
+	.string "Inside, a small seed-like object, dark\n"
+	.string "green, faintly warm to the touch.$"
+
+Route02_Station_SpecimenJar_Text_1:
+# 62 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
 	.string "A specimen jar in a box, empty.\p"
 	.string "The label reads:\n"
 	.string "'CF-09 - organic trace, unknown.'\p"
-	.string "Whatever was inside it\n"
-	.string "has been removed.\p"
+	.string "Whatever was inside it has been\n"
+	.string "removed.\p"
 	.string "Recently.$"
 
 Route02_Station_Radio_Text_0:
-# 61 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
+# 70 "data/maps/Route02_Indoor_Ranger_House/scripts.pory"
 	.string "A broken radio receiver,\n"
 	.string "still plugged into the wall.\p"
 	.string "If you hold it to your ear\n"

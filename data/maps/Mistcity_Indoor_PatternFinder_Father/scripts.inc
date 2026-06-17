@@ -8,18 +8,21 @@ Mistcity_Indoor_PatternFinder_Father::
 # 5 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
 	faceplayer
 # 6 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
+	setspeaker Mistcity_Indoor_PatternFinder_Father_Text_0
+# 7 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
 	goto_if_unset FLAG_HELPED_DAN_BEAT_FACULTY, Mistcity_Indoor_PatternFinder_Father_2
+# 12 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
+	goto_if_unset FLAG_ITEM_MISTCITY_TM_BULK_UP, Mistcity_Indoor_PatternFinder_Father_5
+# 20 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
+	msgbox Mistcity_Indoor_PatternFinder_Father_Text_3, MSGBOX_AUTOCLOSE
+# 21 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
+	waitmessage
 Mistcity_Indoor_PatternFinder_Father_1:
-# 11 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
-	goto_if_set FLAG_HELPED_DAN_BEAT_FACULTY, Mistcity_Indoor_PatternFinder_Father_5
-Mistcity_Indoor_PatternFinder_Father_4:
-# 15 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
+# 24 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
 	release
 	end
 
 Mistcity_Indoor_PatternFinder_Father_2:
-# 7 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
-	setspeaker Mistcity_Indoor_PatternFinder_Father_Text_0
 # 8 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
 	msgbox Mistcity_Indoor_PatternFinder_Father_Text_1
 # 9 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
@@ -27,23 +30,29 @@ Mistcity_Indoor_PatternFinder_Father_2:
 	goto Mistcity_Indoor_PatternFinder_Father_1
 
 Mistcity_Indoor_PatternFinder_Father_5:
-# 12 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
-	setspeaker Mistcity_Indoor_PatternFinder_Father_Text_0
 # 13 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
 	msgbox Mistcity_Indoor_PatternFinder_Father_Text_2
-	goto Mistcity_Indoor_PatternFinder_Father_4
+# 14 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
+	waitmessage
+# 15 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
+	giveitem ITEM_TM_BULK_UP
+# 16 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
+	waitmessage
+# 17 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
+	setflag FLAG_ITEM_MISTCITY_TM_BULK_UP
+	goto Mistcity_Indoor_PatternFinder_Father_1
 
 
 Mistcity_Indoor_PatternFinder_Father_Text_0:
-# 7 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
+# 6 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
 	.string "Mr. Heartfield$"
 
 Mistcity_Indoor_PatternFinder_Father_Text_1:
 # 8 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
-	.string "Oh, hello. My name is {COLOR GREEN}Mr. Heartfield{COLOR DARK_GRAY}.\p"
+	.string "Oh, hello. My name is Mr. Heartfield.\p"
 	.string "Welcome.\p"
 	.string "Sorry for all the ladders and climbing\n"
-	.string "to get to here.\p"
+	.string "to get here.\p"
 	.string "My child is very sensitive to loud\n"
 	.string "noises, but high in the canopy is an\l"
 	.string "oasis of tranquility.\p"
@@ -77,4 +86,21 @@ Mistcity_Indoor_PatternFinder_Father_Text_2:
 	.string "More than that, that it's a strength.\p"
 	.string "I... thank you.\p"
 	.string "You've given them a confidence I\n"
-	.string "haven't seen before.$"
+	.string "haven't seen before.\p"
+	.string "I want to give you something.\p"
+	.string "This TM teaches Bulk Up.\p"
+	.string "A move that builds both body and\n"
+	.string "resolve at once, strength that comes\l"
+	.string "from within.\p"
+	.string "David used to shrink away from\n"
+	.string "everything.\p"
+	.string "Now I see them stand a little taller.\p"
+	.string "That's what you gave them.\p"
+	.string "I think this belongs with you.$"
+
+Mistcity_Indoor_PatternFinder_Father_Text_3:
+# 20 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
+	.string "David is doing so well.\p"
+	.string "They came home last night humming to\n"
+	.string "themselves.\p"
+	.string "First time I've heard that in years.$"

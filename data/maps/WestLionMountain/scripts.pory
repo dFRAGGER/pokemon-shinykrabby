@@ -81,10 +81,31 @@ text WestLionMountain_Text_EdgarPostBattle_After {
 script WestLionMountain_Climber_Convo {
     lock
     faceplayer
-    if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
-        msgbox(format("Twenty years on these peaks and I've seen a lot come and go.\pThose brown-suited folks arrived like they owned the place...\pand left just as suddenly.\pThe mountain outlasts them all."), MSGBOX_AUTOCLOSE)
-    } else {
-        msgbox(format("I've been climbing these mountains for twenty years.\pThe rocks have been shifting lately, more than I've ever seen.\pIt's like the mountain itself is... unsettled."), MSGBOX_AUTOCLOSE)
+    if (flag(FLAG_ITEM_WESTLION_TM_CALM_MIND) == FALSE) {
+        if (flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE) == FALSE) {
+            msgbox(format("I've been climbing these mountains for twenty years.\pThe rocks have been shifting lately, more than I've ever seen.\pIt's like the mountain itself is... unsettled.\pHere, take this before you head further up.\pCalm Mind. Up here, panic gets you killed.\pYou quiet the noise, and suddenly you see the path.\pSame thing in battle."))
+            waitmessage
+            giveitem(ITEM_TM_CALM_MIND)
+            waitmessage
+            setflag(FLAG_ITEM_WESTLION_TM_CALM_MIND)
+        }
+        else {
+            msgbox(format("Twenty years on these peaks and I've seen a lot come and go.\pThose brown-suited folks arrived like they owned the place...\pand left just as suddenly.\pThe mountain outlasts them all.\pCalm Mind. You've earned it."))
+            waitmessage
+            giveitem(ITEM_TM_CALM_MIND)
+            waitmessage
+            setflag(FLAG_ITEM_WESTLION_TM_CALM_MIND)
+        }
+    }
+    else {
+        if (flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE) == FALSE) {
+            msgbox(format("The rocks have been shifting lately.\pStay on the marked paths and watch your footing."), MSGBOX_AUTOCLOSE)
+            waitmessage
+        }
+        else {
+            msgbox(format("Twenty years on these peaks and I've seen a lot come and go.\pThe mountain outlasts them all."), MSGBOX_AUTOCLOSE)
+            waitmessage
+        }
     }
     release
     end

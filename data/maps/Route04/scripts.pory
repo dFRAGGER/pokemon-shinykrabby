@@ -24,8 +24,17 @@ script Route04_Sign_DarkCave {
 script Route04_HikerTired_Convo {
     lock
     faceplayer
-    msgbox(format("I thought...... escaping the mud would be the hard part......\pBut gravity is winning this battle! My belly is pulling me down faster than my legs can push up!"))
-    waitmessage
+    if (flag(FLAG_ITEM_ROUTE04_SILK_SCARF) == FALSE) {
+        msgbox(format("I thought...... escaping the mud would be the hard part......\pBut gravity is winning this battle! My belly is pulling me down faster than my legs can push up!\pHey, you're heading down to the mudflats aren't you?\pTake this. It's a Silk Scarf.\pOut on the open flats the sun just hammers you.\pNo shade, no shelter, nothing.\pI'm going up the mountain from here, won't be needing it anymore.\pStay cool out there."))
+        waitmessage
+        giveitem(ITEM_SILK_SCARF)
+        waitmessage
+        setflag(FLAG_ITEM_ROUTE04_SILK_SCARF)
+    }
+    else {
+        msgbox(format("Still... fighting... gravity......\pHow are those mudflats treating you?"), MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
     release
     end
 }

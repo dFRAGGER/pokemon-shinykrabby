@@ -51,8 +51,17 @@ script Route02_Station_SoilCrate {
 
 script Route02_Station_SpecimenJar {
     lock
-    msgbox(format("A specimen jar in a box, empty.\pThe label reads:\n'CF-09 - organic trace, unknown.'\pWhatever was inside it\nhas been removed.\pRecently."),MSGBOX_AUTOCLOSE)
-    waitmessage
+    if (flag(FLAG_ITEM_ROUTE02_STATION_MIRACLE_SEED) == FALSE) {
+        msgbox(format("A specimen jar in a box.\pThe label reads:\n'CF-09 - organic trace, unknown.'\pInside, a small seed-like object, dark green, faintly warm to the touch."))
+        waitmessage
+        giveitem(ITEM_MIRACLE_SEED)
+        waitmessage
+        setflag(FLAG_ITEM_ROUTE02_STATION_MIRACLE_SEED)
+    }
+    else {
+        msgbox(format("A specimen jar in a box, empty.\pThe label reads:\n'CF-09 - organic trace, unknown.'\pWhatever was inside it has been removed.\pRecently."),MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
     release
 }
 

@@ -1924,3 +1924,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Route01205/scripts.inc"
 
 	.include "data/maps/Island_Mecherchar/scripts.inc"
+
+	.include "data/maps/Route06_UpanaCave_WestEntrance/scripts.inc"
+
+	.include "data/maps/Route06_UpanaCave_MainRoom/scripts.inc"

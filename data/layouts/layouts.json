@@ -10878,6 +10878,30 @@
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/Island_Mecherchar/border.bin",
       "blockdata_filepath": "data/layouts/Island_Mecherchar/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE06_UPANA_CAVE_WEST_ENTRANCE",
+      "name": "Route06_UpanaCave_WestEntrance_Layout",
+      "width": 50,
+      "height": 22,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route06_UpanaCave_WestEntrance/border.bin",
+      "blockdata_filepath": "data/layouts/Route06_UpanaCave_WestEntrance/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE06_UPANA_CAVE_MAIN_ROOM",
+      "name": "Route06_UpanaCave_MainRoom_Layout",
+      "width": 50,
+      "height": 50,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route06_UpanaCave_MainRoom/border.bin",
+      "blockdata_filepath": "data/layouts/Route06_UpanaCave_MainRoom/map.bin"
     }
   ]
 }

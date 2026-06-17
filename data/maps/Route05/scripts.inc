@@ -88,63 +88,91 @@ Route05_Hiker_Convo::
 # 153 "data/maps/Route05/scripts.pory"
 	faceplayer
 # 154 "data/maps/Route05/scripts.pory"
-	msgbox Route05_Hiker_Convo_Text_0, MSGBOX_AUTOCLOSE
-# 155 "data/maps/Route05/scripts.pory"
+	goto_if_unset FLAG_ITEM_ROUTE05_NEVER_MELT_ICE, Route05_Hiker_Convo_2
+# 162 "data/maps/Route05/scripts.pory"
+	msgbox Route05_Hiker_Convo_Text_1, MSGBOX_AUTOCLOSE
+# 163 "data/maps/Route05/scripts.pory"
+	waitmessage
+Route05_Hiker_Convo_1:
+# 165 "data/maps/Route05/scripts.pory"
 	release
 	end
 
+Route05_Hiker_Convo_2:
+# 155 "data/maps/Route05/scripts.pory"
+	msgbox Route05_Hiker_Convo_Text_0
+# 156 "data/maps/Route05/scripts.pory"
+	waitmessage
+# 157 "data/maps/Route05/scripts.pory"
+	giveitem ITEM_NEVER_MELT_ICE
+# 158 "data/maps/Route05/scripts.pory"
+	waitmessage
+# 159 "data/maps/Route05/scripts.pory"
+	setflag FLAG_ITEM_ROUTE05_NEVER_MELT_ICE
+	goto Route05_Hiker_Convo_1
+
 
 Route05_Woman_Convo::
-# 160 "data/maps/Route05/scripts.pory"
+# 170 "data/maps/Route05/scripts.pory"
 	lock
-# 161 "data/maps/Route05/scripts.pory"
+# 171 "data/maps/Route05/scripts.pory"
 	faceplayer
-# 162 "data/maps/Route05/scripts.pory"
+# 172 "data/maps/Route05/scripts.pory"
 	goto_if_set FLAG_HIDE_FACULTY_AT_WESTLION_MINE, Route05_Woman_Convo_2
-# 165 "data/maps/Route05/scripts.pory"
+# 175 "data/maps/Route05/scripts.pory"
 	msgbox Route05_Woman_Convo_Text_1, MSGBOX_AUTOCLOSE
 Route05_Woman_Convo_1:
-# 167 "data/maps/Route05/scripts.pory"
+# 177 "data/maps/Route05/scripts.pory"
 	release
 	end
 
 Route05_Woman_Convo_2:
-# 163 "data/maps/Route05/scripts.pory"
+# 173 "data/maps/Route05/scripts.pory"
 	msgbox Route05_Woman_Convo_Text_0, MSGBOX_AUTOCLOSE
 	goto Route05_Woman_Convo_1
 
 
 Route05_Sign_WestLionMountain::
-# 172 "data/maps/Route05/scripts.pory"
+# 182 "data/maps/Route05/scripts.pory"
 	lock
-# 173 "data/maps/Route05/scripts.pory"
+# 183 "data/maps/Route05/scripts.pory"
 	msgbox Route05_Sign_WestLionMountain_Text_0, MSGBOX_AUTOCLOSE
-# 174 "data/maps/Route05/scripts.pory"
+# 184 "data/maps/Route05/scripts.pory"
 	release
 	return
 
 
 Route05_Sign_Lionsarch::
-# 178 "data/maps/Route05/scripts.pory"
+# 188 "data/maps/Route05/scripts.pory"
 	lock
-# 179 "data/maps/Route05/scripts.pory"
+# 189 "data/maps/Route05/scripts.pory"
 	msgbox Route05_Sign_Lionsarch_Text_0, MSGBOX_AUTOCLOSE
-# 180 "data/maps/Route05/scripts.pory"
+# 190 "data/maps/Route05/scripts.pory"
 	release
 	return
 
 
 Route05_Hiker_Convo_Text_0:
-# 154 "data/maps/Route05/scripts.pory"
+# 155 "data/maps/Route05/scripts.pory"
 	.string "Huff... Huff... This mountain never gets\n"
 	.string "any easier to climb!\p"
-	.string "But the view of the Lion Mountains is\n"
-	.string "always worth it.\p"
-	.string "Just watch out for the ice patches\n"
-	.string "near West Lion Mountain.$"
+	.string "The ice patches near West Lion\n"
+	.string "Mountain are brutal this time of year.\p"
+	.string "Found this chunk frozen into the rock\n"
+	.string "face up there, never melts, even in\l"
+	.string "summer.\p"
+	.string "No use to me with these heavy boots.\p"
+	.string "Here, it'll do more for a Pokémon than it\n"
+	.string "ever will for my ankles.$"
+
+Route05_Hiker_Convo_Text_1:
+# 162 "data/maps/Route05/scripts.pory"
+	.string "Huff... Huff... Still going...\p"
+	.string "Watch those ice patches near West Lion\n"
+	.string "Mountain.$"
 
 Route05_Woman_Convo_Text_0:
-# 163 "data/maps/Route05/scripts.pory"
+# 173 "data/maps/Route05/scripts.pory"
 	.string "I come here every year to watch the\n"
 	.string "Swinub migrate through the snow.\p"
 	.string "They're back to their normal routine!\p"
@@ -154,7 +182,7 @@ Route05_Woman_Convo_Text_0:
 	.string "wrong.$"
 
 Route05_Woman_Convo_Text_1:
-# 165 "data/maps/Route05/scripts.pory"
+# 175 "data/maps/Route05/scripts.pory"
 	.string "I come here every year to watch the\n"
 	.string "Swinub migrate through the snow.\p"
 	.string "They're so adorable when they root\n"
@@ -163,12 +191,12 @@ Route05_Woman_Convo_Text_1:
 	.string "strange... more skittish than usual.$"
 
 Route05_Sign_WestLionMountain_Text_0:
-# 173 "data/maps/Route05/scripts.pory"
+# 183 "data/maps/Route05/scripts.pory"
 	.string "West Lion Mountain\n"
 	.string "Ahead$"
 
 Route05_Sign_Lionsarch_Text_0:
-# 179 "data/maps/Route05/scripts.pory"
+# 189 "data/maps/Route05/scripts.pory"
 	.string "Lionsarch City\n"
 	.string "South$"
 

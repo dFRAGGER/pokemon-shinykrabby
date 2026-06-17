@@ -323,6 +323,14 @@ Crabhill_Faculty_Lost_grunt::
 	return
 
 
+CrabhillEntrance_EventScript_Lyle::
+# 178 "data/maps/CrabhillEntrance/scripts.pory"
+	trainerbattle_single TRAINER_LYLE, CrabhillEntrance_Text_LyleIntro, CrabhillEntrance_Text_LyleDefeated
+# 179 "data/maps/CrabhillEntrance/scripts.pory"
+	msgbox CrabhillEntrance_Text_LylePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
 # 4 "data/maps/CrabhillEntrance/scripts.pory"
 Crabhill_Jacob_in_need_Movement_0:
 # 4 "data/maps/CrabhillEntrance/scripts.pory"
@@ -681,3 +689,19 @@ Crabhill_Faculty_Lost_grunt_Text_0:
 	.string "wildlife frequencies!\p"
 	.string "Forget you heard anything about the\n"
 	.string "signal!$"
+
+CrabhillEntrance_Text_LyleIntro::
+# 183 "data/maps/CrabhillEntrance/scripts.pory"
+	.string "I caught a whole bunch of POKéMON!\p"
+	.string "Go, go, go!\n"
+	.string "My CRUSTACEAN POKéMON team!$"
+
+CrabhillEntrance_Text_LyleDefeated::
+# 187 "data/maps/CrabhillEntrance/scripts.pory"
+	.string "I have all these POKéMON,\n"
+	.string "but I couldn't win…$"
+
+CrabhillEntrance_Text_LylePostBattle::
+# 191 "data/maps/CrabhillEntrance/scripts.pory"
+	.string "I caught a bunch of POKéMON.\n"
+	.string "Now I'm out of POKé BALLS.$"

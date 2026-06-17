@@ -48,70 +48,124 @@ WestLionMountain_Climber_Convo::
 # 83 "data/maps/WestLionMountain/scripts.pory"
 	faceplayer
 # 84 "data/maps/WestLionMountain/scripts.pory"
-	goto_if_set FLAG_HIDE_FACULTY_AT_WESTLION_MINE, WestLionMountain_Climber_Convo_2
-# 87 "data/maps/WestLionMountain/scripts.pory"
-	msgbox WestLionMountain_Climber_Convo_Text_1, MSGBOX_AUTOCLOSE
+	goto_if_unset FLAG_ITEM_WESTLION_TM_CALM_MIND, WestLionMountain_Climber_Convo_2
+# 101 "data/maps/WestLionMountain/scripts.pory"
+	goto_if_unset FLAG_HIDE_FACULTY_AT_WESTLION_MINE, WestLionMountain_Climber_Convo_8
+# 106 "data/maps/WestLionMountain/scripts.pory"
+	msgbox WestLionMountain_Climber_Convo_Text_3, MSGBOX_AUTOCLOSE
+# 107 "data/maps/WestLionMountain/scripts.pory"
+	waitmessage
 WestLionMountain_Climber_Convo_1:
-# 89 "data/maps/WestLionMountain/scripts.pory"
+# 110 "data/maps/WestLionMountain/scripts.pory"
 	release
 	end
 
 WestLionMountain_Climber_Convo_2:
 # 85 "data/maps/WestLionMountain/scripts.pory"
-	msgbox WestLionMountain_Climber_Convo_Text_0, MSGBOX_AUTOCLOSE
+	goto_if_unset FLAG_HIDE_FACULTY_AT_WESTLION_MINE, WestLionMountain_Climber_Convo_5
+# 93 "data/maps/WestLionMountain/scripts.pory"
+	msgbox WestLionMountain_Climber_Convo_Text_1
+# 94 "data/maps/WestLionMountain/scripts.pory"
+	waitmessage
+# 95 "data/maps/WestLionMountain/scripts.pory"
+	giveitem ITEM_TM_CALM_MIND
+# 96 "data/maps/WestLionMountain/scripts.pory"
+	waitmessage
+# 97 "data/maps/WestLionMountain/scripts.pory"
+	setflag FLAG_ITEM_WESTLION_TM_CALM_MIND
+	goto WestLionMountain_Climber_Convo_1
+
+WestLionMountain_Climber_Convo_5:
+# 86 "data/maps/WestLionMountain/scripts.pory"
+	msgbox WestLionMountain_Climber_Convo_Text_0
+# 87 "data/maps/WestLionMountain/scripts.pory"
+	waitmessage
+# 88 "data/maps/WestLionMountain/scripts.pory"
+	giveitem ITEM_TM_CALM_MIND
+# 89 "data/maps/WestLionMountain/scripts.pory"
+	waitmessage
+# 90 "data/maps/WestLionMountain/scripts.pory"
+	setflag FLAG_ITEM_WESTLION_TM_CALM_MIND
+	goto WestLionMountain_Climber_Convo_1
+
+WestLionMountain_Climber_Convo_8:
+# 102 "data/maps/WestLionMountain/scripts.pory"
+	msgbox WestLionMountain_Climber_Convo_Text_2, MSGBOX_AUTOCLOSE
+# 103 "data/maps/WestLionMountain/scripts.pory"
+	waitmessage
 	goto WestLionMountain_Climber_Convo_1
 
 
 WestLionMountain_Hiker_Convo::
-# 94 "data/maps/WestLionMountain/scripts.pory"
+# 115 "data/maps/WestLionMountain/scripts.pory"
 	lock
-# 95 "data/maps/WestLionMountain/scripts.pory"
+# 116 "data/maps/WestLionMountain/scripts.pory"
 	faceplayer
-# 96 "data/maps/WestLionMountain/scripts.pory"
+# 117 "data/maps/WestLionMountain/scripts.pory"
 	goto_if_set FLAG_HIDE_FACULTY_AT_WESTLION_MINE, WestLionMountain_Hiker_Convo_2
-# 99 "data/maps/WestLionMountain/scripts.pory"
+# 120 "data/maps/WestLionMountain/scripts.pory"
 	msgbox WestLionMountain_Hiker_Convo_Text_1, MSGBOX_AUTOCLOSE
 WestLionMountain_Hiker_Convo_1:
-# 101 "data/maps/WestLionMountain/scripts.pory"
+# 122 "data/maps/WestLionMountain/scripts.pory"
 	release
 	end
 
 WestLionMountain_Hiker_Convo_2:
-# 97 "data/maps/WestLionMountain/scripts.pory"
+# 118 "data/maps/WestLionMountain/scripts.pory"
 	msgbox WestLionMountain_Hiker_Convo_Text_0, MSGBOX_AUTOCLOSE
 	goto WestLionMountain_Hiker_Convo_1
 
 
 WestLionMountain_Sign_EastMountain::
-# 106 "data/maps/WestLionMountain/scripts.pory"
+# 127 "data/maps/WestLionMountain/scripts.pory"
 	lock
-# 107 "data/maps/WestLionMountain/scripts.pory"
+# 128 "data/maps/WestLionMountain/scripts.pory"
 	msgbox WestLionMountain_Sign_EastMountain_Text_0, MSGBOX_AUTOCLOSE
-# 108 "data/maps/WestLionMountain/scripts.pory"
+# 129 "data/maps/WestLionMountain/scripts.pory"
 	release
 	return
 
 
 WestLionMountain_Climber_Convo_Text_0:
-# 85 "data/maps/WestLionMountain/scripts.pory"
-	.string "Twenty years on these peaks and I've\n"
-	.string "seen a lot come and go.\p"
-	.string "Those brown-suited folks arrived like\n"
-	.string "they owned the place...\p"
-	.string "and left just as suddenly.\p"
-	.string "The mountain outlasts them all.$"
-
-WestLionMountain_Climber_Convo_Text_1:
-# 87 "data/maps/WestLionMountain/scripts.pory"
+# 86 "data/maps/WestLionMountain/scripts.pory"
 	.string "I've been climbing these mountains for\n"
 	.string "twenty years.\p"
 	.string "The rocks have been shifting lately,\n"
 	.string "more than I've ever seen.\p"
 	.string "It's like the mountain itself is...\n"
-	.string "unsettled.$"
+	.string "unsettled.\p"
+	.string "Here, take this before you head further\n"
+	.string "up.\p"
+	.string "Calm Mind. Up here, panic gets you\n"
+	.string "killed.\p"
+	.string "You quiet the noise, and suddenly you\n"
+	.string "see the path.\p"
+	.string "Same thing in battle.$"
+
+WestLionMountain_Climber_Convo_Text_1:
+# 93 "data/maps/WestLionMountain/scripts.pory"
+	.string "Twenty years on these peaks and I've\n"
+	.string "seen a lot come and go.\p"
+	.string "Those brown-suited folks arrived like\n"
+	.string "they owned the place...\p"
+	.string "and left just as suddenly.\p"
+	.string "The mountain outlasts them all.\p"
+	.string "Calm Mind. You've earned it.$"
+
+WestLionMountain_Climber_Convo_Text_2:
+# 102 "data/maps/WestLionMountain/scripts.pory"
+	.string "The rocks have been shifting lately.\p"
+	.string "Stay on the marked paths and watch\n"
+	.string "your footing.$"
+
+WestLionMountain_Climber_Convo_Text_3:
+# 106 "data/maps/WestLionMountain/scripts.pory"
+	.string "Twenty years on these peaks and I've\n"
+	.string "seen a lot come and go.\p"
+	.string "The mountain outlasts them all.$"
 
 WestLionMountain_Hiker_Convo_Text_0:
-# 97 "data/maps/WestLionMountain/scripts.pory"
+# 118 "data/maps/WestLionMountain/scripts.pory"
 	.string "Have you noticed how quiet it's been up\n"
 	.string "here lately?\p"
 	.string "No more tremors since those people in\n"
@@ -122,7 +176,7 @@ WestLionMountain_Hiker_Convo_Text_0:
 	.string "over.$"
 
 WestLionMountain_Hiker_Convo_Text_1:
-# 99 "data/maps/WestLionMountain/scripts.pory"
+# 120 "data/maps/WestLionMountain/scripts.pory"
 	.string "Did you feel that tremor just now?\p"
 	.string "They've been happening more and more\n"
 	.string "frequently.\p"
@@ -130,7 +184,7 @@ WestLionMountain_Hiker_Convo_Text_1:
 	.string "but they haven't found anything yet.$"
 
 WestLionMountain_Sign_EastMountain_Text_0:
-# 107 "data/maps/WestLionMountain/scripts.pory"
+# 128 "data/maps/WestLionMountain/scripts.pory"
 	.string "East Lion Mountain\n"
 	.string "East$"
 

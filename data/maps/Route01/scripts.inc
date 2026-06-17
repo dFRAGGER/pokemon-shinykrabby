@@ -272,6 +272,22 @@ Route01_Battle_Factulty_Grunts2::
 	return
 
 
+Route01_EventScript_Calvin::
+# 163 "data/maps/Route01/scripts.pory"
+	trainerbattle_single TRAINER_CALVIN_1, Route01_Text_CalvinIntro, Route01_Text_CalvinDefeated
+# 164 "data/maps/Route01/scripts.pory"
+	msgbox Route01_Text_CalvinPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
+Route01_EventScript_James::
+# 169 "data/maps/Route01/scripts.pory"
+	trainerbattle_single TRAINER_JAMES_1, Route01_Text_JamesIntro, Route01_Text_JamesDefeated
+# 170 "data/maps/Route01/scripts.pory"
+	msgbox Route01_Text_JamesPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
 # 17 "data/maps/Route01/scripts.pory"
 Route01_Convo_Bugcatcher_Movement_0:
 # 17 "data/maps/Route01/scripts.pory"
@@ -600,3 +616,33 @@ Route01_Loss_Ad_Dice::
 	.string "Being a janitor or losing a battle?\p"
 	.string "I'd rather lose a battle than spend\n"
 	.string "another minute with my old colleagues.$"
+
+Route01_Text_CalvinIntro::
+# 174 "data/maps/Route01/scripts.pory"
+	.string "If you have POKéMON with you, then\n"
+	.string "you're an official POKéMON TRAINER!\l"
+	.string "You can't say no to my challenge!$"
+
+Route01_Text_CalvinDefeated::
+# 178 "data/maps/Route01/scripts.pory"
+	.string "Arrgh, I lost…\n"
+	.string "I should have trained mine more…$"
+
+Route01_Text_CalvinPostBattle::
+# 182 "data/maps/Route01/scripts.pory"
+	.string "Listen, you. If you're strong,\n"
+	.string "you should have told me before!$"
+
+Route01_Text_JamesIntro::
+# 186 "data/maps/Route01/scripts.pory"
+	.string "If you take BUG POKéMON to school,\n"
+	.string "you get to be instantly popular!$"
+
+Route01_Text_JamesDefeated::
+# 190 "data/maps/Route01/scripts.pory"
+	.string "I can't be popular if I lose.$"
+
+Route01_Text_JamesPostBattle::
+# 194 "data/maps/Route01/scripts.pory"
+	.string "If you have a big BUG POKéMON,\n"
+	.string "people respect you for it.$"

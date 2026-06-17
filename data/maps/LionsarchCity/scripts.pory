@@ -373,7 +373,19 @@ script LionsarchCity_NPC_NewsReporter {
 script LionsarchCity_NPC_GymTrainer {
     lockall
     faceplayer
-    msgbox(format("Petra's Gym specializes in mountain-dwelling Pokémon.\pUrsaring, Golem, Donphan... they're all incredibly tough!\pYou better come prepared."))
+    if (flag(FLAG_ITEM_LIONSARCH_GYM_SNOWBALL) == FALSE) {
+        msgbox(format("You're heading into the Ice Gym?\pTwo leaders in there, Tanya and Tara, both weather setters, both dangerous.\pThe trainers inside all run Ice-types, so bring Fire, Fighting, or Rock.\pOh, and take this."))
+        waitmessage
+        giveitem(ITEM_SNOWBALL)
+        waitmessage
+        setflag(FLAG_ITEM_LIONSARCH_GYM_SNOWBALL)
+        msgbox(format("A Snowball. Let a Pokemon hold it and it boosts their Attack when they get hit by an Ice move.\pIn a Hail team mirror it can flip a fight fast.\pGood luck in there."))
+        waitmessage
+    }
+    else {
+        msgbox(format("Two leaders, two weather teams.\pFire, Fighting, Rock. You've got this."), MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
     releaseall
 }
 
