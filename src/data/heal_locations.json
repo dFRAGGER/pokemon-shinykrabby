@@ -233,6 +233,12 @@
       "y": 51
     },
     {
+      "id": "HEAL_LOCATION_BIKE_PARK",
+      "map": "MAP_BIKE_PARK",
+      "x": 28,
+      "y": 26
+    },
+    {
       "id": "HEAL_LOCATION_SILTROOT_TOWN",
       "map": "MAP_SILTROOT_TOWN",
       "x": 43,

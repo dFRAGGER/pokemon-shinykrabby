@@ -330,7 +330,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscript_Johto_Sign {
 
 script ErpusCity_ProfessorBirdsLab_Eventscript_Hoenn_Sign {
     lockall
-    msgbox(format("An almost illegible note is scrawled on the paper:\pTESSERA??"))
+    msgbox(format("An almost illegible note is scrawled on the paper:\pHOENN??"))
     waitmessage
     releaseall
 }

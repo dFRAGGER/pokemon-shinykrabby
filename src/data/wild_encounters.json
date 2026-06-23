@@ -37931,7 +37931,7 @@
           "map": "MAP_ROUTE06_UPANA_CAVE_WEST_ENTRANCE",
           "base_label": "gRoute06_UpanaCave_WestEntrance",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 12,
@@ -38016,12 +38016,279 @@
               {
                 "min_level": 15,
                 "max_level": 16,
-                "species": "SPECIES_GEODUDE"
+                "species": "SPECIES_NOSEPASS"
               },
               {
                 "min_level": 16,
                 "max_level": 17,
+                "species": "SPECIES_NOSEPASS"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ROUTE06_UPANA_CAVE_MAIN_ROOM",
+          "base_label": "gRoute06_UpanaCave_MainRoom",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 14,
+                "max_level": 15,
                 "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 16,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 13,
+                "max_level": 14,
+                "species": "SPECIES_WHISMUR"
+              },
+              {
+                "min_level": 13,
+                "max_level": 14,
+                "species": "SPECIES_WHISMUR"
+              },
+              {
+                "min_level": 13,
+                "max_level": 14,
+                "species": "SPECIES_NOSEPASS"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_NOSEPASS"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_CUBONE"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_CUBONE"
+              }
+            ]
+          },
+          "rock_smash_mons": {
+            "encounter_rate": 50,
+            "mons": [
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 16,
+                "species": "SPECIES_NOSEPASS"
+              },
+              {
+                "min_level": 16,
+                "max_level": 17,
+                "species": "SPECIES_NOSEPASS"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ROUTE06_UPANA_CAVE_RIVER_ROOM_B1F",
+          "base_label": "gRoute06_UpanaCave_RiverRoom_B1F",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 16,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 13,
+                "max_level": 14,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 13,
+                "max_level": 14,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 13,
+                "max_level": 14,
+                "species": "SPECIES_NOSEPASS"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_NOSEPASS"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_CUBONE"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_CUBONE"
+              }
+            ]
+          },
+          "rock_smash_mons": {
+            "encounter_rate": 50,
+            "mons": [
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 16,
+                "species": "SPECIES_NOSEPASS"
+              },
+              {
+                "min_level": 16,
+                "max_level": 17,
+                "species": "SPECIES_NOSEPASS"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_BIKE_PARK",
+          "base_label": "gBikePark",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 14,
+                "max_level": 16,
+                "species": "SPECIES_TAILLOW"
+              },
+              {
+                "min_level": 14,
+                "max_level": 16,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 14,
+                "max_level": 16,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 14,
+                "max_level": 16,
+                "species": "SPECIES_TAILLOW"
+              },
+              {
+                "min_level": 15,
+                "max_level": 16,
+                "species": "SPECIES_SWABLU"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_SWABLU"
+              },
+              {
+                "min_level": 14,
+                "max_level": 16,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 14,
+                "max_level": 16,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 16,
+                "species": "SPECIES_FARFETCHD"
+              },
+              {
+                "min_level": 15,
+                "max_level": 16,
+                "species": "SPECIES_FARFETCHD"
+              },
+              {
+                "min_level": 15,
+                "max_level": 16,
+                "species": "SPECIES_TORCHIC"
+              },
+              {
+                "min_level": 15,
+                "max_level": 16,
+                "species": "SPECIES_TORCHIC"
               }
             ]
           }

@@ -1,0 +1,110 @@
+mapscripts Route06_UpanaCave_RiverRoom_B1F_MapScripts {}
+
+script UpanaCaveRiverRoom_Trainer_Wade {
+    trainerbattle_single(TRAINER_HIKER_WADE, UpanaCaveRiverRoom_Text_WadeIntro, UpanaCaveRiverRoom_Text_WadeDefeated)
+    msgbox(UpanaCaveRiverRoom_Text_WadePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text UpanaCaveRiverRoom_Text_WadeIntro {
+    format("These Wooper have called this underground river home for generations! I'm here to protect them, battle first!")
+}
+
+text UpanaCaveRiverRoom_Text_WadeDefeated {
+    format("The river flows on regardless...")
+}
+
+text UpanaCaveRiverRoom_Text_WadePostBattle {
+    format("The Wooper here are perfectly calm. The river isolates them from the surface world.\pPure peace down here.")
+}
+
+script UpanaCaveRiverRoom_Trainer_Warren {
+    trainerbattle_single(TRAINER_SCIENTIST_WARREN, UpanaCaveRiverRoom_Text_WarrenIntro, UpanaCaveRiverRoom_Text_WarrenDefeated)
+    msgbox(UpanaCaveRiverRoom_Text_WarrenPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text UpanaCaveRiverRoom_Text_WarrenIntro {
+    format("I'm documenting this cave's geology and its former inhabitants! A battle will clear my head, let's go!")
+}
+
+text UpanaCaveRiverRoom_Text_WarrenDefeated {
+    format("Hypothesis: I need stronger Pokémon.")
+}
+
+text UpanaCaveRiverRoom_Text_WarrenPostBattle {
+    format("The sediment layers here span thousands of years.\pThe indigenous people who carved the upper chambers left tools in this very river.")
+}
+
+script UpanaCaveRiverRoom_Trainer_Corin {
+    trainerbattle_single(TRAINER_HIKER_CORIN, UpanaCaveRiverRoom_Text_CorinIntro, UpanaCaveRiverRoom_Text_CorinDefeated)
+    msgbox(UpanaCaveRiverRoom_Text_CorinPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text UpanaCaveRiverRoom_Text_CorinIntro {
+    format("The river here runs ice cold year-round. My Wooper love it! You look like a challenge!")
+}
+
+text UpanaCaveRiverRoom_Text_CorinDefeated {
+    format("Swept away, like a leaf in the current...")
+}
+
+text UpanaCaveRiverRoom_Text_CorinPostBattle {
+    format("The river originates deep in the mountain. Nobody has traced it to its source yet.\pOne day I will.")
+}
+
+script UpanaCaveRiverRoom_Npc_Ranger {
+    lock
+    faceplayer
+    setspeaker("Ranger Sela")
+    msgbox(format("Three months stationed down here studying this river and its Wooper colony.\pThey've adapted perfectly to the cold and dark. Completely cut off from the surface world."))
+    waitmessage
+    msgbox(format("Our water samples tell an interesting story.\pThe flow rate and mineral composition suggest this river runs all the way to the ocean.\pAnd the source? We traced it north all the way to the Lion Mountains.\pEntirely underground."))
+    waitmessage
+    msgbox(format("The ancient people who once lived in these caves called this river the Vein of the Earth.\pTheir oral legends speak of a guardian. A protector of the underground river.\pAn ancient Pokémon that has never once closed its eyes.\pIt watches the water from the mountains to the sea. Always present. Never sleeping."))
+    waitmessage
+    msgbox(format("...I try not to think about that too hard when I'm taking samples down here alone at in the dark."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script UpanaCaveRiverRoom_Trainer_Elena {
+    trainerbattle_single(TRAINER_LASS_ELENA, UpanaCaveRiverRoom_Text_ElenaIntro, UpanaCaveRiverRoom_Text_ElenaDefeated)
+    msgbox(UpanaCaveRiverRoom_Text_ElenaPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text UpanaCaveRiverRoom_Text_ElenaIntro {
+    format("This Quagsire waddled up to me like we were already friends! We're ready to battle together!")
+}
+
+text UpanaCaveRiverRoom_Text_ElenaDefeated {
+    format("Quagsire doesn't even look upset. Maybe I should be more like Quagsire.")
+}
+
+text UpanaCaveRiverRoom_Text_ElenaPostBattle {
+    format("The Wooper here eventually evolve into Quagsire once they know the whole river.\pThis one knows every inch.")
+}
+
+script UpanaCaveRiverRoom_Inscription_1 {
+    lock
+    msgbox(format("A relief is carved into the cave wall.\pIt depicts a tall, upright figure standing in the middle of a flowing river.\pIts arms are raised, not in greeting, but in a way that suggests great curved blades where hands should be.\pSmall figures kneel at the water's edge around it."))
+    waitmessage
+    release
+}
+
+script UpanaCaveRiverRoom_Inscription_2 {
+    lock
+    msgbox(format("A carving, worn smooth with age.\pIt shows a tall figure, standing on dry land.\pBehind it, a long winding line snakes across the stone stretching into the distance.\pThe figure is turned back toward it, as if it cannot stray too far."))
+    waitmessage
+    release
+}
+
+script UpanaCaveRiverRoom_Inscription_3 {
+    lock
+    msgbox(format("The deep carving in the stone.\pIt seems to show the river.\pCut into the water itself is a single open eye.\pIt is the largest shape in the entire image.\pThe craftsmanship here is different, more careful.\pWhoever carved this took their time."))
+    waitmessage
+    release
+}

@@ -5344,8 +5344,8 @@
     {
       "id": "LAYOUT_CAVE_CORRIDOR",
       "name": "CaveCorridor_Layout",
-      "width": 19,
-      "height": 21,
+      "width": 12,
+      "height": 10,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -10882,8 +10882,8 @@
     {
       "id": "LAYOUT_ROUTE06_UPANA_CAVE_WEST_ENTRANCE",
       "name": "Route06_UpanaCave_WestEntrance_Layout",
-      "width": 50,
-      "height": 22,
+      "width": 25,
+      "height": 13,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -10894,7 +10894,7 @@
     {
       "id": "LAYOUT_ROUTE06_UPANA_CAVE_MAIN_ROOM",
       "name": "Route06_UpanaCave_MainRoom_Layout",
-      "width": 50,
+      "width": 53,
       "height": 50,
       "border_width": 2,
       "border_height": 2,
@@ -10902,6 +10902,18 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Route06_UpanaCave_MainRoom/border.bin",
       "blockdata_filepath": "data/layouts/Route06_UpanaCave_MainRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE06_UPANA_CAVE_RIVER_ROOM_B1F",
+      "name": "Route06_UpanaCave_RiverRoom_B1F_Layout",
+      "width": 34,
+      "height": 50,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route06_UpanaCave_RiverRoom_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/Route06_UpanaCave_RiverRoom_B1F/map.bin"
     }
   ]
 }

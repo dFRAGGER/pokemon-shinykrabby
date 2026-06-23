@@ -247,6 +247,47 @@ BikeShop_Jaouad_EventScript_AfterSwap::
 	end
 
 
+BikeShop_Jaouad_EventScript_Customer::
+# 129 "data/maps/BikeShop_Jaouad/scripts.pory"
+	lock
+# 130 "data/maps/BikeShop_Jaouad/scripts.pory"
+	faceplayer
+# 131 "data/maps/BikeShop_Jaouad/scripts.pory"
+	msgbox BikeShop_Jaouad_EventScript_Customer_Text_0, MSGBOX_DEFAULT
+# 132 "data/maps/BikeShop_Jaouad/scripts.pory"
+	release
+	end
+
+
+BikeShop_Jaouad_EventScript_MartEmployee::
+# 137 "data/maps/BikeShop_Jaouad/scripts.pory"
+	lockall
+# 138 "data/maps/BikeShop_Jaouad/scripts.pory"
+	faceplayer
+# 139 "data/maps/BikeShop_Jaouad/scripts.pory"
+	msgbox BikeShop_Jaouad_EventScript_MartEmployee_Text_0
+# 140 "data/maps/BikeShop_Jaouad/scripts.pory"
+	waitmessage
+# 141 "data/maps/BikeShop_Jaouad/scripts.pory"
+	pokemart BikeShop_Jaouad_Mart_Sodas
+# 142 "data/maps/BikeShop_Jaouad/scripts.pory"
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+# 143 "data/maps/BikeShop_Jaouad/scripts.pory"
+	releaseall
+	return
+
+
+	.align 2
+# 146 "data/maps/BikeShop_Jaouad/scripts.pory"
+BikeShop_Jaouad_Mart_Sodas:
+# 147 "data/maps/BikeShop_Jaouad/scripts.pory"
+	.2byte ITEM_FRESH_WATER
+# 148 "data/maps/BikeShop_Jaouad/scripts.pory"
+	.2byte ITEM_SODA_POP
+# 149 "data/maps/BikeShop_Jaouad/scripts.pory"
+	.2byte ITEM_LEMONADE
+	.2byte ITEM_NONE
+
 BikeShop_Jaouad_EventScript_Kasmi_Text_0:
 # 9 "data/maps/BikeShop_Jaouad/scripts.pory"
 	.string "Oh! A customer! Come in, come in!\p"
@@ -363,3 +404,21 @@ BikeShop_Jaouad_EventScript_SwitchMachForAcro_Text_0:
 # 117 "data/maps/BikeShop_Jaouad/scripts.pory"
 	.string "{PLAYER} swapped the MACH BIKE for\n"
 	.string "an ACRO BIKE.$"
+
+BikeShop_Jaouad_EventScript_Customer_Text_0:
+# 131 "data/maps/BikeShop_Jaouad/scripts.pory"
+	.string "Did you see that ridge out there?\p"
+	.string "Apparently there's an incredible\n"
+	.string "downhill run.\p"
+	.string "But you can't get on it without a bike.\p"
+	.string "I walked all the way up here on foot like\n"
+	.string "an idiot.\p"
+	.string "Mr. Kasmi is the one to talk to about\n"
+	.string "bikes.\p"
+	.string "He's just over there.$"
+
+BikeShop_Jaouad_EventScript_MartEmployee_Text_0:
+# 139 "data/maps/BikeShop_Jaouad/scripts.pory"
+	.string "Long ride? I've got cold drinks.\p"
+	.string "Fresh water, soda, lemonade, pick your\n"
+	.string "poison.$"

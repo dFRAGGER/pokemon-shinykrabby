@@ -124,3 +124,27 @@ script BikeShop_Jaouad_EventScript_AfterSwap {
     release
     end
 }
+
+script BikeShop_Jaouad_EventScript_Customer {
+    lock
+    faceplayer
+    msgbox(format("Did you see that ridge out there?\pApparently there's an incredible downhill run.\pBut you can't get on it without a bike.\pI walked all the way up here on foot like an idiot.\pMr. Kasmi is the one to talk to about bikes.\pHe's just over there."), MSGBOX_DEFAULT)
+    release
+    end
+}
+
+script BikeShop_Jaouad_EventScript_MartEmployee {
+    lockall
+    faceplayer
+    msgbox(format("Long ride? I've got cold drinks.\pFresh water, soda, lemonade, pick your poison."))
+    waitmessage
+    pokemart(BikeShop_Jaouad_Mart_Sodas)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    releaseall
+}
+
+mart BikeShop_Jaouad_Mart_Sodas {
+    ITEM_FRESH_WATER
+    ITEM_SODA_POP
+    ITEM_LEMONADE
+}

@@ -1,1 +1,264 @@
 mapscripts Route06_UpanaCave_MainRoom_MapScripts {}
+
+script UpanaCavesystem_Trainer_Charlie {
+    trainerbattle_double(TRAINER_CHARLIE, UpanaCavesystem_Text_CharlieIntro, UpanaCavesystem_Text_CharlieDefeated, UpanaCavesystem_Text_CharlieNotEnoughMons)
+    msgbox(UpanaCavesystem_Text_CharliePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text UpanaCavesystem_Text_CharlieIntro {
+    format("Six Geodude, one cave, two at a time! You won't know which ones are rocks until they move!")
+}
+
+text UpanaCavesystem_Text_CharlieDefeated {
+    format("How do you tell them apart?! I can barely tell them apart!")
+}
+
+text UpanaCavesystem_Text_CharlieNotEnoughMons {
+    format("Come back when you have two Pokémon!")
+}
+
+text UpanaCavesystem_Text_CharliePostBattle {
+    format("Geodude belongs in a cave. These walls, this stone... they feel right at home.\pSo do I, honestly.")
+}
+
+script UpanaCavesystem_Trainer_Bowen {
+    trainerbattle_single(TRAINER_HIKER_BOWEN, UpanaCavesystem_Text_BowenIntro, UpanaCavesystem_Text_BowenDefeated)
+    msgbox(UpanaCavesystem_Text_BowenPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text UpanaCavesystem_Text_BowenIntro {
+    format("These cavern walls have stood for centuries! My Geodude are carved from the same ancient stone!")
+}
+
+text UpanaCavesystem_Text_BowenDefeated {
+    format("The rocks remember... even defeat.")
+}
+
+text UpanaCavesystem_Text_BowenPostBattle {
+    format("The people who lived here ages ago left carvings on these walls.\pThis place is alive with history.")
+}
+
+script UpanaCavesystem_Trainer_Jasper {
+    trainerbattle_single(TRAINER_BUG_CATCHER_JASPER, UpanaCavesystem_Text_JasperIntro, UpanaCavesystem_Text_JasperDefeated)
+    msgbox(UpanaCavesystem_Text_JasperPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text UpanaCavesystem_Text_JasperIntro {
+    format("Bet you didn't hear me coming! My Pokémon blend right into the dark of this cave!")
+}
+
+text UpanaCavesystem_Text_JasperDefeated {
+    format("I made too much noise after all...")
+}
+
+text UpanaCavesystem_Text_JasperPostBattle {
+    format("Nosepass is drawn here by the cave's natural magnetism.\pThe ancient carvings deep inside even show it.")
+}
+
+script UpanaCavesystem_Trainer_Quinn {
+    trainerbattle_single(TRAINER_LASS_QUINN, UpanaCavesystem_Text_QuinnIntro, UpanaCavesystem_Text_QuinnDefeated)
+    msgbox(UpanaCavesystem_Text_QuinnPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text UpanaCavesystem_Text_QuinnIntro {
+    format("I heard there is a beautifull ridge at the end of this cave! I'm so curious!")
+}
+
+text UpanaCavesystem_Text_QuinnDefeated {
+    format("That's what I get for wandering off the trail!")
+}
+
+text UpanaCavesystem_Text_QuinnPostBattle {
+    format("The upcoming ridgeline is amazing for cycling. Once you get out of here, go check it out!")
+}
+
+script UpanaCavesystem_Trainer_Dane {
+    trainerbattle_single(TRAINER_HIKER_DANE, UpanaCavesystem_Text_DaneIntro, UpanaCavesystem_Text_DaneDefeated)
+    msgbox(UpanaCavesystem_Text_DanePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text UpanaCavesystem_Text_DaneIntro {
+    format("My Gligar can scale these cave walls easily. Can your Pokémon keep up?")
+}
+
+text UpanaCavesystem_Text_DaneDefeated {
+    format("You're as agile as Gligar itself!")
+}
+
+text UpanaCavesystem_Text_DanePostBattle {
+    format("This cave connects all the way to a beautifull ridgeline.\pThe people who carved these walls knew both the sky and the stone.")
+}
+
+script UpanaCavesystem_Trainer_Kenzo {
+    trainerbattle_single(TRAINER_BLACK_BELT_KENZO, UpanaCavesystem_Text_KenzoIntro, UpanaCavesystem_Text_KenzoDefeated)
+    msgbox(UpanaCavesystem_Text_KenzoPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text UpanaCavesystem_Text_KenzoIntro {
+    format("In this ancient hall my spirit is sharpened! Face my fighting technique!")
+}
+
+text UpanaCavesystem_Text_KenzoDefeated {
+    format("Your discipline surpasses mine. I have more to learn.")
+}
+
+text UpanaCavesystem_Text_KenzoPostBattle {
+    format("The ancients who lived here trained their bodies just as I do.\pI feel their strength echoing in these walls.")
+}
+
+script UpanaCavesystem_Trainer_Edgar {
+    trainerbattle_single(TRAINER_POKEMANIAC_EDGAR, UpanaCavesystem_Text_EdgarIntro, UpanaCavesystem_Text_EdgarDefeated)
+    msgbox(UpanaCavesystem_Text_EdgarPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text UpanaCavesystem_Text_EdgarIntro {
+    format("This cave is full of ancient history! My Cubone was found right here among the ruins!")
+}
+
+text UpanaCavesystem_Text_EdgarDefeated {
+    format("My research...! My battle pride...! Both shattered!")
+}
+
+text UpanaCavesystem_Text_EdgarPostBattle {
+    format("The carvings here depict Pokémon we rarely see now.\pThe indigenous people had a deep bond with cave-dwelling species.")
+}
+
+script UpanaCavesystem_Trainer_Aldric {
+    trainerbattle_single(TRAINER_HIKER_ALDRIC, UpanaCavesystem_Text_AldricIntro, UpanaCavesystem_Text_AldricDefeated)
+    msgbox(UpanaCavesystem_Text_AldricPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text UpanaCavesystem_Text_AldricIntro {
+    format("Onix IS this mountain! To battle me is to battle the stone itself!")
+}
+
+text UpanaCavesystem_Text_AldricDefeated {
+    format("Even the mountain must yield sometimes.")
+}
+
+text UpanaCavesystem_Text_AldricPostBattle {
+    format("I've spent years learning the paths through here.\pEvery tunnel was carved by people who knew this rock better than anyone.")
+}
+
+script UpanaCavesystem_Trainer_Sera {
+    trainerbattle_single(TRAINER_BATTLE_GIRL_SERA, UpanaCavesystem_Text_SeraIntro, UpanaCavesystem_Text_SeraDefeated)
+    msgbox(UpanaCavesystem_Text_SeraPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text UpanaCavesystem_Text_SeraIntro {
+    format("The silence of this cave sharpens Meditite's focus and mine. Let's see your strength!")
+}
+
+text UpanaCavesystem_Text_SeraDefeated {
+    format("My focus slipped. I'll meditate on what went wrong.")
+}
+
+text UpanaCavesystem_Text_SeraPostBattle {
+    format("There's a section deeper in where it's completely silent. Perfect for training.\pThe ancients knew it too.")
+}
+
+script UpanaCavesystem_Trainer_Opal {
+    trainerbattle_single(TRAINER_KINDLER_OPAL, UpanaCavesystem_Text_OpalIntro, UpanaCavesystem_Text_OpalDefeated)
+    msgbox(UpanaCavesystem_Text_OpalPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text UpanaCavesystem_Text_OpalIntro {
+    format("Ha, a young trainer in my cave! My Numel keeps me warm in these cold tunnels. Now battle!")
+}
+
+text UpanaCavesystem_Text_OpalDefeated {
+    format("You're fiercer than my Numel's fire, dear!")
+}
+
+text UpanaCavesystem_Text_OpalPostBattle {
+    format("I've lived near this cave my whole life.\pMy grandmother spoke of the people who called it home. Their stories live in the stone.")
+}
+
+script UpanaCaveMainRoom_Npc_Researcher {
+    lock
+    faceplayer
+    setspeaker("Dr. Virel")
+    msgbox(format("These carvings are extraordinary.\pThe technique, the depth of the cuts, this predates anything we have documented in the region.\pWhoever made them spent a long time down here.\pThe creatures depicted... I can't place them.\pThey don't match anything in modern records.\pBut the people who carved them clearly knew them very well.\pPerhaps too well."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script UpanaCaveMainRoom_Npc_Hiker {
+    lock
+    faceplayer
+    setspeaker("Hiker Bram")
+    msgbox(format("You know what I love about this cave?\pThe formations.\pLook at those stalactites they have been growing for thousands of years.\pJust one drip at a time.\pStalactites hang down from the ceiling. Stalagmites push up from the floor.\pEasy way to remember: stalacTITES hold TIGHT to the ceiling.\pI came up with that myself."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script UpanaCaveMainRoom_Inscription_1 {
+    lock
+    msgbox(format("A small carving, easy to miss.\pA circle of hunched figures around a dark pool.\pSomething is submerged in the water at the center.\pAll the figures face inward.\pNone of them appear to be looking at each other."))
+    waitmessage
+    release
+}
+
+script UpanaCaveMainRoom_Inscription_2 {
+    lock
+    msgbox(format("A tightly coiled, spiral-shelled creature fills most of the stone panel.\pBelow it, small figures press their foreheads to the ground.\pFish and plants are carved around them, laid out in neat rows.\pThey appear to be offerings."))
+    waitmessage
+    release
+}
+
+script UpanaCaveMainRoom_Inscription_3 {
+    lock
+    msgbox(format("A lone figure stands with its arms outstretched.\pBefore it looms a shape with wide, jagged jaws and features like a wingspan.\pThe lines carved around the creature are deeper and more frantic than anywhere else on the wall.\pSomething about the image suggests the figure is not afraid."))
+    waitmessage
+    release
+}
+
+script UpanaCaveMainRoom_Inscription_4 {
+    lock
+    msgbox(format("A row of oval shapes arranged in a perfect ring.\pBetween each one, a mark like a curved blade.\pThe image is worn almost flat.\pWhoever made it came back more than once. The outlines have been recut."))
+    waitmessage
+    release
+}
+
+script UpanaCaveMainRoom_Inscription_Large {
+    lock
+    msgbox(format("A large carving covers an entire section of the wall.\pIn the center stands a figure. Jointed, plated, its long curved arms at its sides.\pAround it, dozens of smaller figures in every posture: prostrate, standing, arms raised, holding torches.\pLines radiate outward from the central figure in all directions."))
+    waitmessage
+    msgbox(format("In the upper corner of the image, something descends from above.\pA winged shape. Jaws open. Impossibly large.\pThe two creatures are not fighting.\pThey appear to be... meeting."))
+    waitmessage
+    msgbox(format("Below both of them, the small figures are turned away.\pHeads bowed.\pIn the lowest part of the carving, barely visible, something is being carried toward a fire.\pIt is small.\pIt is not a Pokémon."))
+    waitmessage
+    release
+}
+
+script UpanaCavesystem_Trainer_Rex {
+    trainerbattle_single(TRAINER_BIKER_REX, UpanaCavesystem_Text_RexIntro, UpanaCavesystem_Text_RexDefeated)
+    msgbox(UpanaCavesystem_Text_RexPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text UpanaCavesystem_Text_RexIntro {
+    format("Before I go down that ridge full I want to battle some trainers!")
+}
+
+text UpanaCavesystem_Text_RexDefeated {
+    format("Whoa, you're faster than both my Doduo!")
+}
+
+text UpanaCavesystem_Text_RexPostBattle {
+    format("The downhill run from the ridgeline is wild. My Doduo can't keep pace with me on a bike so they stay in here and race the stalagmites.")
+}
+
+

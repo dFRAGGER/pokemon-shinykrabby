@@ -312,8 +312,7 @@ Erpuscity_Starthouse_1F_LittleSister_Text_0:
 
 Erpuscity_Starthouse_1F_LittleSister_Text_1:
 # 22 "data/maps/ErpusCity_StartHouse_1F/scripts.pory"
-	.string "Hi there big brother, how do you like my\n"
-	.string "new stuffed Pokémon?\p"
+	.string "Mom got me a new stuffed Pokémon!\p"
 	.string "It's huge isn't it?$"
 
 Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech_Text_0:

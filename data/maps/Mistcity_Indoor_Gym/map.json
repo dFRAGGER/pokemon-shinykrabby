@@ -2,7 +2,7 @@
   "id": "MAP_MISTCITY_INDOOR_GYM",
   "name": "Mistcity_Indoor_Gym",
   "layout": "LAYOUT_MISTCITY_INDOOR_GYM",
-  "music": "MUS_FORTREE",
+  "music": "MUS_GYM",
   "region_map_section": "MAPSEC_MIST_CITY",
   "requires_flash": true,
   "weather": "WEATHER_SHADE",

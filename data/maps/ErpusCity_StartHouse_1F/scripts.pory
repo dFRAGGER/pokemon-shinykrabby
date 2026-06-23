@@ -19,7 +19,7 @@ script Erpuscity_Starthouse_1F_WoodStatue {
 script Erpuscity_Starthouse_1F_LittleSister {
     lock
     setspeaker("Sister")
-    msgbox(format("Hi there big brother, how do you like my new stuffed Pokémon?\pIt's huge isn't it?"),MSGBOX_AUTOCLOSE)
+    msgbox(format("Mom got me a new stuffed Pokémon!\pIt's huge isn't it?"),MSGBOX_AUTOCLOSE)
     waitmessage
     release
 }

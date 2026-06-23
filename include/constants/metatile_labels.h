@@ -949,10 +949,10 @@
 
 // gTileset_Snow
 #define METATILE_Snow_Door             0x021
-#define METATILE_Snow_Door_PokeCenter  0x061
-#define METATILE_Snow_Door_Gym         0x1CD
-#define METATILE_Snow_Door_PokeMart    0x041
 #define METATILE_Snow_Door_Contest     0x1DB
+#define METATILE_Snow_Door_Gym         0x1CD
+#define METATILE_Snow_Door_PokeCenter  0x061
+#define METATILE_Snow_Door_PokeMart    0x041
 
 // gTileset_Sootopolis
 #define METATILE_Sootopolis_Door             0x21E

@@ -45,36 +45,36 @@
 #define TRAINER_FACULTY_2F_GRUNT                 38     // SK: Lionsarch Steel Factory 2F - Faculty grunt (Harkin)
 #define TRAINER_FACULTY_2F_SCIENTIST_2           39     // SK: Lionsarch Steel Factory 2F - Faculty scientist (Dr. Vale)
 #define TRAINER_FACULTY_SCIENTIST_FACTORY1       40     // SK: Lionsarch Steel Factory - Faculty scientist (Bram)
-#define TRAINER_UNUSED_41                        41
-#define TRAINER_UNUSED_42                        42
-#define TRAINER_UNUSED_43                        43
-#define TRAINER_UNUSED_44                        44
-#define TRAINER_UNUSED_45                        45
+#define TRAINER_CHARLIE                          41     // SK: Upana Cave System Main Room
+#define TRAINER_HIKER_BOWEN                      42     // SK: Upana Cave Main Room
+#define TRAINER_BUG_CATCHER_JASPER               43     // SK: Upana Cave Main Room
+#define TRAINER_LASS_QUINN                       44     // SK: Upana Cave Main Room
+#define TRAINER_HIKER_DANE                       45     // SK: Upana Cave Main Room
 #define TRAINER_FACULTY_GUARD_B1F_1              46     // SK:
-#define TRAINER_UNUSED_47                        47
-#define TRAINER_UNUSED_48                        48
-#define TRAINER_UNUSED_49                        49
-#define TRAINER_UNUSED_50                        50
-#define TRAINER_UNUSED_51                        51
-#define TRAINER_UNUSED_52                        52
-#define TRAINER_UNUSED_53                        53
-#define TRAINER_UNUSED_54                        54
-#define TRAINER_UNUSED_55                        55
-#define TRAINER_UNUSED_56                        56
-#define TRAINER_UNUSED_57                        57
-#define TRAINER_UNUSED_58                        58
-#define TRAINER_UNUSED_59                        59
-#define TRAINER_UNUSED_60                        60
-#define TRAINER_UNUSED_61                        61
-#define TRAINER_UNUSED_62                        62
-#define TRAINER_UNUSED_63                        63
-#define TRAINER_UNUSED_64                        64
-#define TRAINER_UNUSED_65                        65
-#define TRAINER_UNUSED_66                        66
-#define TRAINER_UNUSED_67                        67
-#define TRAINER_UNUSED_68                        68
-#define TRAINER_UNUSED_69                        69
-#define TRAINER_UNUSED_70                        70
+#define TRAINER_BLACK_BELT_KENZO                 47     // SK: Upana Cave Main Room
+#define TRAINER_POKEMANIAC_EDGAR                 48     // SK: Upana Cave Main Room
+#define TRAINER_HIKER_ALDRIC                     49     // SK: Upana Cave Main Room
+#define TRAINER_BATTLE_GIRL_SERA                 50     // SK: Upana Cave Main Room
+#define TRAINER_KINDLER_OPAL                     51     // SK: Upana Cave Main Room
+#define TRAINER_BIKER_REX                        52     // SK: Upana Cave Main Room
+#define TRAINER_HIKER_WADE                       53     // SK: Upana Cave River Room B1F
+#define TRAINER_SCIENTIST_WARREN                 54     // SK: Upana Cave River Room B1F
+#define TRAINER_HIKER_CORIN                      55     // SK: Upana Cave River Room B1F
+#define TRAINER_LASS_ELENA                       56     // SK: Upana Cave River Room B1F
+#define TRAINER_BIKER_FRLG_SKYE                  57     // SK: Bike Park
+#define TRAINER_TRIATHLETE_F_WREN                58     // SK: Bike Park
+#define TRAINER_TRIATHLETE_M_REED                59     // SK: Bike Park
+#define TRAINER_TRIATHLETE_F_MIRA                60     // SK: Bike Park
+#define TRAINER_BIKER_FRLG_COLT                  61     // SK: Bike Park
+#define TRAINER_TRIATHLETE_M_PIKE                62     // SK: Bike Park
+#define TRAINER_BIKER_FRLG_SEAR                  63     // SK: Bike Park
+#define TRAINER_TRIATHLETE_F_VELA                64     // SK: Bike Park
+#define TRAINER_TRIATHLETE_M_HOLT                65     // SK: Bike Park
+#define TRAINER_TRIATHLETE_F_FERN                66     // SK: Bike Park
+#define TRAINER_TRIATHLETE_M_JUDE                67     // SK: Bike Park
+#define TRAINER_BIKER_FRLG_GRIT                  68     // SK: Bike Park
+#define TRAINER_TRIATHLETE_F_DUNE                69     // SK: Bike Park
+#define TRAINER_BIKER_FRLG_AXEL                  70     // SK: Bike Park
 #define TRAINER_RANDALL                          71     // SK: Route 05 - Mountain trainer
 #define TRAINER_PARKER                           72     // SK: Route 05 - Mountain trainer
 #define TRAINER_GEORGE                           73     // SK: Route 05 - Mountain trainer
@@ -88,7 +88,7 @@
 #define TRAINER_SAMUEL                           81     // SK: East Lion Mountain - Faculty patrol
 #define TRAINER_VITO                             82     // SK: East Lion Mountain - Hiker witness
 #define TRAINER_OWEN                             83     // SK: Mining Cave - Faculty member
-#define TRAINER_UNUSED_84                        84
+#define TRAINER_INTERVIEWER_LANE                 84     // SK: Bike Park (double battle)
 #define TRAINER_UNUSED_85                        85
 #define TRAINER_UNUSED_86                        86
 #define TRAINER_UNUSED_87                        87
@@ -882,37 +882,34 @@
 #define TRAINER_BEVERLY   TRAINER_FACULTY_OFFICIAL_1   // slot repurposed by SK
 #define TRAINER_DARIAN    TRAINER_FACULTY_OFFICIAL_3   // slot repurposed by SK
 
-// Vanilla trainer name aliases — renamed to numbered SK placeholders
-#define TRAINER_ROSE_3                               TRAINER_UNUSED_41
-#define TRAINER_ROSE_4                               TRAINER_UNUSED_42
-#define TRAINER_ROSE_5                               TRAINER_UNUSED_43
-#define TRAINER_DUSTY_1                              TRAINER_UNUSED_44
-#define TRAINER_CHIP                                 TRAINER_UNUSED_45
-#define TRAINER_DUSTY_2                              TRAINER_UNUSED_47
-#define TRAINER_DUSTY_3                              TRAINER_UNUSED_48
-#define TRAINER_DUSTY_4                              TRAINER_UNUSED_49
-#define TRAINER_DUSTY_5                              TRAINER_UNUSED_50
-#define TRAINER_GABBY_AND_TY_1                       TRAINER_UNUSED_51
-#define TRAINER_GABBY_AND_TY_2                       TRAINER_UNUSED_52
-#define TRAINER_GABBY_AND_TY_3                       TRAINER_UNUSED_53
-#define TRAINER_GABBY_AND_TY_4                       TRAINER_UNUSED_54
-#define TRAINER_GABBY_AND_TY_5                       TRAINER_UNUSED_55
-#define TRAINER_GABBY_AND_TY_6                       TRAINER_UNUSED_56
-#define TRAINER_LOLA_1                               TRAINER_UNUSED_57
-#define TRAINER_AUSTINA                              TRAINER_UNUSED_58
-#define TRAINER_GWEN                                 TRAINER_UNUSED_59
-#define TRAINER_LOLA_2                               TRAINER_UNUSED_60
-#define TRAINER_LOLA_3                               TRAINER_UNUSED_61
-#define TRAINER_LOLA_4                               TRAINER_UNUSED_62
-#define TRAINER_LOLA_5                               TRAINER_UNUSED_63
-#define TRAINER_RICKY_1                              TRAINER_UNUSED_64
-#define TRAINER_SIMON                                TRAINER_UNUSED_65
-#define TRAINER_CHARLIE                              TRAINER_UNUSED_66
-#define TRAINER_RICKY_2                              TRAINER_UNUSED_67
-#define TRAINER_RICKY_3                              TRAINER_UNUSED_68
-#define TRAINER_RICKY_4                              TRAINER_UNUSED_69
-#define TRAINER_RICKY_5                              TRAINER_UNUSED_70
-#define TRAINER_WILTON_2                             TRAINER_UNUSED_84
+// Vanilla trainer name aliases — slots repurposed by SK trainers
+#define TRAINER_DUSTY_1                              TRAINER_LASS_QUINN
+#define TRAINER_CHIP                                 TRAINER_HIKER_DANE
+#define TRAINER_DUSTY_2                              TRAINER_BLACK_BELT_KENZO
+#define TRAINER_DUSTY_3                              TRAINER_POKEMANIAC_EDGAR
+#define TRAINER_DUSTY_4                              TRAINER_HIKER_ALDRIC
+#define TRAINER_DUSTY_5                              TRAINER_BATTLE_GIRL_SERA
+#define TRAINER_GABBY_AND_TY_1                       TRAINER_KINDLER_OPAL
+#define TRAINER_GABBY_AND_TY_2                       TRAINER_BIKER_REX
+#define TRAINER_GABBY_AND_TY_3                       TRAINER_HIKER_WADE
+#define TRAINER_GABBY_AND_TY_4                       TRAINER_SCIENTIST_WARREN
+#define TRAINER_GABBY_AND_TY_5                       TRAINER_HIKER_CORIN
+#define TRAINER_GABBY_AND_TY_6                       TRAINER_LASS_ELENA
+#define TRAINER_LOLA_1                               TRAINER_BIKER_FRLG_SKYE
+#define TRAINER_AUSTINA                              TRAINER_TRIATHLETE_F_WREN
+#define TRAINER_GWEN                                 TRAINER_TRIATHLETE_M_REED
+#define TRAINER_LOLA_2                               TRAINER_TRIATHLETE_F_MIRA
+#define TRAINER_LOLA_3                               TRAINER_BIKER_FRLG_COLT
+#define TRAINER_LOLA_4                               TRAINER_TRIATHLETE_M_PIKE
+#define TRAINER_LOLA_5                               TRAINER_BIKER_FRLG_SEAR
+#define TRAINER_RICKY_1                              TRAINER_TRIATHLETE_F_VELA
+#define TRAINER_SIMON                                TRAINER_TRIATHLETE_M_HOLT
+#define TRAINER_CHARLIE_ABANDONED                    TRAINER_TRIATHLETE_F_FERN
+#define TRAINER_RICKY_2                              TRAINER_TRIATHLETE_M_JUDE
+#define TRAINER_RICKY_3                              TRAINER_BIKER_FRLG_GRIT
+#define TRAINER_RICKY_4                              TRAINER_TRIATHLETE_F_DUNE
+#define TRAINER_RICKY_5                              TRAINER_BIKER_FRLG_AXEL
+#define TRAINER_WILTON_2                             TRAINER_INTERVIEWER_LANE
 #define TRAINER_WILTON_3                             TRAINER_UNUSED_85
 #define TRAINER_WILTON_4                             TRAINER_UNUSED_86
 #define TRAINER_WILTON_5                             TRAINER_UNUSED_87
@@ -942,8 +939,6 @@
 #define TRAINER_VALERIE_4                            TRAINER_UNUSED_112
 #define TRAINER_VALERIE_5                            TRAINER_UNUSED_113
 #define TRAINER_DAPHNE                               TRAINER_UNUSED_115
-#define TRAINER_GRUNT_SPACE_CENTER_2                 TRAINER_UNUSED_116
-#define TRAINER_CINDY_2                              TRAINER_UNUSED_117
 #define TRAINER_BRIANNA                              TRAINER_UNUSED_118
 #define TRAINER_NAOMI                                TRAINER_UNUSED_119
 #define TRAINER_CINDY_3                              TRAINER_UNUSED_120
@@ -996,7 +991,6 @@
 #define TRAINER_FRANKLIN                             TRAINER_UNUSED_170
 #define TRAINER_KEVIN                                TRAINER_UNUSED_171
 #define TRAINER_JACK                                 TRAINER_UNUSED_172
-#define TRAINER_DUDLEY                               TRAINER_UNUSED_173
 #define TRAINER_CHAD                                 TRAINER_UNUSED_174
 #define TRAINER_TONY_2                               TRAINER_UNUSED_175
 #define TRAINER_TONY_3                               TRAINER_UNUSED_176
@@ -1016,7 +1010,6 @@
 #define TRAINER_ATSUSHI                              TRAINER_UNUSED_190
 #define TRAINER_KIRK                                 TRAINER_UNUSED_191
 #define TRAINER_GRUNT_AQUA_HIDEOUT_7                 TRAINER_UNUSED_192
-#define TRAINER_GRUNT_AQUA_HIDEOUT_8                 TRAINER_UNUSED_193
 #define TRAINER_SHAWN                                TRAINER_UNUSED_194
 #define TRAINER_FERNANDO_1                           TRAINER_UNUSED_195
 #define TRAINER_DALTON_1                             TRAINER_UNUSED_196
@@ -1278,7 +1271,6 @@
 #define TRAINER_SIENNA                               TRAINER_UNUSED_459
 #define TRAINER_DEBRA                                TRAINER_UNUSED_460
 #define TRAINER_LINDA                                TRAINER_UNUSED_461
-#define TRAINER_KAYLEE                               TRAINER_UNUSED_462
 #define TRAINER_LAUREL                               TRAINER_UNUSED_463
 #define TRAINER_CARLEE                               TRAINER_UNUSED_464
 #define TRAINER_JENNY_2                              TRAINER_UNUSED_465
@@ -1301,8 +1293,6 @@
 #define TRAINER_AMY_AND_LIV_2                        TRAINER_UNUSED_482
 #define TRAINER_GINA_AND_MIA_1                       TRAINER_UNUSED_483
 #define TRAINER_MIU_AND_YUKI                         TRAINER_UNUSED_484
-#define TRAINER_AMY_AND_LIV_3                        TRAINER_UNUSED_485
-#define TRAINER_GINA_AND_MIA_2                       TRAINER_UNUSED_486
 #define TRAINER_AMY_AND_LIV_4                        TRAINER_UNUSED_487
 #define TRAINER_AMY_AND_LIV_5                        TRAINER_UNUSED_488
 #define TRAINER_AMY_AND_LIV_6                        TRAINER_UNUSED_489
@@ -1384,8 +1374,6 @@
 #define TRAINER_CATHERINE_5                          TRAINER_UNUSED_565
 #define TRAINER_JULIO                                TRAINER_UNUSED_566
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_5              TRAINER_UNUSED_567
-#define TRAINER_GRUNT_UNUSED                         TRAINER_UNUSED_568
-#define TRAINER_GRUNT_MT_PYRE_4                      TRAINER_UNUSED_569
 #define TRAINER_GRUNT_JAGGED_PASS                    TRAINER_UNUSED_570
 #define TRAINER_MARC                                 TRAINER_UNUSED_571
 #define TRAINER_BRENDEN                              TRAINER_UNUSED_572
@@ -1397,13 +1385,10 @@
 #define TRAINER_HARRISON                             TRAINER_UNUSED_578
 #define TRAINER_GRUNT_MT_CHIMNEY_2                   TRAINER_UNUSED_579
 #define TRAINER_CLARENCE                             TRAINER_UNUSED_580
-#define TRAINER_TERRY                                TRAINER_UNUSED_581
 #define TRAINER_NATE                                 TRAINER_UNUSED_582
 #define TRAINER_KATHLEEN                             TRAINER_UNUSED_583
 #define TRAINER_CLIFFORD                             TRAINER_UNUSED_584
 #define TRAINER_NICHOLAS                             TRAINER_UNUSED_585
-#define TRAINER_GRUNT_SPACE_CENTER_3                 TRAINER_UNUSED_586
-#define TRAINER_GRUNT_SPACE_CENTER_4                 TRAINER_UNUSED_587
 #define TRAINER_GRUNT_SPACE_CENTER_5                 TRAINER_UNUSED_588
 #define TRAINER_GRUNT_SPACE_CENTER_6                 TRAINER_UNUSED_589
 #define TRAINER_GRUNT_SPACE_CENTER_7                 TRAINER_UNUSED_590
@@ -1412,7 +1397,6 @@
 #define TRAINER_BRENDAN_RUSTBORO_MUDKIP              TRAINER_UNUSED_593
 #define TRAINER_PAXTON                               TRAINER_UNUSED_594
 #define TRAINER_ISABELLA                             TRAINER_UNUSED_595
-#define TRAINER_GRUNT_WEATHER_INST_5                 TRAINER_UNUSED_596
 #define TRAINER_TABITHA_MT_CHIMNEY                   TRAINER_UNUSED_597
 #define TRAINER_JONATHAN                             TRAINER_UNUSED_598
 #define TRAINER_BRENDAN_RUSTBORO_TORCHIC             TRAINER_UNUSED_599
@@ -1446,9 +1430,6 @@
 #define TRAINER_ALAN                                 TRAINER_UNUSED_630
 #define TRAINER_CLARK                                TRAINER_UNUSED_631
 #define TRAINER_ERIC                                 TRAINER_UNUSED_632
-#define TRAINER_LUCAS_2                              TRAINER_UNUSED_633
-#define TRAINER_MIKE_1                               TRAINER_UNUSED_634
-#define TRAINER_MIKE_2                               TRAINER_UNUSED_635
 #define TRAINER_TRENT_2                              TRAINER_UNUSED_636
 #define TRAINER_TRENT_3                              TRAINER_UNUSED_637
 #define TRAINER_TRENT_4                              TRAINER_UNUSED_638
@@ -1661,8 +1642,6 @@
 #define TRAINER_EVERETT                              TRAINER_UNUSED_850
 #define TRAINER_RED                                  TRAINER_UNUSED_851
 #define TRAINER_LEAF                                 TRAINER_UNUSED_852
-#define TRAINER_BRENDAN_PLACEHOLDER                  TRAINER_UNUSED_853
-#define TRAINER_MAY_PLACEHOLDER                      TRAINER_UNUSED_854
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space
 //       for 2 additional trainers before trainer flag space overflows

@@ -852,7 +852,7 @@ LabJariIndoor_Eventscript_Barry_Birds_Text_0:
 	.string "SO WHO ARE YOU?\p"
 	.string "...\p"
 	.string "You want to become my new intern?\p"
-	.string "WELL TOO LATE BOY!!\p"
+	.string "WELL TOO LATE!!\p"
 	.string "BARRY WAS HERE FIRST!!\p"
 	.string "ISN'T THAT RIGHT BARRY?$"
 

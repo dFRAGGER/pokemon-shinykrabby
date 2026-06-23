@@ -928,7 +928,7 @@ ErpusCity_ProfessorBirdsLab_Eventscript_Hoenn_Sign_Text_0:
 # 333 "data/maps/LabJariIndoorF0/scripts.pory"
 	.string "An almost illegible note is scrawled on\n"
 	.string "the paper:\p"
-	.string "TESSERA??$"
+	.string "HOENN??$"
 
 ErpusCity_ProfessorBirdsLab_Eventscript_TaylorSwift_Sign_Text_0:
 # 340 "data/maps/LabJariIndoorF0/scripts.pory"

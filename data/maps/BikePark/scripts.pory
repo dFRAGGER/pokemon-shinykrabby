@@ -1,1 +1,374 @@
 mapscripts BikePark_MapScripts {}
+
+script BikePark_BikeCheck {
+    lockall
+    specialvar(VAR_RESULT, GetPlayerAvatarBike)
+    if (var(VAR_RESULT) == 0) {
+        goto(BikePark_BikeCheck_NoBike)
+    }
+    setflag(FLAG_SYS_CYCLING_ROAD)
+    setvar(VAR_TEMP_0, 1)
+    releaseall
+    end
+}
+
+script BikePark_BikeCheck_NoBike {
+    playse(SE_PIN)
+    applymovement(17, moves(emote_exclamation_mark))
+    msgbox(format("Whoa! This is a designated cycling route.\pFor the safety of everyone on the ridge, you cannot proceed on foot.\pPlease get on your bike first."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(walk_left))
+    waitmovement
+    releaseall
+    end
+}
+
+script BikePark_ClearCyclingRoad {
+    lockall
+    clearflag(FLAG_SYS_CYCLING_ROAD)
+    setvar(VAR_TEMP_0, 0)
+    releaseall
+    end
+}
+
+script BikePark_Npc_LegendWatcher {
+    lock
+    faceplayer
+    msgbox(format("You know, there's a story about a rider who trained on this exact ridge.\pRed hair. Couldn't miss him.\pThree hours a day, five days a week, for six years straight."))
+    waitmessage
+    msgbox(format("Six years.\pI did the math once.\pThat's over four thousand hours on a bike going downhill.\pOn this hill."))
+    waitmessage
+    msgbox(format("Last I heard he still travels.\pNot on a bike anymore though.\pSome beat-up campervan.\pOccasionally turns up in his hometown.\pApparently it only has one house."))
+    waitmessage
+    msgbox(format("...One house.\p...Four thousand hours on a bike.\p...I'm starting to think the riding didn't make him great.\pI'm starting to think it made him a little insane."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script BikePark_Npc_BikerKai {
+    lock
+    faceplayer
+    setspeaker("Biker Kai")
+    msgbox(format("Fastest on this ridge? That would be me.\pFinn tried to argue it last week.\pHe stopped halfway down to adjust his gloves.\pCase closed."))
+    waitmessage
+    release
+    end
+}
+
+script BikePark_Npc_BikerFinn {
+    lock
+    faceplayer
+    setspeaker("Biker Finn")
+    msgbox(format("Don't let Kai tell you anything.\pHe brakes before every bend. I've clocked it.\pFastest downhill is whoever doesn't touch the brakes.\pThat's me."))
+    waitmessage
+    release
+    end
+}
+
+script BikePark_Npc_BikerRox {
+    lock
+    faceplayer
+    setspeaker("Biker Rox")
+    msgbox(format("Those two have been at this for a week.\pNeither of them has actually raced the other yet.\pI offered to time it. They both made excuses.\p...Fastest on this ridge is whoever's willing to actually go."))
+    waitmessage
+    release
+    end
+}
+
+script BikePark_Npc_BikeWatcher {
+    lock
+    faceplayer
+    msgbox(format("These bikes have been parked here a while...\pThe red one looks quick but the brakes are worn.\pThe blue one has better geometry but the saddle's too low.\pThe yellow one in the back...\p...actually, I think that one might be stolen.\pI'll keep watching."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script BikePark_Npc_RidgeRanger {
+    lock
+    faceplayer
+    setspeaker("Ranger Tove")
+    msgbox(format("Three years I've been watching this ridge.\pGulliot, Taillow, Wingull - same crowd every season.\pBut last month I spotted something on the southern outcrop.\pOrange. Small. Left a scorch mark on the rock when it took off."))
+    waitmessage
+    msgbox(format("Haven't seen it since.\pI'm not writing it in the report yet."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script BikePark_Trainer_Skye {
+    trainerbattle_single(TRAINER_BIKER_FRLG_SKYE, BikePark_Text_SkyeIntro, BikePark_Text_SkyeDefeated)
+    msgbox(BikePark_Text_SkyePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BikePark_Text_SkyeIntro {
+    format("Every time I ride down here a whole flock joins me! Try and keep up!")
+}
+
+text BikePark_Text_SkyeDefeated {
+    format("They flew ahead before the finish line...")
+}
+
+text BikePark_Text_SkyePostBattle {
+    format("This ridge belongs to the birds. No predator can reach them up here.\pThey own the airspace.")
+}
+
+script BikePark_Trainer_Wren {
+    trainerbattle_single(TRAINER_TRIATHLETE_F_WREN, BikePark_Text_WrenIntro, BikePark_Text_WrenDefeated)
+    msgbox(BikePark_Text_WrenPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BikePark_Text_WrenIntro {
+    format("Farfetch'd and I train this descent every day. You just stepped onto our track!")
+}
+
+text BikePark_Text_WrenDefeated {
+    format("We'll add extra sprints to tomorrow's session.")
+}
+
+text BikePark_Text_WrenPostBattle {
+    format("She holds that leek for balance on the slope. Never drops it. Not once.")
+}
+
+script BikePark_Trainer_Reed {
+    trainerbattle_single(TRAINER_TRIATHLETE_M_REED, BikePark_Text_ReedIntro, BikePark_Text_ReedDefeated)
+    msgbox(BikePark_Text_ReedPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BikePark_Text_ReedIntro {
+    format("Nuzleaf loves the mountain air. So do I. Nothing like this ridge!")
+}
+
+text BikePark_Text_ReedDefeated {
+    format("You've got some altitude in you.")
+}
+
+text BikePark_Text_ReedPostBattle {
+    format("The elevation changes how Pokemon behave. Nuzleaf is calmer up here. More focused.")
+}
+
+script BikePark_Trainer_Mira {
+    trainerbattle_single(TRAINER_TRIATHLETE_F_MIRA, BikePark_Text_MiraIntro, BikePark_Text_MiraDefeated)
+    msgbox(BikePark_Text_MiraPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BikePark_Text_MiraIntro {
+    format("Taillow rides the updrafts while Lombre handles the puddles at the bottom. This trail is ours!")
+}
+
+text BikePark_Text_MiraDefeated {
+    format("You broke my rhythm!")
+}
+
+text BikePark_Text_MiraPostBattle {
+    format("Something landed on my helmet halfway down.\pThis ridge is full of birds. Bring a helmet, I'm serious.")
+}
+
+script BikePark_Trainer_Colt {
+    trainerbattle_single(TRAINER_BIKER_FRLG_COLT, BikePark_Text_ColtIntro, BikePark_Text_ColtDefeated)
+    msgbox(BikePark_Text_ColtPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BikePark_Text_ColtIntro {
+    format("My Pidgeys fly escort while I go downhill. Fastest flock on the mountain!")
+}
+
+text BikePark_Text_ColtDefeated {
+    format("They usually scare off the competition!")
+}
+
+text BikePark_Text_ColtPostBattle {
+    format("Pidgeotto leads the formation. The two Pidgey keep pace.\pWorks better than a bike computer.")
+}
+
+script BikePark_Trainer_Pike {
+    trainerbattle_single(TRAINER_TRIATHLETE_M_PIKE, BikePark_Text_PikeIntro, BikePark_Text_PikeDefeated)
+    msgbox(BikePark_Text_PikePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BikePark_Text_PikeIntro {
+    format("I train at dawn. My Pokemon see better in the dark than I ever could.")
+}
+
+text BikePark_Text_PikeDefeated {
+    format("You've got good eyes for this hour.")
+}
+
+text BikePark_Text_PikePostBattle {
+    format("Owls on a mountain ridge. The updrafts here are perfect for gliding at night.")
+}
+
+script BikePark_Trainer_Lane {
+    trainerbattle_double(TRAINER_INTERVIEWER_LANE, BikePark_Text_LaneIntro, BikePark_Text_LaneDefeated, BikePark_Text_LaneNotEnoughMons)
+    msgbox(BikePark_Text_LanePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BikePark_Text_LaneIntro {
+    format("We're documenting the riders for a feature piece! A battle will make excellent footage!")
+}
+
+text BikePark_Text_LaneDefeated {
+    format("Cut! That was NOT in the script!")
+}
+
+text BikePark_Text_LaneNotEnoughMons {
+    format("You need at least two Pokemon for this segment!")
+}
+
+text BikePark_Text_LanePostBattle {
+    format("The birds that live up here have extraordinary vision. They see everything on the ridge.\pSo do we. That's why we came.")
+}
+
+script BikePark_Trainer_Sear {
+    trainerbattle_single(TRAINER_BIKER_FRLG_SEAR, BikePark_Text_SearIntro, BikePark_Text_SearDefeated)
+    msgbox(BikePark_Text_SearPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BikePark_Text_SearIntro {
+    format("Combusken could outrun me uphill. Good thing we're going downhill!")
+}
+
+text BikePark_Text_SearDefeated {
+    format("Blazing fast. Almost.")
+}
+
+text BikePark_Text_SearPostBattle {
+    format("Fire-type birds very rarely nest here. But Combusken refused to leave the first time we came up.")
+}
+
+script BikePark_Trainer_Vela {
+    trainerbattle_single(TRAINER_TRIATHLETE_F_VELA, BikePark_Text_VelaIntro, BikePark_Text_VelaDefeated)
+    msgbox(BikePark_Text_VelaPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BikePark_Text_VelaIntro {
+    format("Murkrow keeps the other birds in line. That's how I like my trails: clear!")
+}
+
+text BikePark_Text_VelaDefeated {
+    format("Nobody clears you for long.")
+}
+
+text BikePark_Text_VelaPostBattle {
+    format("Snubbull and Murkrow are best friends. Everyone thinks it's weird. Everyone is wrong.")
+}
+
+script BikePark_Trainer_Holt {
+    trainerbattle_single(TRAINER_TRIATHLETE_M_HOLT, BikePark_Text_HoltIntro, BikePark_Text_HoltDefeated)
+    msgbox(BikePark_Text_HoltPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BikePark_Text_HoltIntro {
+    format("Found these Kakuna clinging to the rock face. Waited all winter for them to hatch. Worth it!")
+}
+
+text BikePark_Text_HoltDefeated {
+    format("You've got a good sting to you.")
+}
+
+text BikePark_Text_HoltPostBattle {
+    format("Beedrill nest on the underside of the ledge here. Sheltered from wind.\pSafe from everything.")
+}
+
+script BikePark_Trainer_Grit {
+    trainerbattle_single(TRAINER_BIKER_FRLG_GRIT, BikePark_Text_GritIntro, BikePark_Text_GritDefeated)
+    msgbox(BikePark_Text_GritPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BikePark_Text_GritIntro {
+    format("Trapinch on a mountain ridge? Don't underestimate us. We go hard downhill.")
+}
+
+text BikePark_Text_GritDefeated {
+    format("Tougher than the gravel. Respect.")
+}
+
+text BikePark_Text_GritPostBattle {
+    format("Trapinch bites through anything. Good motivation when the trail gets rough.")
+}
+
+script BikePark_Trainer_Fern {
+    trainerbattle_single(TRAINER_TRIATHLETE_F_FERN, BikePark_Text_FernIntro, BikePark_Text_FernDefeated)
+    msgbox(BikePark_Text_FernPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BikePark_Text_FernIntro {
+    format("My Butterfree floats alongside me on the descent! Watch out though!")
+}
+
+text BikePark_Text_FernDefeated {
+    format("You scattered my formation!")
+}
+
+text BikePark_Text_FernPostBattle {
+    format("I carried these Metapod all the way up the mountain.\pThe altitude speeds up the change.")
+}
+
+script BikePark_Trainer_Axel {
+    trainerbattle_single(TRAINER_BIKER_FRLG_AXEL, BikePark_Text_AxelIntro, BikePark_Text_AxelDefeated)
+    msgbox(BikePark_Text_AxelPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BikePark_Text_AxelIntro {
+    format("Ninjask moves faster than my tires. I've been chasing it all season!")
+}
+
+text BikePark_Text_AxelDefeated {
+    format("Top speed wasn't enough!")
+}
+
+text BikePark_Text_AxelPostBattle {
+    format("Koffing drifts upward, Ninjask shoots forward, I go downhill.\pThree directions, same team.")
+}
+
+script BikePark_Trainer_Jude {
+    trainerbattle_single(TRAINER_TRIATHLETE_M_JUDE, BikePark_Text_JudeIntro, BikePark_Text_JudeDefeated)
+    msgbox(BikePark_Text_JudePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BikePark_Text_JudeIntro {
+    format("I brought Makuhita up here to build endurance. Then I realized I needed it more.")
+}
+
+text BikePark_Text_JudeDefeated {
+    format("More reps. Got it.")
+}
+
+text BikePark_Text_JudePostBattle {
+    format("Distance, elevation, wind. Makuhita and I push through all of it.\pThis ridge makes champions.")
+}
+
+script BikePark_Trainer_Dune {
+    trainerbattle_single(TRAINER_TRIATHLETE_F_DUNE, BikePark_Text_DuneIntro, BikePark_Text_DuneDefeated)
+    msgbox(BikePark_Text_DunePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text BikePark_Text_DuneIntro {
+    format("The dry mountain air suits my ground-types perfectly. Now let's battle!")
+}
+
+text BikePark_Text_DuneDefeated {
+    format("You ride harder than this trail.")
+}
+
+text BikePark_Text_DunePostBattle {
+    format("Three runs in a row something has dropped on my head from above.\pNo trees up here. It's the birds. It's always the birds.")
+}
+
+

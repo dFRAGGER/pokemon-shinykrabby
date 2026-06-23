@@ -52,7 +52,7 @@ script LabJariIndoor_Eventscript_Barry_Birds {
     }
     waitmovement
     setspeaker("Prof. Birds")
-    msgbox(format("SO WHO ARE YOU?\p ...\pYou want to become my new intern?\p WELL TOO LATE BOY!!\p BARRY WAS HERE FIRST!!\p ISN'T THAT RIGHT BARRY?"),MSGBOX_AUTOCLOSE)
+    msgbox(format("SO WHO ARE YOU?\p ...\pYou want to become my new intern?\p WELL TOO LATE!!\p BARRY WAS HERE FIRST!!\p ISN'T THAT RIGHT BARRY?"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(3, moves(face_left))
     playse(SE_PIN)
