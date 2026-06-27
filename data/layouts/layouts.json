@@ -6245,7 +6245,7 @@
       "id": "LAYOUT_ROUTE016",
       "name": "Route016_Layout",
       "width": 125,
-      "height": 15,
+      "height": 57,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -10914,6 +10914,30 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Route06_UpanaCave_RiverRoom_B1F/border.bin",
       "blockdata_filepath": "data/layouts/Route06_UpanaCave_RiverRoom_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE014_ESTUARY",
+      "name": "Route014_Estuary_Layout",
+      "width": 142,
+      "height": 40,
+      "border_width": 10,
+      "border_height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Route014_Estuary/border.bin",
+      "blockdata_filepath": "data/layouts/Route014_Estuary/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE013_ESTUARY",
+      "name": "Route013_Estuary_Layout",
+      "width": 100,
+      "height": 63,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Route013_Estuary/border.bin",
+      "blockdata_filepath": "data/layouts/Route013_Estuary/map.bin"
     }
   ]
 }

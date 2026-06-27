@@ -1930,3 +1930,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Route06_UpanaCave_MainRoom/scripts.inc"
 
 	.include "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.inc"
+
+	.include "data/maps/Route014_Estuary/scripts.inc"
+
+	.include "data/maps/Route013_Estuary/scripts.inc"
