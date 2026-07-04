@@ -27,6 +27,11 @@
       "map": "MAP_ROUTE013_ESTUARY",
       "offset": -23,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE017",
+      "offset": -18,
+      "direction": "right"
     }
   ],
   "object_events": [],

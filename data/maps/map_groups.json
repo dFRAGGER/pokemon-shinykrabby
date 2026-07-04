@@ -86,7 +86,8 @@
     "gMapGroup_IndoorTwoIslandRoute_Frlg",
     "gMapGroup_IndoorSixIslandRoute_Frlg",
     "gMapGroup_IndoorSevenIslandRoute_Frlg",
-    "gMapGroup_IndoorBikeShop"
+    "gMapGroup_IndoorBikeShop",
+    "gMapGroup_SK_IndoorEstuary"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -711,7 +712,10 @@
     "Route01205",
     "Island_Mecherchar",
     "Route014_Estuary",
-    "Route013_Estuary"
+    "Route013_Estuary",
+    "Route018",
+    "BalkumTown",
+    "Route019"
   ],
   "gMapGroup_IndooErpusCity": [
     "LabJariIndoor",
@@ -801,7 +805,8 @@
     "Route02_Indoor_Ranger_House"
   ],
   "gMapGroup_IndoorMarshDuke": [
-    "Marshduke_Indoor_Chatedral"
+    "Marshduke_Indoor_Chatedral",
+    "Marshduke_Indoor_House1"
   ],
   "gMapGroup_Link_Frlg": [
     "BattleColosseum_2P_Frlg",
@@ -1305,5 +1310,14 @@
   "gMapGroup_IndoorBikeShop": [
     "BikeShop_Jaouad",
     "BikeRoute_House1"
+  ],
+  "gMapGroup_SK_IndoorEstuary": [
+    "Route16_Indoor_House1",
+    "Route16_Indoor_House2",
+    "Route14_Estuary_Indoor_House1",
+    "Route14_Estuary_Indoor_House2",
+    "Route14_Estuary_Indoor_House4",
+    "Route14_Estuary_Indoor_House3",
+    "Route14_Indoor_House1"
   ]
 }

@@ -1934,3 +1934,25 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Route014_Estuary/scripts.inc"
 
 	.include "data/maps/Route013_Estuary/scripts.inc"
+
+	.include "data/maps/Route16_Indoor_House1/scripts.inc"
+
+	.include "data/maps/Route16_Indoor_House2/scripts.inc"
+
+	.include "data/maps/Route14_Estuary_Indoor_House1/scripts.inc"
+
+	.include "data/maps/Route14_Estuary_Indoor_House2/scripts.inc"
+
+	.include "data/maps/Route14_Estuary_Indoor_House4/scripts.inc"
+
+	.include "data/maps/Route14_Estuary_Indoor_House3/scripts.inc"
+
+	.include "data/maps/Route14_Indoor_House1/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_House1/scripts.inc"
+
+	.include "data/maps/Route018/scripts.inc"
+
+	.include "data/maps/BalkumTown/scripts.inc"
+
+	.include "data/maps/Route019/scripts.inc"

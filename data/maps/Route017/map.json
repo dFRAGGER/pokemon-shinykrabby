@@ -15,8 +15,18 @@
   "connections": [
     {
       "map": "MAP_ROUTE014",
-      "offset": 0,
+      "offset": -22,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE014_ESTUARY",
+      "offset": 18,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE018",
+      "offset": 0,
+      "direction": "down"
     }
   ],
   "object_events": [],
