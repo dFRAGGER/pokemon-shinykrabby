@@ -715,7 +715,8 @@
     "Route013_Estuary",
     "Route018",
     "BalkumTown",
-    "Route019"
+    "Route019",
+    "HezikTown"
   ],
   "gMapGroup_IndooErpusCity": [
     "LabJariIndoor",
@@ -1318,6 +1319,7 @@
     "Route14_Estuary_Indoor_House2",
     "Route14_Estuary_Indoor_House4",
     "Route14_Estuary_Indoor_House3",
-    "Route14_Indoor_House1"
+    "Route14_Indoor_House1",
+    "Route14_Estuary_Indoor_Boathouse"
   ]
 }

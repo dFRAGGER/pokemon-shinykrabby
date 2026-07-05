@@ -19,15 +19,15 @@
       "x": 4,
       "y": 6,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE16_INDOOR_HOUSE1",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ROUTE014_ESTUARY",
+      "dest_warp_id": "3"
     },
     {
       "x": 5,
       "y": 6,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE16_INDOOR_HOUSE1",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ROUTE014_ESTUARY",
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [],

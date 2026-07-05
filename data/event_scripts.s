@@ -1956,3 +1956,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/BalkumTown/scripts.inc"
 
 	.include "data/maps/Route019/scripts.inc"
+
+	.include "data/maps/HezikTown/scripts.inc"
+
+	.include "data/maps/Route14_Estuary_Indoor_Boathouse/scripts.inc"

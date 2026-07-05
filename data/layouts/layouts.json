@@ -11039,11 +11039,11 @@
       "id": "LAYOUT_ROUTE018",
       "name": "Route018_Layout",
       "width": 60,
-      "height": 60,
+      "height": 64,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Route018/border.bin",
       "blockdata_filepath": "data/layouts/Route018/map.bin"
     },
@@ -11062,7 +11062,7 @@
     {
       "id": "LAYOUT_ROUTE019",
       "name": "Route019_Layout",
-      "width": 30,
+      "width": 32,
       "height": 120,
       "border_width": 2,
       "border_height": 2,
@@ -11070,6 +11070,30 @@
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Route019/border.bin",
       "blockdata_filepath": "data/layouts/Route019/map.bin"
+    },
+    {
+      "id": "LAYOUT_HEZIK_TOWN",
+      "name": "HezikTown_Layout",
+      "width": 75,
+      "height": 50,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BrickCity",
+      "border_filepath": "data/layouts/HezikTown/border.bin",
+      "blockdata_filepath": "data/layouts/HezikTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE14_ESTUARY_INDOOR_BOATHOUSE",
+      "name": "Route14_Estuary_Indoor_Boathouse_Layout",
+      "width": 15,
+      "height": 8,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SeashoreHouse",
+      "border_filepath": "data/layouts/Route14_Estuary_Indoor_Boathouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route14_Estuary_Indoor_Boathouse/map.bin"
     }
   ]
 }
