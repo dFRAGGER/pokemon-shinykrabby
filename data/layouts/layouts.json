@@ -11074,8 +11074,8 @@
     {
       "id": "LAYOUT_HEZIK_TOWN",
       "name": "HezikTown_Layout",
-      "width": 75,
-      "height": 50,
+      "width": 96,
+      "height": 70,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
