@@ -11075,7 +11075,7 @@
       "id": "LAYOUT_HEZIK_TOWN",
       "name": "HezikTown_Layout",
       "width": 96,
-      "height": 70,
+      "height": 71,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -11094,6 +11094,42 @@
       "secondary_tileset": "gTileset_SeashoreHouse",
       "border_filepath": "data/layouts/Route14_Estuary_Indoor_Boathouse/border.bin",
       "blockdata_filepath": "data/layouts/Route14_Estuary_Indoor_Boathouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE020",
+      "name": "Route020_Layout",
+      "width": 95,
+      "height": 71,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/Route020/border.bin",
+      "blockdata_filepath": "data/layouts/Route020/map.bin"
+    },
+    {
+      "id": "LAYOUT_HEZIK_TOWN_SECRET_GARDEN",
+      "name": "HezikTown_Secret_Garden_Layout",
+      "width": 96,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BrickCity",
+      "border_filepath": "data/layouts/HezikTown_Secret_Garden/border.bin",
+      "blockdata_filepath": "data/layouts/HezikTown_Secret_Garden/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE021",
+      "name": "Route021_Layout",
+      "width": 250,
+      "height": 24,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BrickCity",
+      "border_filepath": "data/layouts/Route021/border.bin",
+      "blockdata_filepath": "data/layouts/Route021/map.bin"
     }
   ]
 }

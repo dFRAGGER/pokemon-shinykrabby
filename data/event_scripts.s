@@ -1960,3 +1960,9 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/HezikTown/scripts.inc"
 
 	.include "data/maps/Route14_Estuary_Indoor_Boathouse/scripts.inc"
+
+	.include "data/maps/Route020/scripts.inc"
+
+	.include "data/maps/HezikTown_Secret_Garden/scripts.inc"
+
+	.include "data/maps/Route021/scripts.inc"

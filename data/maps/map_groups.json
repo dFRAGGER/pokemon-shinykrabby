@@ -716,7 +716,10 @@
     "Route018",
     "BalkumTown",
     "Route019",
-    "HezikTown"
+    "HezikTown",
+    "Route020",
+    "HezikTown_Secret_Garden",
+    "Route021"
   ],
   "gMapGroup_IndooErpusCity": [
     "LabJariIndoor",
