@@ -1966,3 +1966,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/HezikTown_Secret_Garden/scripts.inc"
 
 	.include "data/maps/Route021/scripts.inc"
+
+	.include "data/maps/Route022/scripts.inc"
+
+	.include "data/maps/Island_Ohiana/scripts.inc"

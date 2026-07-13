@@ -24,14 +24,19 @@
       "direction": "right"
     },
     {
+      "map": "MAP_ROUTE021",
+      "offset": -60,
+      "direction": "down"
+    },
+    {
       "map": "MAP_HEZIK_TOWN_SECRET_GARDEN",
       "offset": -40,
       "direction": "right"
     },
     {
-      "map": "MAP_ROUTE021",
-      "offset": -60,
-      "direction": "down"
+      "map": "MAP_ROUTE022",
+      "offset": -29,
+      "direction": "left"
     }
   ],
   "object_events": [],

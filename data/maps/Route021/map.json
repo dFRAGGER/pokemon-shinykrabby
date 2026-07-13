@@ -27,6 +27,11 @@
       "map": "MAP_ERP_CITY",
       "offset": -15,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE022",
+      "offset": 0,
+      "direction": "up"
     }
   ],
   "object_events": [],

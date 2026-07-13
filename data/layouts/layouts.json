@@ -5560,7 +5560,7 @@
     {
       "id": "LAYOUT_ROUTE02",
       "name": "Route02_Layout",
-      "width": 35,
+      "width": 50,
       "height": 63,
       "border_width": 2,
       "border_height": 2,
@@ -5752,7 +5752,7 @@
     {
       "id": "LAYOUT_ROUTE03",
       "name": "Route03_Layout",
-      "width": 49,
+      "width": 57,
       "height": 30,
       "border_width": 2,
       "border_height": 2,
@@ -10920,8 +10920,8 @@
       "name": "Route014_Estuary_Layout",
       "width": 142,
       "height": 40,
-      "border_width": 10,
-      "border_height": 10,
+      "border_width": 2,
+      "border_height": 2,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Route014_Estuary/border.bin",
@@ -11110,7 +11110,7 @@
     {
       "id": "LAYOUT_HEZIK_TOWN_SECRET_GARDEN",
       "name": "HezikTown_Secret_Garden_Layout",
-      "width": 96,
+      "width": 90,
       "height": 40,
       "border_width": 2,
       "border_height": 2,
@@ -11122,14 +11122,38 @@
     {
       "id": "LAYOUT_ROUTE021",
       "name": "Route021_Layout",
-      "width": 250,
-      "height": 24,
+      "width": 286,
+      "height": 20,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_BrickCity",
       "border_filepath": "data/layouts/Route021/border.bin",
       "blockdata_filepath": "data/layouts/Route021/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE022",
+      "name": "Route022_Layout",
+      "width": 60,
+      "height": 100,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Route022/border.bin",
+      "blockdata_filepath": "data/layouts/Route022/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLAND_OHIANA",
+      "name": "Island_Ohiana_Layout",
+      "width": 75,
+      "height": 75,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/Island_Ohiana/border.bin",
+      "blockdata_filepath": "data/layouts/Island_Ohiana/map.bin"
     }
   ]
 }

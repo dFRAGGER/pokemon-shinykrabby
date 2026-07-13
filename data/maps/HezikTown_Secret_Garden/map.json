@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_HEZIK_TOWN",
-      "offset": -6,
+      "offset": 0,
       "direction": "down"
     },
     {
