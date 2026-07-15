@@ -1,0 +1,3 @@
+Marshduke_Indoor_Tower1_1F_MapScripts::
+	.byte 0
+

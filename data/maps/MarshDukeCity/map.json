@@ -49,14 +49,14 @@
       "x": 37,
       "y": 50,
       "elevation": 0,
-      "dest_map": "MAP_MARSH_DUKE_CITY",
+      "dest_map": "MAP_MARSHDUKE_INDOOR_HOUSE1",
       "dest_warp_id": "0"
     },
     {
       "x": 29,
       "y": 50,
       "elevation": 0,
-      "dest_map": "MAP_MARSH_DUKE_CITY",
+      "dest_map": "MAP_MARSHDUKE_INDOOR_HOUSE3",
       "dest_warp_id": "0"
     },
     {
@@ -70,50 +70,50 @@
       "x": 24,
       "y": 40,
       "elevation": 0,
-      "dest_map": "MAP_MARSH_DUKE_CITY",
+      "dest_map": "MAP_MARSHDUKE_INDOOR_HOUSE2",
       "dest_warp_id": "0"
     },
     {
       "x": 30,
       "y": 40,
       "elevation": 0,
-      "dest_map": "MAP_MARSH_DUKE_CITY",
+      "dest_map": "MAP_MARSHDUKE_INDOOR_HOUSE4",
       "dest_warp_id": "0"
     },
     {
       "x": 38,
       "y": 38,
       "elevation": 0,
-      "dest_map": "MAP_MARSH_DUKE_CITY",
+      "dest_map": "MAP_MARSHDUKE_INDOOR_HOUSE5",
       "dest_warp_id": "0"
     },
     {
       "x": 57,
-      "y": 33,
+      "y": 34,
       "elevation": 0,
-      "dest_map": "MAP_MARSH_DUKE_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_MARSHDUKE_INDOOR_CATHEDRAL_GARDEN_GATEHOUSE",
+      "dest_warp_id": "1"
     },
     {
       "x": 58,
-      "y": 33,
+      "y": 34,
       "elevation": 0,
-      "dest_map": "MAP_MARSH_DUKE_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_MARSHDUKE_INDOOR_CATHEDRAL_GARDEN_GATEHOUSE",
+      "dest_warp_id": "2"
     },
     {
       "x": 68,
       "y": 37,
       "elevation": 0,
-      "dest_map": "MAP_MARSH_DUKE_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_MARSHDUKE_INDOOR_CHATEDRAL",
+      "dest_warp_id": "1"
     },
     {
       "x": 69,
       "y": 37,
       "elevation": 0,
-      "dest_map": "MAP_MARSH_DUKE_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_MARSHDUKE_INDOOR_CHATEDRAL",
+      "dest_warp_id": "2"
     },
     {
       "x": 81,

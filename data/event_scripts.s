@@ -1970,3 +1970,21 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Route022/scripts.inc"
 
 	.include "data/maps/Island_Ohiana/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_House2/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_House3/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_House4/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_House5/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_House5_2F/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Tower1_1F/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Tower1_2F/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Tower1_3F/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Cathedral_Garden_Gatehouse/scripts.inc"
