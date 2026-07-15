@@ -11262,6 +11262,18 @@
       "secondary_tileset": "gTileset_BattlePyramid",
       "border_filepath": "data/layouts/Marshduke_Indoor_Cathedral_Garden_Gatehouse/border.bin",
       "blockdata_filepath": "data/layouts/Marshduke_Indoor_Cathedral_Garden_Gatehouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARSHDUKE_INDOOR_GARDEN",
+      "name": "Marshduke_Indoor_Garden_Layout",
+      "width": 65,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Marshduke_Indoor_Garden/border.bin",
+      "blockdata_filepath": "data/layouts/Marshduke_Indoor_Garden/map.bin"
     }
   ]
 }

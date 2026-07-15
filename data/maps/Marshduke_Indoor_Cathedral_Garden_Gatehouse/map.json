@@ -47,15 +47,15 @@
       "x": 4,
       "y": 3,
       "elevation": 0,
-      "dest_map": "MAP_MARSHDUKE_INDOOR_CATHEDRAL_GARDEN_GATEHOUSE",
+      "dest_map": "MAP_MARSHDUKE_INDOOR_GARDEN",
       "dest_warp_id": "0"
     },
     {
       "x": 5,
       "y": 3,
       "elevation": 0,
-      "dest_map": "MAP_MARSHDUKE_INDOOR_CATHEDRAL_GARDEN_GATEHOUSE",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_MARSHDUKE_INDOOR_GARDEN",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],
