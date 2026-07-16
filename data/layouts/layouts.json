@@ -6232,7 +6232,7 @@
     {
       "id": "LAYOUT_MARSHDUKE_INDOOR_CHATEDRAL",
       "name": "Marshduke_Indoor_Chatedral_Layout",
-      "width": 30,
+      "width": 39,
       "height": 40,
       "border_width": 2,
       "border_height": 2,
@@ -11266,7 +11266,7 @@
     {
       "id": "LAYOUT_MARSHDUKE_INDOOR_GARDEN",
       "name": "Marshduke_Indoor_Garden_Layout",
-      "width": 65,
+      "width": 40,
       "height": 40,
       "border_width": 2,
       "border_height": 2,
@@ -11274,6 +11274,30 @@
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Marshduke_Indoor_Garden/border.bin",
       "blockdata_filepath": "data/layouts/Marshduke_Indoor_Garden/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARSHDUKE_INDOOR_GARDEN_CEMETERY",
+      "name": "Marshduke_Indoor_Garden_Cemetery_Layout",
+      "width": 25,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Marshduke_Indoor_Garden_Cemetery/border.bin",
+      "blockdata_filepath": "data/layouts/Marshduke_Indoor_Garden_Cemetery/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARSHDUKE_INDOOR_GARDEN_HOUSE1",
+      "name": "Marshduke_Indoor_Garden_House1_Layout",
+      "width": 10,
+      "height": 9,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Marshduke_Indoor_Garden_House1/border.bin",
+      "blockdata_filepath": "data/layouts/Marshduke_Indoor_Garden_House1/map.bin"
     }
   ]
 }

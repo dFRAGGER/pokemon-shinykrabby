@@ -706,6 +706,46 @@ static void CB2_EndMarowakBattle(void)
     }
 }
 
+// Used as the fallback battle environment for a map when no more specific per-tile
+// terrain (grass, sand, water, mountain, indoor-encounter) was detected, so the map's
+// own battle_scene can pick a themed background instead of a generic one.
+static enum BattleEnvironments GetMapBattleSceneTerrainDefault(enum BattleEnvironments defaultEnvironment)
+{
+    switch (GetCurrentMapBattleScene())
+    {
+    case MAP_BATTLE_SCENE_INDOOR:
+        return BATTLE_ENVIRONMENT_INDOOR;
+    case MAP_BATTLE_SCENE_DESERT:
+        return BATTLE_ENVIRONMENT_DESERT;
+    case MAP_BATTLE_SCENE_SNOW:
+        return BATTLE_ENVIRONMENT_SNOW;
+    case MAP_BATTLE_SCENE_SNOW_CAVE:
+        return BATTLE_ENVIRONMENT_SNOW_CAVE;
+    case MAP_BATTLE_SCENE_RED_CAVE:
+        return BATTLE_ENVIRONMENT_RED_CAVE;
+    case MAP_BATTLE_SCENE_DARKGREY_CAVE:
+        return BATTLE_ENVIRONMENT_DARKGREY_CAVE;
+    case MAP_BATTLE_SCENE_TALL_GRASS:
+        return BATTLE_ENVIRONMENT_GRASS;
+    case MAP_BATTLE_SCENE_LONG_GRASS:
+        return BATTLE_ENVIRONMENT_LONG_GRASS;
+    case MAP_BATTLE_SCENE_SAND:
+        return BATTLE_ENVIRONMENT_SAND;
+    case MAP_BATTLE_SCENE_WATER:
+        return BATTLE_ENVIRONMENT_WATER;
+    case MAP_BATTLE_SCENE_POND:
+        return BATTLE_ENVIRONMENT_POND;
+    case MAP_BATTLE_SCENE_MOUNTAIN:
+        return BATTLE_ENVIRONMENT_MOUNTAIN;
+    case MAP_BATTLE_SCENE_UNDERWATER:
+        return BATTLE_ENVIRONMENT_UNDERWATER;
+    case MAP_BATTLE_SCENE_CAVE:
+        return BATTLE_ENVIRONMENT_CAVE;
+    default:
+        return defaultEnvironment;
+    }
+}
+
 enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
 {
     u16 tileBehavior;
@@ -718,12 +758,24 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
 
     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
 
+    if (MetatileBehavior_IsSnowGrass(tileBehavior))
+        return BATTLE_ENVIRONMENT_SNOW;
     if (MetatileBehavior_IsTallGrass(tileBehavior))
         return BATTLE_ENVIRONMENT_GRASS;
     if (MetatileBehavior_IsLongGrass(tileBehavior))
         return BATTLE_ENVIRONMENT_LONG_GRASS;
+    if (MetatileBehavior_IsDeepSand(tileBehavior))
+        return BATTLE_ENVIRONMENT_DESERT;
+    if (MetatileBehavior_IsMangroveSand(tileBehavior))
+        return BATTLE_ENVIRONMENT_SAND;
     if (MetatileBehavior_IsSandOrDeepSand(tileBehavior))
         return BATTLE_ENVIRONMENT_SAND;
+    if (MetatileBehavior_IsRedCave(tileBehavior))
+        return BATTLE_ENVIRONMENT_RED_CAVE;
+    if (MetatileBehavior_IsSnowCave(tileBehavior))
+        return BATTLE_ENVIRONMENT_SNOW_CAVE;
+    if (MetatileBehavior_IsDarkgreyCave(tileBehavior))
+        return BATTLE_ENVIRONMENT_DARKGREY_CAVE;
 
     switch (gMapHeader.mapType)
     {
@@ -736,10 +788,10 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
             return BATTLE_ENVIRONMENT_BUILDING;
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
             return BATTLE_ENVIRONMENT_POND;
-        return BATTLE_ENVIRONMENT_CAVE;
+        return GetMapBattleSceneTerrainDefault(BATTLE_ENVIRONMENT_CAVE);
     case MAP_TYPE_INDOOR:
     case MAP_TYPE_SECRET_BASE:
-        return BATTLE_ENVIRONMENT_BUILDING;
+        return GetMapBattleSceneTerrainDefault(BATTLE_ENVIRONMENT_BUILDING);
     case MAP_TYPE_UNDERWATER:
         return BATTLE_ENVIRONMENT_UNDERWATER;
     case MAP_TYPE_OCEAN_ROUTE:
@@ -767,7 +819,7 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     if (GetSavedWeather() == WEATHER_SANDSTORM)
         return BATTLE_ENVIRONMENT_SAND;
 
-    return BATTLE_ENVIRONMENT_PLAIN;
+    return GetMapBattleSceneTerrainDefault(BATTLE_ENVIRONMENT_PLAIN);
 }
 
 static enum TransitionType GetBattleTransitionTypeByMap(void)

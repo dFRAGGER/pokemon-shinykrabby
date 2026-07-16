@@ -11,7 +11,7 @@
   "allow_escaping": false,
   "allow_running": true,
   "show_map_name": true,
-  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "battle_scene": "MAP_BATTLE_SCENE_TALL_GRASS",
   "connections": [
     {
       "map": "MAP_ROUTE014",
@@ -106,14 +106,14 @@
       "y": 37,
       "elevation": 0,
       "dest_map": "MAP_MARSHDUKE_INDOOR_CHATEDRAL",
-      "dest_warp_id": "1"
+      "dest_warp_id": "4"
     },
     {
       "x": 69,
       "y": 37,
       "elevation": 0,
       "dest_map": "MAP_MARSHDUKE_INDOOR_CHATEDRAL",
-      "dest_warp_id": "2"
+      "dest_warp_id": "4"
     },
     {
       "x": 81,

@@ -822,7 +822,9 @@
     "Marshduke_Indoor_Tower1_2F",
     "Marshduke_Indoor_Tower1_3F",
     "Marshduke_Indoor_Cathedral_Garden_Gatehouse",
-    "Marshduke_Indoor_Garden"
+    "Marshduke_Indoor_Garden",
+    "Marshduke_Indoor_Garden_Cemetery",
+    "Marshduke_Indoor_Garden_House1"
   ],
   "gMapGroup_Link_Frlg": [
     "BattleColosseum_2P_Frlg",

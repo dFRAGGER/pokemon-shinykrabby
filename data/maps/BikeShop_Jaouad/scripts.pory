@@ -39,6 +39,18 @@ script BikeShop_Jaouad_EventScript_BikeSection {
     if (flag(FLAG_RECEIVED_BIKE) == TRUE) {
         goto(BikeShop_Jaouad_EventScript_SwitchPrompt)
     }
+    if (flag(FLAG_MACH_BIKE_READY) == TRUE) {
+        goto(BikeShop_Jaouad_EventScript_BikeChoice)
+    }
+    goto(BikeShop_Jaouad_EventScript_AcroBikeOnly)
+}
+
+script BikeShop_Jaouad_EventScript_AcroBikeOnly {
+    msgbox(format("Truth is, I've only got the ACRO BIKE ready to go.\pThe MACH BIKE's still in pieces on my bench. Give me your number, I'll call you the second it's fixed.\pUntil then, take the ACRO BIKE. Hops, tricks, tight spots. I do alright for myself."), MSGBOX_DEFAULT)
+    goto(BikeShop_Jaouad_EventScript_GetAcroBike)
+}
+
+script BikeShop_Jaouad_EventScript_BikeChoice {
     msgbox(format("I've got two kinds: the MACH BIKE and the ACRO BIKE.\pMACH BIKE is pure speed. Great for steep sandy slopes.\pACRO BIKE is more technical. Hops, tricks, tight spots.\pTake one. I do alright for myself.\pWhich one will it be?"), MSGBOX_DEFAULT)
     multichoice(21, 8, MULTI_BIKE, TRUE)
     if (var(VAR_RESULT) == 0) {
@@ -71,6 +83,12 @@ script BikeShop_Jaouad_EventScript_GetAcroBike {
 }
 
 script BikeShop_Jaouad_EventScript_AfterGive {
+    if (flag(FLAG_MACH_BIKE_READY) == FALSE) {
+        msgbox(format("I've got your number. Once the MACH BIKE's fixed, I'll call you and you can come swap it out."), MSGBOX_DEFAULT)
+        special(SwapRegisteredBike)
+        release
+        end
+    }
     msgbox(format("Come back any time you want the other one. I'll swap it out for you."), MSGBOX_DEFAULT)
     special(SwapRegisteredBike)
     release
@@ -78,6 +96,11 @@ script BikeShop_Jaouad_EventScript_AfterGive {
 }
 
 script BikeShop_Jaouad_EventScript_SwitchPrompt {
+    if (flag(FLAG_MACH_BIKE_READY) == FALSE) {
+        msgbox(format("Still working on the MACH BIKE. Don't worry, I've got your number.\pI'll call you the second it's ready."), MSGBOX_DEFAULT)
+        release
+        end
+    }
     msgbox(format("Want to switch BIKES?"), MSGBOX_YESNO)
     if (var(VAR_RESULT) == YES) {
         goto(BikeShop_Jaouad_EventScript_SwitchBikes)

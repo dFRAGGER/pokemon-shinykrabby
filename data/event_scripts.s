@@ -1990,3 +1990,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Marshduke_Indoor_Cathedral_Garden_Gatehouse/scripts.inc"
 
 	.include "data/maps/Marshduke_Indoor_Garden/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Garden_Cemetery/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Garden_House1/scripts.inc"

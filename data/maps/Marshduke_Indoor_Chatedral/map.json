@@ -11,13 +11,13 @@
   "allow_escaping": false,
   "allow_running": true,
   "show_map_name": true,
-  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "battle_scene": "MAP_BATTLE_SCENE_INDOOR",
   "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_BIG_REGICE_DOLL",
-      "x": 5,
-      "y": 27,
+      "x": 6,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -29,8 +29,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BIG_REGIROCK_DOLL",
-      "x": 9,
-      "y": 17,
+      "x": 32,
+      "y": 29,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -42,8 +42,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BIG_REGISTEEL_DOLL",
-      "x": 11,
-      "y": 17,
+      "x": 6,
+      "y": 29,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -54,9 +54,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_RAYQUAZA_STILL",
-      "x": 14,
-      "y": 8,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(RAYQUAZA)",
+      "x": 19,
+      "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -67,9 +67,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GROUDON_SIDE",
-      "x": 16,
-      "y": 9,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GROUDON)",
+      "x": 21,
+      "y": 13,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -80,9 +80,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_KYOGRE_SIDE",
-      "x": 12,
-      "y": 9,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KYOGRE)",
+      "x": 17,
+      "y": 13,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -93,11 +93,11 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEW)",
-      "x": 21,
-      "y": 26,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ALAKAZAM_MEGA)",
+      "x": 19,
+      "y": 23,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -107,10 +107,23 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEWTWO)",
-      "x": 23,
-      "y": 27,
+      "x": 33,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEW)",
+      "x": 31,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -120,13 +133,6 @@
     }
   ],
   "warp_events": [
-    {
-      "x": 11,
-      "y": 39,
-      "elevation": 0,
-      "dest_map": "MAP_MARSH_DUKE_CITY",
-      "dest_warp_id": "10"
-    },
     {
       "x": 12,
       "y": 39,
@@ -139,6 +145,20 @@
       "y": 39,
       "elevation": 0,
       "dest_map": "MAP_MARSH_DUKE_CITY",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 15,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_MARSH_DUKE_CITY",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 16,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_MARSH_DUKE_CITY",
       "dest_warp_id": "11"
     },
     {
@@ -146,7 +166,7 @@
       "y": 39,
       "elevation": 0,
       "dest_map": "MAP_MARSH_DUKE_CITY",
-      "dest_warp_id": "11"
+      "dest_warp_id": "10"
     }
   ],
   "coord_events": [],

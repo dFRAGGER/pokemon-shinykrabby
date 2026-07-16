@@ -31,6 +31,22 @@ script BikePark_ClearCyclingRoad {
     end
 }
 
+script BikePark_EventScript_SteepDownhillSign {
+    lock
+    faceplayer
+    msgbox(format("!!{DOWN_ARROW} DANGER!!\pOnly enter downhill with proper bike and experience required.\pVery steep."), MSGBOX_DEFAULT)
+    release
+    end
+}
+
+script BikePark_EventScript_BikeShopSign {
+    lock
+    faceplayer
+    msgbox(format("Mr. Kasmi's Bikeshop"), MSGBOX_SIGN)
+    release
+    end
+}
+
 script BikePark_Npc_LegendWatcher {
     lock
     faceplayer
@@ -92,6 +108,16 @@ script BikePark_Npc_RidgeRanger {
     msgbox(format("Three years I've been watching this ridge.\pGulliot, Taillow, Wingull - same crowd every season.\pBut last month I spotted something on the southern outcrop.\pOrange. Small. Left a scorch mark on the rock when it took off."))
     waitmessage
     msgbox(format("Haven't seen it since.\pI'm not writing it in the report yet."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script BikePark_Npc_Milo {
+    lock
+    faceplayer
+    setspeaker("Milo")
+    msgbox(format("That drop right there? I've been meaning to ride it all week.\pJust waiting on the right gear. Wrong tires for that grade. Wrong suspension too, honestly."), MSGBOX_AUTOCLOSE)
     waitmessage
     release
     end

@@ -113,7 +113,7 @@
 #define FLAG_ITEM_RESEARCH_CENTER_EXP_SHARE  0x05F // SK: Set when the Lead Scientist gives the player the Exp. Share after rescuing Daan.
 #define FLAG_ITEM_ROUTE05_NEVER_MELT_ICE     0x060 // SK: Set when the hiker on Route 5 gives the player the Never-Melt Ice.
 #define FLAG_ITEM_LIONSARCH_GYM_SNOWBALL     0x061 // SK: Set when the gym trainer NPC in Lionsarch gives the player a Snowball.
-#define FLAG_UNUSED_SCRIPTS_0x062            0x062 // Unused Flag
+#define FLAG_MACH_BIKE_READY                  0x062 // SK: Set once Kasmi (BikeShop_Jaouad) has finished fixing the MACH BIKE and calls the player; unlocks giving/swapping the MACH BIKE.
 #define FLAG_UNUSED_SCRIPTS_0x063            0x063 // Unused Flag
 #define FLAG_UNUSED_SCRIPTS_0x064            0x064 // Unused Flag
 #define FLAG_UNUSED_SCRIPTS_0x065            0x065 // Unused Flag
@@ -2314,7 +2314,7 @@
 #define FLAG_RECEIVED_POKEBLOCK_CASE                 FLAG_ITEM_RESEARCH_CENTER_EXP_SHARE
 #define FLAG_RECEIVED_SECRET_POWER                   FLAG_ITEM_ROUTE05_NEVER_MELT_ICE
 #define FLAG_MET_TEAM_AQUA_HARBOR                    FLAG_ITEM_LIONSARCH_GYM_SNOWBALL
-#define FLAG_TV_EXPLAINED                            FLAG_UNUSED_SCRIPTS_0x062
+#define FLAG_TV_EXPLAINED                            FLAG_MACH_BIKE_READY
 #define FLAG_MAUVILLE_GYM_BARRIERS_STATE             FLAG_UNUSED_SCRIPTS_0x063
 #define FLAG_MOSSDEEP_GYM_SWITCH_1                   FLAG_UNUSED_SCRIPTS_0x064
 #define FLAG_MOSSDEEP_GYM_SWITCH_2                   FLAG_UNUSED_SCRIPTS_0x065
