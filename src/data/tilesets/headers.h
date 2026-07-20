@@ -1640,3 +1640,14 @@ const struct Tileset gTileset_BrickCity =
     .metatileAttributes = gMetatileAttributes_BrickCity,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_ShadyForest =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_ShadyForest,
+    .palettes = gTilesetPalettes_ShadyForest,
+    .metatiles = gMetatiles_ShadyForest,
+    .metatileAttributes = gMetatileAttributes_ShadyForest,
+    .callback = NULL,
+};

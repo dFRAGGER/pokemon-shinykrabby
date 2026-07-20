@@ -434,3 +434,6 @@ const u16 gMetatileAttributes_HallOfFame[] = INCBIN_U16("data/tilesets/secondary
 
 const u16 gMetatiles_BrickCity[] = INCBIN_U16("data/tilesets/secondary/brick_city/metatiles.bin");
 const u16 gMetatileAttributes_BrickCity[] = INCBIN_U16("data/tilesets/secondary/brick_city/metatile_attributes.bin");
+
+const u16 gMetatiles_ShadyForest[] = INCBIN_U16("data/tilesets/secondary/shady_forest/metatiles.bin");
+const u16 gMetatileAttributes_ShadyForest[] = INCBIN_U16("data/tilesets/secondary/shady_forest/metatile_attributes.bin");

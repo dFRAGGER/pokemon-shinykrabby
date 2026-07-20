@@ -411,6 +411,12 @@
       "map": "MAP_ROUTE018",
       "x": 29,
       "y": 37
+    },
+    {
+      "id": "HEAL_LOCATION_MARSH_DUKE_CITY",
+      "map": "MAP_MARSH_DUKE_CITY",
+      "x": 44,
+      "y": 51
     }
   ]
 }

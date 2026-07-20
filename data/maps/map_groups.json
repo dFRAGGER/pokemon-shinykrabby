@@ -87,7 +87,8 @@
     "gMapGroup_IndoorSixIslandRoute_Frlg",
     "gMapGroup_IndoorSevenIslandRoute_Frlg",
     "gMapGroup_IndoorBikeShop",
-    "gMapGroup_SK_IndoorEstuary"
+    "gMapGroup_SK_IndoorEstuary",
+    "gMapGroup_Eldwood"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -824,7 +825,10 @@
     "Marshduke_Indoor_Cathedral_Garden_Gatehouse",
     "Marshduke_Indoor_Garden",
     "Marshduke_Indoor_Garden_Cemetery",
-    "Marshduke_Indoor_Garden_House1"
+    "Marshduke_Indoor_Garden_House1",
+    "Marshduke_Indoor_PokemonCenter_1F",
+    "Marshduke_Indoor_PokemonCenter_2F",
+    "Marshduk_Indoor_Mart"
   ],
   "gMapGroup_Link_Frlg": [
     "BattleColosseum_2P_Frlg",
@@ -1338,5 +1342,8 @@
     "Route14_Estuary_Indoor_House3",
     "Route14_Indoor_House1",
     "Route14_Estuary_Indoor_Boathouse"
+  ],
+  "gMapGroup_Eldwood": [
+    "Route016_Eldwood_Entrance"
   ]
 }

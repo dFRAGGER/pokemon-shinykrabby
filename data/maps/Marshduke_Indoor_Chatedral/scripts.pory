@@ -1,1 +1,11 @@
 mapscripts Marshduke_Indoor_Chatedral_MapScripts {}
+
+script Marshduke_Indoor_Chatedral_EventScript_Latias {
+    setvar(VAR_TEMP_0, 1)
+    clearflag(FLAG_MARSHDUKE_CATHEDRAL_LATIOS)
+    addobject(12)
+    applymovement(12, moves(walk_fast_down*11))
+    waitmovement(12)
+    setflag(FLAG_MARSHDUKE_CATHEDRAL_LATIOS)
+    removeobject(12)
+}

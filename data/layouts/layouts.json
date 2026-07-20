@@ -6232,7 +6232,7 @@
     {
       "id": "LAYOUT_MARSHDUKE_INDOOR_CHATEDRAL",
       "name": "Marshduke_Indoor_Chatedral_Layout",
-      "width": 39,
+      "width": 40,
       "height": 40,
       "border_width": 2,
       "border_height": 2,
@@ -11298,6 +11298,18 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/Marshduke_Indoor_Garden_House1/border.bin",
       "blockdata_filepath": "data/layouts/Marshduke_Indoor_Garden_House1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE016_ELDWOOD_ENTRANCE",
+      "name": "Route016_Eldwood_Entrance_Layout",
+      "width": 125,
+      "height": 57,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_ShadyForest",
+      "border_filepath": "data/layouts/Route016_Eldwood_Entrance/border.bin",
+      "blockdata_filepath": "data/layouts/Route016_Eldwood_Entrance/map.bin"
     }
   ]
 }
