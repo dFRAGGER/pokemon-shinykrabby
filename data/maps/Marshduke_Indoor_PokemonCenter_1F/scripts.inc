@@ -24,7 +24,7 @@ Marshduke_Indoor_PokemonCenter_1F_OnTransition::
 
 Marshduke_Indoor_PokemonCenter_1F_EventScript_Nurse::
 # 16 "data/maps/Marshduke_Indoor_PokemonCenter_1F/scripts.pory"
-	setvar VAR_0x800B, LOCALID_MARSHDUKE_NURSE
+	setvar VAR_0x800B, 1
 # 17 "data/maps/Marshduke_Indoor_PokemonCenter_1F/scripts.pory"
 	call Common_EventScript_PkmnCenterNurse
 # 18 "data/maps/Marshduke_Indoor_PokemonCenter_1F/scripts.pory"
@@ -66,17 +66,26 @@ Marshduke_Indoor_PokemonCenter_1F_FatMan::
 
 Marshduke_Indoor_PokemonCenter_1F_HexManiac_Text_0:
 # 27 "data/maps/Marshduke_Indoor_PokemonCenter_1F/scripts.pory"
-	.string "Shh. Watch her ears.\p"
-	.string "That's my PSYDUCK - she runs in\n"
-	.string "circles when a headache is coming.\p"
-	.string "Exactly forty-two laps, every time.\n"
-	.string "I've counted. I always count.\p"
-	.string "Yesterday she stopped at forty-one.\n"
-	.string "Nobody believes me, but something\n"
-	.string "is different about this one.$"
+	.string "Shh. Put your ear to the floor.\p"
+	.string "...\p"
+	.string "No? Fine. I'll tell you.\p"
+	.string "You know that hum from the ALAKAZAM in\n"
+	.string "the Cathedral?\p"
+	.string "It comes up through the floor\n"
+	.string "everywhere in this city.\p"
+	.string "It has been B-flat for decades.\p"
+	.string "How do I know that?\p"
+	.string "My psyduck hates B-flat. Just like\n"
+	.string "anything else which makes noise to be\l"
+	.string "honest...\p"
+	.string "Anyways, last week for ONE second it\n"
+	.string "wavered.\p"
+	.string "Nobody believes me, but my psyduck\n"
+	.string "stopped running and looked intrigued.\p"
+	.string "Then he went back to being anoyed.$"
 
 Marshduke_Indoor_PokemonCenter_1F_FatMan_Text_0:
 # 35 "data/maps/Marshduke_Indoor_PokemonCenter_1F/scripts.pory"
 	.string "Most towns, trainers heal and leave.\p"
-	.string "Here, they heal and go stand\n"
-	.string "in the cathedral for an hour.$"
+	.string "Here, they heal and go stand in the\n"
+	.string "cathedral for an hour.$"

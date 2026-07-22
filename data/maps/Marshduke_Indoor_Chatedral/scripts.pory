@@ -1,11 +1,96 @@
-mapscripts Marshduke_Indoor_Chatedral_MapScripts {}
+mapscripts Marshduke_Indoor_Chatedral_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_MARSHDUKE_CATHEDRAL_VISION_STATE, 2: Marshduke_Indoor_Chatedral_EventScript_VisionReturn
+    ]
+}
 
+script Marshduke_Indoor_Chatedral_EventScript_Alakazam {
+    lock
+    faceplayer
+    msgbox(format("MEGA ALAKAZAM's spoons glow with a faint psychic light...\pAncient memories stir at the edge of your mind, visions of LATIOS and LATIAS long past.\pWill you open your mind to them?"), MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == YES) {
+        goto(Marshduke_Indoor_Chatedral_EventScript_Latias)
+    }
+    release
+}
+
+// Warps into the vision map and ends here; the vision map's own
+// MAP_SCRIPT_ON_FRAME_TABLE picks up VAR_MARSHDUKE_CATHEDRAL_VISION_STATE
+// once its objects are actually loaded, since a script can't reliably
+// keep manipulating objects across a warp it just triggered itself.
 script Marshduke_Indoor_Chatedral_EventScript_Latias {
-    setvar(VAR_TEMP_0, 1)
-    clearflag(FLAG_MARSHDUKE_CATHEDRAL_LATIOS)
-    addobject(12)
-    applymovement(12, moves(walk_fast_down*11))
-    waitmovement(12)
-    setflag(FLAG_MARSHDUKE_CATHEDRAL_LATIOS)
-    removeobject(12)
+    setvar(VAR_MARSHDUKE_CATHEDRAL_VISION_STATE, 1)
+    fadescreen(FADE_TO_BLACK)
+    warpsilent(MAP_MARSHDUKE_INDOOR_VISION_LATIOS_LATIAS, 11, 7)
+    waitstate
+    release
+}
+
+script Marshduke_Indoor_Chatedral_EventScript_VisionReturn {
+    setvar(VAR_MARSHDUKE_CATHEDRAL_VISION_STATE, 0)
+    lock
+    applymovement(27, moves(walk_right))
+    waitmovement
+    msgbox(format("Welcome back to the present.\pGive yourself time to readjust to the world around you."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(27, moves(walk_left face_down))
+    waitmovement
+    release
+}
+
+script Marshduke_Indoor_Chatedral_EventScript_Sister_Wren {
+    lock
+    faceplayer
+    msgbox(format("The meaning of the vision in my opinion?\pInterdependence. Take one away and the other falls.\pSome people think that is a weakness.\pIt's not. It's the core of everything in the universe.\pLight and dark, life and death, love and hate.\pThey are all two sides of the same coin.\pIt's the only design that has ever worked.\pFor willows, for waters, for worlds. For Latios and Latias."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+script Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias{
+    lock
+    faceplayer
+    msgbox(format("THE LESSON OF THE TWO HEARTS:\nLove is the only thing that grows larger when shared."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+script Marshduke_Indoor_Chatedral_EventScript_Sign_HoohLugia{
+    lock
+    faceplayer
+    msgbox(format("THE LESSON OF THE DIVIDED SKY:\nPower that loves the world must sometimes leave it."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+script Marshduke_Indoor_Chatedral_EventScript_Sign_EnteiRaikouSuicune{
+    lock
+    faceplayer
+    msgbox(format("THE LESSON OF THE RUNNERS:\nA second life is not a gift. It is an assignment."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+script Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo{
+    lock
+    faceplayer
+    msgbox(format("THE LESSON OF THE MIRROR:\nThe circumstances of one's birth are irrelevant. It is what you do with the gift of life that determines who you are."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+script Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza{
+    lock
+    faceplayer
+    msgbox(format("THE LESSON OF THE DROWNED AND BURNING WORLD:\nWhen two truths war without limit, the answer comes from above them both."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+script Marshduke_Indoor_Chatedral_EventScript_Sign_EmptyShrine{
+    lock
+    faceplayer
+    msgbox(format("FIVE MEMORIES OF WHAT WAS. ONE SPACE FOR WHAT COULD BE. THE DIFFERENCE BETWEEN THEM IS US."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
 }

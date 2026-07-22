@@ -26,7 +26,7 @@ Maasje_PokemonCenter_1F_OnTransition::
 
 Maasje_PokemonCenter_1F_EventScript_Nurse::
 # 17 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
-	setvar VAR_0x800B, LOCALID_MAASJE_NURSE
+	setvar VAR_0x800B, 1
 # 18 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
 	call Common_EventScript_PkmnCenterNurse
 # 19 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"

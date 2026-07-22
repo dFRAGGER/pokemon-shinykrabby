@@ -5296,8 +5296,8 @@
     {
       "id": "LAYOUT_AUTUMN_RUINS",
       "name": "AutumnRuins_Layout",
-      "width": 60,
-      "height": 50,
+      "width": 52,
+      "height": 35,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -11062,7 +11062,7 @@
     {
       "id": "LAYOUT_ROUTE019",
       "name": "Route019_Layout",
-      "width": 32,
+      "width": 40,
       "height": 120,
       "border_width": 2,
       "border_height": 2,
@@ -11310,6 +11310,18 @@
       "secondary_tileset": "gTileset_ShadyForest",
       "border_filepath": "data/layouts/Route016_Eldwood_Entrance/border.bin",
       "blockdata_filepath": "data/layouts/Route016_Eldwood_Entrance/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARSHDUKE_INDOOR_VISION_LATIOS_LATIAS",
+      "name": "Marshduke_Indoor_Vision_LatiosLatias_Layout",
+      "width": 150,
+      "height": 15,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Marshduke_Indoor_Vision_LatiosLatias/border.bin",
+      "blockdata_filepath": "data/layouts/Marshduke_Indoor_Vision_LatiosLatias/map.bin"
     }
   ]
 }

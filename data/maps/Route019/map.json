@@ -27,6 +27,11 @@
       "map": "MAP_ROUTE020",
       "offset": -36,
       "direction": "down"
+    },
+    {
+      "map": "MAP_AUTUMN_RUINS",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [],

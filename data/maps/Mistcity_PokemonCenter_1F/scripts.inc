@@ -24,7 +24,7 @@ Mistcity_PokemonCenter_1F_OnTransition::
 
 Mistcity_PokemonCenter_1F_EventScript_Nurse::
 # 16 "data/maps/Mistcity_PokemonCenter_1F/scripts.pory"
-	setvar VAR_0x800B, LOCALID_MISTCITY_NURSE
+	setvar VAR_0x800B, 1
 # 17 "data/maps/Mistcity_PokemonCenter_1F/scripts.pory"
 	call Common_EventScript_PkmnCenterNurse
 # 18 "data/maps/Mistcity_PokemonCenter_1F/scripts.pory"
