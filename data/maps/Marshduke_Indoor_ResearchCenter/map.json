@@ -1,0 +1,20 @@
+{
+  "id": "MAP_MARSHDUKE_INDOOR_RESEARCH_CENTER",
+  "name": "Marshduke_Indoor_ResearchCenter",
+  "layout": "LAYOUT_MARSHDUKE_INDOOR_RESEARCH_CENTER",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_INDOOR",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

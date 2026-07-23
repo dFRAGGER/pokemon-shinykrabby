@@ -11322,6 +11322,18 @@
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/Marshduke_Indoor_Vision_LatiosLatias/border.bin",
       "blockdata_filepath": "data/layouts/Marshduke_Indoor_Vision_LatiosLatias/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARSHDUKE_INDOOR_RESEARCH_CENTER",
+      "name": "Marshduke_Indoor_ResearchCenter_Layout",
+      "width": 30,
+      "height": 15,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/Marshduke_Indoor_ResearchCenter/border.bin",
+      "blockdata_filepath": "data/layouts/Marshduke_Indoor_ResearchCenter/map.bin"
     }
   ]
 }

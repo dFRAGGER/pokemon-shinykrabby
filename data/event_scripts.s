@@ -2004,3 +2004,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Marshduk_Indoor_Mart/scripts.inc"
 
 	.include "data/maps/Marshduke_Indoor_Vision_LatiosLatias/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_ResearchCenter/scripts.inc"
