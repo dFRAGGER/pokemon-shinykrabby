@@ -16,13 +16,6 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 3,
-      "y": 9,
-      "elevation": 0,
-      "dest_map": "MAP_MARSH_DUKE_CITY",
-      "dest_warp_id": "8"
-    },
-    {
       "x": 4,
       "y": 9,
       "elevation": 0,
@@ -34,7 +27,7 @@
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_MARSH_DUKE_CITY",
-      "dest_warp_id": "9"
+      "dest_warp_id": "8"
     },
     {
       "x": 6,
@@ -44,14 +37,21 @@
       "dest_warp_id": "9"
     },
     {
-      "x": 4,
+      "x": 7,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_MARSH_DUKE_CITY",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 5,
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_MARSHDUKE_INDOOR_GARDEN",
       "dest_warp_id": "0"
     },
     {
-      "x": 5,
+      "x": 6,
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_MARSHDUKE_INDOOR_GARDEN",

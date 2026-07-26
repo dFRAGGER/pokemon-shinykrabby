@@ -95,7 +95,7 @@
 #define FLAG_HIDE_JACOB_SIENNA              0x4F // SK: Controls visibility of Jacob and Sienna NPCs across ErpCity, CrabhillEntrance, and Indoor_Maasje_Jakub_Home.
 
 // Scripts
-#define FLAG_UNUSED_SCRIPTS_0x050            0x050 // Unused Flag
+#define FLAG_ENABLE_EXP_SHARE_WHOLE_TEAM            0x050 // Unused Flag
 #define FLAG_SET_WALL_CLOCK                  0x51  // SK: Used in starting house
 #define FLAG_UNUSED_SCRIPTS_0x052            0x052 // Unused Flag
 #define FLAG_UNUSED_SCRIPTS_0x053            0x053 // Unused Flag
@@ -2301,7 +2301,7 @@
 #define FLAG_SHOWN_MYSTIC_TICKET                     FLAG_UNUSED_SCRIPTS_0x1DB
 #define FLAG_DEFEATED_HO_OH                          FLAG_UNUSED_SCRIPTS_0x1DC
 #define FLAG_DEFEATED_LUGIA                          FLAG_UNUSED_SCRIPTS_0x1DD
-#define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL      FLAG_UNUSED_SCRIPTS_0x050
+#define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL      FLAG_ENABLE_EXP_SHARE_WHOLE_TEAM
 #define FLAG_RESCUED_BIRCH                           FLAG_UNUSED_SCRIPTS_0x052
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS               FLAG_UNUSED_SCRIPTS_0x053
 #define FLAG_HIDE_CONTEST_POKE_BALL                  FLAG_ITEM_COASTAL_CAVE2_QUICK_CLAW

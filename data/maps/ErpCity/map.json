@@ -19,13 +19,13 @@
       "direction": "left"
     },
     {
-      "map": "MAP_ROUTE021",
-      "offset": 15,
+      "map": "MAP_ROUTE023",
+      "offset": 12,
       "direction": "right"
     },
     {
       "map": "MAP_ROUTE022",
-      "offset": -85,
+      "offset": -88,
       "direction": "right"
     }
   ],
@@ -111,8 +111,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SPEAROW)",
-      "x": 44,
-      "y": 21,
+      "x": 49,
+      "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 0,
@@ -136,13 +136,13 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
-      "x": 37,
-      "y": 31,
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2_FRLG",
+      "x": 49,
+      "y": 26,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ErpCity_Woman",
@@ -160,6 +160,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_KICKED_OUT_LAB_CONVO"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WATTSON",
+      "x": 60,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldMiner_Sjeng_Reminisce",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -185,8 +198,8 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 43,
-      "y": 23,
+      "x": 48,
+      "y": 21,
       "elevation": 0,
       "dest_map": "MAP_ERPUS_CITY_HOUSE3_1F",
       "dest_warp_id": "0"
@@ -325,8 +338,8 @@
     },
     {
       "type": "sign",
-      "x": 41,
-      "y": 23,
+      "x": 51,
+      "y": 22,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ErpCity_Sign_Mailbox_JanVogels"

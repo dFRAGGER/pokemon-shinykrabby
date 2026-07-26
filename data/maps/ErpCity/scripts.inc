@@ -569,6 +569,20 @@ ErpCity_Sign_Mailbox_JanVogels::
 	return
 
 
+OldMiner_Sjeng_Reminisce::
+# 314 "data/maps/ErpCity/scripts.pory"
+	lock
+# 315 "data/maps/ErpCity/scripts.pory"
+	faceplayer
+# 316 "data/maps/ErpCity/scripts.pory"
+	msgbox OldMiner_Sjeng_Reminisce_Text_0, MSGBOX_AUTOCLOSE
+# 317 "data/maps/ErpCity/scripts.pory"
+	waitmessage
+# 318 "data/maps/ErpCity/scripts.pory"
+	release
+	end
+
+
 # 18 "data/maps/ErpCity/scripts.pory"
 ErpCity_SpearowFearow_Flyby_Movement_0:
 # 18 "data/maps/ErpCity/scripts.pory"
@@ -1089,3 +1103,23 @@ ErpCity_Sign_Mailbox_BarryHouse_Text_0:
 ErpCity_Sign_Mailbox_JanVogels_Text_0:
 # 308 "data/maps/ErpCity/scripts.pory"
 	.string "Family Birds's house.$"
+
+OldMiner_Sjeng_Reminisce_Text_0:
+# 316 "data/maps/ErpCity/scripts.pory"
+	.string "Fifty years ago, this town was just\n"
+	.string "river and rock.\p"
+	.string "Then a wild Meowth dug up a nugget of\n"
+	.string "gold deep in the mountains.\p"
+	.string "Folks rushed in from everywhere. They\n"
+	.string "laid these tracks and built this\l"
+	.string "station.\p"
+	.string "But in the end, nobody found much more\n"
+	.string "than that one nugget.\p"
+	.string "The rush died, the trains stopped\n"
+	.string "coming, and I'm still waiting on one that\l"
+	.string "won't arrive.\p"
+	.string "Some routes still run up toward the\n"
+	.string "mountain, though.\p"
+	.string "Only battle-hardened trainers and\n"
+	.string "folks who know their bushcraft make it\l"
+	.string "past the treeline.$"

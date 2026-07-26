@@ -15,23 +15,18 @@
   "connections": [
     {
       "map": "MAP_ROUTE020",
-      "offset": 60,
+      "offset": 14,
       "direction": "up"
     },
     {
       "map": "MAP_HEZIK_TOWN",
-      "offset": 155,
+      "offset": 109,
       "direction": "up"
     },
     {
-      "map": "MAP_ERP_CITY",
-      "offset": -15,
+      "map": "MAP_ROUTE023",
+      "offset": -3,
       "direction": "left"
-    },
-    {
-      "map": "MAP_ROUTE022",
-      "offset": 0,
-      "direction": "up"
     }
   ],
   "object_events": [],

@@ -216,7 +216,7 @@
       "id": "HEAL_LOCATION_MIST_CITY",
       "map": "MAP_MIST_CITY",
       "x": 53,
-      "y": 22,
+      "y": 26,
       "respawn_map": "MAP_MISTCITY_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_MISTCITY_NURSE"
     },

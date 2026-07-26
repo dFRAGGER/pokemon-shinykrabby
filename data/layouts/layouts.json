@@ -5452,8 +5452,8 @@
     {
       "id": "LAYOUT_ERP_CITY",
       "name": "ErpCity_Layout",
-      "width": 63,
-      "height": 35,
+      "width": 70,
+      "height": 45,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -5573,7 +5573,7 @@
       "id": "LAYOUT_MIST_CITY",
       "name": "MistCity_Layout",
       "width": 100,
-      "height": 40,
+      "height": 44,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -6232,7 +6232,7 @@
     {
       "id": "LAYOUT_MARSHDUKE_INDOOR_CHATEDRAL",
       "name": "Marshduke_Indoor_Chatedral_Layout",
-      "width": 40,
+      "width": 41,
       "height": 40,
       "border_width": 2,
       "border_height": 2,
@@ -11122,7 +11122,7 @@
     {
       "id": "LAYOUT_ROUTE021",
       "name": "Route021_Layout",
-      "width": 286,
+      "width": 234,
       "height": 20,
       "border_width": 2,
       "border_height": 2,
@@ -11134,12 +11134,12 @@
     {
       "id": "LAYOUT_ROUTE022",
       "name": "Route022_Layout",
-      "width": 60,
+      "width": 39,
       "height": 100,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Fortree",
+      "secondary_tileset": "gTileset_newsmalltownlab",
       "border_filepath": "data/layouts/Route022/border.bin",
       "blockdata_filepath": "data/layouts/Route022/map.bin"
     },
@@ -11254,7 +11254,7 @@
     {
       "id": "LAYOUT_MARSHDUKE_INDOOR_CATHEDRAL_GARDEN_GATEHOUSE",
       "name": "Marshduke_Indoor_Cathedral_Garden_Gatehouse_Layout",
-      "width": 10,
+      "width": 12,
       "height": 10,
       "border_width": 2,
       "border_height": 2,
@@ -11334,6 +11334,18 @@
       "secondary_tileset": "gTileset_Lab",
       "border_filepath": "data/layouts/Marshduke_Indoor_ResearchCenter/border.bin",
       "blockdata_filepath": "data/layouts/Marshduke_Indoor_ResearchCenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE023",
+      "name": "Route023_Layout",
+      "width": 39,
+      "height": 41,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_newsmalltownlab",
+      "border_filepath": "data/layouts/Route023/border.bin",
+      "blockdata_filepath": "data/layouts/Route023/map.bin"
     }
   ]
 }

@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_MIST_CITY",
-      "offset": -13,
+      "offset": -17,
       "direction": "right"
     },
     {

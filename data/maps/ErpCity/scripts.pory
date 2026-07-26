@@ -309,3 +309,12 @@ script ErpCity_Sign_Mailbox_JanVogels {
     waitmessage
     release
 }
+
+script OldMiner_Sjeng_Reminisce {
+    lock
+    faceplayer
+    msgbox(format("Fifty years ago, this town was just river and rock.\pThen a wild Meowth dug up a nugget of gold deep in the mountains.\pFolks rushed in from everywhere. They laid these tracks and built this station.\pBut in the end, nobody found much more than that one nugget.\pThe rush died, the trains stopped coming, and I'm still waiting on one that won't arrive.\pSome routes still run up toward the mountain, though.\pOnly battle-hardened trainers and folks who know their bushcraft make it past the treeline."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}

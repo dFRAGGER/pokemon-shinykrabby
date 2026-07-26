@@ -16,7 +16,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_RAYQUAZA_STILL",
-      "x": 30,
+      "x": 31,
       "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -29,7 +29,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GROUDON_SIDE",
-      "x": 32,
+      "x": 33,
       "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -42,7 +42,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KYOGRE_SIDE",
-      "x": 28,
+      "x": 29,
       "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -55,7 +55,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ALAKAZAM_MEGA)",
-      "x": 19,
+      "x": 20,
       "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -68,7 +68,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEWTWO)",
-      "x": 35,
+      "x": 36,
       "y": 20,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -81,7 +81,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MEW",
-      "x": 33,
+      "x": 34,
       "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -94,7 +94,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HOOH",
-      "x": 6,
+      "x": 7,
       "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -107,7 +107,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LUGIA",
-      "x": 4,
+      "x": 5,
       "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -120,7 +120,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ENTEI",
-      "x": 6,
+      "x": 7,
       "y": 30,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -133,7 +133,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SUICUNE",
-      "x": 5,
+      "x": 6,
       "y": 29,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -146,7 +146,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RAIKOU",
-      "x": 7,
+      "x": 8,
       "y": 29,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -159,7 +159,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LATIOS",
-      "x": 31,
+      "x": 32,
       "y": 30,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -172,7 +172,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LATIAS",
-      "x": 33,
+      "x": 34,
       "y": 29,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -185,8 +185,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AGATHA",
-      "x": 19,
-      "y": 31,
+      "x": 20,
+      "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -211,7 +211,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN",
-      "x": 28,
+      "x": 29,
       "y": 13,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -224,7 +224,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
-      "x": 21,
+      "x": 22,
       "y": 24,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -237,8 +237,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN_FRLG",
-      "x": 20,
-      "y": 33,
+      "x": 21,
+      "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -263,7 +263,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN_FRLG",
-      "x": 33,
+      "x": 34,
       "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -277,7 +277,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN_FRLG",
       "x": 6,
-      "y": 23,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -289,8 +289,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN_FRLG",
-      "x": 4,
-      "y": 33,
+      "x": 5,
+      "y": 32,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -302,8 +302,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN_FRLG",
-      "x": 18,
-      "y": 33,
+      "x": 19,
+      "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -315,7 +315,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CHANNELER",
-      "x": 3,
+      "x": 4,
       "y": 23,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -328,7 +328,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKER",
-      "x": 5,
+      "x": 6,
       "y": 34,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -341,7 +341,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN_FRLG",
-      "x": 36,
+      "x": 37,
       "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -354,7 +354,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN_FRLG",
-      "x": 30,
+      "x": 31,
       "y": 32,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -367,7 +367,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MOLTRES",
-      "x": 5,
+      "x": 6,
       "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -380,7 +380,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARTICUNO",
-      "x": 4,
+      "x": 5,
       "y": 20,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -393,7 +393,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ZAPDOS",
-      "x": 3,
+      "x": 4,
       "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -406,7 +406,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
-      "x": 17,
+      "x": 18,
       "y": 24,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -420,13 +420,6 @@
   ],
   "warp_events": [
     {
-      "x": 17,
-      "y": 37,
-      "elevation": 0,
-      "dest_map": "MAP_MARSH_DUKE_CITY",
-      "dest_warp_id": "10"
-    },
-    {
       "x": 18,
       "y": 37,
       "elevation": 0,
@@ -434,11 +427,11 @@
       "dest_warp_id": "10"
     },
     {
-      "x": 20,
+      "x": 19,
       "y": 37,
       "elevation": 0,
       "dest_map": "MAP_MARSH_DUKE_CITY",
-      "dest_warp_id": "11"
+      "dest_warp_id": "10"
     },
     {
       "x": 21,
@@ -448,26 +441,52 @@
       "dest_warp_id": "11"
     },
     {
-      "x": 19,
+      "x": 22,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_MARSH_DUKE_CITY",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 20,
       "y": 37,
       "elevation": 0,
       "dest_map": "MAP_MARSH_DUKE_CITY",
       "dest_warp_id": "10"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
-      "x": 19,
-      "y": 28,
+      "x": 20,
+      "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NULL"
     },
     {
       "type": "sign",
-      "x": 4,
+      "x": 5,
       "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -475,7 +494,7 @@
     },
     {
       "type": "sign",
-      "x": 8,
+      "x": 9,
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -483,32 +502,8 @@
     },
     {
       "type": "sign",
-      "x": 30,
+      "x": 31,
       "y": 11,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
-    },
-    {
-      "type": "sign",
-      "x": 34,
-      "y": 21,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
-    },
-    {
-      "type": "sign",
-      "x": 32,
-      "y": 31,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Marshduke_Indoor_Chatedral_EventScript_Alakazam"
-    },
-    {
-      "type": "sign",
-      "x": 6,
-      "y": 31,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NULL"
@@ -516,50 +511,26 @@
     {
       "type": "sign",
       "x": 35,
-      "y": 32,
+      "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias"
-    },
-    {
-      "type": "sign",
-      "x": 7,
-      "y": 34,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Marshduke_Indoor_Chatedral_EventScript_Sign_EnteiRaikouSuicune"
-    },
-    {
-      "type": "sign",
-      "x": 2,
-      "y": 23,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Marshduke_Indoor_Chatedral_EventScript_Sign_HoohLugia"
-    },
-    {
-      "type": "sign",
-      "x": 5,
-      "y": 13,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Marshduke_Indoor_Chatedral_EventScript_Sign_EmptyShrine"
+      "script": "NULL"
     },
     {
       "type": "sign",
       "x": 33,
-      "y": 13,
+      "y": 31,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza"
+      "script": "Marshduke_Indoor_Chatedral_EventScript_Alakazam"
     },
     {
       "type": "sign",
-      "x": 36,
-      "y": 23,
+      "x": 7,
+      "y": 31,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo"
+      "script": "NULL"
     }
   ]
 }
