@@ -15,12 +15,12 @@
   "connections": [
     {
       "map": "MAP_ROUTE020",
-      "offset": 14,
+      "offset": 6,
       "direction": "up"
     },
     {
       "map": "MAP_HEZIK_TOWN",
-      "offset": 109,
+      "offset": 101,
       "direction": "up"
     },
     {
