@@ -1,7 +1,21 @@
 mapscripts Marshduke_Indoor_Chatedral_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        call(Marshduke_Indoor_Chatedral_OnLoad)
+    }
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_MARSHDUKE_CATHEDRAL_VISION_STATE, 2: Marshduke_Indoor_Chatedral_EventScript_VisionReturn
     ]
+}
+
+script Marshduke_Indoor_Chatedral_OnLoad {
+    // Keep pre-tour NPCs hidden until VAR_CATHEDRAL_STATE_MARSHDUKE is set,
+    // so they don't collide with the tour script.
+    if (var(VAR_CATHEDRAL_STATE_MARSHDUKE) == 0) {
+        setflag(FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR)
+    }
+    if (var(VAR_CATHEDRAL_STATE_MARSHDUKE) != 0) {
+        clearflag(FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR)
+    }
 }
 
 script Marshduke_Indoor_Chatedral_EventScript_Alakazam {
@@ -30,11 +44,11 @@ script Marshduke_Indoor_Chatedral_EventScript_Latias {
 script Marshduke_Indoor_Chatedral_EventScript_VisionReturn {
     setvar(VAR_MARSHDUKE_CATHEDRAL_VISION_STATE, 0)
     lock
-    applymovement(27, moves(walk_right))
+    applymovement(25, moves(walk_right))
     waitmovement
     msgbox(format("Welcome back to the present.\pGive yourself time to readjust to the world around you."), MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(27, moves(walk_left face_down))
+    applymovement(25, moves(walk_left face_down))
     waitmovement
     release
 }
@@ -92,5 +106,361 @@ script Marshduke_Indoor_Chatedral_EventScript_Sign_EmptyShrine{
     faceplayer
     msgbox(format("FIVE MEMORIES OF WHAT WAS. ONE SPACE FOR WHAT COULD BE. THE DIFFERENCE BETWEEN THEM IS US."), MSGBOX_AUTOCLOSE)
     waitmessage
+    release
+}
+
+script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
+    
+    lock
+    setvar(VAR_CATHEDRAL_STATE_MARSHDUKE, 1)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark))
+    waitmovement
+    applymovement(14, moves(walk_down*4))
+
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("Ah, a new face! Wonderful.\pI'm the curator and caretaker of this cathedral, Head of the Order of the Open Eye, and chief remover of pigeons.\pBut please, call me Ms. STONE.\pYou have the look of someone who wandered in.\pWould you like a tour? It's free, and I'm very good at it."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(17, moves(walk_down*4))
+     waitmovement
+    playse(SE_PIN)
+    applymovement(14, moves(emote_question_mark face_up))
+    waitmovement
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("...The seeker arrives at the hour of arriving.\pAs they always do. As they always have."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(30)
+    applymovement(14, moves(face_down))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("That's BROTHER ANDRÉ..."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(30)
+    playse(SE_PIN)
+    applymovement(17, moves(emote_exclamation_mark))
+    waitmovement
+    applymovement(14, moves(face_up))
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("...I am but a JANITOR!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(14, moves(face_down))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("He is but a janitor.\pAt the moment, there's no one here but the priests of the Order of the Open Eye, and us.\pA rare opportunity, let's make the most of it.\pCome along, both of you."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(14, moves(walk_up*6 walk_left walk_up))
+    applymovement(17, moves(walk_up*6))
+    applymovement(LOCALID_PLAYER, moves(walk_up*9))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("There. That's what you came for, whether you knew it or not.\pA MEGA ALAKAZAM. In trance. It has been sitting on this hill longer than the hill has had a name.\pOlder than the city. Older than the walls. Even older than the delta itself."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    playse(SE_PIN)
+    applymovement(17, moves(emote_exclamation_mark))
+    waitmovement
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("It does not sit. It is held.\pTime flows around it as water flows around a stone that has decided not to be moved..."))
+    waitmessage
+    applymovement(14, moves(emote_x face_right))
+    setspeaker("Ms. STONE")
+    msgbox(format("It's sitting, André."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(17, moves(face_left))
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("...It is sitting in a transcendent manner."), MSGBOX_AUTOCLOSE)
+    delay(60)
+    applymovement(14, moves(face_up))
+    applymovement(17, moves(face_up))
+    setspeaker("Ms. STONE")
+    msgbox(format("An ALAKAZAM forgets nothing. Not one moment of its whole life.\pNow imagine thousands of years of that, all at once, all still there.\pSo it stopped moving. Stopped living forward. And started, we think, sorting.\pAnd what it finds worth keeping, it shows us.\pAbove the altars. Five memories. Come see."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(14, moves(walk_down*5 walk_left*6 walk_down*3 walk_left*7 face_up))
+    applymovement(LOCALID_PLAYER, moves(walk_left walk_down*6 walk_left*6 walk_down*3 walk_left*6 walk_up))
+    applymovement(17, moves(walk_up walk_left*2 walk_down*5 walk_left*6 walk_down*4 walk_left*5 face_up))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("The REKINDLED. A tower burned, far from here.\pThree Pokémon died in the fire.\pAnd something came down through the smoke and gave them back, not as they were, but as three completely different things.\pStorm. Flame. Clean water.\pAnd then they ran, and they've never stopped running."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(17, moves(emote_exclamation_mark))
+    waitmovement
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("Three flames of one flame!\pThree faces of one face!\pThe many that is secretly the ONE..."))
+    applymovement(14, moves(emote_x face_right))
+    applymovement(17, moves(face_left))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("They're not one, André, that's rather the point. That's the whole point."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("...Three faces of one face that are also, in a deeper sense, three faces."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(30)
+    setspeaker("Ms. STONE")
+    msgbox(format("...\pBetter."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(30)
+    applymovement(14, moves(face_up))
+    applymovement(17, moves(face_up))
+    setspeaker("Ms. STONE")
+    msgbox(format("The blessing is: you didn't survive for nothing.\pNow run."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(14, moves(walk_down walk_right*4 walk_up))
+    waitmovement
+    applymovement(14, moves(walk_right*3 walk_up walk_right*14 walk_down*2 walk_right*7 walk_up))
+    applymovement(17, moves(walk_right*5 walk_up walk_right*14 walk_down*2 walk_right*5 walk_up))
+    applymovement(LOCALID_PLAYER, moves(walk_down walk_right*6 walk_up walk_right*14 walk_down*2 walk_right*6 walk_up*2))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("The BALANCED SKY. Three great birds over a foreign ocean, fire, frost, and lightning.\pAll matched. All magnificent. And when one of them grows stronger than the other two, the sky comes apart.\pSo the silver one rises out of the sea and, this is the part people always get wrong, it doesn't win.\pIt tunes them. Back to even. Then it goes home and claims nothing."))
+    waitmessage
+    playse(SE_PIN)
+    applymovement(17, moves(emote_exclamation_mark))
+    waitmovement
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("The silver one is the SILENCE BETWEEN THE NOTES.\pThe pause in which the chord discovers what it truly..."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(14, moves(emote_exclamation_mark face_left))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("That's... actually not bad."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(17, moves(face_right))
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("...what it truly dreams."), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovement(14, moves(emote_question_mark))
+    waitmovement
+    delay(60)
+    setspeaker("Ms. STONE")
+    msgbox(format("... Nevermind."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(14, moves(face_up))
+    applymovement(17, moves(face_up))
+    waitmovement
+    setspeaker("Ms. STONE") 
+    msgbox(format("The old records call this the Divided Sky.\pWrong name.\pNobody divided that sky. It was only ever meant to be balanced."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(14, moves(walk_down walk_left*4 walk_up ))
+    waitmovement
+    applymovement(14, moves(walk_left*3 walk_up*9 walk_right*9 walk_up ))
+    applymovement(17, moves(walk_left*5 walk_up*9 walk_right*7 walk_up ))
+    applymovement(LOCALID_PLAYER, moves(walk_down walk_left*6 walk_up*9 walk_right*8 walk_up*2 ))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("A creature made in a laboratory, and the creature it was made from.\pOne the original, one a copy.\pPilgrims come here to argue about which one the memory blames.\pIn my opinion, it blames nobody.\pI think it ends with a question instead: What am I?"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(120)
+    playse(SE_PIN)
+    applymovement(17, moves(emote_exclamation_mark))
+    waitmovement
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("And who among us is not asking that same..."))
+    waitmessage
+    applymovement(14, moves(face_left))
+    waitmovement
+    delay(60)
+    setspeaker("Ms. STONE")
+    msgbox(format("André."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(30)
+    applymovement(17, moves(face_right))
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("I was going to say something about the ocean."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    setspeaker("Ms. STONE")
+    msgbox(format("I know."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(14, moves(face_up))
+    applymovement(17, moves(face_up))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("Watch that one to the end, by the way. It lingers on the little one.\pLonger than it needs to. Nobody knows why."))
+    waitmessage
+    delay(60)
+    playse(SE_PIN)
+    applymovement(14, moves(emote_question_mark walk_up face_left))
+    applymovement(LOCALID_PLAYER, moves(face_right))
+    waitmovement
+    delay(60)
+    setspeaker("Ms. STONE")
+    msgbox(format("...\p...\pYou saw the little one? Mew?\p...\pNot possible. Mew hasn't been seen in the wild for decades.\pI think you have mistaken it for something else.\pLets go to the next altar."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(14, moves(walk_down*2 walk_left*4 walk_up))
+    waitmovement
+    applymovement(14, moves(walk_left*3 walk_up*9 walk_right*3 walk_up ))
+    applymovement(17, moves(walk_left*5 walk_up*9 walk_right walk_up ))
+    applymovement(LOCALID_PLAYER, moves(walk_down walk_left*6 walk_up*9 walk_right*2 walk_up*2 ))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("Careful, this one's cold on the left and hot on the right, we're not sure why.\pThe oldest memory we have. Land and sea, tearing a young world in half.\pContinents rising. Continents drowning.\pNeither of them was wrong, mind you.\pLand wanted land. Sea wanted sea. Perfectly reasonable, both of them.\pBut eventually everything needs a balance, and the answer came from above.\pThe sky split open and the green serpent came down from very high up and simply stopped it.\pLegends say it was just a glance, and the world was saved.\pSometimes seeing both sides and not choosing at all, is the only way to choose."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    playse(SE_PIN)
+    applymovement(17, moves(emote_exclamation_mark))
+    waitmovement
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("AH. Now here I have thoughts..."))
+    waitmessage
+    applymovement(14, moves(face_left))
+    setspeaker("Ms. STONE")
+    msgbox(format("I'm sure."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("...for is not the serpent the AXIS? The thread through the bead? The high still point about which the war..."))
+    waitmessage
+    applymovement(14, moves(face_up))
+    setspeaker("Ms. STONE")
+    msgbox(format("We send feuding families here, you know. Merchant guilds. In-laws. They shake hands under the arch and it counts."))
+    waitmessage
+    applymovement(14, moves(face_left))
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("...the war turns."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(14, moves(face_up))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("It works about half the time. Which for in-laws is remarkable."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(14, moves(walk_down walk_left*3))
+    waitmovement
+    applymovement(14, moves(walk_left*17 walk_down*9 walk_left*8 face_up))
+    applymovement(17, moves(walk_down walk_left*18 walk_down*9 walk_left*6 face_up))
+    applymovement(LOCALID_PLAYER, moves(walk_down*2 walk_left*19 walk_down*9 walk_left*5 walk_down walk_left*2 walk_up*2))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("The TWO HEARTS. Two dragons. Brother and sister. Partners. One team.\pWhile they are the same species, they are not the same individual.\pBoth need the other to survive.\pAnd when one of them is gone, the other is lost.\pThe lesson is: love is the only thing that grows larger when shared."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("...This is the one I come to. When it's late. When nobody is watching."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(14, moves(face_right))
+    setspeaker("Ms. STONE")
+    msgbox(format("...\pYes. Well. Me too."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(14, moves(face_up))
+    delay(60)
+    applymovement(14, moves(walk_down walk_right*4 walk_up))
+    waitmovement
+    applymovement(14, moves(walk_right*3 walk_up*9 walk_left*3 walk_up))
+    applymovement(17, moves(walk_right*5 walk_up*10 walk_left face_up))
+    applymovement(LOCALID_PLAYER, moves(walk_down walk_right*6 walk_up*9 walk_left*2 walk_up*2))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("And this one is my favorite, which annoys everybody.\pIt's empty. Always has been. Nine hundred years and it has never shown a thing.\pThe floor's worn smooth, though. Look at it. Something stood here. Or something's going to."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    playse(SE_PIN)
+    applymovement(17, moves(emote_exclamation_mark))
+    waitmovement
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("The unmanifest! The not-yet! The pregnant silence in which all possible altars are simultaneously..."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(30)
+    applymovement(14, moves(face_right))
+    setspeaker("Ms. STONE")
+    msgbox(format("For once, André, that is very close to the Order's actual position."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(17, moves(face_left emote_exclamation_mark))
+    waitmovement
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("Is it?"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    setspeaker("Ms. STONE")
+    msgbox(format("Don't let it go to your head."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(14, moves(face_up))
+    applymovement(17, moves(face_up))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("Somebody left a plaque here. We've never taken it down.\pIt reads:\pFIVE MEMORIES OF WHAT WAS.\pONE SPACE FOR WHAT COULD BE.\pTHE DIFFERENCE BETWEEN THEM IS US."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(14, moves(face_right))
+    applymovement(17, moves(face_left))
+    applymovement(LOCALID_PLAYER, moves(face_down))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("And that's the tour. Five memories, one empty space, and a very old creature that hasn't moved since before your grandmother's grandmother's grandmother.\pGo and watch them properly.\pTake your time."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("May the seeker find what the seeker seeks."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(14, moves(emote_question_mark))
+    waitmovement
+    delay(60)
+    setspeaker("Ms. STONE")
+    msgbox(format("Thank you, André."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(30)
+    playse(SE_PIN)
+    applymovement(17, moves(emote_exclamation_mark))
+    waitmovement
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("Or, and this is important, may they find what they were NOT seeking."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(30)
+    setspeaker("Ms. STONE")
+    msgbox(format("...That one was quite good.\pCan you clean out the trashcans right now?\pYou know, your job? Thank you!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(30)
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("Yes mam. The trashcans, a beautifull methaphor for the all the forgotten memories.\p You know, trashcans make me feel... "), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(30)
+    setspeaker("Ms. STONE")
+    msgbox(format("André."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(17, moves(walk_right*2 walk_down*9))
+    waitmovement
+    applymovement(14, moves(walk_right face_up))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("...May I tell you something I don't put in the tour?\pEveryone watches the gods.\pNine hundred years, and every single person who has stood where you're standing... ...has watched the gods.\pBut there's a world behind them. In every memory.\pWater so full of fish you can't see through it.\pCountless birds species in the skies so you can't see the sun.\pThey're gone now. All of them.\pBut nobody seems to notice. Including me. For sixty years."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(14, moves(face_right))
+    waitmovement
+    delay(60)
+    setspeaker("Ms. STONE")
+    msgbox(format("I don't think it's showing us old stories at all, child.\pI think it's showing us what's happening right now."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(120)
+    applymovement(14, moves(face_up))
+    setspeaker("Ms. STONE")
+    msgbox(format("...Anyway. Pigeons. That bloody open roof.\pEnjoy the altars."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(14, moves(walk_right*3 walk_down*9))
+    waitmovement
+    setflag(FLAG_MARSHDUKE_CATHEDRAL_TOUR)
+    clearflag(FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR)
+    removeobject(14)
+    removeobject(17)
+    addobject(15)
+    addobject(16)
+    addobject(22)
+    addobject(23)
     release
 }

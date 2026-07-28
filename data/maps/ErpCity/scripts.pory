@@ -58,14 +58,15 @@ script ErpCity_Woman {
 
 script ErpCity_ProfessorBirds_Speech_Pokedex {
     lockall
-    applymovement (LOCALID_PLAYER, moves(walk_fast_left jump_left face_right))
+    opendoor(22, 18)
+    applymovement (LOCALID_PLAYER, moves(walk_fast_down walk_fast_left jump_left face_right))
     clearflag(FLAG_KICKED_OUT_LAB_CONVO)
     addobject(2)
     addobject(5)
     addobject(10)
-    applymovement(2, moves(walk_fast_down walk_fast_left))
-    applymovement(5, moves(walk_down*2 face_left))
-    applymovement(10, moves(jump_down jump_right jump_down))
+    applymovement(2, moves(walk_fast_down*2 walk_fast_left))
+    applymovement(5, moves(walk_down*3 face_left))
+    applymovement(10, moves(jump_down*2 jump_right jump_down))
     waitmovement
     setspeaker("Prof. Birds")
     msgbox(format("WHO DO YOU THINK YOU ARE?\nTAYLOR SWIFT OR SOMETHING?\pActually.... I love Taylor Swift hehe.. ANYWAYS!!\pI TOLD YOU TO NOT SNIFF AROUND IN MY SECRET LA... I MEAN STORAGE ROOM!!\p...YOU DIDN'T STEAL ANYTHING RIGHT? RIGHT??!!\p...It doesn't really matter anyways...\pYOU ARE FIRED!!\pI GOT MY SQUIRKY LITTLE INTERN CALLED BARRY ALREADY!\pHE IS LIVING THE DREAM!!"),MSGBOX_AUTOCLOSE)
@@ -151,9 +152,10 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     waitmessage
     applymovement(LOCALID_PLAYER, moves(jump_left face_left))
     waitmovement
-    applymovement(2, moves(walk_right walk_up))
+    applymovement(2, moves(walk_right walk_up*2))
     waitmovement
     removeobject(2)
+    closedoor(22, 18)
     applymovement(LOCALID_PLAYER, moves(face_right))
     waitmovement
     delay(60)
@@ -236,6 +238,8 @@ script ErpCity_Receive_Running_Shoes {
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark face_up))
     waitmovement
+    opendoor(19, 25)
+    waitdooranim
     clearflag(FLAG_HIDE_MOM_SHOES)
     addobject(4)
     applymovement(4, moves(walk_down face_player))
@@ -269,6 +273,8 @@ script ErpCity_Receive_Running_Shoes {
     setflag(FLAG_SYS_B_DASH)
     setflag(FLAG_HIDE_INTERN_BIRDS_LAB)
     removeobject(4)
+    closedoor(19, 25)
+    waitdooranim
     releaseall
     end
     }

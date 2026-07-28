@@ -97,8 +97,8 @@
 // Scripts
 #define FLAG_ENABLE_EXP_SHARE_WHOLE_TEAM            0x050 // Unused Flag
 #define FLAG_SET_WALL_CLOCK                  0x51  // SK: Used in starting house
-#define FLAG_UNUSED_SCRIPTS_0x052            0x052 // Unused Flag
-#define FLAG_UNUSED_SCRIPTS_0x053            0x053 // Unused Flag
+#define FLAG_MARSHDUKE_CATHEDRAL_TOUR           0x052 // Unused Flag
+#define FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR            0x053 // Unused Flag
 #define FLAG_SHINY_ENCOUNTER                 0x54  // SK: Shiny Encounter Flag
 #define FLAG_NOCATCH_ENCOUNTER               0x55  // SK: No catch Encounter Flag
 #define FLAG_ITEM_COASTAL_CAVE2_QUICK_CLAW   0x056 // SK: Set when the hiker in Maasje Coastal Cave 2 gives the player the Quick Claw.
@@ -2302,8 +2302,8 @@
 #define FLAG_DEFEATED_HO_OH                          FLAG_UNUSED_SCRIPTS_0x1DC
 #define FLAG_DEFEATED_LUGIA                          FLAG_UNUSED_SCRIPTS_0x1DD
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL      FLAG_ENABLE_EXP_SHARE_WHOLE_TEAM
-#define FLAG_RESCUED_BIRCH                           FLAG_UNUSED_SCRIPTS_0x052
-#define FLAG_LEGENDARIES_IN_SOOTOPOLIS               FLAG_UNUSED_SCRIPTS_0x053
+#define FLAG_RESCUED_BIRCH                           FLAG_MARSHDUKE_CATHEDRAL_TOUR
+#define FLAG_LEGENDARIES_IN_SOOTOPOLIS               FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR
 #define FLAG_HIDE_CONTEST_POKE_BALL                  FLAG_ITEM_COASTAL_CAVE2_QUICK_CLAW
 #define FLAG_MET_RIVAL_MOM                           FLAG_ITEM_ROUTE04_SILK_SCARF
 #define FLAG_BIRCH_AIDE_MET                          FLAG_ITEM_LIONSARCH_VISITOR_CENTER_FULL_HEAL
