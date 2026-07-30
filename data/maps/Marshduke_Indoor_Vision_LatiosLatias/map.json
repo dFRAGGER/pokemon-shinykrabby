@@ -146,19 +146,6 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
-      "x": 77,
-      "y": 10,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
       "x": 81,
       "y": 10,
       "elevation": 0,
@@ -172,8 +159,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
-      "x": 81,
-      "y": 12,
+      "x": 79,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -187,19 +174,6 @@
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(GOLDEEN)",
       "x": 79,
       "y": 4,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GOLDEEN)",
-      "x": 82,
-      "y": 5,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -341,19 +315,6 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(POLIWAG)",
-      "x": 92,
-      "y": 1,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(POLIWAG)",
       "x": 88,
       "y": 4,
       "elevation": 0,
@@ -405,32 +366,6 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELECTRIKE)",
-      "x": 118,
-      "y": 4,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 10,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CATERPIE)",
-      "x": 115,
-      "y": 4,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(EEVEE)",
       "x": 137,
       "y": 9,
@@ -458,7 +393,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(EEVEE)",
-      "x": 140,
+      "x": 142,
       "y": 5,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
@@ -471,7 +406,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(EEVEE)",
-      "x": 142,
+      "x": 144,
       "y": 6,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",

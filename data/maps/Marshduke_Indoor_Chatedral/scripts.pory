@@ -7,6 +7,36 @@ mapscripts Marshduke_Indoor_Chatedral_MapScripts {
     ]
 }
 
+script Marshduke_Indoor_Chatedral_Sign_Alakazam {
+    lock
+    faceplayer
+    msgbox(format("There's an infographic mounted here. Read it?"), MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == YES) {
+        goto(Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read)
+    }
+    release
+}
+
+script Marshduke_Indoor_Chatedral_Plague_Empty {
+    lock
+    faceplayer
+    msgbox(format("There's an plaque attached to the altar. Read it?"), MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == YES) {
+        goto(Marshduke_Indoor_Chatedral_EventScript_Sign_EmptyShrine)
+    }
+    release
+}
+
+script Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read {
+    msgbox(format("THE REMEMBERER\nA visitor's guide."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    msgbox(format("The latest research, based on sediment layers in the rock around it, suggests this ALAKAZAM began meditating some 10,000 years ago, right after the last ice age.\pLegend says that when the glaciers retreated and the climate changed, it simply sat down, and has remained here ever since.\pThe glacial meltwater has reshaped the delta many times over the following millennia, yet the hill beneath it shows no trace of that erosion.\pAn ALAKAZAM forgets nothing, not one moment, since birth.\pIts brain never stops growing, endlessly multiplying brain cells.\p It is estimated this POKéMON has an astounding IQ of 5,000, and a memory sharp enough to recall everything it has ever experienced.\pMega Evolution is normally temporary, but this ALAKAZAM has held its Mega form the entire time.\pIt's assumed to be sustaining it through sheer psychic power.\pHistorical records agree it has never once moved.\pAnd yet the memories it displays include events that happened elsewhere, while it sat on this very hill.\pHow that's possible, science has yet to explain."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
 script Marshduke_Indoor_Chatedral_OnLoad {
     // Keep pre-tour NPCs hidden until VAR_CATHEDRAL_STATE_MARSHDUKE is set,
     // so they don't collide with the tour script.
@@ -61,6 +91,22 @@ script Marshduke_Indoor_Chatedral_EventScript_Sister_Wren {
     release
 }
 
+// Brother André, still on trashcan duty, picking up the metaphor Ms. Stone
+// cut him off from during the tour.
+script Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan {
+    lock
+    faceplayer
+    setspeaker("BROTHER ANDRÉ")
+    msgbox(format("Ah, as I was saying, before Ms. STONE so rudely assigned me a chore.\pTrashcans are just like black holes. Nothing that falls in ever truly leaves. It only becomes... unreachable.\pA receipt. A wilted flower. A letter someone almost sent. Each one mattered enough to keep, once.\pIs that not the shape of every memory the ALAKAZAM shows us? Kept. Cherished. And then, eventually, discarded.\pWe built a cathedral for what gets remembered.\pBut nobody built anything for what gets thrown away.\pPerhaps the trashcan is the truer altar. The one that does not discrimin..."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    msgbox(format("...I really should empty this before Ms. STONE finds out I've been talking to it instead of emptying it."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(30, moves(face_left))
+    waitmovement
+    release
+}
+
 script Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias{
     lock
     faceplayer
@@ -69,34 +115,37 @@ script Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias{
     release
 }
 
-script Marshduke_Indoor_Chatedral_EventScript_Sign_HoohLugia{
+script Marshduke_Indoor_Chatedral_EventScript_NPC_HoohLugia{
     lock
     faceplayer
-    msgbox(format("THE LESSON OF THE DIVIDED SKY:\nPower that loves the world must sometimes leave it."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Rumors say LUGIA's storm was the one that burned the Brass Tower down, the same fire ENTEI, RAIKOU, and SUICUNE rose from.\pEven a being that can move oceans couldn't stop that fire in time once it started.\pNot every disaster bends to strength, however great.\pIt fled that night, and stayed hidden for years, ashamed of what it couldn't prevent, until the world needed it again.\pPerhaps that's the truer lesson: even the mightiest cannot always win. What matters is choosing, again and again, to use what power you have for good."), MSGBOX_AUTOCLOSE)
     waitmessage
     release
 }
 
-script Marshduke_Indoor_Chatedral_EventScript_Sign_EnteiRaikouSuicune{
+script Marshduke_Indoor_Chatedral_EventScript_NPC_EnteiRaikouSuicune{
     lock
     faceplayer
-    msgbox(format("THE LESSON OF THE RUNNERS:\nA second life is not a gift. It is an assignment."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Oh! You caught me dancing with my Vapereon.\pI'm a KIMONO GIRL, all the way from Ecruteak City in Johto.\pI crossed half the region just to stand in front of this ALAKAZAM and watch its memory of my hometown.\pMy sisters have danced in the ashes of the BURNED TOWER for generations, but none of us have ever seen it whole. Not until I came here.\pDid you know, three hundred years ago, some KIMONO GIRLS made this same journey, and carried pieces of the burned wood to leave it here?\pThose scorched fragments are on display in the city's gallery now, curated by a collector named ARI."), MSGBOX_AUTOCLOSE)
     waitmessage
     release
 }
 
-script Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo{
+script Marshduke_Indoor_Chatedral_EventScript_NPC_MewMewtwo{
     lock
     faceplayer
-    msgbox(format("THE LESSON OF THE MIRROR:\nThe circumstances of one's birth are irrelevant. It is what you do with the gift of life that determines who you are."), MSGBOX_AUTOCLOSE)
+    msgbox(format("I've been standing here an hour, staring at a creature made in a lab beside the one it was copied from.\pMost pilgrims argue about which one's the 'real' one, but the memory never says, and I don't think it's supposed to.\pThe circumstances of one's birth are irrelevant; it's what you do with the gift of life that determines who you are."), MSGBOX_AUTOCLOSE)
     waitmessage
     release
 }
 
-script Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza{
+script Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza{
     lock
     faceplayer
-    msgbox(format("THE LESSON OF THE DROWNED AND BURNING WORLD:\nWhen two truths war without limit, the answer comes from above them both."), MSGBOX_AUTOCLOSE)
+    playse(SE_PIN)
+    applymovement(15, moves(emote_exclamation_mark))
+    waitmovement
+    msgbox(format("Careful, don't stand too close.\pMy castform is trying to register some temperature differences.\pDr. FERRAN, instrumentation.\pI've been measuring the temperature at this altar for twenty years now.\pThe GROUDON side reads hot enough to melt solder.\pThe KYOGRE side reads freezing.\pAnd every sensor I've ever placed between them has failed in increasingly creative ways.\pLast week my thermometer even reported the weather of a country that doesn't exist.\p Three weeks ago a humidity gauge that started transmitting in Morse code.\pAnd one time, a probe simply vanished, and turned up in my lunchbox three days later, slightly damp...\pI've begun to suspect the ALAKAZAM is doing this on purpose.\pWorse, I think it's enjoying it."), MSGBOX_AUTOCLOSE)
     waitmessage
     release
 }
@@ -155,7 +204,7 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     applymovement(LOCALID_PLAYER, moves(walk_up*9))
     waitmovement
     setspeaker("Ms. STONE")
-    msgbox(format("There. That's what you came for, whether you knew it or not.\pA MEGA ALAKAZAM. In trance. It has been sitting on this hill longer than the hill has had a name.\pOlder than the city. Older than the walls. Even older than the delta itself."), MSGBOX_AUTOCLOSE)
+    msgbox(format("There. That's what you came for, whether you knew it or not.\pA MEGA ALAKAZAM. In trance. It has been sitting on this hill longer than the hill has had a name.\pOlder than the city, the walls and we think even older than the delta itself."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
     playse(SE_PIN)
@@ -180,7 +229,7 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     waitmessage
     applymovement(14, moves(walk_down*5 walk_left*6 walk_down*3 walk_left*7 face_up))
     applymovement(LOCALID_PLAYER, moves(walk_left walk_down*6 walk_left*6 walk_down*3 walk_left*6 walk_up))
-    applymovement(17, moves(walk_up walk_left*2 walk_down*5 walk_left*6 walk_down*4 walk_left*5 face_up))
+    applymovement(17, moves(walk_up walk_left*2 walk_down*6 walk_left*6 walk_down*3 walk_left*5 face_up))
     waitmovement
     setspeaker("Ms. STONE")
     msgbox(format("The REKINDLED. A tower burned, far from here.\pThree Pokémon died in the fire.\pAnd something came down through the smoke and gave them back, not as they were, but as three completely different things.\pStorm. Flame. Clean water.\pAnd then they ran, and they've never stopped running."), MSGBOX_AUTOCLOSE)
@@ -208,7 +257,7 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     applymovement(14, moves(face_up))
     applymovement(17, moves(face_up))
     setspeaker("Ms. STONE")
-    msgbox(format("The blessing is: you didn't survive for nothing.\pNow run."), MSGBOX_AUTOCLOSE)
+    msgbox(format("The lesson here is: A second life is not a gift; it is an assignment."), MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(14, moves(walk_down walk_right*4 walk_up))
     waitmovement
@@ -217,7 +266,7 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     applymovement(LOCALID_PLAYER, moves(walk_down walk_right*6 walk_up walk_right*14 walk_down*2 walk_right*6 walk_up*2))
     waitmovement
     setspeaker("Ms. STONE")
-    msgbox(format("The BALANCED SKY. Three great birds over a foreign ocean, fire, frost, and lightning.\pAll matched. All magnificent. And when one of them grows stronger than the other two, the sky comes apart.\pSo the silver one rises out of the sea and, this is the part people always get wrong, it doesn't win.\pIt tunes them. Back to even. Then it goes home and claims nothing."))
+    msgbox(format("The BALANCED SKY. Three great birds over a foreign ocean: fire, frost, and lightning.\pWhen one of them grows stronger than the other two, the sky comes apart.\pSo the silver one rises from the sea, tunes them back to balance, and simply leaves.\pIt shows us that power great enough to remake the world is sometimes wisest left alone."))
     waitmessage
     playse(SE_PIN)
     applymovement(17, moves(emote_exclamation_mark))
@@ -234,20 +283,20 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     delay(60)
     applymovement(17, moves(face_right))
     setspeaker("BROTHER ANDRÉ")
-    msgbox(format("...what it truly dreams."), MSGBOX_AUTOCLOSE)
+    msgbox(format("...the pause in which the chord discovers what it truly... dreams."), MSGBOX_AUTOCLOSE)
     playse(SE_PIN)
     applymovement(14, moves(emote_question_mark))
     waitmovement
     delay(60)
     setspeaker("Ms. STONE")
-    msgbox(format("... Nevermind."), MSGBOX_AUTOCLOSE)
+    msgbox(format("...Nevermind."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
     applymovement(14, moves(face_up))
     applymovement(17, moves(face_up))
     waitmovement
     setspeaker("Ms. STONE") 
-    msgbox(format("The old records call this the Divided Sky.\pWrong name.\pNobody divided that sky. It was only ever meant to be balanced."), MSGBOX_AUTOCLOSE)
+    msgbox(format("The old records call this the Divided Sky.\pPersonally I see it differently.\pNobody divided that sky. It was only ever meant to be balanced and maintained."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
     applymovement(14, moves(walk_down walk_left*4 walk_up ))
@@ -257,9 +306,9 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     applymovement(LOCALID_PLAYER, moves(walk_down walk_left*6 walk_up*9 walk_right*8 walk_up*2 ))
     waitmovement
     setspeaker("Ms. STONE")
-    msgbox(format("A creature made in a laboratory, and the creature it was made from.\pOne the original, one a copy.\pPilgrims come here to argue about which one the memory blames.\pIn my opinion, it blames nobody.\pI think it ends with a question instead: What am I?"), MSGBOX_AUTOCLOSE)
+    msgbox(format("The MIRROR. A creature made in a laboratory, and the creature it was made from.\pOne the original, one the perfect copy.\pPilgrims come here to argue about which one is stronger, better, more perfect.\pIn my opinion, they need each other, they strengthen each other, they can learn from each other.\pI think it ends with a question instead: What if we work together, instead of against each other?"), MSGBOX_AUTOCLOSE)
     waitmessage
-    delay(120)
+    delay(60)
     playse(SE_PIN)
     applymovement(17, moves(emote_exclamation_mark))
     waitmovement
@@ -286,8 +335,11 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     applymovement(17, moves(face_up))
     waitmovement
     setspeaker("Ms. STONE")
-    msgbox(format("Watch that one to the end, by the way. It lingers on the little one.\pLonger than it needs to. Nobody knows why."))
+    msgbox(format("Watch that one to the end, by the way. It lingers on the little one, Mew.\pLonger than it needs to. Nobody knows why."))
     waitmessage
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark))
+    waitmovement
     delay(60)
     playse(SE_PIN)
     applymovement(14, moves(emote_question_mark walk_up face_left))
@@ -311,26 +363,31 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     applymovement(17, moves(emote_exclamation_mark))
     waitmovement
     setspeaker("BROTHER ANDRÉ")
-    msgbox(format("AH. Now here I have thoughts..."))
+    msgbox(format("AH. Now here I have thoughts..."), MSGBOX_AUTOCLOSE)
     waitmessage
+    delay(30)
     applymovement(14, moves(face_left))
     setspeaker("Ms. STONE")
     msgbox(format("I'm sure."), MSGBOX_AUTOCLOSE)
     waitmessage
-    delay(60)
+    delay(30)
     setspeaker("BROTHER ANDRÉ")
-    msgbox(format("...for is not the serpent the AXIS? The thread through the bead? The high still point about which the war..."))
+    msgbox(format("...for is not the serpent the AXIS? The thread through the bead? The high still point about which the war..."), MSGBOX_AUTOCLOSE)
     waitmessage
+    delay(30)
+    applymovement(14, moves(face_left))
+    waitmovement
+    setspeaker("Ms. STONE")
+    msgbox(format("André..."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(17, moves(face_right))
+    waitmovement
+    delay(60)
     applymovement(14, moves(face_up))
     setspeaker("Ms. STONE")
     msgbox(format("We send feuding families here, you know. Merchant guilds. In-laws. They shake hands under the arch and it counts."))
     waitmessage
-    applymovement(14, moves(face_left))
-    setspeaker("BROTHER ANDRÉ")
-    msgbox(format("...the war turns."), MSGBOX_AUTOCLOSE)
-    waitmessage
-    delay(60)
-    applymovement(14, moves(face_up))
+    applymovement(17, moves(face_up))
     waitmovement
     setspeaker("Ms. STONE")
     msgbox(format("It works about half the time. Which for in-laws is remarkable."), MSGBOX_AUTOCLOSE)
@@ -343,7 +400,7 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     applymovement(LOCALID_PLAYER, moves(walk_down*2 walk_left*19 walk_down*9 walk_left*5 walk_down walk_left*2 walk_up*2))
     waitmovement
     setspeaker("Ms. STONE")
-    msgbox(format("The TWO HEARTS. Two dragons. Brother and sister. Partners. One team.\pWhile they are the same species, they are not the same individual.\pBoth need the other to survive.\pAnd when one of them is gone, the other is lost.\pThe lesson is: love is the only thing that grows larger when shared."), MSGBOX_AUTOCLOSE)
+    msgbox(format("The TWO HEARTS. Two dragons. Two personalities. Two ways of being. But one team.\pWhile they are the same species, they are not the same individual.\pStill, each needs the other to survive.\pAnd when one is lost, the other perishes with it.\pThe lesson: love is the only thing that grows larger when shared."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
     setspeaker("BROTHER ANDRÉ")
@@ -364,7 +421,7 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     applymovement(LOCALID_PLAYER, moves(walk_down walk_right*6 walk_up*9 walk_left*2 walk_up*2))
     waitmovement
     setspeaker("Ms. STONE")
-    msgbox(format("And this one is my favorite, which annoys everybody.\pIt's empty. Always has been. Nine hundred years and it has never shown a thing.\pThe floor's worn smooth, though. Look at it. Something stood here. Or something's going to."), MSGBOX_AUTOCLOSE)
+    msgbox(format("And this one is my favorite, which annoys everybody.\pIt's empty. Always has been.\pDuring the cathedral's construction, long ago, the workers claimed to have seen warped visions at this very spot.\pWhatever it was, it hasn't shown itself since, not in at least 900 years.\pAll we have left is hearsay, and hearsay doesn't agree with itself.\pSome talk of a giant with seven eyes. Others claim to have seen several giants at once.\pBut everyone agrees on one thing: whatever it was, it came wrapped in a green light. Nobody knows why."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
     playse(SE_PIN)
@@ -427,9 +484,9 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     waitmessage
     delay(30)
     setspeaker("BROTHER ANDRÉ")
-    msgbox(format("Yes mam. The trashcans, a beautifull methaphor for the all the forgotten memories.\p You know, trashcans make me feel... "), MSGBOX_AUTOCLOSE)
+    msgbox(format("Yes mam. The trashcans, a beautifull methaphor for the all the forgotten memories.\pYou know, trashcans are just like black holes... "), MSGBOX_AUTOCLOSE)
     waitmessage
-    delay(30)
+    delay(60)
     setspeaker("Ms. STONE")
     msgbox(format("André."), MSGBOX_AUTOCLOSE)
     waitmessage
@@ -452,7 +509,7 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     setspeaker("Ms. STONE")
     msgbox(format("...Anyway. Pigeons. That bloody open roof.\pEnjoy the altars."), MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(14, moves(walk_right*3 walk_down*9))
+    applymovement(14, moves(walk_right*3 walk_down walk_right*7))
     waitmovement
     setflag(FLAG_MARSHDUKE_CATHEDRAL_TOUR)
     clearflag(FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR)
@@ -464,3 +521,4 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     addobject(23)
     release
 }
+
