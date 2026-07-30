@@ -145,7 +145,42 @@ script Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza{
     playse(SE_PIN)
     applymovement(15, moves(emote_exclamation_mark))
     waitmovement
-    msgbox(format("Careful, don't stand too close.\pMy castform is trying to register some temperature differences.\pDr. FERRAN, instrumentation.\pI've been measuring the temperature at this altar for twenty years now.\pThe GROUDON side reads hot enough to melt solder.\pThe KYOGRE side reads freezing.\pAnd every sensor I've ever placed between them has failed in increasingly creative ways.\pLast week my thermometer even reported the weather of a country that doesn't exist.\p Three weeks ago a humidity gauge that started transmitting in Morse code.\pAnd one time, a probe simply vanished, and turned up in my lunchbox three days later, slightly damp...\pI've begun to suspect the ALAKAZAM is doing this on purpose.\pWorse, I think it's enjoying it."), MSGBOX_AUTOCLOSE)
+    setspeaker("Dr. FERRAN")
+    msgbox(format("Careful, don't stand too close.\pMy castform is trying to register some temperature differences."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(15, moves(face_right))
+    waitmovement
+    setspeaker("Dr. FERRAN")
+    msgbox(format("Well, go on."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(34, moves(walk_right*3))
+    waitmovement
+    playse(SE_M_MINIMIZE)
+    callnative(SetCastformSunnyForm)
+    applymovement(34, moves(walk_right face_down))
+    delay(60)
+    playse(SE_PIN)
+    applymovement(34, moves(emote_exclamation_mark jump_in_place_down jump_in_place_down))
+    waitmovement
+    applymovement(34, moves(walk_fast_left*2))
+    waitmovement
+    playse(SE_M_MINIMIZE)
+    callnative(SetCastformSnowyForm)
+    applymovement(34, moves(walk_fast_left*2))
+    waitmovement
+    playse(SE_PIN)
+    applymovement(15, moves(emote_question_mark))
+    waitmovement
+    setspeaker("Dr. FERRAN")
+    msgbox(format("What do you mean?\pOver 9000 degrees?! By Arceus!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(34, moves(face_down))
+    faceplayer
+    waitmovement
+    setspeaker("Dr. FERRAN")
+    msgbox(format("Sorry about that.\pDr. FERRAN, instrumentation.\pI've been measuring the temperature at this altar for twenty years now.\pThe GROUDON side reads hot enough to melt solder.\pThe KYOGRE side reads freezing.\pAnd every sensor I've ever placed between them has failed in increasingly creative ways.\pLast week my thermometer even reported the weather of a country that doesn't exist.\p Three weeks ago a humidity gauge that started transmitting in Morse code.\pAnd one time, a probe simply vanished, and turned up in my lunchbox three days later, slightly damp...\pI've begun to suspect the ALAKAZAM is doing this on purpose."), MSGBOX_AUTOCLOSE)
     waitmessage
     release
 }

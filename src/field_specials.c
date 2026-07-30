@@ -5779,3 +5779,19 @@ bool8 CheckAddCoins(void)
     else
         return TRUE;
 }
+
+#define LOCALID_MARSHDUKE_CATHEDRAL_CASTFORM 34
+
+void SetCastformSunnyForm(void)
+{
+    RefreshObjectEventGraphicsIdByLocalIdAndMap(LOCALID_MARSHDUKE_CATHEDRAL_CASTFORM,
+        gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup,
+        OBJ_EVENT_GFX_SPECIES(CASTFORM_SUNNY));
+}
+
+void SetCastformSnowyForm(void)
+{
+    RefreshObjectEventGraphicsIdByLocalIdAndMap(LOCALID_MARSHDUKE_CATHEDRAL_CASTFORM,
+        gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup,
+        OBJ_EVENT_GFX_SPECIES(CASTFORM_SNOWY));
+}

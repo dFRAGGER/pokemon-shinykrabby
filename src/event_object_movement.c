@@ -3139,6 +3139,31 @@ void ObjectEventSetGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup,
         ObjectEventSetGraphicsId(&gObjectEvents[objectEventId], graphicsId);
 }
 
+// Like ObjectEventSetGraphicsIdByLocalIdAndMap, but for species-based (OBJ_EVENT_MON) graphics ids
+// that use a dynamically-loaded palette (the norm under OW_POKEMON_OBJECT_EVENTS). Reuses the same
+// graphics/palette refresh path the follower system uses for mid-scene form changes (e.g. Castform),
+// since plain ObjectEventSetGraphics() never reloads a OBJ_EVENT_PAL_TAG_DYNAMIC palette.
+void RefreshObjectEventGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, u16 graphicsId)
+{
+    u8 objectEventId;
+
+    if (!TryGetObjectEventIdByLocalIdAndMap(localId, mapNum, mapGroup, &objectEventId))
+    {
+        struct ObjectEvent *objectEvent = &gObjectEvents[objectEventId];
+        objectEvent->graphicsId = graphicsId;
+        RefreshFollowerGraphics(objectEvent);
+        // RefreshFollowerGraphics swaps sprite->anims but doesn't restart the sprite's
+        // current animation, so the old species' frame keeps playing until the next
+        // movement action naturally re-triggers it. Force an immediate redraw here,
+        // the same way ObjectEventTurn does for a stationary facing change.
+        if (!objectEvent->inanimate)
+        {
+            StartSpriteAnim(&gSprites[objectEvent->spriteId], GetFaceDirectionAnimNum(objectEvent->facingDirection));
+            SeekSpriteAnim(&gSprites[objectEvent->spriteId], 0);
+        }
+    }
+}
+
 void ObjectEventTurn(struct ObjectEvent *objectEvent, enum Direction direction)
 {
     SetObjectEventDirection(objectEvent, direction);

@@ -38,5 +38,7 @@ bool32 CheckObjectAtXY(u32, u32);
 bool32 CheckPartyHasSpecies(u32);
 bool8 CutMoveRuinValleyCheck(void);
 void CutMoveOpenDottedHoleDoor(void);
+void SetCastformSunnyForm(void);
+void SetCastformSnowyForm(void);
 
 #endif // GUARD_FIELD_SPECIALS_H
