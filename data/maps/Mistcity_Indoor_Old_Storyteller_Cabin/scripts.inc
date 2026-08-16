@@ -74,13 +74,13 @@ Mistcity_Indoor_Old_Storyteller_Elara_10:
 
 Mistcity_Indoor_Old_Storyteller_Elara_Text_0:
 # 7 "data/maps/Mistcity_Indoor_Old_Storyteller_Cabin/scripts.pory"
-	.string "Elara$"
+	.string "ELARA$"
 
 Mistcity_Indoor_Old_Storyteller_Elara_Text_1:
 # 8 "data/maps/Mistcity_Indoor_Old_Storyteller_Cabin/scripts.pory"
 	.string "Come in, come in, child. Don't mind the\n"
 	.string "old books.\p"
-	.string "My name is {COLOR GREEN}Elara{COLOR DARK_GRAY}.\p"
+	.string "My name is {COLOR GREEN}ELARA{COLOR DARK_GRAY}.\p"
 	.string "My family has watched over this forest\n"
 	.string "for more generations than I can count.\p"
 	.string "Lately, something is wrong, I can feel it\n"
@@ -95,7 +95,7 @@ Mistcity_Indoor_Old_Storyteller_Elara_Text_1:
 	.string "An ancient being of steel, said to\n"
 	.string "awaken only when the forest's chaotic\l"
 	.string "harmony is threatened...\p"
-	.string "That brave young man, Daan, he\n"
+	.string "That brave young man, DAAN, he\n"
 	.string "understands.\p"
 	.string "He feels the forest's heartbeat. I pray\n"
 	.string "you have a similar spirit.$"
@@ -103,7 +103,7 @@ Mistcity_Indoor_Old_Storyteller_Elara_Text_1:
 Mistcity_Indoor_Old_Storyteller_Elara_Text_2:
 # 15 "data/maps/Mistcity_Indoor_Old_Storyteller_Cabin/scripts.pory"
 	.string "You! You are the one who stood with\n"
-	.string "Daan!\p"
+	.string "DAAN!\p"
 	.string "I knew there was a kind heart in you.\p"
 	.string "The forest breathes a sigh of relief,\n"
 	.string "and so do I.\p"

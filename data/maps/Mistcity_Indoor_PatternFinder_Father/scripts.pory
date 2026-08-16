@@ -3,21 +3,21 @@ mapscripts Mistcity_Indoor_PatternFinder_Father_MapScripts {}
 script Mistcity_Indoor_PatternFinder_Father {
     lock
     faceplayer
-    setspeaker("Mr. Heartfield")
+    setspeaker("Mr. HEARTFIELD")
     if (flag(FLAG_HELPED_DAN_BEAT_FACULTY) == FALSE) {
-        msgbox(format("Oh, hello. My name is Mr. Heartfield.\pWelcome.\pSorry for all the ladders and climbing to get here.\pMy child is very sensitive to loud noises, but high in the canopy is an oasis of tranquility.\pNature brings his mind to ease.\pMy child... they see the world in a special way.\pNot many people understand.\pThey don't talk much, but they see everything.\pAll the little patterns and connections that the rest of us miss.\pIt's a beautiful, intricate map that only they can read.\pI'm so glad my son David has found a place at the Ranger Station where his mind is appreciated."))
+        msgbox(format("Oh, hello. My name is Mr. HEARTFIELD.\pWelcome.\pSorry for all the ladders and climbing to get here.\pMy child is very sensitive to loud noises, but high in the canopy is an oasis of tranquility.\pNature brings his mind to ease.\pMy child... they see the world in a special way.\pNot many people understand.\pThey don't talk much, but they see everything.\pAll the little patterns and connections that the rest of us miss.\pIt's a beautiful, intricate map that only they can read.\pI'm so glad my son David has found a place at the Ranger Station where his mind is appreciated."))
         waitmessage
     }
     else {
         if (flag(FLAG_ITEM_MISTCITY_TM_BULK_UP) == FALSE) {
-            msgbox(format("It's you.\nThank you.\pMy son David came home yesterday... he seemed so happy. So alive.\pHe was excitedly drawing these complex patterns in his notebook like dots on a stone, marks on a map, strange symbols.\pThey said they were 'solving the puzzle' and that you understood.\pYou showed them that their gift is important.\pMore than that, that it's a strength.\pI... thank you.\pYou've given them a confidence I haven't seen before.\pI want to give you something.\pThis TM teaches Bulk Up.\pA move that builds both body and resolve at once, strength that comes from within.\pDavid used to shrink away from everything.\pNow I see them stand a little taller.\pThat's what you gave them.\pI think this belongs with you."))
+            msgbox(format("It's you.\nThank you.\pMy son DAVID came home yesterday... he seemed so happy. So alive.\pHe was excitedly drawing these complex patterns in his notebook like dots on a stone, marks on a map, strange symbols.\pThey said they were 'solving the puzzle' and that you understood.\pYou showed them that their gift is important.\pMore than that, that it's a strength.\pI... thank you.\pYou've given them a confidence I haven't seen before.\pI want to give you something.\pThis TM teaches Bulk Up.\pA move that builds both body and resolve at once, strength that comes from within.\pDAVID used to shrink away from everything.\pNow I see them stand a little taller.\pThat's what you gave them.\pI think this belongs with you."))
             waitmessage
             giveitem(ITEM_TM_BULK_UP)
             waitmessage
             setflag(FLAG_ITEM_MISTCITY_TM_BULK_UP)
         }
         else {
-            msgbox(format("David is doing so well.\pThey came home last night humming to themselves.\pFirst time I've heard that in years."), MSGBOX_AUTOCLOSE)
+            msgbox(format("DAVID is doing so well.\pThey came home last night humming to themselves.\pFirst time I've heard that in years."), MSGBOX_AUTOCLOSE)
             waitmessage
         }
     }

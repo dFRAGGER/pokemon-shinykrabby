@@ -2,7 +2,7 @@ mapscripts CrabhillEntrance_MapScripts {}
 
 script Crabhill_Jacob_in_need {
     applymovement(LOCALID_PLAYER, moves(walk_up*4 face_left))
-    setspeaker("Jacob")
+    setspeaker("JACOB")
     msgbox(format("HEY!\n HELP ME!\p I'M SO TIRED!\pSTOP THAT MAN OVER THERE!\pHE IS BROADCASTING SOMETHING...\pI CAN'T MOVE...\nNO, I MUST MOVE!!"),MSGBOX_AUTOCLOSE)
     waitmessage    
 }
@@ -10,23 +10,23 @@ script Crabhill_Jacob_in_need {
 script Crabhill_Faculty_Grunt_Signal {
     lock
     faceplayer
-    setspeaker("Faculty Grunt")
+    setspeaker("FACULTY GRUNT")
     msgbox(format("Step back boy!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER,moves(jump_down face_up))
     waitmovement
-    setspeaker("Faculty Grunt")
+    setspeaker("FACULTY GRUNT")
     msgbox(format("Signal output nominal. All organic assets are oscillating in perfect synchronization.\pLook at this beautiful efficiency! This is the future of workforce optimization!"),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
     applymovement(34, moves(face_up emote_exclamation_mark))
     waitmovement
-    setspeaker("Faculty Grunt")
+    setspeaker("FACULTY GRUNT")
     msgbox(format("Wait. Anomaly detected.\pYou there, the gold variant. Your neural pathways are rejecting the command.\pCompliance is not optional. Receive the input!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(34, moves(walk_up))
     waitmovement
-    setspeaker("Faculty Grunt")
+    setspeaker("FACULTY GRUNT")
     msgbox(format("Why aren't you moving?!\pIncreasing signal intensity to maximum voltage! Obey!"),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_M_EXPLOSION)
@@ -34,12 +34,12 @@ script Crabhill_Faculty_Grunt_Signal {
     fadescreen(FADE_FROM_WHITE)
     applymovement(34, moves(jump_down face_up))
     waitmovement
-    setspeaker("Faculty Grunt")
+    setspeaker("FACULTY GRUNT")
     msgbox(format("It... it deflected the carrier wave?!\pThe feedback loop just fried the transmitter circuits!\pThat carapace is acting like a mirror!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(34,moves(face_down))
     waitmovement
-    setspeaker("Faculty Grunt")
+    setspeaker("FACULTY GRUNT")
     msgbox(format("This data is completely anomalous!\pI am not paid enough for radioactive crustaceans!\pTactical retreat! Abort mission!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER, moves(jump_left face_down))
@@ -110,7 +110,7 @@ script Won_or_Caught{
     removeobject(22)
     removeobject(24)
     removeobject(1)
-    setspeaker("Jacob")
+    setspeaker("JACOB")
     msgbox(format("Left... Right... Left... WHOA!"),MSGBOX_AUTOCLOSE)
     applymovement(21, moves(walk_slow_left walk_slow_right walk_slow_left walk_slow_right))
     waitmovement
@@ -125,7 +125,7 @@ script Won_or_Caught{
         applymovement(21, moves(walk_right*2 face_up))
         waitmovement
     }
-    setspeaker("Jacob")
+    setspeaker("JACOB")
     msgbox(format("Kid! You broke the trance!\pThank Arceus... another five minutes of that and my legs would have fallen right off!\pBut did you see it?!\pThat was it!\pThat was the 'special specimen' I wanted to show you!\pA Krabby!\p The single most magnificent creature to sidle on this earth!\pPeople talk about Dragonites or Tyranitars... pshh!\pLook at that carapace!\pLook at that perfect pincer geometry!\p It is the peak of evolution!\pThe best Pokémon in the whole wide world, bar none!\pAnd a Shiny one...\na golden King...\nand it got away...\p Truly, a dark day for science.\pWait...\pHow long was I doing the side-step shuffle?\pOh no.\nOh no no no.\pI left without telling my wife!\pShe's probably barricaded the door by now!\pIf I don't get back before she realizes I've been gone for three hours without permission, she's going to be scarier than a Gyarados!\pI gotta run!\pYou are welcome to join for dinner!"),MSGBOX_AUTOCLOSE)
     applymovement(21,moves(walk_fast_down*7))
     waitmovement
@@ -166,7 +166,7 @@ script Crabhill_Hiker_Hint {
 script Crabhill_Faculty_Lost_grunt {
     lock
     faceplayer
-    setspeaker("Faculty Grunt")
+    setspeaker("FACULTY GRUNT")
     msgbox(format("I have lost contact with my associate, this cave is a maze!\pThe Control Signal seemed to cause a chaotic dispersal instead of obedience!\pWait... erase that input! I absolutely did not say we are manipulating local wildlife frequencies!\pForget you heard anything about the signal!"))
     waitmessage
     release

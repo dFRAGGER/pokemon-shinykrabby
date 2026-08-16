@@ -10,7 +10,7 @@ script ErpCity_Starthouse1F_Mom_Calling {
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER,moves(emote_exclamation_mark))
     waitmovement
-    setspeaker("Mom")
+    setspeaker("MOM")
     msgbox(format("HONEY!!\pWAKE UP!!\pYOU'RE LATE!!"))
     waitmessage
     call(Start_FLAGS_Reset)
@@ -27,7 +27,7 @@ script Start_FLAGS_Reset {
 script ErpCity_Starthouse1F_Mom_Clock {
     if(!flag(FLAG_SET_WALL_CLOCK)){
         lock
-        setspeaker("Mom")
+        setspeaker("MOM")
         msgbox(format("OH, AND DON'T FORGET YOUR CLOCK!\pOTHERWISE YOU WILL BE LATE AGAIN TOMORROW!!"))
         waitmessage
         applymovement(LOCALID_PLAYER, moves(walk_left))

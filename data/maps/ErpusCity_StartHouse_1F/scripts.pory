@@ -2,7 +2,9 @@ mapscripts ErpusCity_StartHouse_1F_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
         call(ErpusCity_Heal_Location)
     }
-    
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_STARTHOUSE_ERP_CITY_1F, 0: ErpusCity_Starthouse_1F_IntroSpeechCheck
+    ]
 }
 
 script ErpusCity_Heal_Location {
@@ -10,46 +12,47 @@ script ErpusCity_Heal_Location {
     end
 }
 
+script ErpusCity_Starthouse_1F_IntroSpeechCheck {
+    setvar(VAR_STARTHOUSE_ERP_CITY_1F, 1)
+    if(flag(FLAG_INTRO_SPEECH_MOM_FINISHED) == FALSE) {
+        call(Erpuscity_Starthouse_1F_Eventscripts_MOMIntrospeech)
+    }
+    end
+}
+
 script Erpuscity_Starthouse_1F_WoodStatue {
     lock
-    msgbox(format("It's a beautifull wooden sculpture.\nOn the bottom it says:\p'Created by Silas, Woodworker from Mistcity'"),MSGBOX_AUTOCLOSE)
+    msgbox(format("It's a beautifull wooden sculpture.\nOn the bottom it says:\p'Created by SILAS, Woodworker from MIST CITY'"),MSGBOX_AUTOCLOSE)
     release
 }
 
 script Erpuscity_Starthouse_1F_LittleSister {
     lock
-    setspeaker("Sister")
-    msgbox(format("Mom got me a new stuffed Pokémon!\pIt's huge isn't it?"),MSGBOX_AUTOCLOSE)
+    setspeaker("SISTER")
+    msgbox(format("MOM got me a new stuffed Pokémon!\pIt's huge isn't it?"),MSGBOX_AUTOCLOSE)
     waitmessage
     release
 }
 
-script Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech {
+script Erpuscity_Starthouse_1F_Eventscripts_MOMIntrospeech {
     lock
-    if(flag(FLAG_INTRO_SPEECH_MOM_FINISHED)==FALSE){
-    getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
-    applymovement(LOCALID_PLAYER, moves(face_down))
+    setspeaker("MOM")
+    msgbox(format("Well, look who's finally awake!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
     playse(SE_PIN)
     applymovement(1, moves(emote_exclamation_mark))
     waitmovement
-    if(var(VAR_TEMP_0)== 7 && var(VAR_TEMP_1)== 3) {
-        applymovement(LOCALID_PLAYER, moves(walk_down*3 walk_left*2))
-    }
-    if(var(VAR_TEMP_0)== 8 && var(VAR_TEMP_1)== 4) {
-        applymovement(LOCALID_PLAYER, moves(walk_down*2 walk_left*3))
-    }
-    if(var(VAR_TEMP_0)== 9 && var(VAR_TEMP_1)== 3) {
-        applymovement(LOCALID_PLAYER, moves(walk_down*3 walk_left*4))
-    }
-    setspeaker("Mom")
-    msgbox(format("Well, look who's finally awake!\pDo you have any idea what time it is?!\pProfessor Birds just called and was fuming over the phone...\pHe started ranting about another rejected grant, and how 'unreliable' today's youth are.\pHe even threatened to give your internship to the next kid who walks into the lab!\pYou'd better get moving.\nHe's waiting for you!"), MSGBOX_AUTOCLOSE)
+    applymovement(LOCALID_PLAYER, moves(walk_down*3 walk_left*3))
+    setspeaker("MOM")
+    msgbox(format("Do you have any idea what time it is?!\pProfessor Birds just called and was fuming over the phone...\pHe started ranting about another rejected grant, and how 'unreliable' today's youth are.\pHe even threatened to give your internship to the next kid who walks into the lab!\pYou'd better get moving.\nHe's waiting for you!"), MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER,moves(emote_question_mark))
     waitmovement
     delay(120)
-    setspeaker("Mom")
-    msgbox(format("Don't complain...\pHere, shove this bagel in your mouth and get going!\pThis is going to be a wonderful learning experience, but only if you actually show up!\pNow GO!\nDon't keep him waiting another second!\pYour dad would be proud!"))
+    setspeaker("MOM")
+    msgbox(format("Don't complain...\pThis is going to be a wonderful learning experience, but only if you actually show up!\pNow GO!\nDon't keep him waiting another second!\pYour dad would be proud!"))
     applymovement(LOCALID_PLAYER,moves(walk_right))
     waitmovement
     setflag(FLAG_INTRO_SPEECH_MOM_FINISHED)
@@ -57,39 +60,25 @@ script Erpuscity_Starthouse_1F_Eventscripts_MomIntrospeech {
     setflag(FLAG_HIDE_ROUTE03_CLIFFSIDE_WATCHER)
     release
     end
-    }
-    else{
-        playse(SE_PIN)
-        applymovement(LOCALID_PLAYER,moves(emote_exclamation_mark))
-        waitmovement
-        setspeaker("Mom")        
-        msgbox(format("{PLAYER} I won't say it again, come on, the lab will be fun for you!"),MSGBOX_AUTOCLOSE)
-        waitmessage
-        applymovement(LOCALID_PLAYER, moves(walk_down))
-        waitmovement
-        release
-        end
-    }
-    
 }
 
-script Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech {
+script Erpuscity_Starthouse_1F_Eventscripts_MOMafterspeech {
     lock
     faceplayer
     if(flag(FLAG_SYS_NATIONAL_DEX)==FALSE){
-    setspeaker("Mom")
+    setspeaker("MOM")
     msgbox(format("{PLAYER} I won't say it again, come on, the lab will be fun for you!"))
     waitmessage
     }
     else {
-        setspeaker("Mom")
+        setspeaker("MOM")
         msgbox(format("So, you are going on an adventure?\pI knew you had it in you, dad would have been proud!\pLet me know if you ever need rest!"))
         waitmessage
-        setspeaker("Mom")
+        setspeaker("MOM")
         msgbox(format("Do you need rest right now?"),MSGBOX_YESNO)
         waitmessage
         if(var(VAR_RESULT)==YES){
-            setspeaker("Mom")
+            setspeaker("MOM")
             msgbox(format("Let me take care of you."),MSGBOX_AUTOCLOSE)
             waitmessage
             fadescreen(FADE_TO_BLACK)
@@ -98,14 +87,18 @@ script Erpuscity_Starthouse_1F_Eventscripts_Momafterspeech {
             special(HealPlayerParty)
             delay(40)
             fadescreen(FADE_FROM_BLACK)
-            setspeaker("Mom")
+            setspeaker("MOM")
             msgbox(format("There you go! Good luck on your adventure!"),MSGBOX_AUTOCLOSE)
             waitmessage
+            release
+            end
         }
         else{
-            setspeaker("Mom")
+            setspeaker("MOM")
             msgbox(format("You can come back any time you want!"))
             waitmessage
+            release
+            end
         }
 
     }

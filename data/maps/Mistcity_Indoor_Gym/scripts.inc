@@ -230,7 +230,7 @@ Mistcity_Gym_Introduction_Text_3:
 
 Mistcity_Gym_David_Defeated_Text_0:
 # 43 "data/maps/Mistcity_Indoor_Gym/scripts.pory"
-	.string "David$"
+	.string "DAVID$"
 
 Mistcity_Gym_David_Defeated_Text_1:
 # 44 "data/maps/Mistcity_Indoor_Gym/scripts.pory"

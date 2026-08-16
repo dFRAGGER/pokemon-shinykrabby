@@ -543,7 +543,7 @@ Won_or_Caught_Movement_8:
 
 Crabhill_Jacob_in_need_Text_0:
 # 5 "data/maps/CrabhillEntrance/scripts.pory"
-	.string "Jacob$"
+	.string "JACOB$"
 
 Crabhill_Jacob_in_need_Text_1:
 # 6 "data/maps/CrabhillEntrance/scripts.pory"
@@ -557,7 +557,7 @@ Crabhill_Jacob_in_need_Text_1:
 
 Crabhill_Faculty_Grunt_Signal_Text_0:
 # 13 "data/maps/CrabhillEntrance/scripts.pory"
-	.string "Faculty Grunt$"
+	.string "FACULTY GRUNT$"
 
 Crabhill_Faculty_Grunt_Signal_Text_1:
 # 14 "data/maps/CrabhillEntrance/scripts.pory"

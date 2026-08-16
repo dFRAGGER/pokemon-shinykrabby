@@ -813,7 +813,7 @@ SiltrootTown_Plant_Dialogue_Text_0:
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_0:
 # 126 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	.string "Ali$"
+	.string "ALI$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_1:
 # 127 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
@@ -827,7 +827,7 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_1:
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_2:
 # 132 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"
-	.string "Giel$"
+	.string "GIEL$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_3:
 # 133 "data/maps/SiltrootTown_Indoor_Ali_Apothecary/scripts.pory"

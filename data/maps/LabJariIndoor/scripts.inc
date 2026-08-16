@@ -815,7 +815,7 @@ LabJariIndoor_Eventscript_Birds_Convo_Movement_1:
 
 LabJariIndoor_Eventscript_Birds_Pokemon_Check_Text_0:
 # 8 "data/maps/LabJariIndoor/scripts.pory"
-	.string "Prof. Birds$"
+	.string "PROF. BIRDS$"
 
 LabJariIndoor_Eventscript_Birds_Pokemon_Check_Text_1:
 # 10 "data/maps/LabJariIndoor/scripts.pory"
@@ -858,7 +858,7 @@ LabJariIndoor_Eventscript_Barry_Birds_Text_0:
 
 LabJariIndoor_Eventscript_Barry_Birds_Text_1:
 # 61 "data/maps/LabJariIndoor/scripts.pory"
-	.string "Barry$"
+	.string "BARRY$"
 
 LabJariIndoor_Eventscript_Barry_Birds_Text_2:
 # 62 "data/maps/LabJariIndoor/scripts.pory"

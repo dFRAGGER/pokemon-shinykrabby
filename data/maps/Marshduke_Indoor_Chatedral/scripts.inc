@@ -17,2594 +17,2774 @@ Marshduke_Indoor_Chatedral_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 
 
 Marshduke_Indoor_Chatedral_Sign_Alakazam::
-# 11 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	lock
-# 12 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	faceplayer
 # 13 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Chatedral_Sign_Alakazam_Text_0, MSGBOX_YESNO
+	lock
 # 14 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	faceplayer
 # 15 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Chatedral_Sign_Alakazam_Text_0, MSGBOX_YESNO
+# 16 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 17 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Marshduke_Indoor_Chatedral_Sign_Alakazam_2
 Marshduke_Indoor_Chatedral_Sign_Alakazam_1:
-# 18 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 20 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 Marshduke_Indoor_Chatedral_Sign_Alakazam_2:
-# 16 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 18 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	goto Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read
 	goto Marshduke_Indoor_Chatedral_Sign_Alakazam_1
 
 
 Marshduke_Indoor_Chatedral_Plague_Empty::
-# 22 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	lock
-# 23 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	faceplayer
 # 24 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Chatedral_Plague_Empty_Text_0, MSGBOX_YESNO
+	lock
 # 25 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	faceplayer
 # 26 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Chatedral_Plague_Empty_Text_0, MSGBOX_YESNO
+# 27 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 28 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Marshduke_Indoor_Chatedral_Plague_Empty_2
 Marshduke_Indoor_Chatedral_Plague_Empty_1:
-# 29 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 31 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 Marshduke_Indoor_Chatedral_Plague_Empty_2:
-# 27 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 29 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	goto Marshduke_Indoor_Chatedral_EventScript_Sign_EmptyShrine
 	goto Marshduke_Indoor_Chatedral_Plague_Empty_1
 
 
 Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC::
-# 33 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	lock
-# 34 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	faceplayer
 # 35 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_Text_0, MSGBOX_YESNO
+	lock
 # 36 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	faceplayer
 # 37 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_Text_0, MSGBOX_YESNO
+# 38 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 39 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_2
 Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_1:
-# 40 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 42 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_Text_1, MSGBOX_AUTOCLOSE
-# 41 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 43 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_2:
-# 38 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 40 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	goto Marshduke_Indoor_Chatedral_EventScript_NPC_Priest_FirstMemory
 	goto Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_1
 
 
 Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read::
-# 46 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read_Text_0, MSGBOX_AUTOCLOSE
-# 47 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
 # 48 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read_Text_1, MSGBOX_AUTOCLOSE
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read_Text_0, MSGBOX_AUTOCLOSE
 # 49 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
 # 50 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read_Text_1, MSGBOX_AUTOCLOSE
+# 51 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 52 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_Priest_FirstMemory::
-# 54 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	lock
-# 55 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	faceplayer
 # 56 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Priest_FirstMemory_Text_0, MSGBOX_AUTOCLOSE
+	lock
 # 57 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	faceplayer
 # 58 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Priest_FirstMemory_Text_0, MSGBOX_AUTOCLOSE
+# 59 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 60 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	end
 
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_MegaStone::
-# 63 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	lock
-# 64 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	faceplayer
 # 65 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_MegaStone_Text_0, MSGBOX_AUTOCLOSE
+	lock
 # 66 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	faceplayer
 # 67 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_MegaStone_Text_0, MSGBOX_AUTOCLOSE
+# 68 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 69 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
 Marshduke_Indoor_Chatedral_OnLoad::
-# 73 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 75 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	compare VAR_CATHEDRAL_STATE_MARSHDUKE, 0
 	goto_if_eq Marshduke_Indoor_Chatedral_OnLoad_2
 Marshduke_Indoor_Chatedral_OnLoad_1:
-# 76 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 78 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	compare VAR_CATHEDRAL_STATE_MARSHDUKE, 0
 	goto_if_ne Marshduke_Indoor_Chatedral_OnLoad_4
 	return
 
 Marshduke_Indoor_Chatedral_OnLoad_2:
-# 74 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 76 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setflag FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR
 	goto Marshduke_Indoor_Chatedral_OnLoad_1
 
 Marshduke_Indoor_Chatedral_OnLoad_4:
-# 77 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 79 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	clearflag FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR
 	return
 
 
-Marshduke_Indoor_Chatedral_EventScript_Alakazam::
-# 82 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	lock
-# 83 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	faceplayer
-# 84 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Chatedral_EventScript_Alakazam_Text_0, MSGBOX_YESNO
-# 85 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 86 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq Marshduke_Indoor_Chatedral_EventScript_Alakazam_2
-Marshduke_Indoor_Chatedral_EventScript_Alakazam_1:
-# 89 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	release
-	return
-
-Marshduke_Indoor_Chatedral_EventScript_Alakazam_2:
-# 87 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	goto Marshduke_Indoor_Chatedral_EventScript_Latias
-	goto Marshduke_Indoor_Chatedral_EventScript_Alakazam_1
-
-
-Marshduke_Indoor_Chatedral_EventScript_Latias::
-# 97 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setvar VAR_MARSHDUKE_CATHEDRAL_VISION_STATE, 1
-# 98 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 99 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	warpsilent MAP_MARSHDUKE_INDOOR_VISION_LATIOS_LATIAS, 11, 7
-# 100 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitstate
-# 101 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	release
-	return
-
-
 Marshduke_Indoor_Chatedral_EventScript_VisionReturn::
-# 105 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 84 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setvar VAR_MARSHDUKE_CATHEDRAL_VISION_STATE, 0
-# 106 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 85 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	lock
-# 107 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 86 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	applymovement 25, Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Movement_0
-# 108 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 87 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
-# 109 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 88 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Text_0, MSGBOX_AUTOCLOSE
-# 110 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 89 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 111 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 90 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	applymovement 25, Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Movement_1
-# 112 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 91 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
-# 113 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 92 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
 Marshduke_Indoor_Chatedral_EventScript_Sister_Wren::
-# 117 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 96 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	lock
-# 118 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 97 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	faceplayer
-# 119 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 98 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_Sister_Wren_Text_0, MSGBOX_AUTOCLOSE
-# 120 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 99 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 121 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 100 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
 Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan::
-# 127 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 106 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	lock
-# 128 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 107 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	faceplayer
-# 129 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 108 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
-# 130 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 109 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_1, MSGBOX_AUTOCLOSE
-# 131 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 110 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 132 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 111 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
-# 133 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 112 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_2, MSGBOX_AUTOCLOSE
-# 134 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 113 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 135 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 114 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	applymovement 30, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
-# 136 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 115 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
-# 137 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 116 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
 Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour::
-# 141 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 120 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	lock
-# 142 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 121 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	faceplayer
-# 143 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 122 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 144 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 123 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_1, MSGBOX_AUTOCLOSE
-# 145 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 124 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 146 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 125 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 147 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 126 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_2, MSGBOX_YESNO
-# 148 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 127 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 149 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 128 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_2
 Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_1:
-# 155 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 134 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 156 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 135 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_4, MSGBOX_AUTOCLOSE
-# 157 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 136 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 158 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 137 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_2:
-# 150 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 129 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 151 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 130 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_3, MSGBOX_AUTOCLOSE
-# 152 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 131 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 153 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 132 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	goto Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_1
 
 
 Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias::
-# 162 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 142 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	lock
-# 163 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 143 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	faceplayer
-# 164 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias_Text_0, MSGBOX_AUTOCLOSE
-# 165 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 144 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias_Text_0, MSGBOX_YESNO
+# 145 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 166 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 146 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias_2
+Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias_1:
+# 156 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
+Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias_2:
+# 147 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	visionpreview 9
+# 148 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 24, Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Movement_0
+# 149 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+# 150 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 151 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Text_0, MSGBOX_AUTOCLOSE
+# 152 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 153 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 24, Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Movement_1
+# 154 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+	goto Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias_1
+
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky::
+# 160 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	lock
+# 161 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	faceplayer
+# 162 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Text_0, MSGBOX_YESNO
+# 163 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 164 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_2
+Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_1:
+# 174 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	release
+	return
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_2:
+# 165 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	visionpreview 1
+# 166 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 36, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_0
+# 167 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+# 168 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 169 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Text_0, MSGBOX_AUTOCLOSE
+# 170 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 171 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 36, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_2
+# 172 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+	goto Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_1
+
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza::
+# 178 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	lock
+# 179 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	faceplayer
+# 180 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza_Text_0, MSGBOX_YESNO
+# 181 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 182 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza_2
+Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza_1:
+# 192 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	release
+	return
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza_2:
+# 183 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	visionpreview 3
+# 184 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 18, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_0
+# 185 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+# 186 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 187 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Text_0, MSGBOX_AUTOCLOSE
+# 188 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 189 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 18, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_2
+# 190 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+	goto Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza_1
+
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo::
+# 196 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	lock
+# 197 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	faceplayer
+# 198 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo_Text_0, MSGBOX_YESNO
+# 199 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 200 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo_2
+Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo_1:
+# 210 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	release
+	return
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo_2:
+# 201 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	visionpreview 0
+# 202 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 23, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_0
+# 203 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+# 204 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 205 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Text_0, MSGBOX_AUTOCLOSE
+# 206 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 207 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 23, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_2
+# 208 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+	goto Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo_1
+
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_Rekindled::
+# 214 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	lock
+# 215 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	faceplayer
+# 216 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_Rekindled_Text_0, MSGBOX_YESNO
+# 217 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 218 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Marshduke_Indoor_Chatedral_EventScript_Sign_Rekindled_2
+Marshduke_Indoor_Chatedral_EventScript_Sign_Rekindled_1:
+# 228 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	release
+	return
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_Rekindled_2:
+# 219 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	visionpreview 4
+# 220 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 20, Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Movement_0
+# 221 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+# 222 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 223 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Text_0, MSGBOX_AUTOCLOSE
+# 224 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 225 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 20, Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Movement_1
+# 226 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+	goto Marshduke_Indoor_Chatedral_EventScript_Sign_Rekindled_1
+
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts::
-# 172 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 234 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	lock
-# 173 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 235 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Text_0, MSGBOX_AUTOCLOSE
-# 174 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 236 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 175 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 237 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
-# 176 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 238 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Text_1, MSGBOX_AUTOCLOSE
-# 177 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 239 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 178 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 240 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
-# 179 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 241 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Text_2, MSGBOX_AUTOCLOSE
-# 180 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 242 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 181 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 243 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
-# 182 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 244 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	faceplayer
-# 183 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 245 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	playse SE_PIN
+# 246 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 38, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+# 247 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 248 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Text_3, MSGBOX_AUTOCLOSE
-# 184 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 249 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 185 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 250 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 38, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+# 251 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 252 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts::
-# 191 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 258 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	lock
-# 192 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 259 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_0, MSGBOX_AUTOCLOSE
-# 193 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 260 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 194 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 261 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
-# 195 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 262 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_1, MSGBOX_AUTOCLOSE
-# 196 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 263 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 197 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 264 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
-# 198 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 265 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_2, MSGBOX_AUTOCLOSE
-# 199 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 266 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 200 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 267 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	faceplayer
-# 201 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 268 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
-# 202 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 269 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	playse SE_PIN
+# 270 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 37, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+# 271 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 272 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_3, MSGBOX_AUTOCLOSE
-# 203 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 273 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 204 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 274 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 37, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+# 275 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 276 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_HoohLugia::
-# 208 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 280 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	lock
-# 209 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 281 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	faceplayer
-# 210 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 282 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_HoohLugia_Text_0, MSGBOX_AUTOCLOSE
-# 211 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 283 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 212 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 284 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
 Marshduke_Indoor_Chatedral_EventScript_Priest_HoohLugia::
-# 216 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 288 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	lock
-# 217 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 289 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	faceplayer
-# 218 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 290 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Priest_HoohLugia_Text_0
-# 219 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 291 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_Priest_HoohLugia_Text_1, MSGBOX_AUTOCLOSE
-# 220 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 292 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 221 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 293 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_EnteiRaikouSuicune::
-# 225 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 297 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	lock
-# 226 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 298 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	faceplayer
-# 227 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 299 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_EnteiRaikouSuicune_Text_0, MSGBOX_AUTOCLOSE
-# 228 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 300 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 229 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 301 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
 Marshduke_Indoor_Chatedral_EventScript_Priest_EnteiRaikouSuicune::
-# 233 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 305 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	lock
-# 234 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 306 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	faceplayer
-# 235 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 307 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Priest_EnteiRaikouSuicune_Text_0
-# 236 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 308 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_Priest_EnteiRaikouSuicune_Text_1, MSGBOX_AUTOCLOSE
-# 237 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 309 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 238 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 310 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_MewMewtwo::
-# 242 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 314 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	lock
-# 243 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 315 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	faceplayer
-# 244 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 316 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	visionpreview 0
+# 317 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_MewMewtwo_Text_0, MSGBOX_AUTOCLOSE
-# 245 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 318 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 246 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 319 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
 Marshduke_Indoor_Chatedral_EventScript_Priest_MewMewtwo::
-# 252 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 325 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	lock
-# 253 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 326 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	faceplayer
-# 254 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 327 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Priest_MewMewtwo_Text_0
-# 255 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 328 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_Priest_MewMewtwo_Text_1, MSGBOX_AUTOCLOSE
-# 256 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 329 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 257 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 330 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
 Marshduke_Indoor_Chatedral_EventScript_Priest_GroundonKyogreRayquaza::
-# 261 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 334 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	lock
-# 262 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 335 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	faceplayer
-# 263 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 336 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Priest_GroundonKyogreRayquaza_Text_0
-# 264 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 337 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_Priest_GroundonKyogreRayquaza_Text_1, MSGBOX_AUTOCLOSE
-# 265 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 338 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 266 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 339 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza::
-# 270 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 343 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	lock
-# 271 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 344 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	faceplayer
-# 272 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 345 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	playse SE_PIN
-# 273 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 15, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_0
-# 274 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 346 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 15, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+# 347 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
-# 275 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 348 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_0
-# 276 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 349 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_1, MSGBOX_AUTOCLOSE
-# 277 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 350 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 278 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 15, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_1
-# 279 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 351 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 15, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+# 352 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
-# 280 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 353 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_0
-# 281 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 354 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_2, MSGBOX_AUTOCLOSE
-# 282 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 355 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 283 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 356 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
-# 284 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 34, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_2
-# 285 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 357 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 33, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_0
+# 358 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
-# 286 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 359 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	playse SE_M_MINIMIZE
-# 287 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 360 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	callnative SetCastformSunnyForm
-# 288 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 34, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_3
-# 289 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 361 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 33, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_2
+# 362 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
-# 290 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 363 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	playse SE_PIN
-# 291 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 34, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_4
-# 292 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 364 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 33, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_1
+# 365 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
-# 293 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 34, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_5
-# 294 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 366 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 33, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_2
+# 367 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
-# 295 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 368 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	playse SE_M_MINIMIZE
-# 296 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 369 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	callnative SetCastformSnowyForm
-# 297 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 34, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_5
-# 298 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 370 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 33, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_2
+# 371 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
-# 299 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 372 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	playse SE_PIN
-# 300 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 15, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_6
-# 301 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 373 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 15, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_3
+# 374 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
-# 302 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 375 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_0
-# 303 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 376 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_3, MSGBOX_AUTOCLOSE
-# 304 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 377 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 305 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 378 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
-# 306 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 34, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_7
-# 307 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 379 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 33, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_4
+# 380 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	faceplayer
-# 308 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 381 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
-# 309 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 382 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_0
-# 310 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 383 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_4, MSGBOX_AUTOCLOSE
-# 311 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 384 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 312 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 385 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
 Marshduke_Indoor_Chatedral_EventScript_Sign_EmptyShrine::
-# 316 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 389 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	lock
-# 317 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 390 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	faceplayer
-# 318 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 391 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_EmptyShrine_Text_0, MSGBOX_AUTOCLOSE
-# 319 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 392 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 320 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 393 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone::
-# 327 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	lock
-# 328 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setvar VAR_CATHEDRAL_STATE_MARSHDUKE, 1
-# 329 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	playse SE_PIN
-# 330 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_0
-# 331 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 332 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_0
-# 334 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 335 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 336 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_0, MSGBOX_AUTOCLOSE
-# 337 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 338 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_0
-# 339 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 340 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	playse SE_PIN
-# 341 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_1
-# 342 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 343 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
-# 344 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_1, MSGBOX_AUTOCLOSE
-# 345 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 346 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 30
-# 347 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_7
-# 348 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 349 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 350 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_2, MSGBOX_AUTOCLOSE
-# 351 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 352 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 30
-# 353 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	playse SE_PIN
-# 354 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_0
-# 355 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 356 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
-# 357 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
-# 358 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_3, MSGBOX_AUTOCLOSE
-# 359 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 360 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
-# 361 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_7
-# 362 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 363 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 364 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_4, MSGBOX_AUTOCLOSE
-# 365 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 366 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_3
-# 367 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_4
-# 368 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_5
-# 369 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 370 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 371 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_5, MSGBOX_AUTOCLOSE
-# 372 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 373 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
-# 374 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	playse SE_PIN
-# 375 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_0
-# 376 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 377 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
-# 378 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_6
-# 379 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 380 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_6
-# 381 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 382 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_7, MSGBOX_AUTOCLOSE
-# 383 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 384 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
-# 385 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
-# 386 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
-# 387 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_8, MSGBOX_AUTOCLOSE
-# 388 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
-# 389 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
-# 390 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
-# 391 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 392 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_9, MSGBOX_AUTOCLOSE
-# 393 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_7
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_8
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_9
-# 397 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 398 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 399 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_10, MSGBOX_AUTOCLOSE
 # 400 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	lock
 # 401 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	playse SE_PIN
+	setvar VAR_CATHEDRAL_STATE_MARSHDUKE, 1
 # 402 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_0
+	playse SE_PIN
 # 403 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
 # 404 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	waitmovement
 # 405 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_11
-# 406 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_6
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_0
 # 407 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+	waitmovement
 # 408 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
 # 409 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_0, MSGBOX_AUTOCLOSE
 # 410 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_12, MSGBOX_AUTOCLOSE
+	waitmessage
 # 411 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_0
 # 412 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 40
+	waitmovement
 # 413 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	playse SE_PIN
 # 414 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_13, MSGBOX_AUTOCLOSE
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_1
 # 415 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	waitmovement
 # 416 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 30
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
 # 417 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_1, MSGBOX_AUTOCLOSE
 # 418 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_14, MSGBOX_AUTOCLOSE
+	waitmessage
 # 419 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	delay 30
 # 420 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 30
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_4
 # 421 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	waitmovement
 # 422 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
 # 423 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_2, MSGBOX_AUTOCLOSE
 # 424 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_15, MSGBOX_AUTOCLOSE
+	waitmessage
 # 425 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 426 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_10
-# 427 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_11
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_12
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_13
-# 431 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 432 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 433 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_16
-# 434 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 435 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	playse SE_PIN
-# 436 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_0
-# 437 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 438 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
-# 439 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_17, MSGBOX_AUTOCLOSE
-# 440 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 441 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	playse SE_PIN
-# 442 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_14
-# 443 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 444 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 445 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_18, MSGBOX_AUTOCLOSE
-# 446 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 447 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
-# 448 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_1
-# 449 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
-# 450 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_19, MSGBOX_AUTOCLOSE
-# 451 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	playse SE_PIN
-# 452 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_6
-# 453 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 454 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
-# 455 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 456 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_20, MSGBOX_AUTOCLOSE
-# 457 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 458 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
-# 459 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
-# 460 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
-# 461 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 462 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 463 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_21, MSGBOX_AUTOCLOSE
-# 464 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 465 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
-# 466 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_15
-# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_16
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_17
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_18
-# 471 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 472 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 473 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_22, MSGBOX_AUTOCLOSE
-# 474 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 475 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
-# 476 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	playse SE_PIN
-# 477 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_0
-# 478 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 479 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
-# 480 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_23
-# 481 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 482 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
-# 483 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 484 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
-# 485 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 486 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_24, MSGBOX_AUTOCLOSE
-# 487 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 488 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 30
-# 489 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_1
-# 490 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 426 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	playse SE_PIN
+# 427 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+# 431 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_3, MSGBOX_AUTOCLOSE
+# 432 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 433 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 434 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_4
+# 435 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 436 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 437 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_4, MSGBOX_AUTOCLOSE
+# 438 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 439 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_3
+# 440 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_4
+# 441 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_5
+# 442 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 443 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 444 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_5, MSGBOX_AUTOCLOSE
+# 445 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 446 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 447 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	playse SE_PIN
+# 448 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+# 449 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 450 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+# 451 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_6
+# 452 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 453 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_6
+# 454 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 455 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_7, MSGBOX_AUTOCLOSE
+# 456 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 457 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 458 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+# 459 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+# 460 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_8, MSGBOX_AUTOCLOSE
+# 461 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 462 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+# 463 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+# 464 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 465 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_9, MSGBOX_AUTOCLOSE
+# 466 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_7
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_8
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_9
+# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 471 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 472 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_10, MSGBOX_AUTOCLOSE
+# 473 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 474 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	playse SE_PIN
+# 475 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+# 476 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 477 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+# 478 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_11
+# 479 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_6
+# 480 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+# 481 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 482 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 483 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_12, MSGBOX_AUTOCLOSE
+# 484 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 485 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 40
+# 486 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+# 487 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_13, MSGBOX_AUTOCLOSE
+# 488 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 489 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 30
+# 490 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
 # 491 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_25, MSGBOX_AUTOCLOSE
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_14, MSGBOX_AUTOCLOSE
 # 492 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
 # 493 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
+	delay 30
 # 494 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 495 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_26, MSGBOX_AUTOCLOSE
-# 496 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 497 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
-# 498 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
-# 499 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 495 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+# 496 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 497 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_15, MSGBOX_AUTOCLOSE
+# 498 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 499 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_10
 # 500 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
 # 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_11
 # 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_27
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_12
 # 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_13
 # 504 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	playse SE_PIN
-# 505 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_0
-# 506 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
+# 505 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 506 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_16
 # 507 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
+	waitmessage
 # 508 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	playse SE_PIN
 # 509 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_19
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
 # 510 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_1
+	waitmovement
 # 511 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
 # 512 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_17, MSGBOX_AUTOCLOSE
 # 513 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	waitmessage
 # 514 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_28, MSGBOX_AUTOCLOSE
-# 515 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 516 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_20
-# 517 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_21
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_22
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_23
-# 521 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 522 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 523 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_29, MSGBOX_AUTOCLOSE
-# 524 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 525 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
-# 526 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	playse SE_PIN
+# 515 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_14
+# 516 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 517 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_18, MSGBOX_AUTOCLOSE
+# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 521 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+# 522 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+# 523 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_19, MSGBOX_AUTOCLOSE
+# 524 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	playse SE_PIN
+# 525 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_3
+# 526 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
 # 527 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_0
+	delay 60
 # 528 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
 # 529 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_20, MSGBOX_AUTOCLOSE
 # 530 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_30, MSGBOX_AUTOCLOSE
+	waitmessage
 # 531 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	delay 60
 # 532 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 30
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
 # 533 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
-# 534 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 535 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_31, MSGBOX_AUTOCLOSE
-# 536 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 537 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 30
-# 538 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
-# 539 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_32, MSGBOX_AUTOCLOSE
-# 540 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 30
-# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
-# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 544 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 545 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_33, MSGBOX_AUTOCLOSE
-# 546 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 547 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_1
-# 548 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 549 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
-# 550 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
-# 551 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 552 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_34
-# 553 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 554 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
-# 555 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 534 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
-# 556 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 535 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 557 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_35, MSGBOX_AUTOCLOSE
-# 558 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 536 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_21, MSGBOX_AUTOCLOSE
+# 537 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 559 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 538 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
-# 560 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_24
-# 561 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 539 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_15
+# 540 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_25
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_26
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_27
-# 565 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_16
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_17
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_18
+# 544 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
-# 566 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 545 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 567 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_36, MSGBOX_AUTOCLOSE
-# 568 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 546 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_22, MSGBOX_AUTOCLOSE
+# 547 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 569 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 548 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
-# 570 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 549 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	playse SE_PIN
+# 550 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+# 551 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 552 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
-# 571 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_37, MSGBOX_AUTOCLOSE
-# 572 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 553 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_23
+# 554 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 573 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 555 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+# 556 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 557 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
-# 574 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_1
-# 575 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 558 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 576 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_38, MSGBOX_AUTOCLOSE
-# 577 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 559 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_24, MSGBOX_AUTOCLOSE
+# 560 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 578 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 561 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 30
+# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_25, MSGBOX_AUTOCLOSE
+# 565 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 566 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
-# 579 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 567 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 568 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_26, MSGBOX_AUTOCLOSE
+# 569 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 570 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 571 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+# 572 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+# 573 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 574 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 575 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_27
+# 576 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 577 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	playse SE_PIN
+# 578 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+# 579 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
 # 580 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
 # 581 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_10
+	playse SE_PIN
 # 582 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_19
 # 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_28
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
 # 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_29
+	waitmovement
 # 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_30
+	delay 60
 # 586 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
 # 587 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_28, MSGBOX_AUTOCLOSE
 # 588 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_39, MSGBOX_AUTOCLOSE
+	waitmessage
 # 589 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_20
 # 590 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
+	waitmovement
 # 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	playse SE_PIN
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_21
 # 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_0
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_22
 # 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_23
 # 594 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	waitmovement
 # 595 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_40, MSGBOX_AUTOCLOSE
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
 # 596 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_29, MSGBOX_AUTOCLOSE
 # 597 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 30
+	waitmessage
 # 598 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_1
+	delay 60
 # 599 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 600 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_41, MSGBOX_AUTOCLOSE
-# 601 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 602 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	playse SE_PIN
-# 603 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_31
-# 604 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 600 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+# 601 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
-# 605 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 602 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+# 603 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_30, MSGBOX_AUTOCLOSE
+# 604 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 605 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 30
 # 606 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_42, MSGBOX_AUTOCLOSE
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
 # 607 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
 # 608 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_31, MSGBOX_AUTOCLOSE
 # 609 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	waitmessage
 # 610 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_43, MSGBOX_AUTOCLOSE
+	delay 30
 # 611 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
 # 612 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_32, MSGBOX_AUTOCLOSE
 # 613 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
-# 614 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
-# 615 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 616 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 617 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_44, MSGBOX_AUTOCLOSE
-# 618 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 619 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
-# 620 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_1
-# 621 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
-# 622 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_7
-# 623 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 614 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 30
+# 615 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+# 616 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
+# 617 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 618 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_33, MSGBOX_AUTOCLOSE
+# 619 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 620 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+# 621 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 622 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 623 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
 # 624 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
 # 625 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_45, MSGBOX_AUTOCLOSE
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_34
 # 626 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
 # 627 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
 # 628 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	waitmovement
 # 629 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_46, MSGBOX_AUTOCLOSE
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
 # 630 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_35, MSGBOX_AUTOCLOSE
 # 631 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	playse SE_PIN
+	waitmessage
 # 632 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_6
-# 633 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 634 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
-# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_47, MSGBOX_AUTOCLOSE
-# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 638 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 30
-# 639 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	playse SE_PIN
-# 640 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_0
-# 641 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 633 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_24
+# 634 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
-# 642 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
-# 643 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_48, MSGBOX_AUTOCLOSE
-# 644 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
-# 645 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 30
-# 646 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_25
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_26
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_27
+# 638 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 639 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 647 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_49, MSGBOX_AUTOCLOSE
-# 648 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 640 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_36, MSGBOX_AUTOCLOSE
+# 641 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
-# 649 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 30
-# 650 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 642 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 643 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
-# 651 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_50, MSGBOX_AUTOCLOSE
-# 652 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 644 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_37, MSGBOX_AUTOCLOSE
+# 645 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
+# 646 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 647 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+# 648 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 649 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_38, MSGBOX_AUTOCLOSE
+# 650 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 651 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 652 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
 # 653 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	delay 60
 # 654 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_10
 # 655 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_24, MSGBOX_AUTOCLOSE
+	waitmovement
 # 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_28
 # 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_29
 # 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_32
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_30
 # 659 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
 # 660 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_33
-# 661 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmovement
-# 662 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
-# 663 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_51, MSGBOX_AUTOCLOSE
-# 664 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 661 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_39, MSGBOX_AUTOCLOSE
+# 662 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
+# 663 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 664 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	playse SE_PIN
 # 665 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_1
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
 # 666 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
 # 667 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 60
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
 # 668 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_40, MSGBOX_AUTOCLOSE
 # 669 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_52, MSGBOX_AUTOCLOSE
+	waitmessage
 # 670 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	waitmessage
+	delay 30
 # 671 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	delay 120
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
 # 672 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
-# 673 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 673 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_41, MSGBOX_AUTOCLOSE
 # 674 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_53, MSGBOX_AUTOCLOSE
-# 675 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmessage
+# 675 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	playse SE_PIN
 # 676 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_34
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_31
 # 677 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	waitmovement
 # 678 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	setflag FLAG_MARSHDUKE_CATHEDRAL_TOUR
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
 # 679 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	clearflag FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_42, MSGBOX_AUTOCLOSE
 # 680 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	removeobject 14
+	waitmessage
 # 681 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	removeobject 17
+	delay 60
 # 682 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	addobject 15
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
 # 683 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	addobject 16
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_43, MSGBOX_AUTOCLOSE
 # 684 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	addobject 22
+	waitmessage
 # 685 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	addobject 23
+	delay 60
 # 686 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+# 687 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+# 688 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 689 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 690 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_44, MSGBOX_AUTOCLOSE
+# 691 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 692 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 693 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+# 694 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+# 695 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_4
+# 696 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 697 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 698 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_45, MSGBOX_AUTOCLOSE
+# 699 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 700 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 701 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+# 702 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_46, MSGBOX_AUTOCLOSE
+# 703 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 704 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	playse SE_PIN
+# 705 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_3
+# 706 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 707 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 708 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 709 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_47, MSGBOX_AUTOCLOSE
+# 710 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 711 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 30
+# 712 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	playse SE_PIN
+# 713 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+# 714 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 715 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+# 716 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_48, MSGBOX_AUTOCLOSE
+# 717 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 718 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 30
+# 719 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 720 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_49, MSGBOX_AUTOCLOSE
+# 721 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 722 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 30
+# 723 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+# 724 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_50, MSGBOX_AUTOCLOSE
+# 725 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 726 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 727 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 728 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_24, MSGBOX_AUTOCLOSE
+# 729 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 730 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 731 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_32
+# 732 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 733 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_33
+# 734 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 735 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 736 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_51, MSGBOX_AUTOCLOSE
+# 737 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 738 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+# 739 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 740 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 60
+# 741 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 742 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_52, MSGBOX_AUTOCLOSE
+# 743 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 744 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	delay 120
+# 745 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+# 746 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+# 747 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_53, MSGBOX_AUTOCLOSE
+# 748 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmessage
+# 749 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_34
+# 750 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	waitmovement
+# 751 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	setflag FLAG_MARSHDUKE_CATHEDRAL_TOUR
+# 752 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	clearflag FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR
+# 753 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	removeobject 14
+# 754 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	removeobject 17
+# 755 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	addobject 15
+# 756 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	addobject 16
+# 757 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	addobject 22
+# 758 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	addobject 23
+# 759 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	addobject 21
+# 760 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	addobject 32
+# 761 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	addobject 37
+# 762 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	addobject 38
+# 763 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	addobject 35
+# 764 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	addobject 34
+# 765 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	addobject 33
+# 766 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	addobject 28
+# 767 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	addobject 29
+# 768 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	release
 	return
 
 
-# 107 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 86 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Movement_0:
-# 107 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 86 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
 	step_end
 
-# 111 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 90 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Movement_1:
-# 111 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 90 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 111 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 90 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	face_down
 	step_end
 
-# 135 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 114 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0:
-# 135 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 114 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	face_left
 	step_end
 
-# 273 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 166 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_0:
+# 166 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	walk_left
+	step_end
+
+# 167 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1:
+# 167 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	face_right
+	step_end
+
+# 171 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_2:
+# 171 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	walk_right
+# 171 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	face_down
+	step_end
+
+# 246 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0:
+# 246 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	emote_exclamation_mark
+	step_end
+
+# 357 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_0:
-# 273 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	emote_exclamation_mark
+# 357 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	walk_right
+# 357 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	walk_right
+# 357 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	walk_right
 	step_end
 
-# 278 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 364 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_1:
-# 278 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	face_right
+# 364 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	emote_exclamation_mark
+# 364 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	jump_in_place_down
+# 364 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	jump_in_place_down
 	step_end
 
-# 284 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 366 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_2:
-# 284 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	walk_right
-# 284 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	walk_right
-# 284 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	walk_right
+# 366 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	walk_fast_left
+# 366 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	walk_fast_left
 	step_end
 
-# 288 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 373 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_3:
-# 288 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	walk_right
-# 288 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	face_down
+# 373 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	emote_question_mark
 	step_end
 
-# 291 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 379 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_4:
-# 291 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	emote_exclamation_mark
-# 291 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	jump_in_place_down
-# 291 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	jump_in_place_down
-	step_end
-
-# 293 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_5:
-# 293 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	walk_fast_left
-# 293 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	walk_fast_left
-	step_end
-
-# 300 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_6:
-# 300 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	emote_question_mark
-	step_end
-
-# 306 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_7:
-# 306 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 379 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	face_down
 	step_end
 
-# 332 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 405 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_0:
-# 332 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 405 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 332 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 405 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 332 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 405 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 332 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 405 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
 	step_end
 
-# 341 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 414 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_1:
-# 341 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 414 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	emote_question_mark
-# 341 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 414 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	face_up
 	step_end
 
-# 356 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2:
-# 356 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	face_up
 	step_end
 
-# 366 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 439 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_3:
-# 366 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 439 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 366 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 439 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 366 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 439 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 366 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 439 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 366 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 439 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 366 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 439 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 366 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 439 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 366 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 439 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 367 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 440 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_4:
-# 367 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 440 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 367 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 440 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 367 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 440 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 367 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 440 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 367 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 440 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 367 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 440 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 368 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 441 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_5:
-# 368 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 441 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 368 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 441 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 368 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 441 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 368 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 441 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 368 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 441 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 368 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 441 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 368 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 441 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 368 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 441 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 368 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 441 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 380 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 453 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_6:
-# 380 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 453 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	emote_x
-# 380 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 453 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	face_right
 	step_end
 
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_7:
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 394 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 467 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	face_up
 	step_end
 
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_8:
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 395 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_9:
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 396 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	face_up
 	step_end
 
-# 426 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 499 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_10:
-# 426 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 499 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 426 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 499 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 426 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 499 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 426 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 499 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 426 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 499 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 426 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 499 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_11:
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 428 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 501 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_12:
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 429 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_13:
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 430 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 503 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 442 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 515 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_14:
-# 442 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 515 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	emote_exclamation_mark
-# 442 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 515 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	face_left
 	step_end
 
-# 466 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 539 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_15:
-# 466 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 539 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 466 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 539 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 466 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 539 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 466 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 539 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 466 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 539 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 466 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 539 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_16:
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 468 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 541 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_17:
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 469 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 542 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_18:
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 470 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 543 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 509 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 582 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_19:
-# 509 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 582 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	emote_question_mark
-# 509 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 582 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 509 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 582 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	face_left
 	step_end
 
-# 516 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 589 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_20:
-# 516 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 589 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 516 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 589 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 516 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 589 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 516 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 589 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 516 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 589 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 516 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 589 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 516 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 589 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_21:
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 591 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_22:
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 519 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 592 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_23:
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 520 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 593 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 560 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 633 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_24:
-# 560 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 633 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 560 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 633 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 560 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 633 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 560 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 633 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
 	step_end
 
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_25:
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 562 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 635 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	face_up
 	step_end
 
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_26:
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 563 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	face_up
 	step_end
 
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_27:
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 637 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_28:
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 583 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 656 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_29:
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 584 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 657 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	face_up
 	step_end
 
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_30:
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_left
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
-# 585 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_up
 	step_end
 
-# 603 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 676 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_31:
-# 603 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 676 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	face_left
-# 603 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 676 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 731 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_32:
-# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 731 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 731 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 731 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 731 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 731 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 731 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 731 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 731 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 731 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 731 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 658 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 731 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
 	step_end
 
-# 660 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 733 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_33:
-# 660 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 733 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 660 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 733 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	face_up
 	step_end
 
-# 676 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 749 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_34:
-# 676 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 749 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 676 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 749 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 676 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 749 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 676 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 749 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_down
-# 676 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 749 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 676 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 749 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 676 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 749 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 676 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 749 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 676 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 749 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 676 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 749 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
-# 676 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 749 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	walk_right
 	step_end
 
 Marshduke_Indoor_Chatedral_Sign_Alakazam_Text_0:
-# 13 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 15 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "There's an infographic mounted here.\n"
 	.string "Read it?$"
 
 Marshduke_Indoor_Chatedral_Plague_Empty_Text_0:
-# 24 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 26 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "There's an plaque attached to the\n"
 	.string "altar. Read it?$"
 
 Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_Text_0:
-# 35 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 37 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Hi there child. Do you want to hear the\n"
 	.string "legend of the first memory?$"
 
 Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_Text_1:
-# 40 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 42 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Whenever you want to learn some\n"
 	.string "history, I'll be here.$"
 
 Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read_Text_0:
-# 46 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 48 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "THE REMEMBERER\n"
 	.string "A visitor's guide.$"
 
 Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read_Text_1:
-# 48 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 50 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "The latest research, based on sediment\n"
 	.string "layers in the rock around it, suggests\l"
 	.string "this ALAKAZAM began meditating some\l"
@@ -2640,7 +2820,7 @@ Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read_Text_1:
 	.string "explain.$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_Priest_FirstMemory_Text_0:
-# 56 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 58 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Well then.\p"
 	.string "Nine hundred years ago, a storm drove a\n"
 	.string "fishing village up this hill, and the sky\l"
@@ -2665,7 +2845,7 @@ Marshduke_Indoor_Chatedral_EventScript_NPC_Priest_FirstMemory_Text_0:
 	.string "It does not dream. It remembers for us.$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_MegaStone_Text_0:
-# 65 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 67 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "I train PSYCHIC types myself. My\n"
 	.string "DROWZEE can barely hold a CALM MIND for\l"
 	.string "a few turns, and that one up there\l"
@@ -2677,23 +2857,14 @@ Marshduke_Indoor_Chatedral_EventScript_NPC_MegaStone_Text_0:
 	.string "visions.\p"
 	.string "No stone or trainer. Isn't that mental?$"
 
-Marshduke_Indoor_Chatedral_EventScript_Alakazam_Text_0:
-# 84 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	.string "MEGA ALAKAZAM's spoons glow with a\n"
-	.string "faint psychic light...\p"
-	.string "Ancient memories stir at the edge of\n"
-	.string "your mind, visions of LATIOS and LATIAS\l"
-	.string "long past.\p"
-	.string "Will you open your mind to them?$"
-
 Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Text_0:
-# 109 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 88 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Welcome back to the present.\p"
 	.string "Give yourself time to readjust to the\n"
 	.string "world around you.$"
 
 Marshduke_Indoor_Chatedral_EventScript_Sister_Wren_Text_0:
-# 119 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 98 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "The meaning of the vision in my opinion?\p"
 	.string "Interdependence. Take one away and\n"
 	.string "the other falls.\p"
@@ -2709,11 +2880,11 @@ Marshduke_Indoor_Chatedral_EventScript_Sister_Wren_Text_0:
 	.string "Latios and Latias.$"
 
 Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0:
-# 129 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 108 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "BROTHER ANDRÉ$"
 
 Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_1:
-# 130 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 109 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Ah, as I was saying, before Ms. STONE so\n"
 	.string "rudely assigned me a chore.\p"
 	.string "Trashcans are just like black holes.\n"
@@ -2734,17 +2905,17 @@ Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_1:
 	.string "altar. The one that does not discrimin...$"
 
 Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_2:
-# 133 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 112 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...I really should empty this before Ms.\n"
 	.string "STONE finds out I've been talking to it\l"
 	.string "instead of emptying it.$"
 
 Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0:
-# 143 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 122 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Ms. STONE$"
 
 Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_1:
-# 144 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 123 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Oh, it's you again. Please tell me you\n"
 	.string "didn't let a Pidgey in behind you.\p"
 	.string "I've chased the same one out through\n"
@@ -2753,12 +2924,12 @@ Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_1:
 	.string "point.$"
 
 Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_2:
-# 147 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 126 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Anyway, have you seen all five of the\n"
 	.string "memories yet?$"
 
 Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_3:
-# 151 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 130 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Good. And you didn't just glance at\n"
 	.string "them, I hope.\p"
 	.string "Half our visitors watch the first one\n"
@@ -2767,46 +2938,85 @@ Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_3:
 	.string "Gen Z nowadays...$"
 
 Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_4:
-# 156 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 135 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Well, go on then. They're not going\n"
 	.string "anywhere.\p"
 	.string "Neither is he.$"
 
 Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias_Text_0:
-# 164 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
-	.string "THE LESSON OF THE TWO HEARTS:\n"
-	.string "Love is the only thing that grows larger\l"
-	.string "when shared.$"
+# 144 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	.string "MEGA ALAKAZAM's spoons glow with a\n"
+	.string "faint psychic light...\p"
+	.string "Ancient memories stir at the edge of\n"
+	.string "your mind, visions of LATIOS and LATIAS\l"
+	.string "long past.\p"
+	.string "Will you open your mind to them?$"
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Text_0:
+# 162 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	.string "MEGA ALAKAZAM's spoons glow with a\n"
+	.string "faint psychic light...\p"
+	.string "Ancient memories stir at the edge of\n"
+	.string "your mind, visions of LUGIA, MOLTRES,\l"
+	.string "ZAPDOS and ARTICUNO long past.\p"
+	.string "Will you open your mind to them?$"
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza_Text_0:
+# 180 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	.string "MEGA ALAKAZAM's spoons glow with a\n"
+	.string "faint psychic light...\p"
+	.string "Ancient memories stir at the edge of\n"
+	.string "your mind, visions of GROUDON, KYOGRE\l"
+	.string "and RAYQUAZA long past.\p"
+	.string "Will you open your mind to them?$"
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo_Text_0:
+# 198 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	.string "MEGA ALAKAZAM's spoons glow with a\n"
+	.string "faint psychic light...\p"
+	.string "Ancient memories stir at the edge of\n"
+	.string "your mind, visions of MEW and MEWTWO\l"
+	.string "long past.\p"
+	.string "Will you open your mind to them?$"
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_Rekindled_Text_0:
+# 216 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+	.string "MEGA ALAKAZAM's spoons glow with a\n"
+	.string "faint psychic light...\p"
+	.string "Ancient memories stir at the edge of\n"
+	.string "your mind, visions of HO-OH, ENTEI,\l"
+	.string "RAIKOU and SUICUNE long past.\p"
+	.string "Will you open your mind to them?$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Text_0:
-# 173 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 235 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...and that's why they never leave each\n"
 	.string "other's side.\p"
 	.string "They choose not to, even though they\n"
 	.string "can if they want.$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Text_1:
-# 176 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 238 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Would you ever choose not to leave me?$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Text_2:
-# 179 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 241 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "I already did, sweetheart. The day you\n"
 	.string "were born.$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Text_3:
-# 183 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 248 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Oh, sorry. Were we in your way?\p"
 	.string "We just come here sometimes, to look at\n"
 	.string "the two of them.$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_0:
-# 192 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 259 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Mom, why does the boy dragon look like\n"
 	.string "the girl dragon, but not exactly?$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_1:
-# 195 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 262 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Because they're not the same, love.\p"
 	.string "LATIOS and LATIAS are brother and\n"
 	.string "sister, not reflections.\p"
@@ -2814,16 +3024,16 @@ Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_1:
 	.string "to love each other completely.$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_2:
-# 198 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 265 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...That's kind of like us, huh?$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_3:
-# 202 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 272 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Oh! Hi. Have you seen the two dragons\n"
 	.string "yet? They're my favorite.$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_HoohLugia_Text_0:
-# 210 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 282 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Rumors say LUGIA's storm was the one\n"
 	.string "that burned the Brass Tower down, the\l"
 	.string "same fire ENTEI, RAIKOU, and SUICUNE\l"
@@ -2843,11 +3053,11 @@ Marshduke_Indoor_Chatedral_EventScript_NPC_HoohLugia_Text_0:
 	.string "use what power you have for good.$"
 
 Marshduke_Indoor_Chatedral_EventScript_Priest_HoohLugia_Text_0:
-# 218 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 290 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "BROTHER COLM$"
 
 Marshduke_Indoor_Chatedral_EventScript_Priest_HoohLugia_Text_1:
-# 219 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 291 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Some visitors call LUGIA's hiding\n"
 	.string "humility.\p"
 	.string "Me personally? I call it a god too afraid\n"
@@ -2856,7 +3066,7 @@ Marshduke_Indoor_Chatedral_EventScript_Priest_HoohLugia_Text_1:
 	.string "actually do something with it.$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_EnteiRaikouSuicune_Text_0:
-# 227 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 299 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Oh! You caught me dancing with my\n"
 	.string "Vapereon.\p"
 	.string "I'm a KIMONO GIRL, all the way from\n"
@@ -2877,11 +3087,11 @@ Marshduke_Indoor_Chatedral_EventScript_NPC_EnteiRaikouSuicune_Text_0:
 	.string "curated by a collector named ARI.$"
 
 Marshduke_Indoor_Chatedral_EventScript_Priest_EnteiRaikouSuicune_Text_0:
-# 235 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 307 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "SISTER ODILE$"
 
 Marshduke_Indoor_Chatedral_EventScript_Priest_EnteiRaikouSuicune_Text_1:
-# 236 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 308 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Second life this. Second life that. Blaa,\n"
 	.string "blaa blaaaaah.\p"
 	.string "In my opinion it's a life sentence,\n"
@@ -2891,7 +3101,7 @@ Marshduke_Indoor_Chatedral_EventScript_Priest_EnteiRaikouSuicune_Text_1:
 	.string "about it.$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_MewMewtwo_Text_0:
-# 244 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 317 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "I've been standing here an hour,\n"
 	.string "staring at a creature made in a lab\l"
 	.string "beside the one it was copied from.\p"
@@ -2905,11 +3115,11 @@ Marshduke_Indoor_Chatedral_EventScript_NPC_MewMewtwo_Text_0:
 	.string "are.$"
 
 Marshduke_Indoor_Chatedral_EventScript_Priest_MewMewtwo_Text_0:
-# 254 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 327 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "SISTER RUTH$"
 
 Marshduke_Indoor_Chatedral_EventScript_Priest_MewMewtwo_Text_1:
-# 255 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 328 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "The Order teaches that origin doesn't\n"
 	.string "matter, only choice...\p"
 	.string "I think that's a comfort we tell MEWTWO\n"
@@ -2919,11 +3129,11 @@ Marshduke_Indoor_Chatedral_EventScript_Priest_MewMewtwo_Text_1:
 	.string "philosophy.$"
 
 Marshduke_Indoor_Chatedral_EventScript_Priest_GroundonKyogreRayquaza_Text_0:
-# 263 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 336 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "SISTER MARGUERITE$"
 
 Marshduke_Indoor_Chatedral_EventScript_Priest_GroundonKyogreRayquaza_Text_1:
-# 264 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 337 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "RAYQUAZA, everybody loves him, calls him\n"
 	.string "righteous and sees him as our lord and\l"
 	.string "saviour.\p"
@@ -2937,26 +3147,26 @@ Marshduke_Indoor_Chatedral_EventScript_Priest_GroundonKyogreRayquaza_Text_1:
 	.string "better color palette.$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_0:
-# 275 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 348 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Dr. FERRAN$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_1:
-# 276 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 349 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Careful, don't stand too close.\p"
 	.string "My castform is trying to register some\n"
 	.string "temperature differences.$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_2:
-# 281 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 354 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Well, go on.$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_3:
-# 303 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 376 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "What do you mean?\p"
 	.string "Over 9000 degrees?! By Arceus!$"
 
 Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_4:
-# 310 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 383 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Sorry about that.\p"
 	.string "I'm Dr. FERRAN, Head of Instrumentation\n"
 	.string "at the Luzac Institute.\p"
@@ -2980,13 +3190,13 @@ Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_4:
 	.string "doing this on purpose.$"
 
 Marshduke_Indoor_Chatedral_EventScript_Sign_EmptyShrine_Text_0:
-# 318 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 391 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "FIVE MEMORIES OF WHAT WAS. ONE SPACE\n"
 	.string "FOR WHAT COULD BE. THE DIFFERENCE\l"
 	.string "BETWEEN THEM IS US.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_0:
-# 336 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 409 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Ah, a new face! Wonderful.\p"
 	.string "I'm the curator and caretaker of this\n"
 	.string "cathedral, Head of the Order of the\l"
@@ -2998,21 +3208,21 @@ Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_0:
 	.string "very good at it.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_1:
-# 344 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 417 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...The seeker arrives at the hour of\n"
 	.string "arriving.\p"
 	.string "As they always do. As they always have.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_2:
-# 350 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 423 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "That's BROTHER ANDRÉ...$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_3:
-# 358 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 431 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...I am but a JANITOR!$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_4:
-# 364 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 437 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "He is but a janitor.\p"
 	.string "At the moment, there's no one here but\n"
 	.string "the priests of the Order of the Open\l"
@@ -3022,7 +3232,7 @@ Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_4:
 	.string "Come along, both of you.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_5:
-# 371 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 444 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "There. That's what you came for,\n"
 	.string "whether you knew it or not.\p"
 	.string "A MEGA ALAKAZAM. In trance. It has been\n"
@@ -3032,23 +3242,23 @@ Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_5:
 	.string "think even older than the delta itself.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_6:
-# 378 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 451 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "It does not sit. It is held.\p"
 	.string "Time flows around it as water flows\n"
 	.string "around a stone that has decided not to\l"
 	.string "be moved...$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_7:
-# 382 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 455 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "It's sitting, André.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_8:
-# 387 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 460 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...It is sitting in a transcendent\n"
 	.string "manner.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_9:
-# 392 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 465 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "An ALAKAZAM forgets nothing. Not one\n"
 	.string "moment of its whole life.\p"
 	.string "Now imagine thousands of years of that,\n"
@@ -3061,7 +3271,7 @@ Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_9:
 	.string "see.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_10:
-# 399 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 472 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "The REKINDLED. A tower burned, far from\n"
 	.string "here.\p"
 	.string "Three Pokémon died in the fire.\p"
@@ -3074,33 +3284,33 @@ Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_10:
 	.string "stopped running.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_11:
-# 405 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 478 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Three flames of one flame!\p"
 	.string "Three faces of one face!\p"
 	.string "The many that is secretly the ONE...$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_12:
-# 410 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 483 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "They're not one, André, that's rather\n"
 	.string "the point. That's the whole point.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_13:
-# 414 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 487 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...Three faces of one face that are\n"
 	.string "also, in a deeper sense, three faces.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_14:
-# 418 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 491 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...\p"
 	.string "Better.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_15:
-# 424 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 497 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "The lesson here is: A second life is not\n"
 	.string "a gift; it is an assignment.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_16:
-# 433 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 506 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "The BALANCED SKY. Three great birds\n"
 	.string "over a foreign ocean: fire, frost, and\l"
 	.string "lightning.\p"
@@ -3114,27 +3324,27 @@ Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_16:
 	.string "left alone.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_17:
-# 439 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 512 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "The silver one is the SILENCE BETWEEN\n"
 	.string "THE NOTES.\p"
 	.string "The pause in which the chord discovers\n"
 	.string "what it truly...$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_18:
-# 445 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 518 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "That's... actually not bad.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_19:
-# 450 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 523 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...the pause in which the chord\n"
 	.string "discovers what it truly... dreams.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_20:
-# 456 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 529 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...Nevermind.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_21:
-# 463 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 536 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "The old records call this the Divided\n"
 	.string "Sky.\p"
 	.string "Personally I see it differently.\p"
@@ -3143,7 +3353,7 @@ Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_21:
 	.string "maintained.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_22:
-# 473 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 546 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "The MIRROR. A creature made in a\n"
 	.string "laboratory, and the creature it was\l"
 	.string "made from.\p"
@@ -3158,32 +3368,32 @@ Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_22:
 	.string "against each other?$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_23:
-# 480 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 553 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "And who among us is not asking that\n"
 	.string "same...$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_24:
-# 486 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 559 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "André.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_25:
-# 491 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 564 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "I was going to say something about the\n"
 	.string "ocean.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_26:
-# 495 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 568 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "I know.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_27:
-# 502 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 575 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Watch that one to the end, by the way.\n"
 	.string "It lingers on the little one, Mew.\p"
 	.string "Longer than it needs to. Nobody knows\n"
 	.string "why.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_28:
-# 514 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 587 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...\p"
 	.string "...\p"
 	.string "You saw the little one? Mew?\p"
@@ -3195,7 +3405,7 @@ Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_28:
 	.string "Lets go to the next altar.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_29:
-# 523 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 596 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Careful, this one's cold on the left and\n"
 	.string "hot on the right, we're not sure why.\p"
 	.string "The oldest memory we have. Land and\n"
@@ -3217,36 +3427,36 @@ Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_29:
 	.string "choose.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_30:
-# 530 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 603 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "AH. Now here I have thoughts...$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_31:
-# 535 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 608 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "I'm sure.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_32:
-# 539 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 612 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...for is not the serpent the AXIS? The\n"
 	.string "thread through the bead? The high still\l"
 	.string "point about which the war...$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_33:
-# 545 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 618 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "André...$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_34:
-# 552 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 625 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "We send feuding families here, you know.\n"
 	.string "Merchant guilds. In-laws. They shake\l"
 	.string "hands under the arch and it counts.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_35:
-# 557 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 630 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "It works about half the time. Which for\n"
 	.string "in-laws is remarkable.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_36:
-# 567 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 640 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "The TWO HEARTS. Two dragons. Two\n"
 	.string "personalities. Two ways of being. But\l"
 	.string "one team.\p"
@@ -3259,17 +3469,17 @@ Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_36:
 	.string "grows larger when shared.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_37:
-# 571 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 644 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...This is the one I come to. When it's\n"
 	.string "late. When nobody is watching.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_38:
-# 576 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 649 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...\p"
 	.string "Yes. Well. Me too.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_39:
-# 588 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 661 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "And this one is my favorite, which\n"
 	.string "annoys everybody.\p"
 	.string "It's empty. Always has been.\p"
@@ -3288,26 +3498,26 @@ Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_39:
 	.string "green light. Nobody knows why.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_40:
-# 595 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 668 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "The unmanifest! The not-yet! The\n"
 	.string "pregnant silence in which all possible\l"
 	.string "altars are simultaneously...$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_41:
-# 600 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 673 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "For once, André, that is very close to\n"
 	.string "the Order's actual position.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_42:
-# 606 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 679 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Is it?$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_43:
-# 610 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 683 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Don't let it go to your head.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_44:
-# 617 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 690 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Somebody left a plaque here. We've\n"
 	.string "never taken it down.\p"
 	.string "It reads:\p"
@@ -3316,7 +3526,7 @@ Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_44:
 	.string "THE DIFFERENCE BETWEEN THEM IS US.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_45:
-# 625 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 698 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "And that's the tour. Five memories, one\n"
 	.string "empty space, and a very old creature\l"
 	.string "that hasn't moved since before your\l"
@@ -3326,28 +3536,28 @@ Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_45:
 	.string "Take your time.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_46:
-# 629 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 702 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "May the seeker find what the seeker\n"
 	.string "seeks.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_47:
-# 636 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 709 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Thank you, André.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_48:
-# 643 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 716 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Or, and this is important, may they find\n"
 	.string "what they were NOT seeking.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_49:
-# 647 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 720 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...That one was quite good.\p"
 	.string "Can you clean out the trashcans right\n"
 	.string "now?\p"
 	.string "You know, your job? Thank you!$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_50:
-# 651 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 724 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "Yes mam. The trashcans, a beautifull\n"
 	.string "methaphor for the all the forgotten\l"
 	.string "memories.\p"
@@ -3355,7 +3565,7 @@ Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_50:
 	.string "holes...$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_51:
-# 663 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 736 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...May I tell you something I don't put in\n"
 	.string "the tour?\p"
 	.string "Everyone watches the gods.\p"
@@ -3373,14 +3583,14 @@ Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_51:
 	.string "me. For sixty years.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_52:
-# 669 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 742 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "I don't think it's showing us old stories\n"
 	.string "at all, child.\p"
 	.string "I think it's showing us what's happening\n"
 	.string "right now.$"
 
 Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_53:
-# 674 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
+# 747 "data/maps/Marshduke_Indoor_Chatedral/scripts.pory"
 	.string "...Anyway. Looks like a few visitors have\n"
 	.string "trickled in.\p"
 	.string "I'd best go scare off the Pidgey. That\n"

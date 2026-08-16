@@ -36,7 +36,7 @@ ErpusCity_Barryhouse_1F_Father::
 
 ErpusCity_Barryhouse_1F_Mother_Text_0:
 # 8 "data/maps/ErpusCity_BarryHouse_1F/scripts.pory"
-	.string "Barry's Mom$"
+	.string "BARRY'S MOM$"
 
 ErpusCity_Barryhouse_1F_Mother_Text_1:
 # 9 "data/maps/ErpusCity_BarryHouse_1F/scripts.pory"
@@ -68,7 +68,7 @@ ErpusCity_Barryhouse_1F_Mother_Text_1:
 
 ErpusCity_Barryhouse_1F_Father_Text_0:
 # 17 "data/maps/ErpusCity_BarryHouse_1F/scripts.pory"
-	.string "Barry's Dad$"
+	.string "BARRY'S DAD$"
 
 ErpusCity_Barryhouse_1F_Father_Text_1:
 # 18 "data/maps/ErpusCity_BarryHouse_1F/scripts.pory"

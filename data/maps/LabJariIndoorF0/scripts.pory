@@ -360,7 +360,7 @@ script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit {
         applymovement (10, moves(walk_fast_right walk_fast_down face_left))
         waitmovement
         applymovement(LOCALID_PLAYER, moves(face_right))
-        setspeaker("Prof. Birds")
+        setspeaker("PROF. BIRDS")
         msgbox(format("I TOLD YOU TO GET SOME BOXES!!\pNOT WANDER AROUND IN MY SECRET LA.. I MEAN STORAGE ROOM!!\pGET THE FUCK OUT!!"))
         waitmessage
         fadescreen(FADE_TO_BLACK)
@@ -395,7 +395,7 @@ script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit {
         applymovement (10, moves(walk_fast_down face_right))
         waitmovement
         applymovement(LOCALID_PLAYER, moves(face_left))
-        setspeaker("Prof. Birds")
+        setspeaker("PROF. BIRDS")
         msgbox(format("I TOLD YOU TO GET SOME BOXES!!\pNOT WANDER AROUND IN MY SECRET LA.. I MEAN STORAGE ROOM!!\pGET THE FUCK OUT!!"))
         waitmessage
         fadescreen(FADE_TO_BLACK)

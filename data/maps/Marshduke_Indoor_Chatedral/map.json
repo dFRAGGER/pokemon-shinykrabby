@@ -611,7 +611,7 @@
       "y": 31,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky"
     },
     {
       "type": "sign",
@@ -627,7 +627,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza"
     },
     {
       "type": "sign",
@@ -635,7 +635,7 @@
       "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo"
     },
     {
       "type": "sign",
@@ -643,7 +643,7 @@
       "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Marshduke_Indoor_Chatedral_EventScript_Alakazam"
+      "script": "Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias"
     },
     {
       "type": "sign",
@@ -651,7 +651,7 @@
       "y": 31,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Marshduke_Indoor_Chatedral_EventScript_Sign_Rekindled"
     },
     {
       "type": "sign",

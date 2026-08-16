@@ -11,7 +11,7 @@ script Maasje_On_Transition {
 
 script Maasje_Sign_Welcome {
     lock
-    msgbox(format("MESTREECH TOWN\nHome to people, and crustaceans."),MSGBOX_SIGN)
+    msgbox(format("MASO TOWN\nHome to people, and crustaceans."),MSGBOX_SIGN)
     waitmessage
     release
 }
@@ -25,7 +25,7 @@ script Maasje_Sign_Jakub_Home {
 
 script Maasje_Sign_Gym {
     lock
-    msgbox(format("Mestreech Gym:\n Where sand rules the world."))
+    msgbox(format("MASO Gym:\n Where sand rules the world."))
     waitmessage
     release
 }
@@ -46,7 +46,7 @@ script Maasje_Sign_Beekeeper {
 
 script Maasje_Sign_CrabHill {
     lock
-    msgbox(format("Crab Hill:\n WARNING! EASY TO GET LOST! TAKE CARE!"))
+    msgbox(format("CRAB HILL:\n WARNING! EASY TO GET LOST! TAKE CARE!"))
     waitmessage
     release
 }
@@ -309,7 +309,7 @@ script Maasje_Joris_UpToTheWhiteLight {
     getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
     msgbox(format("..."),MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(2, moves(walk_in_place_fast_down))
+    applymovement(5, moves(walk_in_place_fast_down))
     delay(40)
     setspeaker("?????")
     msgbox(format("UP TO THE WHITELIGHT!!!"), MSGBOX_AUTOCLOSE)
@@ -317,13 +317,13 @@ script Maasje_Joris_UpToTheWhiteLight {
     applymovement(LOCALID_PLAYER,moves(emote_question_mark))
     delay(40)
     if(var(VAR_TEMP_0)== 49 && var(VAR_TEMP_1)== 34){
-        applymovement(2, moves(walk_fast_left walk_fast_down*7 walk_fast_left walk_fast_down*2))
+        applymovement(5, moves(walk_fast_left walk_fast_down*7 walk_fast_left walk_fast_down*2))
     }
     else{
-        applymovement(2, moves(walk_fast_down*7 walk_fast_left*2 walk_fast_down*2))
+        applymovement(5, moves(walk_fast_down*7 walk_fast_left*2 walk_fast_down*2))
     }
     waitmovement
-    removeobject(2)
+    removeobject(5)
     release
     
 }

@@ -88,114 +88,106 @@ UpanaCaveMainRoom_Npc_Researcher::
 # 189 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	faceplayer
 # 190 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
-	setspeaker UpanaCaveMainRoom_Npc_Researcher_Text_0
+	msgbox UpanaCaveMainRoom_Npc_Researcher_Text_0, MSGBOX_AUTOCLOSE
 # 191 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
-	msgbox UpanaCaveMainRoom_Npc_Researcher_Text_1, MSGBOX_AUTOCLOSE
-# 192 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	waitmessage
-# 193 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 192 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	release
 	end
 
 
 UpanaCaveMainRoom_Npc_Hiker::
-# 198 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 197 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	lock
-# 199 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 198 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	faceplayer
+# 199 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+	msgbox UpanaCaveMainRoom_Npc_Hiker_Text_0, MSGBOX_AUTOCLOSE
 # 200 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
-	setspeaker UpanaCaveMainRoom_Npc_Hiker_Text_0
-# 201 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
-	msgbox UpanaCaveMainRoom_Npc_Hiker_Text_1, MSGBOX_AUTOCLOSE
-# 202 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	waitmessage
-# 203 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 201 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	release
 	end
 
 
 UpanaCaveMainRoom_Inscription_1::
-# 208 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 206 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	lock
-# 209 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 207 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	msgbox UpanaCaveMainRoom_Inscription_1_Text_0
-# 210 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 208 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	waitmessage
-# 211 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 209 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	release
 	return
 
 
 UpanaCaveMainRoom_Inscription_2::
-# 215 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 213 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	lock
-# 216 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 214 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	msgbox UpanaCaveMainRoom_Inscription_2_Text_0
-# 217 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 215 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	waitmessage
-# 218 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 216 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	release
 	return
 
 
 UpanaCaveMainRoom_Inscription_3::
-# 222 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 220 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	lock
-# 223 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 221 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	msgbox UpanaCaveMainRoom_Inscription_3_Text_0
-# 224 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 222 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	waitmessage
-# 225 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 223 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	release
 	return
 
 
 UpanaCaveMainRoom_Inscription_4::
-# 229 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 227 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	lock
-# 230 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 228 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	msgbox UpanaCaveMainRoom_Inscription_4_Text_0
-# 231 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 229 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	waitmessage
-# 232 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 230 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	release
 	return
 
 
 UpanaCaveMainRoom_Inscription_Large::
-# 236 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 234 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	lock
-# 237 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 235 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	msgbox UpanaCaveMainRoom_Inscription_Large_Text_0
+# 236 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+	waitmessage
+# 237 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+	msgbox UpanaCaveMainRoom_Inscription_Large_Text_1
 # 238 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	waitmessage
 # 239 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
-	msgbox UpanaCaveMainRoom_Inscription_Large_Text_1
+	msgbox UpanaCaveMainRoom_Inscription_Large_Text_2
 # 240 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	waitmessage
 # 241 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
-	msgbox UpanaCaveMainRoom_Inscription_Large_Text_2
-# 242 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
-	waitmessage
-# 243 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	release
 	return
 
 
 UpanaCavesystem_Trainer_Rex::
-# 247 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 245 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	trainerbattle_single TRAINER_BIKER_REX, UpanaCavesystem_Text_RexIntro, UpanaCavesystem_Text_RexDefeated
-# 248 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 246 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	msgbox UpanaCavesystem_Text_RexPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 UpanaCaveMainRoom_Npc_Researcher_Text_0:
 # 190 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
-	.string "Dr. Virel$"
-
-UpanaCaveMainRoom_Npc_Researcher_Text_1:
-# 191 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	.string "These carvings are extraordinary.\p"
 	.string "The technique, the depth of the cuts,\n"
 	.string "this predates anything we have\l"
@@ -211,11 +203,7 @@ UpanaCaveMainRoom_Npc_Researcher_Text_1:
 	.string "Perhaps too well.$"
 
 UpanaCaveMainRoom_Npc_Hiker_Text_0:
-# 200 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
-	.string "Hiker Bram$"
-
-UpanaCaveMainRoom_Npc_Hiker_Text_1:
-# 201 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 199 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	.string "You know what I love about this cave?\p"
 	.string "The formations.\p"
 	.string "Look at those stalactites they have\n"
@@ -228,7 +216,7 @@ UpanaCaveMainRoom_Npc_Hiker_Text_1:
 	.string "I came up with that myself.$"
 
 UpanaCaveMainRoom_Inscription_1_Text_0:
-# 209 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 207 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	.string "A small carving, easy to miss.\p"
 	.string "A circle of hunched figures around a\n"
 	.string "dark pool.\p"
@@ -239,7 +227,7 @@ UpanaCaveMainRoom_Inscription_1_Text_0:
 	.string "each other.$"
 
 UpanaCaveMainRoom_Inscription_2_Text_0:
-# 216 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 214 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	.string "A tightly coiled, spiral-shelled\n"
 	.string "creature fills most of the stone panel.\p"
 	.string "Below it, small figures press their\n"
@@ -249,7 +237,7 @@ UpanaCaveMainRoom_Inscription_2_Text_0:
 	.string "They appear to be offerings.$"
 
 UpanaCaveMainRoom_Inscription_3_Text_0:
-# 223 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 221 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	.string "A lone figure stands with its arms\n"
 	.string "outstretched.\p"
 	.string "Before it looms a shape with wide,\n"
@@ -262,7 +250,7 @@ UpanaCaveMainRoom_Inscription_3_Text_0:
 	.string "the figure is not afraid.$"
 
 UpanaCaveMainRoom_Inscription_4_Text_0:
-# 230 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 228 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	.string "A row of oval shapes arranged in a\n"
 	.string "perfect ring.\p"
 	.string "Between each one, a mark like a curved\n"
@@ -272,7 +260,7 @@ UpanaCaveMainRoom_Inscription_4_Text_0:
 	.string "once. The outlines have been recut.$"
 
 UpanaCaveMainRoom_Inscription_Large_Text_0:
-# 237 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 235 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	.string "A large carving covers an entire\n"
 	.string "section of the wall.\p"
 	.string "In the center stands a figure. Jointed,\n"
@@ -285,7 +273,7 @@ UpanaCaveMainRoom_Inscription_Large_Text_0:
 	.string "figure in all directions.$"
 
 UpanaCaveMainRoom_Inscription_Large_Text_1:
-# 239 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 237 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	.string "In the upper corner of the image,\n"
 	.string "something descends from above.\p"
 	.string "A winged shape. Jaws open. Impossibly\n"
@@ -294,7 +282,7 @@ UpanaCaveMainRoom_Inscription_Large_Text_1:
 	.string "They appear to be... meeting.$"
 
 UpanaCaveMainRoom_Inscription_Large_Text_2:
-# 241 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 239 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	.string "Below both of them, the small figures\n"
 	.string "are turned away.\p"
 	.string "Heads bowed.\p"
@@ -477,16 +465,16 @@ UpanaCavesystem_Text_OpalPostBattle::
 	.string "stone.$"
 
 UpanaCavesystem_Text_RexIntro::
-# 252 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 250 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	.string "Before I go down that ridge full I want\n"
 	.string "to battle some trainers!$"
 
 UpanaCavesystem_Text_RexDefeated::
-# 256 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 254 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	.string "Whoa, you're faster than both my Doduo!$"
 
 UpanaCavesystem_Text_RexPostBattle::
-# 260 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
+# 258 "data/maps/Route06_UpanaCave_MainRoom/scripts.pory"
 	.string "The downhill run from the ridgeline is\n"
 	.string "wild. My Doduo can't keep pace with me\l"
 	.string "on a bike so they stay in here and race\l"

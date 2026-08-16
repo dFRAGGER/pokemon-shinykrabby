@@ -563,7 +563,7 @@ Indoor_Maasje_Jacob_Home_Sienna1_Movement_6:
 
 Indoor_Maasje_Jakub_Home_JakubConvo_Text_0:
 # 8 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
-	.string "Jacob$"
+	.string "JACOB$"
 
 Indoor_Maasje_Jakub_Home_JakubConvo_Text_1:
 # 9 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
@@ -679,7 +679,7 @@ Indoor_Maasje_JacobChecksonGeorge_Text_3:
 
 Indoor_Maasje_Jakub_Home_SiennaConvo_Text_0:
 # 125 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
-	.string "Sienna$"
+	.string "SIENNA$"
 
 Indoor_Maasje_Jakub_Home_SiennaConvo_Text_1:
 # 126 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
@@ -735,7 +735,7 @@ Indoor_Maasje_Jacob_Home_Sienna1_Text_1:
 
 Indoor_Maasje_Jacob_Home_Sienna1_Text_2:
 # 154 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
-	.string "George$"
+	.string "GEORGE$"
 
 Indoor_Maasje_Jacob_Home_Sienna1_Text_3:
 # 155 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
@@ -747,7 +747,7 @@ Indoor_Maasje_Jacob_Home_Sienna1_Text_3:
 Indoor_Maasje_Jacob_Home_Sienna1_Text_4:
 # 166 "data/maps/Indoor_Maasje_Jakub_Home/scripts.pory"
 	.string "JEZUS! Please stop jump scaring me.\p"
-	.string "Please! Go to Crabhill and find Jacob!\p"
+	.string "Please! Go to Crabhill and find JACOB!\p"
 	.string "If anyone can figure out why the\n"
 	.string "Krabby are going crazy, it's him...$"
 

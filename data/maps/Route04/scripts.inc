@@ -219,7 +219,7 @@ Route04_DaanPokenavCall_Text_0:
 # 10 "data/maps/Route04/scripts.pory"
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
-	.string "Daan: {PLAYER}!\p"
+	.string "DAAN: {PLAYER}!\p"
 	.string "Finally! I've been trying to\n"
 	.string "reach you for the past hour.\p"
 	.string "Must've been that cave I sent\n"
@@ -278,7 +278,7 @@ Route04_DaanPokenavCall_Text_0:
 
 Route04_Sign_DarkCave_Text_0:
 # 17 "data/maps/Route04/scripts.pory"
-	.string "{UP_ARROW} Bat Cave\n"
+	.string "{UP_ARROW} BAT CAVE\n"
 	.string "Caution: Heavy Bat Population.$"
 
 Route04_HikerTired_Convo_Text_0:

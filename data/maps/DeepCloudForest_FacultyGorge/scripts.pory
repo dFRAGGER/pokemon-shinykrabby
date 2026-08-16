@@ -15,7 +15,7 @@ script DeepCloudforest_Healspot_OnTransition {
 script DeepCloudForest_FacultyGorge_David_Dialogue {
     lock
     faceplayer
-    setspeaker("David")
+    setspeaker("DAVID")
     msgbox(format("Daan charged in there to fight the Faculty, but I... I freeze up every time I hear the buzzing of a Beedrill.\pI'll just guard the entrance, you go ahead and help him before I pass out from the stress."),MSGBOX_AUTOCLOSE)
     waitmessage
     release
@@ -32,13 +32,13 @@ script DeepCloudForest_FacultyGorge_GetOutTruck {
     waitmovement
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down*3))
-    setspeaker("Nash")
+    setspeaker("NASH")
     msgbox(format("By Arceus... This is a massacre.\pThis isn't the usual logging activities we see.\p All the trees have been completely uprooted and removed.\p Looks like somebody is looking for something they can't find."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
     applymovement(7,moves(face_left))
     waitmovement
-    setspeaker("David")
+    setspeaker("DAVID")
     msgbox(format("The signal... it's deafening here.\pAll this random destruction is creating so much chaotic energy...\pBut the Faculty's frequency...\p ...the clean, repeating pattern...\p ...it's close. Very close."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up*3))
@@ -48,12 +48,12 @@ script DeepCloudForest_FacultyGorge_GetOutTruck {
     playse(SE_PIN)
     applymovement(7,moves(emote_exclamation_mark face_down))
     waitmovement
-    setspeaker("David")
+    setspeaker("DAVID")
     msgbox(format("That way! Just over that ridge!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(7, moves(walk_fast_down*2 walk_fast_right*3 walk_fast_down*4))
     waitmovement
-    setspeaker("Nash")
+    setspeaker("NASH")
     msgbox(format("Alright, team, let's move! Stay sharp!"), MSGBOX_AUTOCLOSE)
     applymovement(6, moves(walk_fast_down*2 walk_fast_right*3 walk_fast_down*4))
     waitmovement
@@ -68,36 +68,36 @@ script DeepCloudForest_FacultyGorge_GetOutTruck {
     waitmovement
     clearflag(FLAG_FACULTY_GORGE_NASH2)
     clearflag(FLAG_DAVID_TRUCK)
-    setspeaker("Daan")
+    setspeaker("DAAN")
     msgbox(format("...and I won't let you touch these trees!\pThis forest is alive! It has a right to exist!\p Can't you see it's not just plants standing in your way? We depend on every single one of them!"), MSGBOX_AUTOCLOSE)
     waitmessage
-    setspeaker("Jos Vanderloo")
+    setspeaker("JOS VANDERLOO")
     msgbox(format("Analysis: Subject is displaying irrational, sentimental attachment to non-productive biomass.\pHis methods are inefficient."),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
     applymovement(2, moves(emote_exclamation_mark face_up))
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(format("Shut up Jos! I've got this."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
     applymovement(2, moves(face_right))
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(format("...Listen to yourself, Daan!\p You're clinging to this messy, inefficient past.\pThe Faculty offers a real path to strength!\pA structured path! Something you and your 'friends' would never understand."),MSGBOX_AUTOCLOSE)
     waitmessage
-    setspeaker("Daan")
+    setspeaker("DAAN")
     msgbox(format("Strength? You call this strength?!\pTearing down something that's taken a thousand years to grow?\pYou're a coward, Barry, hiding behind their machines!"), MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
     applymovement(2, moves(emote_exclamation_mark))
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(format("STOP CALLING ME BARRY, MY NAME IS WOUTER YOU IDIOT!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(3, moves(walk_right))
     applymovement(1, moves(walk_right))
-    setspeaker("Ton Cross")
+    setspeaker("TON CROSS")
     msgbox(format("Hey! Show some respect for the Junior Administrator!\pWhy don't you and your tree-hugging Pokémon just give it up?"),MSGBOX_AUTOCLOSE)
     waitmessage
-    setspeaker("Daan")
+    setspeaker("DAAN")
     msgbox(format("NEVER!!\p VENUSAUR, HEADBUTT!"),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_M_HEADBUTT)
@@ -109,8 +109,8 @@ script DeepCloudForest_FacultyGorge_GetOutTruck {
     applymovement(LOCALID_PLAYER,moves(face_right))
     applymovement(17 ,moves(face_left))
     waitmovement
-    setspeaker("Nash")
-    msgbox(format("There he is.\pHolding off two grunts and their leader.\pDavid, stay back and monitor that device.\p{PLAYER}, looks like Daan could use some help.\pI'll take the lead, follow me!"),MSGBOX_AUTOCLOSE)
+    setspeaker("NASH")
+    msgbox(format("There he is.\pHolding off two grunts and their leader.\pDAVID, stay back and monitor that device.\p{PLAYER}, looks like DAAN could use some help.\pI'll take the lead, follow me!"),MSGBOX_AUTOCLOSE)
     applymovement(17 ,moves(face_down))
     applymovement(18, moves(walk_fast_right*8 walk_fast_down*6))
     applymovement(19, moves(walk_fast_right*7 walk_fast_down*6))
@@ -127,7 +127,7 @@ script DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts {
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down*3))
     waitmovement
-    setspeaker("Nash")
+    setspeaker("NASH")
     msgbox(format("ARCANINE, BITE!"))
     waitmessage
     playse(SE_M_BITE)
@@ -135,7 +135,7 @@ script DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts {
     waitmovement
     applymovement(22, moves(face_up))
     waitmovement
-    setspeaker("Nash")
+    setspeaker("NASH")
     msgbox(format("{PLAYER}, apparently there are more grunts here.\pI'll hold these two off for now!\pI'll be right behind you!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(22, moves(face_down))
@@ -176,8 +176,8 @@ script DeepCloudForest_FacultyGorge_Daan_Rescue_Start {
     playse(SE_PIN)
     applymovement(5, moves(emote_exclamation_mark face_down))
     waitmovement
-    setspeaker("Daan")
-    msgbox(format("Nash! I knew you'd come! You're just in time for a party."),MSGBOX_AUTOCLOSE)
+    setspeaker("DAAN")
+    msgbox(format("NASH! I knew you'd come! You're just in time for a party."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
     playse(SE_PIN)
@@ -189,7 +189,7 @@ script DeepCloudForest_FacultyGorge_Daan_Rescue_Start {
     applymovement(2, moves(emote_exclamation_mark walk_diag_southeast walk_right face_down))
     applymovement(12, moves(walk_down walk_right face_down))
     waitmovement
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(format("YOU!?\pOf course you'd show up to ruin everything!\pI should have known you'd be involved in this chaos."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(2, moves(face_up) )
@@ -200,7 +200,7 @@ script DeepCloudForest_FacultyGorge_Daan_Rescue_Start {
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down))
     waitmovement
     special(RemoveCameraObject)
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(format("Enough talk!\pGrunts, deal with the ranger and that tree hugger! {PLAYER} is mine!\pLet's show them the true meaning of order!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(2, moves(walk_fast_left*3 walk_fast_down face_right))
@@ -216,7 +216,7 @@ script DeepCloudForest_FacultyGorge_Daan_Rescue_Start {
     applymovement(13, moves(walk_left walk_down face_right))
     applymovement(LOCALID_PLAYER, moves(face_left))
     waitmovement
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(format("Show me what you got dumb lab intern!"))
     waitmessage
     trainerbattle_no_intro(TRAINER_BARRY_DEEPCLOUDFOREST, Deepcloudforest_Barry_Defeattext)
@@ -237,47 +237,47 @@ script Deepcloudforest_Barry_Defeated {
     applymovement(4, moves(jump_left face_right))
     applymovement(13, moves(jump_left face_right))
     waitmovement
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(format("No... Impossible!\nOur strategy was flawless!\pThe tactical analysis was perfect...\pThe geological resonance scans were pinpoint accurate!\pHow could we lose to a bunch of chaotic, sentimental...!")MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
     applymovement(4, moves(emote_exclamation_mark walk_fast_left*2 face_down))
-    setspeaker("Jos Vanderloo")
+    setspeaker("JOS VANDERLOO")
     msgbox(format("Administrator Barry... I mean Wouter!\nCease communications at once!\pThat information is classified.\nWe are falling back."),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
     applymovement(5, moves(emote_exclamation_mark))
-    setspeaker("Daan")
+    setspeaker("DAAN")
     msgbox(format("Geological scans?\nWhat are you talking about, Barry?\pThis was never just about cutting down trees, was it?\pWhat were you really looking for out here?"),MSGBOX_AUTOCLOSE)
     delay(60)
     playse(SE_POKENAV_CALL)
     delay(60)
     playse(SE_PIN)
     applymovement(4, moves(walk_up emote_question_mark))
-    setspeaker("Jos Vanderloo")
+    setspeaker("JOS VANDERLOO")
     msgbox(format("...\pHello Boss...\pYes...\pUnderstood...\p...You are on speaker right now!")MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(4, moves(walk_right*2))
     setspeaker("?????")
-    msgbox(format(".....Well hello there children.\pThis is the Rector speaking.\pWe have secured the Objective.\pThe target, codename: SILENT GUARDIAN, is in our possession.\pI repeat, the Silent Guardian has been secured.\pMUAHAHAHAHA..."),MSGBOX_AUTOCLOSE)
+    msgbox(format(".....Well hello there children.\pThis is THE RECTOR speaking.\pWe have secured the Objective.\pThe target, codename: SILENT GUARDIAN, is in our possession.\pI repeat, the Silent Guardian has been secured.\pMUAHAHAHAHA..."),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_POKENAV_HANG_UP)
     applymovement(4, moves(walk_right*2 face_down))
     applymovement(LOCALID_PLAYER, moves(face_up))
-    setspeaker("Jos Vanderloo")
+    setspeaker("JOS VANDERLOO")
     msgbox(format("It seems your victory here is irrelevant.\pWhile you were playing hero in the mud, our primary team accomplished the mission.\pThis was merely a distraction."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER, moves(face_left))
     playse(SE_PIN)
     applymovement(2, moves(emote_exclamation_mark))
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(format("That's right!\nYou didn't win anything!\pThe Faculty always thinks two steps ahead.\pYou haven't stopped a thing!\pYou've just proven how insignificant you really are!\pCatch this!"),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_BALL_THROW)
     delay(40)
     playse(SE_PIN)
     applymovement(26, moves(emote_exclamation_mark))
-    setspeaker("Nash")
+    setspeaker("NASH")
     msgbox(format("It's a flashbang! Don't let them get away!"),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_BANG)
@@ -297,10 +297,10 @@ script Deepcloudforest_Barry_Defeated {
     applymovement(5, moves(walk_fast_up walk_fast_left*4 face_down))
     waitmovement
     special(SpawnCameraObject)
-    setspeaker("Daan")
+    setspeaker("DAAN")
     msgbox(format("The 'Silent Guardian'... that's what Elara called the legend!\pI think they found it!"),MSGBOX_AUTOCLOSE)
     waitmessage
-    setspeaker("Nash")
+    setspeaker("NASH")
     msgbox(format("They played us perfectly."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(26, moves(face_right))
@@ -310,19 +310,19 @@ script Deepcloudforest_Barry_Defeated {
     applymovement(LOCALID_PLAYER, moves(face_right))
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right*3))
     waitmovement
-    setspeaker("Nash")
+    setspeaker("NASH")
     msgbox(format("David! Can you track them?\p That comms signal, the new objective... anything!"),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
     applymovement(28, moves(emote_exclamation_mark))
-    setspeaker("David")
+    setspeaker("DAVID")
     msgbox(format("I... I can't track them.\pBut the objective... the 'Guardian'... the energy it's giving off is immense!\pIt's overwhelming everything else!\pIt's moving fast, heading west!"),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
     applymovement(5, moves(walk_fast_right*3 face_down))
     waitmovement
     applymovement(26, moves(face_up))
-    setspeaker("Daan")
+    setspeaker("DAAN")
     msgbox(format("Nash! We have to go!\pWe can't let them get away with a piece of this forest's soul!\pLets get back to the truck!"))
     waitmessage
     setflag(FLAG_DAAN_NASH_TRUCK)
@@ -340,7 +340,6 @@ script Deepcloudforest_Barry_Defeated {
 
 script Deepcloudforest_Trainer_Grunt1 {
     trainerbattle_single(TRAINER_GRUNT_FACULTY_CLOUDFOREST_1, Deepcloudforest_Text_Grunt1Intro, Deepcloudforest_Text_Grunt1Defeated)
-    setspeaker("Maurice")
     msgbox(Deepcloudforest_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE)
 	end
 }
@@ -359,7 +358,6 @@ text Deepcloudforest_Text_Grunt1PostBattle {
 
 script Deepcloudforest_Trainer_Grunt2 {
     trainerbattle_single(TRAINER_GRUNT_FACULTY_CLOUDFOREST_2, Deepcloudforest_Text_Grunt2Intro, Deepcloudforest_Text_Grunt2Defeated)
-	setspeaker("Ad Dice")
     msgbox(Deepcloudforest_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE)
 	end
 }
@@ -378,7 +376,6 @@ text Deepcloudforest_Text_Grunt2PostBattle {
 
 script Deepcloudforest_Trainer_Grunt3 {
     trainerbattle_single(TRAINER_GRUNT_FACULTY_CLOUDFOREST_3, Deepcloudforest_Text_Grunt3Intro, Deepcloudforest_Text_Grunt3Defeated)
-	setspeaker("Yossi")
     msgbox(Deepcloudforest_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE)
 	end
 }
@@ -397,7 +394,6 @@ text Deepcloudforest_Text_Grunt3PostBattle {
 
 script Deepcloudforest_Trainer_Grunt4 {
     trainerbattle_single(TRAINER_GRUNT_FACULTY_CLOUDFOREST_4, Deepcloudforest_Text_Grunt4Intro, Deepcloudforest_Text_Grunt4Defeated)
-	setspeaker("Harrie")
     msgbox(Deepcloudforest_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE)
 	end
 }
@@ -416,7 +412,7 @@ text Deepcloudforest_Text_Grunt4PostBattle {
 
 script Deepcloudforest_Gorge_Goback {
     lock
-    msgbox(format("This is not a time to flee {PLAYER}, Daan is counting on us."))
+    msgbox(format("This is not a time to flee {PLAYER}, DAAN is counting on us."))
     waitmessage
     applymovement(LOCALID_PLAYER, moves(walk_left))
     waitmovement

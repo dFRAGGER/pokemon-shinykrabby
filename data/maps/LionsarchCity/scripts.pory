@@ -425,7 +425,7 @@ script LionsarchCity_RectorSendoff {
     addobject(36)
     delay(30)
 
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(format("You fought hard in there.\pYou are lucky my strongest pokemon are on another mission...\pBut it looks like I stalled you long enough for the ships to depart."), MSGBOX_AUTOCLOSE)
     waitmessage
 
@@ -437,7 +437,7 @@ script LionsarchCity_RectorSendoff {
     waitmovement
     playse(SE_PIN)
     applymovement(16, moves(walk_fast_up walk_fast_right face_down emote_exclamation_mark))
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(format("YOU THERE, WE HAVE ENOUGH MATERIALS, LETS MOVE!"), MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(16, moves(walk_fast_right*4 walk_fast_down*3))
@@ -445,7 +445,7 @@ script LionsarchCity_RectorSendoff {
     removeobject(16)
     applymovement(38, moves(walk_fast_right*2 walk_fast_up*2))
     waitmovement
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(format("AND YOU TWO, LETS KEEP THOSE MUSCLES MOVING!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(17, moves(walk_fast_down*2 walk_fast_right walk_fast_down*4))
@@ -456,7 +456,7 @@ script LionsarchCity_RectorSendoff {
     applymovement(38, moves(walk_fast_right walk_fast_down*2 walk_fast_right*2))
     applymovement(39, moves(walk_up walk_left))
     waitmovement(39)
-    setspeaker("The Conrector")
+    setspeaker("THE CONRECTOR")
     msgbox(format("Good job Barr...Wouter. After you."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(38, moves(walk_down))
@@ -466,7 +466,7 @@ script LionsarchCity_RectorSendoff {
     waitmovement
     removeobject(39)
     delay(30)
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(format("Would you look at that young man, he has a bright future.\pHe is Pushing Boundaries, Developing his Talent and an Inspiration!!\pEverything The Faculty needs."), MSGBOX_AUTOCLOSE)
     waitmessage
 
@@ -494,12 +494,12 @@ script LionsarchCity_RectorSendoff {
 
     applymovement(36, moves(face_right))
     applymovement(LOCALID_PLAYER, moves(face_left))
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(format("The Faculty is not a building or a plan.\pIt is an understanding, an idea.\pAnd ideas cannot be destroyed."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(120)
     applymovement(36, moves(face_down))
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(format("To make a long story short:\nOrder will always prevail.\pIn the end...\pthat is what counts the most.\pSkarmory! Lets go!"), MSGBOX_AUTOCLOSE)
     waitmessage 
 

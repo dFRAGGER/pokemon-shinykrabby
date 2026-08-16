@@ -2854,3 +2854,26 @@
 	getbraillestringwidth \text
 	call EventScript_BrailleCursorWaitButton
 	.endm
+
+	@ Show a map preview for the current map with the WEATHER type.
+	.macro mappreview
+	fadescreen FADE_TO_BLACK
+	callnative Script_MapPreview
+	waitstate
+	.endm
+
+	@ Show the current map's name popup.
+	.macro mappopup
+	callnative Script_MapPopUp
+	.endm
+
+	@ Show a preview image directly (a PreviewImageId, e.g. IMG_VIRIDIAN_FOREST),
+	@ independent of the current map's own region_map_section. Unlike mappreview,
+	@ this never interacts with the auto-preview-on-entry, warp fade color, Flash
+	@ cave-exit, or weather shadow-blend systems - it's purely script-triggered.
+	.macro visionpreview image:req
+	fadescreen FADE_TO_BLACK
+	setvar VAR_0x8004, \image
+	callnative Script_VisionPreview
+	waitstate
+	.endm

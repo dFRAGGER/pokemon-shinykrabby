@@ -551,7 +551,7 @@ Maasje_Joris_UpToTheWhiteLight::
 # 311 "data/maps/Maasje/scripts.pory"
 	waitmessage
 # 312 "data/maps/Maasje/scripts.pory"
-	applymovement 2, Maasje_Joris_UpToTheWhiteLight_Movement_0
+	applymovement 5, Maasje_Joris_UpToTheWhiteLight_Movement_0
 # 313 "data/maps/Maasje/scripts.pory"
 	delay 40
 # 314 "data/maps/Maasje/scripts.pory"
@@ -569,19 +569,19 @@ Maasje_Joris_UpToTheWhiteLight::
 	goto_if_eq Maasje_Joris_UpToTheWhiteLight_4
 Maasje_Joris_UpToTheWhiteLight_3:
 # 323 "data/maps/Maasje/scripts.pory"
-	applymovement 2, Maasje_Joris_UpToTheWhiteLight_Movement_3
+	applymovement 5, Maasje_Joris_UpToTheWhiteLight_Movement_3
 Maasje_Joris_UpToTheWhiteLight_1:
 # 325 "data/maps/Maasje/scripts.pory"
 	waitmovement
 # 326 "data/maps/Maasje/scripts.pory"
-	removeobject 2
+	removeobject 5
 # 327 "data/maps/Maasje/scripts.pory"
 	release
 	return
 
 Maasje_Joris_UpToTheWhiteLight_2:
 # 320 "data/maps/Maasje/scripts.pory"
-	applymovement 2, Maasje_Joris_UpToTheWhiteLight_Movement_2
+	applymovement 5, Maasje_Joris_UpToTheWhiteLight_Movement_2
 	goto Maasje_Joris_UpToTheWhiteLight_1
 
 Maasje_Joris_UpToTheWhiteLight_4:
@@ -726,7 +726,7 @@ Maasje_Joris_UpToTheWhiteLight_Movement_3:
 
 Maasje_Sign_Welcome_Text_0:
 # 14 "data/maps/Maasje/scripts.pory"
-	.string "MESTREECH TOWN\n"
+	.string "MASO TOWN\n"
 	.string "Home to people, and crustaceans.$"
 
 Maasje_Sign_Jakub_Home_Text_0:
@@ -735,7 +735,7 @@ Maasje_Sign_Jakub_Home_Text_0:
 
 Maasje_Sign_Gym_Text_0:
 # 28 "data/maps/Maasje/scripts.pory"
-	.string "Mestreech Gym:\n"
+	.string "MASO Gym:\n"
 	.string "Where sand rules the world.$"
 
 Maasje_Sign_Hill_Text_0:
@@ -749,7 +749,7 @@ Maasje_Sign_Beekeeper_Text_0:
 
 Maasje_Sign_CrabHill_Text_0:
 # 49 "data/maps/Maasje/scripts.pory"
-	.string "Crab Hill:\n"
+	.string "CRAB HILL:\n"
 	.string "WARNING! EASY TO GET LOST! TAKE CARE!$"
 
 Maasje_Tree_Boy_Cut_Text_0:

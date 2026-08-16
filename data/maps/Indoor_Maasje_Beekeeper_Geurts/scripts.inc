@@ -113,7 +113,7 @@ Maasje_Indoor_Beekeeper_Geurts_Assignment_19:
 
 Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_0:
 # 7 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"
-	.string "Steven Smells$"
+	.string "MR. SMELLS$"
 
 Maasje_Indoor_Beekeeper_Geurts_Assignment_Text_1:
 # 8 "data/maps/Indoor_Maasje_Beekeeper_Geurts/scripts.pory"

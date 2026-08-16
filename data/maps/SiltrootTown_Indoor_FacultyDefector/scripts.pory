@@ -5,20 +5,20 @@ script SiltrootTown_Indoor_Scott {
     faceplayer
     playse(SE_PIN)
     applymovement(1, moves( emote_exclamation_mark))
-    setspeaker("Scott")
+    setspeaker("SCOTT")
     msgbox(format("What are you doing in my home?!\pWho are you?!\pDid the government send you?\pAre you a drone in a human suit?!"),MSGBOX_AUTOCLOSE)
     waitmessage
     if(flag(FLAG_SILTROOTTOWN_STASH_SACK)) {
         checkitem(ITEM_POKEBLOCK_CASE)
         if (var(VAR_RESULT) == FALSE) {
-            setspeaker("Scott")
+            setspeaker("SCOTT")
             msgbox(format("...\pHmm... so Ali sent you?\pYou seem to have the inventory but nothing to prove it.\pAli would never send someone to me without the right credentials.\pYOU ARE A SPY AREN'T YOU?"),MSGBOX_AUTOCLOSE)
             waitmessage
             release
             end
         }
         getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
-        setspeaker("Scott")
+        setspeaker("SCOTT")
         msgbox(format("Wait...\pIs that Ali's Stash Case?\pThat beat-up old thing with the dent on the side?\pOnly one person in the world has that.\p...\p... so Ali sent you?\pAnd you have the inventory?\pHmm.\pOne sec..."),MSGBOX_AUTOCLOSE)
         waitmessage
         waitmessage
@@ -44,7 +44,7 @@ script SiltrootTown_Indoor_Scott {
             waitmovement
             delay(60)
         }
-        setspeaker("Scott")
+        setspeaker("SCOTT")
         msgbox(format("Okay, your heat signature is normal.\pYou aren't wearing a wire.\pI suppose I can trust you."),MSGBOX_AUTOCLOSE)
         waitmessage
         delay(40)
@@ -55,7 +55,7 @@ script SiltrootTown_Indoor_Scott {
             delay(60)
             applymovement(1, moves(face_up))
             waitmovement
-            setspeaker("Scott")
+            setspeaker("SCOTT")
             msgbox(format("Nobody saw you coming in right?\pWe cannot leave together through the front door.\pToo many eyes on the street.\pSatellite flyover is in three minutes."),MSGBOX_AUTOCLOSE)
             waitmessage
             applymovement(1, moves(face_down))
@@ -72,7 +72,7 @@ script SiltrootTown_Indoor_Scott {
             delay(60)
             applymovement(1, moves(face_up))
             waitmovement
-            setspeaker("Scott")
+            setspeaker("SCOTT")
             msgbox(format("Nobody saw you coming in right?\pWe cannot leave together through the front door.\pToo many eyes on the street.\pSatellite flyover is in three minutes."),MSGBOX_AUTOCLOSE)
             waitmessage
             applymovement(1, moves(face_down))
@@ -82,7 +82,7 @@ script SiltrootTown_Indoor_Scott {
             waitmovement
             applymovement(LOCALID_PLAYER, moves(face_up)) 
         }
-        setspeaker("Scott")
+        setspeaker("SCOTT")
         msgbox(format("My boat is hidden in the mangroves, right behind the house, camouflaged under the roots.\pMeet me out back.\pI will prep the engine.\pWe are dropping you at the Industrial Harbor in Lion's Arch.\pIt's a rough ride, so don't eat anything heavy before we leave.\pLets move..."),MSGBOX_AUTOCLOSE)
         waitmessage
         if(var(VAR_TEMP_0)==3){

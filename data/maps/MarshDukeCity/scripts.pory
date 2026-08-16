@@ -1,1 +1,9 @@
 mapscripts MarshDukeCity_MapScripts {}
+
+script Marshduke_Library_Sign{
+    lock
+    msgbox(format("- Marshduke Library -\nWE WRITE TO REMEMBER FOR OURSELVES."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}

@@ -22,126 +22,152 @@ Route013_2_OnTransition::
 	return
 
 
+Route013_2_EventScript_BikeParkExitTrigger::
+# 22 "data/maps/Route013_2/scripts.pory"
+	lockall
+# 23 "data/maps/Route013_2/scripts.pory"
+	setvar VAR_TEMP_4, 0
+# 24 "data/maps/Route013_2/scripts.pory"
+	clearflag FLAG_SYS_CYCLING_ROAD
+# 25 "data/maps/Route013_2/scripts.pory"
+	releaseall
+	end
+
+
+Route013_2_EventScript_BikeParkMountTrigger::
+# 35 "data/maps/Route013_2/scripts.pory"
+	lockall
+# 36 "data/maps/Route013_2/scripts.pory"
+	setvar VAR_TEMP_4, 0
+# 37 "data/maps/Route013_2/scripts.pory"
+	special ForcePlayerOntoBike
+# 38 "data/maps/Route013_2/scripts.pory"
+	setflag FLAG_SYS_CYCLING_ROAD
+# 39 "data/maps/Route013_2/scripts.pory"
+	releaseall
+	end
+
+
 Route013_2_Platform1::
-# 17 "data/maps/Route013_2/scripts.pory"
+# 45 "data/maps/Route013_2/scripts.pory"
 	setvar VAR_TEMP_0, 13
-# 18 "data/maps/Route013_2/scripts.pory"
+# 46 "data/maps/Route013_2/scripts.pory"
 	setvar VAR_TEMP_1, 43
-# 19 "data/maps/Route013_2/scripts.pory"
+# 47 "data/maps/Route013_2/scripts.pory"
 	setstepcallback STEP_CB_MUD_SWAMP
 	end
 
 
 Route013_2_Platform2::
-# 25 "data/maps/Route013_2/scripts.pory"
+# 53 "data/maps/Route013_2/scripts.pory"
 	setvar VAR_TEMP_0, 19
-# 26 "data/maps/Route013_2/scripts.pory"
+# 54 "data/maps/Route013_2/scripts.pory"
 	setvar VAR_TEMP_1, 60
-# 27 "data/maps/Route013_2/scripts.pory"
+# 55 "data/maps/Route013_2/scripts.pory"
 	setstepcallback STEP_CB_MUD_SWAMP
 	end
 
 
 Route013_2_Platform3::
-# 33 "data/maps/Route013_2/scripts.pory"
+# 61 "data/maps/Route013_2/scripts.pory"
 	setvar VAR_TEMP_0, 17
-# 34 "data/maps/Route013_2/scripts.pory"
+# 62 "data/maps/Route013_2/scripts.pory"
 	setvar VAR_TEMP_1, 84
-# 35 "data/maps/Route013_2/scripts.pory"
+# 63 "data/maps/Route013_2/scripts.pory"
 	setstepcallback STEP_CB_MUD_SWAMP
 	end
 
 
 Route013_2_Platform4::
-# 41 "data/maps/Route013_2/scripts.pory"
+# 69 "data/maps/Route013_2/scripts.pory"
 	setvar VAR_TEMP_0, 22
-# 42 "data/maps/Route013_2/scripts.pory"
+# 70 "data/maps/Route013_2/scripts.pory"
 	setvar VAR_TEMP_1, 100
-# 43 "data/maps/Route013_2/scripts.pory"
+# 71 "data/maps/Route013_2/scripts.pory"
 	setstepcallback STEP_CB_MUD_SWAMP
 	end
 
 
 Route013_2_StuckInMud::
-# 51 "data/maps/Route013_2/scripts.pory"
+# 79 "data/maps/Route013_2/scripts.pory"
 	lockall
-# 52 "data/maps/Route013_2/scripts.pory"
+# 80 "data/maps/Route013_2/scripts.pory"
 	setvar VAR_TEMP_2, 0
-# 53 "data/maps/Route013_2/scripts.pory"
+# 81 "data/maps/Route013_2/scripts.pory"
 	msgbox Route013_2_Text_StuckInMud, MSGBOX_DEFAULT
-# 54 "data/maps/Route013_2/scripts.pory"
+# 82 "data/maps/Route013_2/scripts.pory"
 	compare VAR_TEMP_0, 13
 	goto_if_eq Route013_2_StuckInMud_2
 Route013_2_StuckInMud_1:
-# 57 "data/maps/Route013_2/scripts.pory"
+# 85 "data/maps/Route013_2/scripts.pory"
 	compare VAR_TEMP_0, 19
 	goto_if_eq Route013_2_StuckInMud_5
 Route013_2_StuckInMud_4:
-# 60 "data/maps/Route013_2/scripts.pory"
+# 88 "data/maps/Route013_2/scripts.pory"
 	compare VAR_TEMP_0, 17
 	goto_if_eq Route013_2_StuckInMud_8
 Route013_2_StuckInMud_7:
-# 63 "data/maps/Route013_2/scripts.pory"
+# 91 "data/maps/Route013_2/scripts.pory"
 	goto Route013_2_WarpBack_Platform4
 	return
 
 Route013_2_StuckInMud_2:
-# 55 "data/maps/Route013_2/scripts.pory"
+# 83 "data/maps/Route013_2/scripts.pory"
 	goto Route013_2_WarpBack_Platform1
 	goto Route013_2_StuckInMud_1
 
 Route013_2_StuckInMud_5:
-# 58 "data/maps/Route013_2/scripts.pory"
+# 86 "data/maps/Route013_2/scripts.pory"
 	goto Route013_2_WarpBack_Platform2
 	goto Route013_2_StuckInMud_4
 
 Route013_2_StuckInMud_8:
-# 61 "data/maps/Route013_2/scripts.pory"
+# 89 "data/maps/Route013_2/scripts.pory"
 	goto Route013_2_WarpBack_Platform3
 	goto Route013_2_StuckInMud_7
 
 
 Route013_2_WarpBack_Platform1::
-# 67 "data/maps/Route013_2/scripts.pory"
+# 95 "data/maps/Route013_2/scripts.pory"
 	warp MAP_ROUTE013_2, 13, 43
-# 68 "data/maps/Route013_2/scripts.pory"
+# 96 "data/maps/Route013_2/scripts.pory"
 	waitstate
-# 69 "data/maps/Route013_2/scripts.pory"
+# 97 "data/maps/Route013_2/scripts.pory"
 	releaseall
 	end
 
 
 Route013_2_WarpBack_Platform2::
-# 74 "data/maps/Route013_2/scripts.pory"
+# 102 "data/maps/Route013_2/scripts.pory"
 	warp MAP_ROUTE013_2, 19, 60
-# 75 "data/maps/Route013_2/scripts.pory"
+# 103 "data/maps/Route013_2/scripts.pory"
 	waitstate
-# 76 "data/maps/Route013_2/scripts.pory"
+# 104 "data/maps/Route013_2/scripts.pory"
 	releaseall
 	end
 
 
 Route013_2_WarpBack_Platform3::
-# 81 "data/maps/Route013_2/scripts.pory"
+# 109 "data/maps/Route013_2/scripts.pory"
 	warp MAP_ROUTE013_2, 17, 84
-# 82 "data/maps/Route013_2/scripts.pory"
+# 110 "data/maps/Route013_2/scripts.pory"
 	waitstate
-# 83 "data/maps/Route013_2/scripts.pory"
+# 111 "data/maps/Route013_2/scripts.pory"
 	releaseall
 	end
 
 
 Route013_2_WarpBack_Platform4::
-# 88 "data/maps/Route013_2/scripts.pory"
+# 116 "data/maps/Route013_2/scripts.pory"
 	warp MAP_ROUTE013_2, 22, 100
-# 89 "data/maps/Route013_2/scripts.pory"
+# 117 "data/maps/Route013_2/scripts.pory"
 	waitstate
-# 90 "data/maps/Route013_2/scripts.pory"
+# 118 "data/maps/Route013_2/scripts.pory"
 	releaseall
 	end
 
 
 Route013_2_Text_StuckInMud::
-# 94 "data/maps/Route013_2/scripts.pory"
+# 122 "data/maps/Route013_2/scripts.pory"
 	.string "You got stuck in the mud\n"
 	.string "and had to turn back!$"

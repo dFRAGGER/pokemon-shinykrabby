@@ -8,7 +8,7 @@ mapscripts Mistcity_Indoor_FacultySympathizer_MapScripts {
 script Mistcity_Indoor_FacultySympathizer_Escape {
     lock
     setvar(VAR_MISTCITY_STATE, 2)
-    setspeaker("Marcus")
+    setspeaker("MARCUS")
     msgbox(format("... I'M TELLING YOU NOTHING, YOU STUPID TREE HUGGER!!\pNOW GET OUT OF MY WAY!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER, moves(walk_right face_left))
@@ -23,7 +23,7 @@ script Mistcity_Indoor_FacultySympathizer_Escape {
     applymovement(5,moves(walk_down*2 face_right))
     waitmovement
     applymovement(3, moves(face_left))
-    setspeaker("Eleanor")
+    setspeaker("ELEANOR")
     msgbox(format("Mph.\pI suppose you think you are some kind of hero?\pEnjoy your precious, muddy trees.\p Progress will find a way, with or without your approval."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(5,moves(walk_down*2))
@@ -35,15 +35,15 @@ script Mistcity_Indoor_FacultySympathizer_Escape {
     delay(120)
     applymovement(LOCALID_PLAYER, moves(face_up))
     waitmovement
-    setspeaker("Daan")
-    msgbox(format("I think they're gone.\pRan like Rattata the second I started asking real questions about the excavation.\pThey knew exactly what The Faculty was doing to the forest.\p...\pWhat? There were problems in Meestreech as well?\p...\pThat device looks very similar to the ones the faculty were using in the forest.\pBut this... this feels too big for just them.\pI can't shake this feeling about Prof. Birds.\pYou remember what I said in the truck?\pAbout him scanning the forest years ago?\pIt's too much of a coincidence.\nI'm going to call Jacob.\pHe's got a way of making people talk... after a few drinks... if you know what I mean.\pWe're going to pay the Professor a visit at his lab.\pWe need to know what he was really looking for back then.\pIf he knows anything about Registeel, we're going to get it out of him.\pWhile we sort out Prof. Birds, I want you to start heading west, through batcave.\pForget the internship for a moment, this is bigger now."))
+    setspeaker("DAAN")
+    msgbox(format("I think they're gone.\pRan like Rattata the second I started asking real questions about the excavation.\pThey knew exactly what The Faculty was doing to the forest.\p...\pWhat? There were problems in MASO TOWN as well?\p...\pThat device looks very similar to the ones the faculty were using in the forest.\pBut this... this feels too big for just them.\pI can't shake this feeling about PROF. BIRDS.\pYou remember what I said in the truck?\pAbout him scanning the forest years ago?\pIt's too much of a coincidence.\nI'm going to call JACOB.\pHe's got a way of making people talk... after a few drinks... if you know what I mean.\pWe're going to pay the Professor a visit at his lab.\pWe need to know what he was really looking for back then.\pIf he knows anything about Registeel, we're going to get it out of him.\pWhile we sort out Prof. Birds, I want you to start heading west, through batcave.\pForget the internship for a moment, this is bigger now."))
     waitmessage
-    setspeaker("Daan")
+    setspeaker("DAAN")
     msgbox(format("Here. Take this.\pI've already added my number.\pI'll call you on the Pokénav once we've dealt with the Professor.\pThere's more I need to tell you but I'd rather not say it all out loud in here."),MSGBOX_AUTOCLOSE)
     waitmessage
     if(flag(FLAG_SYS_POKENAV_GET)==FALSE){
         playfanfare(MUS_OBTAIN_ITEM)
-        message(format("Daan handed you the Pokénav!\nHis number has been registered!"))
+        message(format("DAAN handed you the Pokénav!\nHis number has been registered!"))
         waitfanfare
         closemessage
         setflag(FLAG_SYS_POKENAV_GET)
@@ -51,7 +51,7 @@ script Mistcity_Indoor_FacultySympathizer_Escape {
     }
     else{
         playfanfare(MUS_OBTAIN_ITEM)
-        message(format("Daan's number has been\nregistered in your Pokénav!"))
+        message(format("DAAN's number has been\nregistered in your Pokénav!"))
         waitfanfare
         closemessage
     }
@@ -60,12 +60,12 @@ script Mistcity_Indoor_FacultySympathizer_Escape {
     setflag(FLAG_ADDED_MATCH_CALL_TO_POKENAV)
     setvar(VAR_FORTREE_CITY_STATE, 1)
     if(flag(FLAG_BADGE02_GET)==TRUE){
-        setspeaker("Daan")
-        msgbox(format("Oh, you already beat David?\nImpressive.\pYou're ready for the swamps, then.\pGood luck, {PLAYER}."),MSGBOX_AUTOCLOSE)
+        setspeaker("DAAN")
+        msgbox(format("Oh, you already beat DAVID?\nImpressive.\pYou're ready for the swamps, then.\pGood luck, {PLAYER}."),MSGBOX_AUTOCLOSE)
         waitmessage
     }
     else{
-        setspeaker("Daan")
+        setspeaker("DAAN")
         msgbox(format("Oh, and don't skip the gym while you're in town.\pGood luck, {PLAYER}."),MSGBOX_AUTOCLOSE)
         waitmessage
     }
@@ -79,14 +79,14 @@ script Mistcity_Indoor_Faculty_Husband {
     lock
     faceplayer
     if(!flag(FLAG_HELPED_DAN_BEAT_FACULTY)) {
-        setspeaker("Marcus")
-        msgbox(format("Welcome to the future site of progress.\p My name is {COLOR BLUE}Marcus{COLOR DARK_GRAY}.\p The Faculty transferred me here to oversee regional development.\p This town and forest is a chaotic mess of untapped resources.\p We're here to implement structure, to turn this town into a model of efficiency."))
+        setspeaker("MARCUS")
+        msgbox(format("Welcome to the future site of progress.\p My name is {COLOR BLUE}MARCUS{COLOR DARK_GRAY}.\p The Faculty transferred me here to oversee regional development.\p This town and forest is a chaotic mess of untapped resources.\p We're here to implement structure, to turn this town into a model of efficiency."))
         waitmessage
         release
         end 
     }
     if(flag(FLAG_HELPED_DAN_BEAT_FACULTY)) {
-        setspeaker("Marcus")
+        setspeaker("MARCUS")
         msgbox(format("You.\pSo you're the hooligan who interfered with our work.\p You've accomplished nothing but delaying the inevitable.\p This region needs order, not sentimental rabble-rousers."))
         waitmessage
         release
@@ -98,14 +98,14 @@ script Mistcity_Indoor_Faculty_Wife {
     lock
     faceplayer
     if(!flag(FLAG_HELPED_DAN_BEAT_FACULTY)) {
-        setspeaker("Eleanor")
-        msgbox(format("Oh, hello.\pA new face?\p I'm {COLOR BLUE}Eleanor{COLOR DARK_GRAY}.\p Mist City has a certain... rustic charm, I suppose.\p But it's so dreadfully unproductive.\p Don't you worry, The Faculty will bring modern amenities and a real sense of purpose to this place.\p That Daan fellow chaining himself to a tree? Utterly backwards.\pYou can't stop the future."))
+        setspeaker("ELEANOR")
+        msgbox(format("Oh, hello.\pA new face?\p I'm {COLOR BLUE}ELEANOR{COLOR DARK_GRAY}.\p Mist City has a certain... rustic charm, I suppose.\p But it's so dreadfully unproductive.\p Don't you worry, The Faculty will bring modern amenities and a real sense of purpose to this place.\p That Daan fellow chaining himself to a tree? Utterly backwards.\pYou can't stop the future."))
         waitmessage
         release
         end 
     }
     if(flag(FLAG_HELPED_DAN_BEAT_FACULTY)) {
-        setspeaker("Eleanor")
+        setspeaker("ELEANOR")
         msgbox(format("Mph.\pI suppose you think you're some kind of hero.\pEnjoy your precious, muddy trees.\p Progress will find a way, with or without your approval."))
         waitmessage
         release

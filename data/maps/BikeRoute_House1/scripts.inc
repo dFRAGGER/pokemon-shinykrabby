@@ -43,9 +43,9 @@ BikeRoute_House1_EventScript_Phildy_2:
 # 18 "data/maps/BikeRoute_House1/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 19 "data/maps/BikeRoute_House1/scripts.pory"
-	setspeaker BikeRoute_House1_EventScript_Phildy_Text_0
+	setspeaker BikeRoute_House1_EventScript_Phildy_Text_5
 # 20 "data/maps/BikeRoute_House1/scripts.pory"
-	msgbox BikeRoute_House1_EventScript_Phildy_Text_5, MSGBOX_AUTOCLOSE
+	msgbox BikeRoute_House1_EventScript_Phildy_Text_6, MSGBOX_AUTOCLOSE
 # 21 "data/maps/BikeRoute_House1/scripts.pory"
 	waitmessage
 	goto BikeRoute_House1_EventScript_Phildy_1
@@ -53,12 +53,13 @@ BikeRoute_House1_EventScript_Phildy_2:
 
 BikeRoute_House1_EventScript_Phildy_Text_0:
 # 6 "data/maps/BikeRoute_House1/scripts.pory"
-	.string "Phildy$"
+	.string "PHILDY$"
 
 BikeRoute_House1_EventScript_Phildy_Text_1:
 # 7 "data/maps/BikeRoute_House1/scripts.pory"
-	.string "Oh, hello! The name's Phildy. I live here.\p"
-	.string "You've met Kasmi next door, I take it?\p"
+	.string "Oh, hello! The name's PHILDY. I live here.\p"
+	.string "You've met MR. KASMI next door, I take\n"
+	.string "it?\p"
 	.string "I met him the week before he left on\n"
 	.string "that big trip - five minutes in and he\l"
 	.string "was already describing mountain routes.\p"
@@ -96,5 +97,9 @@ BikeRoute_House1_EventScript_Phildy_Text_4:
 	.string "Shall I fix up your Pokémon?$"
 
 BikeRoute_House1_EventScript_Phildy_Text_5:
+# 19 "data/maps/BikeRoute_House1/scripts.pory"
+	.string "Phildy$"
+
+BikeRoute_House1_EventScript_Phildy_Text_6:
 # 20 "data/maps/BikeRoute_House1/scripts.pory"
 	.string "There you go. Rest up and ride safe.$"

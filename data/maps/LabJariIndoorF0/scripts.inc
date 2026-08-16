@@ -950,7 +950,7 @@ LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_2:
 
 LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_3:
 # 363 "data/maps/LabJariIndoorF0/scripts.pory"
-	.string "Prof. Birds$"
+	.string "PROF. BIRDS$"
 
 LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_4:
 # 364 "data/maps/LabJariIndoorF0/scripts.pory"

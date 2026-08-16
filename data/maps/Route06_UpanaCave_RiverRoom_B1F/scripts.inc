@@ -32,78 +32,72 @@ UpanaCaveRiverRoom_Npc_Ranger::
 # 59 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	faceplayer
 # 60 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
-	setspeaker UpanaCaveRiverRoom_Npc_Ranger_Text_0
+	msgbox UpanaCaveRiverRoom_Npc_Ranger_Text_0
 # 61 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
-	msgbox UpanaCaveRiverRoom_Npc_Ranger_Text_1
+	waitmessage
 # 62 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
-	waitmessage
+	msgbox UpanaCaveRiverRoom_Npc_Ranger_Text_1
 # 63 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
-	msgbox UpanaCaveRiverRoom_Npc_Ranger_Text_2
+	waitmessage
 # 64 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
-	waitmessage
+	msgbox UpanaCaveRiverRoom_Npc_Ranger_Text_2
 # 65 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
-	msgbox UpanaCaveRiverRoom_Npc_Ranger_Text_3
+	waitmessage
 # 66 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
-	waitmessage
+	msgbox UpanaCaveRiverRoom_Npc_Ranger_Text_3, MSGBOX_AUTOCLOSE
 # 67 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
-	msgbox UpanaCaveRiverRoom_Npc_Ranger_Text_4, MSGBOX_AUTOCLOSE
-# 68 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	waitmessage
-# 69 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 68 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	release
 	end
 
 
 UpanaCaveRiverRoom_Trainer_Elena::
-# 74 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 73 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	trainerbattle_single TRAINER_LASS_ELENA, UpanaCaveRiverRoom_Text_ElenaIntro, UpanaCaveRiverRoom_Text_ElenaDefeated
-# 75 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 74 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	msgbox UpanaCaveRiverRoom_Text_ElenaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 UpanaCaveRiverRoom_Inscription_1::
-# 92 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 91 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	lock
-# 93 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 92 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	msgbox UpanaCaveRiverRoom_Inscription_1_Text_0
-# 94 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 93 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	waitmessage
-# 95 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 94 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	release
 	return
 
 
 UpanaCaveRiverRoom_Inscription_2::
-# 99 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 98 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	lock
-# 100 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 99 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	msgbox UpanaCaveRiverRoom_Inscription_2_Text_0
-# 101 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 100 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	waitmessage
-# 102 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 101 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	release
 	return
 
 
 UpanaCaveRiverRoom_Inscription_3::
-# 106 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 105 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	lock
-# 107 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 106 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	msgbox UpanaCaveRiverRoom_Inscription_3_Text_0
-# 108 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 107 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	waitmessage
-# 109 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 108 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	release
 	return
 
 
 UpanaCaveRiverRoom_Npc_Ranger_Text_0:
 # 60 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
-	.string "Ranger Sela$"
-
-UpanaCaveRiverRoom_Npc_Ranger_Text_1:
-# 61 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	.string "Three months stationed down here\n"
 	.string "studying this river and its Wooper\l"
 	.string "colony.\p"
@@ -111,8 +105,8 @@ UpanaCaveRiverRoom_Npc_Ranger_Text_1:
 	.string "and dark. Completely cut off from the\l"
 	.string "surface world.$"
 
-UpanaCaveRiverRoom_Npc_Ranger_Text_2:
-# 63 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+UpanaCaveRiverRoom_Npc_Ranger_Text_1:
+# 62 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	.string "Our water samples tell an interesting\n"
 	.string "story.\p"
 	.string "The flow rate and mineral composition\n"
@@ -122,8 +116,8 @@ UpanaCaveRiverRoom_Npc_Ranger_Text_2:
 	.string "the way to the Lion Mountains.\p"
 	.string "Entirely underground.$"
 
-UpanaCaveRiverRoom_Npc_Ranger_Text_3:
-# 65 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+UpanaCaveRiverRoom_Npc_Ranger_Text_2:
+# 64 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	.string "The ancient people who once lived in\n"
 	.string "these caves called this river the Vein\l"
 	.string "of the Earth.\p"
@@ -135,14 +129,14 @@ UpanaCaveRiverRoom_Npc_Ranger_Text_3:
 	.string "mountains to the sea. Always present.\l"
 	.string "Never sleeping.$"
 
-UpanaCaveRiverRoom_Npc_Ranger_Text_4:
-# 67 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+UpanaCaveRiverRoom_Npc_Ranger_Text_3:
+# 66 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	.string "...I try not to think about that too\n"
 	.string "hard when I'm taking samples down here\l"
 	.string "alone at in the dark.$"
 
 UpanaCaveRiverRoom_Inscription_1_Text_0:
-# 93 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 92 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	.string "A relief is carved into the cave wall.\p"
 	.string "It depicts a tall, upright figure\n"
 	.string "standing in the middle of a flowing\l"
@@ -154,7 +148,7 @@ UpanaCaveRiverRoom_Inscription_1_Text_0:
 	.string "around it.$"
 
 UpanaCaveRiverRoom_Inscription_2_Text_0:
-# 100 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 99 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	.string "A carving, worn smooth with age.\p"
 	.string "It shows a tall figure, standing on dry\n"
 	.string "land.\p"
@@ -165,7 +159,7 @@ UpanaCaveRiverRoom_Inscription_2_Text_0:
 	.string "if it cannot stray too far.$"
 
 UpanaCaveRiverRoom_Inscription_3_Text_0:
-# 107 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 106 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	.string "The deep carving in the stone.\p"
 	.string "It seems to show the river.\p"
 	.string "Cut into the water itself is a single\n"
@@ -230,18 +224,18 @@ UpanaCaveRiverRoom_Text_CorinPostBattle::
 	.string "One day I will.$"
 
 UpanaCaveRiverRoom_Text_ElenaIntro::
-# 79 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 78 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	.string "This Quagsire waddled up to me like we\n"
 	.string "were already friends! We're ready to\l"
 	.string "battle together!$"
 
 UpanaCaveRiverRoom_Text_ElenaDefeated::
-# 83 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 82 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	.string "Quagsire doesn't even look upset. Maybe\n"
 	.string "I should be more like Quagsire.$"
 
 UpanaCaveRiverRoom_Text_ElenaPostBattle::
-# 87 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
+# 86 "data/maps/Route06_UpanaCave_RiverRoom_B1F/scripts.pory"
 	.string "The Wooper here eventually evolve into\n"
 	.string "Quagsire once they know the whole\l"
 	.string "river.\p"

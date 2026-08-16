@@ -26,7 +26,7 @@ script PeterHouse_EntranceScene {
 
     // Scene: Girls enter basement area
     delay(30)
-    setspeaker("Bouncer Bruno")
+    setspeaker("BOUNCER BRUNO")
     msgbox(format("Come inside ladies.\p If there is a man bothering you, please give a shout out to the bouncers."),MSGBOX_AUTOCLOSE)
     waitmessage
 
@@ -57,7 +57,7 @@ script PeterHouse_EntranceScene {
     applymovement(7, moves(face_down))
     waitmovement
 
-    setspeaker("Bouncer Mario")
+    setspeaker("BOUNCER MARIO")
     msgbox(format("Hey, you there!\pCome over here for a second."))
     waitmessage
 
@@ -65,7 +65,7 @@ script PeterHouse_EntranceScene {
     applymovement(LOCALID_PLAYER, moves(walk_up walk_left face_up))
     waitmovement
 
-    setspeaker("Bouncer Mario")
+    setspeaker("BOUNCER MARIO")
     msgbox(format("Alright, what's your name?\pAnd more importantly... who do you know here?\pThis ain't a public venue, kid."))
     waitmessage
 
@@ -73,20 +73,20 @@ script PeterHouse_EntranceScene {
     applymovement(7, moves(emote_exclamation_mark))
     waitmovement
 
-    setspeaker("Bouncer Mario")
-    msgbox(format("...\pA package from Ali?\pFor Peter?\pFrom down south?\pOh damn, you're THAT delivery!"))
+    setspeaker("BOUNCER MARIO")
+    msgbox(format("...\pA package from ALI?\pFor PETER?\pFrom down south?\pOh damn, you're THAT delivery!"))
     waitmessage
 
-    setspeaker("Bouncer Mario")
-    msgbox(format("Peter's been waiting for this package for weeks!\pSays it's essential for the 'party atmosphere'.\pWhatever that means..."))
+    setspeaker("BOUNCER MARIO")
+    msgbox(format("PETER's been waiting for this package for weeks!\pSays it's essential for the 'party atmosphere'.\pWhatever that means..."))
     waitmessage
 
     // Guard signals to the bouncer
     applymovement(7, moves(face_left))
     waitmovement
 
-    setspeaker("Bouncer Mario")
-    msgbox(format("Hey Bruno! Let this one through!\pVIP delivery from Ali!"))
+    setspeaker("BOUNCER MARIO")
+    msgbox(format("Hey Bruno! Let this one through!\pVIP delivery from ALI!"))
     waitmessage
 
     // Bouncer acknowledges
@@ -94,8 +94,8 @@ script PeterHouse_EntranceScene {
     waitmovement
     delay(20)
 
-    setspeaker("Bouncer Bruno")
-    msgbox(format("Ali's contact, huh?\pAlright, you're good.\pHead on down. Peter's in the basement spinning records."))
+    setspeaker("BOUNCER BRUNO")
+    msgbox(format("ALI's contact, huh?\pAlright, you're good.\pHead on down. PETER's in the basement spinning records."))
     waitmessage
 
     // Bouncer and Machokes step aside
@@ -105,8 +105,8 @@ script PeterHouse_EntranceScene {
     applymovement(7, moves(face_down))
     waitmovement
 
-    setspeaker("Bouncer Mario")
-    msgbox(format("Go on.\pAnd hey... enjoy the groove down there.\pPeter throws one hell of a party."))
+    setspeaker("BOUNCER MARIO")
+    msgbox(format("Go on.\pAnd hey... enjoy the groove down there.\pPETER throws one hell of a party."))
     waitmessage
 
     setflag(FLAG_PETER_HOUSE_INTRO_DONE)
@@ -123,35 +123,35 @@ script PeterHouse_Bouncer {
     getobjectxy(1,CURRENT_POSITION, VAR_TEMP_2, VAR_TEMP_3)    
     if (flag(FLAG_PETER_HOUSE_INTRO_DONE)) {
         if(var(VAR_TEMP_0) == 2 && var(VAR_TEMP_1) == 2 && var(VAR_TEMP_2) == 2 && var(VAR_TEMP_3) == 3){
-            setspeaker("Bouncer Bruno")
+            setspeaker("BOUNCER BRUNO")
             msgbox(format("You're leaving already?\pThe party's just getting started!"))
             waitmessage
             applymovement(1, moves(walk_left face_right))
             waitmovement
             }
         elif(var(VAR_TEMP_0) == 3 && var(VAR_TEMP_1) == 3 && var(VAR_TEMP_2) == 2 && var(VAR_TEMP_3) == 3){
-            setspeaker("Bouncer Bruno")
+            setspeaker("BOUNCER BRUNO")
             msgbox(format("You're cleared.\pHead on down whenever you're ready.\pJust don't cause any trouble."))
             waitmessage
             applymovement(1, moves(walk_left face_right))
             waitmovement
             }
         elif(var(VAR_TEMP_0) == 2 && var(VAR_TEMP_1) == 4 && var(VAR_TEMP_2) == 2 && var(VAR_TEMP_3) == 3){
-            setspeaker("Bouncer Bruno")
+            setspeaker("BOUNCER BRUNO")
             msgbox(format("You're cleared.\pHead on down whenever you're ready.\pJust don't cause any trouble."))
             waitmessage
             applymovement(1, moves(walk_left face_right))
             waitmovement
             }
         elif(var(VAR_TEMP_0) == 1 && var(VAR_TEMP_1) == 3 && var(VAR_TEMP_2) == 2 && var(VAR_TEMP_3) == 3){
-            setspeaker("Bouncer Bruno")
+            setspeaker("BOUNCER BRUNO")
             msgbox(format("You're cleared.\pHead on down whenever you're ready.\pJust don't cause any trouble."))
             waitmessage
             applymovement(1, moves(walk_right face_left))
             waitmovement
             }
         else {
-            setspeaker("Bouncer Bruno")
+            setspeaker("BOUNCER BRUNO")
             msgbox(format("You're cleared.\pHead on down whenever you're ready.\pJust don't cause any trouble."))
             waitmessage
         }
@@ -169,7 +169,7 @@ script PeterHouse_Bouncer {
 script PeterHouse_Machoke {
     lockall
     faceplayer
-    setspeaker("Machoke")
+    setspeaker("MACHOKE")
     msgbox(format("MACHOKE!\p(The Machoke cracks its knuckles menacingly.)"))
     waitmessage
     releaseall
@@ -179,14 +179,14 @@ script PeterHouse_Machoke {
 script PeterHouse_DoorGuard {
     lockall
     faceplayer
-    setspeaker("Bouncer Mario")
+    setspeaker("BOUNCER MARIO")
     if (flag(FLAG_PETER_HOUSE_INTRO_DONE)) {
-        msgbox(format("You're on the list now.\pGo enjoy the party.\pPeter's got the best beats in Lionsarch."))
+        msgbox(format("You're on the list now.\pGo enjoy the party.\pPETER's got the best beats in Lionsarch."))
     } elif (checkitem(ITEM_SOOT_SACK, 1)) {
-        msgbox(format("Oh, you've got something from Ali?\pWhy didn't you say so!\pGo talk to Bruno, he'll let you through."))
+        msgbox(format("Oh, you've got something from ALI?\pWhy didn't you say so!\pGo talk to BRUNO, he'll let you through."))
         waitmessage
         setflag(FLAG_PETER_HOUSE_INTRO_DONE)
-        msgbox(format("Hey Bruno! This one's cleared!"))
+        msgbox(format("Hey BRUNO! This one's cleared!"))
     } else {
         msgbox(format("Name and reference, please.\pYou don't know anyone?\pThen I can't let you in. House rules."))
     }
@@ -208,11 +208,11 @@ script PeterHouse_NPC_Peter {
     lockall
     faceplayer
     if(!flag(FLAG_DELIVERED_ALIS_PACKAGE_TO_PETER)) {
-        setspeaker("Peter")
-        msgbox(format("Hey there! You looking for something?\pIf you're here about the party... well, you gotta know the password first.\pOr bring me something special from my friend Ali down south."))
+        setspeaker("PETER")
+        msgbox(format("Hey there! You looking for something?\pIf you're here about the party... well, you gotta know the password first.\pOr bring me something special from my friend ALI down south."))
         waitmessage
     } else {
-        setspeaker("Peter")
+        setspeaker("PETER")
         msgbox(format("The groove is strong tonight!\pFeel free to head downstairs anytime.\pThe basement is where the magic happens."))
         waitmessage
     }
@@ -222,7 +222,7 @@ script PeterHouse_NPC_Peter {
 script PeterHouse_Woman_Neighbor {
     lockall
     faceplayer
-    msgbox(format("Peter is such a nice young man.\pA bit loud with his music sometimes, but he's always polite.\pI hear thumping bass at odd hours... must be doing aerobics or something."))
+    msgbox(format("PETER is such a nice young man.\pA bit loud with his music sometimes, but he's always polite.\pI hear thumping bass at odd hours... must be doing aerobics or something."))
     releaseall
 }
 

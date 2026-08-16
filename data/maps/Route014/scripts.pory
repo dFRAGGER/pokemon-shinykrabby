@@ -1,1 +1,141 @@
 mapscripts Route014_MapScripts {}
+
+script Route014_Broken_Bridge_Ari {
+    lock
+    faceplayer
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    setspeaker("ARI")
+    msgbox(format("There you are. Now that your legs have some STRENGTH, I can actually race you.\pBut first a test. Look at that gap."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    if (var(VAR_TEMP_0) == 89 && var(VAR_TEMP_1) == 19) {
+        applymovement(LOCALID_PLAYER, moves(walk_up walk_left face_right))
+        applymovement(17, moves(face_right))
+        waitmovement
+        delay(90)
+        applymovement(LOCALID_PLAYER, moves(face_down))
+        applymovement(17, moves(face_up))
+        waitmovement
+    }
+    if (var(VAR_TEMP_0) == 87 && var(VAR_TEMP_1) == 19) {
+        applymovement(17, moves(face_right))
+        applymovement(LOCALID_PLAYER, moves(walk_down walk_right))
+        waitmovement
+        delay(90)
+        applymovement(LOCALID_PLAYER, moves(face_up))
+        applymovement(17, moves(face_down))
+        waitmovement
+    }
+    if(var(VAR_TEMP_0) == 88 && var(VAR_TEMP_1) == 18) {
+        applymovement(17, moves(face_right))
+        applymovement(LOCALID_PLAYER, moves(face_right))
+        waitmovement
+        delay(90)
+        applymovement(LOCALID_PLAYER, moves(face_down))
+        applymovement(17, moves(face_up))
+        waitmovement
+    }
+    if(var(VAR_TEMP_0) == 88 && var(VAR_TEMP_1) == 20) {
+        applymovement(17, moves(face_right))
+        applymovement(LOCALID_PLAYER, moves(face_right))
+        waitmovement
+        delay(90)
+        applymovement(LOCALID_PLAYER, moves(face_up))
+        applymovement(17, moves(face_down))
+        waitmovement
+    }
+    setspeaker("ARI")
+    msgbox(format("Nobody gets across that standing still. You have to RUN at it.\pHere's the whole secret, and people pay me for this: don't speed up at the edge.\pSpeed up EARLY. Then just... keep going.\pRight. On three. Try to keep up."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(17, moves(face_right))
+    waitmovement
+    delay(60)
+    applymovement(LOCALID_PLAYER, moves(face_right))
+    applymovement(17, moves(walk_fast_right*3 jump_2_right walk_fast_right face_left))
+    waitmovement
+    delay(60)
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    setspeaker("ARI")
+    msgbox(format("Well, what are you waiting for? Get across that gap!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    hidefollower
+    setflag(FLAG_TEMP_HIDE_FOLLOWER)
+    applymovement(17, moves(walk_up face_down))
+    waitmovement
+    if (var(VAR_TEMP_0) == 88 && var(VAR_TEMP_1) == 18) {
+        applymovement(LOCALID_PLAYER, moves(walk_down face_right))
+        waitmovement
+        delay(60)
+        applymovement(LOCALID_PLAYER, moves(walk_fast_right*3 jump_2_right walk_fast_right))
+        waitmovement
+    }
+    if (var(VAR_TEMP_0) == 88 && var(VAR_TEMP_1) == 20) {
+        applymovement(LOCALID_PLAYER, moves(walk_up face_right))
+        waitmovement
+        delay(60)
+        applymovement(LOCALID_PLAYER, moves(walk_fast_right*3 jump_2_right walk_fast_right))
+        waitmovement
+    }
+    delay(60)
+    applymovement(LOCALID_PLAYER, moves(face_up))
+    waitmovement
+    setspeaker("ARI")
+    msgbox(format("Well well, you made it. I guess you can call yourself a runner now.\pI don't know if you can beat me, but at least you can keep up.\pI'm making my daily trip towards the Breeze Tower, got some trainer dates setup.\pI'm basicly their biggest investor at the moment.\pWithout me the Breeze Tower would have gone bankrupt a long time ago.\pI guess I can do a sprint battle along the way though, meet me at the large bridge up ahead."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(face_right))
+    applymovement(17, moves(walk_right walk_down face_right))
+    waitmovement
+    delay(60)
+    msgbox(format("Ready, set ... GO!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    setflag(FLAG_ARI_HIDE_JUMP_CHALLENGE)
+    playse((SE_PIN))
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark))
+    applymovement(17, moves(walk_faster_right*4 walk_faster_down*8 walk_fast_right*6))
+    waitmovement
+    removeobject(17)
+    clearflag(FLAG_TEMP_HIDE_FOLLOWER)
+    release
+    end
+}
+
+script Route014_Broken_Bridge_Trigger_East {
+    setvar(VAR_TEMP_3, 1)
+    lockall
+    msgbox(format("Try to jump?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        setvar(VAR_TEMP_3, 0)
+        releaseall
+        end
+    }
+    hidefollower
+    applymovement(LOCALID_PLAYER, moves(walk_left*2 face_right))
+    waitmovement
+    delay(30)
+    applymovement(LOCALID_PLAYER, moves(walk_fast_right*2 jump_2_right))
+    waitmovement
+    setvar(VAR_TEMP_3, 0)
+    releaseall
+    end
+}
+
+script Route014_Broken_Bridge_Trigger_West {
+    setvar(VAR_TEMP_4, 1)
+    lockall
+    msgbox(format("Try to jump?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        setvar(VAR_TEMP_4, 0)
+        releaseall
+        end
+    }
+    hidefollower
+    applymovement(LOCALID_PLAYER, moves(walk_right*2 face_left))
+    waitmovement
+    delay(30)
+    applymovement(LOCALID_PLAYER, moves(walk_fast_left*2 jump_2_left))
+    waitmovement
+    setvar(VAR_TEMP_4, 0)
+    releaseall
+    end
+}
+
+

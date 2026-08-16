@@ -80,29 +80,6 @@ script Marshduke_Indoor_Chatedral_OnLoad {
     }
 }
 
-script Marshduke_Indoor_Chatedral_EventScript_Alakazam {
-    lock
-    faceplayer
-    msgbox(format("MEGA ALAKAZAM's spoons glow with a faint psychic light...\pAncient memories stir at the edge of your mind, visions of LATIOS and LATIAS long past.\pWill you open your mind to them?"), MSGBOX_YESNO)
-    waitmessage
-    if(var(VAR_RESULT) == YES) {
-        goto(Marshduke_Indoor_Chatedral_EventScript_Latias)
-    }
-    release
-}
-
-// Warps into the vision map and ends here; the vision map's own
-// MAP_SCRIPT_ON_FRAME_TABLE picks up VAR_MARSHDUKE_CATHEDRAL_VISION_STATE
-// once its objects are actually loaded, since a script can't reliably
-// keep manipulating objects across a warp it just triggered itself.
-script Marshduke_Indoor_Chatedral_EventScript_Latias {
-    setvar(VAR_MARSHDUKE_CATHEDRAL_VISION_STATE, 1)
-    fadescreen(FADE_TO_BLACK)
-    warpsilent(MAP_MARSHDUKE_INDOOR_VISION_LATIOS_LATIAS, 11, 7)
-    waitstate
-    release
-}
-
 script Marshduke_Indoor_Chatedral_EventScript_VisionReturn {
     setvar(VAR_MARSHDUKE_CATHEDRAL_VISION_STATE, 0)
     lock
@@ -158,13 +135,96 @@ script Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour {
     msgbox(format("Well, go on then. They're not going anywhere.\pNeither is he."), MSGBOX_AUTOCLOSE)
     waitmessage
     release
+    
 }
 
 script Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias{
     lock
     faceplayer
-    msgbox(format("THE LESSON OF THE TWO HEARTS:\nLove is the only thing that grows larger when shared."), MSGBOX_AUTOCLOSE)
+    msgbox(format("MEGA ALAKAZAM's spoons glow with a faint psychic light...\pAncient memories stir at the edge of your mind, visions of LATIOS and LATIAS long past.\pWill you open your mind to them?"), MSGBOX_YESNO)
     waitmessage
+    if(var(VAR_RESULT) == YES) {
+        visionpreview(9) // placeholder: IMG_SILPH_CO - swap for real Latios/Latias art
+        applymovement(24, moves(walk_right))
+        applymovement(LOCALID_PLAYER, moves(face_left))
+        waitmovement
+        msgbox(format("Welcome back to the present.\pGive yourself time to readjust to the world around you."), MSGBOX_AUTOCLOSE)
+        waitmessage
+        applymovement(24, moves(walk_left face_down))
+        waitmovement
+    }
+    release
+}
+
+script Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky {
+    lock
+    faceplayer
+    msgbox(format("MEGA ALAKAZAM's spoons glow with a faint psychic light...\pAncient memories stir at the edge of your mind, visions of LUGIA, MOLTRES, ZAPDOS and ARTICUNO long past.\pWill you open your mind to them?"), MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == YES) {
+        visionpreview(1) // placeholder: IMG_MT_MOON - swap for real Lugia/Articuno/Zapdos/Moltres art
+        applymovement(36, moves(walk_left))
+        applymovement(LOCALID_PLAYER, moves(face_right))
+        waitmovement
+        msgbox(format("Welcome back to the present.\pGive yourself time to readjust to the world around you."), MSGBOX_AUTOCLOSE)
+        waitmessage
+        applymovement(36, moves(walk_right face_down))
+        waitmovement
+    }
+    release
+}
+
+script Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza {
+    lock
+    faceplayer
+    msgbox(format("MEGA ALAKAZAM's spoons glow with a faint psychic light...\pAncient memories stir at the edge of your mind, visions of GROUDON, KYOGRE and RAYQUAZA long past.\pWill you open your mind to them?"), MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == YES) {
+        visionpreview(3) // placeholder: IMG_ROCK_TUNNEL - swap for real Groundon/Kyogre/Rayquaza art
+        applymovement(18, moves(walk_left))
+        applymovement(LOCALID_PLAYER, moves(face_right))
+        waitmovement
+        msgbox(format("Welcome back to the present.\pGive yourself time to readjust to the world around you."), MSGBOX_AUTOCLOSE)
+        waitmessage
+        applymovement(18, moves(walk_right face_down))
+        waitmovement
+    }
+    release
+}
+
+script Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo {
+    lock
+    faceplayer
+    msgbox(format("MEGA ALAKAZAM's spoons glow with a faint psychic light...\pAncient memories stir at the edge of your mind, visions of MEW and MEWTWO long past.\pWill you open your mind to them?"), MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == YES) {
+        visionpreview(0) // placeholder: IMG_VIRIDIAN_FOREST - swap for real Mew/Mewtwo art
+        applymovement(23, moves(walk_left))
+        applymovement(LOCALID_PLAYER, moves(face_right))
+        waitmovement
+        msgbox(format("Welcome back to the present.\pGive yourself time to readjust to the world around you."), MSGBOX_AUTOCLOSE)
+        waitmessage
+        applymovement(23, moves(walk_right face_down))
+        waitmovement
+    }
+    release
+}
+
+script Marshduke_Indoor_Chatedral_EventScript_Sign_Rekindled {
+    lock
+    faceplayer
+    msgbox(format("MEGA ALAKAZAM's spoons glow with a faint psychic light...\pAncient memories stir at the edge of your mind, visions of HO-OH, ENTEI, RAIKOU and SUICUNE long past.\pWill you open your mind to them?"), MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == YES) {
+        visionpreview(4) // placeholder: IMG_POKEMON_TOWER - swap for real Ho-Oh/Entei/Raikou/Suicune art
+        applymovement(20, moves(walk_right))
+        applymovement(LOCALID_PLAYER, moves(face_left))
+        waitmovement
+        msgbox(format("Welcome back to the present.\pGive yourself time to readjust to the world around you."), MSGBOX_AUTOCLOSE)
+        waitmessage
+        applymovement(20, moves(walk_left face_down))
+        waitmovement
+    }
     release
 }
 
@@ -253,6 +313,7 @@ script Marshduke_Indoor_Chatedral_EventScript_Priest_EnteiRaikouSuicune{
 script Marshduke_Indoor_Chatedral_EventScript_NPC_MewMewtwo{
     lock
     faceplayer
+    visionpreview(0) // IMG_VIRIDIAN_FOREST - enum isn't assembler-visible, no #define exists for it yet
     msgbox(format("I've been standing here an hour, staring at a creature made in a lab beside the one it was copied from.\pMost pilgrims argue about which one's the 'real' one, but the memory never says, and I don't think it's supposed to.\pThe circumstances of one's birth are irrelevant; it's what you do with the gift of life that determines who you are."), MSGBOX_AUTOCLOSE)
     waitmessage
     release

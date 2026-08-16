@@ -12,6 +12,34 @@ script Route013_2_OnTransition {
     return
 }
 
+# Bike Park mountain crossing, x=6 band (outer, closer to Route013_2's
+# interior). Unconditionally clears the cycling-road flag. Sitting further
+# from the boundary than the mount trigger means a player who walks up and
+# turns back before actually committing to the crossing never gets mounted
+# in the first place. Firing this while the flag is already off is a no-op.
+# VAR_TEMP_4 is reset every fire so the trigger can refire on every crossing.
+script Route013_2_EventScript_BikeParkExitTrigger {
+    lockall
+    setvar(VAR_TEMP_4, 0)
+    clearflag(FLAG_SYS_CYCLING_ROAD)
+    releaseall
+    end
+}
+
+# Bike Park mountain crossing, x=2 band (inner, right next to the BikePark
+# boundary). Unconditionally force-mounts the player and sets the
+# cycling-road flag. By the time the player reaches this tile they're
+# effectively committing to entering BikePark. Firing this while already
+# mounted/flagged is a no-op.
+script Route013_2_EventScript_BikeParkMountTrigger {
+    lockall
+    setvar(VAR_TEMP_4, 0)
+    special(ForcePlayerOntoBike)
+    setflag(FLAG_SYS_CYCLING_ROAD)
+    releaseall
+    end
+}
+
 # Platform 1 (trigger x=13, y=44) — first platform, activates the mud mechanic
 script Route013_2_Platform1 {
     setvar(VAR_TEMP_0, 13)

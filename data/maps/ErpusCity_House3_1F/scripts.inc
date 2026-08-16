@@ -21,10 +21,12 @@ ErpusCity_House3_1F_DadBirds_Conversation::
 
 ErpusCity_House3_1F_DadBirds_Conversation_Text_0:
 # 8 "data/maps/ErpusCity_House3_1F/scripts.pory"
-	.string "John Birds$"
+	.string "JOHN BIRDS$"
 
 ErpusCity_House3_1F_DadBirds_Conversation_Text_1:
 # 9 "data/maps/ErpusCity_House3_1F/scripts.pory"
+	.string "Hi, my name is John Birds. Father of the\n"
+	.string "local professor.\p"
 	.string "Back in the day, my son and I ran a pig\n"
 	.string "farm together in a town much like this\l"
 	.string "one.\p"

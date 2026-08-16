@@ -224,7 +224,7 @@ Mistcity_WoodShop_StatueFour::
 
 Mistcity_Indoor_Woodwork_Shop_Silas_Text_0:
 # 7 "data/maps/Mistcity_Indoor_Woodwork_Shop/scripts.pory"
-	.string "Silas$"
+	.string "SILAS$"
 
 Mistcity_Indoor_Woodwork_Shop_Silas_Text_1:
 # 8 "data/maps/Mistcity_Indoor_Woodwork_Shop/scripts.pory"

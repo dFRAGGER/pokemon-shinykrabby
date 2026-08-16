@@ -20,7 +20,7 @@ Maasje_PokemonCenter_2F_Red::
 
 Maasje_PokemonCenter_2F_Red_Text_0:
 # 6 "data/maps/Maasje_PokemonCenter_2F/scripts.pory"
-	.string "Game Maker$"
+	.string "GAME MAKER$"
 
 Maasje_PokemonCenter_2F_Red_Text_1:
 # 7 "data/maps/Maasje_PokemonCenter_2F/scripts.pory"

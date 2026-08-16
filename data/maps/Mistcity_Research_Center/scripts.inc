@@ -576,7 +576,7 @@ Mistcity_Research_Center_DadBugCatcher_Text_1:
 
 Mistcity_Research_Center_Daan_RescueMission2_Text_0:
 # 79 "data/maps/Mistcity_Research_Center/scripts.pory"
-	.string "Nash$"
+	.string "NASH$"
 
 Mistcity_Research_Center_Daan_RescueMission2_Text_1:
 # 80 "data/maps/Mistcity_Research_Center/scripts.pory"

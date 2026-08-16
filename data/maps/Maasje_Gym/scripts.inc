@@ -233,7 +233,7 @@ Maasje_Gym_PeteLongfellow_Defeated_Movement_1:
 
 Maasje_Gym_Introduction_Text_0:
 # 12 "data/maps/Maasje_Gym/scripts.pory"
-	.string "Hi, welcome to the Maasje Pokemon Gym.\p"
+	.string "Hi, welcome to the MOSA Pokemon Gym.\p"
 	.string "The gym leader and trainers use sand &\n"
 	.string "ground pokemon.\p"
 	.string "Grass pokemon seem to have an edge,\n"
@@ -255,7 +255,7 @@ Maasje_Gym_Introduction_Text_1:
 
 Maasje_Gym_Introduction_Text_2:
 # 22 "data/maps/Maasje_Gym/scripts.pory"
-	.string "Hi, welcome to the Maasje Pokemon Gym.\p"
+	.string "Hi, welcome to the MOSA Pokemon Gym.\p"
 	.string "The gym leader and trainers use sand &\n"
 	.string "ground pokemon.\p"
 	.string "Grass pokemon seem to have an edge,\n"
@@ -278,7 +278,7 @@ Maasje_Gym_Introduction_Text_3:
 
 Maasje_Gym_PeteLongfellow_Defeated_Text_0:
 # 41 "data/maps/Maasje_Gym/scripts.pory"
-	.string "Pete$"
+	.string "PETE$"
 
 Maasje_Gym_PeteLongfellow_Defeated_Text_1:
 # 42 "data/maps/Maasje_Gym/scripts.pory"
@@ -319,7 +319,7 @@ Maasje_Gym_PeteLongfellow_Defeated_Text_4:
 
 Maasje_Gym_Eventscript_Bram_Text_0:
 # 92 "data/maps/Maasje_Gym/scripts.pory"
-	.string "Bram of the Millcount$"
+	.string "BRAM OF THE MILLCOUNT$"
 
 Maasje_Gym_Eventscript_Bram_Text_1:
 # 93 "data/maps/Maasje_Gym/scripts.pory"
@@ -329,7 +329,7 @@ Maasje_Gym_Eventscript_Bram_Text_1:
 
 Maasje_Gym_Eventscript_Rob_Text_0:
 # 107 "data/maps/Maasje_Gym/scripts.pory"
-	.string "Rob of Erpus$"
+	.string "ROB OF ERPUS$"
 
 Maasje_Gym_Eventscript_Rob_Text_1:
 # 108 "data/maps/Maasje_Gym/scripts.pory"

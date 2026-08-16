@@ -123,18 +123,18 @@ script SiltrootTown_Indoor_Apothecary_Ali_Giel {
     playse(SE_PIN)
     applymovement(2, moves(emote_question_mark face_down))
     waitmovement
-    setspeaker("Ali")
+    setspeaker("ALI")
     msgbox(format("Whoa... enter the event horizon, my friend.\pYou have pulled into my gravity well.\pYou look like you are carrying a lot of mass on your shoulders.\pWe have the finest herbs here... grown with hydroponics that rival NASA specs."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(1,moves(walk_left walk_down))
     waitmovement
     applymovement(2, moves(face_left))
-    setspeaker("Giel")
+    setspeaker("GIEL")
     msgbox(format("cough... COUGH!\pDon't let him start on the space stuff, kid.\pHe stares at the sky all night.\pIt's just lights in the dark, Ali.\pcough...\pLike an Artic Monkey concert but further away."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(2, moves(face_down))
     delay(60)
-    setspeaker("Ali")
+    setspeaker("ALI")
     msgbox(format("Wait... the vibrations are shifting.\pDaan sent you?\pWhoa. That guy is intense.\pAlways shouting about 'Mother Nature'...\pHe thinks too small.\pI'm thinking about the bigger picture. The cosmos. The singularity.\pTalking about singularity... Slowbro, bring me a sample of that OG Kush."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
@@ -142,7 +142,7 @@ script SiltrootTown_Indoor_Apothecary_Ali_Giel {
     waitmovement
     playse(SE_PIN)
     delay(60)
-    setspeaker("Ali")
+    setspeaker("ALI")
     msgbox(format("Slowbro, abort launch.\pOur guest is grounded.\pMore for us, right?\pI need the focus anyway.\pMy Master's thesis on supermassive black holes isn't going to write itself."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
@@ -153,20 +153,20 @@ script SiltrootTown_Indoor_Apothecary_Ali_Giel {
     applymovement(5,moves(face_up))
     waitmovement
     delay(60)
-    setspeaker("Giel")
+    setspeaker("GIEL")
     msgbox(format("Thanks Slowbro. These herbs will do me good.\pcough... COUGH!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(5,moves(walk_slow_down walk_slow_left*3 walk_slow_up*5))
     waitmovement
     applymovement(2, moves(face_left))
-    setspeaker("Giel")
+    setspeaker("GIEL")
     msgbox(format("So you need a ride to Lion's Arch?\pThat cold ass harbor up north?\pWhy would anyone want to go there?\pThere's no good music scene, apart from a disco club in a random basement."))
     waitmessage
     applymovement(2, moves(face_down))
-    setspeaker("Ali")
+    setspeaker("ALI")
     msgbox(format("It is a long trip across the wild ocean.\pYou need my neighbor, Scott.\pHe... moves inventory for me.\pThis business funds my, uh... 'hardware acquisitions'.\pRocket fuel isn't cheap, you know?\pI mean... high-quality fertilizer. Yeah."))
     waitmessage
-    setspeaker("Ali")
+    setspeaker("ALI")
     msgbox(format("I believe in Karma. Celestial mechanics.\pI help you, you help me.\pI have a client in Lion's Arch.\pA DJ... cool guy.\pHe helps fund my 'Project Star-Shot'.\pI mean, he buys a lot of product.\pI have a stash stacked in an old shed deep in the southern mangroves.\pGo get the package, bring it to Scott, and tell him it is for the 'Ice Cold' run."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
@@ -176,14 +176,14 @@ script SiltrootTown_Indoor_Apothecary_Ali_Giel {
     delay(60)
     applymovement(2, moves(face_left))
     applymovement(1, moves(emote_question_mark))
-    setspeaker("Giel")
+    setspeaker("GIEL")
     msgbox(format("...\pWait... that's my phone?\pOh for the love of...\pIt's her.\pShe probably crashed her car again or needs 'emotional support'.\pI can't deal with this drama right now, but I have to take this.\p...COUGH!\pSee you around, kid. Don't let the system grind you down."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(1,moves(walk_down*3 face_right))
     applymovement(2, moves(face_down))
     applymovement(LOCALID_PLAYER, moves(walk_right face_left))
     waitmovement
-    setspeaker("Giel")
+    setspeaker("GIEL")
     msgbox(format("Oh... if you are ever visit Hezik Town, let me know.\pMaybe you can visit one of my history lectures, girls love that shit."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(1,moves(walk_down))
@@ -194,7 +194,7 @@ script SiltrootTown_Indoor_Apothecary_Ali_Giel {
     delay(120)
     applymovement(LOCALID_PLAYER,moves(face_up))
     waitmovement
-    setspeaker("Ali")
+    setspeaker("ALI")
     msgbox(format("He loves that woman, even if the thermodynamics of their relationship are unstable.\pAlright, good vibes only.\pGo to the southern mangroves, grab the stash, find Scott.\pAnd watch the sky... big things are coming."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(2, moves(face_up))
@@ -207,19 +207,19 @@ script Siltroottown_Indoor_Apothecary_Ali {
     lock
     faceplayer
     if(!flag(FLAG_SILTROOTTOWN_STASH_SACK) && !flag(FLAG_HIDE_SCOTT_AFTER_CONVO)){
-    setspeaker("Ali")
+    setspeaker("ALI")
     msgbox(format("Follow coastline south, there you'll find a passage to a small shed.\pFeel free to take any samples if you'd like.\pThe strains that are in that shed are some of the strongest I got hehe."),MSGBOX_AUTOCLOSE)
     waitmessage
     }
     elif(flag(FLAG_SILTROOTTOWN_STASH_SACK) && !flag(FLAG_HIDE_SCOTT_AFTER_CONVO)) {
         checkitem(ITEM_POKEBLOCK_CASE)
         if (var(VAR_RESULT) == TRUE) {
-            setspeaker("Ali")
+            setspeaker("ALI")
             msgbox(format("You've got my Stash Case.\pNow go find Scott - he is right next door.\pShow it to him and tell him it's for the 'Ice Cold' run."),MSGBOX_AUTOCLOSE)
             waitmessage
         }
         else {
-        setspeaker("Ali")
+        setspeaker("ALI")
         msgbox(format("Ah, the satellite returns to base.\pYou smell like swamp water... and success.\pThose Slowbros in the shed are hard workers, but their processing speed is a bit low, right?\pYou got the package? Stellar.\pMy client in Lion's Arch is going to be very happy.\pThis funds the next phase of the... uh, 'hydro-garden project'."),MSGBOX_AUTOCLOSE)
         waitmessage
         applymovement(2,moves(face_left))
@@ -235,22 +235,22 @@ script Siltroottown_Indoor_Apothecary_Ali {
         waitmovement
         delay(40)
         applymovement(2, moves(face_player))
-        setspeaker("Ali")
+        setspeaker("ALI")
         msgbox(format("Okay, listen closely.\pGo to the house at the very end of the mudflat, right next to mine.\pThat is where Scott lives.\pHe is a bit... weird.\pAnd he wears these experimental goggles all the time.\pDo not ask him about them.\pJust show him the package and tell him you need an 'Ice Cold' run.\pGood luck kiddo."),MSGBOX_AUTOCLOSE)
         waitmessage
         delay(40)
-        setspeaker("Ali")
+        setspeaker("ALI")
         msgbox(format("Oh - one more thing.\pTake this."),MSGBOX_AUTOCLOSE)
         waitmessage
         giveitem(ITEM_POKEBLOCK_CASE)
-        setspeaker("Ali")
+        setspeaker("ALI")
         msgbox(format("That is my personal Stash Case.\pThere is only one like it in the world.\pScott will recognize it.\pWe go way back, him and me.\pMany nights under the stars, that case, his goggles, and my telescope.\pJust show it to him and he will know you are from me.\pAnd hey - you can also use it to store your grind from a Grinder.\lBring it back here and my Rolling Table guy will roll it into a Joint, Blunt, or Bowl for your Pokémon.\pKeeps them sharp. Trust the process."),MSGBOX_AUTOCLOSE)
         waitmessage
         }
 
     }
     elif(flag(FLAG_SILTROOTTOWN_STASH_SACK) && flag(FLAG_HIDE_SCOTT_AFTER_CONVO)) {
-        setspeaker("Ali")
+        setspeaker("ALI")
         msgbox(format("So you've met scott?\pHe's a little bit of weirdo, I know, but he gets the job done.\pGood luck on your trip across the ocean, it's gonna be a wild one!\pLet me know when you have delivered the stash.\pSee you around."))
         waitmessage
     }

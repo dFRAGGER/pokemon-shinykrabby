@@ -2,7 +2,7 @@ mapscripts Route02_MapScripts {}
 
 script Route02_Sign_Middle {
     lock
-    msgbox(format("{LEFT_ARROW} Mist City\n {RIGHT_ARROW} Meestrech City"), MSGBOX_SIGN)
+    msgbox(format("{LEFT_ARROW} MISTY CITY\n {RIGHT_ARROW} MOSA TOWN"), MSGBOX_SIGN)
     waitmessage
     release
 }

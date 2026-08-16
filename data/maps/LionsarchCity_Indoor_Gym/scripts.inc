@@ -320,7 +320,7 @@ LionsarchGym_Guide_Text_3:
 
 LionsarchGym_Leader1_Text_0:
 # 38 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	.string "Tanya$"
+	.string "TANYA$"
 
 LionsarchGym_Leader1_Text_1:
 # 39 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
@@ -356,7 +356,7 @@ LionsarchGym_Leader1_Defeated_Text_0:
 
 LionsarchGym_Leader2_Text_0:
 # 87 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"
-	.string "Tara$"
+	.string "TARA$"
 
 LionsarchGym_Leader2_Text_1:
 # 88 "data/maps/LionsarchCity_Indoor_Gym/scripts.pory"

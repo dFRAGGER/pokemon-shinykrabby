@@ -194,12 +194,10 @@ Maasje_PokemonCenter_1F_Man::
 # 109 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
 	faceplayer
 # 110 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
-	setspeaker Maasje_PokemonCenter_1F_Man_Text_0
+	msgbox Maasje_PokemonCenter_1F_Man_Text_0
 # 111 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
-	msgbox Maasje_PokemonCenter_1F_Man_Text_1
-# 112 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
 	waitmessage
-# 113 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
+# 112 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
 	release
 	return
 
@@ -280,7 +278,7 @@ Maasje_PokemonCenter_1F_Second_Nurse_Text_0:
 
 Maasje_PokemonCenter_1F_Bryan_Trigger0_Text_0:
 # 48 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
-	.string "Bryan$"
+	.string "BRYAN$"
 
 Maasje_PokemonCenter_1F_Bryan_Trigger0_Text_1:
 # 49 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
@@ -301,10 +299,6 @@ Maasje_PokemonCenter_1F_Bryan_Following_Text_0:
 
 Maasje_PokemonCenter_1F_Man_Text_0:
 # 110 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
-	.string "Steph Boilers$"
-
-Maasje_PokemonCenter_1F_Man_Text_1:
-# 111 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
 	.string "Back in the day the gym leader, Pete\n"
 	.string "Longfellow, was my geography teacher.\p"
 	.string "He quit his old job because one of\n"

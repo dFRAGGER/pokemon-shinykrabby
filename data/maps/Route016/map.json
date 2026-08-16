@@ -51,6 +51,61 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 0,
+      "elevation": 0,
+      "var": "VAR_TEMP_6",
+      "var_value": "0",
+      "script": "Route016_EventScript_BikeParkMountTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_TEMP_6",
+      "var_value": "0",
+      "script": "Route016_EventScript_BikeParkExitTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 0,
+      "elevation": 0,
+      "var": "VAR_TEMP_6",
+      "var_value": "0",
+      "script": "Route016_EventScript_BikeParkMountTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 0,
+      "elevation": 0,
+      "var": "VAR_TEMP_6",
+      "var_value": "0",
+      "script": "Route016_EventScript_BikeParkMountTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_TEMP_6",
+      "var_value": "0",
+      "script": "Route016_EventScript_BikeParkExitTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_TEMP_6",
+      "var_value": "0",
+      "script": "Route016_EventScript_BikeParkExitTrigger"
+    }
+  ],
   "bg_events": []
 }

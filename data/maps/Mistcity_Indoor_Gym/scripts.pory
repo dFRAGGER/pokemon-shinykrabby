@@ -40,20 +40,20 @@ script Mistcity_Gym_Leader_David {
 
 script Mistcity_Gym_David_Defeated {
     lock
-    setspeaker("David")
+    setspeaker("DAVID")
     msgbox(format("You battle with the same courage you showed during the rescue mission.\pYou have earned this Badge not just for winning, but for your heart.\pI know Daan would be proud of you too."))
     call(Common_EventScript_PlayGymBadgeFanfare)
     setflag(FLAG_BADGE02_GET)
     setspeaker(NULL)
     msgbox(format("You have recieved the FOREST BADGE!"))
     waitmessage
-    setspeaker("David")
+    setspeaker("DAVID")
     msgbox(format("The FOREST BADGE makes all POKéMON up to Level 30, even those you get in trades, obey without question.\pAnd, you'll be able to use this HM move FLASH outside of battle too!"))
     waitmessage
     giveitem(ITEM_HM05)
     setflag(FLAG_RECEIVED_HM_FLASH)
     setflag(FLAG_DEFEATED_DEWFORD_GYM )
-    setspeaker("David")
+    setspeaker("DAVID")
     msgbox(format("That Hidden Machine contains the move Flash.\pIt creates a brilliant light.\pIt can light up even the darkest of areas to guide your path.\pI learned it from studying that Faculty scum.\pSometimes you have to fight fire with fire!\pGood luck on your further endeavours."))
     waitmessage
     animateflash(1)

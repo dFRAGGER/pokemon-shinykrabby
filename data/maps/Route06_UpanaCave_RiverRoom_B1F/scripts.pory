@@ -57,7 +57,6 @@ text UpanaCaveRiverRoom_Text_CorinPostBattle {
 script UpanaCaveRiverRoom_Npc_Ranger {
     lock
     faceplayer
-    setspeaker("Ranger Sela")
     msgbox(format("Three months stationed down here studying this river and its Wooper colony.\pThey've adapted perfectly to the cold and dark. Completely cut off from the surface world."))
     waitmessage
     msgbox(format("Our water samples tell an interesting story.\pThe flow rate and mineral composition suggest this river runs all the way to the ocean.\pAnd the source? We traced it north all the way to the Lion Mountains.\pEntirely underground."))

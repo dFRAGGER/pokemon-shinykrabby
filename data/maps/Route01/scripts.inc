@@ -206,7 +206,7 @@ Route01_Factulty_Grunts_Position4::
 # 116 "data/maps/Route01/scripts.pory"
 	applymovement 2, Route01_Factulty_Grunts_Position4_Movement_2
 # 117 "data/maps/Route01/scripts.pory"
-	applymovement 3, Route01_Factulty_Grunts_Position4_Movement_3
+	applymovement 3, Route01_Factulty_Grunts_Position4_Movement_2
 # 118 "data/maps/Route01/scripts.pory"
 	waitmovement
 # 119 "data/maps/Route01/scripts.pory"
@@ -467,8 +467,6 @@ Route01_Factulty_Grunts_Position4_Movement_2:
 # 116 "data/maps/Route01/scripts.pory"
 	walk_down
 # 116 "data/maps/Route01/scripts.pory"
-	walk_down
-# 116 "data/maps/Route01/scripts.pory"
 	walk_left
 # 116 "data/maps/Route01/scripts.pory"
 	walk_left
@@ -487,32 +485,6 @@ Route01_Factulty_Grunts_Position4_Movement_2:
 # 116 "data/maps/Route01/scripts.pory"
 	walk_left
 # 116 "data/maps/Route01/scripts.pory"
-	walk_left
-	step_end
-
-# 117 "data/maps/Route01/scripts.pory"
-Route01_Factulty_Grunts_Position4_Movement_3:
-# 117 "data/maps/Route01/scripts.pory"
-	walk_down
-# 117 "data/maps/Route01/scripts.pory"
-	walk_left
-# 117 "data/maps/Route01/scripts.pory"
-	walk_left
-# 117 "data/maps/Route01/scripts.pory"
-	walk_left
-# 117 "data/maps/Route01/scripts.pory"
-	walk_left
-# 117 "data/maps/Route01/scripts.pory"
-	walk_left
-# 117 "data/maps/Route01/scripts.pory"
-	walk_left
-# 117 "data/maps/Route01/scripts.pory"
-	walk_left
-# 117 "data/maps/Route01/scripts.pory"
-	walk_left
-# 117 "data/maps/Route01/scripts.pory"
-	walk_left
-# 117 "data/maps/Route01/scripts.pory"
 	walk_left
 	step_end
 
@@ -531,8 +503,8 @@ Route01_Battle_Factulty_Grunts2_Movement_0:
 Route01_Text_Route01_Text_0:
 # 7 "data/maps/Route01/scripts.pory"
 	.string "ROUTE 1\n"
-	.string "{LEFT_ARROW} MEESTRECH CITY\p"
-	.string "{RIGHT_ARROW} ERP CITY$"
+	.string "{LEFT_ARROW} MOSA TOWN\p"
+	.string "{RIGHT_ARROW} ERP TOWN$"
 
 Route01_Convo_Bugcatcher_Text_0:
 # 18 "data/maps/Route01/scripts.pory"
@@ -561,7 +533,7 @@ Route01_Convo_ExIntern_Text_0:
 
 Route01_Factulty_Grunts_Position1_Text_0:
 # 47 "data/maps/Route01/scripts.pory"
-	.string "Ad Dice$"
+	.string "AD$"
 
 Route01_Factulty_Grunts_Position1_Text_1:
 # 48 "data/maps/Route01/scripts.pory"
@@ -572,7 +544,7 @@ Route01_Factulty_Grunts_Position1_Text_1:
 	.string "has no potential.\p"
 	.string "The Faculty would discard him right\n"
 	.string "away!\p"
-	.string "Come on Ton, let's go. The boss is\n"
+	.string "Come on ADDY, let's go. The boss is\n"
 	.string "waiting for us.$"
 
 Route01_Factulty_Grunts_Position2_Text_0:
@@ -584,12 +556,12 @@ Route01_Factulty_Grunts_Position2_Text_0:
 	.string "has a weak personality.\p"
 	.string "The Faculty would discard him right\n"
 	.string "away!\p"
-	.string "Come on Ton, let's go. The boss is\n"
+	.string "Come on ADDY, let's go. The boss is\n"
 	.string "waiting for us.$"
 
 Route01_Battle_Factulty_Grunts_Text_0:
 # 128 "data/maps/Route01/scripts.pory"
-	.string "Ton Cross$"
+	.string "ADDY$"
 
 Route01_Battle_Factulty_Grunts_Text_1:
 # 129 "data/maps/Route01/scripts.pory"
@@ -598,11 +570,11 @@ Route01_Battle_Factulty_Grunts_Text_1:
 	.string "No registration?\p"
 	.string "All unregistered Pokémon have to be\n"
 	.string "confiscated by The Faculty!\p"
-	.string "Let me take on this loser, Ad.$"
+	.string "Let me take on this loser, AD.$"
 
 Route01_Battle_Factulty_Grunts_Text_2:
 # 135 "data/maps/Route01/scripts.pory"
-	.string "Ton, you are an absolute loser, let me\n"
+	.string "ADDY, you are an absolute loser, let me\n"
 	.string "handle this prick.$"
 
 Route01_Loss_Ton_Cross::

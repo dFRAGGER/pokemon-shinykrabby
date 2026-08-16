@@ -108,110 +108,112 @@ MiningCaveB1F_Barry_PostBattle::
 # 127 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	delay 30
 # 128 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	msgbox MiningCaveB1F_Barry_PostBattle_Text_1, MSGBOX_AUTOCLOSE
-# 129 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	waitmessage
-# 130 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	applymovement 2, MiningCaveB1F_Barry_PostBattle_Movement_3
-# 131 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	waitmovement
-# 132 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	removeobject 2
-# 133 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	setflag FLAG_HIDE_MINING_CAVE_B1F_SCIENTIST
-# 134 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	callnative StopCaveTremorScene
-# 135 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	applymovement 1, MiningCaveB1F_Barry_PostBattle_Movement_2
-# 136 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	delay 60
-# 137 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	applymovement 1, MiningCaveB1F_Barry_PostBattle_Movement_4
-# 138 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	waitmovement
-# 139 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	applymovement 1, MiningCaveB1F_Barry_PostBattle_Movement_5
-# 140 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	applymovement LOCALID_PLAYER, MiningCaveB1F_Barry_PostBattle_Movement_6
-# 141 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	waitmovement
-# 142 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	setspeaker MiningCaveB1F_Barry_Battle_Text_0
-# 143 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	msgbox MiningCaveB1F_Barry_PostBattle_Text_2, MSGBOX_AUTOCLOSE
-# 144 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 129 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	msgbox MiningCaveB1F_Barry_PostBattle_Text_1, MSGBOX_AUTOCLOSE
+# 130 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	waitmessage
+# 131 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	applymovement 2, MiningCaveB1F_Barry_PostBattle_Movement_3
+# 132 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	waitmovement
+# 133 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	removeobject 2
+# 134 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	setflag FLAG_HIDE_MINING_CAVE_B1F_SCIENTIST
+# 135 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	callnative StopCaveTremorScene
+# 136 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	applymovement 1, MiningCaveB1F_Barry_PostBattle_Movement_2
+# 137 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	delay 60
+# 138 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	applymovement 1, MiningCaveB1F_Barry_PostBattle_Movement_4
+# 139 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	waitmovement
+# 140 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	applymovement 1, MiningCaveB1F_Barry_PostBattle_Movement_5
+# 141 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	applymovement LOCALID_PLAYER, MiningCaveB1F_Barry_PostBattle_Movement_6
+# 142 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	waitmovement
+# 143 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	setspeaker MiningCaveB1F_Barry_Battle_Text_0
+# 144 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	msgbox MiningCaveB1F_Barry_PostBattle_Text_2, MSGBOX_AUTOCLOSE
 # 145 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	playse SE_BALL_THROW
+	waitmessage
 # 146 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	applymovement LOCALID_PLAYER, MiningCaveB1F_Barry_PostBattle_Movement_7
+	playse SE_BALL_THROW
 # 147 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	delay 15
+	applymovement LOCALID_PLAYER, MiningCaveB1F_Barry_PostBattle_Movement_7
 # 148 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	delay 15
 # 149 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	setvar VAR_MINING_CAVE_STATE, 1
+	fadescreen FADE_TO_BLACK
 # 150 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	delay 120
+	setvar VAR_MINING_CAVE_STATE, 1
 # 151 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	warpsilent MAP_EAST_LION_MOUNTAIN_FACULTY_MINING_CAVE, 9, 10
+	delay 120
 # 152 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	warpsilent MAP_EAST_LION_MOUNTAIN_FACULTY_MINING_CAVE, 9, 10
+# 153 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	release
 	end
 
 
 MiningCaveB1F_Worker1_Convo::
-# 162 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	lock
 # 163 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	faceplayer
+	lock
 # 164 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	msgbox MiningCaveB1F_Worker1_Convo_Text_0, MSGBOX_AUTOCLOSE
+	faceplayer
 # 165 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	msgbox MiningCaveB1F_Worker1_Convo_Text_0, MSGBOX_AUTOCLOSE
+# 166 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	release
 	end
 
 
 MiningCaveB1F_Worker2_Convo::
-# 170 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	lock
 # 171 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	faceplayer
+	lock
 # 172 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	msgbox MiningCaveB1F_Worker2_Convo_Text_0, MSGBOX_AUTOCLOSE
+	faceplayer
 # 173 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	msgbox MiningCaveB1F_Worker2_Convo_Text_0, MSGBOX_AUTOCLOSE
+# 174 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	release
 	end
 
 
 MiningCaveB1F_Worker3_Convo::
-# 178 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	lock
 # 179 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	faceplayer
+	lock
 # 180 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	msgbox MiningCaveB1F_Worker3_Convo_Text_0, MSGBOX_AUTOCLOSE
+	faceplayer
 # 181 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	msgbox MiningCaveB1F_Worker3_Convo_Text_0, MSGBOX_AUTOCLOSE
+# 182 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	release
 	end
 
 
 MiningCaveB1F_Sign_DeepMine::
-# 186 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	lock
 # 187 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	msgbox MiningCaveB1F_Sign_DeepMine_Text_0, MSGBOX_AUTOCLOSE
+	lock
 # 188 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	msgbox MiningCaveB1F_Sign_DeepMine_Text_0, MSGBOX_AUTOCLOSE
+# 189 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	release
 	return
 
 
 MiningCave_Sign_Danger::
-# 192 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	lock
 # 193 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	msgbox MiningCave_Sign_Danger_Text_0, MSGBOX_AUTOCLOSE
+	lock
 # 194 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+	msgbox MiningCave_Sign_Danger_Text_0, MSGBOX_AUTOCLOSE
+# 195 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	release
 	return
 
@@ -254,65 +256,65 @@ MiningCaveB1F_Barry_PostBattle_Movement_2:
 	face_down
 	step_end
 
-# 130 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 131 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 MiningCaveB1F_Barry_PostBattle_Movement_3:
-# 130 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 131 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	walk_fast_left
-# 130 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 131 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	walk_fast_up
-# 130 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 131 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	walk_fast_up
-# 130 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 131 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	walk_fast_up
-# 130 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 131 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	walk_fast_up
-# 130 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 131 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 137 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 138 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 MiningCaveB1F_Barry_PostBattle_Movement_4:
-# 137 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 138 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 139 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 140 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 MiningCaveB1F_Barry_PostBattle_Movement_5:
-# 139 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 140 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	walk_fast_down
-# 139 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 140 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 140 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 141 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 MiningCaveB1F_Barry_PostBattle_Movement_6:
-# 140 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 141 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	face_up
-# 140 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 141 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	lock_facing_direction
-# 140 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 141 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	walk_fast_down
-# 140 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 141 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	walk_fast_down
-# 140 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 141 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 146 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 147 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 MiningCaveB1F_Barry_PostBattle_Movement_7:
-# 146 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 147 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	face_up
-# 146 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 147 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	lock_facing_direction
-# 146 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 147 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	jump_2_down
-# 146 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 147 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	unlock_facing_direction
 	step_end
 
 MiningCaveB1F_Barry_Battle_Text_0:
 # 101 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
-	.string "Barry$"
+	.string "BARRY$"
 
 MiningCaveB1F_Barry_Battle_Text_1:
 # 102 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
@@ -330,19 +332,19 @@ MiningCaveB1F_Barry_PostBattle_Text_0:
 	.string "We might have digged to deep...$"
 
 MiningCaveB1F_Barry_PostBattle_Text_1:
-# 128 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 129 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	.string "We gotta go!\p"
 	.string "Gather the others and move the\n"
 	.string "materials to the factory!$"
 
 MiningCaveB1F_Barry_PostBattle_Text_2:
-# 143 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 144 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	.string "You honestely think I would let you\n"
 	.string "leave and try to ruin our plans again?\p"
 	.string "Take this, stupid intern!$"
 
 MiningCaveB1F_Worker1_Convo_Text_0:
-# 164 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 165 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	.string "These rock formations are\n"
 	.string "extraordinary...\p"
 	.string "The crystalline density here is off the\n"
@@ -351,7 +353,7 @@ MiningCaveB1F_Worker1_Convo_Text_0:
 	.string "career.$"
 
 MiningCaveB1F_Worker2_Convo_Text_0:
-# 172 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 173 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	.string "Something incredible passed through\n"
 	.string "this place long ago.\p"
 	.string "The deeper we excavate, the stronger\n"
@@ -360,7 +362,7 @@ MiningCaveB1F_Worker2_Convo_Text_0:
 	.string "just go wild.$"
 
 MiningCaveB1F_Worker3_Convo_Text_0:
-# 180 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 181 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	.string "There are markings on the walls in this\n"
 	.string "deepest section.\p"
 	.string "Not writing exactly... more like\n"
@@ -369,13 +371,13 @@ MiningCaveB1F_Worker3_Convo_Text_0:
 	.string "against the rock itself.$"
 
 MiningCaveB1F_Sign_DeepMine_Text_0:
-# 187 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 188 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	.string "RESTRICTED - LEVEL B1\n"
 	.string "Administrator Access Only\n"
 	.string "- The sign bears a fresh Faculty emblem.$"
 
 MiningCave_Sign_Danger_Text_0:
-# 193 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
+# 194 "data/maps/EastLionMountain_Faculty_Mining_Cave_B1F/scripts.pory"
 	.string "CAUTION: Active Excavation\n"
 	.string "Hard hats mandatory past this point\n"
 	.string "Report tremors immediately$"

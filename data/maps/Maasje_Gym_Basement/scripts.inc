@@ -39,7 +39,7 @@ Maasje_Gym_Basement_Eventscript_Mart::
 
 Maasje_Gym_Basement_Eventscript_Addy_Text_0:
 # 14 "data/maps/Maasje_Gym_Basement/scripts.pory"
-	.string "Addy the Janitor$"
+	.string "ADDY$"
 
 Maasje_Gym_Basement_Eventscript_Addy_Text_1:
 # 15 "data/maps/Maasje_Gym_Basement/scripts.pory"
@@ -48,7 +48,7 @@ Maasje_Gym_Basement_Eventscript_Addy_Text_1:
 
 Maasje_Gym_Basement_Eventscript_Mart_Text_0:
 # 29 "data/maps/Maasje_Gym_Basement/scripts.pory"
-	.string "Mart of the Breakel$"
+	.string "MART OF THE BREAKEL$"
 
 Maasje_Gym_Basement_Eventscript_Mart_Text_1:
 # 30 "data/maps/Maasje_Gym_Basement/scripts.pory"

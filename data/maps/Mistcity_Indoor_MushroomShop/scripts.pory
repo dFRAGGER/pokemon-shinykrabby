@@ -6,7 +6,7 @@ script Mistcity_Indoor_MushroomShop_MushroomGirl {
     faceplayer
     if(!flag(FLAG_MUSHROOM_MISSION_STARTED)&&!flag(FLAG_MUSHROOM_MISSION_COMPLETED)){
     setflag(FLAG_MUSHROOM_MISSION_STARTED)
-    setspeaker("Leaf")
+    setspeaker("LEAF")
     msgbox(format("HEY! WELCOME!\pWatch your step, a new batch of mushrooms just arrived from the forest!\pI'm {COLOR GREEN}Leaf{COLOR DARK_GRAY}! I'm a mycologist!\pThat means I LOVE MUSHROOMS!\nAnd this forest is a PARADISE!\pSay, you're a trainer, right?!\pYou could help me with my research!\pI'm making a Fungus Index!\pCould you show me some Pokémon that have fungi on them?\pI'm looking for a Paras, a Parasect, a Shroomish, and a Breloom!\pPleeeease?"),MSGBOX_AUTOCLOSE)
     waitmessage
     release
@@ -14,7 +14,7 @@ script Mistcity_Indoor_MushroomShop_MushroomGirl {
     }
     if(flag(FLAG_MUSHROOM_MISSION_STARTED)&&!flag(FLAG_MUSHROOM_MISSION_COMPLETED)){
     if(!flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARAS)||!flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT)||!flag(FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH)||!flag(FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM)) {
-    setspeaker("Leaf")
+    setspeaker("LEAF")
     msgbox(format("Well!!\pHave you found any new mushroom Pokemon?"))
     waitmessage
     call(Mistcity_CheckParasInParty)
@@ -22,23 +22,23 @@ script Mistcity_Indoor_MushroomShop_MushroomGirl {
     call(Mistcity_CheckShroomishInParty)
     call(Mistcity_CheckBreloomInParty)
     if(flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARAS)&&flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT)&&flag(FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH)&&flag(FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM)) {
-        setspeaker("Leaf")
+        setspeaker("LEAF")
         msgbox(format("YOU DID IT! YOU DID IT!\pMy Fungus Index is complete!\pI'm the happiest mycologist in the world!\pHere, I grew this for you! It's extra potent!"))
         waitmessage
         setflag(FLAG_MUSHROOM_MISSION_COMPLETED)
         playfanfare(MUS_OBTAIN_ITEM)
         giveitem(ITEM_BALM_MUSHROOM)
-        setspeaker("Leaf")
+        setspeaker("LEAF")
         msgbox(format("Wait! Wait!\pI have more!"))
         waitmessage
         playfanfare(MUS_OBTAIN_ITEM)
         giveitem(ITEM_BIG_MUSHROOM)
-        setspeaker("Leaf")
+        setspeaker("LEAF")
         msgbox(format("No.. No! I'm not done!"))
         waitmessage
         playfanfare(MUS_OBTAIN_ITEM)
         giveitem(ITEM_TINY_MUSHROOM)
-        setspeaker("Leaf")
+        setspeaker("LEAF")
         msgbox(format("There you go!\pPssttt....\pIf you ever need some shrooms to trip out...\pI'm here for ya..."))
         waitmessage
         release
@@ -46,30 +46,30 @@ script Mistcity_Indoor_MushroomShop_MushroomGirl {
 
     }
     else{
-        setspeaker("Leaf")
+        setspeaker("LEAF")
         msgbox(format("For my Fungus Index to be complete I'm still missing:"))
         waitmessage
         if(!flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARAS)){
-            setspeaker("Leaf")
+            setspeaker("LEAF")
             msgbox(format("A Paras."))
             waitmessage
         }
         if(!flag(FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT)){
-            setspeaker("Leaf")
+            setspeaker("LEAF")
             msgbox(format("A Parasect."))
             waitmessage
         }
         if(!flag(FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH)){
-            setspeaker("Leaf")
+            setspeaker("LEAF")
             msgbox(format("A Shroomish."))
             waitmessage
         }
         if(!flag(FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM)){
-            setspeaker("Leaf")
+            setspeaker("LEAF")
             msgbox(format("A Breloom."))
             waitmessage
         }
-        setspeaker("Leaf")
+        setspeaker("LEAF")
         msgbox(format("Good luck finding those!\p I have a small reward for you if you manage to help me complete my Fungus Index."))
         waitmessage
         release
@@ -77,7 +77,7 @@ script Mistcity_Indoor_MushroomShop_MushroomGirl {
     }
     }
     if(flag(FLAG_MUSHROOM_MISSION_STARTED)&&!flag(FLAG_MUSHROOM_MISSION_COMPLETED)){
-        setspeaker("Leaf")
+        setspeaker("LEAF")
         msgbox(format("Thank you so much for helping me complete my Fungus Index!\pAre you enjoying those mushrooms I gave you?"))
         waitmessage
         release
@@ -95,7 +95,7 @@ script Mistcity_CheckParasInParty {
         specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
         if(var(VAR_RESULT) == SPECIES_PARAS){
             setflag(FLAG_MISTCITY_SHOW_MUSHROOM_PARAS)
-            setspeaker("Leaf")
+            setspeaker("LEAF")
             msgbox(format("Ooh, a Paras with tochukaso spores!\pA classic symbiotic relationship! Fascinating!"))
             return
         }
@@ -113,7 +113,7 @@ script Mistcity_CheckParasectInParty {
         specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
         if(var(VAR_RESULT) == SPECIES_PARASECT){
             setflag(FLAG_MISTCITY_SHOW_MUSHROOM_PARASECT)
-            setspeaker("Leaf")
+            setspeaker("LEAF")
             msgbox(format("YES! The fungus has taken full control of the host!\pLook at those wonderfully vacant eyes! This Parasect is perfect!"))
             return
         }
@@ -131,7 +131,7 @@ script Mistcity_CheckShroomishInParty {
         specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
         if(var(VAR_RESULT) == SPECIES_SHROOMISH){
             setflag(FLAG_MISTCITY_SHOW_MUSHROOM_SHROOMISH)
-            setspeaker("Leaf")
+            setspeaker("LEAF")
             msgbox(format("A Shroomish! I love how its spores can paralyze a foe! So efficient!\pHave you found any more interesting shroom species?"))
             return
         }
@@ -149,7 +149,7 @@ script Mistcity_CheckBreloomInParty {
         specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
         if(var(VAR_RESULT) == SPECIES_BRELOOM){
             setflag(FLAG_MISTCITY_SHOW_MUSHROOM_BRELOOM)
-            setspeaker("Leaf")
+            setspeaker("LEAF")
             msgbox(format("Breloom, the apex predator of the mushroom world!\pIts toxic spores are a masterpiece of natural engineering!"))
             return
         }

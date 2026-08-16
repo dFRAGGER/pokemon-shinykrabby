@@ -1,314 +1,369 @@
 #include "global.h"
-#include "event_data.h"
+#include "string_util.h"
+#include "malloc.h"
+#include "gpu_regs.h"
+#include "region_map.h"
+#include "main.h"
+#include "menu.h"
+#include "palette.h"
 #include "field_screen_effect.h"
 #include "field_weather.h"
-#include "gpu_regs.h"
-#include "malloc.h"
-#include "map_preview_screen.h"
-#include "menu.h"
-#include "overworld.h"
-#include "palette.h"
-#include "region_map.h"
 #include "script.h"
-#include "string_util.h"
+#include "overworld.h"
+#include "event_data.h"
+#include "map_preview_screen.h"
 #include "constants/region_map_sections.h"
-
-static EWRAM_DATA bool8 sHasVisitedMapBefore = FALSE;
-
-#if IS_FRLG
+#include "constants/rgb.h"
 
 static EWRAM_DATA bool8 sAllocedBg0TilemapBuffer = FALSE;
 
 static void Task_RunMapPreviewScreenForest(u8 taskId);
+static void Task_RunMapPreview_Script(u8 taskId);
+static void CB2_MapPreviewScript(void);
+static void VblankCB_MapPreviewScript(void);
 
 static const u8 sViridianForestMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/viridian_forest/tiles.gbapal");
-static const u8 sViridianForestMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/viridian_forest/tiles.4bpp.smol");
-static const u8 sViridianForestMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/viridian_forest/tilemap.bin.smolTM");
+static const u8 sViridianForestMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/viridian_forest/tiles.4bpp.lz");
+static const u8 sViridianForestMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/viridian_forest/tilemap.bin.lz");
 static const u8 sRockTunnelMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/rock_tunnel/tiles.gbapal");
-static const u8 sRockTunnelMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/rock_tunnel/tiles.4bpp.smol");
-static const u8 sRockTunnelMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/rock_tunnel/tilemap.bin.smolTM");
+static const u8 sRockTunnelMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/rock_tunnel/tiles.4bpp.lz");
+static const u8 sRockTunnelMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/rock_tunnel/tilemap.bin.lz");
 static const u8 sRocketHideoutMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/rocket_hideout/tiles.gbapal");
-static const u8 sRocketHideoutMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/rocket_hideout/tiles.4bpp.smol");
-static const u8 sRocketHideoutMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/rocket_hideout/tilemap.bin.smolTM");
+static const u8 sRocketHideoutMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/rocket_hideout/tiles.4bpp.lz");
+static const u8 sRocketHideoutMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/rocket_hideout/tilemap.bin.lz");
 static const u8 sPowerPlantMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/power_plant/tiles.gbapal");
-static const u8 sPowerPlantMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/power_plant/tiles.4bpp.smol");
-static const u8 sPowerPlantMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/power_plant/tilemap.bin.smolTM");
+static const u8 sPowerPlantMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/power_plant/tiles.4bpp.lz");
+static const u8 sPowerPlantMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/power_plant/tilemap.bin.lz");
 static const u8 sPokemonMansionMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/pokemon_mansion/tiles.gbapal");
-static const u8 sPokemonMansionMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/pokemon_mansion/tiles.4bpp.smol");
-static const u8 sPokemonMansionMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/pokemon_mansion/tilemap.bin.smolTM");
+static const u8 sPokemonMansionMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/pokemon_mansion/tiles.4bpp.lz");
+static const u8 sPokemonMansionMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/pokemon_mansion/tilemap.bin.lz");
 static const u8 sPokemonTowerMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/pokemon_tower/tiles.gbapal");
-static const u8 sPokemonTowerMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/pokemon_tower/tiles.4bpp.smol");
-static const u8 sPokemonTowerMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/pokemon_tower/tilemap.bin.smolTM");
+static const u8 sPokemonTowerMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/pokemon_tower/tiles.4bpp.lz");
+static const u8 sPokemonTowerMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/pokemon_tower/tilemap.bin.lz");
 static const u8 sSilphCoMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/silph_co/tiles.gbapal");
-static const u8 sSilphCoMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/silph_co/tiles.4bpp.smol");
-static const u8 sSilphCoMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/silph_co/tilemap.bin.smolTM");
+static const u8 sSilphCoMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/silph_co/tiles.4bpp.lz");
+static const u8 sSilphCoMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/silph_co/tilemap.bin.lz");
 static const u8 sMtMoonMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/mt_moon/tiles.gbapal");
-static const u8 sMtMoonMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/mt_moon/tiles.4bpp.smol");
-static const u8 sMtMoonMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/mt_moon/tilemap.bin.smolTM");
+static const u8 sMtMoonMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/mt_moon/tiles.4bpp.lz");
+static const u8 sMtMoonMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/mt_moon/tilemap.bin.lz");
 static const u8 sSeafoamIslandsMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/seafoam_islands/tiles.gbapal");
-static const u8 sSeafoamIslandsMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/seafoam_islands/tiles.4bpp.smol");
-static const u8 sSeafoamIslandsMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/seafoam_islands/tilemap.bin.smolTM");
+static const u8 sSeafoamIslandsMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/seafoam_islands/tiles.4bpp.lz");
+static const u8 sSeafoamIslandsMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/seafoam_islands/tilemap.bin.lz");
 static const u8 sRocketWarehouseMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/rocket_warehouse/tiles.gbapal");
-static const u8 sRocketWarehouseMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/rocket_warehouse/tiles.4bpp.smol");
-static const u8 sRocketWarehouseMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/rocket_warehouse/tilemap.bin.smolTM");
+static const u8 sRocketWarehouseMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/rocket_warehouse/tiles.4bpp.lz");
+static const u8 sRocketWarehouseMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/rocket_warehouse/tilemap.bin.lz");
 static const u8 sVictoryRoadMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/victory_road/tiles.gbapal");
-static const u8 sVictoryRoadMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/victory_road/tiles.4bpp.smol");
-static const u8 sVictoryRoadMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/victory_road/tilemap.bin.smolTM");
+static const u8 sVictoryRoadMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/victory_road/tiles.4bpp.lz");
+static const u8 sVictoryRoadMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/victory_road/tilemap.bin.lz");
 static const u8 sMtEmberMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/mt_ember/tiles.gbapal");
-static const u8 sMtEmberMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/mt_ember/tiles.4bpp.smol");
-static const u8 sMtEmberMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/mt_ember/tilemap.bin.smolTM");
+static const u8 sMtEmberMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/mt_ember/tiles.4bpp.lz");
+static const u8 sMtEmberMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/mt_ember/tilemap.bin.lz");
 static const u8 sSafariZoneMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/safari_zone/tiles.gbapal");
-static const u8 sSafariZoneMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/safari_zone/tiles.4bpp.smol");
-static const u8 sSafariZoneMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/safari_zone/tilemap.bin.smolTM");
+static const u8 sSafariZoneMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/safari_zone/tiles.4bpp.lz");
+static const u8 sSafariZoneMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/safari_zone/tilemap.bin.lz");
 static const u8 sMoneanChamberMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/monean_chamber/tiles.gbapal");
-static const u8 sMoneanChamberMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/monean_chamber/tiles.4bpp.smol");
-static const u8 sMoneanChamberMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/monean_chamber/tilemap.bin.smolTM");
+static const u8 sMoneanChamberMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/monean_chamber/tiles.4bpp.lz");
+static const u8 sMoneanChamberMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/monean_chamber/tilemap.bin.lz");
 static const u8 sDottedHoleMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/dotted_hole/tiles.gbapal");
-static const u8 sDottedHoleMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/dotted_hole/tiles.4bpp.smol");
-static const u8 sDottedHoleMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/dotted_hole/tilemap.bin.smolTM");
+static const u8 sDottedHoleMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/dotted_hole/tiles.4bpp.lz");
+static const u8 sDottedHoleMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/dotted_hole/tilemap.bin.lz");
 static const u8 sCeruleanCaveMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/cerulean_cave/tiles.gbapal");
-static const u8 sCeruleanCaveMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/cerulean_cave/tiles.4bpp.smol");
-static const u8 sCeruleanCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/cerulean_cave/tilemap.bin.smolTM");
+static const u8 sCeruleanCaveMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/cerulean_cave/tiles.4bpp.lz");
+static const u8 sCeruleanCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/cerulean_cave/tilemap.bin.lz");
 static const u8 sDiglettsCaveMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/digletts_cave/tiles.gbapal");
-static const u8 sDiglettsCaveMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/digletts_cave/tiles.4bpp.smol");
-static const u8 sDiglettsCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/digletts_cave/tilemap.bin.smolTM");
+static const u8 sDiglettsCaveMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/digletts_cave/tiles.4bpp.lz");
+static const u8 sDiglettsCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/digletts_cave/tilemap.bin.lz");
 static const u8 sLostCaveMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/lost_cave/tiles.gbapal");
-static const u8 sLostCaveMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/lost_cave/tiles.4bpp.smol");
-static const u8 sLostCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/lost_cave/tilemap.bin.smolTM");
+static const u8 sLostCaveMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/lost_cave/tiles.4bpp.lz");
+static const u8 sLostCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/lost_cave/tilemap.bin.lz");
 static const u8 sBerryForestMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/berry_forest/tiles.gbapal");
-static const u8 sBerryForestMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/berry_forest/tiles.4bpp.smol");
-static const u8 sBerryForestMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/berry_forest/tilemap.bin.smolTM");
+static const u8 sBerryForestMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/berry_forest/tiles.4bpp.lz");
+static const u8 sBerryForestMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/berry_forest/tilemap.bin.lz");
 static const u8 sIcefallCaveMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/icefall_cave/tiles.gbapal");
-static const u8 sIcefallCaveMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/icefall_cave/tiles.4bpp.smol");
-static const u8 sIcefallCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/icefall_cave/tilemap.bin.smolTM");
+static const u8 sIcefallCaveMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/icefall_cave/tiles.4bpp.lz");
+static const u8 sIcefallCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/icefall_cave/tilemap.bin.lz");
 static const u8 sAlteringCaveMapPreviewPalette[] = INCBIN_U8("graphics/map_preview/altering_cave/tiles.gbapal");
-static const u8 sAlteringCaveMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/altering_cave/tiles.4bpp.smol");
-static const u8 sAlteringCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/altering_cave/tilemap.bin.smolTM");
+static const u8 sAlteringCaveMapPreviewTiles[] = INCBIN_U8("graphics/map_preview/altering_cave/tiles.4bpp.lz");
+static const u8 sAlteringCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/altering_cave/tilemap.bin.lz");
 
+// If you set flagId to MPS_FLAG_NULL, it will not set a flag when visiting the map for the first time
+// and the duration will default to MPS_DURATION_NO_FLAG.
 static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
     [MPS_VIRIDIAN_FOREST] = {
         .mapsec = MAPSEC_VIRIDIAN_FOREST,
-        .type = MPS_TYPE_FOREST,
-        .flagId = FLAG_WORLD_MAP_VIRIDIAN_FOREST,
-        .tilesptr = sViridianForestMapPreviewTiles,
-        .tilemapptr = sViridianForestMapPreviewTilemap,
-        .palptr = sViridianForestMapPreviewPalette
+        .type = MPS_TYPE_FADE_IN,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_VIRIDIAN_FOREST
     },
     [MPS_MT_MOON] = {
         .mapsec = MAPSEC_MT_MOON,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_MT_MOON_1F,
-        .tilesptr = sMtMoonMapPreviewTiles,
-        .tilemapptr = sMtMoonMapPreviewTilemap,
-        .palptr = sMtMoonMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_MT_MOON
     },
     [MPS_DIGLETTS_CAVE] = {
         .mapsec = MAPSEC_DIGLETTS_CAVE,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_DIGLETTS_CAVE_B1F,
-        .tilesptr = sDiglettsCaveMapPreviewTiles,
-        .tilemapptr = sDiglettsCaveMapPreviewTilemap,
-        .palptr = sDiglettsCaveMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_DIGLETTS_CAVE
     },
     [MPS_ROCK_TUNNEL] = {
         .mapsec = MAPSEC_ROCK_TUNNEL,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_ROCK_TUNNEL_1F,
-        .tilesptr = sRockTunnelMapPreviewTiles,
-        .tilemapptr = sRockTunnelMapPreviewTilemap,
-        .palptr = sRockTunnelMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_ROCK_TUNNEL
     },
     [MPS_POKEMON_TOWER] = {
         .mapsec = MAPSEC_POKEMON_TOWER,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_POKEMON_TOWER_1F,
-        .tilesptr = sPokemonTowerMapPreviewTiles,
-        .tilemapptr = sPokemonTowerMapPreviewTilemap,
-        .palptr = sPokemonTowerMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_POKEMON_TOWER
     },
     [MPS_SAFARI_ZONE] = {
         .mapsec = MAPSEC_KANTO_SAFARI_ZONE,
-        .type = MPS_TYPE_FOREST,
-        .flagId = FLAG_WORLD_MAP_SAFARI_ZONE_CENTER,
-        .tilesptr = sSafariZoneMapPreviewTiles,
-        .tilemapptr = sSafariZoneMapPreviewTilemap,
-        .palptr = sSafariZoneMapPreviewPalette
+        .type = MPS_TYPE_FADE_IN,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_SAFARI_ZONE
     },
     [MPS_SEAFOAM_ISLANDS] = {
         .mapsec = MAPSEC_SEAFOAM_ISLANDS,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SEAFOAM_ISLANDS_1F,
-        .tilesptr = sSeafoamIslandsMapPreviewTiles,
-        .tilemapptr = sSeafoamIslandsMapPreviewTilemap,
-        .palptr = sSeafoamIslandsMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_SEAFOAM_ISLANDS
     },
     [MPS_POKEMON_MANSION] = {
         .mapsec = MAPSEC_POKEMON_MANSION,
-        .type = MPS_TYPE_FOREST,
-        .flagId = FLAG_WORLD_MAP_POKEMON_MANSION_1F,
-        .tilesptr = sPokemonMansionMapPreviewTiles,
-        .tilemapptr = sPokemonMansionMapPreviewTilemap,
-        .palptr = sPokemonMansionMapPreviewPalette
+        .type = MPS_TYPE_FADE_IN,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_POKEMON_MANSION
     },
     [MPS_ROCKET_HIDEOUT] = {
         .mapsec = MAPSEC_ROCKET_HIDEOUT,
-        .type = MPS_TYPE_FOREST,
-        .flagId = FLAG_WORLD_MAP_ROCKET_HIDEOUT_B1F,
-        .tilesptr = sRocketHideoutMapPreviewTiles,
-        .tilemapptr = sRocketHideoutMapPreviewTilemap,
-        .palptr = sRocketHideoutMapPreviewPalette
+        .type = MPS_TYPE_FADE_IN,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_ROCKET_HIDEOUT
     },
     [MPS_SILPH_CO] = {
         .mapsec = MAPSEC_SILPH_CO,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SILPH_CO_1F,
-        .tilesptr = sSilphCoMapPreviewTiles,
-        .tilemapptr = sSilphCoMapPreviewTilemap,
-        .palptr = sSilphCoMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_SILPH_CO
     },
     [MPS_VICTORY_ROAD] = {
         .mapsec = MAPSEC_KANTO_VICTORY_ROAD,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_VICTORY_ROAD_1F,
-        .tilesptr = sVictoryRoadMapPreviewTiles,
-        .tilemapptr = sVictoryRoadMapPreviewTilemap,
-        .palptr = sVictoryRoadMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_VICTORY_ROAD
     },
     [MPS_CERULEAN_CAVE] = {
         .mapsec = MAPSEC_CERULEAN_CAVE,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_CERULEAN_CAVE_1F,
-        .tilesptr = sCeruleanCaveMapPreviewTiles,
-        .tilemapptr = sCeruleanCaveMapPreviewTilemap,
-        .palptr = sCeruleanCaveMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_CERULEAN_CAVE
     },
     [MPS_POWER_PLANT] = {
         .mapsec = MAPSEC_POWER_PLANT,
-        .type = MPS_TYPE_FOREST,
-        .flagId = FLAG_WORLD_MAP_POWER_PLANT,
-        .tilesptr = sPowerPlantMapPreviewTiles,
-        .tilemapptr = sPowerPlantMapPreviewTilemap,
-        .palptr = sPowerPlantMapPreviewPalette
+        .type = MPS_TYPE_FADE_IN,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_POWER_PLANT
     },
     [MPS_MT_EMBER] = {
         .mapsec = MAPSEC_MT_EMBER,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_MT_EMBER_EXTERIOR,
-        .tilesptr = sMtEmberMapPreviewTiles,
-        .tilemapptr = sMtEmberMapPreviewTilemap,
-        .palptr = sMtEmberMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_MT_EMBER
     },
     [MPS_ROCKET_WAREHOUSE] = {
         .mapsec = MAPSEC_ROCKET_WAREHOUSE,
-        .type = MPS_TYPE_FOREST,
-        .flagId = FLAG_WORLD_MAP_THREE_ISLAND_BERRY_FOREST,
-        .tilesptr = sRocketWarehouseMapPreviewTiles,
-        .tilemapptr = sRocketWarehouseMapPreviewTilemap,
-        .palptr = sRocketWarehouseMapPreviewPalette
+        .type = MPS_TYPE_FADE_IN,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_ROCKET_WAREHOUSE
     },
     [MPS_MONEAN_CHAMBER] = {
         .mapsec = MAPSEC_MONEAN_CHAMBER,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
-        .tilesptr = sMoneanChamberMapPreviewTiles,
-        .tilemapptr = sMoneanChamberMapPreviewTilemap,
-        .palptr = sMoneanChamberMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_MONEAN_CHAMBER
     },
     [MPS_DOTTED_HOLE] = {
         .mapsec = MAPSEC_DOTTED_HOLE,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SIX_ISLAND_DOTTED_HOLE_1F,
-        .tilesptr = sDottedHoleMapPreviewTiles,
-        .tilemapptr = sDottedHoleMapPreviewTilemap,
-        .palptr = sDottedHoleMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_DOTTED_HOLE
     },
     [MPS_BERRY_FOREST] = {
         .mapsec = MAPSEC_BERRY_FOREST,
-        .type = MPS_TYPE_FOREST,
-        .flagId = FLAG_WORLD_MAP_THREE_ISLAND_BERRY_FOREST,
-        .tilesptr = sBerryForestMapPreviewTiles,
-        .tilemapptr = sBerryForestMapPreviewTilemap,
-        .palptr = sBerryForestMapPreviewPalette
+        .type = MPS_TYPE_FADE_IN,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_BERRY_FOREST
     },
     [MPS_ICEFALL_CAVE] = {
         .mapsec = MAPSEC_ICEFALL_CAVE,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE,
-        .tilesptr = sIcefallCaveMapPreviewTiles,
-        .tilemapptr = sIcefallCaveMapPreviewTilemap,
-        .palptr = sIcefallCaveMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_ICEFALL_CAVE
     },
     [MPS_LOST_CAVE] = {
         .mapsec = MAPSEC_LOST_CAVE,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE,
-        .tilesptr = sLostCaveMapPreviewTiles,
-        .tilemapptr = sLostCaveMapPreviewTilemap,
-        .palptr = sLostCaveMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_LOST_CAVE
     },
     [MPS_ALTERING_CAVE] = {
-        .mapsec = MAPSEC_ALTERING_CAVE_FRLG,
+        .mapsec = MAPSEC_ALTERING_CAVE,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SIX_ISLAND_ALTERING_CAVE,
-        .tilesptr = sAlteringCaveMapPreviewTiles,
-        .tilemapptr = sAlteringCaveMapPreviewTilemap,
-        .palptr = sAlteringCaveMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_ALTERING_CAVE
     },
     [MPS_PATTERN_BUSH] = {
         .mapsec = MAPSEC_PATTERN_BUSH,
-        .type = MPS_TYPE_FOREST,
-        .flagId = FLAG_WORLD_MAP_SIX_ISLAND_PATTERN_BUSH,
-        .tilesptr = sViridianForestMapPreviewTiles,
-        .tilemapptr = sViridianForestMapPreviewTilemap,
-        .palptr = sViridianForestMapPreviewPalette
+        .type = MPS_TYPE_FADE_IN,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_VIRIDIAN_FOREST
     },
     [MPS_LIPTOO_CHAMBER] = {
         .mapsec = MAPSEC_LIPTOO_CHAMBER,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
-        .tilesptr = sMoneanChamberMapPreviewTiles,
-        .tilemapptr = sMoneanChamberMapPreviewTilemap,
-        .palptr = sMoneanChamberMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_MONEAN_CHAMBER
     },
     [MPS_WEEPTH_CHAMBER] = {
         .mapsec = MAPSEC_WEEPTH_CHAMBER,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
-        .tilesptr = sMoneanChamberMapPreviewTiles,
-        .tilemapptr = sMoneanChamberMapPreviewTilemap,
-        .palptr = sMoneanChamberMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_MONEAN_CHAMBER
     },
     [MPS_TDILFORD_CHAMBER] = {
         .mapsec = MAPSEC_DILFORD_CHAMBER,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
-        .tilesptr = sMoneanChamberMapPreviewTiles,
-        .tilemapptr = sMoneanChamberMapPreviewTilemap,
-        .palptr = sMoneanChamberMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_MONEAN_CHAMBER
     },
     [MPS_SCUFIB_CHAMBER] = {
         .mapsec = MAPSEC_SCUFIB_CHAMBER,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
-        .tilesptr = sMoneanChamberMapPreviewTiles,
-        .tilemapptr = sMoneanChamberMapPreviewTilemap,
-        .palptr = sMoneanChamberMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_MONEAN_CHAMBER
     },
     [MPS_RIXY_CHAMBER] = {
         .mapsec = MAPSEC_RIXY_CHAMBER,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
-        .tilesptr = sMoneanChamberMapPreviewTiles,
-        .tilemapptr = sMoneanChamberMapPreviewTilemap,
-        .palptr = sMoneanChamberMapPreviewPalette
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_MONEAN_CHAMBER
     },
     [MPS_VIAPOIS_CHAMBER] = {
         .mapsec = MAPSEC_VIAPOIS_CHAMBER,
         .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_MONEAN_CHAMBER
+    }
+};
+
+static const struct ImageData sMapPreviewImageData[IMG_COUNT] = {
+    [IMG_VIRIDIAN_FOREST] = {
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [IMG_MT_MOON] = {
+        .tilesptr = sMtMoonMapPreviewTiles,
+        .tilemapptr = sMtMoonMapPreviewTilemap,
+        .palptr = sMtMoonMapPreviewPalette
+    },
+    [IMG_DIGLETTS_CAVE] = {
+        .tilesptr = sDiglettsCaveMapPreviewTiles,
+        .tilemapptr = sDiglettsCaveMapPreviewTilemap,
+        .palptr = sDiglettsCaveMapPreviewPalette
+    },
+    [IMG_ROCK_TUNNEL] = {
+        .tilesptr = sRockTunnelMapPreviewTiles,
+        .tilemapptr = sRockTunnelMapPreviewTilemap,
+        .palptr = sRockTunnelMapPreviewPalette
+    },
+    [IMG_POKEMON_TOWER] = {
+        .tilesptr = sPokemonTowerMapPreviewTiles,
+        .tilemapptr = sPokemonTowerMapPreviewTilemap,
+        .palptr = sPokemonTowerMapPreviewPalette
+    },
+    [IMG_SAFARI_ZONE] = {
+        .tilesptr = sSafariZoneMapPreviewTiles,
+        .tilemapptr = sSafariZoneMapPreviewTilemap,
+        .palptr = sSafariZoneMapPreviewPalette
+    },
+    [IMG_SEAFOAM_ISLANDS] = {
+        .tilesptr = sSeafoamIslandsMapPreviewTiles,
+        .tilemapptr = sSeafoamIslandsMapPreviewTilemap,
+        .palptr = sSeafoamIslandsMapPreviewPalette
+    },
+    [IMG_POKEMON_MANSION] = {
+        .tilesptr = sPokemonMansionMapPreviewTiles,
+        .tilemapptr = sPokemonMansionMapPreviewTilemap,
+        .palptr = sPokemonMansionMapPreviewPalette
+    },
+    [IMG_ROCKET_HIDEOUT] = {
+        .tilesptr = sRocketHideoutMapPreviewTiles,
+        .tilemapptr = sRocketHideoutMapPreviewTilemap,
+        .palptr = sRocketHideoutMapPreviewPalette
+    },
+    [IMG_SILPH_CO] = {
+        .tilesptr = sSilphCoMapPreviewTiles,
+        .tilemapptr = sSilphCoMapPreviewTilemap,
+        .palptr = sSilphCoMapPreviewPalette
+    },
+    [IMG_VICTORY_ROAD] = {
+        .tilesptr = sVictoryRoadMapPreviewTiles,
+        .tilemapptr = sVictoryRoadMapPreviewTilemap,
+        .palptr = sVictoryRoadMapPreviewPalette
+    },
+    [IMG_CERULEAN_CAVE] = {
+        .tilesptr = sCeruleanCaveMapPreviewTiles,
+        .tilemapptr = sCeruleanCaveMapPreviewTilemap,
+        .palptr = sCeruleanCaveMapPreviewPalette
+    },
+    [IMG_POWER_PLANT] = {
+        .tilesptr = sPowerPlantMapPreviewTiles,
+        .tilemapptr = sPowerPlantMapPreviewTilemap,
+        .palptr = sPowerPlantMapPreviewPalette
+    },
+    [IMG_MT_EMBER] = {
+        .tilesptr = sMtEmberMapPreviewTiles,
+        .tilemapptr = sMtEmberMapPreviewTilemap,
+        .palptr = sMtEmberMapPreviewPalette
+    },
+    [IMG_ROCKET_WAREHOUSE] = {
+        .tilesptr = sRocketWarehouseMapPreviewTiles,
+        .tilemapptr = sRocketWarehouseMapPreviewTilemap,
+        .palptr = sRocketWarehouseMapPreviewPalette
+    },
+    [IMG_MONEAN_CHAMBER] = {
         .tilesptr = sMoneanChamberMapPreviewTiles,
         .tilemapptr = sMoneanChamberMapPreviewTilemap,
         .palptr = sMoneanChamberMapPreviewPalette
+    },
+    [IMG_DOTTED_HOLE] = {
+        .tilesptr = sDottedHoleMapPreviewTiles,
+        .tilemapptr = sDottedHoleMapPreviewTilemap,
+        .palptr = sDottedHoleMapPreviewPalette
+    },
+    [IMG_BERRY_FOREST] = {
+        .tilesptr = sBerryForestMapPreviewTiles,
+        .tilemapptr = sBerryForestMapPreviewTilemap,
+        .palptr = sBerryForestMapPreviewPalette
+    },
+    [IMG_ICEFALL_CAVE] = {
+        .tilesptr = sIcefallCaveMapPreviewTiles,
+        .tilemapptr = sIcefallCaveMapPreviewTilemap,
+        .palptr = sIcefallCaveMapPreviewPalette
+    },
+    [IMG_LOST_CAVE] = {
+        .tilesptr = sLostCaveMapPreviewTiles,
+        .tilemapptr = sLostCaveMapPreviewTilemap,
+        .palptr = sLostCaveMapPreviewPalette
+    },
+    [IMG_ALTERING_CAVE] = {
+        .tilesptr = sAlteringCaveMapPreviewTiles,
+        .tilemapptr = sAlteringCaveMapPreviewTilemap,
+        .palptr = sAlteringCaveMapPreviewPalette
     }
 };
 
@@ -319,7 +374,17 @@ static const struct WindowTemplate sMapNameWindow = {
     .width = 13,
     .height = 2,
     .paletteNum = 14,
-    .baseBlock = 0x1C2
+    .baseBlock = 0x259
+};
+
+static const struct WindowTemplate sMapNameWindowLarge = {
+    .bg = 0,
+    .tilemapLeft = 0,
+    .tilemapTop = 0,
+    .width = 22,
+    .height = 2,
+    .paletteNum = 14,
+    .baseBlock = 0x259
 };
 
 static const struct BgTemplate sMapPreviewBgTemplate[1] = {
@@ -328,7 +393,7 @@ static const struct BgTemplate sMapPreviewBgTemplate[1] = {
     }
 };
 
-static u8 GetMapPreviewScreenIdx(mapsec_u8_t mapsec)
+static u8 GetMapPreviewScreenIdx(u8 mapsec)
 {
     s32 i;
 
@@ -342,7 +407,7 @@ static u8 GetMapPreviewScreenIdx(mapsec_u8_t mapsec)
     return MPS_COUNT;
 }
 
-bool8 MapHasPreviewScreen(mapsec_u8_t mapsec, u8 type)
+bool8 MapHasPreviewScreen(u8 mapsec, u8 type)
 {
     u8 idx;
 
@@ -364,7 +429,7 @@ bool8 MapHasPreviewScreen(mapsec_u8_t mapsec, u8 type)
     }
 }
 
-bool32 MapHasPreviewScreen_HandleQLState2(mapsec_u8_t mapsec, u8 type)
+bool32 MapHasPreviewScreen_HandleQLState2(u8 mapsec, u8 type)
 {
     return MapHasPreviewScreen(mapsec, type);
 }
@@ -375,7 +440,7 @@ void MapPreview_InitBgs(void)
     ShowBg(0);
 }
 
-void MapPreview_LoadGfx(mapsec_u8_t mapsec)
+void MapPreview_LoadGfx(u8 mapsec)
 {
     u8 idx;
 
@@ -383,8 +448,12 @@ void MapPreview_LoadGfx(mapsec_u8_t mapsec)
     if (idx != MPS_COUNT)
     {
        ResetTempTileDataBuffers();
-       LoadPalette(sMapPreviewScreenData[idx].palptr, BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
-       DecompressAndCopyTileDataToVram(0, sMapPreviewScreenData[idx].tilesptr, 0, 0, 0);
+       if (MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == TRUE)
+            LoadPalette(sMapPreviewImageData[sMapPreviewScreenData[idx].image].palptr, BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+        else
+            LoadPalette(sMapPreviewImageData[sMapPreviewScreenData[idx].image].palptr, BG_PLTT_ID(0), 16 * PLTT_SIZE_4BPP);
+            
+       DecompressAndCopyTileDataToVram(0, sMapPreviewImageData[sMapPreviewScreenData[idx].image].tilesptr, 0, 0, 0);
        if (GetBgTilemapBuffer(0) == NULL)
        {
            SetBgTilemapBuffer(0, Alloc(BG_SCREEN_SIZE));
@@ -394,7 +463,7 @@ void MapPreview_LoadGfx(mapsec_u8_t mapsec)
        {
            sAllocedBg0TilemapBuffer = FALSE;
        }
-       CopyToBgTilemapBuffer(0, sMapPreviewScreenData[idx].tilemapptr, 0, 0x000);
+       CopyToBgTilemapBuffer(0, sMapPreviewImageData[sMapPreviewScreenData[idx].image].tilemapptr, 0, 0x000);
        CopyBgTilemapBufferToVram(0);
     }
 }
@@ -413,7 +482,7 @@ bool32 MapPreview_IsGfxLoadFinished(void)
     return FreeTempTileDataBuffersIfPossible();
 }
 
-void MapPreview_StartForestTransition(mapsec_u8_t mapsec)
+void MapPreview_StartForestTransition(u8 mapsec)
 {
     u8 taskId;
 
@@ -436,7 +505,7 @@ void MapPreview_StartForestTransition(mapsec_u8_t mapsec)
     LockPlayerFieldControls();
 }
 
-u16 MapPreview_CreateMapNameWindow(mapsec_u8_t mapsec)
+u16 MapPreview_CreateMapNameWindow(u8 mapsec)
 {
     u16 windowId;
     u32 xctr;
@@ -447,14 +516,22 @@ u16 MapPreview_CreateMapNameWindow(mapsec_u8_t mapsec)
     u8 color[0];
     #endif
 
-    windowId = AddWindow(&sMapNameWindow);
+    GetMapName(gStringVar4, mapsec, 0);
+    if (GetStringWidth(FONT_NORMAL, gStringVar4, 0) > 104)
+    {
+        windowId = AddWindow(&sMapNameWindowLarge);
+        xctr = 177 - GetStringWidth(FONT_NORMAL, gStringVar4, 0);
+    }
+    else
+    {
+        xctr = 104 - GetStringWidth(FONT_NORMAL, gStringVar4, 0);
+        windowId = AddWindow(&sMapNameWindow);
+    }
     FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
     PutWindowTilemap(windowId);
     color[0] = TEXT_COLOR_WHITE; // Access violation
     color[1] = TEXT_COLOR_RED; // Access violation
     color[2] = TEXT_COLOR_LIGHT_GRAY; // Access violation
-    GetMapName(gStringVar4, mapsec, 0);
-    xctr = 104 - GetStringWidth(FONT_NORMAL, gStringVar4, 0);
     AddTextPrinterParameterized4(windowId, FONT_NORMAL, xctr / 2, 2, 0, 0, color/* Access violation */, -1, gStringVar4);
     return windowId;
 }
@@ -463,11 +540,11 @@ bool32 ForestMapPreviewScreenIsRunning(void)
 {
     if (FuncIsActiveTask(Task_RunMapPreviewScreenForest) == TRUE)
     {
-        return FALSE;
+        return TRUE;
     }
     else
     {
-        return TRUE;
+        return FALSE;
     }
 }
 
@@ -501,7 +578,7 @@ static void Task_RunMapPreviewScreenForest(u8 taskId)
         break;
     case 3:
         data[1]++;
-        if (data[1] > data[10])
+        if (data[1] > data[10] || JOY_HELD(B_BUTTON))
         {
             data[1] = 0;
             data[0]++;
@@ -550,7 +627,7 @@ static void Task_RunMapPreviewScreenForest(u8 taskId)
     }
 }
 
-const struct MapPreviewScreen * GetDungeonMapPreviewScreenInfo(mapsec_u8_t mapsec)
+const struct MapPreviewScreen * GetDungeonMapPreviewScreenInfo(u8 mapsec)
 {
     u8 idx;
 
@@ -565,51 +642,241 @@ const struct MapPreviewScreen * GetDungeonMapPreviewScreenInfo(mapsec_u8_t mapse
     }
 }
 
-u16 MapPreview_GetDuration(mapsec_u8_t mapsec)
+u16 MapPreview_GetDuration(u8 mapsec)
 {
     u8 idx;
     u16 flagId;
 
     idx = GetMapPreviewScreenIdx(mapsec);
+
     if (idx == MPS_COUNT)
     {
         return 0;
     }
+
     flagId = sMapPreviewScreenData[idx].flagId;
-    if (sMapPreviewScreenData[idx].type == MPS_TYPE_CAVE)
-    {
-        if (!FlagGet(flagId))
-        {
-            return 120;
+
+    if (flagId == MPS_FLAG_NULL) {
+        if (MPS_DURATION_ALWAYS != 0) {
+            return MPS_DURATION_ALWAYS;
         }
         else
         {
-            return 40;
+            return MPS_DURATION_NO_FLAG;
         }
     }
-    else {
-        if (sHasVisitedMapBefore)
+    else if (MPS_DURATION_ALWAYS != 0) {
+        if (!FlagGet(flagId))
         {
-            return 120;
+            FlagSet(flagId);
+        }
+        return MPS_DURATION_ALWAYS;
+    }
+    else {
+        if (!FlagGet(flagId))
+        {
+            FlagSet(flagId);
+            return MPS_DURATION_LONG;
         }
         else
         {
-            return 40;
+            return MPS_DURATION_SHORT;
         }
     }
 }
 
-#endif // IS_FRLG
-
-void MapPreview_SetFlag(u16 flagId)
+static void VblankCB_MapPreviewScript(void)
 {
-    if (!FlagGet(flagId))
+    TransferPlttBuffer();
+}
+
+#define taskStep        data[0]
+#define frameCounter    data[1]
+#define MPWindowId      data[2]
+
+void Script_MapPreview(void)
+{
+    SetVBlankCallback(NULL);
+    gMain.savedCallback = CB2_ReturnToFieldContinueScript;
+    MapPreview_LoadGfx(gMapHeader.regionMapSectionId);
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0x10, 0, RGB_BLACK);
+    SetVBlankCallback(VblankCB_MapPreviewScript);
+    SetMainCallback2(CB2_MapPreviewScript);
+    CreateTask(Task_RunMapPreview_Script, 0);
+}
+
+static void CB2_MapPreviewScript(void)
+{
+    RunTasks();
+    DoScheduledBgTilemapCopiesToVram();
+    UpdatePaletteFade();
+}
+
+static void Task_RunMapPreview_Script(u8 taskId)
+{
+    s16 * data;
+
+    data = gTasks[taskId].data;
+    switch (taskStep)
     {
-        sHasVisitedMapBefore = TRUE;
+    case 0:
+        if (!MapPreview_IsGfxLoadFinished() && !IsDma3ManagerBusyWithBgCopy())
+        {
+            MPWindowId = MapPreview_CreateMapNameWindow(gMapHeader.regionMapSectionId);
+            CopyWindowToVram(MPWindowId, COPYWIN_FULL);
+            taskStep++;
+        }
+        break;
+    case 1:
+        if (!IsDma3ManagerBusyWithBgCopy())
+        {
+            FadeInFromBlack();
+            taskStep++;
+        }
+        break;
+    case 2:
+        frameCounter++;
+        if (frameCounter > MPS_DURATION_SCRIPT || JOY_HELD(B_BUTTON))
+        {
+            BeginNormalPaletteFade(PALETTES_ALL, MPS_BASIC_FADE_SPEED, 0, 16, RGB_BLACK);
+            frameCounter = 0;
+            taskStep++;
+        }
+        break;
+    case 3:
+        if (!UpdatePaletteFade())
+        {
+            MapPreview_Unload(MPWindowId);
+            DestroyTask(taskId);
+            SetMainCallback2(gMain.savedCallback);
+        }
+        break;
+    }
+}
+
+#undef taskStep
+#undef frameCounter
+#undef MPWindowId
+
+// Loads a preview image directly by PreviewImageId (IMG_*), bypassing
+// sMapPreviewScreenData/mapsec lookup entirely - so it never touches
+// gMapHeader.regionMapSectionId and can't interact with any of the other
+// systems keyed off MapHasPreviewScreen_HandleQLState2 (auto-preview-on
+// -entry in overworld.c, warp fade color in field_screen_effect.c, the
+// Flash cave-exit transition in fldeff_flash.c, the weather shadow-blend
+// guard in field_weather.c/field_weather_effect.c). This is what makes it
+// genuinely script-only: which image shows depends only on what the script
+// passes in, never on which map the player happens to be standing in.
+// Each baked image's tilemap references palette banks according to which
+// .type it was authored for (see sMapPreviewScreenData below): FADE_IN-style
+// art (e.g. Viridian Forest) only uses banks 13-15, since it needs to coexist
+// on screen with the live map's own palette during a crossfade reveal.
+// CAVE-style art uses the full bank range 0-15, since it's shown against a
+// plain black screen with nothing else live underneath. Loading the wrong
+// one doesn't just misplace the palette - the tile data itself indexes into
+// the wrong bank range, so the image comes out with the wrong colors
+// entirely. Found by scanning sMapPreviewScreenData for whichever entry uses
+// this image, since PreviewImageId itself doesn't carry that information.
+static bool32 ImageUsesFullPalette(u8 imageId)
+{
+    u8 i;
+
+    for (i = 0; i < MPS_COUNT; i++)
+    {
+        if (sMapPreviewScreenData[i].image == imageId)
+        {
+            return sMapPreviewScreenData[i].type == MPS_TYPE_CAVE;
+        }
+    }
+    return TRUE;
+}
+
+static void MapPreview_LoadImageGfx(u8 imageId)
+{
+    ResetTempTileDataBuffers();
+    if (ImageUsesFullPalette(imageId))
+        LoadPalette(sMapPreviewImageData[imageId].palptr, BG_PLTT_ID(0), 16 * PLTT_SIZE_4BPP);
+    else
+        LoadPalette(sMapPreviewImageData[imageId].palptr, BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+    DecompressAndCopyTileDataToVram(0, sMapPreviewImageData[imageId].tilesptr, 0, 0, 0);
+    if (GetBgTilemapBuffer(0) == NULL)
+    {
+        SetBgTilemapBuffer(0, Alloc(BG_SCREEN_SIZE));
+        sAllocedBg0TilemapBuffer = TRUE;
     }
     else
     {
-        sHasVisitedMapBefore = FALSE;
+        sAllocedBg0TilemapBuffer = FALSE;
     }
+    CopyToBgTilemapBuffer(0, sMapPreviewImageData[imageId].tilemapptr, 0, 0x000);
+    CopyBgTilemapBufferToVram(0);
+}
+
+#define taskStep        data[0]
+#define frameCounter    data[1]
+
+static void Task_RunVisionPreview_Script(u8 taskId)
+{
+    s16 * data;
+
+    data = gTasks[taskId].data;
+    switch (taskStep)
+    {
+    case 0:
+        if (!MapPreview_IsGfxLoadFinished() && !IsDma3ManagerBusyWithBgCopy())
+        {
+            taskStep++;
+        }
+        break;
+    case 1:
+        if (!IsDma3ManagerBusyWithBgCopy())
+        {
+            FadeInFromBlack();
+            taskStep++;
+        }
+        break;
+    case 2:
+        frameCounter++;
+        if (frameCounter > MPS_DURATION_SCRIPT || JOY_HELD(B_BUTTON))
+        {
+            BeginNormalPaletteFade(PALETTES_ALL, MPS_BASIC_FADE_SPEED, 0, 16, RGB_BLACK);
+            frameCounter = 0;
+            taskStep++;
+        }
+        break;
+    case 3:
+        if (!UpdatePaletteFade())
+        {
+            if (sAllocedBg0TilemapBuffer)
+            {
+                Free(GetBgTilemapBuffer(0));
+            }
+            DestroyTask(taskId);
+            SetMainCallback2(gMain.savedCallback);
+        }
+        break;
+    }
+}
+
+#undef taskStep
+#undef frameCounter
+
+// gSpecialVar_0x8004: a PreviewImageId (IMG_*) to show. Called by the
+// visionpreview script macro.
+void Script_VisionPreview(void)
+{
+    SetVBlankCallback(NULL);
+    gMain.savedCallback = CB2_ReturnToFieldContinueScript;
+    MapPreview_LoadImageGfx(gSpecialVar_0x8004);
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0x10, 0, RGB_BLACK);
+    SetVBlankCallback(VblankCB_MapPreviewScript);
+    SetMainCallback2(CB2_MapPreviewScript);
+    CreateTask(Task_RunVisionPreview_Script, 0);
+}
+
+// Unused by anything in this codebase (no map script calls setworldmapflag),
+// kept only so that scrcmd still compiles.
+void MapPreview_SetFlag(u16 flagId)
+{
     FlagSet(flagId);
 }

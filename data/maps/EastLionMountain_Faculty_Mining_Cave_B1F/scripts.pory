@@ -98,7 +98,7 @@ script MiningCaveB1F_Barry_Battle {
     playse(SE_PIN)
     applymovement(1, moves(emote_exclamation_mark))
     waitmovement(0)
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(format("YOU again?!\pDon't you ever know when to quit?\p...\pIt doesn't matter. We've already found what we came for.\pYou're too late to change anything."), MSGBOX_AUTOCLOSE)
     waitmessage
     trainerbattle_no_intro(TRAINER_BARRY, MiningCaveB1F_Text_BarryDefeated)
@@ -117,7 +117,7 @@ script MiningCaveB1F_Barry_PostBattle {
     playse(SE_PIN)
     applymovement(1, moves(emote_exclamation_mark))
     waitmovement(0)
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(format("Gah! This entire section is destabilizing!\pWe might have digged to deep..."), MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER, moves(face_right lock_facing_direction walk_left unlock_facing_direction walk_right face_up))
@@ -125,6 +125,7 @@ script MiningCaveB1F_Barry_PostBattle {
     waitmovement
     applymovement(2, moves(face_down))
     delay(30)
+    setspeaker("BARRY")
     msgbox(format("We gotta go!\pGather the others and move the materials to the factory!"), MSGBOX_AUTOCLOSE)
     waitmessage    
     applymovement(2, moves(walk_fast_left walk_fast_up*5))
@@ -139,7 +140,7 @@ script MiningCaveB1F_Barry_PostBattle {
     applymovement(1, moves(walk_fast_down*2))
     applymovement(LOCALID_PLAYER, moves(face_up lock_facing_direction walk_fast_down*2 unlock_facing_direction))
     waitmovement
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(format("You honestely think I would let you leave and try to ruin our plans again?\pTake this, stupid intern!"), MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_BALL_THROW)

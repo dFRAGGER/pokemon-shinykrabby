@@ -755,7 +755,7 @@ Mistcity_Research_Center_Entrance_Daan_RescueMission_Movement_11:
 
 Mistcity_Research_Center_Entrance_Rangers_Slaking_Text_0:
 # 7 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
-	.string "Ranger$"
+	.string "RANGER$"
 
 Mistcity_Research_Center_Entrance_Rangers_Slaking_Text_1:
 # 8 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
@@ -833,7 +833,7 @@ Mistcity_Research_Center_Entrance_Rangers_Trucks_Text_1:
 
 Mistcity_Research_Center_Entrance_Scientist_Mist_Text_0:
 # 81 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
-	.string "Scientist$"
+	.string "SCIENTIST$"
 
 Mistcity_Research_Center_Entrance_Scientist_Mist_Text_1:
 # 82 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
@@ -972,7 +972,7 @@ Mistcity_Research_Center_Entrance_Scientist_Slaking_Text_1:
 
 Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_0:
 # 172 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
-	.string "Lead Scientist$"
+	.string "LEAD SCIENTIST$"
 
 Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_1:
 # 173 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
@@ -1056,7 +1056,7 @@ Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_6:
 
 Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_7:
 # 211 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
-	.string "Nash$"
+	.string "NASH$"
 
 Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_8:
 # 212 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
@@ -1086,7 +1086,7 @@ Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_9:
 
 Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_10:
 # 226 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
-	.string "David$"
+	.string "DAVID$"
 
 Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_11:
 # 227 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
@@ -1144,7 +1144,7 @@ Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_15:
 Mistcity_Research_Center_Entrance_LeadScientist_Text_0:
 # 276 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	.string "Don't be afraid.\p"
-	.string "Nash & David are the best people we\n"
+	.string "NASH & DAVID are the best people we\n"
 	.string "got.\p"
 	.string "Make sure you heal your Pokémon and\n"
 	.string "stock up on potions, the forest can be\l"
@@ -1156,7 +1156,7 @@ Mistcity_Research_Center_Entrance_LeadScientist_Text_0:
 Mistcity_Research_Center_Entrance_LeadScientist_Text_1:
 # 281 "data/maps/Mistcity_Research_Center_Entrance/scripts.pory"
 	.string "You actually did it.\p"
-	.string "Daan is safe, and the seismic\n"
+	.string "DAAN is safe, and the seismic\n"
 	.string "disturbances have completely ceased.\p"
 	.string "Nash and David said you handled\n"
 	.string "yourself like a veteran out there.\p"

@@ -662,54 +662,46 @@ Deepcloudforest_Trainer_Grunt1::
 # 342 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	trainerbattle_single TRAINER_GRUNT_FACULTY_CLOUDFOREST_1, Deepcloudforest_Text_Grunt1Intro, Deepcloudforest_Text_Grunt1Defeated
 # 343 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	setspeaker Deepcloudforest_Trainer_Grunt1_Text_0
-# 344 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	msgbox Deepcloudforest_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Deepcloudforest_Trainer_Grunt2::
-# 361 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 360 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	trainerbattle_single TRAINER_GRUNT_FACULTY_CLOUDFOREST_2, Deepcloudforest_Text_Grunt2Intro, Deepcloudforest_Text_Grunt2Defeated
-# 362 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	setspeaker Deepcloudforest_Trainer_Grunt2_Text_0
-# 363 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 361 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	msgbox Deepcloudforest_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Deepcloudforest_Trainer_Grunt3::
-# 380 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 378 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	trainerbattle_single TRAINER_GRUNT_FACULTY_CLOUDFOREST_3, Deepcloudforest_Text_Grunt3Intro, Deepcloudforest_Text_Grunt3Defeated
-# 381 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	setspeaker Deepcloudforest_Trainer_Grunt3_Text_0
-# 382 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 379 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	msgbox Deepcloudforest_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Deepcloudforest_Trainer_Grunt4::
-# 399 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 396 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	trainerbattle_single TRAINER_GRUNT_FACULTY_CLOUDFOREST_4, Deepcloudforest_Text_Grunt4Intro, Deepcloudforest_Text_Grunt4Defeated
-# 400 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	setspeaker Deepcloudforest_Trainer_Grunt4_Text_0
-# 401 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 397 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	msgbox Deepcloudforest_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Deepcloudforest_Gorge_Goback::
-# 418 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 414 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	lock
-# 419 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 415 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	msgbox Deepcloudforest_Gorge_Goback_Text_0
-# 420 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 416 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	waitmessage
-# 421 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 417 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	applymovement LOCALID_PLAYER, Deepcloudforest_Gorge_Goback_Movement_0
-# 422 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 418 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	waitmovement
-# 423 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 419 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	release
 	return
 
@@ -1354,15 +1346,15 @@ Deepcloudforest_Barry_Defeated_Movement_6:
 	face_down
 	step_end
 
-# 421 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 417 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 Deepcloudforest_Gorge_Goback_Movement_0:
-# 421 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 417 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	walk_left
 	step_end
 
 DeepCloudForest_FacultyGorge_David_Dialogue_Text_0:
 # 18 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	.string "David$"
+	.string "DAVID$"
 
 DeepCloudForest_FacultyGorge_David_Dialogue_Text_1:
 # 19 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
@@ -1375,7 +1367,7 @@ DeepCloudForest_FacultyGorge_David_Dialogue_Text_1:
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_0:
 # 35 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	.string "Nash$"
+	.string "NASH$"
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_1:
 # 36 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
@@ -1406,7 +1398,7 @@ DeepCloudForest_FacultyGorge_GetOutTruck_Text_4:
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_5:
 # 71 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	.string "Daan$"
+	.string "DAAN$"
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_6:
 # 72 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
@@ -1419,7 +1411,7 @@ DeepCloudForest_FacultyGorge_GetOutTruck_Text_6:
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_7:
 # 74 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	.string "Jos Vanderloo$"
+	.string "JOS VANDERLOO$"
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_8:
 # 75 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
@@ -1430,7 +1422,7 @@ DeepCloudForest_FacultyGorge_GetOutTruck_Text_8:
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_9:
 # 79 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	.string "Barry$"
+	.string "BARRY$"
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_10:
 # 80 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
@@ -1461,7 +1453,7 @@ DeepCloudForest_FacultyGorge_GetOutTruck_Text_13:
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_14:
 # 97 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	.string "Ton Cross$"
+	.string "TON CROSS$"
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Text_15:
 # 98 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
@@ -1479,9 +1471,9 @@ DeepCloudForest_FacultyGorge_GetOutTruck_Text_17:
 # 113 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "There he is.\p"
 	.string "Holding off two grunts and their leader.\p"
-	.string "David, stay back and monitor that\n"
+	.string "DAVID, stay back and monitor that\n"
 	.string "device.\p"
-	.string "{PLAYER}, looks like Daan could use\n"
+	.string "{PLAYER}, looks like DAAN could use\n"
 	.string "some help.\p"
 	.string "I'll take the lead, follow me!$"
 
@@ -1498,7 +1490,7 @@ DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Text_1:
 
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_0:
 # 180 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	.string "Nash! I knew you'd come! You're just in\n"
+	.string "NASH! I knew you'd come! You're just in\n"
 	.string "time for a party.$"
 
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_1:
@@ -1562,7 +1554,7 @@ Deepcloudforest_Barry_Defeated_Text_4:
 Deepcloudforest_Barry_Defeated_Text_5:
 # 262 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string ".....Well hello there children.\p"
-	.string "This is the Rector speaking.\p"
+	.string "This is THE RECTOR speaking.\p"
 	.string "We have secured the Objective.\p"
 	.string "The target, codename: SILENT GUARDIAN,\n"
 	.string "is in our possession.\p"
@@ -1626,26 +1618,10 @@ Deepcloudforest_Barry_Defeated_Text_13:
 	.string "of this forest's soul!\p"
 	.string "Lets get back to the truck!$"
 
-Deepcloudforest_Trainer_Grunt1_Text_0:
-# 343 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	.string "Maurice$"
-
-Deepcloudforest_Trainer_Grunt2_Text_0:
-# 362 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	.string "Ad Dice$"
-
-Deepcloudforest_Trainer_Grunt3_Text_0:
-# 381 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	.string "Yossi$"
-
-Deepcloudforest_Trainer_Grunt4_Text_0:
-# 400 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
-	.string "Harrie$"
-
 Deepcloudforest_Gorge_Goback_Text_0:
-# 419 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 415 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "This is not a time to flee {PLAYER},\n"
-	.string "Daan is counting on us.$"
+	.string "DAAN is counting on us.$"
 
 Deepcloudforest_Barry_Defeattext::
 # 227 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
@@ -1653,65 +1629,65 @@ Deepcloudforest_Barry_Defeattext::
 	.string "him a while ago!$"
 
 Deepcloudforest_Text_Grunt1Intro::
-# 348 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 347 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "Chopping down these ancient trees is\n"
 	.string "hard work. You better not get in my way!$"
 
 Deepcloudforest_Text_Grunt1Defeated::
-# 352 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 351 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "I'm too tired from all this woodcutting\n"
 	.string "to battle properly...$"
 
 Deepcloudforest_Text_Grunt1PostBattle::
-# 356 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 355 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "We have orders to clear this whole area.\n"
 	.string "There is something buried here that\l"
 	.string "needs to see the light of day.$"
 
 Deepcloudforest_Text_Grunt2Intro::
-# 367 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 365 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "My equipment is going crazy! There is a\n"
 	.string "massive magnetic signal nearby.$"
 
 Deepcloudforest_Text_Grunt2Defeated::
-# 371 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 369 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "My equipment!\n"
 	.string "You made me drop my scanner!$"
 
 Deepcloudforest_Text_Grunt2PostBattle::
-# 375 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 373 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "The readings aren't coming from a\n"
 	.string "normal Pokémon. It feels like living\l"
 	.string "metal is sleeping beneath this gorge.$"
 
 Deepcloudforest_Text_Grunt3Intro::
-# 386 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 383 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "This gorge is off-limits by order of the\n"
 	.string "Faculty. Turn back now, kid!$"
 
 Deepcloudforest_Text_Grunt3Defeated::
-# 390 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 387 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "Alert!\n"
 	.string "We have an intruder!$"
 
 Deepcloudforest_Text_Grunt3PostBattle::
-# 394 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 391 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "We believe there is a sealed chamber\n"
 	.string "hidden in these rock walls. We just need\l"
 	.string "to find the right door.$"
 
 Deepcloudforest_Text_Grunt4Intro::
-# 405 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 401 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "Do you know how old this forest is? Not\n"
 	.string "as old as the thing we are looking for.$"
 
 Deepcloudforest_Text_Grunt4Defeated::
-# 409 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 405 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "History repeats itself... Defeated\n"
 	.string "again.$"
 
 Deepcloudforest_Text_Grunt4PostBattle::
-# 413 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
+# 409 "data/maps/DeepCloudForest_FacultyGorge/scripts.pory"
 	.string "Legend says an ancient golem was\n"
 	.string "locked away here ages ago. The Faculty\l"
 	.string "will harness its power!$"

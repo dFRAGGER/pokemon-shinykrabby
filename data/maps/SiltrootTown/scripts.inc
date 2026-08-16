@@ -302,9 +302,9 @@ SiltrootTown_Arrive_Boatride::
 # 145 "data/maps/SiltrootTown/scripts.pory"
 	resetobjectsubpriority 5, MAP_LIONSARCH_CITY
 # 146 "data/maps/SiltrootTown/scripts.pory"
-	setspeaker SiltrootTown_Scott_Boatride_Text_0
+	setspeaker SiltrootTown_Arrive_Boatride_Text_1
 # 147 "data/maps/SiltrootTown/scripts.pory"
-	msgbox SiltrootTown_Arrive_Boatride_Text_1, MSGBOX_AUTOCLOSE
+	msgbox SiltrootTown_Arrive_Boatride_Text_2, MSGBOX_AUTOCLOSE
 # 148 "data/maps/SiltrootTown/scripts.pory"
 	waitmessage
 # 149 "data/maps/SiltrootTown/scripts.pory"
@@ -1516,7 +1516,7 @@ Siltroottown_Sign_SiltrootTown_Text_0:
 
 SiltrootTown_Scott_Boatride_Text_0:
 # 90 "data/maps/SiltrootTown/scripts.pory"
-	.string "Scott$"
+	.string "SCOTT$"
 
 SiltrootTown_Scott_Boatride_Text_1:
 # 91 "data/maps/SiltrootTown/scripts.pory"
@@ -1542,6 +1542,10 @@ SiltrootTown_Arrive_Boatride_Text_0:
 	.string "Let's move!$"
 
 SiltrootTown_Arrive_Boatride_Text_1:
+# 146 "data/maps/SiltrootTown/scripts.pory"
+	.string "Scott$"
+
+SiltrootTown_Arrive_Boatride_Text_2:
 # 147 "data/maps/SiltrootTown/scripts.pory"
 	.string "Touchdown. We are in the blind spot.\p"
 	.string "My scanners show a gap in the harbor\n"
@@ -1554,7 +1558,7 @@ SiltrootTown_Arrive_Boatride_Text_1:
 	.string "You have to take the package to the\n"
 	.string "client yourself.\p"
 	.string "He is a DJ.\p"
-	.string "Peter.\p"
+	.string "PETER.\p"
 	.string "If you hear loud, old-school disco\n"
 	.string "music, that is the drop-off point.\p"
 	.string "Now get moving!\p"
@@ -1589,7 +1593,7 @@ Siltroottown_Youth_Outide_Ali_Shop_2_Text_0:
 
 Siltroottown_Youth_Outide_Ali_Shop_3_Text_0:
 # 183 "data/maps/SiltrootTown/scripts.pory"
-	.string "Ali really knows his botany...\p"
+	.string "ALI really knows his botany...\p"
 	.string "I feel like a Hoppip floating on a\n"
 	.string "breeze.\p"
 	.string "Hey, do you have any snacks?\p"
@@ -1669,7 +1673,7 @@ Siltroottown_Guard_shed_Text_0:
 Siltroottown_Guard_shed_Text_1:
 # 269 "data/maps/SiltrootTown/scripts.pory"
 	.string "...\p"
-	.string "Oh? Ali sent you?\p"
+	.string "Oh? ALI sent you?\p"
 	.string "For the 'Project Star-Shot' shipment?\p"
 	.string "Alright, you're clear.$"
 

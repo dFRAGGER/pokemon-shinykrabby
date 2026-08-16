@@ -45,7 +45,7 @@ script Maasje_PokemonCenter_1F_Bryan_Trigger0 {
     applymovement(2, moves(emote_exclamation_mark))
     delay(60)
     applymovement(2, moves(walk_fast_left * 4 walk_fast_down))
-    setspeaker("Bryan")
+    setspeaker("BRYAN")
     msgbox(format("Hi, my name is {COLOR RED}Bryan{COLOR DARK_GRAY}.\p I'd like to film everything, absolutely everything.\p Can I film your journey towards becoming a pokemon master?\p ..... What? No?\p Just don't mind me, act like you don't see me."),MSGBOX_AUTOCLOSE)
     waitmessage
     release
@@ -59,7 +59,7 @@ script Maasje_PokemonCenter_1F_Bryan_Trigger1 {
     applymovement(2, moves(emote_exclamation_mark))
     delay(60)
     applymovement(2, moves(walk_fast_left * 3 face_down))
-    setspeaker("Bryan")
+    setspeaker("BRYAN")
     msgbox(format("Hi, my name is {COLOR RED}Bryan{COLOR DARK_GRAY}.\p I'd like to film everything, absolutely everything.\p Can I film your journey towards becoming a pokemon master?\p ..... What? No?\p Just don't mind me, act like you don't see me."),MSGBOX_AUTOCLOSE)
     waitmessage
     release
@@ -73,7 +73,7 @@ script Maasje_PokemonCenter_1F_Bryan_Trigger2 {
     applymovement(2, moves(emote_exclamation_mark))
     delay(60)
     applymovement(2, moves(walk_fast_left face_down))
-    setspeaker("Bryan")
+    setspeaker("BRYAN")
     msgbox(format("Hi, my name is {COLOR RED}Bryan{COLOR DARK_GRAY}.\p I'd like to film everything, absolutely everything.\p Can I film your journey towards becoming a pokemon master?\p ..... What? No?\p Just don't mind me, act like you don't see me."),MSGBOX_AUTOCLOSE)
     waitmessage
     release
@@ -87,7 +87,7 @@ script Maasje_PokemonCenter_1F_Bryan_Trigger3 {
     applymovement(2, moves(emote_exclamation_mark))
     delay(60)
     applymovement(2, moves(walk_fast_down))
-    setspeaker("Bryan")
+    setspeaker("BRYAN")
     msgbox(format("Hi, my name is {COLOR RED}Bryan{COLOR DARK_GRAY}.\p I'd like to film everything, absolutely everything.\p Can I film your journey towards becoming a pokemon master?\p ..... What? No?\p Just don't mind me, act like you don't see me."),MSGBOX_AUTOCLOSE)
     waitmessage
     release
@@ -98,7 +98,7 @@ script Maasje_PokemonCenter_1F_Bryan_Following {
     playse(SE_PIN)
     applymovement(2, moves(emote_question_mark face_player))
     delay(40)
-    setspeaker("Bryan")
+    setspeaker("BRYAN")
     msgbox(format("Are you talking to me?\p I'm not even here, don't worry!\p I'll send you the footage on DVD!"))
     waitmessage
     release
@@ -107,7 +107,6 @@ script Maasje_PokemonCenter_1F_Bryan_Following {
 script Maasje_PokemonCenter_1F_Man {
     lock
     faceplayer
-    setspeaker("Steph Boilers")
     msgbox(format("Back in the day the gym leader, Pete Longfellow, was my geography teacher.\p He quit his old job because one of students started to imitate his quirks.\p I forgot the real name of the student, but everybody called him J.T.B.."))
     waitmessage
     release

@@ -33,7 +33,7 @@ script ErpCity_Visited {
 
 script ErpCity_Sign_Welcome {
     lock
-    msgbox(format("ERPUS CITY\pTranquil and peaceful."),MSGBOX_SIGN)
+    msgbox(format("ERP TOWN\pTranquil and peaceful."),MSGBOX_SIGN)
     waitmessage
     release
 }
@@ -50,7 +50,7 @@ script ErpCity_Old_Man_Boekel {
 script ErpCity_Woman {
     lock
     faceplayer
-    msgbox(format("I traveled here from Meestrech just to gaze at that lake over there!\p The water is so calm and clear it looks like a mirror."),MSGBOX_AUTOCLOSE)
+    msgbox(format("I traveled here from Mosa Town just to gaze at that lake over there!\p The water is so calm and clear it looks like a mirror."),MSGBOX_AUTOCLOSE)
     waitmessage
     release
     end
@@ -68,7 +68,7 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     applymovement(5, moves(walk_down*3 face_left))
     applymovement(10, moves(jump_down*2 jump_right jump_down))
     waitmovement
-    setspeaker("Prof. Birds")
+    setspeaker("PROF. BIRDS")
     msgbox(format("WHO DO YOU THINK YOU ARE?\nTAYLOR SWIFT OR SOMETHING?\pActually.... I love Taylor Swift hehe.. ANYWAYS!!\pI TOLD YOU TO NOT SNIFF AROUND IN MY SECRET LA... I MEAN STORAGE ROOM!!\p...YOU DIDN'T STEAL ANYTHING RIGHT? RIGHT??!!\p...It doesn't really matter anyways...\pYOU ARE FIRED!!\pI GOT MY SQUIRKY LITTLE INTERN CALLED BARRY ALREADY!\pHE IS LIVING THE DREAM!!"),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
@@ -78,14 +78,14 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     applymovement(2, moves(walk_right))
     waitmovement
     applymovement(5, moves(face_up))
-    setspeaker("Prof. Birds")
+    setspeaker("PROF. BIRDS")
     msgbox(format(".....wait a second....\p.....maybe this little slob can help me to get some data...\p...that strange anomaly....\p.....yes a very good idea Jari, very smart...."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
     playse(SE_PIN)
     applymovement (2, moves(emote_exclamation_mark walk_left))
     applymovement(5, moves(face_left))
-    setspeaker("Prof. Birds")
+    setspeaker("PROF. BIRDS")
     msgbox(format(".....DID I SAY THAT OUT LOUD?\pARGH ANYWAYS, HOW ABOUT I REHIRE YOU AGAIN TO BECOME MY DATA HOARDER....\pI MEAN MY FELLOW RESEARCHER OFCOURSE! MY BELOVED PARTNER!\pTO BECOME A REAL POKEMON MASTER WE... I MEAN YOU... NEED TO CATCH EVERY POKEMON\pAND SCAN THEM WITH THIS LITTLE DEVICE...."))
     waitmessage
     setflag(FLAG_SYS_POKEDEX_GET)
@@ -96,13 +96,13 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     playfanfare(MUS_OBTAIN_ITEM)
     waitfanfare
     waitmessage
-    setspeaker("Prof. Birds")
+    setspeaker("PROF. BIRDS")
     msgbox(format("THIS DEVICE CAN COLLECT VITAL DATA ON POKEMON HABITATS, MIGRATION PATTERNS AND ...uh...\p...unique genomic signatures... for the pigs... you know...\pAND THIS WAY I WILL EXTRACT ALL NECESSARY INFORMATION FOR MY BELOVED....\p...sensors for responsible pig farming...\pNOW GO, AND DON'T COME BACK BEFORE YOU HAVE SCANNE...\p ...caught some rare Pokémons...\p...\pWHAT DO YOU MEAN... HOW?\pJUST USE POKEBALLS....\p A POKEMON MASTER HAHAHA...\pyou got to be joking...\pHERE, CATCH THESE!"))
     waitmessage
     setspeaker(NULL)
     giveitem(ITEM_POKE_BALL, 5)
     waitmessage
-    setspeaker("Prof. Birds")
+    setspeaker("PROF. BIRDS")
     msgbox(format("THROW THESE MOTHERFUCKERS, AND THE WORLD WILL BE MINE...\p...I mean ours..."),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
@@ -115,14 +115,14 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     applymovement(5, moves(walk_fast_left face_up))
     applymovement(2, moves(face_down))
     waitmovement
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(format("HE BREAKS INTO YOUR LAB AND GETS A POKEDEX, POKEBALLS AND A MISSION TO BECOME A POKEMON MASTER?\pWHAT DID I GET?\p A FUCKING MAGIKARP?\pTHE MOST USELESS POKEMON EVER IN EXISTENCE?\pI QUIT!!\p AND STOP SAYING BARRY!\pMY NAME IS W O U T E R!!"))
     waitmessage
     applymovement(5, moves(walk_fast_left face_up))
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(face_down emote_question_mark))
     waitmovement
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(format("...\pYOU??\pA POKEMON MASTER?\pDON'T MAKE ME LAUGH.\pI WILL TAKE EVERY CHANCE TO PREVENT THAT FROM HAPPENING!"),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
@@ -139,7 +139,7 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     setvar(VAR_RECIEVED_STARTER_POKEMON, 2)
     clearflag(FLAG_HIDE_INTERN_BIRDS_LAB)
     delay(120)
-    setspeaker("Prof. Birds")
+    setspeaker("PROF. BIRDS")
     msgbox(format("...I'd probably should search for another intern right now..."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
@@ -147,7 +147,7 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     waitmovement
     applymovement(LOCALID_PLAYER, moves(face_right))
     waitmovement
-    setspeaker("Prof. Birds")
+    setspeaker("PROF. BIRDS")
     msgbox(format("ABOUT THAT ANOM... YOUR MISSION!\pAN OLD FRIEND CALLED ME YESTERDAY...\pHIS NAME IS {COLOR GREEN}Jacob{COLOR DARK_GRAY}...\nHe used to live in this town...\p...but the traitor moved to {COLOR RED}Mestreech{COLOR DARK_GRAY} just west of here...\p...apparently a GOLDEN KRABBY has been sighted there...\p...a rare genetic ANOMALY...\p...this could be the perfect start to my genome triangul... I MEAN PIG SENSOR DEVELOPMENT!\pNOW WHAT ARE YOU WAITING FOR!?\pGET THAT DATA FOR ME... I MEAN US.\p AND STAY AWAY FROM MISPOES...\p HE DOESN'T LIKE ME...\pI MEAN YOU OFCOURSE!!\p...\p...so I was shouting the entire time?\pWHO CARES!\pNOW FUCK OFF!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER, moves(jump_left face_left))
@@ -167,15 +167,15 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     setflag(FLAG_HIDE_JACOB_SIENNA)
     clearflag(FLAG_HIDE_INTERN_BIRDS_LAB)
     delay(60)
-    specialvar(VAR_RESULT,ScriptGetPartyMonSpecies)
-    special(BufferMonNickname)
-    msgbox(format("...I think it is safe to come out now {STR_VAR_1}, lets get out of here!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("...I think it is safe to come out now, lets get out of here!"),MSGBOX_AUTOCLOSE)
+    special(UpdateFollowingPokemon)
+
     releaseall
 }
 
 script ErpCity_ProfessorBirds_After_Speech {
     lockall
-    setspeaker("Prof. Birds")
+    setspeaker("PROF. BIRDS")
     msgbox(format("WELL, WHAT ARE YOU WAITING FOR?\p GET THAT DATA ON THAT GOLDEN KRABBY FOR ME... I MEAN US."))
     waitmessage
     releaseall
@@ -183,7 +183,7 @@ script ErpCity_ProfessorBirds_After_Speech {
 
 script ErpCity_Mispoes_Miauw {
     lockall
-    setspeaker("Mispoes")
+    setspeaker("MISPOES")
     msgbox(format("Miaaaauw... KSSSSJSJJGGGG"))
     waitmessage
     releaseall
@@ -244,7 +244,7 @@ script ErpCity_Receive_Running_Shoes {
     addobject(4)
     applymovement(4, moves(walk_down face_player))
     waitmovement
-    setspeaker("Mom")
+    setspeaker("MOM")
     msgbox(format("Honey, I almost forgot!\pIf you want to make an impression on the professor you should wear some different shoes.\pAs a surprise I've bought a new pair for you!"))
     waitmessage
     setflag(FLAG_RECEIVED_RUNNING_SHOES)
@@ -255,18 +255,10 @@ script ErpCity_Receive_Running_Shoes {
     setspeaker(NULL)
     msgbox(format("Now if you press your 'B muscle' while moving, you will sprint!"))
     waitmessage
-    setspeaker("Mom")
-    msgbox(format("Look at you, all nice and shiny.\p Say hello to the professor for me.\p Have fun!"),MSGBOX_AUTOCLOSE)
-    delay(60)
-    setspeaker("Mom")
-    msgbox(format("Well, go on!\nDon't be shy!"), MSGBOX_AUTOCLOSE)
+    setspeaker("MOM")
+    msgbox(format("Look at you, all nice and shiny.\p Say hello to the professor for me.\pThe lab is up the hill, north from here.\pHave fun!"),MSGBOX_AUTOCLOSE)
     waitmessage
-    delay(40)
     applymovement(LOCALID_PLAYER, moves(walk_down))
-    waitmovement
-    setspeaker("Mom")
-    msgbox(format("There you go!\nI'll prepare some potatoes, meat and vegetables for you when you get back, your favorite!"))
-    waitmessage
     applymovement(4, moves(walk_up))
     waitmovement
     setflag(FLAG_HIDE_MOM_SHOES)
@@ -279,6 +271,7 @@ script ErpCity_Receive_Running_Shoes {
     end
     }
     else{
+        setspeaker(NULL)
         msgbox(format("Better get to the lab, Mom probably won't let me in if I don't try."))
         waitmessage
         applymovement(LOCALID_PLAYER, moves(walk_down))

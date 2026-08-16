@@ -21,7 +21,7 @@ script SteelFactory_2F_Scientist_Battle2 {
 }
 
 text SteelFactory_2F_Scientist1_Intro {
-    format("You've made it this far?\pThe Rector will hear about this intrusion.")
+    format("You've made it this far?\pTHE RECTOR will hear about this intrusion.")
 }
 
 text SteelFactory_2F_Scientist1_Defeat {
@@ -33,7 +33,7 @@ text SteelFactory_2F_Scientist1_PostBattle {
 }
 
 text SteelFactory_2F_Grunt_Intro {
-    format("Nobody gets past this floor without Faculty clearance.\pThat means you.")
+    format("Nobody gets past this floor without FACULTY clearance.\pThat means you.")
 }
 
 text SteelFactory_2F_Grunt_Defeat {
@@ -41,7 +41,7 @@ text SteelFactory_2F_Grunt_Defeat {
 }
 
 text SteelFactory_2F_Grunt_PostBattle {
-    format("The Rector's going to hear about every single one of you.")
+    format("THE RECTOR's going to hear about every single one of you.")
 }
 
 text SteelFactory_2F_Scientist2_Intro {
@@ -53,7 +53,7 @@ text SteelFactory_2F_Scientist2_Defeat {
 }
 
 text SteelFactory_2F_Scientist2_PostBattle {
-    format("You'll regret reaching The Rector.")
+    format("You'll regret reaching THE RECTOR.")
 }
 
 // ─── 2F LORE NPCS ───
@@ -66,7 +66,7 @@ script SteelFactory_2F_Scientist_Lore1 {
 }
 
 text SteelFactory_2F_Scientist_Lore1_Text {
-    format("This floor handles Faculty coordination.\pThe Rector reviews all field reports personally.\pWe don't get many... visitors.")
+    format("This floor handles Faculty coordination.\pTHE RECTOR reviews all field reports personally.\pWe don't get many... visitors.")
 }
 
 // ─── RECTOR FALLBACK (direct NPC touch) ───
@@ -127,18 +127,18 @@ script SteelFactory_2F_OverhearCutscene {
     waitmovement
 
     // ── Rector opens the meeting ──
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(SteelFactory_2F_Rector_OpensMeeting)
     waitmessage
 
     // ── ConRector: iron ore / Lairon report ──
     applymovement(8, moves(walk_up))
     if (flag(FLAG_STEEL_FACTORY_FREED_POKEMON) == TRUE) {
-        setspeaker("The Conrector")
+        setspeaker("THE CONRECTOR")
         msgbox(SteelFactory_2F_Conrector_LaironsFreed,MSGBOX_AUTOCLOSE)
         waitmessage
     } else {
-        setspeaker("The Conrector")
+        setspeaker("THE CONRECTOR")
         msgbox(SteelFactory_2F_Conrector_LaironsGood,MSGBOX_AUTOCLOSE)
         waitmessage
     }
@@ -147,7 +147,7 @@ script SteelFactory_2F_OverhearCutscene {
 
     // ── Rector suggests electric shocks for Magikarp ──
     applymovement(2, moves(walk_up))
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(SteelFactory_2F_Rector_ShockSuggestion,MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
@@ -156,13 +156,13 @@ script SteelFactory_2F_OverhearCutscene {
 
     // ── Barry hesitates and declines with pathetic excuse ──
     applymovement(2, moves(face_up))
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(SteelFactory_2F_Barry_ShockDecline,MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
 
     // ── Barry: mining report ──
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(SteelFactory_2F_Barry_MiningReport,MSGBOX_AUTOCLOSE)
     waitmessage
 
@@ -180,17 +180,17 @@ script SteelFactory_2F_OverhearCutscene {
 
 
     // ── Rector confrontation ──
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(SteelFactory_2F_Rector_Recognises,MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_FAILURE)
     applymovement(1, moves(face_down emote_x))
     applymovement(8, moves(face_up emote_exclamation_mark))
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(SteelFactory_2F_Rector_TurnsOnConrector,MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(2,moves(face_up))
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(SteelFactory_2F_Rector_AngryOrders,MSGBOX_AUTOCLOSE)
     waitmessage
 
@@ -202,7 +202,7 @@ script SteelFactory_2F_OverhearCutscene {
     waitmovement
     applymovement(2, moves(walk_fast_down*5))
     waitmovement
-    setspeaker("Barry")
+    setspeaker("BARRY")
     msgbox(format("Come on you stupid fish, let's get out of here!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(2, moves(walk_fast_up*4))
@@ -219,7 +219,7 @@ script SteelFactory_2F_OverhearCutscene {
     waitmovement
 
     // ── Rector addresses player ──
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(SteelFactory_2F_Rector_BattleChallenge)
     waitmessage
     setspeaker(NULL)
@@ -232,10 +232,10 @@ script SteelFactory_2F_OverhearCutscene {
 // ─── POST-BATTLE ───
 
 script SteelFactory_2F_Rector_Defeated {
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(SteelFactory_2F_Rector_DefeatedText1)
     waitmessage
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(SteelFactory_2F_Rector_DefeatedText2,MSGBOX_AUTOCLOSE)
     waitmessage
     setspeaker(NULL)

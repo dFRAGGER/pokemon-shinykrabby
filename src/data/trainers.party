@@ -99,7 +99,7 @@ Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_FACULTY_1 ===
-Name: TON CROSS
+Name: ADDY
 Class: Gentleman
 Pic: Gentleman
 Gender: Male
@@ -111,7 +111,7 @@ Level: 2
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_FACULTY_2 ===
-Name: AD DICE
+Name: AD
 Class: Gentleman
 Pic: Gentleman
 Gender: Male

@@ -95,7 +95,7 @@
 #define FLAG_HIDE_JACOB_SIENNA              0x4F // SK: Controls visibility of Jacob and Sienna NPCs across ErpCity, CrabhillEntrance, and Indoor_Maasje_Jakub_Home.
 
 // Scripts
-#define FLAG_ENABLE_EXP_SHARE_WHOLE_TEAM            0x050 // Unused Flag
+#define FLAG_UNUSED_SCRIPTS_0x050            0x050 // Unused Flag
 #define FLAG_SET_WALL_CLOCK                  0x51  // SK: Used in starting house
 #define FLAG_MARSHDUKE_CATHEDRAL_TOUR           0x052 // Unused Flag
 #define FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR            0x053 // Unused Flag
@@ -449,7 +449,7 @@
 #define FLAG_REGISTERED_DRAKE                (TRAINER_REGISTERED_FLAGS_START + REMATCH_DRAKE)
 #define FLAG_REGISTERED_WALLACE              (TRAINER_REGISTERED_FLAGS_START + REMATCH_WALLACE)
 
-#define FLAG_UNUSED_0x1AA                    0x1AA // Unused Flag
+#define FLAG_ENABLE_EXP_SHARE_WHOLE_TEAM      0x1AA // SK: Set to enable Exp. Share for the whole party; must not alias FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL (0x050).
 #define FLAG_UNUSED_0x1AB                    0x1AB // Unused Flag
 
 #define FLAG_UNUSED_SCRIPTS_0x1AC            0x1AC // Unused Flag
@@ -706,12 +706,12 @@
 #define FLAG_HIDE_LIONSARCH_FACULTY_SHIPS   0x29C // SK: Hides industrial dock ships after Faculty departure cutscene
 #define FLAG_PETER_GAVE_FACTORY_REWARD      0x29D // SK: Peter gave the player a reward after the Steel Factory was cleared
 #define FLAG_UP_TO_THE_WHITELIGHT_SILTROOTTOWN  0x29E // SK: Joris on the beach at siltroottown.
-#define FLAG_UNUSED_0x29F  0x29F // Unused Flag
-#define FLAG_UNUSED_0x2A0  0x2A0 // Unused Flag
-#define FLAG_UNUSED_0x2A1  0x2A1 // Unused Flag
-#define FLAG_UNUSED_0x2A2  0x2A2 // Unused Flag
-#define FLAG_UNUSED_0x2A3  0x2A3 // Unused Flag
-#define FLAG_UNUSED_0x2A4  0x2A4 // Unused Flag
+#define FLAG_MD_CLOSED_SHELF                 0x29F // SK: Set when the locked Order shelf in Marshduke_Indoor_House1 is closed; unset to reveal the marked page inside.
+#define FLAG_MD_READ_ANCIENT_MANUSCRIPT       0x2A0 // SK: Set in Marshduke_Indoor_House1 after reading the marked page in the unlocked Order shelf.
+#define FLAG_MET_ARI                         0x2A1 // SK: Set when the player first talks to Ari in Marshduke_Indoor_House4; gates the shortened repeat greeting.
+#define FLAG_STRENGTH_UNLOCKED               0x2A2 // SK: Set when the player obtains/learns HM Strength; checked by Ari in Marshduke_Indoor_House4 to unlock her race dialogue.
+#define FLAG_ARI_SPRINT_CHALLENGE            0x2A3 // SK: Ari's sprint challenge state on Route 014.
+#define FLAG_ARI_HIDE_JUMP_CHALLENGE         0x2A4 // SK: Ari's jump challenge visibility state on Route 014.
 #define FLAG_UNUSED_0x2A5  0x2A5 // Unused Flag
 #define FLAG_UNUSED_0x2A6  0x2A6 // Unused Flag
 #define FLAG_UNUSED_0x2A7  0x2A7 // Unused Flag
@@ -2301,7 +2301,7 @@
 #define FLAG_SHOWN_MYSTIC_TICKET                     FLAG_UNUSED_SCRIPTS_0x1DB
 #define FLAG_DEFEATED_HO_OH                          FLAG_UNUSED_SCRIPTS_0x1DC
 #define FLAG_DEFEATED_LUGIA                          FLAG_UNUSED_SCRIPTS_0x1DD
-#define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL      FLAG_ENABLE_EXP_SHARE_WHOLE_TEAM
+#define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL      FLAG_UNUSED_SCRIPTS_0x050
 #define FLAG_RESCUED_BIRCH                           FLAG_MARSHDUKE_CATHEDRAL_TOUR
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS               FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR
 #define FLAG_HIDE_CONTEST_POKE_BALL                  FLAG_ITEM_COASTAL_CAVE2_QUICK_CLAW

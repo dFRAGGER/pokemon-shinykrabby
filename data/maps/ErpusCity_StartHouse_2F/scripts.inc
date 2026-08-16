@@ -76,7 +76,7 @@ ErpCity_Starthouse1F_Mom_Clock_Movement_0:
 
 ErpCity_Starthouse1F_Mom_Calling_Text_0:
 # 13 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"
-	.string "Mom$"
+	.string "MOM$"
 
 ErpCity_Starthouse1F_Mom_Calling_Text_1:
 # 14 "data/maps/ErpusCity_StartHouse_2F/scripts.pory"

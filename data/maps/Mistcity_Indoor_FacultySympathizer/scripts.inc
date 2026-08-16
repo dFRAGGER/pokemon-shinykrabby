@@ -277,7 +277,7 @@ Mistcity_Indoor_FacultySympathizer_Escape_Movement_7:
 
 Mistcity_Indoor_FacultySympathizer_Escape_Text_0:
 # 11 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	.string "Marcus$"
+	.string "MARCUS$"
 
 Mistcity_Indoor_FacultySympathizer_Escape_Text_1:
 # 12 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
@@ -287,7 +287,7 @@ Mistcity_Indoor_FacultySympathizer_Escape_Text_1:
 
 Mistcity_Indoor_FacultySympathizer_Escape_Text_2:
 # 26 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	.string "Eleanor$"
+	.string "ELEANOR$"
 
 Mistcity_Indoor_FacultySympathizer_Escape_Text_3:
 # 27 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
@@ -300,7 +300,7 @@ Mistcity_Indoor_FacultySympathizer_Escape_Text_3:
 
 Mistcity_Indoor_FacultySympathizer_Escape_Text_4:
 # 38 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	.string "Daan$"
+	.string "DAAN$"
 
 Mistcity_Indoor_FacultySympathizer_Escape_Text_5:
 # 39 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
@@ -311,21 +311,21 @@ Mistcity_Indoor_FacultySympathizer_Escape_Text_5:
 	.string "They knew exactly what The Faculty was\n"
 	.string "doing to the forest.\p"
 	.string "...\p"
-	.string "What? There were problems in\n"
-	.string "Meestreech as well?\p"
+	.string "What? There were problems in MASO TOWN\n"
+	.string "as well?\p"
 	.string "...\p"
 	.string "That device looks very similar to the\n"
 	.string "ones the faculty were using in the\l"
 	.string "forest.\p"
 	.string "But this... this feels too big for just\n"
 	.string "them.\p"
-	.string "I can't shake this feeling about Prof.\n"
-	.string "Birds.\p"
+	.string "I can't shake this feeling about PROF.\n"
+	.string "BIRDS.\p"
 	.string "You remember what I said in the truck?\p"
 	.string "About him scanning the forest years\n"
 	.string "ago?\p"
 	.string "It's too much of a coincidence.\n"
-	.string "I'm going to call Jacob.\p"
+	.string "I'm going to call JACOB.\p"
 	.string "He's got a way of making people talk...\n"
 	.string "after a few drinks... if you know what I\l"
 	.string "mean.\p"
@@ -352,17 +352,17 @@ Mistcity_Indoor_FacultySympathizer_Escape_Text_6:
 
 Mistcity_Indoor_FacultySympathizer_Escape_Text_7:
 # 46 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	.string "Daan handed you the Pokénav!\n"
+	.string "DAAN handed you the Pokénav!\n"
 	.string "His number has been registered!$"
 
 Mistcity_Indoor_FacultySympathizer_Escape_Text_8:
 # 54 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	.string "Daan's number has been\n"
+	.string "DAAN's number has been\n"
 	.string "registered in your Pokénav!$"
 
 Mistcity_Indoor_FacultySympathizer_Escape_Text_9:
 # 64 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
-	.string "Oh, you already beat David?\n"
+	.string "Oh, you already beat DAVID?\n"
 	.string "Impressive.\p"
 	.string "You're ready for the swamps, then.\p"
 	.string "Good luck, {PLAYER}.$"
@@ -376,7 +376,7 @@ Mistcity_Indoor_FacultySympathizer_Escape_Text_10:
 Mistcity_Indoor_Faculty_Husband_Text_0:
 # 83 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	.string "Welcome to the future site of progress.\p"
-	.string "My name is {COLOR BLUE}Marcus{COLOR DARK_GRAY}.\p"
+	.string "My name is {COLOR BLUE}MARCUS{COLOR DARK_GRAY}.\p"
 	.string "The Faculty transferred me here to\n"
 	.string "oversee regional development.\p"
 	.string "This town and forest is a chaotic mess\n"
@@ -399,7 +399,7 @@ Mistcity_Indoor_Faculty_Wife_Text_0:
 # 102 "data/maps/Mistcity_Indoor_FacultySympathizer/scripts.pory"
 	.string "Oh, hello.\p"
 	.string "A new face?\p"
-	.string "I'm {COLOR BLUE}Eleanor{COLOR DARK_GRAY}.\p"
+	.string "I'm {COLOR BLUE}ELEANOR{COLOR DARK_GRAY}.\p"
 	.string "Mist City has a certain... rustic charm, I\n"
 	.string "suppose.\p"
 	.string "But it's so dreadfully unproductive.\p"

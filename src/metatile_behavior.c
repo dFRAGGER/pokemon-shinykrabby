@@ -143,6 +143,7 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_SNOW_CAVE]                          = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_DARKGREY_CAVE]                      = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_SNOW_GRASS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_CYCLING_ROAD_PULL_RIGHT_GRASS]      = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
 };
 
 bool8 MetatileBehavior_IsATile(u8 metatileBehavior)
@@ -192,7 +193,7 @@ bool8 MetatileBehavior_IsJumpSouth(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsPokeGrass(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_TALL_GRASS || metatileBehavior == MB_LONG_GRASS || metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN_GRASS)
+    if (metatileBehavior == MB_TALL_GRASS || metatileBehavior == MB_LONG_GRASS || metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN_GRASS || metatileBehavior == MB_CYCLING_ROAD_PULL_RIGHT_GRASS)
         return TRUE;
     else
         return FALSE;
@@ -799,7 +800,7 @@ bool8 MetatileBehavior_IsPuddle(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsTallGrass(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_TALL_GRASS || metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN_GRASS || metatileBehavior == MB_SNOW_GRASS)
+    if (metatileBehavior == MB_TALL_GRASS || metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN_GRASS || metatileBehavior == MB_CYCLING_ROAD_PULL_RIGHT_GRASS || metatileBehavior == MB_SNOW_GRASS)
         return TRUE;
     else
         return FALSE;
@@ -1290,6 +1291,14 @@ bool32 MetatileBehavior_IsCyclingRoadPullDownTile(u8 metatileBehavior)
 bool8 MetatileBehavior_IsCyclingRoadPullDownTileGrass(u8 metatileBehavior)
 {
     return metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN_GRASS;
+}
+
+bool32 MetatileBehavior_IsCyclingRoadPullRightTile(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_CYCLING_ROAD_PULL_RIGHT || metatileBehavior == MB_CYCLING_ROAD_PULL_RIGHT_GRASS)
+        return TRUE;
+    else
+        return FALSE;
 }
 
 bool8 MetatileBehavior_IsMuddySlope(u8 metatileBehavior)

@@ -1,32 +1,27 @@
 mapscripts BikePark_MapScripts {}
 
+# Route06 entrance, mount band (inner, closer to the BikePark interior).
+# Unconditionally force-mounts the player and sets the cycling-road flag.
+# Paired with BikePark_EventScript_Route06ExitTrigger, which sits further
+# out toward the Route06 boundary so a quick touch-and-retreat doesn't
+# mount the player before they've committed to entering. VAR_TEMP_5 is
+# reset every fire so the trigger can refire on every crossing.
 script BikePark_BikeCheck {
     lockall
-    specialvar(VAR_RESULT, GetPlayerAvatarBike)
-    if (var(VAR_RESULT) == 0) {
-        goto(BikePark_BikeCheck_NoBike)
-    }
+    setvar(VAR_TEMP_5, 0)
+    special(ForcePlayerOntoBike)
     setflag(FLAG_SYS_CYCLING_ROAD)
-    setvar(VAR_TEMP_0, 1)
     releaseall
     end
 }
 
-script BikePark_BikeCheck_NoBike {
-    playse(SE_PIN)
-    applymovement(17, moves(emote_exclamation_mark))
-    msgbox(format("Whoa! This is a designated cycling route.\pFor the safety of everyone on the ridge, you cannot proceed on foot.\pPlease get on your bike first."), MSGBOX_AUTOCLOSE)
-    waitmessage
-    applymovement(LOCALID_PLAYER, moves(walk_left))
-    waitmovement
-    releaseall
-    end
-}
-
-script BikePark_ClearCyclingRoad {
+# Route06 entrance, exit band (outer, closer to the Route06 boundary).
+# Unconditionally clears the cycling-road flag, mirroring
+# Route013_2_EventScript_BikeParkExitTrigger on the other real entrance.
+script BikePark_EventScript_Route06ExitTrigger {
     lockall
+    setvar(VAR_TEMP_5, 0)
     clearflag(FLAG_SYS_CYCLING_ROAD)
-    setvar(VAR_TEMP_0, 0)
     releaseall
     end
 }
@@ -65,7 +60,6 @@ script BikePark_Npc_LegendWatcher {
 script BikePark_Npc_BikerKai {
     lock
     faceplayer
-    setspeaker("Biker Kai")
     msgbox(format("Fastest on this ridge? That would be me.\pFinn tried to argue it last week.\pHe stopped halfway down to adjust his gloves.\pCase closed."))
     waitmessage
     release
@@ -75,7 +69,6 @@ script BikePark_Npc_BikerKai {
 script BikePark_Npc_BikerFinn {
     lock
     faceplayer
-    setspeaker("Biker Finn")
     msgbox(format("Don't let Kai tell you anything.\pHe brakes before every bend. I've clocked it.\pFastest downhill is whoever doesn't touch the brakes.\pThat's me."))
     waitmessage
     release
@@ -85,7 +78,6 @@ script BikePark_Npc_BikerFinn {
 script BikePark_Npc_BikerRox {
     lock
     faceplayer
-    setspeaker("Biker Rox")
     msgbox(format("Those two have been at this for a week.\pNeither of them has actually raced the other yet.\pI offered to time it. They both made excuses.\p...Fastest on this ridge is whoever's willing to actually go."))
     waitmessage
     release
@@ -104,7 +96,6 @@ script BikePark_Npc_BikeWatcher {
 script BikePark_Npc_RidgeRanger {
     lock
     faceplayer
-    setspeaker("Ranger Tove")
     msgbox(format("Three years I've been watching this ridge.\pGulliot, Taillow, Wingull - same crowd every season.\pBut last month I spotted something on the southern outcrop.\pOrange. Small. Left a scorch mark on the rock when it took off."))
     waitmessage
     msgbox(format("Haven't seen it since.\pI'm not writing it in the report yet."), MSGBOX_AUTOCLOSE)
@@ -116,7 +107,6 @@ script BikePark_Npc_RidgeRanger {
 script BikePark_Npc_Milo {
     lock
     faceplayer
-    setspeaker("Milo")
     msgbox(format("That drop right there? I've been meaning to ride it all week.\pJust waiting on the right gear. Wrong tires for that grade. Wrong suspension too, honestly."), MSGBOX_AUTOCLOSE)
     waitmessage
     release

@@ -20,7 +20,7 @@ Mistcity_PokemonCenter_2F_Red_Convo::
 
 Mistcity_PokemonCenter_2F_Red_Convo_Text_0:
 # 6 "data/maps/Mistcity_PokemonCenter_2F/scripts.pory"
-	.string "Game Maker$"
+	.string "GAME MAKER$"
 
 Mistcity_PokemonCenter_2F_Red_Convo_Text_1:
 # 7 "data/maps/Mistcity_PokemonCenter_2F/scripts.pory"

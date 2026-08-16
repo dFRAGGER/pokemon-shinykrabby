@@ -45,11 +45,11 @@ Mistcity_Indoor_PatternFinder_Father_5:
 
 Mistcity_Indoor_PatternFinder_Father_Text_0:
 # 6 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
-	.string "Mr. Heartfield$"
+	.string "Mr. HEARTFIELD$"
 
 Mistcity_Indoor_PatternFinder_Father_Text_1:
 # 8 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
-	.string "Oh, hello. My name is Mr. Heartfield.\p"
+	.string "Oh, hello. My name is Mr. HEARTFIELD.\p"
 	.string "Welcome.\p"
 	.string "Sorry for all the ladders and climbing\n"
 	.string "to get here.\p"
@@ -74,7 +74,7 @@ Mistcity_Indoor_PatternFinder_Father_Text_2:
 # 13 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
 	.string "It's you.\n"
 	.string "Thank you.\p"
-	.string "My son David came home yesterday... he\n"
+	.string "My son DAVID came home yesterday... he\n"
 	.string "seemed so happy. So alive.\p"
 	.string "He was excitedly drawing these complex\n"
 	.string "patterns in his notebook like dots on a\l"
@@ -92,7 +92,7 @@ Mistcity_Indoor_PatternFinder_Father_Text_2:
 	.string "A move that builds both body and\n"
 	.string "resolve at once, strength that comes\l"
 	.string "from within.\p"
-	.string "David used to shrink away from\n"
+	.string "DAVID used to shrink away from\n"
 	.string "everything.\p"
 	.string "Now I see them stand a little taller.\p"
 	.string "That's what you gave them.\p"
@@ -100,7 +100,7 @@ Mistcity_Indoor_PatternFinder_Father_Text_2:
 
 Mistcity_Indoor_PatternFinder_Father_Text_3:
 # 20 "data/maps/Mistcity_Indoor_PatternFinder_Father/scripts.pory"
-	.string "David is doing so well.\p"
+	.string "DAVID is doing so well.\p"
 	.string "They came home last night humming to\n"
 	.string "themselves.\p"
 	.string "First time I've heard that in years.$"

@@ -526,7 +526,7 @@ DeepCloudForest_AncientGrotto_GetOutTruck_Text_0:
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_1:
 # 36 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	.string "The Rector$"
+	.string "THE RECTOR$"
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_2:
 # 37 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
@@ -536,7 +536,7 @@ DeepCloudForest_AncientGrotto_GetOutTruck_Text_2:
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_3:
 # 54 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	.string "Daan$"
+	.string "DAAN$"
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_4:
 # 55 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
@@ -550,7 +550,7 @@ DeepCloudForest_AncientGrotto_GetOutTruck_Text_5:
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_6:
 # 76 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	.string "David$"
+	.string "DAVID$"
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_7:
 # 77 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
@@ -587,7 +587,7 @@ DeepCloudForest_AncientGrotto_GetOutTruck_Text_10:
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_11:
 # 99 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"
-	.string "Nash$"
+	.string "NASH$"
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_12:
 # 100 "data/maps/DeepCloudforest_FacultyAncientGrotto/scripts.pory"

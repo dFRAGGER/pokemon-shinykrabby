@@ -20,15 +20,15 @@ script House1_Marta {
     if (flag(FLAG_HOUSE1_STARDUST_GIVEN) == FALSE) {
         msgbox(format("Oh! Hello there, come in, come in.\pI found something odd last spring in a crate that washed up near berth seven.\pNo label. No manifest. No shipper's mark.\pJust this little thing inside, glittering in the harbor light."))
         waitmessage
-        msgbox(format("Sven says I should have reported it to the harbor master.\pBut I ask you - who sends an unmarked crate with just one shiny thing in it?\pSomeone who doesn't want it found, that's who.\pYou look sharp. Here. You take it."))
+        msgbox(format("My husband says I should have reported it to the harbor master.\pBut I ask you - who sends an unmarked crate with just one shiny thing in it?\pSomeone who doesn't want it found, that's who.\pYou look sharp. Here. You take it."))
         waitmessage
         giveitem(ITEM_STARDUST)
         waitmessage
         setflag(FLAG_HOUSE1_STARDUST_GIVEN)
-        msgbox(format("Don't tell Sven, or I'll never hear the end of it."))
+        msgbox(format("Don't tell my husband, or I'll never hear the end of it."))
         waitmessage
     } else {
-        msgbox(format("Sven's been fretting about that crate for months.\pI told him I gave away what was inside.\pHe says I 'can't just give away unlogged harbor goods.'\pRetired forty years and he still thinks like a dockworker."))
+        msgbox(format("My husband's been fretting about that crate for months.\pI told him I gave away what was inside.\pHe says I 'can't just give away unlogged harbor goods.'\pRetired forty years and he still thinks like a dockworker."))
         waitmessage
     }
     release

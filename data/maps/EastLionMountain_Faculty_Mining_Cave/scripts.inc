@@ -44,7 +44,7 @@ MiningCave_WakeUp_Text_1:
 MiningCave_WakeUp_Text_2:
 # 13 "data/maps/EastLionMountain_Faculty_Mining_Cave/scripts.pory"
 	.string "...Wait.\p"
-	.string "The crevice. Barry pushed me in.$"
+	.string "The crevice. BARRY pushed me in.$"
 
 MiningCave_WakeUp_Text_3:
 # 14 "data/maps/EastLionMountain_Faculty_Mining_Cave/scripts.pory"

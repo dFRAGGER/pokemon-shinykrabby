@@ -1647,7 +1647,7 @@ LionsarchCity_Scott_ArrivalPoint_Text_0:
 
 LionsarchCity_RectorSendoff_Text_0:
 # 428 "data/maps/LionsarchCity/scripts.pory"
-	.string "The Rector$"
+	.string "THE RECTOR$"
 
 LionsarchCity_RectorSendoff_Text_1:
 # 429 "data/maps/LionsarchCity/scripts.pory"
@@ -1659,7 +1659,7 @@ LionsarchCity_RectorSendoff_Text_1:
 
 LionsarchCity_RectorSendoff_Text_2:
 # 440 "data/maps/LionsarchCity/scripts.pory"
-	.string "Barry$"
+	.string "BARRY$"
 
 LionsarchCity_RectorSendoff_Text_3:
 # 441 "data/maps/LionsarchCity/scripts.pory"
@@ -1673,7 +1673,7 @@ LionsarchCity_RectorSendoff_Text_4:
 
 LionsarchCity_RectorSendoff_Text_5:
 # 459 "data/maps/LionsarchCity/scripts.pory"
-	.string "The Conrector$"
+	.string "THE CONRECTOR$"
 
 LionsarchCity_RectorSendoff_Text_6:
 # 460 "data/maps/LionsarchCity/scripts.pory"

@@ -569,7 +569,7 @@ PeterHouse_Bouncer_Movement_0:
 
 PeterHouse_EntranceScene_Text_0:
 # 29 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
-	.string "Bouncer Bruno$"
+	.string "BOUNCER BRUNO$"
 
 PeterHouse_EntranceScene_Text_1:
 # 30 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
@@ -579,7 +579,7 @@ PeterHouse_EntranceScene_Text_1:
 
 PeterHouse_EntranceScene_Text_2:
 # 60 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
-	.string "Bouncer Mario$"
+	.string "BOUNCER MARIO$"
 
 PeterHouse_EntranceScene_Text_3:
 # 61 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
@@ -596,14 +596,14 @@ PeterHouse_EntranceScene_Text_4:
 PeterHouse_EntranceScene_Text_5:
 # 77 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
 	.string "...\p"
-	.string "A package from Ali?\p"
-	.string "For Peter?\p"
+	.string "A package from ALI?\p"
+	.string "For PETER?\p"
 	.string "From down south?\p"
 	.string "Oh damn, you're THAT delivery!$"
 
 PeterHouse_EntranceScene_Text_6:
 # 81 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
-	.string "Peter's been waiting for this package\n"
+	.string "PETER's been waiting for this package\n"
 	.string "for weeks!\p"
 	.string "Says it's essential for the 'party\n"
 	.string "atmosphere'.\p"
@@ -612,20 +612,20 @@ PeterHouse_EntranceScene_Text_6:
 PeterHouse_EntranceScene_Text_7:
 # 89 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
 	.string "Hey Bruno! Let this one through!\p"
-	.string "VIP delivery from Ali!$"
+	.string "VIP delivery from ALI!$"
 
 PeterHouse_EntranceScene_Text_8:
 # 98 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
-	.string "Ali's contact, huh?\p"
+	.string "ALI's contact, huh?\p"
 	.string "Alright, you're good.\p"
-	.string "Head on down. Peter's in the basement\n"
+	.string "Head on down. PETER's in the basement\n"
 	.string "spinning records.$"
 
 PeterHouse_EntranceScene_Text_9:
 # 109 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
 	.string "Go on.\p"
 	.string "And hey... enjoy the groove down there.\p"
-	.string "Peter throws one hell of a party.$"
+	.string "PETER throws one hell of a party.$"
 
 PeterHouse_Bouncer_Text_0:
 # 127 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
@@ -654,7 +654,7 @@ PeterHouse_Bouncer_Text_3:
 
 PeterHouse_Machoke_Text_0:
 # 172 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
-	.string "Machoke$"
+	.string "MACHOKE$"
 
 PeterHouse_Machoke_Text_1:
 # 173 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
@@ -666,18 +666,18 @@ PeterHouse_DoorGuard_Text_0:
 # 184 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
 	.string "You're on the list now.\p"
 	.string "Go enjoy the party.\p"
-	.string "Peter's got the best beats in\n"
+	.string "PETER's got the best beats in\n"
 	.string "Lionsarch.$"
 
 PeterHouse_DoorGuard_Text_1:
 # 186 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
-	.string "Oh, you've got something from Ali?\p"
+	.string "Oh, you've got something from ALI?\p"
 	.string "Why didn't you say so!\p"
-	.string "Go talk to Bruno, he'll let you through.$"
+	.string "Go talk to BRUNO, he'll let you through.$"
 
 PeterHouse_DoorGuard_Text_2:
 # 189 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
-	.string "Hey Bruno! This one's cleared!$"
+	.string "Hey BRUNO! This one's cleared!$"
 
 PeterHouse_DoorGuard_Text_3:
 # 191 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
@@ -697,7 +697,7 @@ PeterHouse_PartyGirl_Text_1:
 
 PeterHouse_NPC_Peter_Text_0:
 # 211 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
-	.string "Peter$"
+	.string "PETER$"
 
 PeterHouse_NPC_Peter_Text_1:
 # 212 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
@@ -705,7 +705,7 @@ PeterHouse_NPC_Peter_Text_1:
 	.string "If you're here about the party... well,\n"
 	.string "you gotta know the password first.\p"
 	.string "Or bring me something special from my\n"
-	.string "friend Ali down south.$"
+	.string "friend ALI down south.$"
 
 PeterHouse_NPC_Peter_Text_2:
 # 216 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
@@ -716,7 +716,7 @@ PeterHouse_NPC_Peter_Text_2:
 
 PeterHouse_Woman_Neighbor_Text_0:
 # 225 "data/maps/LionsarchCity_Indoor_PeterHouse/scripts.pory"
-	.string "Peter is such a nice young man.\p"
+	.string "PETER is such a nice young man.\p"
 	.string "A bit loud with his music sometimes, but\n"
 	.string "he's always polite.\p"
 	.string "I hear thumping bass at odd hours...\n"

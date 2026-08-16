@@ -5780,7 +5780,7 @@ bool8 CheckAddCoins(void)
         return TRUE;
 }
 
-#define LOCALID_MARSHDUKE_CATHEDRAL_CASTFORM 34
+#define LOCALID_MARSHDUKE_CATHEDRAL_CASTFORM 33
 
 void SetCastformSunnyForm(void)
 {

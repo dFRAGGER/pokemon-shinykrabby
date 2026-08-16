@@ -2010,3 +2010,11 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Route023/scripts.inc"
 
 	.include "data/maps/Marshduke_Indoor_Vision_MewMewtwoo/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_House1_2F/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Gym/scripts.inc"
+
+	.include "data/maps/UjeTown/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_ResearchCenter_2F/scripts.inc"

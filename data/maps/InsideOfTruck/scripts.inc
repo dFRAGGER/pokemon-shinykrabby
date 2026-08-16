@@ -546,7 +546,7 @@ Mistcity_InsideOfTruck_Daan_Returndrive_Movement_9:
 
 Miscity_InsideOfTruck_Daan_RescueMission_Text_0:
 # 39 "data/maps/InsideOfTruck/scripts.pory"
-	.string "David$"
+	.string "DAVID$"
 
 Miscity_InsideOfTruck_Daan_RescueMission_Text_1:
 # 40 "data/maps/InsideOfTruck/scripts.pory"
@@ -583,7 +583,7 @@ Mistcity_InsideOfTruck_Daan_ChaseFaculty_Text_1:
 
 Mistcity_InsideOfTruck_Daan_ChaseFaculty_Text_2:
 # 121 "data/maps/InsideOfTruck/scripts.pory"
-	.string "Daan$"
+	.string "DAAN$"
 
 Mistcity_InsideOfTruck_Daan_ChaseFaculty_Text_3:
 # 122 "data/maps/InsideOfTruck/scripts.pory"

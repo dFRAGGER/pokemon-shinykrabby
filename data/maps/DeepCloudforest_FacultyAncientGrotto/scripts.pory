@@ -33,7 +33,7 @@ script DeepCloudForest_AncientGrotto_GetOutTruck {
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left*4))
     waitmovement
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(format("Allright teachers, to make a long story short, force the golem on the ship and lets get out of here."),MSGBOX_AUTOCLOSE)
     setflag(FLAG_ANCIENTGROTTO_BOARD_SHIP)
     delay(40)
@@ -51,7 +51,7 @@ script DeepCloudForest_AncientGrotto_GetOutTruck {
     applymovement(8, moves(walk_fast_left*3))
     applymovement(10, moves(walk_fast_left*3))
     waitmovement
-    setspeaker("Daan")
+    setspeaker("DAAN")
     msgbox(format("HEY!\nWHAT ARE YOU GUYS DOING?"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(7, moves(walk_right*2))
@@ -68,47 +68,47 @@ script DeepCloudForest_AncientGrotto_GetOutTruck {
     waitmovement
     applymovement(6, moves(walk_slow_left face_right))
     waitmovement
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(format("Impressive!\pHow did you guys find us that quickly?"), MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(8, moves(walk_down face_left))
     delay(40)
-    setspeaker("David")
+    setspeaker("DAVID")
     msgbox(format("That energy...\pthe pressure...\pIt's the 'Silent Guardian'...\pIt's exactly what the legends described.\nThey actually did it.\pThey have Registeel."),MSGBOX_AUTOCLOSE)
     delay(60)
     applymovement(7, moves(walk_down*2 face_right))
     waitmovement
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(format("Look at you, young man.\pYou seem to be an intelligent kid.\pWhy don't you join the faculty?\pAt the faculty we Push Boundaries, Develop Talent and Inspire!!\pYou would be the perfect fit!"),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
     applymovement(9, moves(emote_exclamation_mark walk_fast_left walk_fast_down*2 face_left ))
     waitmovement
-    setspeaker("Daan")
+    setspeaker("DAAN")
     msgbox(format("Don't talk to him, you fool!\pFree Registeel, he belongs in this forest!"), MSGBOX_AUTOCLOSE)
     delay(40)
     applymovement(7, moves(face_left))
     delay(60)
     applymovement(7, moves(face_right))
     waitmessage
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(format("Unfortunately, I can't do that.\pOur plan is bigger than this chaotic forest.\pHe is a necessary piece to bring order to this world."), MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(10, moves(emote_exclamation_mark walk_fast_left*2 face_down))
     waitmovement
-    setspeaker("Nash")
+    setspeaker("NASH")
     msgbox(format("What do you mean?"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(7, moves(face_up))
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(format("You will see my friend, you will see.\pTeachers, lets get out of here."), MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(7, moves(face_left))
-    setspeaker("The Rector")
+    setspeaker("THE RECTOR")
     msgbox(format("ELECTABUZZ, FLASH!!"), MSGBOX_AUTOCLOSE)
     setflag(FLAG_ANCIENTGROTTO_DISAPPEAR_SHIP)
     delay(40)
-    setspeaker("Nash")
+    setspeaker("NASH")
     msgbox(format("Goddamn, not again...\nI should have brought my sunglasses..."),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_BANG)
@@ -131,10 +131,10 @@ script DeepCloudForest_AncientGrotto_GetOutTruck {
     waitmovement
     applymovement(2, moves(walk_slow_left*5))
     special(RemoveCameraObject)
-    setspeaker("Daan")
+    setspeaker("DAAN")
     msgbox(format("We can't catch them..."),MSGBOX_AUTOCLOSE)
     delay(120)
-    setspeaker("Daan")
+    setspeaker("DAAN")
     msgbox(format("Lets get back to the research station, it's getting dark."),MSGBOX_AUTOCLOSE)
     waitmessage
     clearflag(FLAG_DAVID_TRUCK)

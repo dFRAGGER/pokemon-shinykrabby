@@ -94,8 +94,8 @@ Route02_Researcher_BulletSeed_2:
 
 Route02_Sign_Middle_Text_0:
 # 5 "data/maps/Route02/scripts.pory"
-	.string "{LEFT_ARROW} Mist City\n"
-	.string "{RIGHT_ARROW} Meestrech City$"
+	.string "{LEFT_ARROW} MISTY CITY\n"
+	.string "{RIGHT_ARROW} MOSA TOWN$"
 
 Route02_Researcher_BulletSeed_Text_0:
 # 122 "data/maps/Route02/scripts.pory"

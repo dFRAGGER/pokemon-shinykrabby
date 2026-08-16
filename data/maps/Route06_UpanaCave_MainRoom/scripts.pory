@@ -187,7 +187,6 @@ text UpanaCavesystem_Text_OpalPostBattle {
 script UpanaCaveMainRoom_Npc_Researcher {
     lock
     faceplayer
-    setspeaker("Dr. Virel")
     msgbox(format("These carvings are extraordinary.\pThe technique, the depth of the cuts, this predates anything we have documented in the region.\pWhoever made them spent a long time down here.\pThe creatures depicted... I can't place them.\pThey don't match anything in modern records.\pBut the people who carved them clearly knew them very well.\pPerhaps too well."), MSGBOX_AUTOCLOSE)
     waitmessage
     release
@@ -197,7 +196,6 @@ script UpanaCaveMainRoom_Npc_Researcher {
 script UpanaCaveMainRoom_Npc_Hiker {
     lock
     faceplayer
-    setspeaker("Hiker Bram")
     msgbox(format("You know what I love about this cave?\pThe formations.\pLook at those stalactites they have been growing for thousands of years.\pJust one drip at a time.\pStalactites hang down from the ceiling. Stalagmites push up from the floor.\pEasy way to remember: stalacTITES hold TIGHT to the ceiling.\pI came up with that myself."), MSGBOX_AUTOCLOSE)
     waitmessage
     release

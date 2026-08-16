@@ -159,7 +159,7 @@ SteelFactory_2F_OverhearCutscene_7:
 # 127 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	waitmovement
 # 130 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	setspeaker SteelFactory_2F_Rector_Fallback_Text_0
+	setspeaker SteelFactory_2F_OverhearCutscene_Text_0
 # 131 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	msgbox SteelFactory_2F_Rector_OpensMeeting
 # 132 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
@@ -169,7 +169,7 @@ SteelFactory_2F_OverhearCutscene_7:
 # 136 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	goto_if_set FLAG_STEEL_FACTORY_FREED_POKEMON, SteelFactory_2F_OverhearCutscene_13
 # 141 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	setspeaker SteelFactory_2F_OverhearCutscene_Text_0
+	setspeaker SteelFactory_2F_OverhearCutscene_Text_1
 # 142 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	msgbox SteelFactory_2F_Conrector_LaironsGood, MSGBOX_AUTOCLOSE
 # 143 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
@@ -182,7 +182,7 @@ SteelFactory_2F_OverhearCutscene_12:
 # 149 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	applymovement 2, SteelFactory_2F_OverhearCutscene_Movement_2
 # 150 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	setspeaker SteelFactory_2F_Rector_Fallback_Text_0
+	setspeaker SteelFactory_2F_OverhearCutscene_Text_0
 # 151 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	msgbox SteelFactory_2F_Rector_ShockSuggestion, MSGBOX_AUTOCLOSE
 # 152 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
@@ -196,7 +196,7 @@ SteelFactory_2F_OverhearCutscene_12:
 # 158 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	applymovement 2, SteelFactory_2F_OverhearCutscene_Movement_5
 # 159 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	setspeaker SteelFactory_2F_OverhearCutscene_Text_1
+	setspeaker SteelFactory_2F_OverhearCutscene_Text_2
 # 160 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	msgbox SteelFactory_2F_Barry_ShockDecline, MSGBOX_AUTOCLOSE
 # 161 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
@@ -204,7 +204,7 @@ SteelFactory_2F_OverhearCutscene_12:
 # 162 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	delay 60
 # 165 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	setspeaker SteelFactory_2F_OverhearCutscene_Text_1
+	setspeaker SteelFactory_2F_OverhearCutscene_Text_2
 # 166 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	msgbox SteelFactory_2F_Barry_MiningReport, MSGBOX_AUTOCLOSE
 # 167 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
@@ -230,7 +230,7 @@ SteelFactory_2F_OverhearCutscene_12:
 # 179 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	applymovement 8, SteelFactory_2F_OverhearCutscene_Movement_8
 # 183 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	setspeaker SteelFactory_2F_Rector_Fallback_Text_0
+	setspeaker SteelFactory_2F_OverhearCutscene_Text_0
 # 184 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	msgbox SteelFactory_2F_Rector_Recognises, MSGBOX_AUTOCLOSE
 # 185 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
@@ -242,7 +242,7 @@ SteelFactory_2F_OverhearCutscene_12:
 # 188 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	applymovement 8, SteelFactory_2F_OverhearCutscene_Movement_11
 # 189 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	setspeaker SteelFactory_2F_Rector_Fallback_Text_0
+	setspeaker SteelFactory_2F_OverhearCutscene_Text_0
 # 190 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	msgbox SteelFactory_2F_Rector_TurnsOnConrector, MSGBOX_AUTOCLOSE
 # 191 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
@@ -250,7 +250,7 @@ SteelFactory_2F_OverhearCutscene_12:
 # 192 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	applymovement 2, SteelFactory_2F_OverhearCutscene_Movement_5
 # 193 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	setspeaker SteelFactory_2F_Rector_Fallback_Text_0
+	setspeaker SteelFactory_2F_OverhearCutscene_Text_0
 # 194 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	msgbox SteelFactory_2F_Rector_AngryOrders, MSGBOX_AUTOCLOSE
 # 195 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
@@ -270,9 +270,9 @@ SteelFactory_2F_OverhearCutscene_12:
 # 204 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	waitmovement
 # 205 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	setspeaker SteelFactory_2F_OverhearCutscene_Text_1
+	setspeaker SteelFactory_2F_OverhearCutscene_Text_2
 # 206 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	msgbox SteelFactory_2F_OverhearCutscene_Text_2, MSGBOX_AUTOCLOSE
+	msgbox SteelFactory_2F_OverhearCutscene_Text_3, MSGBOX_AUTOCLOSE
 # 207 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	waitmessage
 # 208 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
@@ -300,7 +300,7 @@ SteelFactory_2F_OverhearCutscene_12:
 # 219 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	waitmovement
 # 222 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	setspeaker SteelFactory_2F_Rector_Fallback_Text_0
+	setspeaker SteelFactory_2F_OverhearCutscene_Text_0
 # 223 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	msgbox SteelFactory_2F_Rector_BattleChallenge
 # 224 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
@@ -336,7 +336,7 @@ SteelFactory_2F_OverhearCutscene_9:
 
 SteelFactory_2F_OverhearCutscene_13:
 # 137 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	setspeaker SteelFactory_2F_OverhearCutscene_Text_0
+	setspeaker SteelFactory_2F_OverhearCutscene_Text_1
 # 138 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	msgbox SteelFactory_2F_Conrector_LaironsFreed, MSGBOX_AUTOCLOSE
 # 139 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
@@ -346,13 +346,13 @@ SteelFactory_2F_OverhearCutscene_13:
 
 SteelFactory_2F_Rector_Defeated::
 # 235 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	setspeaker SteelFactory_2F_Rector_Fallback_Text_0
+	setspeaker SteelFactory_2F_OverhearCutscene_Text_0
 # 236 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	msgbox SteelFactory_2F_Rector_DefeatedText1
 # 237 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	waitmessage
 # 238 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	setspeaker SteelFactory_2F_Rector_Fallback_Text_0
+	setspeaker SteelFactory_2F_OverhearCutscene_Text_0
 # 239 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	msgbox SteelFactory_2F_Rector_DefeatedText2, MSGBOX_AUTOCLOSE
 # 240 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
@@ -843,14 +843,18 @@ SteelFactory_2F_Rector_Fallback_Text_0:
 	.string "The Rector$"
 
 SteelFactory_2F_OverhearCutscene_Text_0:
-# 137 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	.string "The Conrector$"
+# 130 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
+	.string "THE RECTOR$"
 
 SteelFactory_2F_OverhearCutscene_Text_1:
-# 159 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	.string "Barry$"
+# 137 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
+	.string "THE CONRECTOR$"
 
 SteelFactory_2F_OverhearCutscene_Text_2:
+# 159 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
+	.string "BARRY$"
+
+SteelFactory_2F_OverhearCutscene_Text_3:
 # 206 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	.string "Come on you stupid fish, let's get out\n"
 	.string "of here!$"
@@ -858,7 +862,7 @@ SteelFactory_2F_OverhearCutscene_Text_2:
 SteelFactory_2F_Scientist1_Intro::
 # 23 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	.string "You've made it this far?\p"
-	.string "The Rector will hear about this\n"
+	.string "THE RECTOR will hear about this\n"
 	.string "intrusion.$"
 
 SteelFactory_2F_Scientist1_Defeat::
@@ -875,7 +879,7 @@ SteelFactory_2F_Scientist1_PostBattle::
 SteelFactory_2F_Grunt_Intro::
 # 35 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	.string "Nobody gets past this floor without\n"
-	.string "Faculty clearance.\p"
+	.string "FACULTY clearance.\p"
 	.string "That means you.$"
 
 SteelFactory_2F_Grunt_Defeat::
@@ -885,7 +889,7 @@ SteelFactory_2F_Grunt_Defeat::
 
 SteelFactory_2F_Grunt_PostBattle::
 # 43 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	.string "The Rector's going to hear about every\n"
+	.string "THE RECTOR's going to hear about every\n"
 	.string "single one of you.$"
 
 SteelFactory_2F_Scientist2_Intro::
@@ -901,13 +905,13 @@ SteelFactory_2F_Scientist2_Defeat::
 
 SteelFactory_2F_Scientist2_PostBattle::
 # 55 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
-	.string "You'll regret reaching The Rector.$"
+	.string "You'll regret reaching THE RECTOR.$"
 
 SteelFactory_2F_Scientist_Lore1_Text::
 # 68 "data/maps/LionsarchCity_Steel_Factory_2F/scripts.pory"
 	.string "This floor handles Faculty\n"
 	.string "coordination.\p"
-	.string "The Rector reviews all field reports\n"
+	.string "THE RECTOR reviews all field reports\n"
 	.string "personally.\p"
 	.string "We don't get many... visitors.$"
 

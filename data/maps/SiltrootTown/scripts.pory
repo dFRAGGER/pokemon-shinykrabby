@@ -87,7 +87,7 @@ script SiltrootTown_Scott_Boatride {
     checkitem(ITEM_POKEBLOCK_CASE)
     if (var(VAR_RESULT) == FALSE) {
         faceplayer
-        setspeaker("Scott")
+        setspeaker("SCOTT")
         msgbox(format("...I don't know you.\pYou got no credentials.\pGo see Ali first.\pIf he vouches for you, you'll know what to bring."),MSGBOX_AUTOCLOSE)
         waitmessage
         releaseall
@@ -96,7 +96,7 @@ script SiltrootTown_Scott_Boatride {
     setflag(FLAG_HIDE_SCOTT_LIONSARCH_CITY)
     getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
     faceplayer
-    setspeaker("Scott")
+    setspeaker("SCOTT")
     msgbox(format("Nobody saw you right?\pLets move before the satellite flies over.\pThe boat ride will be a rough one."),MSGBOX_AUTOCLOSE)
     waitmessage
     setobjectsubpriority(12, MAP_SILTROOT_TOWN, 0)
@@ -125,7 +125,7 @@ script SiltrootTown_Scott_Boatride {
 
 script SiltrootTown_Arrive_Boatride {
     delay(50)
-    setspeaker("Scott")
+    setspeaker("SCOTT")
     msgbox(format("Bravo, Tango here.\pReady to disembark?\p...\pCopy that.\pLet's move!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER,moves(walk_fast_up))
@@ -144,7 +144,7 @@ script SiltrootTown_Arrive_Boatride {
     resetobjectsubpriority(LOCALID_PLAYER, MAP_SILTROOT_TOWN)
     resetobjectsubpriority(5, MAP_LIONSARCH_CITY)
     setspeaker("Scott")
-    msgbox(format("Touchdown. We are in the blind spot.\pMy scanners show a gap in the harbor security grid for exactly forty-five seconds.\pListen fast because I am burning fuel right now.\pI am not going further into the city.\pToo many facial recognition towers.\pYou have to take the package to the client yourself.\pHe is a DJ.\pPeter.\pIf you hear loud, old-school disco music, that is the drop-off point.\pNow get moving!\pWalk forward and don't look back.\pIf anyone asks, we never met.\pI was never here.\pTango going dark."),MSGBOX_AUTOCLOSE)
+    msgbox(format("Touchdown. We are in the blind spot.\pMy scanners show a gap in the harbor security grid for exactly forty-five seconds.\pListen fast because I am burning fuel right now.\pI am not going further into the city.\pToo many facial recognition towers.\pYou have to take the package to the client yourself.\pHe is a DJ.\pPETER.\pIf you hear loud, old-school disco music, that is the drop-off point.\pNow get moving!\pWalk forward and don't look back.\pIf anyone asks, we never met.\pI was never here.\pTango going dark."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(5, moves(walk_fast_down walk_fast_left walk_fast_down*9))
     waitmovement
@@ -180,7 +180,7 @@ script Siltroottown_Youth_Outide_Ali_Shop_2 {
 script Siltroottown_Youth_Outide_Ali_Shop_3 {
     lock
     faceplayer
-    msgbox(format("Ali really knows his botany...\pI feel like a Hoppip floating on a breeze.\pHey, do you have any snacks?\pI would kill for a Lava Cookie right now."))
+    msgbox(format("ALI really knows his botany...\pI feel like a Hoppip floating on a breeze.\pHey, do you have any snacks?\pI would kill for a Lava Cookie right now."))
     waitmessage
     release
     end
@@ -266,7 +266,7 @@ script Siltroottown_Guard_shed {
     playse(SE_PIN)
     applymovement(20,moves(emote_exclamation_mark))
     waitmovement
-    msgbox(format("...\pOh? Ali sent you?\pFor the 'Project Star-Shot' shipment?\pAlright, you're clear."),MSGBOX_AUTOCLOSE)
+    msgbox(format("...\pOh? ALI sent you?\pFor the 'Project Star-Shot' shipment?\pAlright, you're clear."),MSGBOX_AUTOCLOSE)
     waitmessage    
     if(var(VAR_TEMP_0) == 62 && var(VAR_TEMP_1) == 65) {
         applymovement(20, moves(walk_down face_up))

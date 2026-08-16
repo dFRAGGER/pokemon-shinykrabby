@@ -110,8 +110,8 @@ House1_Marta_Text_0:
 
 House1_Marta_Text_1:
 # 23 "data/maps/LionsarchCity_Indoor_House1/scripts.pory"
-	.string "Sven says I should have reported it to\n"
-	.string "the harbor master.\p"
+	.string "My husband says I should have reported\n"
+	.string "it to the harbor master.\p"
 	.string "But I ask you - who sends an unmarked\n"
 	.string "crate with just one shiny thing in it?\p"
 	.string "Someone who doesn't want it found,\n"
@@ -120,13 +120,13 @@ House1_Marta_Text_1:
 
 House1_Marta_Text_2:
 # 28 "data/maps/LionsarchCity_Indoor_House1/scripts.pory"
-	.string "Don't tell Sven, or I'll never hear the\n"
-	.string "end of it.$"
+	.string "Don't tell my husband, or I'll never hear\n"
+	.string "the end of it.$"
 
 House1_Marta_Text_3:
 # 31 "data/maps/LionsarchCity_Indoor_House1/scripts.pory"
-	.string "Sven's been fretting about that crate\n"
-	.string "for months.\p"
+	.string "My husband's been fretting about that\n"
+	.string "crate for months.\p"
 	.string "I told him I gave away what was inside.\p"
 	.string "He says I 'can't just give away unlogged\n"
 	.string "harbor goods.'\p"

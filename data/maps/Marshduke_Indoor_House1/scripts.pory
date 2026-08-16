@@ -1,1 +1,156 @@
 mapscripts Marshduke_Indoor_House1_MapScripts {}
+
+script Marshduke_Indoor_House1_Receptionist {
+    lock
+    faceplayer
+    msgbox(format("Welcome to Marshduke's library! Books to your left, quiet to your right.\pIf you find a MEOWTH in the poetry section, he lives here now and we've all made peace with it."))
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House1_Scribe {
+    lock
+    faceplayer
+    msgbox(format("Wet ink, mind your sleeves!\pI'm copying out a copy of a copy of a copy.\pBy now the hero's name has changed twice and the dragon's grown an extra head.\pHe'll have three by the time my apprentice is done."))
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House1_Girl {
+    lock
+    playse(SE_PIN)
+    applymovement(3, moves(emote_exclamation_mark))
+    waitmovement
+    msgbox(format("I want the one with the fish on the cover!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    playse(SE_PIN)
+    applymovement(4, moves(emote_question_mark face_left))
+    waitmovement
+    msgbox(format("...There's fish on nine of them.\p...this is going to take a while..."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(4, moves(face_up))
+    waitmovement
+    release
+    end
+}
+
+script Marshduke_Indoor_House1_Scholar {
+    lock
+    faceplayer
+    msgbox(format("Ask me about the Brass Tower. Go on. Anything.\pI've been here since TUESDAY and nobody's asked me anything."))
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House1_Kid {
+    lock
+    faceplayer
+    msgbox(format("Shh! I'm 'studying' for my mom.\pReally I'm playing this new ROM hack called POKÉMON SHINY KRABBY.\pDon't tell her, okay?"))
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House1_Sign_LegendShelf {
+    lock
+    msgbox(format("Nine accounts of one burning tower, shelved shoulder to shoulder.\pThey have not resolved their differences."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House1_Sign_PilgrimDiaries {
+    lock
+    msgbox(format("Hundreds of little books.\pThey all describe the same five memories, but they all differ slightly it seems."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House1_Sign_NaturalHistoryCase {
+    lock
+    msgbox(format("A pinned note: 'RE-CATALOGUED - EYEWITNESS. Previously: poetic exaggeration. - Casja.'\pThe old label is crossed out twice."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House1_Sign_DeltaSurveyVolumes {
+    lock
+    msgbox(format("Charts of the delta over eight centuries.\pThe channels wander all over the place.\pEvery single one of them goes around a hill."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House1_Sign_WaterDamagedManuscript {
+    lock
+    msgbox(format("Half a page survives:\p'...and the water so crowded with fish that our boat went slowly, and we complained of it...'"), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House1_Sign_LedgerOfDonations {
+    lock
+    msgbox(format("Every book here came in somebody's coat.\pEntry one is a soup recipe, donated by accident."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House1_Sign_ForeignLanguageShelf {
+    lock
+    msgbox(format("Thirty different languages about the same subject."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House1_Sign_ChildrensShelf {
+    lock
+    msgbox(format("Very well-worn books.\pThe tower burns in all of them, but most have HO OH in a different color."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House1_Sign_EmptyShelf {
+    lock
+    msgbox(format("A shelf half empty. The label reads: 'FOR WHAT HASN'T BEEN WRITTEN YET'."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House1_Sign_AnkleShelf {
+    lock
+    msgbox(format("Gnaw marks everywhere. A librarian has taped up a note: 'WE KNOW. WE'RE WORKING ON IT. STOP LEAVING FOOD IN THE HISTORY SECTION.'"), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House1_Sign_ClosedShelf {
+    lock
+    if (flag(FLAG_MD_CLOSED_SHELF) == FALSE) {
+        msgbox(format("A locked case of the Order's oldest texts.\pThere are gloves in the cabinet and a very serious sign about the gloves."), MSGBOX_SIGN)
+        waitmessage
+        release
+        end
+    }
+    msgbox(format("The locked case of the Order's oldest texts seems to have been left open and unattended.\pRead the ancient manuscript?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        release
+        end
+    }
+    msgbox(format("'Before the ice left, the wanderer sat, and the green light of the wood came to sit with it.'\p'They kept company - the rememberer and the traveler. The one who cannot leave the past, and the one who cannot stay in the present.'\p'What they spoke of, no text records, only oral history.'"), MSGBOX_SIGN)
+    waitmessage
+    setflag(FLAG_MD_READ_ANCIENT_MANUSCRIPT)
+    release
+    end
+}

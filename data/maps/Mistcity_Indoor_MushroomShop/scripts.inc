@@ -361,7 +361,7 @@ Mushroom_Vileplume::
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_0:
 # 9 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
-	.string "Leaf$"
+	.string "LEAF$"
 
 Mistcity_Indoor_MushroomShop_MushroomGirl_Text_1:
 # 10 "data/maps/Mistcity_Indoor_MushroomShop/scripts.pory"
