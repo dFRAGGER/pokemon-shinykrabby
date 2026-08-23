@@ -2102,7 +2102,7 @@ SteelFactory_1F_Scientist_Lore1_Text::
 	.string "Mountains, we create a material that\l"
 	.string "channels legendary energy.\p"
 	.string "The Faculty will bring true order to\n"
-	.string "Teressa. Diversity has had its chance.\l"
+	.string "Tessera. Diversity has had its chance.\l"
 	.string "Now it is structure's turn.$"
 
 SteelFactory_1F_Scientist_Lore2_Text::
@@ -2143,7 +2143,7 @@ SteelFactory_1F_Scientist_Lore5_Text::
 
 SteelFactory_1F_Official_Lore1_Text::
 # 669 "data/maps/LionsarchCity_Steel_Factory/scripts.pory"
-	.string "Teressa is a beautiful region.\p"
+	.string "Teserra is a beautiful region.\p"
 	.string "But it's wasted on chaos.\p"
 	.string "Dozens of mutations, dozens of types,\n"
 	.string "no cohesion, no direction.\p"

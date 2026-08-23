@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
+      "graphics_id": "OBJ_EVENT_GFX_DRAKE",
       "x": 13,
       "y": 2,
       "elevation": 0,
@@ -30,7 +30,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
       "x": 15,
-      "y": 9,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -41,113 +41,111 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_BRAM",
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 3,
-      "y": 3,
+      "local_id": "LOCALID_ADDY",
+      "graphics_id": "OBJ_EVENT_GFX_CAPTAIN",
+      "x": 5,
+      "y": 7,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_BURIED",
-      "trainer_sight_or_berry_tree_id": "1",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Maasje_Gym_Basement_Eventscript_Addy",
+      "flag": "FLAG_HIDE_PETELONGFELLOW"
+    },
+    {
+      "local_id": "LOCALID_BRAM",
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+      "x": 8,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "Maasje_Gym_Eventscript_Bram",
       "flag": "FLAG_HIDE_PETELONGFELLOW"
     },
     {
-      "local_id": "LOCALID_ROB",
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 2,
-      "y": 4,
+      "local_id": "LOCALID_MART",
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR_FRLG",
+      "x": 21,
+      "y": 9,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_BURIED",
-      "trainer_sight_or_berry_tree_id": "1",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Maasje_Gym_Basement_Eventscript_Mart",
+      "flag": "FLAG_HIDE_PETELONGFELLOW"
+    },
+    {
+      "local_id": "LOCALID_ROB",
+      "graphics_id": "OBJ_EVENT_GFX_COOK",
+      "x": 16,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "Maasje_Gym_Eventscript_Rob",
       "flag": "FLAG_HIDE_PETELONGFELLOW"
     }
   ],
   "warp_events": [
     {
-      "x": 13,
-      "y": 11,
-      "elevation": 0,
-      "dest_map": "MAP_MAASJE",
-      "dest_warp_id": "0"
-    },
-    {
       "x": 14,
-      "y": 11,
+      "y": 24,
       "elevation": 0,
       "dest_map": "MAP_MAASJE",
       "dest_warp_id": "0"
     },
     {
-      "x": 10,
-      "y": 11,
+      "x": 15,
+      "y": 24,
       "elevation": 0,
-      "dest_map": "MAP_MAASJE_GYM_BASEMENT",
+      "dest_map": "MAP_MAASJE",
       "dest_warp_id": "0"
-    },
-    {
-      "x": 12,
-      "y": 5,
-      "elevation": 0,
-      "dest_map": "MAP_MAASJE_GYM_BASEMENT",
-      "dest_warp_id": "2"
-    },
-    {
-      "x": 8,
-      "y": 4,
-      "elevation": 0,
-      "dest_map": "MAP_MAASJE_GYM_BASEMENT",
-      "dest_warp_id": "3"
-    },
-    {
-      "x": 13,
-      "y": 10,
-      "elevation": 0,
-      "dest_map": "MAP_MAASJE_GYM_BASEMENT",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 5,
-      "y": 7,
-      "elevation": 0,
-      "dest_map": "MAP_MAASJE_GYM_BASEMENT",
-      "dest_warp_id": "9"
-    },
-    {
-      "x": 5,
-      "y": 2,
-      "elevation": 0,
-      "dest_map": "MAP_MAASJE_GYM_BASEMENT",
-      "dest_warp_id": "7"
-    },
-    {
-      "x": 0,
-      "y": 10,
-      "elevation": 0,
-      "dest_map": "MAP_MAASJE_GYM_BASEMENT",
-      "dest_warp_id": "7"
-    },
-    {
-      "x": 1,
-      "y": 3,
-      "elevation": 0,
-      "dest_map": "MAP_MAASJE_GYM_BASEMENT",
-      "dest_warp_id": "8"
-    },
-    {
-      "x": 2,
-      "y": 4,
-      "elevation": 0,
-      "dest_map": "MAP_MAASJE_GYM_BASEMENT",
-      "dest_warp_id": "9"
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Maasje_Gym_Pillar_SetState_1"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Maasje_Gym_Pillar_SetState_2"
+    },
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Maasje_Gym_Pillar_SetState_3"
+    },
+    {
+      "type": "sign",
+      "x": 22,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Maasje_Gym_Pillar_SetState_4"
+    }
+  ]
 }

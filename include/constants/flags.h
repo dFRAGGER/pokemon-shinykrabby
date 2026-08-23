@@ -101,7 +101,6 @@
 #define FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR            0x053 // Unused Flag
 #define FLAG_SHINY_ENCOUNTER                 0x54  // SK: Shiny Encounter Flag
 #define FLAG_NOCATCH_ENCOUNTER               0x55  // SK: No catch Encounter Flag
-#define FLAG_ITEM_COASTAL_CAVE2_QUICK_CLAW   0x056 // SK: Set when the hiker in Maasje Coastal Cave 2 gives the player the Quick Claw.
 #define FLAG_ITEM_ROUTE04_SILK_SCARF         0x057 // SK: Set when the tired hiker on Route 4 gives the player the Silk Scarf.
 #define FLAG_ITEM_LIONSARCH_VISITOR_CENTER_FULL_HEAL 0x058 // SK: Set when the ranger in the Lionsarch Visitor Center gives the player a Full Heal.
 #define FLAG_ITEM_WESTLION_TM_CALM_MIND      0x059 // SK: Set when the climber on West Lion Mountain gives the player TM Calm Mind.
@@ -712,8 +711,8 @@
 #define FLAG_STRENGTH_UNLOCKED               0x2A2 // SK: Set when the player obtains/learns HM Strength; checked by Ari in Marshduke_Indoor_House4 to unlock her race dialogue.
 #define FLAG_ARI_SPRINT_CHALLENGE            0x2A3 // SK: Ari's sprint challenge state on Route 014.
 #define FLAG_ARI_HIDE_JUMP_CHALLENGE         0x2A4 // SK: Ari's jump challenge visibility state on Route 014.
-#define FLAG_UNUSED_0x2A5  0x2A5 // Unused Flag
-#define FLAG_UNUSED_0x2A6  0x2A6 // Unused Flag
+#define FLAG_ITEM_COASTAL_CAVE2_QUICK_CLAW    0x2A5 // SK: Set when the hiker in Maasje Coastal Cave 2 gives the player the Quick Claw.
+#define FLAG_MET_PETE_LONGFELLOW_GYMHILL      0x2A6 // SK: Set after the player first talks to Pete Longfellow blocking Maasje Gym Hill.
 #define FLAG_UNUSED_0x2A7  0x2A7 // Unused Flag
 #define FLAG_UNUSED_0x2A8  0x2A8 // Unused Flag
 #define FLAG_UNUSED_0x2A9  0x2A9 // Unused Flag
@@ -2304,7 +2303,7 @@
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL      FLAG_UNUSED_SCRIPTS_0x050
 #define FLAG_RESCUED_BIRCH                           FLAG_MARSHDUKE_CATHEDRAL_TOUR
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS               FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR
-#define FLAG_HIDE_CONTEST_POKE_BALL                  FLAG_ITEM_COASTAL_CAVE2_QUICK_CLAW
+#define FLAG_HIDE_CONTEST_POKE_BALL                  0x056
 #define FLAG_MET_RIVAL_MOM                           FLAG_ITEM_ROUTE04_SILK_SCARF
 #define FLAG_BIRCH_AIDE_MET                          FLAG_ITEM_LIONSARCH_VISITOR_CENTER_FULL_HEAL
 #define FLAG_DECLINED_BIKE                           FLAG_ITEM_WESTLION_TM_CALM_MIND

@@ -76,6 +76,32 @@ script Maasje_Collect_Honey_BeeHives {
     release
 }
 
+script Maasje_PeteLongfellow_Crabs_Gymhill {
+    lock
+    faceplayer
+    setspeaker("PETE")
+    if (flag(FLAG_MET_PETE_LONGFELLOW_GYMHILL) == FALSE) {
+        setflag(FLAG_MET_PETE_LONGFELLOW_GYMHILL)
+        if (flag(FLAG_SHINY_KRABBY_ENCOUNTER) == FALSE) {
+            msgbox(format("Ah, a challenger! Or, no, LOOK at this, how am I supposed to-\p...sorry. Sorry.\pI'm Pete Longfellow, the gym leader here. For what that's worth right now.\pThe gym is CLOSED. Just look at them!\pIn all my years sailing every sea this world has to offer, through the pages of my finest geography books, of course, I have NEVER once come across behaviour like this. Never!\p...I just don't understand it.\pCome back another time. Please. Once this sorts itself out."), MSGBOX_AUTOCLOSE)
+        }
+        else {
+            msgbox(format("Oh - h-hello there.\pSorry, I'm Pete Longfellow, the gym leader. You catching me out here instead of in the gym is, frankly, a little humiliating.\pBut! Good news, the crabs seem back to normal. FINALLY.\p...They still need time to adjust and get back to the sea, though, so don't get any ideas.\pCome back at the end of the day and the gym is yours to challenge.\pUntil then, go have a look around town. Or something."), MSGBOX_AUTOCLOSE)
+        }
+    }
+    else {
+        if (flag(FLAG_SHINY_KRABBY_ENCOUNTER) == FALSE) {
+            msgbox(format("Still! Still not past these blasted crabs!\p...Come back another time. Once this sorts itself out."), MSGBOX_AUTOCLOSE)
+        }
+        else {
+            msgbox(format("Right, right, the crabs are back to normal, but they still need time before I can let anyone through.\pCome back at the end of the day, the gym will be ready.\p...Go look around town in the meantime, would you?"), MSGBOX_AUTOCLOSE)
+        }
+    }
+    waitmessage
+    release
+    end
+}
+
 script Maasje_Advice_Fisher_Crabhill {
     lock
     faceplayer

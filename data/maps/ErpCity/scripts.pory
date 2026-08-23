@@ -58,6 +58,7 @@ script ErpCity_Woman {
 
 script ErpCity_ProfessorBirds_Speech_Pokedex {
     lockall
+    playbgm(MUS_RG_ENCOUNTER_RIVAL,FALSE)
     opendoor(22, 18)
     applymovement (LOCALID_PLAYER, moves(walk_fast_down walk_fast_left jump_left face_right))
     clearflag(FLAG_KICKED_OUT_LAB_CONVO)
@@ -71,22 +72,27 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     setspeaker("PROF. BIRDS")
     msgbox(format("WHO DO YOU THINK YOU ARE?\nTAYLOR SWIFT OR SOMETHING?\pActually.... I love Taylor Swift hehe.. ANYWAYS!!\pI TOLD YOU TO NOT SNIFF AROUND IN MY SECRET LA... I MEAN STORAGE ROOM!!\p...YOU DIDN'T STEAL ANYTHING RIGHT? RIGHT??!!\p...It doesn't really matter anyways...\pYOU ARE FIRED!!\pI GOT MY SQUIRKY LITTLE INTERN CALLED BARRY ALREADY!\pHE IS LIVING THE DREAM!!"),MSGBOX_AUTOCLOSE)
     waitmessage
-    playse(SE_PIN)
-    applymovement(5, moves(emote_question_mark))
+    applymovement(5, moves(face_up))
+    applymovement(2, moves(walk_right face_down))
+    waitmovement
+    setspeaker("PROF. BIRDS")
+    msgbox(format("AM I RIGHT, BARRY?!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_FAILURE)
+    applymovement(5, moves(emote_x))
     waitmovement
     delay(120)
     applymovement(2, moves(walk_right))
     waitmovement
-    applymovement(5, moves(face_up))
     setspeaker("PROF. BIRDS")
-    msgbox(format(".....wait a second....\p.....maybe this little slob can help me to get some data...\p...that strange anomaly....\p.....yes a very good idea Jari, very smart...."),MSGBOX_AUTOCLOSE)
+    msgbox(format(".....wait a second....\p.....maybe this little slob can help me to get some data...\p...that strange anomaly JACOB called about....\p.....yes a very good idea Jari, very smart...."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
     playse(SE_PIN)
-    applymovement (2, moves(emote_exclamation_mark walk_left))
+    applymovement (2, moves(emote_exclamation_mark walk_left*2))
     applymovement(5, moves(face_left))
     setspeaker("PROF. BIRDS")
-    msgbox(format(".....DID I SAY THAT OUT LOUD?\pARGH ANYWAYS, HOW ABOUT I REHIRE YOU AGAIN TO BECOME MY DATA HOARDER....\pI MEAN MY FELLOW RESEARCHER OFCOURSE! MY BELOVED PARTNER!\pTO BECOME A REAL POKEMON MASTER WE... I MEAN YOU... NEED TO CATCH EVERY POKEMON\pAND SCAN THEM WITH THIS LITTLE DEVICE...."))
+    msgbox(format(".....did I say that out loud?\pARGH ANYWAYS! How about I rehire you again to become my data hoarder....\pJUNIOR RESEARCHER OFCOURSE! My beloved partner!\pFor your first assignment I order you to...\pI MEAN I ask you to head to MASO TOWN, and visit my old friend JACOB.\pApparently he has seen a rare pokemon species, an ANOMALY he said.\pHe told me about a GOLDEN KING, the single most magnificent creature to sidle on this earth.\pWell I want you to go and SCAN that POKEMON with this genomic sequence.... I MEAN POKeDEX!!"),MSGBOX_AUTOCLOSE)
     waitmessage
     setflag(FLAG_SYS_POKEDEX_GET)
     special(EnableNationalPokedex)
@@ -97,16 +103,18 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     waitfanfare
     waitmessage
     setspeaker("PROF. BIRDS")
-    msgbox(format("THIS DEVICE CAN COLLECT VITAL DATA ON POKEMON HABITATS, MIGRATION PATTERNS AND ...uh...\p...unique genomic signatures... for the pigs... you know...\pAND THIS WAY I WILL EXTRACT ALL NECESSARY INFORMATION FOR MY BELOVED....\p...sensors for responsible pig farming...\pNOW GO, AND DON'T COME BACK BEFORE YOU HAVE SCANNE...\p ...caught some rare Pokémons...\p...\pWHAT DO YOU MEAN... HOW?\pJUST USE POKEBALLS....\p A POKEMON MASTER HAHAHA...\pyou got to be joking...\pHERE, CATCH THESE!"))
+    msgbox(format("This device can collect VITAL DATA ON POKEMON HABITATS, MIGRATION PATTERNS AND ...uh...\p...unique genomic signatures... for the pigs... you know...\pAnd this way I WILL EXTRACT ALL NECESSARY INFORMATION FOR MY BELOVED....\p...sensors for responsible pig farming...\pNOW GO, AND DON'T COME BACK BEFORE YOU HAVE SEQUENC...\p ...scanned that rare Pokémon...\p...\pWHAT DO YOU MEAN... HOW?\pJust use Pokeballs, catch it and scan it after....\pA POKEMON RESEARCHER??? HAHAHA...\p...you got to be joking...\pHERE, CATCH THESE!"))
     waitmessage
+    playse(SE_BALL_THROW)
     setspeaker(NULL)
     giveitem(ITEM_POKE_BALL, 5)
     waitmessage
     setspeaker("PROF. BIRDS")
-    msgbox(format("THROW THESE MOTHERFUCKERS, AND THE WORLD WILL BE MINE...\p...I mean ours..."),MSGBOX_AUTOCLOSE)
+    msgbox(format("Throw these right at your... at its head, CATCH the ANOMALY and don't come back before..."),MSGBOX_AUTOCLOSE)
     waitmessage
-    playse(SE_PIN)
+    playse(SE_FAILURE)
     applymovement(5, moves(emote_x))
+    waitmovement
     applymovement(2, moves(emote_question_mark))
     applymovement(LOCALID_PLAYER, moves(face_right))
     applymovement(2, moves(face_right))
@@ -116,23 +124,40 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     applymovement(2, moves(face_down))
     waitmovement
     setspeaker("BARRY")
-    msgbox(format("HE BREAKS INTO YOUR LAB AND GETS A POKEDEX, POKEBALLS AND A MISSION TO BECOME A POKEMON MASTER?\pWHAT DID I GET?\p A FUCKING MAGIKARP?\pTHE MOST USELESS POKEMON EVER IN EXISTENCE?\pI QUIT!!\p AND STOP SAYING BARRY!\pMY NAME IS W O U T E R!!"))
+    msgbox(format("HE BREAKS INTO YOUR LAB AND GETS A POKEDEX, POKEBALLS AND AN ACTUAL ASSIGNMENT?\pWHAT DID I GET?\pA FUCKING MAGIKARP?\pTHE MOST USELESS POKEMON EVER IN EXISTENCE?\pI QUIT!!\pAND STOP SAYING BARRY!\pMY NAME IS W O U T E R!!"))
     waitmessage
     applymovement(5, moves(walk_fast_left face_up))
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(face_down emote_question_mark))
     waitmovement
-    setspeaker("BARRY")
-    msgbox(format("...\pYOU??\pA POKEMON MASTER?\pDON'T MAKE ME LAUGH.\pI WILL TAKE EVERY CHANCE TO PREVENT THAT FROM HAPPENING!"),MSGBOX_AUTOCLOSE)
+    setspeaker("W O U T E R")
+    msgbox(format("...\pYOU??\pBECOMING A POKEMON RESEARCHER?\pDON'T MAKE ME LAUGH.\pI WILL TAKE EVERY CHANCE TO PREVENT THAT FROM HAPPENING!"),MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_question_mark face_left))
     applymovement(5, moves(walk_fast_left*7 walk_fast_down*5))
-    applymovement(10,moves(jump_2_left*3))    
+    playse(SE_LEDGE)
+    applymovement(10,moves(jump_2_left))
     waitmovement
+    playse(SE_LEDGE)
+    applymovement(10,moves(jump_2_left))
+    waitmovement
+    playse(SE_LEDGE)
+    applymovement(10,moves(jump_2_left)) 
+    waitmovement
+    playse(SE_LEDGE)
     removeobject(5)
     applymovement(2,moves(walk_down face_left))
-    applymovement(10,moves(jump_2_left*2 jump_2_down*2))
+    applymovement(10,moves(jump_2_left))
+    waitmovement
+    playse(SE_LEDGE)
+    applymovement(10,moves(jump_2_left))
+    waitmovement
+    playse(SE_LEDGE)
+    applymovement(10,moves(jump_2_down))
+    waitmovement
+    playse(SE_LEDGE)
+    applymovement(10, moves(jump_2_down))
     waitmovement
     removeobject(10)
     setflag (FLAG_KICKED_OUT_LAB_CONVO)
@@ -148,8 +173,9 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     applymovement(LOCALID_PLAYER, moves(face_right))
     waitmovement
     setspeaker("PROF. BIRDS")
-    msgbox(format("ABOUT THAT ANOM... YOUR MISSION!\pAN OLD FRIEND CALLED ME YESTERDAY...\pHIS NAME IS {COLOR GREEN}Jacob{COLOR DARK_GRAY}...\nHe used to live in this town...\p...but the traitor moved to {COLOR RED}Mestreech{COLOR DARK_GRAY} just west of here...\p...apparently a GOLDEN KRABBY has been sighted there...\p...a rare genetic ANOMALY...\p...this could be the perfect start to my genome triangul... I MEAN PIG SENSOR DEVELOPMENT!\pNOW WHAT ARE YOU WAITING FOR!?\pGET THAT DATA FOR ME... I MEAN US.\p AND STAY AWAY FROM MISPOES...\p HE DOESN'T LIKE ME...\pI MEAN YOU OFCOURSE!!\p...\p...so I was shouting the entire time?\pWHO CARES!\pNOW FUCK OFF!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("Well, WHAT ARE YOU WAITING FOR!?\pI want that data TODAY!\pThis could be the perfect start to my genome triangul... I MEAN PIG SENSOR DEVELOPMENT!\pAND STAY AWAY FROM MISPOES...\pHe doesn't like me...\pI MEAN YOU OFCOURSE!!\p...\p...so I was shouting the entire time?\pWHO CARES!\pNOW FUCK OFF!"),MSGBOX_AUTOCLOSE)
     waitmessage
+    playse(SE_LEDGE)
     applymovement(LOCALID_PLAYER, moves(jump_left face_left))
     waitmovement
     applymovement(2, moves(walk_right walk_up*2))
@@ -169,22 +195,22 @@ script ErpCity_ProfessorBirds_Speech_Pokedex {
     delay(60)
     msgbox(format("...I think it is safe to come out now, lets get out of here!"),MSGBOX_AUTOCLOSE)
     special(UpdateFollowingPokemon)
-
+    fadedefaultbgm
     releaseall
 }
 
 script ErpCity_ProfessorBirds_After_Speech {
     lockall
     setspeaker("PROF. BIRDS")
-    msgbox(format("WELL, WHAT ARE YOU WAITING FOR?\p GET THAT DATA ON THAT GOLDEN KRABBY FOR ME... I MEAN US."))
+    msgbox(format("Well, what are you waiting for?\pGet that data for me... I MEAN US."))
     waitmessage
     releaseall
 }
 
 script ErpCity_Mispoes_Miauw {
     lockall
-    setspeaker("MISPOES")
-    msgbox(format("Miaaaauw... KSSSSJSJJGGGG"))
+    faceplayer
+    msgbox(format("MISSSS....POESSSSSSS...."),MSGBOX_AUTOCLOSE)
     waitmessage
     releaseall
 }
@@ -198,6 +224,7 @@ script ErpCity_Lab_Sign {
 
 script ErpCity_Hiker_Cave {
     lockall
+    faceplayer
     applymovement(5, moves(face_player)    
     )
     msgbox(format("The cave is not accessible at this time.\p Recent tremors from a unknown source have caused massive rock slides.\p The path is too dangerous."))

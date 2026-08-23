@@ -4,11 +4,9 @@ script Mistcity_Research_Center_Entrance_Rangers_Slaking {
     lock
     faceplayer
     if (flag(FLAG_RESCUED_DAAN)){
-        setspeaker("RANGER")
         msgbox(format("It is finally out cold.\pIt stopped pressing its ear to the floor about an hour ago.\pTo be honest, seeing it snore that loudly is a huge relief."))
     }
     if(!flag(FLAG_RESCUED_DAAN)) {
-        setspeaker("RANGER")
         msgbox(format("This Slaking usually sleeps eighteen hours a day, but it keeps pressing its ear to the mud like it hears something moving deep underground."))
     }
     waitmessage
@@ -19,11 +17,9 @@ script Mistcity_Research_Center_Entrance_Rangers_Shiftry {
     lock
     faceplayer
     if (flag(FLAG_RESCUED_DAAN)){
-        setspeaker("RANGER")
         msgbox(format("The howling has completely stopped.\pIt is just grooming its leaf fans now.\pIt seems whatever was invading its territory in the deep woods is gone."))
     }
     if(!flag(FLAG_RESCUED_DAAN)) {
-        setspeaker("RANGER")
         msgbox(format("I've never seen a Shiftry act this aggressive, but it keeps staring toward the deep woods and howling as if an intruder is tearing up its home."))
     }
     waitmessage
@@ -34,11 +30,11 @@ script Mistcity_Research_Center_Entrance_Rangers_Paras {
     lock
     faceplayer
     if (flag(FLAG_RESCUED_DAAN)){
-        setspeaker("RANGER")
+
         msgbox(format("The air is finally clear.\pThe defensive spore release has stopped.\pIt seems the 'seismic activity' it was sensing has calmed down."))
     }
     if(!flag(FLAG_RESCUED_DAAN)) {
-        setspeaker("RANGER")
+
         msgbox(format("The mushroom on this Parasect's back has been releasing defensive spores all morning, a reaction usually only triggered by heavy seismic activity."))
     }
     waitmessage
@@ -49,11 +45,11 @@ script Mistcity_Research_Center_Entrance_Rangers_Tropius {
     lock
     faceplayer
     if (flag(FLAG_RESCUED_DAAN)){
-        setspeaker("RANGER")
+
         msgbox(format("It is happily munching on some Nanab berries now.\pThat metallic grinding sound must have ceased, because this big guy is totally relaxed again."))
     }
     if(!flag(FLAG_RESCUED_DAAN)) {
-        setspeaker("RANGER")
+
         msgbox(format("We found this poor Tropius tangled in the lower branches; it was terrified of a loud, metallic grinding sound echoing from the restricted zone."))
     }
     waitmessage
@@ -64,11 +60,11 @@ script Mistcity_Research_Center_Entrance_Rangers_Trucks {
     lock
     faceplayer
     if (flag(FLAG_RESCUED_DAAN)){
-        setspeaker("RANGER")
+
         msgbox(format("The distress signals have flatlined.\pWe are actually parking the transport trucks for the first time in days.\pSounds like peace has returned to the forest core."))
     }
     if(!flag(FLAG_RESCUED_DAAN)) {
-        setspeaker("RANGER")
+
         msgbox(format("We've had to mobilize all our rescue trucks just to keep up with the sheer volume of distress signals coming from the forest core."))
     }
     waitmessage
@@ -78,7 +74,7 @@ script Mistcity_Research_Center_Entrance_Rangers_Trucks {
 script Mistcity_Research_Center_Entrance_Scientist_Mist {
     lock
     faceplayer
-    setspeaker("SCIENTIST")
+
     msgbox(format("The deep cloud forest is a biological marvel, a unique ecosystem where the perpetual mist allows rare and ancient Pokémon species to thrive in isolation."))
     waitmessage
     release
@@ -87,7 +83,7 @@ script Mistcity_Research_Center_Entrance_Scientist_Mist {
 script Mistcity_Research_Center_Entrance_Scientist_Guard {
     lock
     faceplayer
-    setspeaker("RANGER")
+
     msgbox(format("I can't let you through; the upper level is strictly reserved for our lead researchers to analyze the sensitive data coming from the forest."))
     waitmessage
     release
@@ -97,11 +93,11 @@ script Mistcity_Research_Center_Entrance_Scientist_Paras {
     lock
     faceplayer
     if (flag(FLAG_RESCUED_DAAN)){
-        setspeaker("SCIENTIST")
+
         msgbox(format("Incredible.\pThe bioluminescence on the Tochukaso mushroom is fading rapidly.\pIt has returned to its natural, dull color.\pThat 'sonar' signal that was irritating the fungus seems to have been cut off completely.\pWhatever you did down there silenced the noise."))
     }
     if(!flag(FLAG_RESCUED_DAAN)) {
-    setspeaker("SCIENTIST")
+
     msgbox(format("Now, this is the most alarming case.\pThe tochukaso mushroom that controls the Parasect is a fungus, right?\pIt's incredibly sensitive to geological changes.\pLately, we've rescued several Parasect from the deep woods whose mushrooms have developed a faint, unnatural bio-luminescence.\pIt's a defensive reaction.\pOur hypothesis is that something is emitting powerful, systematic waves of energy into the ground-like a sonar.\pThe fungus is reacting to being 'scanned.'\pSomeone isn't just exploring the forest; they're X-raying it."))
     }
     waitmessage
@@ -114,11 +110,11 @@ script Mistcity_Research_Center_Entrance_Scientist_Tropius {
     lock
     faceplayer
     if (flag(FLAG_RESCUED_DAAN)){
-        setspeaker("SCIENTIST")
+
         msgbox(format("Just look at it.\pIt is preening its wings and growling softly.\pThe sheer terror is gone.\pIf the atmospheric disturbance has truly dissipated, this one should be ready to return to Whisperwood Grove very soon.\pIt finally feels safe to fly."))
     }
     if(!flag(FLAG_RESCUED_DAAN)) {
-    setspeaker("SCIENTIST")
+
     msgbox(format("This poor thing was part of a whole herd we saw fleeing the Whisperwood Grove area last week.\pThey were in a complete panic, flying erratically as if escaping a huge predator, but there was nothing there.\pThis one got separated and was exhausted.\pIt's still incredibly skittish.\pWe've been getting similar reports from other flying-type Pokémon.\pSome kind of powerful, ground-based energy pulse in that sector is making the sky feel unsafe to them."))
     }
     waitmessage
@@ -131,11 +127,11 @@ script Mistcity_Research_Center_Entrance_Scientist_Shiftry {
     lock
     faceplayer
     if (flag(FLAG_RESCUED_DAAN)){
-        setspeaker("SCIENTIST")
+
         msgbox(format("The Shiftry has stopped staring at the floor.\pIt is looking out the window towards the treeline.\pIts internal compass seems to have realigned.\pThe magnetic interference that was scrambling its senses has vanished.\pIt is back to being the master of the forest."))
     }
     if(!flag(FLAG_RESCUED_DAAN)) {
-    setspeaker("SCIENTIST")
+
     msgbox(format("Shiftry are masters of the forest, moving like ghosts through the trees.\pThey are deeply connected to their territory.\pBut this one? We found it completely disoriented, miles from its home.\pIt acts dazed, sometimes just staring blankly at the ground for hours.\pOur analysis suggests its sensory organs, which help it navigate, are being overwhelmed by some kind of external interference.\pIt's like its natural compass has been scrambled by a powerful magnetic field."))
     }
     waitmessage
@@ -148,11 +144,11 @@ script Mistcity_Research_Center_Entrance_Scientist_Slaking {
     lock
     faceplayer
     if (flag(FLAG_RESCUED_DAAN)){
-        setspeaker("SCIENTIST")
+
         msgbox(format("Shh... keep your voice down.\pFor the first time in weeks, the Slaking is preparing to sleep.\pThat low-frequency hum must have stopped, because its heart rate is perfectly slow and steady.\pIt is finally back to doing what it does best... absolutely nothing."))
     }
     if(!flag(FLAG_RESCUED_DAAN)) {
-    setspeaker("SCIENTIST")
+
     msgbox(format("It's the strangest thing.\pSlaking are the definition of energy conservation, but this one... it won't rest.\pWe rescued it a few weeks back after reports of it aggressively pacing near some ancient stone ruins deep in the forest.\pIts bio-scans are all over the place, showing constant, low-level stress.\pIt's as if it's reacting to a persistent, low-frequency hum that none of our equipment can even detect.\pSomething out there is seriously disturbing the peace."))
     }
     waitmessage
@@ -204,7 +200,7 @@ script Mistcity_Research_Center_Entrance_Daan_RescueMission {
     applymovement(18, moves(face_down))
     waitmovement
     setspeaker("LEAD SCIENTIST")
-    msgbox(format("I want to introduce you to two of my people, {COLOR BLUE}Nash{COLOR DARK_GRAY} & {COLOR GREEN}David{COLOR DARK_GRAY}."),MSGBOX_AUTOCLOSE)
+    msgbox(format("I want to introduce you to two of my people, Nash & David."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(20, moves(walk_down))
     waitmovement

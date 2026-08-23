@@ -100,7 +100,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_FACULTY_1 ===
 Name: ADDY
-Class: Gentleman
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Rich
@@ -112,7 +112,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_FACULTY_2 ===
 Name: AD
-Class: Gentleman
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Rich
@@ -274,7 +274,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_FACULTY_CLOUDFOREST_1 ===
 Name: MAURICE
-Class: Gentleman
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Rich
@@ -290,8 +290,8 @@ Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_FACULTY_CLOUDFOREST_2 ===
-Name: AD DICE
-Class: Gentleman
+Name: AD
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Rich
@@ -308,7 +308,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_FACULTY_CLOUDFOREST_3 ===
 Name: YOSSI
-Class: Gentleman
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Rich
@@ -321,7 +321,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_FACULTY_CLOUDFOREST_4 ===
 Name: HARRIE
-Class: Gentleman
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Rich
@@ -648,7 +648,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_FACULTY_2F_GRUNT ===
 Name: HARKIN
-Class: Gentleman
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Rich
@@ -804,7 +804,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_FACULTY_GUARD_B1F_1 ===
 Name: ADDIE
-Class: Gentleman
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Rich
@@ -1359,7 +1359,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALBERT ===
 Name: ALBERT
-Class: Gentleman
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Cool
@@ -1376,7 +1376,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SAMUEL ===
 Name: SAMUEL
-Class: Gentleman
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Cool
@@ -1406,7 +1406,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_OWEN ===
 Name: OWEN
-Class: Gentleman
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Cool
@@ -1502,7 +1502,7 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
 === TRAINER_WARREN ===
 Name: WARREN
-Class: Gentleman
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Cool
@@ -1524,7 +1524,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_UNUSED_89 ===
 Name: MADS
-Class: Gentleman
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Cool
@@ -1537,7 +1537,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_UNUSED_90 ===
 Name: AD
-Class: Gentleman
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Cool
@@ -1982,7 +1982,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_FACULTY_GUARD_B1F_2 ===
 Name: AD DICE
-Class: Gentleman
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Rich
@@ -3443,14 +3443,14 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_BRAM ===
 Name: BRAM
-Class: Gentleman
-Pic: Gentleman
+Class: Sailor
+Pic: Sailor
 Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Wingull
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3473,18 +3473,18 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_ROB ===
 Name: ROB
-Class: Gentleman
-Pic: Gentleman
+Class: Sailor
+Pic: Sailor
 Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Diglett
+Shellder
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Diglett
+Shellder
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3502,15 +3502,15 @@ Level: 10
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_ADDY ===
-Name: ADDY
-Class: Gentleman
-Pic: Gentleman
+Name: GARRICK
+Class: Sailor
+Pic: Sailor
 Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Phanpy
+Corsola
 Level: 10
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -4803,36 +4803,36 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 === TRAINER_PETELONGFELLOW ===
 Name: PETE
 Class: Leader
-Pic: Expert M
+Pic: Elite Four Drake
 Gender: Male
 Music: Male
 Items: Potion
 Double Battle: No
 AI: Basic Trainer
 
-Sandshrew
+Staryu
 Level: 12
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Sandstorm
-- Sand Attack
-- Defense Curl
-- Rollout
+- Water Gun
+- Confuse Ray
+- Aqua Jet
+- Harden
 
-Diglett
+Krabby
 Level: 12
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Sandstorm
-- Mud Slap
-- Astonish
-- Scratch
+- Bubble
+- Mud Shot
+- Leer
+- Metal Claw
 
-Gligar
+Qwilfish
 Level: 15 
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Sandstorm
-- Fury Cutter
-- Sand Attack
-- Mud Shot
+- Fell Stinger
+- Water Pulse
+- Spikes
+- Minimize
 
 === TRAINER_UNUSED_269 ===
 Name: NORMAN
@@ -7995,7 +7995,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_FACULTY_OFFICIAL_1 ===
 Name: ALDRIC
-Class: Gentleman
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Rich
@@ -10940,7 +10940,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_FACULTY_OFFICIAL_2 ===
 Name: LORENZ
-Class: Gentleman
+Class: Faculty Grunt
 Pic: Gentleman
 Gender: Male
 Music: Rich
@@ -11759,14 +11759,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MART ===
 Name: MART
-Class: Gentleman
-Pic: Gentleman
+Class: Sailor
+Pic: Sailor FrLg
 Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
 
-Wooper
+Shuckle
 Level: 9
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -13481,7 +13481,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_FACULTY_RECTOR ===
 Name: THE RECTOR
-Class: Gentleman
+Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Intense

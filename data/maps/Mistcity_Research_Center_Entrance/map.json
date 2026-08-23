@@ -17,7 +17,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER_FRLG",
       "x": 14,
-      "y": 14,
+      "y": 15,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -43,7 +43,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
       "x": 13,
-      "y": 10,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -262,7 +262,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "graphics_id": "OBJ_EVENT_GFX_LT_SURGE",
       "x": 3,
       "y": 5,
       "elevation": 0,
@@ -290,14 +290,14 @@
   ],
   "warp_events": [
     {
-      "x": 12,
+      "x": 14,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_MIST_CITY",
       "dest_warp_id": "3"
     },
     {
-      "x": 13,
+      "x": 15,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_MIST_CITY",

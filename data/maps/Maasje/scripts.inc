@@ -131,596 +131,636 @@ Maasje_Collect_Honey_BeeHives::
 	return
 
 
-Maasje_Advice_Fisher_Crabhill::
+Maasje_PeteLongfellow_Crabs_Gymhill::
 # 80 "data/maps/Maasje/scripts.pory"
 	lock
 # 81 "data/maps/Maasje/scripts.pory"
 	faceplayer
 # 82 "data/maps/Maasje/scripts.pory"
-	applymovement 60, Maasje_Advice_Fisher_Crabhill_Movement_0
+	setspeaker Maasje_PeteLongfellow_Crabs_Gymhill_Text_0
 # 83 "data/maps/Maasje/scripts.pory"
+	goto_if_unset FLAG_MET_PETE_LONGFELLOW_GYMHILL, Maasje_PeteLongfellow_Crabs_Gymhill_2
+# 93 "data/maps/Maasje/scripts.pory"
+	goto_if_unset FLAG_SHINY_KRABBY_ENCOUNTER, Maasje_PeteLongfellow_Crabs_Gymhill_8
+# 97 "data/maps/Maasje/scripts.pory"
+	msgbox Maasje_PeteLongfellow_Crabs_Gymhill_Text_4, MSGBOX_AUTOCLOSE
+Maasje_PeteLongfellow_Crabs_Gymhill_1:
+# 100 "data/maps/Maasje/scripts.pory"
+	waitmessage
+# 101 "data/maps/Maasje/scripts.pory"
+	release
+	end
+
+Maasje_PeteLongfellow_Crabs_Gymhill_2:
+# 84 "data/maps/Maasje/scripts.pory"
+	setflag FLAG_MET_PETE_LONGFELLOW_GYMHILL
+# 85 "data/maps/Maasje/scripts.pory"
+	goto_if_unset FLAG_SHINY_KRABBY_ENCOUNTER, Maasje_PeteLongfellow_Crabs_Gymhill_5
+# 89 "data/maps/Maasje/scripts.pory"
+	msgbox Maasje_PeteLongfellow_Crabs_Gymhill_Text_2, MSGBOX_AUTOCLOSE
+	goto Maasje_PeteLongfellow_Crabs_Gymhill_1
+
+Maasje_PeteLongfellow_Crabs_Gymhill_5:
+# 86 "data/maps/Maasje/scripts.pory"
+	msgbox Maasje_PeteLongfellow_Crabs_Gymhill_Text_1, MSGBOX_AUTOCLOSE
+	goto Maasje_PeteLongfellow_Crabs_Gymhill_1
+
+Maasje_PeteLongfellow_Crabs_Gymhill_8:
+# 94 "data/maps/Maasje/scripts.pory"
+	msgbox Maasje_PeteLongfellow_Crabs_Gymhill_Text_3, MSGBOX_AUTOCLOSE
+	goto Maasje_PeteLongfellow_Crabs_Gymhill_1
+
+
+Maasje_Advice_Fisher_Crabhill::
+# 106 "data/maps/Maasje/scripts.pory"
+	lock
+# 107 "data/maps/Maasje/scripts.pory"
+	faceplayer
+# 108 "data/maps/Maasje/scripts.pory"
+	applymovement 60, Maasje_Advice_Fisher_Crabhill_Movement_0
+# 109 "data/maps/Maasje/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_ESCAPE_ROPE, Maasje_Advice_Fisher_Crabhill_2
-# 91 "data/maps/Maasje/scripts.pory"
+# 117 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Advice_Fisher_Crabhill_Text_2
-# 92 "data/maps/Maasje/scripts.pory"
+# 118 "data/maps/Maasje/scripts.pory"
 	waitmessage
 Maasje_Advice_Fisher_Crabhill_1:
-# 94 "data/maps/Maasje/scripts.pory"
+# 120 "data/maps/Maasje/scripts.pory"
 	release
 	return
 
 Maasje_Advice_Fisher_Crabhill_2:
-# 84 "data/maps/Maasje/scripts.pory"
+# 110 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Advice_Fisher_Crabhill_Text_0
-# 85 "data/maps/Maasje/scripts.pory"
+# 111 "data/maps/Maasje/scripts.pory"
 	giveitem ITEM_ESCAPE_ROPE
-# 86 "data/maps/Maasje/scripts.pory"
+# 112 "data/maps/Maasje/scripts.pory"
 	setflag FLAG_RECEIVED_ESCAPE_ROPE
-# 87 "data/maps/Maasje/scripts.pory"
+# 113 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Advice_Fisher_Crabhill_Text_1
-# 88 "data/maps/Maasje/scripts.pory"
+# 114 "data/maps/Maasje/scripts.pory"
 	waitmessage
 	goto Maasje_Advice_Fisher_Crabhill_1
 
 
 Maasje_Flag_Follower_Prep::
-# 98 "data/maps/Maasje/scripts.pory"
+# 124 "data/maps/Maasje/scripts.pory"
 	setflag FLAG_DISABLE_FOLLOWER_POKEMON
 	return
 
 
 Maasje_Beehive_01::
-# 102 "data/maps/Maasje/scripts.pory"
+# 128 "data/maps/Maasje/scripts.pory"
 	lock
-# 103 "data/maps/Maasje/scripts.pory"
+# 129 "data/maps/Maasje/scripts.pory"
 	goto_if_set FLAG_START_COLLECTING_HONEY, Maasje_Beehive_01_2
-# 119 "data/maps/Maasje/scripts.pory"
+# 145 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_3
-# 120 "data/maps/Maasje/scripts.pory"
+# 146 "data/maps/Maasje/scripts.pory"
 	waitmessage
 Maasje_Beehive_01_1:
-# 122 "data/maps/Maasje/scripts.pory"
+# 148 "data/maps/Maasje/scripts.pory"
 	release
 	return
 
 Maasje_Beehive_01_2:
-# 104 "data/maps/Maasje/scripts.pory"
+# 130 "data/maps/Maasje/scripts.pory"
 	goto_if_unset FLAG_CLEAR_BEEHIVE_01, Maasje_Beehive_01_5
-# 114 "data/maps/Maasje/scripts.pory"
+# 140 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_2
-# 115 "data/maps/Maasje/scripts.pory"
+# 141 "data/maps/Maasje/scripts.pory"
 	waitmessage
 	goto Maasje_Beehive_01_1
 
 Maasje_Beehive_01_5:
-# 105 "data/maps/Maasje/scripts.pory"
+# 131 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_0, MSGBOX_YESNO
-# 106 "data/maps/Maasje/scripts.pory"
+# 132 "data/maps/Maasje/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Maasje_Beehive_01_8
 	goto Maasje_Beehive_01_1
 
 Maasje_Beehive_01_8:
-# 107 "data/maps/Maasje/scripts.pory"
+# 133 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_1
-# 108 "data/maps/Maasje/scripts.pory"
+# 134 "data/maps/Maasje/scripts.pory"
 	addvar VAR_BEEKEEPER_GEURTS, 1
-# 109 "data/maps/Maasje/scripts.pory"
+# 135 "data/maps/Maasje/scripts.pory"
 	setflag FLAG_CLEAR_BEEHIVE_01
-# 110 "data/maps/Maasje/scripts.pory"
+# 136 "data/maps/Maasje/scripts.pory"
 	waitmessage
 	goto Maasje_Beehive_01_1
 
 
 Maasje_Beehive_02::
-# 126 "data/maps/Maasje/scripts.pory"
+# 152 "data/maps/Maasje/scripts.pory"
 	lock
-# 127 "data/maps/Maasje/scripts.pory"
+# 153 "data/maps/Maasje/scripts.pory"
 	goto_if_set FLAG_START_COLLECTING_HONEY, Maasje_Beehive_02_2
-# 143 "data/maps/Maasje/scripts.pory"
+# 169 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_3
-# 144 "data/maps/Maasje/scripts.pory"
+# 170 "data/maps/Maasje/scripts.pory"
 	waitmessage
 Maasje_Beehive_02_1:
-# 146 "data/maps/Maasje/scripts.pory"
+# 172 "data/maps/Maasje/scripts.pory"
 	release
 	return
 
 Maasje_Beehive_02_2:
-# 128 "data/maps/Maasje/scripts.pory"
+# 154 "data/maps/Maasje/scripts.pory"
 	goto_if_unset FLAG_CLEAR_BEEHIVE_02, Maasje_Beehive_02_5
-# 138 "data/maps/Maasje/scripts.pory"
+# 164 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_2
-# 139 "data/maps/Maasje/scripts.pory"
+# 165 "data/maps/Maasje/scripts.pory"
 	waitmessage
 	goto Maasje_Beehive_02_1
 
 Maasje_Beehive_02_5:
-# 129 "data/maps/Maasje/scripts.pory"
+# 155 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_0, MSGBOX_YESNO
-# 130 "data/maps/Maasje/scripts.pory"
+# 156 "data/maps/Maasje/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Maasje_Beehive_02_8
 	goto Maasje_Beehive_02_1
 
 Maasje_Beehive_02_8:
-# 131 "data/maps/Maasje/scripts.pory"
+# 157 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_1
-# 132 "data/maps/Maasje/scripts.pory"
+# 158 "data/maps/Maasje/scripts.pory"
 	addvar VAR_BEEKEEPER_GEURTS, 1
-# 133 "data/maps/Maasje/scripts.pory"
+# 159 "data/maps/Maasje/scripts.pory"
 	setflag FLAG_CLEAR_BEEHIVE_02
-# 134 "data/maps/Maasje/scripts.pory"
+# 160 "data/maps/Maasje/scripts.pory"
 	waitmessage
 	goto Maasje_Beehive_02_1
 
 
 Maasje_Beehive_03::
-# 150 "data/maps/Maasje/scripts.pory"
+# 176 "data/maps/Maasje/scripts.pory"
 	lock
-# 151 "data/maps/Maasje/scripts.pory"
+# 177 "data/maps/Maasje/scripts.pory"
 	goto_if_set FLAG_START_COLLECTING_HONEY, Maasje_Beehive_03_2
-# 167 "data/maps/Maasje/scripts.pory"
+# 193 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_3
-# 168 "data/maps/Maasje/scripts.pory"
+# 194 "data/maps/Maasje/scripts.pory"
 	waitmessage
 Maasje_Beehive_03_1:
-# 170 "data/maps/Maasje/scripts.pory"
+# 196 "data/maps/Maasje/scripts.pory"
 	release
 	return
 
 Maasje_Beehive_03_2:
-# 152 "data/maps/Maasje/scripts.pory"
+# 178 "data/maps/Maasje/scripts.pory"
 	goto_if_unset FLAG_CLEAR_BEEHIVE_03, Maasje_Beehive_03_5
-# 162 "data/maps/Maasje/scripts.pory"
+# 188 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_2
-# 163 "data/maps/Maasje/scripts.pory"
+# 189 "data/maps/Maasje/scripts.pory"
 	waitmessage
 	goto Maasje_Beehive_03_1
 
 Maasje_Beehive_03_5:
-# 153 "data/maps/Maasje/scripts.pory"
+# 179 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_0, MSGBOX_YESNO
-# 154 "data/maps/Maasje/scripts.pory"
+# 180 "data/maps/Maasje/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Maasje_Beehive_03_8
 	goto Maasje_Beehive_03_1
 
 Maasje_Beehive_03_8:
-# 155 "data/maps/Maasje/scripts.pory"
+# 181 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_1
-# 156 "data/maps/Maasje/scripts.pory"
+# 182 "data/maps/Maasje/scripts.pory"
 	addvar VAR_BEEKEEPER_GEURTS, 1
-# 157 "data/maps/Maasje/scripts.pory"
+# 183 "data/maps/Maasje/scripts.pory"
 	setflag FLAG_CLEAR_BEEHIVE_03
-# 158 "data/maps/Maasje/scripts.pory"
+# 184 "data/maps/Maasje/scripts.pory"
 	waitmessage
 	goto Maasje_Beehive_03_1
 
 
 Maasje_Beehive_04::
-# 174 "data/maps/Maasje/scripts.pory"
+# 200 "data/maps/Maasje/scripts.pory"
 	lock
-# 175 "data/maps/Maasje/scripts.pory"
+# 201 "data/maps/Maasje/scripts.pory"
 	goto_if_set FLAG_START_COLLECTING_HONEY, Maasje_Beehive_04_2
-# 191 "data/maps/Maasje/scripts.pory"
+# 217 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_3
-# 192 "data/maps/Maasje/scripts.pory"
+# 218 "data/maps/Maasje/scripts.pory"
 	waitmessage
 Maasje_Beehive_04_1:
-# 194 "data/maps/Maasje/scripts.pory"
+# 220 "data/maps/Maasje/scripts.pory"
 	release
 	return
 
 Maasje_Beehive_04_2:
-# 176 "data/maps/Maasje/scripts.pory"
+# 202 "data/maps/Maasje/scripts.pory"
 	goto_if_unset FLAG_CLEAR_BEEHIVE_04, Maasje_Beehive_04_5
-# 186 "data/maps/Maasje/scripts.pory"
+# 212 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_2
-# 187 "data/maps/Maasje/scripts.pory"
+# 213 "data/maps/Maasje/scripts.pory"
 	waitmessage
 	goto Maasje_Beehive_04_1
 
 Maasje_Beehive_04_5:
-# 177 "data/maps/Maasje/scripts.pory"
+# 203 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_0, MSGBOX_YESNO
-# 178 "data/maps/Maasje/scripts.pory"
+# 204 "data/maps/Maasje/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Maasje_Beehive_04_8
 	goto Maasje_Beehive_04_1
 
 Maasje_Beehive_04_8:
-# 179 "data/maps/Maasje/scripts.pory"
+# 205 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_1
-# 180 "data/maps/Maasje/scripts.pory"
+# 206 "data/maps/Maasje/scripts.pory"
 	addvar VAR_BEEKEEPER_GEURTS, 1
-# 181 "data/maps/Maasje/scripts.pory"
+# 207 "data/maps/Maasje/scripts.pory"
 	setflag FLAG_CLEAR_BEEHIVE_04
-# 182 "data/maps/Maasje/scripts.pory"
+# 208 "data/maps/Maasje/scripts.pory"
 	waitmessage
 	goto Maasje_Beehive_04_1
 
 
 Maasje_Beehive_05::
-# 198 "data/maps/Maasje/scripts.pory"
+# 224 "data/maps/Maasje/scripts.pory"
 	lock
-# 199 "data/maps/Maasje/scripts.pory"
+# 225 "data/maps/Maasje/scripts.pory"
 	goto_if_set FLAG_START_COLLECTING_HONEY, Maasje_Beehive_05_2
-# 215 "data/maps/Maasje/scripts.pory"
+# 241 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_3
-# 216 "data/maps/Maasje/scripts.pory"
+# 242 "data/maps/Maasje/scripts.pory"
 	waitmessage
 Maasje_Beehive_05_1:
-# 218 "data/maps/Maasje/scripts.pory"
+# 244 "data/maps/Maasje/scripts.pory"
 	release
 	return
 
 Maasje_Beehive_05_2:
-# 200 "data/maps/Maasje/scripts.pory"
+# 226 "data/maps/Maasje/scripts.pory"
 	goto_if_unset FLAG_CLEAR_BEEHIVE_05, Maasje_Beehive_05_5
-# 210 "data/maps/Maasje/scripts.pory"
+# 236 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_2
-# 211 "data/maps/Maasje/scripts.pory"
+# 237 "data/maps/Maasje/scripts.pory"
 	waitmessage
 	goto Maasje_Beehive_05_1
 
 Maasje_Beehive_05_5:
-# 201 "data/maps/Maasje/scripts.pory"
+# 227 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_0, MSGBOX_YESNO
-# 202 "data/maps/Maasje/scripts.pory"
+# 228 "data/maps/Maasje/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Maasje_Beehive_05_8
 	goto Maasje_Beehive_05_1
 
 Maasje_Beehive_05_8:
-# 203 "data/maps/Maasje/scripts.pory"
+# 229 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_1
-# 204 "data/maps/Maasje/scripts.pory"
+# 230 "data/maps/Maasje/scripts.pory"
 	addvar VAR_BEEKEEPER_GEURTS, 1
-# 205 "data/maps/Maasje/scripts.pory"
+# 231 "data/maps/Maasje/scripts.pory"
 	setflag FLAG_CLEAR_BEEHIVE_05
-# 206 "data/maps/Maasje/scripts.pory"
+# 232 "data/maps/Maasje/scripts.pory"
 	waitmessage
 	goto Maasje_Beehive_05_1
 
 
 Maasje_Beehive_06::
-# 222 "data/maps/Maasje/scripts.pory"
+# 248 "data/maps/Maasje/scripts.pory"
 	lock
-# 223 "data/maps/Maasje/scripts.pory"
+# 249 "data/maps/Maasje/scripts.pory"
 	goto_if_set FLAG_START_COLLECTING_HONEY, Maasje_Beehive_06_2
-# 245 "data/maps/Maasje/scripts.pory"
+# 271 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_3
-# 246 "data/maps/Maasje/scripts.pory"
+# 272 "data/maps/Maasje/scripts.pory"
 	waitmessage
 Maasje_Beehive_06_1:
-# 248 "data/maps/Maasje/scripts.pory"
+# 274 "data/maps/Maasje/scripts.pory"
 	release
 	return
 
 Maasje_Beehive_06_2:
-# 224 "data/maps/Maasje/scripts.pory"
+# 250 "data/maps/Maasje/scripts.pory"
 	goto_if_unset FLAG_CLEAR_BEEHIVE_06, Maasje_Beehive_06_5
-# 240 "data/maps/Maasje/scripts.pory"
+# 266 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_2
-# 241 "data/maps/Maasje/scripts.pory"
+# 267 "data/maps/Maasje/scripts.pory"
 	waitmessage
 	goto Maasje_Beehive_06_1
 
 Maasje_Beehive_06_5:
-# 225 "data/maps/Maasje/scripts.pory"
+# 251 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_0, MSGBOX_YESNO
-# 226 "data/maps/Maasje/scripts.pory"
+# 252 "data/maps/Maasje/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Maasje_Beehive_06_8
 	goto Maasje_Beehive_06_1
 
 Maasje_Beehive_06_8:
-# 227 "data/maps/Maasje/scripts.pory"
+# 253 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_1
-# 228 "data/maps/Maasje/scripts.pory"
+# 254 "data/maps/Maasje/scripts.pory"
 	addvar VAR_BEEKEEPER_GEURTS, 1
-# 229 "data/maps/Maasje/scripts.pory"
+# 255 "data/maps/Maasje/scripts.pory"
 	setflag FLAG_CLEAR_BEEHIVE_06
-# 230 "data/maps/Maasje/scripts.pory"
+# 256 "data/maps/Maasje/scripts.pory"
 	waitmessage
-# 231 "data/maps/Maasje/scripts.pory"
+# 257 "data/maps/Maasje/scripts.pory"
 	playmoncry SPECIES_VOLBEAT, CRY_MODE_ENCOUNTER
-# 232 "data/maps/Maasje/scripts.pory"
+# 258 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_06_Text_0
-# 233 "data/maps/Maasje/scripts.pory"
+# 259 "data/maps/Maasje/scripts.pory"
 	waitmessage
-# 234 "data/maps/Maasje/scripts.pory"
+# 260 "data/maps/Maasje/scripts.pory"
 	waitmoncry
-# 235 "data/maps/Maasje/scripts.pory"
+# 261 "data/maps/Maasje/scripts.pory"
 	createmon 1, 0, SPECIES_VOLBEAT, 8
-# 236 "data/maps/Maasje/scripts.pory"
+# 262 "data/maps/Maasje/scripts.pory"
 	dowildbattle
 	goto Maasje_Beehive_06_1
 
 
 Maasje_Beehive_07::
-# 252 "data/maps/Maasje/scripts.pory"
+# 278 "data/maps/Maasje/scripts.pory"
 	lock
-# 253 "data/maps/Maasje/scripts.pory"
+# 279 "data/maps/Maasje/scripts.pory"
 	goto_if_set FLAG_START_COLLECTING_HONEY, Maasje_Beehive_07_2
-# 269 "data/maps/Maasje/scripts.pory"
+# 295 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_3
-# 270 "data/maps/Maasje/scripts.pory"
+# 296 "data/maps/Maasje/scripts.pory"
 	waitmessage
 Maasje_Beehive_07_1:
-# 272 "data/maps/Maasje/scripts.pory"
+# 298 "data/maps/Maasje/scripts.pory"
 	release
 	return
 
 Maasje_Beehive_07_2:
-# 254 "data/maps/Maasje/scripts.pory"
+# 280 "data/maps/Maasje/scripts.pory"
 	goto_if_unset FLAG_CLEAR_BEEHIVE_07, Maasje_Beehive_07_5
-# 264 "data/maps/Maasje/scripts.pory"
+# 290 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_2
-# 265 "data/maps/Maasje/scripts.pory"
+# 291 "data/maps/Maasje/scripts.pory"
 	waitmessage
 	goto Maasje_Beehive_07_1
 
 Maasje_Beehive_07_5:
-# 255 "data/maps/Maasje/scripts.pory"
+# 281 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_0, MSGBOX_YESNO
-# 256 "data/maps/Maasje/scripts.pory"
+# 282 "data/maps/Maasje/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Maasje_Beehive_07_8
 	goto Maasje_Beehive_07_1
 
 Maasje_Beehive_07_8:
-# 257 "data/maps/Maasje/scripts.pory"
+# 283 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_1
-# 258 "data/maps/Maasje/scripts.pory"
+# 284 "data/maps/Maasje/scripts.pory"
 	addvar VAR_BEEKEEPER_GEURTS, 1
-# 259 "data/maps/Maasje/scripts.pory"
+# 285 "data/maps/Maasje/scripts.pory"
 	setflag FLAG_CLEAR_BEEHIVE_07
-# 260 "data/maps/Maasje/scripts.pory"
+# 286 "data/maps/Maasje/scripts.pory"
 	waitmessage
 	goto Maasje_Beehive_07_1
 
 
 Maasje_Beehive_08::
-# 276 "data/maps/Maasje/scripts.pory"
+# 302 "data/maps/Maasje/scripts.pory"
 	lock
-# 277 "data/maps/Maasje/scripts.pory"
+# 303 "data/maps/Maasje/scripts.pory"
 	goto_if_set FLAG_START_COLLECTING_HONEY, Maasje_Beehive_08_2
-# 299 "data/maps/Maasje/scripts.pory"
+# 325 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_3
-# 300 "data/maps/Maasje/scripts.pory"
+# 326 "data/maps/Maasje/scripts.pory"
 	waitmessage
 Maasje_Beehive_08_1:
-# 302 "data/maps/Maasje/scripts.pory"
+# 328 "data/maps/Maasje/scripts.pory"
 	release
 	return
 
 Maasje_Beehive_08_2:
-# 278 "data/maps/Maasje/scripts.pory"
+# 304 "data/maps/Maasje/scripts.pory"
 	goto_if_unset FLAG_CLEAR_BEEHIVE_08, Maasje_Beehive_08_5
-# 294 "data/maps/Maasje/scripts.pory"
+# 320 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_2
-# 295 "data/maps/Maasje/scripts.pory"
+# 321 "data/maps/Maasje/scripts.pory"
 	waitmessage
 	goto Maasje_Beehive_08_1
 
 Maasje_Beehive_08_5:
-# 279 "data/maps/Maasje/scripts.pory"
+# 305 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_0, MSGBOX_YESNO
-# 280 "data/maps/Maasje/scripts.pory"
+# 306 "data/maps/Maasje/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Maasje_Beehive_08_8
 	goto Maasje_Beehive_08_1
 
 Maasje_Beehive_08_8:
-# 281 "data/maps/Maasje/scripts.pory"
+# 307 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_01_Text_1
-# 282 "data/maps/Maasje/scripts.pory"
+# 308 "data/maps/Maasje/scripts.pory"
 	addvar VAR_BEEKEEPER_GEURTS, 1
-# 283 "data/maps/Maasje/scripts.pory"
+# 309 "data/maps/Maasje/scripts.pory"
 	setflag FLAG_CLEAR_BEEHIVE_08
-# 284 "data/maps/Maasje/scripts.pory"
+# 310 "data/maps/Maasje/scripts.pory"
 	waitmessage
-# 285 "data/maps/Maasje/scripts.pory"
+# 311 "data/maps/Maasje/scripts.pory"
 	playmoncry SPECIES_ILLUMISE, CRY_MODE_ENCOUNTER
-# 286 "data/maps/Maasje/scripts.pory"
+# 312 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Beehive_06_Text_0
-# 287 "data/maps/Maasje/scripts.pory"
+# 313 "data/maps/Maasje/scripts.pory"
 	waitmessage
-# 288 "data/maps/Maasje/scripts.pory"
+# 314 "data/maps/Maasje/scripts.pory"
 	waitmoncry
-# 289 "data/maps/Maasje/scripts.pory"
+# 315 "data/maps/Maasje/scripts.pory"
 	createmon 1, 0, SPECIES_ILLUMISE, 8
-# 290 "data/maps/Maasje/scripts.pory"
+# 316 "data/maps/Maasje/scripts.pory"
 	dowildbattle
 	goto Maasje_Beehive_08_1
 
 
 Maasje_Joris_UpToTheWhiteLight::
-# 306 "data/maps/Maasje/scripts.pory"
+# 332 "data/maps/Maasje/scripts.pory"
 	lock
-# 307 "data/maps/Maasje/scripts.pory"
+# 333 "data/maps/Maasje/scripts.pory"
 	faceplayer
-# 308 "data/maps/Maasje/scripts.pory"
+# 334 "data/maps/Maasje/scripts.pory"
 	setflag FLAG_UP_TO_THE_WHITELIGHT_MAASJE
-# 309 "data/maps/Maasje/scripts.pory"
+# 335 "data/maps/Maasje/scripts.pory"
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-# 310 "data/maps/Maasje/scripts.pory"
+# 336 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Joris_UpToTheWhiteLight_Text_0, MSGBOX_AUTOCLOSE
-# 311 "data/maps/Maasje/scripts.pory"
+# 337 "data/maps/Maasje/scripts.pory"
 	waitmessage
-# 312 "data/maps/Maasje/scripts.pory"
+# 338 "data/maps/Maasje/scripts.pory"
 	applymovement 5, Maasje_Joris_UpToTheWhiteLight_Movement_0
-# 313 "data/maps/Maasje/scripts.pory"
+# 339 "data/maps/Maasje/scripts.pory"
 	delay 40
-# 314 "data/maps/Maasje/scripts.pory"
+# 340 "data/maps/Maasje/scripts.pory"
 	setspeaker Maasje_Joris_UpToTheWhiteLight_Text_1
-# 315 "data/maps/Maasje/scripts.pory"
+# 341 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Joris_UpToTheWhiteLight_Text_2, MSGBOX_AUTOCLOSE
-# 316 "data/maps/Maasje/scripts.pory"
+# 342 "data/maps/Maasje/scripts.pory"
 	waitmessage
-# 317 "data/maps/Maasje/scripts.pory"
+# 343 "data/maps/Maasje/scripts.pory"
 	applymovement LOCALID_PLAYER, Maasje_Joris_UpToTheWhiteLight_Movement_1
-# 318 "data/maps/Maasje/scripts.pory"
+# 344 "data/maps/Maasje/scripts.pory"
 	delay 40
-# 319 "data/maps/Maasje/scripts.pory"
+# 345 "data/maps/Maasje/scripts.pory"
 	compare VAR_TEMP_0, 49
 	goto_if_eq Maasje_Joris_UpToTheWhiteLight_4
 Maasje_Joris_UpToTheWhiteLight_3:
-# 323 "data/maps/Maasje/scripts.pory"
+# 349 "data/maps/Maasje/scripts.pory"
 	applymovement 5, Maasje_Joris_UpToTheWhiteLight_Movement_3
 Maasje_Joris_UpToTheWhiteLight_1:
-# 325 "data/maps/Maasje/scripts.pory"
+# 351 "data/maps/Maasje/scripts.pory"
 	waitmovement
-# 326 "data/maps/Maasje/scripts.pory"
+# 352 "data/maps/Maasje/scripts.pory"
 	removeobject 5
-# 327 "data/maps/Maasje/scripts.pory"
+# 353 "data/maps/Maasje/scripts.pory"
 	release
 	return
 
 Maasje_Joris_UpToTheWhiteLight_2:
-# 320 "data/maps/Maasje/scripts.pory"
+# 346 "data/maps/Maasje/scripts.pory"
 	applymovement 5, Maasje_Joris_UpToTheWhiteLight_Movement_2
 	goto Maasje_Joris_UpToTheWhiteLight_1
 
 Maasje_Joris_UpToTheWhiteLight_4:
-# 319 "data/maps/Maasje/scripts.pory"
+# 345 "data/maps/Maasje/scripts.pory"
 	compare VAR_TEMP_1, 34
 	goto_if_eq Maasje_Joris_UpToTheWhiteLight_2
 	goto Maasje_Joris_UpToTheWhiteLight_3
 
 
 Maasje_Evenscript_Rick::
-# 332 "data/maps/Maasje/scripts.pory"
+# 358 "data/maps/Maasje/scripts.pory"
 	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated
-# 333 "data/maps/Maasje/scripts.pory"
+# 359 "data/maps/Maasje/scripts.pory"
 	msgbox Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Maasje_Evenscript_Allen::
-# 338 "data/maps/Maasje/scripts.pory"
+# 364 "data/maps/Maasje/scripts.pory"
 	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated
-# 339 "data/maps/Maasje/scripts.pory"
+# 365 "data/maps/Maasje/scripts.pory"
 	msgbox Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Maasje_Eventscript_Ivan::
-# 344 "data/maps/Maasje/scripts.pory"
+# 370 "data/maps/Maasje/scripts.pory"
 	trainerbattle_single TRAINER_IVAN, Route104_Text_IvanIntro, Route104_Text_IvanDefeat
-# 345 "data/maps/Maasje/scripts.pory"
+# 371 "data/maps/Maasje/scripts.pory"
 	msgbox Route104_Text_IvanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Maasje_Eventscript_Winston::
-# 350 "data/maps/Maasje/scripts.pory"
+# 376 "data/maps/Maasje/scripts.pory"
 	trainerbattle_single TRAINER_WINSTON_1, Route104_Text_WinstonIntro, Route104_Text_WinstonDefeat
-# 351 "data/maps/Maasje/scripts.pory"
+# 377 "data/maps/Maasje/scripts.pory"
 	msgbox Route104_Text_WinstonPostBattle, MSGBOX_DEFAULT
-# 352 "data/maps/Maasje/scripts.pory"
+# 378 "data/maps/Maasje/scripts.pory"
 	release
 	end
 
 
 Maasje_Eventscript_Maniac::
-# 357 "data/maps/Maasje/scripts.pory"
+# 383 "data/maps/Maasje/scripts.pory"
 	lock
-# 358 "data/maps/Maasje/scripts.pory"
+# 384 "data/maps/Maasje/scripts.pory"
 	faceplayer
-# 359 "data/maps/Maasje/scripts.pory"
+# 385 "data/maps/Maasje/scripts.pory"
 	goto_if_unset FLAG_SHINY_KRABBY_ENCOUNTER, Maasje_Eventscript_Maniac_1
-# 365 "data/maps/Maasje/scripts.pory"
+# 391 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Eventscript_Maniac_Text_1
-# 366 "data/maps/Maasje/scripts.pory"
+# 392 "data/maps/Maasje/scripts.pory"
 	release
 	end
 
 Maasje_Eventscript_Maniac_1:
-# 360 "data/maps/Maasje/scripts.pory"
+# 386 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Eventscript_Maniac_Text_0
-# 361 "data/maps/Maasje/scripts.pory"
+# 387 "data/maps/Maasje/scripts.pory"
 	release
 	end
 
 
 Maasje_EventScript_Tiana::
-# 371 "data/maps/Maasje/scripts.pory"
+# 397 "data/maps/Maasje/scripts.pory"
 	trainerbattle_single TRAINER_TIANA, Maasje_Text_TianaIntro, Maasje_Text_TianaDefeated
-# 372 "data/maps/Maasje/scripts.pory"
+# 398 "data/maps/Maasje/scripts.pory"
 	msgbox Maasje_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
-# 82 "data/maps/Maasje/scripts.pory"
+# 108 "data/maps/Maasje/scripts.pory"
 Maasje_Advice_Fisher_Crabhill_Movement_0:
-# 82 "data/maps/Maasje/scripts.pory"
+# 108 "data/maps/Maasje/scripts.pory"
 	face_player
 	step_end
 
-# 312 "data/maps/Maasje/scripts.pory"
+# 338 "data/maps/Maasje/scripts.pory"
 Maasje_Joris_UpToTheWhiteLight_Movement_0:
-# 312 "data/maps/Maasje/scripts.pory"
+# 338 "data/maps/Maasje/scripts.pory"
 	walk_in_place_fast_down
 	step_end
 
-# 317 "data/maps/Maasje/scripts.pory"
+# 343 "data/maps/Maasje/scripts.pory"
 Maasje_Joris_UpToTheWhiteLight_Movement_1:
-# 317 "data/maps/Maasje/scripts.pory"
+# 343 "data/maps/Maasje/scripts.pory"
 	emote_question_mark
 	step_end
 
-# 320 "data/maps/Maasje/scripts.pory"
+# 346 "data/maps/Maasje/scripts.pory"
 Maasje_Joris_UpToTheWhiteLight_Movement_2:
-# 320 "data/maps/Maasje/scripts.pory"
+# 346 "data/maps/Maasje/scripts.pory"
 	walk_fast_left
-# 320 "data/maps/Maasje/scripts.pory"
+# 346 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
-# 320 "data/maps/Maasje/scripts.pory"
+# 346 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
-# 320 "data/maps/Maasje/scripts.pory"
+# 346 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
-# 320 "data/maps/Maasje/scripts.pory"
+# 346 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
-# 320 "data/maps/Maasje/scripts.pory"
+# 346 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
-# 320 "data/maps/Maasje/scripts.pory"
+# 346 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
-# 320 "data/maps/Maasje/scripts.pory"
+# 346 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
-# 320 "data/maps/Maasje/scripts.pory"
+# 346 "data/maps/Maasje/scripts.pory"
 	walk_fast_left
-# 320 "data/maps/Maasje/scripts.pory"
+# 346 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
-# 320 "data/maps/Maasje/scripts.pory"
+# 346 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 323 "data/maps/Maasje/scripts.pory"
+# 349 "data/maps/Maasje/scripts.pory"
 Maasje_Joris_UpToTheWhiteLight_Movement_3:
-# 323 "data/maps/Maasje/scripts.pory"
+# 349 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
-# 323 "data/maps/Maasje/scripts.pory"
+# 349 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
-# 323 "data/maps/Maasje/scripts.pory"
+# 349 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
-# 323 "data/maps/Maasje/scripts.pory"
+# 349 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
-# 323 "data/maps/Maasje/scripts.pory"
+# 349 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
-# 323 "data/maps/Maasje/scripts.pory"
+# 349 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
-# 323 "data/maps/Maasje/scripts.pory"
+# 349 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
-# 323 "data/maps/Maasje/scripts.pory"
+# 349 "data/maps/Maasje/scripts.pory"
 	walk_fast_left
-# 323 "data/maps/Maasje/scripts.pory"
+# 349 "data/maps/Maasje/scripts.pory"
 	walk_fast_left
-# 323 "data/maps/Maasje/scripts.pory"
+# 349 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
-# 323 "data/maps/Maasje/scripts.pory"
+# 349 "data/maps/Maasje/scripts.pory"
 	walk_fast_down
 	step_end
 
@@ -772,19 +812,74 @@ Maasje_Collect_Honey_BeeHives_Text_0:
 	.string "You have collected honey from the\n"
 	.string "beehive.$"
 
+Maasje_PeteLongfellow_Crabs_Gymhill_Text_0:
+# 82 "data/maps/Maasje/scripts.pory"
+	.string "PETE$"
+
+Maasje_PeteLongfellow_Crabs_Gymhill_Text_1:
+# 86 "data/maps/Maasje/scripts.pory"
+	.string "Ah, a challenger! Or, no, LOOK at this,\n"
+	.string "how am I supposed to-\p"
+	.string "...sorry. Sorry.\p"
+	.string "I'm Pete Longfellow, the gym leader\n"
+	.string "here. For what that's worth right now.\p"
+	.string "The gym is CLOSED. Just look at them!\p"
+	.string "In all my years sailing every sea this\n"
+	.string "world has to offer, through the pages\l"
+	.string "of my finest geography books, of\l"
+	.string "course, I have NEVER once come across\l"
+	.string "behaviour like this. Never!\p"
+	.string "...I just don't understand it.\p"
+	.string "Come back another time. Please. Once\n"
+	.string "this sorts itself out.$"
+
+Maasje_PeteLongfellow_Crabs_Gymhill_Text_2:
+# 89 "data/maps/Maasje/scripts.pory"
+	.string "Oh - h-hello there.\p"
+	.string "Sorry, I'm Pete Longfellow, the gym\n"
+	.string "leader. You catching me out here\l"
+	.string "instead of in the gym is, frankly, a\l"
+	.string "little humiliating.\p"
+	.string "But! Good news, the crabs seem back to\n"
+	.string "normal. FINALLY.\p"
+	.string "...They still need time to adjust and get\n"
+	.string "back to the sea, though, so don't get\l"
+	.string "any ideas.\p"
+	.string "Come back at the end of the day and the\n"
+	.string "gym is yours to challenge.\p"
+	.string "Until then, go have a look around town.\n"
+	.string "Or something.$"
+
+Maasje_PeteLongfellow_Crabs_Gymhill_Text_3:
+# 94 "data/maps/Maasje/scripts.pory"
+	.string "Still! Still not past these blasted\n"
+	.string "crabs!\p"
+	.string "...Come back another time. Once this\n"
+	.string "sorts itself out.$"
+
+Maasje_PeteLongfellow_Crabs_Gymhill_Text_4:
+# 97 "data/maps/Maasje/scripts.pory"
+	.string "Right, right, the crabs are back to\n"
+	.string "normal, but they still need time before\l"
+	.string "I can let anyone through.\p"
+	.string "Come back at the end of the day, the\n"
+	.string "gym will be ready.\p"
+	.string "...Go look around town in the meantime,\n"
+	.string "would you?$"
+
 Maasje_Advice_Fisher_Crabhill_Text_0:
-# 84 "data/maps/Maasje/scripts.pory"
+# 110 "data/maps/Maasje/scripts.pory"
 	.string "Whoa there, planning on going in?\p"
 	.string "That place can be a tricky maze. Here,\n"
 	.string "take this with you, just in case.$"
 
 Maasje_Advice_Fisher_Crabhill_Text_1:
-# 87 "data/maps/Maasje/scripts.pory"
+# 113 "data/maps/Maasje/scripts.pory"
 	.string "It's an Escape Rope. A real lifesaver if\n"
 	.string "you ever feel hopelessly lost!$"
 
 Maasje_Advice_Fisher_Crabhill_Text_2:
-# 91 "data/maps/Maasje/scripts.pory"
+# 117 "data/maps/Maasje/scripts.pory"
 	.string "Can you believe this whole place was\n"
 	.string "once an underwater reef?\p"
 	.string "Thanks to the tireless work of crabs,\n"
@@ -792,48 +887,48 @@ Maasje_Advice_Fisher_Crabhill_Text_2:
 	.string "safe haven for Pokémon.$"
 
 Maasje_Beehive_01_Text_0:
-# 105 "data/maps/Maasje/scripts.pory"
+# 131 "data/maps/Maasje/scripts.pory"
 	.string "This beehive seems full of honey, do you\n"
 	.string "want to collect it?$"
 
 Maasje_Beehive_01_Text_1:
-# 107 "data/maps/Maasje/scripts.pory"
+# 133 "data/maps/Maasje/scripts.pory"
 	.string "{PLAYER} collected the honey.$"
 
 Maasje_Beehive_01_Text_2:
-# 114 "data/maps/Maasje/scripts.pory"
+# 140 "data/maps/Maasje/scripts.pory"
 	.string "The beehive is empty. Better look for\n"
 	.string "another hive.$"
 
 Maasje_Beehive_01_Text_3:
-# 119 "data/maps/Maasje/scripts.pory"
+# 145 "data/maps/Maasje/scripts.pory"
 	.string "It's a beehive, better not touch it.$"
 
 Maasje_Beehive_06_Text_0:
-# 232 "data/maps/Maasje/scripts.pory"
+# 258 "data/maps/Maasje/scripts.pory"
 	.string "......BZZZZZZZZZZZZZZ$"
 
 Maasje_Joris_UpToTheWhiteLight_Text_0:
-# 310 "data/maps/Maasje/scripts.pory"
+# 336 "data/maps/Maasje/scripts.pory"
 	.string "...$"
 
 Maasje_Joris_UpToTheWhiteLight_Text_1:
-# 314 "data/maps/Maasje/scripts.pory"
+# 340 "data/maps/Maasje/scripts.pory"
 	.string "?????$"
 
 Maasje_Joris_UpToTheWhiteLight_Text_2:
-# 315 "data/maps/Maasje/scripts.pory"
+# 341 "data/maps/Maasje/scripts.pory"
 	.string "UP TO THE WHITELIGHT!!!$"
 
 Maasje_Eventscript_Maniac_Text_0:
-# 360 "data/maps/Maasje/scripts.pory"
+# 386 "data/maps/Maasje/scripts.pory"
 	.string "This town is overrun by Krabby's.\p"
 	.string "Everybody is scared to go outside.\p"
 	.string "I still need groceries though, so I'm\n"
 	.string "taking the risk!$"
 
 Maasje_Eventscript_Maniac_Text_1:
-# 365 "data/maps/Maasje/scripts.pory"
+# 391 "data/maps/Maasje/scripts.pory"
 	.string "Everybody is still shook by the\n"
 	.string "infestation by those Krabby's.\p"
 	.string "You won't seem them outside very often.\p"
@@ -841,16 +936,16 @@ Maasje_Eventscript_Maniac_Text_1:
 	.string "back to normal.$"
 
 Maasje_Text_TianaIntro::
-# 376 "data/maps/Maasje/scripts.pory"
+# 402 "data/maps/Maasje/scripts.pory"
 	.string "I'm going to keep winning and aim\n"
 	.string "to be the best TRAINER.\p"
 	.string "Help me further my career!$"
 
 Maasje_Text_TianaDefeated::
-# 380 "data/maps/Maasje/scripts.pory"
+# 406 "data/maps/Maasje/scripts.pory"
 	.string "I ended up furthering your career…$"
 
 Maasje_Text_TianaPostBattle::
-# 384 "data/maps/Maasje/scripts.pory"
+# 410 "data/maps/Maasje/scripts.pory"
 	.string "To keep winning my way up, I see that\n"
 	.string "I have to catch more POKéMON.$"

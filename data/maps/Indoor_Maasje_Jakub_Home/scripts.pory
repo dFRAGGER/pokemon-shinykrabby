@@ -10,49 +10,52 @@ script Indoor_Maasje_Jakub_Home_JakubConvo {
     setspeaker(NULL)
     giveitem(ITEM_SCANNER)
     setspeaker("JACOB")
-    msgbox(format("I found it on the way out of Crabhill.\pIt must have been dropped by that strange man when he fled the scene.\pIt is fried, but it proves he was up to something nasty.\pI've heard rumors about a group called The Faculty.\pThey talk about 'optimizing nature,' but this was mind control.\pApparently they all wear a sleek, brown uniform.\pAnd have you seen the new Gym Leader, Pete Longfellow?\pSame brown suit, same sterile attitude.\pYou need to go there and bankrupt his team!\pBut listen to me closely: Do NOT go back to Professor Birds yet!\pIf he finds out we saw the Golden Krabby, the Michelangelo of crustaceans, and didn't get a single sensor reading?\pHe will be crushed!\pHe might actually fire you for 'gross incompetence,' and I can't save you from that.\pYour only play is to head to Mist City and find my friend Daan.\pHe is a bit... earthy. Loves nature. But he can decode this device.\pPlus, the Cloud Forest there is full of rare Pokémon. Catch a few of those, and Birds might just forgive us for losing the Golden One.\pNow go! For the glory of the Krabby!"))
-    waitmessage 
-    if(flag(FLAG_HIDE_PETELONGFELLOW) == TRUE){
+    msgbox(format("I found it on the way out of Crabhill.\pIt must have been dropped by that strange man when he fled the scene.\pIt is fried, but it proves he was up to something nasty.\pI've heard rumors about a group called The Faculty.\pThey talk about 'optimizing nature,' but this looked like some form of mind control.\pApparently they all wear a sleek, brown uniform.\p..."))
+    waitmessage
+    playse(SE_PIN)
+    applymovement(3, moves(emote_exclamation_mark))
+    waitmovement
+    setspeaker("JACOB")
+    msgbox(format("You got send by PROF. BIRDS?\p...\pTo scan the Shiny Krabby? The Golden King?\pThat is... not totally unexpected...\p...\pSo you are his newest intern... the 596th in 3 years...\pIf I were you I would NOT go back to PROF. BIRDS yet!\pIf he finds out you saw the Golden Krabby, the Michelangelo of crustaceans, and didn't get a single sensor reading?\pHe will be crushed!\pHe might actually fire you again for 'gross incompetence,' and crush you dream of becoming a great Pokemon Researcher.\pI would advise you to go to Mist City and find my friend DAAN.\pHe is a bit... earthy. Loves nature. A bit of a tree hugger.\pBut he is also a POKEMON RESEARCHER himself, and possibly can decode the readings of this device the moments before it got fried by the Shiny Krabby.\pMaybe that can help you in your search for this magnificant creature.\pWell, what do you say?\pAre you ready for an adventure?\p..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_question_mark))
+    delay(120)
+    msgbox(format("...no?\pHmmm... I get it... this is all a bit much for a first day as an intern.\pMaybe you could check out the local gym?\p That might be an opportunity to boost your confidence.\pThe GYM LEADER is an old man, but don't underestimate him.\pI think a well trained crustacean can help you out there, no bias ofcourse...\pGood luck!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    if(flag(FLAG_BADGE01_GET) == TRUE){
+        playse(SE_PIN)
+        applymovement(3, moves(emote_exclamation_mark))
+        waitmovement
         setflag(FLAG_JAKUB_CONVO_2)
         setspeaker("JACOB")
-        msgbox(format("...\pWHAT?!\pYOU ALREADY BEAT HIM?\pJeezzz thank you so much!\pTime for George to go outside and play again!"),MSGBOX_AUTOCLOSE)
+        msgbox(format("...\pWHAT?!\pYOU ALREADY BEAT HIM?\pLet me be clear, {PLAYER}you might be the 596th intern of PROF. BIRDS...\p...but I think you get what it takes to have PROF. BIRDS actually hire you with a salary!\pMist City for interns like you is just around the corner!\pJust follow the path north until you see some big waterfalls.\pAt the the top of the falls you will find Mist City shrouded in clouds and rain.\pI'll call ahead and make sure DAAN is aware of your arrival.\pIf you leave now you'll be back to ERP TOWN before your mom even starts to worry!"),MSGBOX_AUTOCLOSE)
         waitmessage
-        call(Indoor_Maasje_JacobChecksonGeorge)
-        setspeaker("JACOB")
-        msgbox(format("Anyways...\pGeorge is happily playing outsi... on his gameboy again!\pSafe travels and say Hi to Daan for me!"),MSGBOX_AUTOCLOSE)
-        waitmessage
-        release
-        end
     }
-    elif(flag(FLAG_HIDE_PETELONGFELLOW) == FALSE) {
-        setspeaker("JACOB")
-        msgbox(format("Good luck with training!\pI think the cliffs along the coast are a good place to challenge yourself."),MSGBOX_AUTOCLOSE)
-        waitmessage
-        release
-        end
-    }}
-    elif (flag(FLAG_JAKUB_CONVO)==TRUE){
-        if(flag(FLAG_HIDE_PETELONGFELLOW) == TRUE && flag(FLAG_JAKUB_CONVO_2) == FALSE){
-        setflag(FLAG_JAKUB_CONVO_2)
-        setspeaker("JACOB")
-        msgbox(format("...\pWHAT?!\pYOU BEAT HIM?\pJeezzz thank you so much!\pTime for George to go outside and play again!"),MSGBOX_AUTOCLOSE)
-        waitmessage
-        call(Indoor_Maasje_JacobChecksonGeorge)
-        setspeaker("JACOB")
-        msgbox(format("Anyways...\pGeorge is happily playing outsi... on his gameboy again!\pSafe travels and say Hi to Daan for me!"),MSGBOX_AUTOCLOSE)
-        waitmessage
-        }
-        elif(flag(FLAG_HIDE_PETELONGFELLOW) == FALSE && flag(FLAG_JAKUB_CONVO_2) == FALSE) {
+    release
+    end
+    }
+    if(flag(FLAG_BADGE01_GET) == FALSE) {
         setspeaker("JACOB")
         msgbox(format("The gym is up the hill!\pGood luck with training!\pI think the cliffs along the coast are a good place to challenge yourself."),MSGBOX_AUTOCLOSE)
         waitmessage
-        }
-        elif(flag(FLAG_HIDE_PETELONGFELLOW) == TRUE && flag(FLAG_JAKUB_CONVO_2) == TRUE){
-           setspeaker("JACOB")
-            msgbox(format("Thank you so much for everything.\pI still want to catch that golden Krabby one time.\pI can't stop thinking about it..."),MSGBOX_AUTOCLOSE)
-            waitmessage 
-        }
+        release
+        end
     }
+    if(flag(FLAG_BADGE01_GET) == TRUE && flag(FLAG_JAKUB_CONVO_2) == FALSE){
+        setflag(FLAG_JAKUB_CONVO_2)
+        setspeaker("JACOB")
+        msgbox(format("...\pWHAT?!\pYOU ALREADY BEAT HIM?\pLet me be clear, {PLAYER}, you might be the 596th intern of PROF. BIRDS, but I think you get what it takes to have PROF. BIRDS actually hire you with a salary.\pMist City for interns like you is just around the corner!\pJust follow the path north until you see some big waterfalls.\pAt the the top of the falls you will find Mist City shrouded in clouds and rain.\pI'll call ahead and make sure DAAN is aware of your arrival.\pIf you leave now you'll be back to ERP TOWN before your mom even starts to worry!"),MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+    if(flag(FLAG_BADGE01_GET) == TRUE && flag(FLAG_JAKUB_CONVO_2) == TRUE){
+           setspeaker("JACOB")
+            msgbox(format("Thank you so much for everything.\pI still want to catch that Golden Krabby one time.\pI can't stop thinking about it..."),MSGBOX_AUTOCLOSE)
+            waitmessage 
+    }
+    
     release
     end
 }
@@ -123,12 +126,13 @@ script Indoor_Maasje_Jakub_Home_SiennaConvo {
     lock
     faceplayer
     setspeaker("SIENNA")
-    msgbox(format("Thanks for helping my husband!\p He has been more relaxt since the Krabby's have been acting normal again."))
+    msgbox(format("Thanks for helping my husband!\p He has been more at peace since the Krabby's have been acting normal again."))
     release
 }
 
 script Indoor_Maasje_Jacob_Home_Sienna1 {
     lock
+    hidefollower
     faceplayer
     playse(SE_PIN)
     applymovement(4,moves(emote_exclamation_mark))
@@ -146,7 +150,7 @@ script Indoor_Maasje_Jacob_Home_Sienna1 {
     applymovement(LOCALID_PLAYER,moves(face_left))
     waitmovement
     setspeaker("SIENNA")
-    msgbox(format("I don't think they noticed...\pIt's a nightmare!\nThe whole town has been overrun!\p The Krabby... they're usually such peaceful creatures, scuttling along the sand.\pBut this morning, they just... snapped!\p They're swarming the streets, pinching everything in sight!\pWait...\p...you must be the intern Professor Birds sent over.\pJacob mentioned you were coming today, he got a call from his old friend Prof. Birds.\pHe was so excited to take you out to catch that rare specimen he found...\pBut he isn't here!\pWhen the invasion started, he couldn't just sit by.\pKrabby are his absolute favorite Pokémon, you see?\pIt breaks his heart to see them acting so aggressive\pand wrong...\pHe was convinced something on their breeding grounds must be disturbing them.\pHe grabbed his old fishing gear and ran off toward Crabhill hours ago... but he didn't even ask permission!\pPlease, you have to find him!\pCrabhill is the rocky hill to the northeast; you can cross the sandbar while the tide is still low.\p I have to stay here and protect my poor, terrified George!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("I don't think they noticed...\pIt's a nightmare!\nThe whole town has been overrun!\p The Krabby... they're usually such peaceful creatures, scuttling along the sand.\pBut this morning, they just... snapped!\p They're swarming the streets, pinching everything in sight!\pWait...\p...you are looking for my husband aren't you...\pWell join the club!\pWhen the invasion started, he couldn't just sit by.\pKrabby are his absolute favorite Pokémon, you see?\pIt breaks his heart to see them acting so aggressive\pand wrong...\pHe was convinced something on their breeding grounds must be disturbing them.\pHe grabbed his old fishing gear and ran off toward Crabhill hours ago... but he didn't even ask permission!\pPlease, you have to find him!\pCrabhill is the rocky hill to the west; you can cross the sandbar while the tide is still low.\p I have to stay here and protect my poor, terrified George!"),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(4,moves(face_left))
     delay(60)
@@ -167,6 +171,7 @@ script Indoor_Maasje_Jacob_Home_Sienna1 {
     waitmessage
     applymovement(4,moves(face_left))
     waitmovement
+    clearflag(FLAG_TEMP_HIDE_FOLLOWER)
     release
     end
     }

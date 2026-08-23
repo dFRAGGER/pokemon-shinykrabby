@@ -40,9 +40,6 @@ script Erpuscity_Starthouse_1F_Eventscripts_MOMIntrospeech {
     msgbox(format("Well, look who's finally awake!"), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
-    playse(SE_PIN)
-    applymovement(1, moves(emote_exclamation_mark))
-    waitmovement
     applymovement(LOCALID_PLAYER, moves(walk_down*3 walk_left*3))
     setspeaker("MOM")
     msgbox(format("Do you have any idea what time it is?!\pProfessor Birds just called and was fuming over the phone...\pHe started ranting about another rejected grant, and how 'unreliable' today's youth are.\pHe even threatened to give your internship to the next kid who walks into the lab!\pYou'd better get moving.\nHe's waiting for you!"), MSGBOX_AUTOCLOSE)

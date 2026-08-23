@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE02_INDOOR_RANGER_HOUSE",
   "name": "Route02_Indoor_Ranger_House",
   "layout": "LAYOUT_ROUTE02_INDOOR_RANGER_HOUSE",
-  "music": "MUS_DUMMY",
+  "music": "MUS_RG_POKE_MANSION",
   "region_map_section": "MAPSEC_ROUTE_02",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

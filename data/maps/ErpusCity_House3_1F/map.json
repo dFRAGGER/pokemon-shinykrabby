@@ -6,7 +6,7 @@
   "region_map_section": "MAPSEC_ERPUS_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": true,
@@ -31,14 +31,14 @@
   "warp_events": [
     {
       "x": 2,
-      "y": 9,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ERP_CITY",
       "dest_warp_id": "3"
     },
     {
       "x": 3,
-      "y": 9,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ERP_CITY",
       "dest_warp_id": "3"

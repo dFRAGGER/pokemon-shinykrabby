@@ -7,12 +7,12 @@ script LabJariIndoor_Eventscript_Birds_Pokemon_Check {
     faceplayer
     setspeaker("PROF. BIRDS")
     if(!flag(FLAG_SHINY_KRABBY_ENCOUNTER)){
-    msgbox(format("...WHY ARE YOU STILL HERE? BETTER GET TO THAT SCRUB OF A FRIEND CALLED {COLOR GREEN}Jacob{COLOR DARK_GRAY} IN THE {COLOR RED}Mestreech{COLOR DARK_GRAY}! HE PROBABLY KNOWS WHERE TO FIND THAT GOLDEN KRABBY!"))
+    msgbox(format("...Why are you still HERE? BETTER GET TO THAT SCRUB OF A FRIEND CALLED JACOB IN MASO TOWN!"),MSGBOX_AUTOCLOSE)
     waitmessage
     }
     if(flag(FLAG_SHINY_KRABBY_ENCOUNTER)){
     setspeaker("PROF. BIRDS")
-    msgbox(format("ZERO DATA?! YOU SAW THE GOLDEN ANOMALY AND YOU HAVE ZERO DATA?!\pTHIS IS WORSE THAN THE DAY I SOLD MY BITCOIN FOR A PIZZA!\p...wait...\p...you said it deflected the signal? That level of energy resistance...\p...It might imply that the mutation was triggered by...\p...no...\p...it can't be...\pANYWAYS! DO NOT COME BACK UNTIL YOU CATCH A RARE POKÉMON OR THAT GOLDEN KRABBY!\pNOW GET OUT! I NEED TO LISTEN TO SABRINA CARPENTER! USELESS INTERN!"))
+    msgbox(format("...\p...\pZERO DATA?!\pYOU SAW THE GOLDEN ANOMALY AND YOU HAVE ZERO DATA?!\pTHIS IS WORSE THAN THE DAY I SOLD MY BITCOIN FOR A PIZZA!\p...wait...\p...you said it deflected the signal? That level of energy resistance...\p...It might imply that the mutation was triggered by...\p...no...\p...it can't be...\pANYWAYS, IF YOU WANT TO TRULY BECOME A POKEMON RESEARCHER, SCAN THAT GOLDEN KRABBY FOR ME.\pNOW GET OUT! I NEED TO LISTEN TO SABRINA CARPENTER! USELESS INTERN!"))
     }
     releaseall
 }
@@ -28,10 +28,12 @@ script LabJariIndoor_Eventscript_Magikarp {
 script LabJariIndoor_Eventscript_Barry_Birds {
     lock
     if(flag(FLAG_INTERN_BOXES_ASSIGNMENT)==FALSE){
+    playbgm(MUS_RG_ENCOUNTER_RIVAL,FALSE)
     getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
     delay(10)
     playse(SE_PIN)
     applymovement(3, moves(face_down emote_exclamation_mark))
+    waitmovement
     delay(30)
     playse(SE_PIN)
     applymovement(2, moves(face_down emote_question_mark))
@@ -93,7 +95,7 @@ script LabJariIndoor_Eventscript_Barry_Birds {
     waitmessage
     applymovement(3, moves(face_down))
     setspeaker("PROF. BIRDS")
-    msgbox(format("And you are... {PLAYER}??\p...and {PLAYER} is interested in Pokémon??\p WELL, GET IN LINE! HAHAHA.\p MY NAME IS PROFESSOR BIRDS!\p I RESEARCH POKEMON FOR A LIVING!!\pBESIDES THAT, I ALSO DEVELOP SECRET TECHNOL... I mean sensors for pig farms.\p...so you want to become a Pokémon Master?\p...HAHAHAH, YOU!!?\nA POKEMON MASTER???\p YOUR FIRST TASK AS AN INTERN IS TO GET SOME BOXES OUT OF MY STORAGE ROOM.\pEVERYBODY WHO WANTS TO BECOME A POKEMON MASTER HAS TO START SOMEWHERE!!\pHAHAHAHAH!!\pI warn you, do not sniff around in my storage room...\p...OR I'LL FIRE YOU IMMEDIATELY!\pHAHAHHAHA... HAHAH... HAHA... HA... haha..."),MSGBOX_AUTOCLOSE)
+    msgbox(format("And you are... {PLAYER}??\p...and {PLAYER} is interested in Pokémon??\p WELL, GET IN LINE! HAHAHA.\p MY NAME IS PROFESSOR BIRDS!\pI RESEARCH POKEMON FOR A LIVING!!\pBesides that, I also develop secret technol... SENSORS FOR PIG FARMS.\p...so you want to become a POKEMON RESEARCHER?\p...HAHAHAH, YOU!!?\nA POKEMON RESEARCHER???\pWELL WELL.\pYour first task as an INTERN is to GET SOME BOXES OUT OF MY STORAGE ROOM.\pEverybody who wants to become a POKEMON RESEARCHER has to start SOMEWHERE!!\pHAHAHAHAH!!\pI warn you, do not sniff around in my storage room...\p...OR I'LL FIRE YOU IMMEDIATELY!\pHAHAHHAHA... HAHAH... HAHA... HA... haha..."),MSGBOX_AUTOCLOSE)
     waitmessage
     if(var(VAR_TEMP_0)== 3 && var(VAR_TEMP_1)== 14) {
         applymovement(3, moves(walk_up*2))
@@ -122,12 +124,14 @@ script LabJariIndoor_Eventscript_Barry_Birds {
     msgbox(format("WELL, WHERE WERE WE BARRY??"),MSGBOX_AUTOCLOSE)
     waitmessage
     setflag(FLAG_INTERN_BOXES_ASSIGNMENT)
+    fadedefaultbgm
     release
     end
     }
     else {
         playse(SE_PIN)
         applymovement(3, moves(emote_exclamation_mark face_down))
+        waitmovement
         setspeaker("PROF. BIRDS")
         msgbox(format("WHERE DO YOU THINK YOU ARE GOING, {PLAYER}?\p GET TO THE BACK AND GET THOSE BOXES HERE!!"),MSGBOX_AUTOCLOSE)
         waitmessage
@@ -144,6 +148,7 @@ script LabJariIndoor_Eventscript_Birds_Convo {
     lock
     playse(SE_PIN)
     applymovement(3, moves(emote_exclamation_mark))
+    waitmovement
     faceplayer
     setspeaker("PROF. BIRDS")
     msgbox(format("DON'T BOTHER US, I'M EXPLAINING TO BARRY HOW IMPORTANT DNA SAMPL... pig sensors are!!"))
@@ -176,6 +181,7 @@ script LabJariIndoor_Eventscript_Barry_Convo {
     lock
     playse(SE_PIN)
     applymovement(2, moves(emote_exclamation_mark))
+    waitmovement
     faceplayer
     setspeaker("BARRY")
     msgbox(format("Don't disturb me... I'm learning a lot about...\ppig sensors..."),MSGBOX_AUTOCLOSE)

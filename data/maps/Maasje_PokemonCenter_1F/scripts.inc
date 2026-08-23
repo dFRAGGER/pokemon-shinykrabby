@@ -282,11 +282,11 @@ Maasje_PokemonCenter_1F_Bryan_Trigger0_Text_0:
 
 Maasje_PokemonCenter_1F_Bryan_Trigger0_Text_1:
 # 49 "data/maps/Maasje_PokemonCenter_1F/scripts.pory"
-	.string "Hi, my name is {COLOR RED}Bryan{COLOR DARK_GRAY}.\p"
+	.string "Hi, my name is BRYAN.\p"
 	.string "I'd like to film everything, absolutely\n"
 	.string "everything.\p"
 	.string "Can I film your journey towards\n"
-	.string "becoming a pokemon master?\p"
+	.string "becoming a pokemon researcher?\p"
 	.string "..... What? No?\p"
 	.string "Just don't mind me, act like you don't\n"
 	.string "see me.$"

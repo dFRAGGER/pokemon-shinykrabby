@@ -45,7 +45,7 @@ script Route01_Factulty_Grunts_Position1 {
     applymovement(3, moves(walk_right * 7 walk_down))
     call(Route01_Battle_Factulty_Grunts)
     setspeaker("AD")
-    msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and so he has no potential.\p The Faculty would discard him right away!\p Come on ADDY, let's go. The boss is waiting for us."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\pLet's go ADDY. Forget this kid.\pWe got more important things to do."), MSGBOX_AUTOCLOSE)
     setflag(FLAG_FACULTY_GRUNTS_ROUT01)
     applymovement(2, moves(walk_left * 10))
     applymovement(3, moves(walk_left * 10))
@@ -67,7 +67,7 @@ script Route01_Factulty_Grunts_Position2 {
     applymovement(3, moves(walk_right * 7 face_player))
     call(Route01_Battle_Factulty_Grunts)
     setspeaker("AD")
-    msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\p Come on ADDY, let's go. The boss is waiting for us."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\pLet's go ADDY. Forget this kid.\pWe got more important things to do."), MSGBOX_AUTOCLOSE)
     setflag(FLAG_FACULTY_GRUNTS_ROUT01)
     applymovement(2, moves(walk_left * 10))
     applymovement(3, moves(walk_left * 10))
@@ -89,7 +89,7 @@ script Route01_Factulty_Grunts_Position3 {
     applymovement(3, moves(walk_right * 6 ))
     call(Route01_Battle_Factulty_Grunts2)
     setspeaker("AD")
-    msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\p Come on ADDY, let's go. The boss is waiting for us."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\pLet's go ADDY. Forget this kid.\pWe got more important things to do."), MSGBOX_AUTOCLOSE)
     setflag(FLAG_FACULTY_GRUNTS_ROUT01)
     applymovement(2, moves(walk_left * 10))
     applymovement(3, moves(walk_left * 10))
@@ -111,7 +111,7 @@ script Route01_Factulty_Grunts_Position4 {
     applymovement(3, moves(walk_right walk_up walk_right * 5))
     call(Route01_Battle_Factulty_Grunts2)
     setspeaker("AD")
-    msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\p Come on ADDY, let's go. The boss is waiting for us."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\pLet's go ADDY. Forget this kid.\pWe got more important things to do."), MSGBOX_AUTOCLOSE)
     setflag(FLAG_FACULTY_GRUNTS_ROUT01)
     applymovement(2, moves(walk_down walk_left * 10))
     applymovement(3, moves(walk_down walk_left * 10))
@@ -126,7 +126,7 @@ script Route01_Factulty_Grunts_Position4 {
 
 script Route01_Battle_Factulty_Grunts {
     setspeaker("ADDY")
-    msgbox(format("Do you have registration for that Pokémon?\p No registration?\p All unregistered Pokémon have to be confiscated by The Faculty!\p Let me take on this loser, AD."))
+    msgbox(format("Do you have registration for that Pokémon?\p No registration?\pAll unregistered Pokémon have to be confiscated by The Faculty!\pLet me take on this loser, AD."))
     waitmessage
     trainerbattle_no_intro(TRAINER_GRUNT_FACULTY_1, Route01_Loss_Ton_Cross)
     playse(MUS_AQUA_MAGMA_HIDEOUT)
@@ -140,7 +140,7 @@ script Route01_Battle_Factulty_Grunts {
 
 script Route01_Battle_Factulty_Grunts2 {
     setspeaker("ADDY")
-    msgbox(format("Do you have registration for that Pokémon?\p No registration?\p All unregistered Pokémon have to be confiscated by The Faculty!\p Let me take on this loser, AD."))
+    msgbox(format("Do you have registration for that Pokémon?\pNo registration?\pAll unregistered Pokémon have to be confiscated by The Faculty!\pLet me take on this loser, AD."))
     waitmessage
     trainerbattle_no_intro(TRAINER_GRUNT_FACULTY_1, Route01_Loss_Ton_Cross)
     playse(MUS_AQUA_MAGMA_HIDEOUT)
@@ -153,7 +153,7 @@ script Route01_Battle_Factulty_Grunts2 {
 }
 
 text Route01_Loss_Ton_Cross {
-    format("Even losing does not feel as bad as teaching geography to unmotivated children.")
+    format("I used to wear more comfortable clothes, but the faculty forced me to wear this uniform.")
 }
 
 text Route01_Loss_Ad_Dice {

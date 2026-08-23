@@ -647,7 +647,7 @@ text SteelFactory_1F_ControlPanel_Text {
 }
 
 text SteelFactory_1F_Scientist_Lore1_Text {
-    format("The Regi-Metal alloy is our greatest achievement.\pBy replicating the elemental forging process Regigigas used in Lions Mountains, we create a material that channels legendary energy.\pThe Faculty will bring true order to Teressa. Diversity has had its chance. Now it is structure's turn.")
+    format("The Regi-Metal alloy is our greatest achievement.\pBy replicating the elemental forging process Regigigas used in Lions Mountains, we create a material that channels legendary energy.\pThe Faculty will bring true order to Tessera. Diversity has had its chance. Now it is structure's turn.")
 }
 
 text SteelFactory_1F_Scientist_Lore2_Text {
@@ -667,7 +667,7 @@ text SteelFactory_1F_Scientist_Lore5_Text {
 }
 
 text SteelFactory_1F_Official_Lore1_Text {
-    format("Teressa is a beautiful region.\pBut it's wasted on chaos.\pDozens of mutations, dozens of types, no cohesion, no direction.\pWe are going to change that.\pOne processed metric ton at a time.")
+    format("Teserra is a beautiful region.\pBut it's wasted on chaos.\pDozens of mutations, dozens of types, no cohesion, no direction.\pWe are going to change that.\pOne processed metric ton at a time.")
 }
 
 text SteelFactory_1F_Official_Lore2_Text {

@@ -8,6 +8,9 @@ mapscripts LabJariIndoorF0_MapScripts {
     ]
 }
 
+
+
+
 script LabJarinIndoorF0_Eventscript_Entrance {
     lock
     setvar(VAR_RECIEVED_STARTER_POKEMON, 1)
@@ -345,6 +348,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscript_TaylorSwift_Sign {
 script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit {
         lockall
         if(flag(FLAG_RECEIVED_STARTER_CHOICE)) {
+        playbgm(MUS_RG_ENCOUNTER_RIVAL,FALSE)
         playse(SE_PIN)
         applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark))
         waitmovement
@@ -380,6 +384,7 @@ script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit {
 script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit {
         lockall
         if(flag(FLAG_RECEIVED_STARTER_CHOICE)) {
+        playbgm(MUS_RG_ENCOUNTER_RIVAL,FALSE)
         playse(SE_PIN)
         applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark))
         waitmovement

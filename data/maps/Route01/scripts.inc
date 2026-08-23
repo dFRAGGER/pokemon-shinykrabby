@@ -116,7 +116,7 @@ Route01_Factulty_Grunts_Position2::
 # 69 "data/maps/Route01/scripts.pory"
 	setspeaker Route01_Factulty_Grunts_Position1_Text_0
 # 70 "data/maps/Route01/scripts.pory"
-	msgbox Route01_Factulty_Grunts_Position2_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Route01_Factulty_Grunts_Position1_Text_1, MSGBOX_AUTOCLOSE
 # 71 "data/maps/Route01/scripts.pory"
 	setflag FLAG_FACULTY_GRUNTS_ROUT01
 # 72 "data/maps/Route01/scripts.pory"
@@ -158,7 +158,7 @@ Route01_Factulty_Grunts_Position3::
 # 91 "data/maps/Route01/scripts.pory"
 	setspeaker Route01_Factulty_Grunts_Position1_Text_0
 # 92 "data/maps/Route01/scripts.pory"
-	msgbox Route01_Factulty_Grunts_Position2_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Route01_Factulty_Grunts_Position1_Text_1, MSGBOX_AUTOCLOSE
 # 93 "data/maps/Route01/scripts.pory"
 	setflag FLAG_FACULTY_GRUNTS_ROUT01
 # 94 "data/maps/Route01/scripts.pory"
@@ -200,7 +200,7 @@ Route01_Factulty_Grunts_Position4::
 # 113 "data/maps/Route01/scripts.pory"
 	setspeaker Route01_Factulty_Grunts_Position1_Text_0
 # 114 "data/maps/Route01/scripts.pory"
-	msgbox Route01_Factulty_Grunts_Position2_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Route01_Factulty_Grunts_Position1_Text_1, MSGBOX_AUTOCLOSE
 # 115 "data/maps/Route01/scripts.pory"
 	setflag FLAG_FACULTY_GRUNTS_ROUT01
 # 116 "data/maps/Route01/scripts.pory"
@@ -540,24 +540,12 @@ Route01_Factulty_Grunts_Position1_Text_1:
 	.string "Argh, nevermind.\p"
 	.string "That Pokemon isn't worth registrating\n"
 	.string "anyway.\p"
-	.string "He barely listens to his owner and so he\n"
-	.string "has no potential.\p"
-	.string "The Faculty would discard him right\n"
-	.string "away!\p"
-	.string "Come on ADDY, let's go. The boss is\n"
-	.string "waiting for us.$"
-
-Route01_Factulty_Grunts_Position2_Text_0:
-# 70 "data/maps/Route01/scripts.pory"
-	.string "Argh, nevermind.\p"
-	.string "That Pokemon isn't worth registrating\n"
-	.string "anyway.\p"
 	.string "He barely listens to his owner and he\n"
 	.string "has a weak personality.\p"
 	.string "The Faculty would discard him right\n"
 	.string "away!\p"
-	.string "Come on ADDY, let's go. The boss is\n"
-	.string "waiting for us.$"
+	.string "Let's go ADDY. Forget this kid.\p"
+	.string "We got more important things to do.$"
 
 Route01_Battle_Factulty_Grunts_Text_0:
 # 128 "data/maps/Route01/scripts.pory"
@@ -579,9 +567,9 @@ Route01_Battle_Factulty_Grunts_Text_2:
 
 Route01_Loss_Ton_Cross::
 # 155 "data/maps/Route01/scripts.pory"
-	.string "Even losing does not feel as bad as\n"
-	.string "teaching geography to unmotivated\l"
-	.string "children.$"
+	.string "I used to wear more comfortable\n"
+	.string "clothes, but the faculty forced me to\l"
+	.string "wear this uniform.$"
 
 Route01_Loss_Ad_Dice::
 # 159 "data/maps/Route01/scripts.pory"

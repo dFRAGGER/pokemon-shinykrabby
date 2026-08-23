@@ -270,7 +270,7 @@
 #define VAR_BRYAN_POSITION                               0x40F8 // Unused Var
 #define VAR_BEEKEEPER_GEURTS                             0x40F9 // Unused Var
 #define VAR_STARTHOUSE_ERP_CITY_1F                       0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
+#define VAR_MAASJE_GYM_TIDE_STATE                        0x40FB // 0: default, 1-4: pillar-selected tide, 5: final (after Pete defeated)
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var

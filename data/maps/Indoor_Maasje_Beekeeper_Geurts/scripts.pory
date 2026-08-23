@@ -5,7 +5,7 @@ script Maasje_Indoor_Beekeeper_Geurts_Assignment {
     faceplayer
     if(var(VAR_BEEKEEPER_GEURTS) == 0){
         setspeaker("MR. SMELLS")
-        msgbox(format("Hi there!\n My Name is {COLOR RED}Steven Smells{COLOR DARK_GRAY}.\p I recently retired as a biology teacher, and now am a full time beekeper.\p I love honey! It is my favorite substance.\p Can you help me collect my honey from my beehives outside?"), MSGBOX_YESNO)
+        msgbox(format("Hi there!\n My Name is STEVEN SMELLS.\p I recently retired as a biology teacher, and now am a full time beekeper.\p I love honey! It is my favorite substance.\p Can you help me collect my honey from my beehives outside?"), MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
             msgbox(format("Thank you so much, my body is becoming to brittle to climb the cliffs.\p There should be 8 beehives along the coast.\p Come back when you have collected all the honey.\p I might have a small reward for you."), MSGBOX_AUTOCLOSE)
             waitmessage
