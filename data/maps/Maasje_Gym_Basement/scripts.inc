@@ -1,0 +1,14 @@
+Maasje_Gym_Basement_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Maasje_Gym_Basement_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	.byte 0
+
+Maasje_Gym_Basement_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	call Maasje_Gym_Basement_Check_Buried
+	return
+
+
+Maasje_Gym_Basement_Check_Buried::
+	setobjectmovementtype 1, MOVEMENT_TYPE_BURIED
+	setobjectmovementtype 2, MOVEMENT_TYPE_BURIED
+	return
+

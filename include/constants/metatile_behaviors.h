@@ -245,6 +245,17 @@ enum {
     MB_HEADBUTT_TREE,
     MB_WATER_NORTH_ARROW_WARP,
     MB_BRIDGE_OVER_ICE,
+
+    // ShinyKrabby custom metatile behaviors (ported from custom maps)
+    MB_MANGROVE_SAND,
+    MB_DEEP_MUD,
+    MB_RED_CAVE,
+    MB_SNOW_CAVE,
+    MB_DARKGREY_CAVE,
+    MB_SNOW_GRASS,
+    MB_CYCLING_ROAD_PULL_RIGHT,
+    MB_CYCLING_ROAD_PULL_RIGHT_GRASS,
+
     NUM_METATILE_BEHAVIORS
 };
 

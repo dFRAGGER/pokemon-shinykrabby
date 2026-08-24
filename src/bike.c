@@ -43,6 +43,8 @@ static void AcroBikeTransition_WheelieRisingMoving(enum Direction);
 static void AcroBikeTransition_WheelieLoweringMoving(enum Direction);
 static void AcroBikeTransition_Downhill(enum Direction);
 static void AcroBikeTransition_Uphill(enum Direction);
+static void AcroBikeTransition_Righthill(enum Direction);
+static void AcroBikeTransition_Lefthill(enum Direction);
 static void AcroBike_TryHistoryUpdate(u16, u16);
 static u8 AcroBike_GetJumpDirection(void);
 static void Bike_UpdateDirTimerHistory(enum Direction);
@@ -61,6 +63,8 @@ static void StandardBikeTransition_TurnDirection(u8);
 static void StandardBikeTransition_MoveDirection(u8);
 static void StandardBikeTransition_Downhill(u8);
 static void StandardBikeTransition_Uphill(u8);
+static void StandardBikeTransition_Righthill(u8);
+static void StandardBikeTransition_Lefthill(u8);
 static u8 GetStandardBikeTransitionId(u8 *, u16, u16);
 static u8 StandardBikeInputHandler_Normal(u8 *, u16, u16);
 static u8 StandardBikeInputHandler_Turning(u8 *, u16, u16);
@@ -84,6 +88,8 @@ static void (*const sStandardBikeTransitions[])(u8) =
     [BIKE_TRANS_MOVE]           = StandardBikeTransition_MoveDirection,
     [BIKE_TRANS_DOWNHILL]       = StandardBikeTransition_Downhill,
     [BIKE_TRANS_UPHILL]         = StandardBikeTransition_Uphill,
+    [BIKE_TRANS_RIGHTHILL]      = StandardBikeTransition_Righthill,
+    [BIKE_TRANS_LEFTHILL]       = StandardBikeTransition_Lefthill,
 };
 
 static u8 (*const sStandardBikeInputHandlers[])(u8 *, u16, u16) =
@@ -126,6 +132,8 @@ static void (*const sAcroBikeTransitions[])(enum Direction) =
     [ACRO_TRANS_WHEELIE_LOWERING_MOVING]  = AcroBikeTransition_WheelieLoweringMoving,
     [ACRO_TRANS_DOWNHILL]                 = AcroBikeTransition_Downhill,
     [ACRO_TRANS_UPHILL]                   = AcroBikeTransition_Uphill,
+    [ACRO_TRANS_RIGHTHILL]                = AcroBikeTransition_Righthill,
+    [ACRO_TRANS_LEFTHILL]                 = AcroBikeTransition_Lefthill,
 };
 
 static enum AcroTransition (*const sAcroBikeInputHandlers[])(enum Direction *, u16, u16) =
@@ -243,6 +251,27 @@ static u8 StandardBikeInputHandler_Normal(u8 *direction_p, u16 newKeys, u16 held
             }
         }
     }
+    else if (MetatileBehavior_IsCyclingRoadPullRightTile(playerObjEvent->currentMetatileBehavior) == TRUE)
+    {
+        if (!JOY_HELD(B_BUTTON))
+        {
+            gPlayerAvatar.acroBikeState = BIKE_STATE_SLOPE;
+            gPlayerAvatar.runningState = MOVING;
+            if (*direction_p == DIR_EAST || *direction_p == DIR_NONE)
+                return BIKE_TRANS_RIGHTHILL;
+            else
+                return BIKE_TRANS_LEFTHILL;
+        }
+        else
+        {
+            if (*direction_p != DIR_NONE)
+            {
+                gPlayerAvatar.acroBikeState = BIKE_STATE_SLOPE;
+                gPlayerAvatar.runningState = MOVING;
+                return BIKE_TRANS_LEFTHILL;
+            }
+        }
+    }
     if (*direction_p == DIR_NONE)
     {
         *direction_p = direction;
@@ -296,6 +325,25 @@ static u8 StandardBikeInputHandler_Slope(u8 *direction_p, u16 newKeys, u16 heldK
                 return BIKE_TRANS_DOWNHILL;
             else
                 return BIKE_TRANS_UPHILL;
+        }
+    }
+    else if (MetatileBehavior_IsCyclingRoadPullRightTile(playerObjEventId[gObjectEvents].currentMetatileBehavior) == TRUE)
+    {
+        if (*direction_p != direction)
+        {
+            gPlayerAvatar.acroBikeState = BIKE_STATE_TURNING;
+            gPlayerAvatar.newDirBackup = *direction_p;
+            gPlayerAvatar.runningState = NOT_MOVING;
+            return GetStandardBikeTransitionId(direction_p, newKeys, heldKeys);
+        }
+        else
+        {
+            gPlayerAvatar.runningState = MOVING;
+            gPlayerAvatar.acroBikeState = BIKE_STATE_SLOPE;
+            if (*direction_p == DIR_EAST || *direction_p == DIR_NONE)
+                return BIKE_TRANS_RIGHTHILL;
+            else
+                return BIKE_TRANS_LEFTHILL;
         }
     }
     gPlayerAvatar.acroBikeState = BIKE_STATE_NORMAL;
@@ -366,6 +414,22 @@ static void StandardBikeTransition_Downhill(u8 v)
 }
 
 static void StandardBikeTransition_Uphill(u8 direction)
+{
+    if (GetBikeCollision(direction) == COLLISION_NONE)
+        PlayerWalkNormal(direction);
+}
+
+static void StandardBikeTransition_Righthill(u8 v)
+{
+    u8 collision = GetBikeCollision(DIR_EAST);
+
+    if (collision == COLLISION_NONE)
+        PlayerWalkFaster(DIR_EAST);
+    else if (collision == COLLISION_LEDGE_JUMP)
+        PlayerJumpLedge(DIR_EAST);
+}
+
+static void StandardBikeTransition_Lefthill(u8 direction)
 {
     if (GetBikeCollision(direction) == COLLISION_NONE)
         PlayerWalkNormal(direction);
@@ -564,6 +628,27 @@ static enum AcroTransition AcroBikeHandleInputNormal(enum Direction *newDirectio
                 gPlayerAvatar.acroBikeState = ACRO_STATE_SLOPE;
                 gPlayerAvatar.runningState = MOVING;
                 return ACRO_TRANS_UPHILL;
+            }
+        }
+    }
+    else if (MetatileBehavior_IsCyclingRoadPullRightTile(playerObjEvent->currentMetatileBehavior) == TRUE)
+    {
+        if (!JOY_HELD(B_BUTTON))
+        {
+            gPlayerAvatar.acroBikeState = ACRO_STATE_SLOPE;
+            gPlayerAvatar.runningState = MOVING;
+            if (*newDirection == DIR_EAST || *newDirection == DIR_NONE)
+                return ACRO_TRANS_RIGHTHILL;
+            else
+                return ACRO_TRANS_LEFTHILL;
+        }
+        else
+        {
+            if (*newDirection != DIR_NONE)
+            {
+                gPlayerAvatar.acroBikeState = ACRO_STATE_SLOPE;
+                gPlayerAvatar.runningState = MOVING;
+                return ACRO_TRANS_LEFTHILL;
             }
         }
     }
@@ -830,6 +915,25 @@ static enum AcroTransition AcroBikeHandleInput_Slope(enum Direction *direction_p
                 return ACRO_TRANS_DOWNHILL;
             else
                 return ACRO_TRANS_UPHILL;
+        }
+    }
+    else if (MetatileBehavior_IsCyclingRoadPullRightTile(playerObjEventId[gObjectEvents].currentMetatileBehavior) == TRUE)
+    {
+        if (*direction_p != direction && gPlayerAvatar.runningState != MOVING)
+        {
+            gPlayerAvatar.acroBikeState = ACRO_STATE_TURNING;
+            gPlayerAvatar.newDirBackup = *direction_p;
+            gPlayerAvatar.runningState = NOT_MOVING;
+            return CheckMovementInputAcroBike(direction_p, newKeys, heldKeys);
+        }
+        else
+        {
+            gPlayerAvatar.runningState = MOVING;
+            gPlayerAvatar.acroBikeState = ACRO_STATE_SLOPE;
+            if (*direction_p == DIR_EAST || *direction_p == DIR_NONE)
+                return ACRO_TRANS_RIGHTHILL;
+            else
+                return ACRO_TRANS_LEFTHILL;
         }
     }
     gPlayerAvatar.acroBikeState = ACRO_STATE_NORMAL;
@@ -1197,6 +1301,22 @@ static void AcroBikeTransition_Downhill(enum Direction v)
 }
 
 static void AcroBikeTransition_Uphill(enum Direction direction)
+{
+    if (GetBikeCollision(direction) == COLLISION_NONE)
+        PlayerWalkNormal(direction);
+}
+
+static void AcroBikeTransition_Righthill(enum Direction v)
+{
+    u8 collision = GetBikeCollision(DIR_EAST);
+
+    if (collision == COLLISION_NONE)
+        PlayerWalkFaster(DIR_EAST);
+    else if (collision == COLLISION_LEDGE_JUMP)
+        PlayerJumpLedge(DIR_EAST);
+}
+
+static void AcroBikeTransition_Lefthill(enum Direction direction)
 {
     if (GetBikeCollision(direction) == COLLISION_NONE)
         PlayerWalkNormal(direction);

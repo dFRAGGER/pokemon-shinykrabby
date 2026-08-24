@@ -779,23 +779,87 @@ void Snow_InitVars(void)
     gWeatherPtr->weatherGfxLoaded = FALSE;
     gWeatherPtr->targetColorMapIndex = 0;
     gWeatherPtr->colorMapStepDelay = 20;
-    gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES;
+    gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES_STANDARD;
     gWeatherPtr->snowflakeVisibleCounter = 0;
+    gWeatherPtr->snowflakeTimer = 36;
     Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
     gWeatherPtr->noShadows = FALSE;
 }
 
-void Snow_InitAll(void)
+// ShinyKrabby custom weather (ported from custom maps)
+void SnowLight_InitVars(void)
+{
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->weatherGfxLoaded = FALSE;
+    gWeatherPtr->targetColorMapIndex = 0;
+    gWeatherPtr->colorMapStepDelay = 30;
+    gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES_LIGHT;
+    gWeatherPtr->snowflakeVisibleCounter = 0;
+    gWeatherPtr->snowflakeTimer = 72;
+    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY);
+    gWeatherPtr->noShadows = FALSE;
+}
+
+void SnowHeavy_InitVars(void)
+{
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->weatherGfxLoaded = FALSE;
+    gWeatherPtr->targetColorMapIndex = 0;
+    gWeatherPtr->colorMapStepDelay = 12;
+    gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES_HEAVY;
+    gWeatherPtr->snowflakeVisibleCounter = 0;
+    gWeatherPtr->snowflakeTimer = 6;
+    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY);
+    gWeatherPtr->noShadows = FALSE;
+}
+
+void SnowBlizzard_InitVars(void)
+{
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->weatherGfxLoaded = FALSE;
+    gWeatherPtr->targetColorMapIndex = 0;
+    gWeatherPtr->colorMapStepDelay = 8;
+    gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES_BLIZZARD;
+    gWeatherPtr->snowflakeVisibleCounter = 0;
+    gWeatherPtr->snowflakeTimer = 2;
+    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY);
+    gWeatherPtr->noShadows = FALSE;
+}
+
+static void SnowInitAllCommon(void)
 {
     u16 i;
 
-    Snow_InitVars();
     while (gWeatherPtr->weatherGfxLoaded == FALSE)
     {
         Snow_Main();
         for (i = 0; i < gWeatherPtr->snowflakeSpriteCount; i++)
             UpdateSnowflakeSprite(gWeatherPtr->sprites.s1.snowflakeSprites[i]);
     }
+}
+
+void Snow_InitAll(void)
+{
+    Snow_InitVars();
+    SnowInitAllCommon();
+}
+
+void SnowLight_InitAll(void)
+{
+    SnowLight_InitVars();
+    SnowInitAllCommon();
+}
+
+void SnowHeavy_InitAll(void)
+{
+    SnowHeavy_InitVars();
+    SnowInitAllCommon();
+}
+
+void SnowBlizzard_InitAll(void)
+{
+    SnowBlizzard_InitVars();
+    SnowInitAllCommon();
 }
 
 void Snow_Main(void)
@@ -833,11 +897,14 @@ static bool8 UpdateVisibleSnowflakeSprites(void)
     if (gWeatherPtr->snowflakeSpriteCount == gWeatherPtr->targetSnowflakeSpriteCount)
         return FALSE;
 
-    if (++gWeatherPtr->snowflakeVisibleCounter > 36)
+    if (++gWeatherPtr->snowflakeVisibleCounter > gWeatherPtr->snowflakeTimer)
     {
         gWeatherPtr->snowflakeVisibleCounter = 0;
         if (gWeatherPtr->snowflakeSpriteCount < gWeatherPtr->targetSnowflakeSpriteCount)
-            CreateSnowflakeSprite();
+        {
+            if (!CreateSnowflakeSprite())
+                gWeatherPtr->targetSnowflakeSpriteCount = gWeatherPtr->snowflakeSpriteCount;
+        }
         else
             DestroySnowflakeSprite();
     }
@@ -939,11 +1006,25 @@ static void InitSnowflakeSpriteMovement(struct Sprite *sprite)
     sprite->tPosY = sprite->y * 128;
     sprite->x2 = 0;
     rand = Random();
-    sprite->tDeltaY = (rand & 3) * 5 + 64;
+    {
+        u16 baseSpeed;
+        if (gWeatherPtr->targetSnowflakeSpriteCount <= NUM_SNOWFLAKE_SPRITES_LIGHT)
+            baseSpeed = 40;
+        else if (gWeatherPtr->targetSnowflakeSpriteCount <= NUM_SNOWFLAKE_SPRITES_STANDARD)
+            baseSpeed = 64;
+        else if (gWeatherPtr->targetSnowflakeSpriteCount <= NUM_SNOWFLAKE_SPRITES_HEAVY)
+            baseSpeed = 128;
+        else
+            baseSpeed = 384;
+        sprite->tDeltaY = (rand & 3) * 16 + baseSpeed;
+    }
     sprite->tDeltaY2 = sprite->tDeltaY;
     StartSpriteAnim(sprite, (rand & 1) ? 0 : 1);
     sprite->tWaveIndex = 0;
-    sprite->tWaveDelta = ((rand & 3) == 0) ? 2 : 1;
+    if (gWeatherPtr->targetSnowflakeSpriteCount > NUM_SNOWFLAKE_SPRITES_HEAVY)
+        sprite->tWaveDelta = ((rand & 1) == 0) ? 4 : 3;
+    else
+        sprite->tWaveDelta = ((rand & 3) == 0) ? 2 : 1;
     sprite->tFallDuration = (rand & 0x1F) + 210;
     sprite->tFallCounter = 0;
 }
@@ -2280,6 +2361,104 @@ bool8 Shade_Finish(void)
 }
 
 //------------------------------------------------------------------------------
+// WEATHER_CLUB_LIGHTS
+//------------------------------------------------------------------------------
+
+enum {
+    CLUB_LIGHTS_STATE_INIT,
+    CLUB_LIGHTS_STATE_WAIT_CHANGE,
+    CLUB_LIGHTS_STATE_FLASH_ON,
+    CLUB_LIGHTS_STATE_FLASH_HOLD,
+    CLUB_LIGHTS_STATE_FLASH_OFF,
+    CLUB_LIGHTS_STATE_FLASH_WAIT,
+};
+
+void ClubLights_InitVars(void)
+{
+    gWeatherPtr->initStep = CLUB_LIGHTS_STATE_INIT;
+    gWeatherPtr->weatherGfxLoaded = FALSE;
+    gWeatherPtr->targetColorMapIndex = 3;
+    gWeatherPtr->colorMapStepDelay = 20;
+    gWeatherPtr->thunderTimer = 0;
+    gWeatherPtr->thunderAllowEnd = TRUE;
+    Weather_SetBlendCoeffs(8, 8);
+    gWeatherPtr->noShadows = FALSE;
+}
+
+void ClubLights_InitAll(void)
+{
+    ClubLights_InitVars();
+    while (gWeatherPtr->weatherGfxLoaded == FALSE)
+        ClubLights_Main();
+}
+
+void ClubLights_Main(void)
+{
+    switch (gWeatherPtr->initStep)
+    {
+    case CLUB_LIGHTS_STATE_INIT:
+        gWeatherPtr->weatherGfxLoaded = TRUE;
+        gWeatherPtr->initStep++;
+        break;
+    case CLUB_LIGHTS_STATE_WAIT_CHANGE:
+        if (gWeatherPtr->palProcessingState != WEATHER_PAL_STATE_CHANGING_WEATHER)
+        {
+            gWeatherPtr->thunderTimer = (Random() % 20) + 30;
+            gWeatherPtr->initStep = CLUB_LIGHTS_STATE_FLASH_ON;
+        }
+        break;
+    case CLUB_LIGHTS_STATE_FLASH_ON:
+        // Flash bright
+        gWeatherPtr->thunderAllowEnd = FALSE;
+        ApplyWeatherColorMapIfIdle(18);
+        gWeatherPtr->thunderTimer = (Random() % 3) + 4;
+        gWeatherPtr->initStep++;
+        break;
+    case CLUB_LIGHTS_STATE_FLASH_HOLD:
+        if (--gWeatherPtr->thunderTimer == 0)
+        {
+            gWeatherPtr->initStep++;
+        }
+        break;
+    case CLUB_LIGHTS_STATE_FLASH_OFF:
+        // Return to darker state
+        ApplyWeatherColorMapIfIdle(3);
+        gWeatherPtr->thunderAllowEnd = TRUE;
+        gWeatherPtr->thunderTimer = (Random() % 30) + 20;
+        gWeatherPtr->initStep++;
+        break;
+    case CLUB_LIGHTS_STATE_FLASH_WAIT:
+        if (--gWeatherPtr->thunderTimer == 0)
+        {
+            gWeatherPtr->initStep = CLUB_LIGHTS_STATE_FLASH_ON;
+        }
+        break;
+    }
+}
+
+bool8 ClubLights_Finish(void)
+{
+    switch (gWeatherPtr->finishStep)
+    {
+    case 0:
+        gWeatherPtr->thunderAllowEnd = FALSE;
+        gWeatherPtr->finishStep++;
+        // fall through
+    case 1:
+        ClubLights_Main();
+        if (gWeatherPtr->thunderAllowEnd)
+        {
+            gWeatherPtr->finishStep++;
+            return FALSE;
+        }
+        break;
+    default:
+        return FALSE;
+    }
+    return TRUE;
+}
+
+//------------------------------------------------------------------------------
 // WEATHER_UNDERWATER_BUBBLES
 //------------------------------------------------------------------------------
 
@@ -2619,6 +2798,10 @@ static u8 TranslateWeatherNum(u8 weather)
     case WEATHER_DROUGHT:            return WEATHER_DROUGHT;
     case WEATHER_DOWNPOUR:           return WEATHER_DOWNPOUR;
     case WEATHER_UNDERWATER_BUBBLES: return WEATHER_UNDERWATER_BUBBLES;
+    case WEATHER_CLUB_LIGHTS:        return WEATHER_CLUB_LIGHTS;
+    case WEATHER_SNOW_LIGHT:         return WEATHER_SNOW_LIGHT;
+    case WEATHER_SNOW_HEAVY:         return WEATHER_SNOW_HEAVY;
+    case WEATHER_SNOW_BLIZZARD:      return WEATHER_SNOW_BLIZZARD;
     case WEATHER_ABNORMAL:           return WEATHER_ABNORMAL;
     case WEATHER_LEAVES:             return WEATHER_LEAVES;
     case WEATHER_ROUTE119_CYCLE:     return sWeatherCycleRoute119[gSaveBlock1Ptr->weatherCycleStage];

@@ -156,10 +156,10 @@ static void SpriteCB_SelectionIconCancel(struct Sprite *);
 static void SpriteCB_MonPic(struct Sprite *);
 static void SpriteCB_Condition(struct Sprite *);
 
-static const u8 sText_GetsAPokeBlockQuestion[] = _(" gets a {POKEBLOCK}?");
+static const u8 sText_GetsAPokeBlockQuestion[] = _(" gets a Treat?");
 static const u8 sText_WasEnhanced[] = _("was enhanced!");
 static const u8 sText_NothingChanged[] = _("Nothing changed!");
-static const u8 sText_WontEatAnymore[] = _("It won't eat anymore…");
+static const u8 sText_WontEatAnymore[] = _("It has built a full Tolerance.\nThe Treat had no effect.");
 static const u8 sText_NatureSlash[] = _("NATURE/");
 
 extern const u16 gConditionGraphData_Pal[];
@@ -292,13 +292,19 @@ static const struct WindowTemplate sUsePokeblockYesNoWinTemplate =
     .baseBlock = 0x83
 };
 
+static const u8 sConditionName_Energetic[] = _("Energetic");
+static const u8 sConditionName_Uplifted[]  = _("Uplifted");
+static const u8 sConditionName_Focused[]   = _("Focused");
+static const u8 sConditionName_Relaxed[]   = _("Relaxed");
+static const u8 sConditionName_Creative[]  = _("Creative");
+
 static const u8 *const sConditionNames[CONDITION_COUNT] =
 {
-    [CONDITION_COOL]   = gText_Coolness,
-    [CONDITION_TOUGH]  = gText_Toughness,
-    [CONDITION_SMART]  = gText_Smartness,
-    [CONDITION_CUTE]   = gText_Cuteness,
-    [CONDITION_BEAUTY] = gText_Beauty3
+    [CONDITION_COOL]   = sConditionName_Energetic,
+    [CONDITION_TOUGH]  = sConditionName_Uplifted,
+    [CONDITION_SMART]  = sConditionName_Focused,
+    [CONDITION_CUTE]   = sConditionName_Relaxed,
+    [CONDITION_BEAUTY] = sConditionName_Creative
 };
 
 static const struct SpriteSheet sSpriteSheet_UpDown =
@@ -1024,17 +1030,45 @@ static void AddPokeblockToConditions(struct Pokeblock *pokeblock, struct Pokemon
     }
 }
 
+static void ApplyHerbEffects(struct Pokeblock *pokeblock, struct Pokemon *mon, u8 partyIndex)
+{
+    u8 dominantFlavor = GetPokeblocksFlavor(pokeblock);
+
+    // RELAXED: immediate HP heal (sweet value / 4 of max HP)
+    if (dominantFlavor == FLAVOR_RELAXED && pokeblock->sweet > 0)
+    {
+        u16 maxHP = GetMonData(mon, MON_DATA_MAX_HP, NULL);
+        u16 curHP = GetMonData(mon, MON_DATA_HP, NULL);
+        u16 heal  = (u16)((u32)maxHP * pokeblock->sweet / 400);
+        if (heal < 1) heal = 1;
+        curHP += heal;
+        if (curHP > maxHP) curHP = maxHP;
+        SetMonData(mon, MON_DATA_HP, &curHP);
+    }
+
+    // Set persistent battle flags for other effects
+    if (dominantFlavor == FLAVOR_ENERGETIC && pokeblock->spicy > 0)
+        gHerbEffectFlags[partyIndex] |= HERB_FLAG_ENERGETIC;
+    if (dominantFlavor == FLAVOR_FOCUSED && pokeblock->bitter > 0)
+        gHerbEffectFlags[partyIndex] |= HERB_FLAG_FOCUSED;
+    if (dominantFlavor == FLAVOR_UPLIFTED && pokeblock->sour > 0)
+        gHerbEffectFlags[partyIndex] |= HERB_FLAG_UPLIFTED;
+}
+
 static void CalculateConditionEnhancements(void)
 {
     u16 i;
-    struct Pokemon *mon = gPlayerParty;
-    mon += sMenu->party[sMenu->info.curSelection].monId;
+    u8 partyIndex = sMenu->party[sMenu->info.curSelection].monId;
+    struct Pokemon *mon = gPlayerParty + partyIndex;
 
     GetMonConditions(mon, sInfo->conditionsBeforeBlock);
     AddPokeblockToConditions(sInfo->pokeblock, mon);
     GetMonConditions(mon, sInfo->conditionsAfterBlock);
     for (i = 0; i < CONDITION_COUNT; i++)
         sInfo->enhancements[i] = sInfo->conditionsAfterBlock[i] - sInfo->conditionsBeforeBlock[i];
+
+    // Apply herb effects (RELAXED heals HP immediately; others set flags for battle)
+    ApplyHerbEffects(sInfo->pokeblock, mon, partyIndex);
 }
 
 static void CalculatePokeblockEffectiveness(struct Pokeblock *pokeblock, struct Pokemon *mon)

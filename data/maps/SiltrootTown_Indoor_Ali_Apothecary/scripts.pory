@@ -1,0 +1,308 @@
+mapscripts SiltrootTown_Indoor_Ali_Apothecary_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_SILTROOT_TOWN_STATE, 0: SiltrootTown_Indoor_Apothecary_Ali_Giel
+    ]
+}
+
+script SiltrootTown_Ali_Employer {
+    lock
+	faceplayer
+	msgbox(format("Hi there. A new batch just arrived.\n How can I help?"))
+	waitmessage
+	pokemart(SiltrootTown_Mart_Items)
+	msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+	release
+	end
+    
+}
+
+mart SiltrootTown_Mart_Items {
+    ITEM_LEPPA_BERRY
+	ITEM_PECHA_BERRY
+	ITEM_ORAN_BERRY
+    ITEM_SITRUS_BERRY
+}
+
+// Rolling Table NPC - prepares grind into a Joint, Blunt, or Bowl
+// Choice result: 0=Joint, 1=Blunt, 2=Bowl, 3=Cancel (MULTI_HERB_PREP)
+script SiltrootTown_RollingTable {
+    lock
+    faceplayer
+    if (!flag(FLAG_MET_ROLLING_TABLE_GUY)) {
+        setflag(FLAG_MET_ROLLING_TABLE_GUY)
+        msgbox(format("Hey. Name's Rudo.\pI've been rolling longer than Ali's been stargazing.\pUsed to work the underground prep circuit in Lionsarch before he brought me in.\pNow I handle all the prep here - Joints, Blunts, Bowls.\pYou bring me the grind, I'll turn it into something your Pokémon won't forget."),MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    special(Special_HasGroundMaterial)
+    if (var(VAR_RESULT) == FALSE) {
+        msgbox(format("No grind, no roll.\pFind someone with a Grinder, grind your buds, then come back."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+    msgbox(format("Nice. Pick which grind you want to roll."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    // Open the Stash Case so the player picks which grind to roll.
+    // VAR_RESULT = TRUE if they picked one, 0xFFFF if they cancelled.
+    // VAR_0x8000 = selected slot index.
+    special(Special_OpenCaseForRolling)
+    waitstate
+    if (var(VAR_RESULT) == 0xFFFF) {
+        msgbox(format("No worries. Come back when you're ready."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+    msgbox(format("Alright. What prep do you want?"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    multichoice(0, 0, MULTI_HERB_PREP, FALSE)
+    if (var(VAR_RESULT) == 3) {
+        msgbox(format("No worries. Come back when you're ready."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+    copyvar(VAR_0x8001, VAR_RESULT)
+    // VAR_0x8000 = slot (set by Special_OpenCaseForRolling), VAR_0x8001 = prep type (0=Joint,1=Blunt,2=Bowl)
+    special(Special_PrepareHerbTreat)
+    if (var(VAR_0x8001) == 0) {
+        msgbox(format("There you go - rolled it into a Joint.\pNice and even. Use it with your Pokemon and they'll feel it."),MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    elif (var(VAR_0x8001) == 1) {
+        msgbox(format("Blunt's done.\pTwo dominant strains packed tight. Hits harder than a Joint.\pUse it with your Pokemon."),MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    else {
+        msgbox(format("Bowl's packed.\pPure concentrated top strain - nothing balanced about it.\pUse it with your Pokemon."),MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    release
+    end
+}
+
+script SiltrootTown_Elder_Dialogue {
+    lock
+    faceplayer
+    msgbox(format("My doctor prescribed me all sorts of pills for my stiff hip... but Ali's 'special brownies' are the only thing that work.\pI feel twenty years younger... and very, very hungry.\pDo you have any cookies, dear?"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script SiltrootTown_Woman_Dialogue {
+    lock
+    faceplayer
+    msgbox(format("I don't even smoke.\pI just come here to sit in the fog.\pIt is the only place in town where nobody asks me to do anything.\pIt's like a sanctuary... a very smelly sanctuary."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script SiltrootTown_Screen_Dialogue {
+    lock
+    faceplayer
+    msgbox(format("Eight hundred for a gram of OG Kush?!\pInflation is hitting us hard.\pI might have to settle for the Lemon Haze mix this week.\pIt's weaker, but it leaves enough money for snacks."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script SiltrootTown_Plant_Dialogue {
+    lock
+    faceplayer
+    msgbox(format("Look at the leaves on this one.\pThey call it 'Indica'.\pAli says if you stare at it long enough, you can see the cosmos.\pI have been staring for ten minutes and I only see a very fuzzy caterpie."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script SiltrootTown_Indoor_Apothecary_Ali_Giel {
+    lock
+    setvar(VAR_SILTROOT_TOWN_STATE,1)
+    playse(SE_PIN)
+    applymovement(2, moves(emote_question_mark face_down))
+    waitmovement
+    setspeaker("ALI")
+    msgbox(format("Whoa... enter the event horizon, my friend.\pYou have pulled into my gravity well.\pYou look like you are carrying a lot of mass on your shoulders.\pWe have the finest herbs here... grown with hydroponics that rival NASA specs."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(1,moves(walk_left walk_down))
+    waitmovement
+    applymovement(2, moves(face_left))
+    setspeaker("GIEL")
+    msgbox(format("cough... COUGH!\pDon't let him start on the space stuff, kid.\pHe stares at the sky all night.\pIt's just lights in the dark, Ali.\pcough...\pLike an Artic Monkey concert but further away."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(2, moves(face_down))
+    delay(60)
+    setspeaker("ALI")
+    msgbox(format("Wait... the vibrations are shifting.\pDaan sent you?\pWhoa. That guy is intense.\pAlways shouting about 'Mother Nature'...\pHe thinks too small.\pI'm thinking about the bigger picture. The cosmos. The singularity.\pTalking about singularity... Slowbro, bring me a sample of that OG Kush."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(5,moves(walk_slow_down*5 walk_slow_right*3 face_down emote_question_mark))
+    waitmovement
+    playse(SE_PIN)
+    delay(60)
+    setspeaker("ALI")
+    msgbox(format("Slowbro, abort launch.\pOur guest is grounded.\pMore for us, right?\pI need the focus anyway.\pMy Master's thesis on supermassive black holes isn't going to write itself."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(2, moves(face_left))
+    applymovement(5,moves(walk_slow_up face_right))
+    waitmovement
+    delay(60)
+    applymovement(5,moves(face_up))
+    waitmovement
+    delay(60)
+    setspeaker("GIEL")
+    msgbox(format("Thanks Slowbro. These herbs will do me good.\pcough... COUGH!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(5,moves(walk_slow_down walk_slow_left*3 walk_slow_up*5))
+    waitmovement
+    applymovement(2, moves(face_left))
+    setspeaker("GIEL")
+    msgbox(format("So you need a ride to Lion's Arch?\pThat cold ass harbor up north?\pWhy would anyone want to go there?\pThere's no good music scene, apart from a disco club in a random basement."))
+    waitmessage
+    applymovement(2, moves(face_down))
+    setspeaker("ALI")
+    msgbox(format("It is a long trip across the wild ocean.\pYou need my neighbor, Scott.\pHe... moves inventory for me.\pThis business funds my, uh... 'hardware acquisitions'.\pRocket fuel isn't cheap, you know?\pI mean... high-quality fertilizer. Yeah."))
+    waitmessage
+    setspeaker("ALI")
+    msgbox(format("I believe in Karma. Celestial mechanics.\pI help you, you help me.\pI have a client in Lion's Arch.\pA DJ... cool guy.\pHe helps fund my 'Project Star-Shot'.\pI mean, he buys a lot of product.\pI have a stash stacked in an old shed deep in the southern mangroves.\pGo get the package, bring it to Scott, and tell him it is for the 'Ice Cold' run."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    playse(SE_POKENAV_CALL)
+    delay(60)
+    playse(SE_POKENAV_CALL)
+    delay(60)
+    applymovement(2, moves(face_left))
+    applymovement(1, moves(emote_question_mark))
+    setspeaker("GIEL")
+    msgbox(format("...\pWait... that's my phone?\pOh for the love of...\pIt's her.\pShe probably crashed her car again or needs 'emotional support'.\pI can't deal with this drama right now, but I have to take this.\p...COUGH!\pSee you around, kid. Don't let the system grind you down."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(1,moves(walk_down*3 face_right))
+    applymovement(2, moves(face_down))
+    applymovement(LOCALID_PLAYER, moves(walk_right face_left))
+    waitmovement
+    setspeaker("GIEL")
+    msgbox(format("Oh... if you are ever visit Hezik Town, let me know.\pMaybe you can visit one of my history lectures, girls love that shit."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(1,moves(walk_down))
+    waitmovement
+    setflag(FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1)
+    removeobject(1)
+    removeobject(5)
+    delay(120)
+    applymovement(LOCALID_PLAYER,moves(face_up))
+    waitmovement
+    setspeaker("ALI")
+    msgbox(format("He loves that woman, even if the thermodynamics of their relationship are unstable.\pAlright, good vibes only.\pGo to the southern mangroves, grab the stash, find Scott.\pAnd watch the sky... big things are coming."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(2, moves(face_up))
+    waitmovement
+    release
+    end
+}
+
+script Siltroottown_Indoor_Apothecary_Ali {
+    lock
+    faceplayer
+    if(!flag(FLAG_SILTROOTTOWN_STASH_SACK) && !flag(FLAG_HIDE_SCOTT_AFTER_CONVO)){
+    setspeaker("ALI")
+    msgbox(format("Follow coastline south, there you'll find a passage to a small shed.\pFeel free to take any samples if you'd like.\pThe strains that are in that shed are some of the strongest I got hehe."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    }
+    elif(flag(FLAG_SILTROOTTOWN_STASH_SACK) && !flag(FLAG_HIDE_SCOTT_AFTER_CONVO)) {
+        checkitem(ITEM_POKEBLOCK_CASE)
+        if (var(VAR_RESULT) == TRUE) {
+            setspeaker("ALI")
+            msgbox(format("You've got my Stash Case.\pNow go find Scott - he is right next door.\pShow it to him and tell him it's for the 'Ice Cold' run."),MSGBOX_AUTOCLOSE)
+            waitmessage
+        }
+        else {
+        setspeaker("ALI")
+        msgbox(format("Ah, the satellite returns to base.\pYou smell like swamp water... and success.\pThose Slowbros in the shed are hard workers, but their processing speed is a bit low, right?\pYou got the package? Stellar.\pMy client in Lion's Arch is going to be very happy.\pThis funds the next phase of the... uh, 'hydro-garden project'."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        applymovement(2,moves(face_left))
+        waitmovement
+        delay(40)
+        applymovement(2,moves(face_up))
+        waitmovement
+        delay(40)
+        applymovement(2,moves(face_right))
+        waitmovement
+        delay(40)
+        applymovement(2,moves(face_down))
+        waitmovement
+        delay(40)
+        applymovement(2, moves(face_player))
+        setspeaker("ALI")
+        msgbox(format("Okay, listen closely.\pGo to the house at the very end of the mudflat, right next to mine.\pThat is where Scott lives.\pHe is a bit... weird.\pAnd he wears these experimental goggles all the time.\pDo not ask him about them.\pJust show him the package and tell him you need an 'Ice Cold' run.\pGood luck kiddo."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        delay(40)
+        setspeaker("ALI")
+        msgbox(format("Oh - one more thing.\pTake this."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        giveitem(ITEM_POKEBLOCK_CASE)
+        setspeaker("ALI")
+        msgbox(format("That is my personal Stash Case.\pThere is only one like it in the world.\pScott will recognize it.\pWe go way back, him and me.\pMany nights under the stars, that case, his goggles, and my telescope.\pJust show it to him and he will know you are from me.\pAnd hey - you can also use it to store your grind from a Grinder.\lBring it back here and my Rolling Table guy will roll it into a Joint, Blunt, or Bowl for your Pokémon.\pKeeps them sharp. Trust the process."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        }
+
+    }
+    elif(flag(FLAG_SILTROOTTOWN_STASH_SACK) && flag(FLAG_HIDE_SCOTT_AFTER_CONVO)) {
+        setspeaker("ALI")
+        msgbox(format("So you've met scott?\pHe's a little bit of weirdo, I know, but he gets the job done.\pGood luck on your trip across the ocean, it's gonna be a wild one!\pLet me know when you have delivered the stash.\pSee you around."))
+        waitmessage
+    }
+    release
+    end
+}
+
+// Price display board
+script SiltrootTown_PriceBoard {
+    lock
+    msgbox(format("A large screen displays today's available strains.\pSilver Haze ............. ¥300\lNorthern Lights ...... ¥400\lLemon Haze .............. ¥600\lOG Kush ................... ¥800\p'From the cosmos to your Pokémon.\lAli's Apothecary - Grown beyond the stars.'"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+// Herb guide NPC - explains the full grinder/rolling system via topic menu
+script SiltrootTown_HerbGuide {
+    lock
+    faceplayer
+    msgbox(format("Hey, first time at an Apothecary?\pWant me to explain how the dark web of 'herbs' works?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        msgbox(format("No worries. Come find me if you have questions."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+    SiltrootTown_HerbGuide_Menu:
+    multichoice(0, 0, MULTI_HERB_GUIDE, FALSE)
+    if (var(VAR_RESULT) == 0) {
+        msgbox(format("The Grinder is where it all starts.\pYou put a strain - a bud - into the Grinder and it spins it down into a grind.\pThat grind goes into your Stash Case.\pYou can carry multiple grinds at once.\pOne slot per grind."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        goto(SiltrootTown_HerbGuide_Menu)
+    }
+    if (var(VAR_RESULT) == 1) {
+        msgbox(format("Each grind takes on the name of the strongest effect in the strain.\pStrains can give 5 different effects.\p Some strains give an energetic effect while others boost creativity.\pThere are also strains that help you Relax or Focus.\p Lastly there are some strains that Uplift you when you feel down.\pIf the strain is balanced across all flavors, the grind and final prep get a Premium name."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        goto(SiltrootTown_HerbGuide_Menu)
+    }
+    if (var(VAR_RESULT) == 2) {
+        msgbox(format("The Rolling Table in this shop is run by Rudo. \pBring him your grind and he'll roll it into something your Pokémon can use.\pYou pick which grind from your Stash Case, then pick the prep type.\pFeed the result to your Pokémon to boost their stats."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        goto(SiltrootTown_HerbGuide_Menu)
+    }
+    if (var(VAR_RESULT) == 3) {
+        msgbox(format("Three ways to prep your grind for consumption.\pA Joint is smooth and balanced - all flavors carry through evenly.\pA Blunt is double-packed - the two strongest flavors hit harder than a Joint.\pA Bowl is pure top strain - maximum effect on one stat, nothing else.\pThe 'Feel' number on the item tells you how potent it is.\pHigher Feel, stronger effect."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        goto(SiltrootTown_HerbGuide_Menu)
+    }
+    // VAR_RESULT == 4: Never mind
+    msgbox(format("Alright. You know where to find me."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}

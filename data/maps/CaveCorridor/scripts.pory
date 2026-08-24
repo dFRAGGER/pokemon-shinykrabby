@@ -1,0 +1,12 @@
+mapscripts CaveCorridor_MapScripts {
+    
+}
+
+script CaveCorridor_Eventscript {
+    lock
+    msgbox(format("What the hell is this place...\pWhere are those boxes...\nThey should be here somewhere..."))
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(walk_up))
+    waitmovement
+    release
+}

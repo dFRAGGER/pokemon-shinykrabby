@@ -1,0 +1,48 @@
+mapscripts LionsarchCity_Indoor_House2_MapScripts {}
+
+// House 2 - Apartment of cargo clerk Felix.
+// Felix cross-references every crate that passes through Lionsarch.
+// His neighbor Nadia crashes here sometimes, dreaming of boarding a ship south.
+// Felix gives away Net Balls he ordered for harbor nuisance Pokémon but never used.
+
+script House2_Felix {
+    lock
+    faceplayer
+    if (flag(FLAG_HOUSE2_NETBALL_GIVEN) == FALSE) {
+        msgbox(format("Hm? Can't you see I'm in the middle of something?\pI've got 847 manifests to cross-reference before morning.\pEvery crate, every barrel. By weight, by category, by flag of origin.\pThe harbor master now wants them sorted by Pokémon interference risk too.\pDon't even get me started on the aquatic disturbance reports."))
+        waitmessage
+        msgbox(format("...Actually. Here. Take these.\pI ordered them three months ago for catching Tentacool that get jammed in the filter grates.\pNever found the time to actually go down there.\pMaybe you'll put them to better use than I will."))
+        waitmessage
+        giveitem(ITEM_NET_BALL)
+        waitmessage
+        setflag(FLAG_HOUSE2_NETBALL_GIVEN)
+        msgbox(format("Now please. I have a shipment of raw iron and 200 barrels of fish paste to categorize."))
+        waitmessage
+    } else {
+        msgbox(format("Do you know this city moves over 40,000 tons of cargo every single month?\p40,000 tons!\pAnd someone has to write all of that down.\pThat someone... is me.\pGo away."))
+        waitmessage
+    }
+    release
+}
+
+script House2_Nadia {
+    lock
+    faceplayer
+    msgbox(format("You know what I think about sometimes?\pJust... boarding one of those big cargo ships at berth.\pStowing away if I had to.\pSee where it takes me.\pAnywhere south would do."))
+    waitmessage
+    msgbox(format("Don't get me wrong, Lionsarch is fine.\pIt's just always cold. Always grey.\pAlways smelling of metal and frozen fish.\pI want to go somewhere warm.\pSomewhere with actual sun."))
+    waitmessage
+    release
+}
+
+script House2_CargoBoard {
+    lockall
+    msgbox(format("A dense board covered in pinned manifests and cargo notes:\p(WEEK 43 - INBOUND)\n- Iron ore:           8,420 tons\n- Coal:               2,190 tons\n- Frozen fish paste:    340 tons\n- Factory parts:         67 units\p(WEEK 43 - OUTBOUND)\n- Processed steel:    6,850 tons\n- Refined ore pellets: 1,200 tons\n- 'Special cargo' (no label): 3 crates\pFelix's handwriting in red: 'WHAT IS IN CRATES 31-33??'"))
+    releaseall
+}
+
+script House2_Newspaper {
+    lockall
+    msgbox(format("A newspaper lies open on the table:\p'LIONSARCH STEEL OUTPUT TRIPLES'\p'Record tonnage exported this quarter.\nHarbor authority celebrates new crane installation.\pCritics ask: where did all the fishing boats go?'\pThe crossword is half-finished.\nSomeone has written 'BORING' across the sports section."))
+    releaseall
+}

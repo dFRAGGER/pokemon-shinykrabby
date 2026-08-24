@@ -372,7 +372,7 @@ static void Task_NewGameHnsSpeechSub_InitPokeBall(u8 taskId)
     gSprites[spriteId].invisible = FALSE;
     gSprites[spriteId].data[0] = 0;
 
-    CreatePokeballSpriteToReleaseMon(spriteId, gSprites[spriteId].oam.paletteNum, 112, 58, 0, 0, 32, PALETTES_BG, SPECIES_WOOPER);
+    CreatePokeballSpriteToReleaseMon(spriteId, gSprites[spriteId].oam.paletteNum, 112, 58, 0, 0, 32, PALETTES_BG, SPECIES_MAGIKARP);
     gTasks[taskId].func = Task_NewGameHnsSpeechSub_WaitForMon;
     gTasks[sHnsSpeechMainTaskId].tTimer = 0;
 }
@@ -573,7 +573,7 @@ static void Task_NewGameHnsSpeech_SlideInNewGenderSprite(u8 taskId)
 
 static void Task_NewGameHnsSpeech_ChallengeDisclaimer(u8 taskId)
 {
-    static const u8 sText_Disclaimer[] = _("What challenge are you\nexpecting?\p{COLOR RED}The following settings can be changed\nfrom the PC once you start the game.\lHowever, after starting the game, the\lnuzlocke, randomizer, difficulty and\lchallenge settings can only be made\leasier, not harder.");
+    static const u8 sText_Disclaimer[] = _("One more clause for the\ncontract.\p{COLOR RED}Your probation... I mean, GAME\nsettings can be changed from\lthe PC once you start.\lHowever, once you're on the\lclock, the nuzlocke, randomizer,\ldifficulty and challenge terms\lcan only be loosened. Never\ltightened. HR's orders.\lNot mine. Definitely not mine.");
     NewGameHnsSpeech_ClearWindow(0);
     StringCopy(gStringVar4, sText_Disclaimer);
     AddTextPrinterWithCustomSpeedForMessage(FALSE, 2);
@@ -1047,7 +1047,7 @@ static void SpriteCB_MovePlayerDownWhileShrinking(struct Sprite *sprite)
 
 static u8 NewGameHnsSpeech_CreateMonSprite(u8 x, u8 y)
 {
-    return CreateMonPicSprite_Affine(SPECIES_WOOPER, FALSE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    return CreateMonPicSprite_Affine(SPECIES_MAGIKARP, FALSE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
 }
 
 static void AddHnsSpeechObjects(u8 taskId)

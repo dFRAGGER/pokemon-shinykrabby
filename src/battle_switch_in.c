@@ -8,6 +8,7 @@
 #include "generational_changes.h"
 #include "constants/battle.h"
 #include "constants/moves.h"
+#include "pokeblock.h"
 
 static bool32 FirstEventBlockEvents(struct BattleCalcValues *calcValues);
 static bool32 TryHazardsOnSwitchIn(enum BattlerId battler, enum Ability ability, enum HoldEffect holdEffect, enum Hazards hazardType);
@@ -174,6 +175,24 @@ bool32 DoSwitchInEvents(void)
         gBattleStruct->eventState.switchIn++;
         if (TrySwitchInEjectPack(START_OF_TURN))
             return TRUE;
+        break;
+    case SWITCH_IN_EVENTS_HERB_EFFECTS:
+        for (battler = 0; battler < gBattlersCount; battler++)
+        {
+            u8 partyIndex;
+            if (!IsBattlerAlive(battler))
+                continue;
+            if (GetBattlerSide(battler) != B_SIDE_PLAYER)
+                continue;
+            partyIndex = gBattlerPartyIndexes[battler];
+            if (gHerbEffectFlags[partyIndex] & HERB_FLAG_ENERGETIC)
+            {
+                if (gBattleMons[battler].statStages[STAT_SPEED] < MAX_STAT_STAGE)
+                    gBattleMons[battler].statStages[STAT_SPEED]++;
+                gHerbEffectFlags[partyIndex] &= ~HERB_FLAG_ENERGETIC;
+            }
+        }
+        gBattleStruct->eventState.switchIn++;
         break;
     case SWITCH_IN_EVENTS_COUNT:
         break;

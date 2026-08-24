@@ -81,6 +81,7 @@
 #include "constants/party_menu.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "config/overworld.h"
 
 enum {
     MENU_SUMMARY,
@@ -2959,7 +2960,10 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             {
                 if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == FieldMove_GetMoveId(j))
                 {
-                    if (FieldMove_GetMoveId(j) != MOVE_FLY && FieldMove_GetMoveId(j) != MOVE_FLASH)
+                    if (FieldMove_GetMoveId(j) != MOVE_FLY && FieldMove_GetMoveId(j) != MOVE_FLASH
+                     && FieldMove_GetMoveId(j) != MOVE_CUT && FieldMove_GetMoveId(j) != MOVE_SURF
+                     && FieldMove_GetMoveId(j) != MOVE_STRENGTH && FieldMove_GetMoveId(j) != MOVE_ROCK_SMASH
+                     && FieldMove_GetMoveId(j) != MOVE_WATERFALL && FieldMove_GetMoveId(j) != MOVE_DIVE)
                         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
                     break;
                 }
@@ -2970,6 +2974,26 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         if (sPartyMenuInternal->numActions < 5 && CheckBagHasItem(ITEM_HM05, 1)
          && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), MOVE_FLASH))
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLASH + MENU_FIELD_MOVES);
+#if OW_HM_ITEMS_ALLOW_FIELD_USE == TRUE
+        if (sPartyMenuInternal->numActions < 5 && CheckBagHasItem(ITEM_HM01, 1)
+         && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), MOVE_CUT))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_CUT + MENU_FIELD_MOVES);
+        if (sPartyMenuInternal->numActions < 5 && CheckBagHasItem(ITEM_HM03, 1)
+         && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), MOVE_SURF))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_SURF + MENU_FIELD_MOVES);
+        if (sPartyMenuInternal->numActions < 5 && CheckBagHasItem(ITEM_HM04, 1)
+         && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), MOVE_STRENGTH))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_STRENGTH + MENU_FIELD_MOVES);
+        if (sPartyMenuInternal->numActions < 5 && CheckBagHasItem(ITEM_HM06, 1)
+         && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), MOVE_ROCK_SMASH))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_ROCK_SMASH + MENU_FIELD_MOVES);
+        if (sPartyMenuInternal->numActions < 5 && CheckBagHasItem(ITEM_HM07, 1)
+         && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), MOVE_WATERFALL))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_WATERFALL + MENU_FIELD_MOVES);
+        if (sPartyMenuInternal->numActions < 5 && CheckBagHasItem(ITEM_HM08, 1)
+         && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), MOVE_DIVE))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_DIVE + MENU_FIELD_MOVES);
+#endif
     }
 
     if (!InBattlePike())

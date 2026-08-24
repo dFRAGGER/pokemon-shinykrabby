@@ -853,6 +853,9 @@ const struct WindowTemplate *const gBattleWindowTemplates[] =
 
 // If current map scene equals any of the values in sMapBattleSceneMapping,
 // use its battle environment value. Otherwise, use the default.
+// If current map scene equals any of the values in sMapBattleSceneMapping,
+// use its battle environment value. Otherwise, use the environment BattleSetup_GetEnvironmentId
+// already resolved (e.g. a terrain default from a map's battle_scene, or a per-tile match).
 static u8 GetBattleEnvironmentByMapScene(u8 mapBattleScene)
 {
     int i;
@@ -861,7 +864,7 @@ static u8 GetBattleEnvironmentByMapScene(u8 mapBattleScene)
         if (mapBattleScene == sMapBattleSceneMapping[i].mapScene)
             return sMapBattleSceneMapping[i].battleEnvironment;
     }
-    return BATTLE_ENVIRONMENT_PLAIN;
+    return gBattleEnvironment;
 }
 
 static bool32 UseModernBattleEnvironment(void)

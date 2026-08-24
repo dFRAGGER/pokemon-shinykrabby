@@ -1,0 +1,43 @@
+mapscripts LionsarchCity_PokemonCenter_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        call(LionsarchCity_PokemonCenter_1F_OnTransition)
+    }
+    MAP_SCRIPT_ON_RESUME {
+        call(CableClub_OnResume)
+    }
+}
+
+script LionsarchCity_PokemonCenter_1F_OnTransition {
+    setrespawn(HEAL_LOCATION_LIONSARCH_CITY)
+    end
+}
+
+script LionsarchCity_PokemonCenter_1F_EventScript_Nurse {
+	setvar(VAR_0x800B, 1)
+	call (Common_EventScript_PkmnCenterNurse)
+	waitmessage
+    waitbuttonpress
+    release
+    end
+}
+
+// Sailor Rik - cargo hand on the northern freight routes.
+// Came in after a bad crossing last night. Sits by the bench to rest.
+script LionsarchCity_PokemonCenter_1F_SailorRik {
+    lock
+    faceplayer
+    msgbox(format("Rough crossing last night.\pSwell coming in from the northwest, four meters easy.\pMy Tentacruel got knocked around something fierce trying to steady the hull.\pNurse says he'll be right as rain in a few minutes.\pMe, I'll need a bit longer."))
+    waitmessage
+    release
+}
+
+// Courier Bette - runs deliveries between Lionsarch and the southern towns.
+// Always rushing, but stopped to charge her Pokémon and get out of the cold.
+script LionsarchCity_PokemonCenter_1F_CourierBette {
+    lock
+    faceplayer
+    msgbox(format("Ugh, this city.\pDon't get me wrong, I love the work, but Lionsarch is always so COLD.\pI came up in a boat from Siltroot this morning and I can't feel my fingers.\pMy Ponyta hated every second of it too.\pShe stayed in her pokeball the whole time."))
+    waitmessage
+    release
+}
+

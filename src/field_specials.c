@@ -5861,6 +5861,23 @@ bool8 CheckAddCoins(void)
         return TRUE;
 }
 
+// ShinyKrabby custom specials (ported from custom maps)
+#define LOCALID_MARSHDUKE_CATHEDRAL_CASTFORM 33
+
+void SetCastformSunnyForm(void)
+{
+    RefreshObjectEventGraphicsIdByLocalIdAndMap(LOCALID_MARSHDUKE_CATHEDRAL_CASTFORM,
+        gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup,
+        OBJ_EVENT_GFX_SPECIES(CASTFORM_SUNNY));
+}
+
+void SetCastformSnowyForm(void)
+{
+    RefreshObjectEventGraphicsIdByLocalIdAndMap(LOCALID_MARSHDUKE_CATHEDRAL_CASTFORM,
+        gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup,
+        OBJ_EVENT_GFX_SPECIES(CASTFORM_SNOWY));
+}
+
 void HaircutBrother1(void)
 {
     AdjustFriendship(&gPlayerParty[gSpecialVar_0x8004], FRIENDSHIP_EVENT_HAIRCUT1);

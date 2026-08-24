@@ -1,0 +1,32 @@
+mapscripts Marshduk_Indoor_Mart_MapScripts {}
+
+script Marshduk_Indoor_Mart_Employee {
+    lock
+    faceplayer
+    message(gText_HowMayIServeYou)
+    waitmessage
+    pokemart(Marshduk_Indoor_Mart_Items)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    release
+    end
+}
+
+mart Marshduk_Indoor_Mart_Items {
+    ITEM_GREAT_BALL
+    ITEM_SUPER_POTION
+    ITEM_ANTIDOTE
+    ITEM_PARALYZE_HEAL
+    ITEM_AWAKENING
+    ITEM_BURN_HEAL
+    ITEM_REVIVE
+    ITEM_X_SPEED
+}
+
+script Marshduk_Indoor_Mart_Woman {
+    lock
+    faceplayer
+    msgbox(format("Out of stock again...\pREPELs and rope are the essentials for crossing the mud-infested delta and scaring away the URSARING."))
+    waitmessage
+    release
+    end
+}

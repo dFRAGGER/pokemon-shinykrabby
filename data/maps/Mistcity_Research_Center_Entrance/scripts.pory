@@ -1,0 +1,306 @@
+mapscripts Mistcity_Research_Center_Entrance_MapScripts {}
+
+script Mistcity_Research_Center_Entrance_Rangers_Slaking {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+        msgbox(format("It is finally out cold.\pIt stopped pressing its ear to the floor about an hour ago.\pTo be honest, seeing it snore that loudly is a huge relief."))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+        msgbox(format("This Slaking usually sleeps eighteen hours a day, but it keeps pressing its ear to the mud like it hears something moving deep underground."))
+    }
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Rangers_Shiftry {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+        msgbox(format("The howling has completely stopped.\pIt is just grooming its leaf fans now.\pIt seems whatever was invading its territory in the deep woods is gone."))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+        msgbox(format("I've never seen a Shiftry act this aggressive, but it keeps staring toward the deep woods and howling as if an intruder is tearing up its home."))
+    }
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Rangers_Paras {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+
+        msgbox(format("The air is finally clear.\pThe defensive spore release has stopped.\pIt seems the 'seismic activity' it was sensing has calmed down."))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+
+        msgbox(format("The mushroom on this Parasect's back has been releasing defensive spores all morning, a reaction usually only triggered by heavy seismic activity."))
+    }
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Rangers_Tropius {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+
+        msgbox(format("It is happily munching on some Nanab berries now.\pThat metallic grinding sound must have ceased, because this big guy is totally relaxed again."))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+
+        msgbox(format("We found this poor Tropius tangled in the lower branches; it was terrified of a loud, metallic grinding sound echoing from the restricted zone."))
+    }
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Rangers_Trucks {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+
+        msgbox(format("The distress signals have flatlined.\pWe are actually parking the transport trucks for the first time in days.\pSounds like peace has returned to the forest core."))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+
+        msgbox(format("We've had to mobilize all our rescue trucks just to keep up with the sheer volume of distress signals coming from the forest core."))
+    }
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Scientist_Mist {
+    lock
+    faceplayer
+
+    msgbox(format("The deep cloud forest is a biological marvel, a unique ecosystem where the perpetual mist allows rare and ancient Pokémon species to thrive in isolation."))
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Scientist_Guard {
+    lock
+    faceplayer
+
+    msgbox(format("I can't let you through; the upper level is strictly reserved for our lead researchers to analyze the sensitive data coming from the forest."))
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Scientist_Paras {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+
+        msgbox(format("Incredible.\pThe bioluminescence on the Tochukaso mushroom is fading rapidly.\pIt has returned to its natural, dull color.\pThat 'sonar' signal that was irritating the fungus seems to have been cut off completely.\pWhatever you did down there silenced the noise."))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+
+    msgbox(format("Now, this is the most alarming case.\pThe tochukaso mushroom that controls the Parasect is a fungus, right?\pIt's incredibly sensitive to geological changes.\pLately, we've rescued several Parasect from the deep woods whose mushrooms have developed a faint, unnatural bio-luminescence.\pIt's a defensive reaction.\pOur hypothesis is that something is emitting powerful, systematic waves of energy into the ground-like a sonar.\pThe fungus is reacting to being 'scanned.'\pSomeone isn't just exploring the forest; they're X-raying it."))
+    }
+    waitmessage
+    applymovement(3,moves(face_right))
+    waitmovement
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Scientist_Tropius {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+
+        msgbox(format("Just look at it.\pIt is preening its wings and growling softly.\pThe sheer terror is gone.\pIf the atmospheric disturbance has truly dissipated, this one should be ready to return to Whisperwood Grove very soon.\pIt finally feels safe to fly."))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+
+    msgbox(format("This poor thing was part of a whole herd we saw fleeing the Whisperwood Grove area last week.\pThey were in a complete panic, flying erratically as if escaping a huge predator, but there was nothing there.\pThis one got separated and was exhausted.\pIt's still incredibly skittish.\pWe've been getting similar reports from other flying-type Pokémon.\pSome kind of powerful, ground-based energy pulse in that sector is making the sky feel unsafe to them."))
+    }
+    waitmessage
+    applymovement(12,moves(face_up))
+    waitmovement
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Scientist_Shiftry {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+
+        msgbox(format("The Shiftry has stopped staring at the floor.\pIt is looking out the window towards the treeline.\pIts internal compass seems to have realigned.\pThe magnetic interference that was scrambling its senses has vanished.\pIt is back to being the master of the forest."))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+
+    msgbox(format("Shiftry are masters of the forest, moving like ghosts through the trees.\pThey are deeply connected to their territory.\pBut this one? We found it completely disoriented, miles from its home.\pIt acts dazed, sometimes just staring blankly at the ground for hours.\pOur analysis suggests its sensory organs, which help it navigate, are being overwhelmed by some kind of external interference.\pIt's like its natural compass has been scrambled by a powerful magnetic field."))
+    }
+    waitmessage
+    applymovement(4,moves(face_down))
+    waitmovement
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Scientist_Slaking {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+
+        msgbox(format("Shh... keep your voice down.\pFor the first time in weeks, the Slaking is preparing to sleep.\pThat low-frequency hum must have stopped, because its heart rate is perfectly slow and steady.\pIt is finally back to doing what it does best... absolutely nothing."))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+
+    msgbox(format("It's the strangest thing.\pSlaking are the definition of energy conservation, but this one... it won't rest.\pWe rescued it a few weeks back after reports of it aggressively pacing near some ancient stone ruins deep in the forest.\pIts bio-scans are all over the place, showing constant, low-level stress.\pIt's as if it's reacting to a persistent, low-frequency hum that none of our equipment can even detect.\pSomething out there is seriously disturbing the peace."))
+    }
+    waitmessage
+    applymovement(2,moves(face_down))
+    waitmovement
+    release
+}
+
+script Mistcity_Research_Center_Entrance_Daan_RescueMission {
+    lock
+    setflag(FLAG_DISABLE_FOLLOWER_POKEMON)
+    hidefollower
+    playse(SE_PIN)
+    applymovement(19, moves(face_right emote_exclamation_mark))
+    waitmovement
+    applymovement(LOCALID_PLAYER,moves(face_left))
+    setspeaker("LEAD SCIENTIST")
+    msgbox(format("Hold it right there.\pYou're a skilled trainer, right?\p...Good. We have a serious situation.\pJoin us."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER,moves(walk_left*3 face_up))
+    waitmovement
+    applymovement(19, moves(face_up))
+    waitmovement
+    setspeaker("LEAD SCIENTIST")
+    msgbox(format("About two hours ago, a distress alarm went off in the Whisperwood Grove.\pIt's in the same sector we've been getting all these weird reports from.\pThe alarm was triggered by a report of illegal deforestation.\pOur best ranger, Daan, took the first truck out to investigate.\pWe were expecting a radio check-in an hour ago, but we've gotten nothing but static.\pWe need someone to head to his last known coordinates to provide backup and find out what's going on.\pWe're stretched thin here with all these agitated Pokémon."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(19, moves(face_right))
+    applymovement(LOCALID_PLAYER,moves(face_left))
+    waitmovement
+    setspeaker("LEAD SCIENTIST")
+    msgbox(format("Can you do it?"),MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT)==YES){
+    setspeaker("LEAD SCIENTIST")
+    msgbox(format("...Great!\pDon't go in there unprepared.\pEvery Pokémon we've rescued recently has come from that sector.\pThey're all on edge, so expect wild Pokémon to be more aggressive than usual.\pThe reports mentioned there were tracks from vehicles that have no business being that deep in a protected forest.\pThis group, whoever they are, are well-equipped, and they're after something specific.\pLook for tracks, listen for machinery, and find Daan.\pBut be careful, whoever is out there is trying to tear the heart out of the forest."),MSGBOX_AUTOCLOSE)
+    }
+    if(var(VAR_RESULT)==NO){
+        setspeaker("LEAD SCIENTIST")
+        msgbox(format("Well, I'm afraid you have no choice.\pWe are understaffed but you won't go in there alone.\pEvery Pokémon we've rescued recently has come from that sector.\pThey're all on edge, so expect wild Pokémon to be more aggressive than usual.\pThe reports mentioned there were tracks from vehicles that have no business being that deep in a protected forest.\pThis group, whoever they are, are well-equipped, and they're after something specific.\pLook for tracks, listen for machinery, and find Daan.\pBut be careful, whoever is out there is trying to tear the heart out of the forest."),MSGBOX_AUTOCLOSE)
+    }
+    waitmessage
+    applymovement(LOCALID_PLAYER,moves(walk_right*2 face_up))
+    applymovement(21, moves(face_down))
+    
+    
+    waitmovement
+    applymovement(19, moves(walk_right*2 face_up))
+    applymovement(20, moves(walk_right walk_up face_down))
+    applymovement(18, moves(face_down))
+    waitmovement
+    setspeaker("LEAD SCIENTIST")
+    msgbox(format("I want to introduce you to two of my people, Nash & David."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(20, moves(walk_down))
+    waitmovement
+    setspeaker("NASH")
+    msgbox(format("Glad to have you with us.\pMy partner, Arcanine, and I know that sector like the back of our hands.\pI'll handle communications and watch our six for any ambushes.\pThe reports about organized trespassers are what worry me most.\pAmateurs get lost; professionals leave tracks like the ones we've seen.\pLet's move out, find Daan, and make sure whoever is doing this regrets stepping foot in our forest."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(20, moves(face_up))
+    waitmovement
+    delay(40)
+    applymovement(20, moves(face_down))
+    waitmovement
+    setspeaker("NASH")
+    msgbox(format("This is the kid's first time out in the deep woods.\pHe's... a specialist.\pA bit green, but the sharpest mind we've got.\pLet's all make sure we get back in one piece.\pGo ahead, introduce yourself."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(20, moves(walk_up face_down))
+    waitmovement
+    applymovement(18, moves(walk_down walk_right face_down))
+    waitmovement
+    setspeaker("DAVID")
+    msgbox(format("I'm {COLOR GREEN}David Heartfield{COLOR DARK_GRAY}.\pI'm...\pI'm not a great battler.\pNash is for the fighting.\pI'm here to find the wrongness.\pThe scientists... they said the Parasect's mushroom was glowing.\pA stress reaction to a high-frequency energy pulse.\pI built a scanner to detect that specific frequency.\pIt won't find Pokémon... it will find the source of what's hurting them."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    applymovement(18,moves(face_right))
+    waitmovement
+    delay(60)
+    setspeaker("DAVID")
+    msgbox(format("It's... loud out there.\pLots of data.\pAll the agitated Pokémon are creating chaotic energy spikes.\pBut their pattern is random.\pThe deforestation signal... that will be a steady, repeating pattern.\pA clean signal in the noise."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(18, moves(face_down))
+    waitmovement
+    setspeaker("DAVID")
+    msgbox(format("I'll find the signal.\pThat's what I'm good at.\pJust...\pjust keep the angry Beedrill away from me."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(18, moves(walk_left walk_up face_down))
+    waitmovement
+    setspeaker("LEAD SCIENTIST")
+    msgbox(format("Nash.\nDavid.\pGo downstairs and prepare the truck.\pKeep me updated on your progress."))
+    waitmessage
+    applymovement(20, moves(walk_up*2))
+    waitmovement
+    removeobject(20)
+    applymovement(21, moves(walk_left walk_up*2))
+    waitmovement
+    removeobject(21)
+    applymovement(18,moves(walk_right walk_up*2))
+    waitmovement
+    removeobject(18)
+    waitmovement
+    setflag(FLAG_HIDE_NASH_DAVID)
+    applymovement(19,moves(face_right))
+    applymovement(LOCALID_PLAYER,moves(face_left))
+    waitmovement
+    setspeaker("LEAD SCIENTIST")
+    msgbox(format("Don't be afraid.\pNash & David are the best people I got.\pMake sure you heal your Pokémon and stack up on some potions, the forest can be a very harsh place.\pI'll keep in contact trough the radio.\pNash and David should be ready any minute now."))
+    waitmessage
+    setvar(VAR_MISTCITY_RESEARCH_CENTER,1)
+    setflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER1)
+    clearflag(FLAG_DISABLE_FOLLOWER_POKEMON)
+    release
+    end
+}
+
+script Mistcity_Research_Center_Entrance_LeadScientist {
+    lock
+    faceplayer
+    setspeaker("LEAD SCIENTIST")
+    if (flag(FLAG_RESCUED_DAAN) == FALSE) {
+        msgbox(format("Don't be afraid.\pNASH & DAVID are the best people we got.\pMake sure you heal your Pokémon and stock up on potions, the forest can be a very harsh place.\pI'll keep in contact through the radio.\pNash and David are waiting for you downstairs."))
+        waitmessage
+    }
+    else {
+        if (flag(FLAG_ITEM_RESEARCH_CENTER_EXP_SHARE) == FALSE) {
+            msgbox(format("You actually did it.\pDAAN is safe, and the seismic disturbances have completely ceased.\pNash and David said you handled yourself like a veteran out there.\pWe owe you a great debt, {PLAYER}.\pThe forest can finally heal.\pAs a reward, I want to give you a piece of technology we've been developing here.\pWe call it Experience Sharing, or in short Exp. Share.\pThe idea came from studying Venusaur's in their natural habitat.\pYou probably know that Venusaur's collect solar energy through the flower on their back right?\pTurns out, that this energy is not only going to its own body, but is shared among every living thing around the Venusaur through tiny roots in his foots.\pFascinating right?\pSometimes new technology is not the answer, but just looking at what nature is doing around us and take that as an example.\pAfter all, Pokémon have been on this planet far longer than us.\pThey've already solved problems we're still scribbling equations for.\pWe just have to pay attention.\pThis technology does the same thing, it shares the experience of battle across your whole team.\pTake it."))
+            waitmessage
+            giveitem(ITEM_EXP_SHARE)
+            waitmessage
+            msgbox(format("One more thing, you can turn it off any time.\pSometimes the best thing for a Pokémon is to face a battle alone.\pThere's a bond that forms when it's just the two of you out there.\pOr if you want a harder road, well... the forest will respect that too."), MSGBOX_AUTOCLOSE)
+            waitmessage
+            setflag(FLAG_ITEM_RESEARCH_CENTER_EXP_SHARE)
+        }
+        else {
+            msgbox(format("To think that group was operating right under our noses...\pThe forest is quiet again.\pWe won't take that for granted."), MSGBOX_AUTOCLOSE)
+            waitmessage
+        }
+    }
+    release
+}
+
+script Mistcity_Research_Center_Entrance_ScientistPlatform {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+        setspeaker("SCIENTIST")
+        msgbox(format("The anomaly just... vanished.\pLook at the monitor.\pThe interference pattern flatlined some time ago.\pThe background noise is back to normal ambient levels.\pIt is like someone just walked up to the source and pulled the plug."))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+        setspeaker("SCIENTIST")
+        msgbox(format("This doesn't make any sense.\pThe seismic needles are jumping every thirty seconds exactly.\pNature isn't this rhythmic.\pIt looks less like tectonic movement and more like... heavy machinery?\pWhatever it is, it is shaking the very foundation of the forest."))
+    }
+    waitmessage
+    release
+}

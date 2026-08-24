@@ -1,0 +1,421 @@
+mapscripts LabJariIndoorF0_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_PROFESSOR_BIRDS_DISCOVERY)
+        setflag(FLAG_DISABLE_FOLLOWER_POKEMON)
+    }
+        MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_RECIEVED_STARTER_POKEMON, 0: LabJarinIndoorF0_Eventscript_Entrance
+    ]
+}
+
+
+
+
+script LabJarinIndoorF0_Eventscript_Entrance {
+    lock
+    setvar(VAR_RECIEVED_STARTER_POKEMON, 1)
+    msgbox(format("HOLY MOLY!!\p Look at all those Pokeballs!\p What would be in them?"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+script ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection {
+    lockall
+    if(!flag(FLAG_RECEIVED_STARTER_CHOICE)){
+    showmonpic(SPECIES_CHARMANDER, 10, 3)
+    msgbox(format("This pokeball seems to contain Charmander, want to slide the pokeball in your pocket?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == NO) {
+        msgbox(format("Lets see what is in the other pokeballs."))
+    }
+    if(var(VAR_RESULT) == YES) {
+        givemon(SPECIES_CHARMANDER, 5)
+        playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_RECEIVED_STARTER_CHARMANDER)
+        removeobject(9)
+        setflag(FLAG_RECEIVED_STARTER_CHOICE)
+        bufferspeciesname(STR_VAR_2, SPECIES_CHARMANDER)
+        msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
+        }
+        
+    }
+    hidemonpic
+    }
+    else{
+        msgbox(format("Better leave quickly.."))
+    }
+    releaseall
+
+}
+
+script ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection {
+    lockall
+    if(!flag(FLAG_RECEIVED_STARTER_CHOICE)){
+    showmonpic(SPECIES_BULBASAUR, 10, 3)
+    msgbox(format("This pokeball seems to contain Bulbasaur, want to slide the pokeball in your pocket?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == NO) {
+        msgbox(format("Lets see what is in the other pokeballs."))
+    }
+    if(var(VAR_RESULT) == YES) {
+        givemon(SPECIES_BULBASAUR, 5)
+        playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_RECEIVED_STARTER_BULBASAUR)
+        removeobject(8)
+        setflag(FLAG_RECEIVED_STARTER_CHOICE)
+        bufferspeciesname(STR_VAR_2, SPECIES_BULBASAUR)
+        msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
+        }
+        
+    }
+    hidemonpic
+    }
+    else{
+        msgbox(format("Better leave quickly.."))
+    }
+    releaseall
+
+}
+
+script ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection {
+    lockall
+    if(!flag(FLAG_RECEIVED_STARTER_CHOICE)){
+    showmonpic(SPECIES_SQUIRTLE, 10, 3)
+    msgbox(format("This pokeball seems to contain Squirtle, want to slide the pokeball in your pocket?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == NO) {
+        msgbox(format("Lets see what is in the other pokeballs."))
+    }
+    if(var(VAR_RESULT) == YES) {
+        givemon(SPECIES_SQUIRTLE, 5)
+        playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_RECEIVED_STARTER_SQUIRTLE)
+        removeobject(7)
+        setflag(FLAG_RECEIVED_STARTER_CHOICE)
+        bufferspeciesname(STR_VAR_2, SPECIES_SQUIRTLE)
+        msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
+        }
+        
+    }
+    hidemonpic
+    }
+    else{
+        msgbox(format("Better leave quickly.."))
+    }
+    releaseall
+
+
+}
+
+script ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection {
+    lockall
+    if(!flag(FLAG_RECEIVED_STARTER_CHOICE)){
+    showmonpic(SPECIES_CYNDAQUIL, 10, 3)
+    msgbox(format("This pokeball seems to contain Cyndaquil, want to slide the pokeball in your pocket?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == NO) {
+        msgbox(format("Lets see what is in the other pokeballs."))
+    }
+    if(var(VAR_RESULT) == YES) {
+        givemon(SPECIES_CYNDAQUIL, 5)
+        playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_RECEIVED_STARTER_CYNDAQUIL)
+        removeobject(6)
+        setflag(FLAG_RECEIVED_STARTER_CHOICE)
+        bufferspeciesname(STR_VAR_2, SPECIES_CYNDAQUIL)
+        msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
+        }
+        
+    }
+    hidemonpic
+    }
+    else{
+        msgbox(format("Better leave quickly.."))
+    }
+    releaseall
+
+}
+
+script ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection {
+    lockall
+    if(!flag(FLAG_RECEIVED_STARTER_CHOICE)){
+    showmonpic(SPECIES_CHIKORITA, 10, 3)
+    msgbox(format("This pokeball seems to contain Chikorita, want to slide the pokeball in your pocket?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == NO) {
+        msgbox(format("Lets see what is in the other pokeballs."))
+    }
+    if(var(VAR_RESULT) == YES) {
+        givemon(SPECIES_CHIKORITA, 5)
+        playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_RECEIVED_STARTER_CHIKORITA)
+        removeobject(5)
+        setflag(FLAG_RECEIVED_STARTER_CHOICE)
+        bufferspeciesname(STR_VAR_2, SPECIES_CHIKORITA)
+        msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
+        }
+        
+    }
+    hidemonpic
+    }
+    else{
+        msgbox(format("Better leave quickly.."))
+    }
+    releaseall
+
+}
+
+script ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection {
+    lockall
+    if(!flag(FLAG_RECEIVED_STARTER_CHOICE)){
+    showmonpic(SPECIES_TOTODILE, 10, 3)
+    msgbox(format("This pokeball seems to contain Totodile, want to slide the pokeball in your pocket?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == NO) {
+        msgbox(format("Lets see what is in the other pokeballs."))
+    }
+    if(var(VAR_RESULT) == YES) {
+        givemon(SPECIES_TOTODILE, 5)
+        playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_RECEIVED_STARTER_TOTODILE)
+        removeobject(4)
+        setflag(FLAG_RECEIVED_STARTER_CHOICE)
+        bufferspeciesname(STR_VAR_2, SPECIES_TOTODILE)
+        msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
+        }
+    
+    }
+    hidemonpic
+    }
+    else{
+        msgbox(format("Better leave quickly.."))
+    }
+    releaseall
+
+}
+
+script ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection {
+    lockall
+    if(!flag(FLAG_RECEIVED_STARTER_CHOICE)){
+    showmonpic(SPECIES_TORCHIC, 10, 3)
+    msgbox(format("This pokeball seems to contain Torchic, want to slide the pokeball in your pocket?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == NO) {
+        msgbox(format("Lets see what is in the other pokeballs."))
+    }
+    if(var(VAR_RESULT) == YES) {
+        givemon(SPECIES_TORCHIC, 5)
+        playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_RECEIVED_STARTER_TORCHIC)
+        removeobject(3)
+        setflag(FLAG_RECEIVED_STARTER_CHOICE)
+        bufferspeciesname(STR_VAR_2, SPECIES_TORCHIC)
+        msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
+        }
+        
+    }
+    hidemonpic
+    }
+    else{
+        msgbox(format("Better leave quickly.."))
+    }
+    releaseall
+
+}
+
+script ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection {
+    lockall
+    if(!flag(FLAG_RECEIVED_STARTER_CHOICE)){
+    showmonpic(SPECIES_TREECKO, 10, 3)
+    msgbox(format("This pokeball seems to contain Treecko, want to slide the pokeball in your pocket?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == NO) {
+        msgbox(format("Lets see what is in the other pokeballs."))
+    }
+    if(var(VAR_RESULT) == YES) {
+        givemon(SPECIES_TREECKO, 5)
+        playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_RECEIVED_STARTER_TREECKO)
+        removeobject(2)
+        setflag(FLAG_RECEIVED_STARTER_CHOICE)
+        bufferspeciesname(STR_VAR_2, SPECIES_TREECKO)
+        msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
+        }
+        
+    }
+    hidemonpic
+    }
+    else{
+        msgbox(format("Better leave quickly.."))
+    }
+    releaseall
+
+}
+
+script ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection {
+    lockall
+    if(!flag(FLAG_RECEIVED_STARTER_CHOICE)){
+    showmonpic(SPECIES_MUDKIP, 10, 3)
+    msgbox(format("This pokeball seems to contain Mudkip, \n want to slide the pokeball in your pocket?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == NO) {
+        msgbox(format("Lets see what is in the other pokeballs."))
+    }
+    if(var(VAR_RESULT) == YES) {
+        givemon(SPECIES_MUDKIP, 5)
+        playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_RECEIVED_STARTER_MUDKIP)
+        removeobject(1)
+        setflag(FLAG_RECEIVED_STARTER_CHOICE)
+        bufferspeciesname(STR_VAR_2, SPECIES_MUDKIP)
+        msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_NameReceivedPartyMon)
+        fadescreen(FADE_FROM_BLACK)
+        }
+        
+    }
+    hidemonpic
+    }
+    else{
+        msgbox(format("Better leave quickly.."))
+    }
+    releaseall
+
+}
+
+script ErpusCity_ProfessorBirdsLab_Eventscript_Kanto_Sign {
+    lockall
+    msgbox(format("An almost illegible note is scrawled on the paper:\pKANTOOOO!!?"))
+    waitmessage
+    releaseall
+}
+
+script ErpusCity_ProfessorBirdsLab_Eventscript_Johto_Sign {
+    lockall
+    msgbox(format("An almost illegible note is scrawled on the paper:\pJOHTOO?!"))
+    waitmessage
+    releaseall
+}
+
+script ErpusCity_ProfessorBirdsLab_Eventscript_Hoenn_Sign {
+    lockall
+    msgbox(format("An almost illegible note is scrawled on the paper:\pHOENN??"))
+    waitmessage
+    releaseall
+}
+
+script ErpusCity_ProfessorBirdsLab_Eventscript_TaylorSwift_Sign {
+    lockall
+    msgbox(format("An almost illegible note is scrawled on the paper:\pI LOVEEEEE TAYLOR SWIFT"))
+    waitmessage
+    releaseall
+}
+
+script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit {
+        lockall
+        if(flag(FLAG_RECEIVED_STARTER_CHOICE)) {
+        playbgm(MUS_RG_ENCOUNTER_RIVAL,FALSE)
+        playse(SE_PIN)
+        applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark))
+        waitmovement
+        setspeaker("?????")
+        msgbox(format("HEY.........."))
+        waitmessage
+        setspeaker("?????")
+        msgbox(format("WHAT ARE YOU DOING HERE??!!"))
+        waitmessage
+        clearflag (FLAG_PROFESSOR_BIRDS_DISCOVERY)
+        clearflag(FLAG_DISABLE_FOLLOWER_POKEMON)
+        addobject (10)
+        applymovement (10, moves(walk_fast_right walk_fast_down face_left))
+        waitmovement
+        applymovement(LOCALID_PLAYER, moves(face_right))
+        setspeaker("PROF. BIRDS")
+        msgbox(format("I TOLD YOU TO GET SOME BOXES!!\pNOT WANDER AROUND IN MY SECRET LA.. I MEAN STORAGE ROOM!!\pGET THE FUCK OUT!!"))
+        waitmessage
+        fadescreen(FADE_TO_BLACK)
+        warpsilent (MAP_ERP_CITY, 0)
+        waitstate
+        fadescreen (FADE_FROM_BLACK)
+        }
+        else {
+            msgbox(format("Hmmmm, those pokeballs look shiny...\p Nobody will notice when I take one right?"))
+            applymovement(LOCALID_PLAYER, stopplayer)
+            waitmovement(0)
+        }
+
+        releaseall
+}
+
+script LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit {
+        lockall
+        if(flag(FLAG_RECEIVED_STARTER_CHOICE)) {
+        playbgm(MUS_RG_ENCOUNTER_RIVAL,FALSE)
+        playse(SE_PIN)
+        applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark))
+        waitmovement
+        setspeaker("?????")
+        msgbox(format("HEY.........."))
+        waitmessage
+        setspeaker("?????")
+        msgbox(format("WHAT ARE YOU DOING HERE??!!"))
+        waitmessage
+        clearflag (FLAG_PROFESSOR_BIRDS_DISCOVERY)
+        clearflag(FLAG_DISABLE_FOLLOWER_POKEMON)
+        addobject (10)
+        applymovement (10, moves(walk_fast_down face_right))
+        waitmovement
+        applymovement(LOCALID_PLAYER, moves(face_left))
+        setspeaker("PROF. BIRDS")
+        msgbox(format("I TOLD YOU TO GET SOME BOXES!!\pNOT WANDER AROUND IN MY SECRET LA.. I MEAN STORAGE ROOM!!\pGET THE FUCK OUT!!"))
+        waitmessage
+        fadescreen(FADE_TO_BLACK)
+        warpsilent (MAP_ERP_CITY, 0)
+        waitstate
+        fadescreen (FADE_FROM_BLACK)
+        }
+        else {
+            msgbox(format("Hmmmm, those pokeballs look shiny...\p Nobody will notice when I take one right?"))
+            applymovement(LOCALID_PLAYER, stopplayer)
+            waitmovement(0)
+        }
+        releaseall
+}
+
+movement stopplayer {
+    walk_down
+}

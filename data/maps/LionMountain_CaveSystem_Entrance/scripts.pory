@@ -1,0 +1,10 @@
+mapscripts LionMountain_CaveSystem_Entrance_MapScripts {}
+
+script LionMountain_CaveSystem_Entrance_Hiker_Convo {
+    lock
+    faceplayer
+    msgbox(format("I've hiked caves all across the Terassa region, but this place... it's different.\pThe air itself feels ancient.\pYou can sense it in the walls, the silence, the cold."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+

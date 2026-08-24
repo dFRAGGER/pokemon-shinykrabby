@@ -1,0 +1,249 @@
+mapscripts LionsarchCity_Indoor_Gym_MapScripts {
+}
+
+# ─── GYM GUIDE ───────────────────────────────────────────────────────────────
+
+script LionsarchGym_Guide {
+    lock
+    faceplayer
+    if (flag(FLAG_BADGE03_GET) == TRUE) {
+        msgbox(format("You actually conquered both peaks!\pI knew sending you in there was the right call.\pStay warm out there!"))
+        waitmessage
+        release
+        end
+    }
+    if (flag(FLAG_LIONSARCH_GYM_GUIDE_GAVE_WATER) == FALSE) {
+        setflag(FLAG_LIONSARCH_GYM_GUIDE_GAVE_WATER)
+        msgbox(format("Welcome to the Lionsarch Gym!\pAlready visited those two mountains up north? The Lion Mountains. This whole gym is inspired by them.\pWe've got two leaders - one for each peak. You have to beat both to earn the badge.\pWhich one should you challenge first? Great question. I always forget.\pI want to say... left? Maybe right? You know what, just trust your gut.\pEither way, take this. You're going to want it in there."))
+        waitmessage
+        giveitem(ITEM_FRESH_WATER)
+        waitmessage
+        msgbox(format("Good luck!\pAnd please don't freeze to death in there - the paperwork alone would ruin my entire week."))
+        waitmessage
+        release
+        end
+    }
+    msgbox(format("Two leaders, two peaks - that's the Lion Mountains for you.\pI still can't remember which one you're supposed to face first. Just try both!\pGood luck out there. And seriously, don't freeze to death."))
+    waitmessage
+    release
+    end
+}
+
+# ─── GYM LEADERS ─────────────────────────────────────────────────────────────
+
+script LionsarchGym_Leader1 {
+    lock
+    if (flag(FLAG_BADGE03_GET) == TRUE) {
+        faceplayer
+        setspeaker("TANYA")
+        msgbox(format("Two peaks stand as one.\nYou have proven yourself."))
+        waitmessage
+        setspeaker(NULL)
+        release
+        end
+    }
+    if (flag(FLAG_DEFEATED_LIONSARCH_LEADER1) == FALSE) {
+        faceplayer
+        setspeaker("TANYA")
+        msgbox(format("You made it to the west peak.\pSome call snow just frozen rain.\pThey are wrong.\pSnow is water set free. It falls where it chooses, covers the world in silence, and leaves nothing the same as it was.\pNo two flakes ever alike.\pIt is the most beautiful thing water can become.\pNow, let us see if you can stand in the middle of it."))
+        waitmessage
+        setspeaker(NULL)
+        trainerbattle_single(TRAINER_LIONSARCH_LEADER1, LionsarchGym_Leader1_IntroText, LionsarchGym_Leader1_DefeatText, LionsarchGym_Leader1_Defeated)
+    }
+    else {
+        faceplayer
+        setspeaker("TANYA")
+        msgbox(format("Defeat my partner, then claim your prize."))
+        waitmessage
+        setspeaker(NULL)
+    }
+    release
+    end
+}
+
+script LionsarchGym_Leader1_Defeated {
+    lock
+    setspeaker("TANYA")
+    msgbox(format("The west peak quiets.\pSnow yields, but what lies beneath it does not.\pMy partner is waiting. She is the ice under the snow."))
+    waitmessage
+    setspeaker(NULL)
+    setflag(FLAG_DEFEATED_LIONSARCH_LEADER1)
+    release
+    end
+}
+
+text LionsarchGym_Leader1_IntroText {
+    format("Snow falls where it chooses!\pNo peak can hold it, and neither can you!")
+}
+
+text LionsarchGym_Leader1_DefeatText {
+    format("The snow... drifts away.")
+}
+
+script LionsarchGym_Leader2 {
+    lock
+    if (flag(FLAG_BADGE03_GET) == TRUE) {
+        faceplayer
+        setspeaker("TARA")
+        msgbox(format("Two peaks stand as one.\nYou have earned our respect."))
+        waitmessage
+        setspeaker(NULL)
+        release
+        end
+    }
+    if (flag(FLAG_DEFEATED_LIONSARCH_LEADER1) == FALSE) {
+        faceplayer
+        setspeaker("TARA")
+        msgbox(format("You must face the west mountain first.\pThe east is ice, it holds its shape. It will wait."))
+        waitmessage
+        setspeaker(NULL)
+        release
+        end
+    }
+    faceplayer
+    setspeaker("TARA")
+    msgbox(format("You endured the snow.\pShe will tell you snow is the most beautiful thing water can become. She has always believed that.\pBut I have stood on this peak my whole life, and I know what remains when the snow melts.\pIce.\pClear. Still. Holding its form through everything.\pThat is the most beautiful thing water can become.\pNow, stand against something that does not yield."))
+    waitmessage
+    setspeaker(NULL)
+    trainerbattle_single(TRAINER_LIONSARCH_LEADER2, LionsarchGym_Leader2_IntroText, LionsarchGym_Leader2_DefeatText, LionsarchGym_Leader2_Defeated)
+    release
+    end
+}
+
+script LionsarchGym_Leader2_Defeated {
+    lock
+    setspeaker("TARA")
+    msgbox(format("Both peaks... brought down.\pYou have conquered the Lion Mountains."))
+    waitmessage
+    call(Common_EventScript_PlayGymBadgeFanfare)
+    setflag(FLAG_BADGE03_GET)
+    setspeaker(NULL)
+    msgbox(format("You received the PEAK BADGE!"))
+    waitmessage
+    setspeaker("TARA")
+    msgbox(format("She will say snow is the most beautiful.\pI will say ice is.\pWe have argued about this our whole lives.\pAnd every time, we arrive at the same answer.\pThey need each other.\pSnow falls free and covers the world in silence.\pIce holds firm long after the snow is gone.\pNeither is complete without the other.\pLook at the Lion Mountains.\pThe west peak and the east peak.\pStand one alone, and it is just a mountain.\pStand both together, and the whole valley below is sheltered.\pWe are the same.\pAnd so, it seems, are you and your team."))
+    waitmessage
+    setspeaker("TARA")
+    msgbox(format("The PEAK BADGE lets all Pokémon up to level 40 obey without question.\pYou may now use ROCK SMASH outside of battle.\pAnd take this."))
+    waitmessage
+    giveitem(ITEM_TM07)
+    waitmessage
+    setspeaker("TARA")
+    msgbox(format("That is TM HAIL.\pSummon a blizzard that batters every Pokémon on the field for five turns.\pEvery Ice-type move hits without fail while the storm rages.\pWe have trained on these peaks our entire lives.\pThe cold is not a condition to us.\pIt is home.\pUse it like one."))
+    waitmessage
+    setspeaker(NULL)
+    setflag(FLAG_DEFEATED_MAUVILLE_GYM)
+
+    call(LionsarchGym_SetTrainerFlags)
+    release
+    end
+}
+
+text LionsarchGym_Leader2_IntroText {
+    format("Ice holds what snow cannot!\nThis is where you stop!")
+}
+
+text LionsarchGym_Leader2_DefeatText {
+    format("The ice... gives way.")
+}
+
+# ─── TRAINERS ─────────────────────────────────────────────────────────────────
+
+script LionsarchGym_Trainer_Hiker1 {
+    trainerbattle_single(TRAINER_LIONSARCH_HIKER_1, LionsarchGym_Hiker1_Intro, LionsarchGym_Hiker1_Defeat)
+    msgbox(LionsarchGym_Hiker1_PostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text LionsarchGym_Hiker1_Intro {
+    format("You won't get past me in this blizzard!")
+}
+
+text LionsarchGym_Hiker1_Defeat {
+    format("The cold got to me first...")
+}
+
+text LionsarchGym_Hiker1_PostBattle {
+    format("Keep pushing north. The storm only gets worse.")
+}
+
+script LionsarchGym_Trainer_Hiker2 {
+    trainerbattle_single(TRAINER_LIONSARCH_HIKER_2, LionsarchGym_Hiker2_Intro, LionsarchGym_Hiker2_Defeat)
+    msgbox(LionsarchGym_Hiker2_PostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text LionsarchGym_Hiker2_Intro {
+    format("The lion mountains guard their secrets fiercely!")
+}
+
+text LionsarchGym_Hiker2_Defeat {
+    format("Even the mountain fell today...")
+}
+
+text LionsarchGym_Hiker2_PostBattle {
+    format("I've barely seen the leaders myself - just shapes in the white.")
+}
+
+script LionsarchGym_Trainer_Hiker3 {
+    trainerbattle_single(TRAINER_LIONSARCH_HIKER_3, LionsarchGym_Hiker3_Intro, LionsarchGym_Hiker3_Defeat)
+    msgbox(LionsarchGym_Hiker3_PostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text LionsarchGym_Hiker3_Intro {
+    format("The blizzard is my ally - I'll freeze you in your tracks!")
+}
+
+text LionsarchGym_Hiker3_Defeat {
+    format("The storm can't save me now...")
+}
+
+text LionsarchGym_Hiker3_PostBattle {
+    format("They say when the two leaders stand together, the storm obeys them.")
+}
+
+script LionsarchGym_Trainer_Hiker4 {
+    trainerbattle_single(TRAINER_LIONSARCH_HIKER_4, LionsarchGym_Hiker4_Intro, LionsarchGym_Hiker4_Defeat)
+    msgbox(LionsarchGym_Hiker4_PostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text LionsarchGym_Hiker4_Intro {
+    format("Every step closer to the top is a step into oblivion!")
+}
+
+text LionsarchGym_Hiker4_Defeat {
+    format("The peak is yours today...")
+}
+
+text LionsarchGym_Hiker4_PostBattle {
+    format("When the whiteout hits, follow the cold wind north.")
+}
+
+script LionsarchGym_Trainer_Hiker5 {
+    trainerbattle_single(TRAINER_LIONSARCH_HIKER_5, LionsarchGym_Hiker5_Intro, LionsarchGym_Hiker5_Defeat)
+    msgbox(LionsarchGym_Hiker5_PostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text LionsarchGym_Hiker5_Intro {
+    format("The lion mountains have two eyes - and both are watching you!")
+}
+
+text LionsarchGym_Hiker5_Defeat {
+    format("I couldn't hold the pass...")
+}
+
+text LionsarchGym_Hiker5_PostBattle {
+    format("I've never actually seen the leaders clearly. Just shapes in the white.")
+}
+
+script LionsarchGym_SetTrainerFlags {
+    settrainerflag(TRAINER_LIONSARCH_HIKER_1)
+    settrainerflag(TRAINER_LIONSARCH_HIKER_2)
+    settrainerflag(TRAINER_LIONSARCH_HIKER_3)
+    settrainerflag(TRAINER_LIONSARCH_HIKER_4)
+    settrainerflag(TRAINER_LIONSARCH_HIKER_5)
+    return
+}

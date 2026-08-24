@@ -1,0 +1,2251 @@
+Marshduke_Indoor_Chatedral_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Marshduke_Indoor_Chatedral_MapScripts_MAP_SCRIPT_ON_LOAD
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Marshduke_Indoor_Chatedral_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
+	.byte 0
+
+Marshduke_Indoor_Chatedral_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call Marshduke_Indoor_Chatedral_OnLoad
+	return
+
+Marshduke_Indoor_Chatedral_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_MARSHDUKE_CATHEDRAL_VISION_STATE, 2, Marshduke_Indoor_Chatedral_EventScript_VisionReturn
+	.2byte 0
+
+
+Marshduke_Indoor_Chatedral_Sign_Alakazam::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_Chatedral_Sign_Alakazam_Text_0, MSGBOX_YESNO
+	waitmessage
+	compare VAR_RESULT, YES
+	goto_if_eq Marshduke_Indoor_Chatedral_Sign_Alakazam_2
+Marshduke_Indoor_Chatedral_Sign_Alakazam_1:
+	release
+	return
+
+Marshduke_Indoor_Chatedral_Sign_Alakazam_2:
+	goto Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read
+	goto Marshduke_Indoor_Chatedral_Sign_Alakazam_1
+
+
+Marshduke_Indoor_Chatedral_Plague_Empty::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_Chatedral_Plague_Empty_Text_0, MSGBOX_YESNO
+	waitmessage
+	compare VAR_RESULT, YES
+	goto_if_eq Marshduke_Indoor_Chatedral_Plague_Empty_2
+Marshduke_Indoor_Chatedral_Plague_Empty_1:
+	release
+	return
+
+Marshduke_Indoor_Chatedral_Plague_Empty_2:
+	goto Marshduke_Indoor_Chatedral_EventScript_Sign_EmptyShrine
+	goto Marshduke_Indoor_Chatedral_Plague_Empty_1
+
+
+Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_Text_0, MSGBOX_YESNO
+	waitmessage
+	compare VAR_RESULT, YES
+	goto_if_eq Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_2
+Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_1:
+	msgbox Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_Text_1, MSGBOX_AUTOCLOSE
+	release
+	return
+
+Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_2:
+	goto Marshduke_Indoor_Chatedral_EventScript_NPC_Priest_FirstMemory
+	goto Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_1
+
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read::
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read_Text_1, MSGBOX_AUTOCLOSE
+	waitmessage
+	release
+	return
+
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_Priest_FirstMemory::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Priest_FirstMemory_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	release
+	end
+
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_MegaStone::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_MegaStone_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	release
+	return
+
+
+Marshduke_Indoor_Chatedral_OnLoad::
+	compare VAR_CATHEDRAL_STATE_MARSHDUKE, 0
+	goto_if_eq Marshduke_Indoor_Chatedral_OnLoad_2
+Marshduke_Indoor_Chatedral_OnLoad_1:
+	compare VAR_CATHEDRAL_STATE_MARSHDUKE, 0
+	goto_if_ne Marshduke_Indoor_Chatedral_OnLoad_4
+	return
+
+Marshduke_Indoor_Chatedral_OnLoad_2:
+	setflag FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR
+	goto Marshduke_Indoor_Chatedral_OnLoad_1
+
+Marshduke_Indoor_Chatedral_OnLoad_4:
+	clearflag FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR
+	return
+
+
+Marshduke_Indoor_Chatedral_EventScript_VisionReturn::
+	setvar VAR_MARSHDUKE_CATHEDRAL_VISION_STATE, 0
+	lock
+	applymovement 25, Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Movement_0
+	waitmovement
+	msgbox Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 25, Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Movement_1
+	waitmovement
+	release
+	return
+
+
+Marshduke_Indoor_Chatedral_EventScript_Sister_Wren::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Sister_Wren_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	release
+	return
+
+
+Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan::
+	lock
+	faceplayer
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_1, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_2, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 30, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+	waitmovement
+	release
+	return
+
+
+Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour::
+	lock
+	faceplayer
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_1, MSGBOX_AUTOCLOSE
+	waitmessage
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_2, MSGBOX_YESNO
+	waitmessage
+	compare VAR_RESULT, YES
+	goto_if_eq Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_2
+Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_1:
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_4, MSGBOX_AUTOCLOSE
+	waitmessage
+	release
+	return
+
+Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_2:
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_3, MSGBOX_AUTOCLOSE
+	waitmessage
+	release
+	goto Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_1
+
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias_Text_0, MSGBOX_YESNO
+	waitmessage
+	compare VAR_RESULT, YES
+	goto_if_eq Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias_2
+Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias_1:
+	release
+	return
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias_2:
+	visionpreview 9
+	applymovement 24, Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Movement_0
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+	waitmovement
+	msgbox Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 24, Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Movement_1
+	waitmovement
+	goto Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias_1
+
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Text_0, MSGBOX_YESNO
+	waitmessage
+	compare VAR_RESULT, YES
+	goto_if_eq Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_2
+Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_1:
+	release
+	return
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_2:
+	visionpreview 1
+	applymovement 36, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_0
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+	waitmovement
+	msgbox Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 36, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_2
+	waitmovement
+	goto Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_1
+
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza_Text_0, MSGBOX_YESNO
+	waitmessage
+	compare VAR_RESULT, YES
+	goto_if_eq Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza_2
+Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza_1:
+	release
+	return
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza_2:
+	visionpreview 3
+	applymovement 18, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_0
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+	waitmovement
+	msgbox Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 18, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_2
+	waitmovement
+	goto Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza_1
+
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo_Text_0, MSGBOX_YESNO
+	waitmessage
+	compare VAR_RESULT, YES
+	goto_if_eq Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo_2
+Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo_1:
+	release
+	return
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo_2:
+	visionpreview 0
+	applymovement 23, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_0
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+	waitmovement
+	msgbox Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 23, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_2
+	waitmovement
+	goto Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo_1
+
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_Rekindled::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_Rekindled_Text_0, MSGBOX_YESNO
+	waitmessage
+	compare VAR_RESULT, YES
+	goto_if_eq Marshduke_Indoor_Chatedral_EventScript_Sign_Rekindled_2
+Marshduke_Indoor_Chatedral_EventScript_Sign_Rekindled_1:
+	release
+	return
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_Rekindled_2:
+	visionpreview 4
+	applymovement 20, Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Movement_0
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+	waitmovement
+	msgbox Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 20, Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Movement_1
+	waitmovement
+	goto Marshduke_Indoor_Chatedral_EventScript_Sign_Rekindled_1
+
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts::
+	lock
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Text_1, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Text_2, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	faceplayer
+	playse SE_PIN
+	applymovement 38, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+	waitmovement
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Text_3, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 38, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+	waitmovement
+	release
+	return
+
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts::
+	lock
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_1, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_2, MSGBOX_AUTOCLOSE
+	waitmessage
+	faceplayer
+	delay 60
+	playse SE_PIN
+	applymovement 37, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+	waitmovement
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_3, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 37, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+	waitmovement
+	release
+	return
+
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_HoohLugia::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_HoohLugia_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	release
+	return
+
+
+Marshduke_Indoor_Chatedral_EventScript_Priest_HoohLugia::
+	lock
+	faceplayer
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Priest_HoohLugia_Text_0
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Priest_HoohLugia_Text_1, MSGBOX_AUTOCLOSE
+	waitmessage
+	release
+	return
+
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_EnteiRaikouSuicune::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_EnteiRaikouSuicune_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	release
+	return
+
+
+Marshduke_Indoor_Chatedral_EventScript_Priest_EnteiRaikouSuicune::
+	lock
+	faceplayer
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Priest_EnteiRaikouSuicune_Text_0
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Priest_EnteiRaikouSuicune_Text_1, MSGBOX_AUTOCLOSE
+	waitmessage
+	release
+	return
+
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_MewMewtwo::
+	lock
+	faceplayer
+	visionpreview 0
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_MewMewtwo_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	release
+	return
+
+
+Marshduke_Indoor_Chatedral_EventScript_Priest_MewMewtwo::
+	lock
+	faceplayer
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Priest_MewMewtwo_Text_0
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Priest_MewMewtwo_Text_1, MSGBOX_AUTOCLOSE
+	waitmessage
+	release
+	return
+
+
+Marshduke_Indoor_Chatedral_EventScript_Priest_GroundonKyogreRayquaza::
+	lock
+	faceplayer
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Priest_GroundonKyogreRayquaza_Text_0
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Priest_GroundonKyogreRayquaza_Text_1, MSGBOX_AUTOCLOSE
+	waitmessage
+	release
+	return
+
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza::
+	lock
+	faceplayer
+	playse SE_PIN
+	applymovement 15, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_0
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_1, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 15, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_0
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_2, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	applymovement 33, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_0
+	waitmovement
+	playse SE_M_MINIMIZE
+	callnative SetCastformSunnyForm
+	applymovement 33, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_2
+	delay 60
+	playse SE_PIN
+	applymovement 33, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_1
+	waitmovement
+	applymovement 33, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_2
+	waitmovement
+	playse SE_M_MINIMIZE
+	callnative SetCastformSnowyForm
+	applymovement 33, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_2
+	waitmovement
+	playse SE_PIN
+	applymovement 15, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_3
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_0
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_3, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	applymovement 33, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_4
+	faceplayer
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_0
+	msgbox Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_4, MSGBOX_AUTOCLOSE
+	waitmessage
+	release
+	return
+
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_EmptyShrine::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_Chatedral_EventScript_Sign_EmptyShrine_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	release
+	return
+
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone::
+	lock
+	setvar VAR_CATHEDRAL_STATE_MARSHDUKE, 1
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+	waitmovement
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_0
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_0
+	waitmovement
+	playse SE_PIN
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_1
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_1, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 30
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_4
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_2, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 30
+	playse SE_PIN
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+	waitmovement
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_3, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_4
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_4, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_3
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_4
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_5
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_5, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	playse SE_PIN
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_6
+	waitmessage
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_6
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_7, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_8, MSGBOX_AUTOCLOSE
+	delay 60
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_9, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_7
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_8
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_9
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_10, MSGBOX_AUTOCLOSE
+	waitmessage
+	playse SE_PIN
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_11
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_6
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_12, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 40
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_13, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 30
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_14, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 30
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_15, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_10
+	waitmovement
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_11
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_12
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_13
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_16
+	waitmessage
+	playse SE_PIN
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_17, MSGBOX_AUTOCLOSE
+	waitmessage
+	playse SE_PIN
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_14
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_18, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_19, MSGBOX_AUTOCLOSE
+	playse SE_PIN
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_3
+	waitmovement
+	delay 60
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_20, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_21, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_15
+	waitmovement
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_16
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_17
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_18
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_22, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	playse SE_PIN
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_23
+	waitmessage
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+	waitmovement
+	delay 60
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_24, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 30
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_25, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_26, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_27
+	waitmessage
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+	waitmovement
+	delay 60
+	playse SE_PIN
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_19
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+	waitmovement
+	delay 60
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_28, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_20
+	waitmovement
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_21
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_22
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_23
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_29, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	playse SE_PIN
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_30, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 30
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_31, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 30
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_32, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 30
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_33, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+	waitmovement
+	delay 60
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_34
+	waitmessage
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_35, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_24
+	waitmovement
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_25
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_26
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_27
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_36, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_37, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_38, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	delay 60
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_10
+	waitmovement
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_28
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_29
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_30
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_39, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	playse SE_PIN
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_40, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 30
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_41, MSGBOX_AUTOCLOSE
+	waitmessage
+	playse SE_PIN
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_31
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_42, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_43, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_44, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0
+	applymovement LOCALID_PLAYER, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_4
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_45, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_46, MSGBOX_AUTOCLOSE
+	waitmessage
+	playse SE_PIN
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_3
+	waitmovement
+	delay 60
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_47, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 30
+	playse SE_PIN
+	applymovement 17, Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_48, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 30
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_49, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 30
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_50, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_24, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	applymovement 17, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_32
+	waitmovement
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_33
+	waitmovement
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_51, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 14, Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1
+	waitmovement
+	delay 60
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_52, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 120
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2
+	setspeaker Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0
+	msgbox Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_53, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 14, Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_34
+	waitmovement
+	setflag FLAG_MARSHDUKE_CATHEDRAL_TOUR
+	clearflag FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR
+	removeobject 14
+	removeobject 17
+	addobject 15
+	addobject 16
+	addobject 22
+	addobject 23
+	addobject 21
+	addobject 32
+	addobject 37
+	addobject 38
+	addobject 35
+	addobject 34
+	addobject 33
+	addobject 28
+	addobject 29
+	release
+	return
+
+
+Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Movement_0:
+	walk_right
+	step_end
+
+Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Movement_1:
+	walk_left
+	face_down
+	step_end
+
+Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Movement_0:
+	face_left
+	step_end
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_0:
+	walk_left
+	step_end
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_1:
+	face_right
+	step_end
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Movement_2:
+	walk_right
+	face_down
+	step_end
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Movement_0:
+	emote_exclamation_mark
+	step_end
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_0:
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_1:
+	emote_exclamation_mark
+	jump_in_place_down
+	jump_in_place_down
+	step_end
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_2:
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_3:
+	emote_question_mark
+	step_end
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Movement_4:
+	face_down
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_0:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_1:
+	emote_question_mark
+	face_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_2:
+	face_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_3:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_4:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_5:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_6:
+	emote_x
+	face_right
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_7:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_8:
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_9:
+	walk_up
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_10:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_11:
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_12:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_13:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_14:
+	emote_exclamation_mark
+	face_left
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_15:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_16:
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_17:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_18:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_19:
+	emote_question_mark
+	walk_up
+	face_left
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_20:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_21:
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_22:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_23:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_24:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_25:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_26:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_27:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_28:
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_29:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	face_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_30:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_31:
+	face_left
+	emote_exclamation_mark
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_32:
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_33:
+	walk_right
+	face_up
+	step_end
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Movement_34:
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Marshduke_Indoor_Chatedral_Sign_Alakazam_Text_0:
+	.string "There's an infographic mounted here.\n"
+	.string "Read it?$"
+
+Marshduke_Indoor_Chatedral_Plague_Empty_Text_0:
+	.string "There's an plaque attached to the\n"
+	.string "altar. Read it?$"
+
+Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_Text_0:
+	.string "Hi there child. Do you want to hear the\n"
+	.string "legend of the first memory?$"
+
+Marshduke_Indoor_Chatedral_Priest_History_Alakazam_NPC_Text_1:
+	.string "Whenever you want to learn some\n"
+	.string "history, I'll be here.$"
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read_Text_0:
+	.string "THE REMEMBERER\n"
+	.string "A visitor's guide.$"
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_Alakazam_Read_Text_1:
+	.string "The latest research, based on sediment\n"
+	.string "layers in the rock around it, suggests\l"
+	.string "this ALAKAZAM began meditating some\l"
+	.string "10,000 years ago, right after the last\l"
+	.string "ice age.\p"
+	.string "Legend says that when the glaciers\n"
+	.string "retreated and the climate changed, it\l"
+	.string "simply sat down, and has remained here\l"
+	.string "ever since.\p"
+	.string "The glacial meltwater has reshaped the\n"
+	.string "delta many times over the following\l"
+	.string "millennia, yet the hill beneath it shows\l"
+	.string "no trace of that erosion.\p"
+	.string "An ALAKAZAM forgets nothing, not one\n"
+	.string "moment, since birth.\p"
+	.string "Its brain never stops growing,\n"
+	.string "endlessly multiplying brain cells.\p"
+	.string "It is estimated this POKéMON has an\n"
+	.string "astounding IQ of 5,000, and a memory\l"
+	.string "sharp enough to recall everything it\l"
+	.string "has ever experienced.\p"
+	.string "Mega Evolution is normally temporary,\n"
+	.string "but this ALAKAZAM has held its Mega\l"
+	.string "form the entire time.\p"
+	.string "It's assumed to be sustaining it\n"
+	.string "through sheer psychic power.\p"
+	.string "Historical records agree it has never\n"
+	.string "once moved.\p"
+	.string "And yet the memories it displays\n"
+	.string "include events that happened\l"
+	.string "elsewhere, while it sat on this very hill.\p"
+	.string "How that's possible, science has yet to\n"
+	.string "explain.$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_Priest_FirstMemory_Text_0:
+	.string "Well then.\p"
+	.string "Nine hundred years ago, a storm drove a\n"
+	.string "fishing village up this hill, and the sky\l"
+	.string "above the ALAKAZAM simply opened.\p"
+	.string "They saw a burning tower on a foreign\n"
+	.string "shore, and a great bird descending in\l"
+	.string "rainbow fire to lift three small shapes\l"
+	.string "from the flames.\p"
+	.string "None of them had ever heard of\n"
+	.string "Ecruteak. And yet, as the village elder\l"
+	.string "wrote, it was 'realer than real. I smelled\l"
+	.string "the ash. I have never left this coast,\l"
+	.string "and yet I grieve for a tower I have\l"
+	.string "never seen.'\p"
+	.string "Word spread. Pilgrims came. And in time\n"
+	.string "we understood the visions were not\l"
+	.string "random, but chosen.\p"
+	.string "We call this the Doctrine of the Deep\n"
+	.string "Archive: a mind that has seen too much,\l"
+	.string "curating on our behalf, so we are not\l"
+	.string "doomed to learn every lesson twice.\p"
+	.string "It does not dream. It remembers for us.$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_MegaStone_Text_0:
+	.string "I train PSYCHIC types myself. My\n"
+	.string "DROWZEE can barely hold a CALM MIND for\l"
+	.string "a few turns, and that one up there\l"
+	.string "hasn't dropped its MEGA form in\l"
+	.string "thousands of years.\p"
+	.string "The scholars say it's raw psychic will\n"
+	.string "alone, holding the transformation from\l"
+	.string "the inside, the same way it holds the\l"
+	.string "visions.\p"
+	.string "No stone or trainer. Isn't that mental?$"
+
+Marshduke_Indoor_Chatedral_EventScript_VisionReturn_Text_0:
+	.string "Welcome back to the present.\p"
+	.string "Give yourself time to readjust to the\n"
+	.string "world around you.$"
+
+Marshduke_Indoor_Chatedral_EventScript_Sister_Wren_Text_0:
+	.string "The meaning of the vision in my opinion?\p"
+	.string "Interdependence. Take one away and\n"
+	.string "the other falls.\p"
+	.string "Some people think that is a weakness.\p"
+	.string "It's not. It's the core of everything in\n"
+	.string "the universe.\p"
+	.string "Light and dark, life and death, love and\n"
+	.string "hate.\p"
+	.string "They are all two sides of the same coin.\p"
+	.string "It's the only design that has ever\n"
+	.string "worked.\p"
+	.string "For willows, for waters, for worlds. For\n"
+	.string "Latios and Latias.$"
+
+Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_0:
+	.string "BROTHER ANDRÉ$"
+
+Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_1:
+	.string "Ah, as I was saying, before Ms. STONE so\n"
+	.string "rudely assigned me a chore.\p"
+	.string "Trashcans are just like black holes.\n"
+	.string "Nothing that falls in ever truly leaves.\l"
+	.string "It only becomes... unreachable.\p"
+	.string "A receipt. A wilted flower. A letter\n"
+	.string "someone almost sent. Each one mattered\l"
+	.string "enough to keep, once.\p"
+	.string "Is that not the shape of every memory\n"
+	.string "the ALAKAZAM shows us? Kept.\l"
+	.string "Cherished. And then, eventually,\l"
+	.string "discarded.\p"
+	.string "We built a cathedral for what gets\n"
+	.string "remembered.\p"
+	.string "But nobody built anything for what\n"
+	.string "gets thrown away.\p"
+	.string "Perhaps the trashcan is the truer\n"
+	.string "altar. The one that does not discrimin...$"
+
+Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan_Text_2:
+	.string "...I really should empty this before Ms.\n"
+	.string "STONE finds out I've been talking to it\l"
+	.string "instead of emptying it.$"
+
+Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_0:
+	.string "Ms. STONE$"
+
+Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_1:
+	.string "Oh, it's you again. Please tell me you\n"
+	.string "didn't let a Pidgey in behind you.\p"
+	.string "I've chased the same one out through\n"
+	.string "that roof gap eleven times this week.\l"
+	.string "I'm fairly sure it's mocking me at this\l"
+	.string "point.$"
+
+Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_2:
+	.string "Anyway, have you seen all five of the\n"
+	.string "memories yet?$"
+
+Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_3:
+	.string "Good. And you didn't just glance at\n"
+	.string "them, I hope.\p"
+	.string "Half our visitors watch the first one\n"
+	.string "and call it a day. That's like reading a\l"
+	.string "book's first page and shelving it.\p"
+	.string "Gen Z nowadays...$"
+
+Marshduke_Indoor_Chatedral_EventScript_Stone_PostTour_Text_4:
+	.string "Well, go on then. They're not going\n"
+	.string "anywhere.\p"
+	.string "Neither is he.$"
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_LatiosLatias_Text_0:
+	.string "MEGA ALAKAZAM's spoons glow with a\n"
+	.string "faint psychic light...\p"
+	.string "Ancient memories stir at the edge of\n"
+	.string "your mind, visions of LATIOS and LATIAS\l"
+	.string "long past.\p"
+	.string "Will you open your mind to them?$"
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_BalancedSky_Text_0:
+	.string "MEGA ALAKAZAM's spoons glow with a\n"
+	.string "faint psychic light...\p"
+	.string "Ancient memories stir at the edge of\n"
+	.string "your mind, visions of LUGIA, MOLTRES,\l"
+	.string "ZAPDOS and ARTICUNO long past.\p"
+	.string "Will you open your mind to them?$"
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza_Text_0:
+	.string "MEGA ALAKAZAM's spoons glow with a\n"
+	.string "faint psychic light...\p"
+	.string "Ancient memories stir at the edge of\n"
+	.string "your mind, visions of GROUDON, KYOGRE\l"
+	.string "and RAYQUAZA long past.\p"
+	.string "Will you open your mind to them?$"
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo_Text_0:
+	.string "MEGA ALAKAZAM's spoons glow with a\n"
+	.string "faint psychic light...\p"
+	.string "Ancient memories stir at the edge of\n"
+	.string "your mind, visions of MEW and MEWTWO\l"
+	.string "long past.\p"
+	.string "Will you open your mind to them?$"
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_Rekindled_Text_0:
+	.string "MEGA ALAKAZAM's spoons glow with a\n"
+	.string "faint psychic light...\p"
+	.string "Ancient memories stir at the edge of\n"
+	.string "your mind, visions of HO-OH, ENTEI,\l"
+	.string "RAIKOU and SUICUNE long past.\p"
+	.string "Will you open your mind to them?$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Text_0:
+	.string "...and that's why they never leave each\n"
+	.string "other's side.\p"
+	.string "They choose not to, even though they\n"
+	.string "can if they want.$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Text_1:
+	.string "Would you ever choose not to leave me?$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Text_2:
+	.string "I already did, sweetheart. The day you\n"
+	.string "were born.$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts_Text_3:
+	.string "Oh, sorry. Were we in your way?\p"
+	.string "We just come here sometimes, to look at\n"
+	.string "the two of them.$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_0:
+	.string "Mom, why does the boy dragon look like\n"
+	.string "the girl dragon, but not exactly?$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_1:
+	.string "Because they're not the same, love.\p"
+	.string "LATIOS and LATIAS are brother and\n"
+	.string "sister, not reflections.\p"
+	.string "Two different people who just happen\n"
+	.string "to love each other completely.$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_2:
+	.string "...That's kind of like us, huh?$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts_Text_3:
+	.string "Oh! Hi. Have you seen the two dragons\n"
+	.string "yet? They're my favorite.$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_HoohLugia_Text_0:
+	.string "Rumors say LUGIA's storm was the one\n"
+	.string "that burned the Brass Tower down, the\l"
+	.string "same fire ENTEI, RAIKOU, and SUICUNE\l"
+	.string "rose from.\p"
+	.string "Even a being that can move oceans\n"
+	.string "couldn't stop that fire in time once it\l"
+	.string "started.\p"
+	.string "Not every disaster bends to strength,\n"
+	.string "however great.\p"
+	.string "It fled that night, and stayed hidden\n"
+	.string "for years, ashamed of what it couldn't\l"
+	.string "prevent, until the world needed it\l"
+	.string "again.\p"
+	.string "Perhaps that's the truer lesson: even\n"
+	.string "the mightiest cannot always win. What\l"
+	.string "matters is choosing, again and again, to\l"
+	.string "use what power you have for good.$"
+
+Marshduke_Indoor_Chatedral_EventScript_Priest_HoohLugia_Text_0:
+	.string "BROTHER COLM$"
+
+Marshduke_Indoor_Chatedral_EventScript_Priest_HoohLugia_Text_1:
+	.string "Some visitors call LUGIA's hiding\n"
+	.string "humility.\p"
+	.string "Me personally? I call it a god too afraid\n"
+	.string "of itself to help anyone.\p"
+	.string "Guilt only becomes a virtue once you\n"
+	.string "actually do something with it.$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_EnteiRaikouSuicune_Text_0:
+	.string "Oh! You caught me dancing with my\n"
+	.string "Vapereon.\p"
+	.string "I'm a KIMONO GIRL, all the way from\n"
+	.string "Ecruteak City in Johto.\p"
+	.string "I crossed half the world just to stand\n"
+	.string "in front of this ALAKAZAM and watch its\l"
+	.string "memory of my hometown.\p"
+	.string "My sisters have danced in the ashes of\n"
+	.string "the BURNED TOWER for generations, but\l"
+	.string "none of us have ever seen it whole. Not\l"
+	.string "until I came here.\p"
+	.string "Did you know, three hundred years ago,\n"
+	.string "some KIMONO GIRLS made this same\l"
+	.string "journey, and carried pieces of the\l"
+	.string "burned wood to leave it here?\p"
+	.string "Those scorched fragments are on\n"
+	.string "display in the city's gallery now,\l"
+	.string "curated by a collector named ARI.$"
+
+Marshduke_Indoor_Chatedral_EventScript_Priest_EnteiRaikouSuicune_Text_0:
+	.string "SISTER ODILE$"
+
+Marshduke_Indoor_Chatedral_EventScript_Priest_EnteiRaikouSuicune_Text_1:
+	.string "Second life this. Second life that. Blaa,\n"
+	.string "blaa blaaaaah.\p"
+	.string "In my opinion it's a life sentence,\n"
+	.string "HO-OH never asked them if they wanted\l"
+	.string "to keep running.\p"
+	.string "I'm already getting tired thinking\n"
+	.string "about it.$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_MewMewtwo_Text_0:
+	.string "I've been standing here an hour,\n"
+	.string "staring at a creature made in a lab\l"
+	.string "beside the one it was copied from.\p"
+	.string "Most pilgrims argue about which one's\n"
+	.string "the 'real' one, but the memory never\l"
+	.string "says, and I don't think it's supposed\l"
+	.string "to.\p"
+	.string "The circumstances of one's birth are\n"
+	.string "irrelevant; it's what you do with the\l"
+	.string "gift of life that determines who you\l"
+	.string "are.$"
+
+Marshduke_Indoor_Chatedral_EventScript_Priest_MewMewtwo_Text_0:
+	.string "SISTER RUTH$"
+
+Marshduke_Indoor_Chatedral_EventScript_Priest_MewMewtwo_Text_1:
+	.string "The Order teaches that origin doesn't\n"
+	.string "matter, only choice...\p"
+	.string "I think that's a comfort we tell MEWTWO\n"
+	.string "so we don't have to sit with what was\l"
+	.string "actually done to it in that laboratory.\p"
+	.string "Some wounds aren't erased by a nice\n"
+	.string "philosophy.$"
+
+Marshduke_Indoor_Chatedral_EventScript_Priest_GroundonKyogreRayquaza_Text_0:
+	.string "SISTER MARGUERITE$"
+
+Marshduke_Indoor_Chatedral_EventScript_Priest_GroundonKyogreRayquaza_Text_1:
+	.string "RAYQUAZA, everybody loves him, calls him\n"
+	.string "righteous and sees him as our lord and\l"
+	.string "saviour.\p"
+	.string "I call him a coup with a weather machine\n"
+	.string "attached.\p"
+	.string "Fly in, end the argument by ending\n"
+	.string "everyone's ability to have one, call it a\l"
+	.string "peace deal forever after.\p"
+	.string "Same move every dictator in history has\n"
+	.string "made, he's just working with a much\l"
+	.string "better color palette.$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_0:
+	.string "Dr. FERRAN$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_1:
+	.string "Careful, don't stand too close.\p"
+	.string "My castform is trying to register some\n"
+	.string "temperature differences.$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_2:
+	.string "Well, go on.$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_3:
+	.string "What do you mean?\p"
+	.string "Over 9000 degrees?! By Arceus!$"
+
+Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza_Text_4:
+	.string "Sorry about that.\p"
+	.string "I'm Dr. FERRAN, Head of Instrumentation\n"
+	.string "at the Luzac Institute.\p"
+	.string "I've been measuring the temperature at\n"
+	.string "this altar for twenty years now.\p"
+	.string "The GROUDON side reads hot enough to\n"
+	.string "melt solder.\p"
+	.string "The KYOGRE side reads freezing.\p"
+	.string "And every sensor I've ever placed\n"
+	.string "between them has failed in increasingly\l"
+	.string "creative ways.\p"
+	.string "Last week my thermometer even\n"
+	.string "reported the weather of a country that\l"
+	.string "doesn't exist.\p"
+	.string "Three weeks ago a humidity gauge that\n"
+	.string "started transmitting in Morse code.\p"
+	.string "And one time, a probe simply vanished,\n"
+	.string "and turned up in my lunchbox three days\l"
+	.string "later, slightly damp...\p"
+	.string "I've begun to suspect the ALAKAZAM is\n"
+	.string "doing this on purpose.$"
+
+Marshduke_Indoor_Chatedral_EventScript_Sign_EmptyShrine_Text_0:
+	.string "FIVE MEMORIES OF WHAT WAS. ONE SPACE\n"
+	.string "FOR WHAT COULD BE. THE DIFFERENCE\l"
+	.string "BETWEEN THEM IS US.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_0:
+	.string "Ah, a new face! Wonderful.\p"
+	.string "I'm the curator and caretaker of this\n"
+	.string "cathedral, Head of the Order of the\l"
+	.string "Open Eye, and chief remover of Pidgey.\p"
+	.string "But please, call me Ms. STONE.\p"
+	.string "You have the look of someone who\n"
+	.string "wandered in.\p"
+	.string "Would you like a tour? It's free, and I'm\n"
+	.string "very good at it.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_1:
+	.string "...The seeker arrives at the hour of\n"
+	.string "arriving.\p"
+	.string "As they always do. As they always have.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_2:
+	.string "That's BROTHER ANDRÉ...$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_3:
+	.string "...I am but a JANITOR!$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_4:
+	.string "He is but a janitor.\p"
+	.string "At the moment, there's no one here but\n"
+	.string "the priests of the Order of the Open\l"
+	.string "Eye, and us.\p"
+	.string "A rare opportunity, let's make the most\n"
+	.string "of it.\p"
+	.string "Come along, both of you.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_5:
+	.string "There. That's what you came for,\n"
+	.string "whether you knew it or not.\p"
+	.string "A MEGA ALAKAZAM. In trance. It has been\n"
+	.string "sitting on this hill longer than the hill\l"
+	.string "has had a name.\p"
+	.string "Older than the city, the walls and we\n"
+	.string "think even older than the delta itself.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_6:
+	.string "It does not sit. It is held.\p"
+	.string "Time flows around it as water flows\n"
+	.string "around a stone that has decided not to\l"
+	.string "be moved...$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_7:
+	.string "It's sitting, André.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_8:
+	.string "...It is sitting in a transcendent\n"
+	.string "manner.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_9:
+	.string "An ALAKAZAM forgets nothing. Not one\n"
+	.string "moment of its whole life.\p"
+	.string "Now imagine thousands of years of that,\n"
+	.string "all at once, all still there.\p"
+	.string "So it stopped moving. Stopped living\n"
+	.string "forward. And started, we think, sorting.\p"
+	.string "And what it finds worth keeping, it\n"
+	.string "shows us.\p"
+	.string "Above the altars. Five memories. Come\n"
+	.string "see.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_10:
+	.string "The REKINDLED. A tower burned, far from\n"
+	.string "here.\p"
+	.string "Three Pokémon died in the fire.\p"
+	.string "And something came down through the\n"
+	.string "smoke and gave them back, not as they\l"
+	.string "were, but as three completely different\l"
+	.string "things.\p"
+	.string "Storm. Flame. Clean water.\p"
+	.string "And then they ran, and they've never\n"
+	.string "stopped running.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_11:
+	.string "Three flames of one flame!\p"
+	.string "Three faces of one face!\p"
+	.string "The many that is secretly the ONE...$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_12:
+	.string "They're not one, André, that's rather\n"
+	.string "the point. That's the whole point.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_13:
+	.string "...Three faces of one face that are\n"
+	.string "also, in a deeper sense, three faces.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_14:
+	.string "...\p"
+	.string "Better.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_15:
+	.string "The lesson here is: A second life is not\n"
+	.string "a gift; it is an assignment.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_16:
+	.string "The BALANCED SKY. Three great birds\n"
+	.string "over a foreign ocean: fire, frost, and\l"
+	.string "lightning.\p"
+	.string "When one of them grows stronger than\n"
+	.string "the other two, the sky comes apart.\p"
+	.string "So the silver one rises from the sea,\n"
+	.string "tunes them back to balance, and simply\l"
+	.string "leaves.\p"
+	.string "It shows us that power great enough to\n"
+	.string "remake the world is sometimes wisest\l"
+	.string "left alone.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_17:
+	.string "The silver one is the SILENCE BETWEEN\n"
+	.string "THE NOTES.\p"
+	.string "The pause in which the chord discovers\n"
+	.string "what it truly...$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_18:
+	.string "That's... actually not bad.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_19:
+	.string "...the pause in which the chord\n"
+	.string "discovers what it truly... dreams.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_20:
+	.string "...Nevermind.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_21:
+	.string "The old records call this the Divided\n"
+	.string "Sky.\p"
+	.string "Personally I see it differently.\p"
+	.string "Nobody divided that sky. It was only\n"
+	.string "ever meant to be balanced and\l"
+	.string "maintained.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_22:
+	.string "The MIRROR. A creature made in a\n"
+	.string "laboratory, and the creature it was\l"
+	.string "made from.\p"
+	.string "One the original, one the perfect copy.\p"
+	.string "Pilgrims come here to argue about which\n"
+	.string "one is stronger, better, more perfect.\p"
+	.string "In my opinion, they need each other,\n"
+	.string "they strengthen each other, they can\l"
+	.string "learn from each other.\p"
+	.string "I think it ends with a question instead:\n"
+	.string "What if we work together, instead of\l"
+	.string "against each other?$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_23:
+	.string "And who among us is not asking that\n"
+	.string "same...$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_24:
+	.string "André.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_25:
+	.string "I was going to say something about the\n"
+	.string "ocean.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_26:
+	.string "I know.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_27:
+	.string "Watch that one to the end, by the way.\n"
+	.string "It lingers on the little one, Mew.\p"
+	.string "Longer than it needs to. Nobody knows\n"
+	.string "why.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_28:
+	.string "...\p"
+	.string "...\p"
+	.string "You saw the little one? Mew?\p"
+	.string "...\p"
+	.string "Not possible. Mew hasn't been seen in\n"
+	.string "the wild for decades.\p"
+	.string "I think you have mistaken it for\n"
+	.string "something else.\p"
+	.string "Lets go to the next altar.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_29:
+	.string "Careful, this one's cold on the left and\n"
+	.string "hot on the right, we're not sure why.\p"
+	.string "The oldest memory we have. Land and\n"
+	.string "sea, tearing a young world in half.\p"
+	.string "Continents rising. Continents drowning.\p"
+	.string "Neither of them was wrong, mind you.\p"
+	.string "Land wanted land. Sea wanted sea.\n"
+	.string "Perfectly reasonable, both of them.\p"
+	.string "But eventually everything needs a\n"
+	.string "balance, and the answer came from\l"
+	.string "above.\p"
+	.string "The sky split open and the green\n"
+	.string "serpent came down from very high up and\l"
+	.string "simply stopped it.\p"
+	.string "Legends say it was just a glance, and\n"
+	.string "the world was saved.\p"
+	.string "Sometimes seeing both sides and not\n"
+	.string "choosing at all, is the only way to\l"
+	.string "choose.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_30:
+	.string "AH. Now here I have thoughts...$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_31:
+	.string "I'm sure.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_32:
+	.string "...for is not the serpent the AXIS? The\n"
+	.string "thread through the bead? The high still\l"
+	.string "point about which the war...$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_33:
+	.string "André...$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_34:
+	.string "We send feuding families here, you know.\n"
+	.string "Merchant guilds. In-laws. They shake\l"
+	.string "hands under the arch and it counts.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_35:
+	.string "It works about half the time. Which for\n"
+	.string "in-laws is remarkable.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_36:
+	.string "The TWO HEARTS. Two dragons. Two\n"
+	.string "personalities. Two ways of being. But\l"
+	.string "one team.\p"
+	.string "While they are the same species, they\n"
+	.string "are not the same individual.\p"
+	.string "Still, each needs the other to survive.\p"
+	.string "And when one is lost, the other perishes\n"
+	.string "with it.\p"
+	.string "The lesson: love is the only thing that\n"
+	.string "grows larger when shared.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_37:
+	.string "...This is the one I come to. When it's\n"
+	.string "late. When nobody is watching.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_38:
+	.string "...\p"
+	.string "Yes. Well. Me too.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_39:
+	.string "And this one is my favorite, which\n"
+	.string "annoys everybody.\p"
+	.string "It's empty. Always has been.\p"
+	.string "During the cathedral's construction,\n"
+	.string "long ago, the workers claimed to have\l"
+	.string "seen warped visions at this very spot.\p"
+	.string "Whatever it was, it hasn't shown itself\n"
+	.string "since, not in at least 900 years.\p"
+	.string "All we have left is hearsay, and hearsay\n"
+	.string "doesn't agree with itself.\p"
+	.string "Some talk of a giant with seven eyes.\n"
+	.string "Others claim to have seen several\l"
+	.string "giants at once.\p"
+	.string "But everyone agrees on one thing:\n"
+	.string "whatever it was, it came wrapped in a\l"
+	.string "green light. Nobody knows why.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_40:
+	.string "The unmanifest! The not-yet! The\n"
+	.string "pregnant silence in which all possible\l"
+	.string "altars are simultaneously...$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_41:
+	.string "For once, André, that is very close to\n"
+	.string "the Order's actual position.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_42:
+	.string "Is it?$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_43:
+	.string "Don't let it go to your head.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_44:
+	.string "Somebody left a plaque here. We've\n"
+	.string "never taken it down.\p"
+	.string "It reads:\p"
+	.string "FIVE MEMORIES OF WHAT WAS.\p"
+	.string "ONE SPACE FOR WHAT COULD BE.\p"
+	.string "THE DIFFERENCE BETWEEN THEM IS US.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_45:
+	.string "And that's the tour. Five memories, one\n"
+	.string "empty space, and a very old creature\l"
+	.string "that hasn't moved since before your\l"
+	.string "grandmother's grandmother's\l"
+	.string "grandmother.\p"
+	.string "Go and watch them properly.\p"
+	.string "Take your time.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_46:
+	.string "May the seeker find what the seeker\n"
+	.string "seeks.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_47:
+	.string "Thank you, André.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_48:
+	.string "Or, and this is important, may they find\n"
+	.string "what they were NOT seeking.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_49:
+	.string "...That one was quite good.\p"
+	.string "Can you clean out the trashcans right\n"
+	.string "now?\p"
+	.string "You know, your job? Thank you!$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_50:
+	.string "Yes mam. The trashcans, a beautifull\n"
+	.string "methaphor for the all the forgotten\l"
+	.string "memories.\p"
+	.string "You know, trashcans are just like black\n"
+	.string "holes...$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_51:
+	.string "...May I tell you something I don't put in\n"
+	.string "the tour?\p"
+	.string "Everyone watches the gods.\p"
+	.string "Nine hundred years, and every single\n"
+	.string "person who has stood where you're\l"
+	.string "standing... ...has watched the gods.\p"
+	.string "But there's a world behind them. In\n"
+	.string "every memory.\p"
+	.string "Water so full of fish you can't see\n"
+	.string "through it.\p"
+	.string "Countless birds species in the skies so\n"
+	.string "you can't see the sun.\p"
+	.string "They're gone now. All of them.\p"
+	.string "But nobody seems to notice. Including\n"
+	.string "me. For sixty years.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_52:
+	.string "I don't think it's showing us old stories\n"
+	.string "at all, child.\p"
+	.string "I think it's showing us what's happening\n"
+	.string "right now.$"
+
+Marshduke_Indoor_Cathedral_Introduction_Ms_Stone_Text_53:
+	.string "...Anyway. Looks like a few visitors have\n"
+	.string "trickled in.\p"
+	.string "I'd best go scare off the Pidgey. That\n"
+	.string "bloody open roof.\p"
+	.string "Enjoy the altars.$"

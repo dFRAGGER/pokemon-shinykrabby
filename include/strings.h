@@ -160,6 +160,7 @@ extern const u8 gText_Gold[];
 
 extern const u8 gMenuText_Use[];
 extern const u8 gMenuText_Toss[];
+extern const u8 gMenuText_Roll[];
 extern const u8 gMenuText_Give[];
 extern const u8 gMenuText_Give2[];
 extern const u8 gMenuText_Register[];
@@ -1975,6 +1976,7 @@ extern const u8 MatchCall_Text_Phoebe[];
 extern const u8 MatchCall_Text_Glacia[];
 extern const u8 MatchCall_Text_Drake[];
 extern const u8 MatchCall_Text_Wallace[];
+extern const u8 MatchCall_Text_Daan1[];
 
 // Contest Link
 extern const u8 gText_ColorDarkGray[];

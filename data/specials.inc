@@ -709,3 +709,9 @@ gSpecials::
 	def_special GivePartyMonNationalRibbon
 	def_special GetMaxPartySize
 	def_special IsPartyLimitChallengeActive
+
+	@ ShinyKrabby custom specials (ported from custom maps)
+	def_special Special_PrepareHerbTreat
+	def_special Special_HasGroundMaterial
+	def_special Special_OpenCaseForRolling
+	def_special UpdateFollowingPokemon

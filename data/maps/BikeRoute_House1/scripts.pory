@@ -1,0 +1,26 @@
+mapscripts BikeRoute_House1_MapScripts {}
+
+script BikeRoute_House1_EventScript_Phildy {
+    lock
+    faceplayer
+    setspeaker("PHILDY")
+    msgbox(format("Oh, hello! The name's PHILDY. I live here.\pYou've met MR. KASMI next door, I take it?\pI met him the week before he left on that big trip - five minutes in and he was already describing mountain routes.\pI thought: this man is either completely mad or completely free. Turned out to be both."), MSGBOX_DEFAULT)
+    msgbox(format("A couple months in I went to find him. Three connections and a long drive later, I did.\pFound him somewhere in the back of beyond, fixing that motorcycle in the rain without a care in the world.\pI stayed two weeks, kept messaging after that, and somewhere in all those words I must have said the right thing, because eventually he wrote back: I'm coming home."), MSGBOX_DEFAULT)
+    msgbox(format("I won't say I talked him into it. But I won't say I didn't either.\pAnd now here we are - him fixing bikes next door, me right here.\pHe likes to say this place is too small for him. Maybe. But it fits us just fine."), MSGBOX_DEFAULT)
+    msgbox(format("You're welcome to rest here whenever you need.\pShall I fix up your Pokémon?"), MSGBOX_YESNO)
+    waitmessage
+    if (var(VAR_RESULT) == YES) {
+        fadescreen(FADE_TO_BLACK)
+        playse(MUS_HEAL)
+        waitse
+        special(HealPlayerParty)
+        delay(40)
+        fadescreen(FADE_FROM_BLACK)
+        setspeaker("Phildy")
+        msgbox(format("There you go. Rest up and ride safe."), MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    setrespawn(HEAL_LOCATION_BIKE_PARK)
+    release
+    end
+}

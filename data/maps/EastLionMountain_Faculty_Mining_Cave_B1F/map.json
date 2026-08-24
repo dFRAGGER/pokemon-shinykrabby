@@ -1,0 +1,151 @@
+{
+  "id": "MAP_EAST_LION_MOUNTAIN_FACULTY_MINING_CAVE_B1F",
+  "name": "EastLionMountain_Faculty_Mining_Cave_B1F",
+  "layout": "LAYOUT_EAST_LION_MOUNTAIN_FACULTY_MINING_CAVE_B1F",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_LIONS_ARCH_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_RED_CAVE",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+      "x": 23,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MiningCaveB1F_Barry_Battle",
+      "flag": "FLAG_HIDE_FACULTY_AT_WESTLION_MINE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
+      "x": 23,
+      "y": 19,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MiningCaveB1F_Worker3_Convo",
+      "flag": "FLAG_HIDE_MINING_CAVE_B1F_SCIENTIST"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
+      "x": 21,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MiningCaveB1F_Worker2_Convo",
+      "flag": "FLAG_HIDE_FACULTY_AT_WESTLION_MINE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
+      "x": 33,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MiningCaveB1F_Worker1_Convo",
+      "flag": "FLAG_HIDE_FACULTY_AT_WESTLION_MINE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "x": 31,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "MiningCaveB1F_Trainer_Faculty_Addy",
+      "flag": "FLAG_HIDE_FACULTY_AT_WESTLION_MINE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "x": 11,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "MiningCaveB1F_Trainer_Faculty_Ad",
+      "flag": "FLAG_HIDE_FACULTY_AT_WESTLION_MINE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "x": 8,
+      "y": 17,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "MiningCave_Trainer_Faculty_Warren",
+      "flag": "FLAG_HIDE_FACULTY_AT_WESTLION_MINE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "x": 26,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "MiningCave_Trainer_Faculty_Owen",
+      "flag": "FLAG_HIDE_FACULTY_AT_WESTLION_MINE"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_EAST_LION_MOUNTAIN",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MiningCave_Sign_Danger"
+    },
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 26,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MiningCaveB1F_Sign_DeepMine"
+    }
+  ],
+  "game_version": "hns"
+}

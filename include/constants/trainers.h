@@ -668,6 +668,9 @@ enum TrainerClassID
     TRAINER_CLASS_DEVELOPER_HNS,
     TRAINER_CLASS_PYRAMID_KING_HNS,
 
+    // ShinyKrabby custom trainer class
+    TRAINER_CLASS_FACULTY_GRUNT,
+
     TRAINER_CLASS_COUNT,
 };
 

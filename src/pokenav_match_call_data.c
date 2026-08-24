@@ -607,6 +607,21 @@ static const struct MatchCallStructTrainer sWallaceMatchCallHeader =
     .textData = sWallaceTextScripts
 };
 
+static const match_call_text_data_t sDaanTextScripts[] = {
+    { MatchCall_Text_Daan1, ALWAYS_AVAILABLE, NO_FLAG_TO_SET },
+    MATCH_CALL_TEXT_END
+};
+
+static const struct MatchCallStructNPC sDaanMatchCallHeader =
+{
+    .type = MC_TYPE_NPC,
+    .mapSec = MAPSEC_MIST_CITY,
+    .flag = FLAG_FACULTY_SYMPATHIZERS_2,
+    .desc = COMPOUND_STRING("RESEARCHER"),
+    .name = COMPOUND_STRING("DAAN"),
+    .textData = sDaanTextScripts
+};
+
 static const match_call_t sMatchCallHeaders[] = {
     [MC_HEADER_MR_STONE]   = {.npc    = &sMrStoneMatchCallHeader},
     [MC_HEADER_PROF_BIRCH] = {.birch  = &sProfBirchMatchCallHeader},
@@ -629,7 +644,8 @@ static const match_call_t sMatchCallHeaders[] = {
     [MC_HEADER_PHOEBE]     = {.leader = &sPhoebeMatchCallHeader},
     [MC_HEADER_GLACIA]     = {.leader = &sGlaciaMatchCallHeader},
     [MC_HEADER_DRAKE]      = {.leader = &sDrakeMatchCallHeader},
-    [MC_HEADER_WALLACE]    = {.leader = &sWallaceMatchCallHeader}
+    [MC_HEADER_WALLACE]    = {.leader = &sWallaceMatchCallHeader},
+    [MC_HEADER_DAAN]       = {.npc    = &sDaanMatchCallHeader}
 };
 
 #else // Emerald

@@ -61,4 +61,43 @@ bool32 MapPreview_IsGfxLoadFinished(void);
 void MapPreview_Unload(s32 windowId);
 void MapPreview_StartForestTransition(mapsec_u8_t mapsec);
 
+// ShinyKrabby: script-triggered preview images (visionpreview), independent of mapsec
+enum PreviewImageId
+{
+    IMG_VIRIDIAN_FOREST,
+    IMG_MT_MOON,
+    IMG_DIGLETTS_CAVE,
+    IMG_ROCK_TUNNEL,
+    IMG_POKEMON_TOWER,
+    IMG_SAFARI_ZONE,
+    IMG_SEAFOAM_ISLANDS,
+    IMG_POKEMON_MANSION,
+    IMG_ROCKET_HIDEOUT,
+    IMG_SILPH_CO,
+    IMG_VICTORY_ROAD,
+    IMG_CERULEAN_CAVE,
+    IMG_POWER_PLANT,
+    IMG_MT_EMBER,
+    IMG_ROCKET_WAREHOUSE,
+    IMG_MONEAN_CHAMBER,
+    IMG_DOTTED_HOLE,
+    IMG_BERRY_FOREST,
+    IMG_ICEFALL_CAVE,
+    IMG_LOST_CAVE,
+    IMG_ALTERING_CAVE,
+    IMG_COUNT
+};
+
+#define MPS_DURATION_SCRIPT     120 // Duration in frames for a script-triggered (visionpreview) preview.
+#define MPS_BASIC_FADE_SPEED    1
+
+struct ImageData
+{
+    const void *tilesptr;
+    const void *tilemapptr;
+    const void *palptr;
+};
+
+void Script_VisionPreview(void);
+
 #endif //GUARD_MAP_PREVIEW_SCREEN_H

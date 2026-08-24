@@ -1,0 +1,46 @@
+{
+  "id": "MAP_CAVE_CORRIDOR",
+  "name": "CaveCorridor",
+  "layout": "LAYOUT_CAVE_CORRIDOR",
+  "music": "MUS_PETALBURG_WOODS",
+  "region_map_section": "MAPSEC_ERPUS_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_INDOOR",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 5,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_CAVE_HALLWAY_JARI",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_LAB_JARI_INDOOR_STORAGE",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_RECIEVED_STARTER_POKEMON",
+      "var_value": "0",
+      "script": "CaveCorridor_Eventscript"
+    }
+  ],
+  "bg_events": [],
+  "game_version": "hns"
+}

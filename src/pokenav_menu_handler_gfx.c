@@ -340,7 +340,7 @@ static const u8 *const sHnSMapPageDescriptionJohtoKanto = COMPOUND_STRING("Check
 
 static const u8 *const sPageDescriptions[] =
 {
-    [POKENAV_MENUITEM_MAP]                     = COMPOUND_STRING("Check the map of the HOENN region"),
+    [POKENAV_MENUITEM_MAP]                     = COMPOUND_STRING("Check the map of the TESSERA region"),
     [POKENAV_MENUITEM_CONDITION]               = COMPOUND_STRING("Check POKéMON in detail."),
     [POKENAV_MENUITEM_MATCH_CALL]              = COMPOUND_STRING("Call a registered TRAINER."),
     [POKENAV_MENUITEM_RIBBONS]                 = COMPOUND_STRING("Check obtained RIBBONS."),

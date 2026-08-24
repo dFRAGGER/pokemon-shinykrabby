@@ -1,0 +1,26 @@
+mapscripts Route016_MapScripts {}
+
+# Bike Park mountain crossing, outer band (further from the BikePark
+# boundary at y=0). Unconditionally clears the cycling-road flag. Sits
+# further from the boundary than the mount trigger so a touch-and-retreat
+# doesn't mount the player before they've committed to the crossing.
+# VAR_TEMP_6 is reset every fire so the trigger can refire on every crossing.
+script Route016_EventScript_BikeParkExitTrigger {
+    lockall
+    setvar(VAR_TEMP_6, 0)
+    clearflag(FLAG_SYS_CYCLING_ROAD)
+    releaseall
+    end
+}
+
+# Bike Park mountain crossing, inner band (right next to the BikePark
+# boundary at y=0). Unconditionally force-mounts the player and sets the
+# cycling-road flag.
+script Route016_EventScript_BikeParkMountTrigger {
+    lockall
+    setvar(VAR_TEMP_6, 0)
+    special(ForcePlayerOntoBike)
+    setflag(FLAG_SYS_CYCLING_ROAD)
+    releaseall
+    end
+}

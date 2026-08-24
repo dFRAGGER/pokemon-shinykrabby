@@ -1,0 +1,3 @@
+Route14_Estuary_Indoor_House2_MapScripts::
+	.byte 0
+

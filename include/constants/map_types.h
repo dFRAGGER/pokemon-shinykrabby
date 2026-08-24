@@ -32,6 +32,22 @@ enum MapBattleScene
     MAP_BATTLE_SCENE_KAREN_HNS,
     MAP_BATTLE_SCENE_LANCE_HNS,
     MAP_BATTLE_SCENE_BLUE_BUILDING,
+
+    // ShinyKrabby: terrain-type map battle scenes (ported from custom maps).
+    // Not dispatched through this field at runtime - the actual battle
+    // background for these maps is chosen via sMapDefaultEnvironments in
+    // battle_setup.c. These values only need to exist so the map header's
+    // battle_scene byte field has something valid to compile to.
+    MAP_BATTLE_SCENE_CAVE,
+    MAP_BATTLE_SCENE_DESERT,
+    MAP_BATTLE_SCENE_INDOOR,
+    MAP_BATTLE_SCENE_LONG_GRASS,
+    MAP_BATTLE_SCENE_MOUNTAIN,
+    MAP_BATTLE_SCENE_RED_CAVE,
+    MAP_BATTLE_SCENE_SAND,
+    MAP_BATTLE_SCENE_SNOW,
+    MAP_BATTLE_SCENE_SNOW_CAVE,
+    MAP_BATTLE_SCENE_TALL_GRASS,
 };
 
 #define MAP_BATTLE_SCENE_INDOOR_1 MAP_BATTLE_SCENE_NORMAL

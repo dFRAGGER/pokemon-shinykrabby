@@ -203,8 +203,25 @@
 // 0x40CE 0x40CF 0x40D0 0x40D1 0x40D6 are also unsafe, but already carry their
 // Emerald names in the shared block at the top of this file.
 
-#define VARS_END                                         0x40FF
+#define VARS_END                                         0x410F
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)
+
+// ShinyKrabby custom vars (ported from custom maps)
+#define VAR_MISTCITY_RESEARCH_CENTER_LOCATION             0x4100
+#define VAR_BEEKEEPER_GEURTS                              0x4101
+#define VAR_BRYAN_POSITION                                0x4102
+#define VAR_CATHEDRAL_STATE_MARSHDUKE                     0x4103
+#define VAR_LIONSARCH_CITY_STATE                          0x4104
+#define VAR_MAASJE_GYM_TIDE_STATE                         0x4105
+#define VAR_MARSHDUKE_CATHEDRAL_VISION_STATE              0x4106
+#define VAR_MEESTRECH_TOWN_STATE                          0x4107
+#define VAR_MINING_CAVE_STATE                             0x4108
+#define VAR_MISTCITY_RESEARCH_CENTER                      0x4109
+#define VAR_MISTCITY_STATE                                0x410A
+#define VAR_RECIEVED_STARTER_POKEMON                      0x410B
+#define VAR_SILTROOT_TOWN_STATE                           0x410C
+#define VAR_STARTHOUSE_ERP_CITY                           0x410D
+#define VAR_STARTHOUSE_ERP_CITY_1F                        0x410E
 
 #define SPECIAL_VARS_START            0x8000
 // special vars

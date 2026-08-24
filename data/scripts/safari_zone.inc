@@ -247,7 +247,7 @@ SafariZone_Northwest_Text_Man:
 
 SafariZone_North_Text_Fisherman:
 	.string "I'm on a mission to find WATER POKéMON\n"
-	.string "you don't see in HOENN.\p"
+	.string "you don't see in TESSERA.\p"
 	.string "Do you have any idea where the lake is?$"
 
 SafariZone_North_Text_Man:
@@ -313,7 +313,7 @@ SafariZone_Southeast_Text_FatMan:
 
 SafariZone_Southeast_Text_RichBoy:
 	.string "The POKéMON around here seem to be\n"
-	.string "from somewhere other than HOENN.$"
+	.string "from somewhere other than TESSERA.$"
 
 SafariZone_Northeast_Text_Boy:
 	.string "I only have a couple SAFARI BALLS left.\p"

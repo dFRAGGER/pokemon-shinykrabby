@@ -217,6 +217,35 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .battleIntroSlide = BUILDING_BATTLE_INTRO_SLIDE,
     },
 
+    // ShinyKrabby custom battle environments (ported from custom maps)
+    [BATTLE_ENVIRONMENT_RED_CAVE] =
+    {
+        .name = _("Cave"),
+        .naturePower = CAVE_NATURE_POWER,
+        .secretPowerAnimation = CAVE_SECRET_POWER_ANIMATION,
+        .secretPowerEffect = CAVE_SECRET_POWER_EFFECT,
+        .camouflageType = CAVE_CAMOUFLAGE_TYPE,
+        .camouflageBlend = CAVE_CAMOUFLAGE_BLEND,
+        .entry = ENVIRONMENT_ENTRY(RedCave),
+        .background = ENVIRONMENT_BACKGROUND(RedCave),
+        .palette = gBattleEnvironmentPalette_RedCave,
+        .battleIntroSlide = CAVE_BATTLE_INTRO_SLIDE,
+    },
+
+    [BATTLE_ENVIRONMENT_DESERT] =
+    {
+        .name = _("Desert"),
+        .naturePower = B_NATURE_POWER_MOVES >= GEN_6 ? MOVE_EARTH_POWER : MOVE_EARTHQUAKE,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_4 ? gBattleAnimMove_MudSlap : gBattleAnimMove_MudShot,
+        .secretPowerEffect = MOVE_EFFECT_ACC_MINUS_1,
+        .camouflageType = TYPE_GROUND,
+        .camouflageBlend = RGB(30, 24, 11),
+        .entry = ENVIRONMENT_ENTRY(Desert),
+        .background = ENVIRONMENT_BACKGROUND(Desert),
+        .palette = gBattleEnvironmentPalette_Desert,
+        .battleIntroSlide = BattleIntroSlide2,
+    },
+
     [BATTLE_ENVIRONMENT_PLAIN] =
     {
         .name = _("Plain"),

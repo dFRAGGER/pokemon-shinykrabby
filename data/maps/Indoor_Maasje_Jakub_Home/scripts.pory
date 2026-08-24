@@ -1,0 +1,193 @@
+mapscripts Indoor_Maasje_Jakub_Home_MapScripts {}
+
+script Indoor_Maasje_Jakub_Home_JakubConvo {
+    lock
+    faceplayer    
+    if (flag(FLAG_JAKUB_CONVO)== FALSE){
+    setflag(FLAG_JAKUB_CONVO)
+    setspeaker("JACOB")
+    msgbox(format("Ah!\n You made it!\pAs you can see, the crisis has been averted.\p The Krabby are back to their peaceful, sand-scuttling selves.\pMy wife has...\p ...mostly forgiven me.\pHere, take a look at this:"))    
+    setspeaker(NULL)
+    giveitem(ITEM_SCANNER)
+    setspeaker("JACOB")
+    msgbox(format("I found it on the way out of Crabhill.\pIt must have been dropped by that strange man when he fled the scene.\pIt is fried, but it proves he was up to something nasty.\pI've heard rumors about a group called The Faculty.\pThey talk about 'optimizing nature,' but this looked like some form of mind control.\pApparently they all wear a sleek, brown uniform.\p..."))
+    waitmessage
+    playse(SE_PIN)
+    applymovement(3, moves(emote_exclamation_mark))
+    waitmovement
+    setspeaker("JACOB")
+    msgbox(format("You got send by PROF. BIRDS?\p...\pTo scan the Shiny Krabby? The Golden King?\pThat is... not totally unexpected...\p...\pSo you are his newest intern... the 596th in 3 years...\pIf I were you I would NOT go back to PROF. BIRDS yet!\pIf he finds out you saw the Golden Krabby, the Michelangelo of crustaceans, and didn't get a single sensor reading?\pHe will be crushed!\pHe might actually fire you again for 'gross incompetence,' and crush you dream of becoming a great Pokemon Researcher.\pI would advise you to go to Mist City and find my friend DAAN.\pHe is a bit... earthy. Loves nature. A bit of a tree hugger.\pBut he is also a POKEMON RESEARCHER himself, and possibly can decode the readings of this device the moments before it got fried by the Shiny Krabby.\pMaybe that can help you in your search for this magnificant creature.\pWell, what do you say?\pAre you ready for an adventure?\p..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_question_mark))
+    delay(120)
+    msgbox(format("...no?\pHmmm... I get it... this is all a bit much for a first day as an intern.\pMaybe you could check out the local gym?\p That might be an opportunity to boost your confidence.\pThe GYM LEADER is an old man, but don't underestimate him.\pI think a well trained crustacean can help you out there, no bias ofcourse...\pGood luck!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    if(flag(FLAG_BADGE01_GET) == TRUE){
+        playse(SE_PIN)
+        applymovement(3, moves(emote_exclamation_mark))
+        waitmovement
+        setflag(FLAG_JAKUB_CONVO_2)
+        setspeaker("JACOB")
+        msgbox(format("...\pWHAT?!\pYOU ALREADY BEAT HIM?\pLet me be clear, {PLAYER}you might be the 596th intern of PROF. BIRDS...\p...but I think you get what it takes to have PROF. BIRDS actually hire you with a salary!\pMist City for interns like you is just around the corner!\pJust follow the path north until you see some big waterfalls.\pAt the the top of the falls you will find Mist City shrouded in clouds and rain.\pI'll call ahead and make sure DAAN is aware of your arrival.\pIf you leave now you'll be back to ERP TOWN before your mom even starts to worry!"),MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    release
+    end
+    }
+    if(flag(FLAG_BADGE01_GET) == FALSE) {
+        setspeaker("JACOB")
+        msgbox(format("The gym is up the hill!\pGood luck with training!\pI think the cliffs along the coast are a good place to challenge yourself."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+    if(flag(FLAG_BADGE01_GET) == TRUE && flag(FLAG_JAKUB_CONVO_2) == FALSE){
+        setflag(FLAG_JAKUB_CONVO_2)
+        setspeaker("JACOB")
+        msgbox(format("...\pWHAT?!\pYOU ALREADY BEAT HIM?\pLet me be clear, {PLAYER}, you might be the 596th intern of PROF. BIRDS, but I think you get what it takes to have PROF. BIRDS actually hire you with a salary.\pMist City for interns like you is just around the corner!\pJust follow the path north until you see some big waterfalls.\pAt the the top of the falls you will find Mist City shrouded in clouds and rain.\pI'll call ahead and make sure DAAN is aware of your arrival.\pIf you leave now you'll be back to ERP TOWN before your mom even starts to worry!"),MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+    if(flag(FLAG_BADGE01_GET) == TRUE && flag(FLAG_JAKUB_CONVO_2) == TRUE){
+           setspeaker("JACOB")
+            msgbox(format("Thank you so much for everything.\pI still want to catch that Golden Krabby one time.\pI can't stop thinking about it..."),MSGBOX_AUTOCLOSE)
+            waitmessage 
+    }
+    
+    release
+    end
+}
+
+script Indoor_Maasje_JacobChecksonGeorge {
+    getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
+    if(var(VAR_TEMP_0) == 2 && var(VAR_TEMP_1) == 5){
+        playse(SE_PIN)
+        applymovement(3, moves(emote_exclamation_mark))
+        waitmovement
+        delay(60)
+        setspeaker("JACOB")
+        msgbox(format("GEORGEEE, COME HERE, GET OUTSIDE!!"),MSGBOX_AUTOCLOSE)
+        delay(60)
+        applymovement(3, moves(walk_left walk_down*4 walk_right*7))
+        waitmovement
+        delay(60)
+        setspeaker("JACOB")
+        msgbox(format("PUT THAT GAMEBOY DOWN..."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        delay(60)
+        setspeaker("JACOB")
+        msgbox(format("NO I DID NOT DO THAT WHEN I WAS YOUNG!...."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        delay(60)
+        setspeaker("JACOB")
+        msgbox(format("ARGHH NEVERMIND...."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        delay(60)
+        applymovement(3,moves(walk_left*7 walk_up*4 walk_right))
+        waitmovement     
+        faceplayer
+        return      
+        }
+    else {
+        playse(SE_PIN)
+        applymovement(3, moves(emote_exclamation_mark))
+        waitmovement
+        delay(60)
+        setspeaker("JACOB")
+        msgbox(format("GEORGEEE, COME HERE, GET OUTSIDE!!"),MSGBOX_AUTOCLOSE)
+        delay(60)
+        applymovement(3, moves(walk_down*4 walk_right*6))
+        waitmovement
+        delay(60)
+        setspeaker("JACOB")
+        msgbox(format("PUT THAT GAMEBOY DOWN..."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        delay(60)
+        setspeaker("JACOB")
+        msgbox(format("NO I DID NOT DO THAT WHEN I WAS YOUNG!...."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        delay(60)
+        setspeaker("JACOB")
+        msgbox(format("ARGHH NEVERMIND...."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        delay(60)
+        applymovement(3,moves(walk_left*6 walk_up*4))
+        waitmovement
+        faceplayer
+        return
+    }
+    return
+    
+}
+
+script Indoor_Maasje_Jakub_Home_SiennaConvo {
+    lock
+    faceplayer
+    setspeaker("SIENNA")
+    msgbox(format("Thanks for helping my husband!\p He has been more at peace since the Krabby's have been acting normal again."))
+    release
+}
+
+script Indoor_Maasje_Jacob_Home_Sienna1 {
+    lock
+    hidefollower
+    faceplayer
+    playse(SE_PIN)
+    applymovement(4,moves(emote_exclamation_mark))
+    waitmovement
+    if (flag(FLAG_SHINY_KRABBY_ENCOUNTER) == FALSE && flag(FLAG_SIENNA_CONVO) == FALSE){
+    applymovement(LOCALID_PLAYER,moves(jump_right face_left))
+    setspeaker("SIENNA")
+    msgbox(format("EEEEK! Stay back!\p...Oh, thank goodness, you're human!\pBe queit, before they hear us!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER,moves(face_down))
+    applymovement(4,moves(walk_fast_right walk_fast_up walk_fast_right*2 walk_fast_down))
+    waitmovement
+    delay(120)
+    applymovement(4,moves(walk_fast_up walk_fast_left*2 walk_fast_down face_right))
+    applymovement(LOCALID_PLAYER,moves(face_left))
+    waitmovement
+    setspeaker("SIENNA")
+    msgbox(format("I don't think they noticed...\pIt's a nightmare!\nThe whole town has been overrun!\p The Krabby... they're usually such peaceful creatures, scuttling along the sand.\pBut this morning, they just... snapped!\p They're swarming the streets, pinching everything in sight!\pWait...\p...you are looking for my husband aren't you...\pWell join the club!\pWhen the invasion started, he couldn't just sit by.\pKrabby are his absolute favorite Pokémon, you see?\pIt breaks his heart to see them acting so aggressive\pand wrong...\pHe was convinced something on their breeding grounds must be disturbing them.\pHe grabbed his old fishing gear and ran off toward Crabhill hours ago... but he didn't even ask permission!\pPlease, you have to find him!\pCrabhill is the rocky hill to the west; you can cross the sandbar while the tide is still low.\p I have to stay here and protect my poor, terrified George!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(4,moves(face_left))
+    delay(60)
+    applymovement(1,moves(face_right))
+    setspeaker("GEORGE")
+    msgbox(format("Mom, seriously, keep it down.\pI'm on the last level and if I lose my last life because you're yelling about crabs, I'm gonna lose it."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(1,moves(face_down))
+    applymovement(4,moves(walk_left))
+    waitmovement
+    setflag(FLAG_SIENNA_CONVO )
+    release
+    end
+    }
+    if(flag(FLAG_SHINY_KRABBY_ENCOUNTER) == FALSE && flag(FLAG_SIENNA_CONVO) == TRUE){
+    setspeaker("SIENNA")
+    msgbox(format("JEZUS! Please stop jump scaring me.\pPlease! Go to Crabhill and find JACOB!\pIf anyone can figure out why the Krabby are going crazy, it's him..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(4,moves(face_left))
+    waitmovement
+    clearflag(FLAG_TEMP_HIDE_FOLLOWER)
+    release
+    end
+    }
+
+}
+
+script Indoor_Maasje_Jakub_Home_GeorgeConvo {
+    lock
+    faceplayer
+    if(flag(FLAG_SHINY_KRABBY_ENCOUNTER) == FALSE){
+    setspeaker("GEORGE")
+    msgbox(format("Dad says that I can't be on my GameBoy the entire time.\p I'm sure he did the same thing back in the day. "))
+    }
+    else{
+        setspeaker("GEORGE")
+        msgbox(format("Last night I saw my dad play on his own gameboy.\p I'm sure as hell not going outside."))
+    }
+    release
+}

@@ -5,7 +5,7 @@
 #define WEATHER_SUNNY_CLOUDS            1
 #define WEATHER_SUNNY                   2
 #define WEATHER_RAIN                    3
-#define WEATHER_SNOW                    4   // Unused
+#define WEATHER_SNOW                    4
 #define WEATHER_RAIN_THUNDERSTORM       5
 #define WEATHER_FOG_HORIZONTAL          6
 #define WEATHER_VOLCANIC_ASH            7
@@ -17,6 +17,10 @@
 #define WEATHER_DOWNPOUR                13
 #define WEATHER_UNDERWATER_BUBBLES      14
 #define WEATHER_ABNORMAL                15  // The alternating weather during Groudon/Kyogre conflict
+#define WEATHER_CLUB_LIGHTS             16  // Flashing lights effect for indoor club/disco
+#define WEATHER_SNOW_LIGHT              17
+#define WEATHER_SNOW_HEAVY              18
+#define WEATHER_SNOW_BLIZZARD           19
 #define WEATHER_ROUTE119_CYCLE          20
 #define WEATHER_ROUTE123_CYCLE          21
 #define WEATHER_FOG                     22  // Aggregate of WEATHER_FOG_HORIZONTAL and WEATHER_FOG_DIAGONAL
@@ -37,6 +41,9 @@
 #define COORD_EVENT_WEATHER_SANDSTORM           9
 #define COORD_EVENT_WEATHER_SHADE               10
 #define COORD_EVENT_WEATHER_DROUGHT             11
+#define COORD_EVENT_WEATHER_SNOW_LIGHT          12
+#define COORD_EVENT_WEATHER_SNOW_HEAVY          13
+#define COORD_EVENT_WEATHER_SNOW_BLIZZARD       14
 #define COORD_EVENT_WEATHER_ROUTE119_CYCLE      20
 #define COORD_EVENT_WEATHER_ROUTE123_CYCLE      21
 

@@ -1,0 +1,44 @@
+mapscripts Maasje_Coastal_Cave2_MapScripts {}
+
+script Maasje_Coastal_Cave2_Hiker {
+    lock
+    faceplayer
+    if (flag(FLAG_ITEM_COASTAL_CAVE2_QUICK_CLAW) == FALSE) {
+        msgbox(format("The tide pushes all kinds of things into these caves.\pFound this wedged between two rocks near the back wall.\pSharp. Curved. Some kind of claw.\pCould be from a sea creature. Something large.\pI'm a fossil hunter, not a biologist - here, you take it."))
+        waitmessage
+        giveitem(ITEM_QUICK_CLAW)
+        waitmessage
+        setflag(FLAG_ITEM_COASTAL_CAVE2_QUICK_CLAW)
+        msgbox(format("Speaking of which, I'm down here looking for fossils.\pIf you ever find one, come and find me."), MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    else {
+        if (flag(FLAG_ITEM_TRADED_DOME_FOSSIL) == FALSE) {
+            msgbox(format("Still hunting down here.\pYou haven't come across any fossils, have you?"))
+            waitmessage
+            checkitem(ITEM_HELIX_FOSSIL)
+            if (var(VAR_RESULT) == TRUE) {
+                msgbox(format("...\pWow, that HELIX fossil looks amazing!\pDo you want to trade it for my DOME fossil?"), MSGBOX_YESNO)
+                waitmessage
+                if (var(VAR_RESULT) == TRUE) {
+                    removeitem(ITEM_HELIX_FOSSIL)
+                    msgbox(format("{PLAYER} handed over the HELIX fossil."))
+                    waitmessage
+                    giveitem(ITEM_DOME_FOSSIL)
+                    msgbox(format("Thank you. My collection is complete now!"))
+                    setflag(FLAG_ITEM_TRADED_DOME_FOSSIL)
+                }
+                else {
+                    msgbox(format("Too bad. Come back if you ever change your mind."), MSGBOX_AUTOCLOSE)
+                    waitmessage
+                }
+            }
+        }
+        else {
+            msgbox(format("Thanks for the trade. My collection is complete now!"), MSGBOX_AUTOCLOSE)
+            waitmessage
+        }
+    }
+    release
+    end
+}

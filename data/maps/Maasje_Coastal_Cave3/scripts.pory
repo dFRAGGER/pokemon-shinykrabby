@@ -1,0 +1,19 @@
+mapscripts Maasje_Coastal_Cave3_MapScripts {}
+
+script Maasje_Coastal_Cave3_EventScript_Winston {
+    trainerbattle_single(TRAINER_WINSTON_1, Maasje_Coastal_Cave3_Text_WinstonIntro, Maasje_Coastal_Cave3_Text_WinstonDefeated)
+    msgbox(Maasje_Coastal_Cave3_Text_WinstonPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Maasje_Coastal_Cave3_Text_WinstonIntro {
+    format("Oh, sure, I'll accept your challenge.\nI have a lot of money.")
+}
+
+text Maasje_Coastal_Cave3_Text_WinstonDefeated {
+    format("Why couldn't I win?")
+}
+
+text Maasje_Coastal_Cave3_Text_WinstonPostBattle {
+    format("There are some things money can't buy.\nThat's POKéMON…")
+}

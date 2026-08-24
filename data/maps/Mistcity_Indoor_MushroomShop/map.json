@@ -1,0 +1,96 @@
+{
+  "id": "MAP_MISTCITY_INDOOR_MUSHROOM_SHOP",
+  "name": "Mistcity_Indoor_MushroomShop",
+  "layout": "LAYOUT_MISTCITY_INDOOR_MUSHROOM_SHOP",
+  "music": "MUS_FORTREE",
+  "region_map_section": "MAPSEC_MIST_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_INDOOR",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ROXANNE",
+      "x": 8,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Mistcity_Indoor_MushroomShop_MushroomGirl",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VILEPLUME)",
+      "x": 2,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Mushroom_Vileplume",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_MIST_CITY",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_MIST_CITY",
+      "dest_warp_id": "14"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 9,
+      "y": 4,
+      "elevation": 0,
+      "item": "ITEM_TINY_MUSHROOM",
+      "flag": "FLAG_HIDDEN_ITEM_SHROOMSHOP_TINY_MUSHROOM"
+    },
+    {
+      "type": "hidden_item",
+      "x": 2,
+      "y": 6,
+      "elevation": 0,
+      "item": "ITEM_BALMMUSHROOM",
+      "flag": "FLAG_HIDDEN_ITEM_SHROOMSHOP_BALM_MUSHROOM"
+    },
+    {
+      "type": "hidden_item",
+      "x": 10,
+      "y": 7,
+      "elevation": 0,
+      "item": "ITEM_BIG_MUSHROOM",
+      "flag": "FLAG_HIDDEN_ITEM_SHROOMSHOP_BIG_MUSHROOM"
+    },
+    {
+      "type": "hidden_item",
+      "x": 1,
+      "y": 4,
+      "elevation": 0,
+      "item": "ITEM_MAX_MUSHROOMS",
+      "flag": "FLAG_HIDDEN_ITEM_SHROOMSHOP_MAX_MUSHROOM"
+    }
+  ],
+  "game_version": "hns"
+}

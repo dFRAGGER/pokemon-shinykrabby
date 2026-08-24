@@ -1,0 +1,379 @@
+mapscripts LionsarchCity_Indoor_PeterBasementParty_MapScripts {}
+
+// The secret disco basement club
+
+script DiscoBasement_DJ_Peter {
+    lock
+    faceplayer
+    setspeaker("DJ PETER")
+    // Check if player has delivered the package
+    if (flag(FLAG_DELIVERED_ALIS_PACKAGE_TO_PETER)) {
+        // Already delivered, check if got Dancing Boots
+        if (flag(FLAG_RECEIVED_CLIMBING_ROPE)) {
+            setspeaker("DJ PETER")
+            if (flag(FLAG_STEEL_FACTORY_COMPLETE)) {
+                if (flag(FLAG_PETER_GAVE_FACTORY_REWARD)) {
+                    msgbox(format("Seriously, you did it.\pThe Faculty's gone, the factory's quiet, and I can finally breathe again.\pParty's louder than ever down here.\pThat's all thanks to you."))
+                } else {
+                    msgbox(format("You actually did it.\pI didn't think... I mean, I KNEW you could do it.\pBut still.\pThe Faculty. Gone. From my city."))
+                    waitmessage
+                    setspeaker("DJ PETER")
+                    msgbox(format("Look, I owe you.\pI had this stashed away for a while.\pGot it the hard way, if you know what I mean.\pThere was a period in my life where I ran a little... HOT.\pToo hot.\pLike, everything-on-fire-including-myself hot.\pNot my proudest chapter."))
+                    waitmessage
+                    setspeaker("DJ PETER")
+                    msgbox(format("Point is, I learned a thing or two about Overheat.\pNot the kind you want to experience personally, trust me.\pBut the kind your Pokemon can actually USE?\pThat's a different story.\pHere. Take the TM.\pYou'll do more good with it than I ever did."))
+                    waitmessage
+                    giveitem(ITEM_TM38)
+                    setflag(FLAG_PETER_GAVE_FACTORY_REWARD)
+                    setspeaker("DJ PETER")
+                    msgbox(format("Now get back out there.\pAnd hey... stay funky."))
+                }
+            } elif (flag(FLAG_STEEL_FACTORY_TUNNEL_OPEN)) {
+                msgbox(format("Welcome back to the GROOVE ZONE!\pYou making progress in there?\pThat factory's been giving me the creeps for years.\pGood to know someone's finally poking around."))
+            } elif (flag(FLAG_PETER_GAVE_TUNNEL_PERMISSION)) {
+                msgbox(format("Tunnel's still open on our end.\pPaolo will let you through.\pGet in there and find out what they're really building."))
+            } elif (flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)) {
+                msgbox(format("Hey... you're back.\pYou've got that look.\pLike you've just been somewhere you weren't supposed to be.\p...What happened?"))
+                waitmessage
+                setspeaker("DJ PETER")
+                msgbox(format("...\pThey pushed you into a CREVASSE?!\pI always knew the Faculty played dirty.\pBut throwing someone into a pit..."))
+                waitmessage
+                setspeaker("DJ PETER")
+                msgbox(format("And they've already moved everything to the factory.\pThis is escalating faster than I thought."))
+                waitmessage
+                setspeaker("DJ PETER")
+                msgbox(format("I've been watching those people dig into those mountains for months.\pEvery week the shipments get bigger.\pEvery week the tremors get worse."))
+                waitmessage
+                setspeaker("DJ PETER")
+                msgbox(format("I can't sit on this anymore.\pYou need to get into that factory.\pLuckely I know a way in that the Faculty doesn't."))
+                waitmessage
+                setspeaker("DJ PETER")
+                msgbox(format("There's a tunnel running from this basement straight to the factory's lower level.\pOld smuggling route.\pThe Faculty thinks they sealed their end years ago.\pThey didn't seal ours."))
+                waitmessage
+                setspeaker("DJ PETER")
+                msgbox(format("Paolo guards the entrance down here.\pI'll tell him you have my blessing to go through.\pGet in there.\pFind out what they're really building.\pAnd be careful."))
+                waitmessage
+                setflag(FLAG_PETER_GAVE_TUNNEL_PERMISSION)
+                setflag(FLAG_HIDE_RECTOR_ELECTABUZZ_AFTER_BATTLE)
+            } else {
+                msgbox(format("Hey, you're still kicking around Lionsarch!\pGood to see you.\pSomething's been feeling off up in those mountains lately.\pStay funky out there."))
+            }
+        } else {
+            // This shouldn't happen, but handle it
+            setspeaker("DJ PETER")
+            msgbox(format("Hey, thanks again for the delivery!\pDon't forget you've still got those boots of mine!"))
+        }
+    } elif (checkitem(ITEM_SOOT_SACK, 1)) {
+        // Player has the package from Ali
+        setspeaker("DJ PETER")
+        msgbox(format("Wait... that smell...\pIs that what I think it is?"))
+        waitmessage
+        setspeaker("DJ PETER")
+        msgbox(format("You brought the goods from Ali!\pMy man! This is exactly what I needed!\pThe party can really get started now!"))
+        waitmessage
+        removeitem(ITEM_SOOT_SACK, 1)
+        setflag(FLAG_DELIVERED_ALIS_PACKAGE_TO_PETER)
+        setspeaker("DJ PETER")
+        msgbox(format("Let me return the favor - first round of dancing is on the house!"))
+        waitmessage
+        setspeaker("DJ PETER")
+        msgbox(format("...\pNo?\pYou don't want to dance?\pYou've got that look.\pSomeone with places to be.\pTough crowd!"))
+        waitmessage
+        setspeaker("DJ PETER")
+        msgbox(format("Alright, let me return the favor another way.\pWhen I first rolled into Lionsarch, I had nothing.\pNo gig, no place, no plan.\pJust a pair of boots and a whole lot of nerve."))
+        waitmessage
+        setspeaker("DJ PETER")
+        msgbox(format("Nights I'd dance in 'em right here on this floor.\pDays I'd climb the Lion Mountains in the same pair.\pUp those rocky ridges before the sun got too high.\pSame boots. Same rhythm. Different terrain."))
+        waitmessage
+        setspeaker("DJ PETER")
+        msgbox(format("I got new ones eventually.\pBut these old ones deserve someone who'll actually use 'em.\pHere. Take 'em.\pThey'll get you places."))
+        waitmessage
+        giveitem(ITEM_CLIMBING_ROPE)
+        setflag(FLAG_RECEIVED_CLIMBING_ROPE)
+        setspeaker("DJ PETER")
+        msgbox(format("Come back sometime, yeah?\pThere's more down here than just good music.\pYou talk to the right people... you'd be surprised what doors open."))
+        waitmessage
+        setspeaker("DJ PETER")
+        msgbox(format("Now get out there.\pAnd remember... stay funky!"))
+    } else {
+        // Normal dialogue
+        setspeaker("DJ PETER")
+        msgbox(format("Welcome to the GROOVE ZONE!\pThis is where the real party happens!\pOld school disco, baby!\pNone of that modern stuff - just pure, unadulterated FUNK!"))
+    }
+    waitmessage
+    release
+}
+
+// Guard near the DJ stage - grants access after hearing about Ali's stash
+script DiscoBasement_Guard_DJStage {
+    lock
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    faceplayer
+    setspeaker("BOUNCER CARLO")
+    if (flag(FLAG_BASEMENT_DJ_STAGE_ACCESS)) {
+        setspeaker("BOUNCER CARLO")
+        msgbox(format("Alright, you're cool.\pOur VIPs can go where ever they want.\pEnjoy the party!"))
+        applymovement(10, moves(walk_right face_left))
+        if(var(VAR_TEMP_0) == 21 && var(VAR_TEMP_1) == 5){
+            applymovement(LOCALID_PLAYER, moves(walk_right walk_up))
+            waitmovement
+            applymovement(10, moves(walk_left face_down))
+        }
+        elif(var(VAR_TEMP_0) == 22 && var(VAR_TEMP_1) == 6){
+            applymovement(LOCALID_PLAYER, moves(walk_up*2))
+            waitmovement
+            applymovement(10, moves(walk_left face_down))
+        }
+        elif(var(VAR_TEMP_0) == 22 && var(VAR_TEMP_1) == 4){
+            applymovement(LOCALID_PLAYER, moves(walk_down*2))
+            waitmovement
+            applymovement(10, moves(walk_left face_down))
+        }
+        waitmovement
+    } elif (checkitem(ITEM_SOOT_SACK, 1)) {
+        setspeaker("BOUNCER CARLO")
+        msgbox(format("Hey, hold up.\pNobody gets past me without clearance.\p..."))
+        waitmessage
+        setspeaker("BOUNCER CARLO")
+        msgbox(format("Wait... is that Ali's stash you're carrying?\pI can smell it from here!\pDamn, that's the good stuff!"))
+        waitmessage
+        setspeaker("BOUNCER CARLO")
+        msgbox(format("Alright, you're clearly here on business.\pPeter's gonna want to see you.\pGo on through, VIP access granted!"))
+        waitmessage
+        setflag(FLAG_BASEMENT_DJ_STAGE_ACCESS)
+        setspeaker("BOUNCER CARLO")
+        msgbox(format("Tell Peter I said what's up!"))
+        applymovement(10, moves(walk_right face_left))
+        if(var(VAR_TEMP_0) == 21 && var(VAR_TEMP_1) == 5){
+            applymovement(LOCALID_PLAYER, moves(walk_right walk_up))
+            waitmovement
+            applymovement(10, moves(walk_left face_down))
+        }
+        elif(var(VAR_TEMP_0) == 22 && var(VAR_TEMP_1) == 6){
+            applymovement(LOCALID_PLAYER, moves(walk_up*2))
+            waitmovement
+            applymovement(10, moves(walk_left face_down))
+        }
+        elif(var(VAR_TEMP_0) == 22 && var(VAR_TEMP_1) == 4){
+            applymovement(LOCALID_PLAYER, moves(walk_down*2))
+            waitmovement
+            applymovement(10, moves(walk_left face_down))
+        }
+        waitmovement
+    } else {
+        setspeaker("BOUNCER CARLO")
+        msgbox(format("Hey, VIP area only past this point.\pNo entry without clearance from the boss.\pYou want in? Talk to someone who knows someone."))
+    }
+    waitmessage
+    release
+}
+
+// Guard near entrance - talks about the smuggling tunnel
+script DiscoBasement_Guard_Tunnel {
+    lockall
+    faceplayer
+    setspeaker("BOUNCER PAOLO")
+    if (flag(FLAG_STEEL_FACTORY_TUNNEL_OPEN)) {
+        msgbox(format("Peter said to let you through.\pWatch yourself in there.\pThe Faculty doesn't take kindly to uninvited guests."), MSGBOX_AUTOCLOSE)
+        waitmessage
+        releaseall
+        end
+    }
+    if (flag(FLAG_PETER_GAVE_TUNNEL_PERMISSION)) {
+        msgbox(format("Just got the clearance over the radio from Peter.\pSaid you did him a solid.\pHe asked me to let you through the tunnel, the keys are in the door.\p Be careful in there, alright?"), MSGBOX_AUTOCLOSE)
+        waitmessage
+        setflag(FLAG_STEEL_FACTORY_TUNNEL_OPEN)     
+        releaseall
+        end
+    }
+    msgbox(format("You see that old tunnel over there?\pIt used to run all the way to the Iron Factory.\pBack in the day, it was a smuggling route.\pDirect link from the harbor, if you know what I mean."))
+    waitmessage
+    setspeaker("BOUNCER PAOLO")
+    msgbox(format("Used to move all kinds of... 'merchandise' through there.\pNo customs, no questions asked.\pThe good old days, you know?"))
+    waitmessage
+    setspeaker("BOUNCER PAOLO")
+    msgbox(format("But then the Faculty took over the factory.\pThey sealed the whole thing up.\pNow only Peter and the Faculty have the keys.\pRest of us are locked out for good.\pPeter told me to not let anyone near it, so... here I am, doing my part to keep the secrets safe."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    releaseall
+}
+
+// Machoke guard
+script DiscoBasement_Guard_Machoke {
+    lockall
+    faceplayer
+    setspeaker("MACHOKE")
+    msgbox(format("MACHOKE! CHOKE!"))
+    waitmessage
+    releaseall
+}
+
+// Another guard staring at the dancers together with machoke
+script DiscoBasement_Guard_Staring {
+    lockall
+    faceplayer
+    setspeaker("BOUNCER MARCO")
+    msgbox(format("Man, look at those dancers go!\pPeter really knows how to throw a party!\pI could watch them dance all night!"))
+    waitmessage
+    releaseall
+}
+// Giel watching the girls and getting rejected
+script DiscoBasement_Giel {
+    lock
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    faceplayer
+    setspeaker("GIEL")
+    if (flag(FLAG_GIEL_LEFT_BASEMENT)) {
+        // This shouldn't trigger as Giel should be gone
+        releaseall
+        end
+    }
+    setspeaker("GIEL")
+    msgbox(format("Oh hey, it's you!\pSmall world, right?\pI got here way faster than you.\pI know people, you see. Connections."))
+    waitmessage
+    setspeaker("GIEL")
+    msgbox(format("When you mentioned Lionsarch City back in Siltroot Town, I got inspired.\pThought I'd check out the scene here.\pMaybe meet some intellectuals who appreciate fine conversation."))
+    waitmessage
+    // Look at the girls
+    applymovement(7, moves(face_left))
+    waitmovement
+    if(var(VAR_TEMP_0) == 16 && var(VAR_TEMP_1) == 8){
+        applymovement(LOCALID_PLAYER, moves(walk_down walk_right face_left))
+    }
+    
+    delay(30)
+    setspeaker("GIEL")
+    msgbox(format("See those lovely ladies over there?\pI've been trying to impress them with my knowledge.\pWatch this!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(7, moves(walk_left))
+    waitmovement
+    
+    setspeaker("GIEL")
+    msgbox(format("Hey Ladies!!\pDid you know about the historical conflicts in the Kanto region?\pFascinating stuff, really.\pThe war between Celadon and Saffron...\pThe trade disputes of Vermilion Harbor...\pClassic historical drama!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    // Girl 1 pushes back
+    playse(SE_PIN)
+    applymovement(4, moves(emote_exclamation_mark face_right))
+    waitmovement
+    setspeaker(NULL)
+    msgbox(format("Ugh, this guy again?\pNobody wants to hear about ancient wars!\pWe're trying to DANCE here!"))
+    waitmessage
+    playse(SE_PIN)
+    applymovement(5, moves(emote_exclamation_mark face_right))    
+    waitmovement
+    msgbox(format("Seriously, take the hint!\pYou've been hovering around us all night!\pSo creepy!"))
+    waitmessage
+    playse(SE_PIN)
+    applymovement(6, moves(emote_exclamation_mark face_right))
+    waitmovement
+    msgbox(format("Security! Can someone get this weirdo away from us?!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(7, moves(walk_right face_player))
+    waitmovement    
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)    
+    setspeaker("GIEL")
+    msgbox(format("FINE!\pI see how it is!\pYou just can't appreciate intellectual discourse!\pThis is what's wrong with society today!"))
+    waitmessage
+    setspeaker("GIEL")
+    msgbox(format("Women just don't appreciate a man who understands history!\pI try to share my knowledge and THIS is the thanks I get?!"))
+    waitmessage
+    setspeaker("GIEL")
+    msgbox(format("I'm done with this city!\pThe disco scene here is TERRIBLE anyway!\pI'm going back to Hezik City where people actually have CULTURE!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    // Giel storms out
+    if(var(VAR_TEMP_0) == 17 && var(VAR_TEMP_1) == 9){
+        applymovement(LOCALID_PLAYER, moves(jump_right face_down))
+    }
+    applymovement(LOCALID_PLAYER, moves(face_down))
+    applymovement(7, moves(walk_down*6))
+    waitmovement
+    setflag(FLAG_GIEL_LEFT_BASEMENT)
+    removeobject(7)
+    // Girls go back to dancing
+    applymovement(4, moves(face_up))
+    applymovement(5, moves(face_up))
+    applymovement(6, moves(face_up))
+    waitmovement    
+    release
+}
+
+script DiscoBasement_Dancer_1 {
+    lockall
+    faceplayer
+    msgbox(format("Can you FEEL it?!\pThe bass is hitting different tonight!\pI haven't stopped dancing for THREE HOURS!"))
+    releaseall
+}
+
+script DiscoBasement_Dancer_2 {
+    lockall
+    faceplayer
+    msgbox(format("This place is the best-kept secret in Lionsarch!\pNo Faculty goons, no harbor noise...\pJust pure vibes and disco lights!"))
+    releaseall
+}
+
+script DiscoBasement_Dancer_3 {
+    lockall
+    faceplayer
+    msgbox(format("PETER only plays vinyl.\pHe says digital music doesn't have the same soul.\pI don't know about that, but this music SLAPS!"))
+    releaseall
+}
+
+script DiscoBasement_Chillaxer {
+    lockall
+    faceplayer
+    msgbox(format("I needed this, you know?\pThe city above is all smog and industry.\pDown here, it's like traveling back to a better time."))
+    releaseall
+}
+
+script DiscoBasement_AliFriend {
+    lockall
+    faceplayer
+    msgbox(format("ALI from Siltroot Town hooks PETER up with the good stuff.\pI mean... the good MUSIC.\pYeah. Definitely just music."))
+    releaseall
+}
+
+script DiscoBasement_Oldwoman {
+    lockall
+    faceplayer
+    msgbox(format("I used to come here when I was younger.\pPETER's been throwing parties here for decades!\pThe music's changed, but the vibe is still the same."))
+    releaseall
+}
+
+script DiscoBasement_DiscoBall {
+    lockall
+    msgbox(format("A massive disco ball spins overhead, scattering light across the room.\pIt's mesmerizing..."))
+    releaseall
+}
+
+script DiscoBasement_SpeakerSystem {
+    lockall
+    msgbox(format("The Loudred is blasting:\n'Le Freak' by Chic\p'FREAK OUT!'"))
+    releaseall
+}
+
+script DiscoBasement_VinylCollection {
+    lockall
+    msgbox(format("PETER's vinyl collection is MASSIVE.\pHundreds of records, all meticulously organized.\pThis must have cost a fortune!"))
+    releaseall
+}
+
+script DiscoBasement_TunnelEntrance_Check {
+    if (flag(FLAG_STEEL_FACTORY_TUNNEL_OPEN)) {
+        end
+    }
+    lockall
+    playse(SE_PIN)
+    applymovement(13, moves(emote_exclamation_mark))
+    waitmovement
+    setspeaker("BOUNCER PAOLO")
+    msgbox(format("Hey! You can't just walk in there.\pThat tunnel is off-limits.\pIf you want access, talk to me first."), MSGBOX_AUTOCLOSE)
+    applymovement(LOCALID_PLAYER, moves(walk_up))
+    waitmovement
+    releaseall
+    end
+}
+
+script DiscoBasement_SecretEntrance {
+    lockall
+    msgbox(format("A discrete entrance hidden behind a bookshelf upstairs.\pVery clever!"))
+    releaseall
+}

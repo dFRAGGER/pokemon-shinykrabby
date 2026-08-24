@@ -197,6 +197,17 @@ void Snow_InitVars(void);
 void Snow_Main(void);
 void Snow_InitAll(void);
 bool8 Snow_Finish(void);
+// ShinyKrabby custom weather (ported from custom maps)
+void SnowLight_InitVars(void);
+void SnowLight_InitAll(void);
+void SnowHeavy_InitVars(void);
+void SnowHeavy_InitAll(void);
+void SnowBlizzard_InitVars(void);
+void SnowBlizzard_InitAll(void);
+void ClubLights_InitVars(void);
+void ClubLights_Main(void);
+void ClubLights_InitAll(void);
+bool8 ClubLights_Finish(void);
 void Thunderstorm_InitVars(void);
 void Thunderstorm_Main(void);
 void Thunderstorm_InitAll(void);

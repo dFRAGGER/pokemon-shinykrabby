@@ -14,12 +14,12 @@ To edit and visualize HNS/FRLG maps, you want:
  
 To edit and visualize EMERALD maps, you want:
  
-#define NUM_TILES_IN_PRIMARY 512
-#define NUM_METATILES_IN_PRIMARY 512
-#define NUM_PALS_IN_PRIMARY 6
-#define NUM_TILES_IN_PRIMARY_EMERALD 640
-#define NUM_METATILES_IN_PRIMARY_EMERALD 640
-#define NUM_PALS_IN_PRIMARY_EMERALD 7
+#define NUM_TILES_IN_PRIMARY 640
+#define NUM_METATILES_IN_PRIMARY 640
+#define NUM_PALS_IN_PRIMARY 7
+#define NUM_TILES_IN_PRIMARY_EMERALD 512
+#define NUM_METATILES_IN_PRIMARY_EMERALD 512
+#define NUM_PALS_IN_PRIMARY_EMERALD 6
 */
 #define NUM_TILES_IN_PRIMARY 640
 #define NUM_METATILES_IN_PRIMARY 640
@@ -33,7 +33,7 @@ To edit and visualize EMERALD maps, you want:
 #define NUM_PALS_TOTAL 13
 #define MAX_MAP_DATA_SIZE 10240
 
-#define NUM_TILES_PER_METATILE 8
+#define NUM_TILES_PER_METATILE 12
 
 // Map coordinates are offset by 7 when using the map
 // buffer because it needs to load sufficient border

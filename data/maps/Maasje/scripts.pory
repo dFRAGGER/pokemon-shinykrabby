@@ -1,0 +1,412 @@
+mapscripts Maasje_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        call(Maasje_On_Transition)
+    }
+}
+
+script Maasje_On_Transition {
+    setflag(FLAG_VISITED_MAASJE)
+    clearflag(FLAG_DISABLE_FOLLOWER_POKEMON)
+}
+
+script Maasje_Sign_Welcome {
+    lock
+    msgbox(format("MASO TOWN\nHome to people, and crustaceans."),MSGBOX_SIGN)
+    waitmessage
+    release
+}
+
+script Maasje_Sign_Jakub_Home {
+    lock
+    msgbox(format("Jacob's House"))
+    waitmessage
+    release
+}
+
+script Maasje_Sign_Gym {
+    lock
+    msgbox(format("MASO Gym:\n Where sand rules the world."))
+    waitmessage
+    release
+}
+
+script Maasje_Sign_Hill {
+    lock
+    msgbox(format("{UP_ARROW} PokeGym\n{DOWN_ARROW} The beach"))
+    waitmessage
+    release
+}
+
+script Maasje_Sign_Beekeeper {
+    lock
+    msgbox(format("Beekeeper Smells's House"))
+    waitmessage
+    release
+}
+
+script Maasje_Sign_CrabHill {
+    lock
+    msgbox(format("CRAB HILL:\n WARNING! EASY TO GET LOST! TAKE CARE!"))
+    waitmessage
+    release
+}
+
+script Maasje_Tree_Boy_Cut {
+    lock
+    faceplayer
+    msgbox(format("The rain in the Cloud Forest makes trees grow back overnight.\pLuckely you only need a POKéMON that CAN learn Cut in your party - no need to actually teach it.\pMore room for the good moves, am I right!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+}
+
+script Maasje_Sign_NextRoute {
+    lock
+    msgbox(format("{UP_ARROW} The Cloud Forest\n Enter on own risk, or with a guide."))
+    waitmessage
+    release
+}
+
+script Maasje_Krabby_Cry {
+    playmoncry(SPECIES_KRABBY, CRY_MODE_NORMAL)
+}
+
+script Maasje_Collect_Honey_BeeHives {
+    lock
+    msgbox(format("You have collected honey from the beehive."))
+    release
+}
+
+script Maasje_PeteLongfellow_Crabs_Gymhill {
+    lock
+    faceplayer
+    setspeaker("PETE")
+    if (flag(FLAG_MET_PETE_LONGFELLOW_GYMHILL) == FALSE) {
+        setflag(FLAG_MET_PETE_LONGFELLOW_GYMHILL)
+        if (flag(FLAG_SHINY_KRABBY_ENCOUNTER) == FALSE) {
+            msgbox(format("Ah, a challenger! Or, no, LOOK at this, how am I supposed to-\p...sorry. Sorry.\pI'm Pete Longfellow, the gym leader here. For what that's worth right now.\pThe gym is CLOSED. Just look at them!\pIn all my years sailing every sea this world has to offer, through the pages of my finest geography books, of course, I have NEVER once come across behaviour like this. Never!\p...I just don't understand it.\pCome back another time. Please. Once this sorts itself out."), MSGBOX_AUTOCLOSE)
+        }
+        else {
+            msgbox(format("Oh - h-hello there.\pSorry, I'm Pete Longfellow, the gym leader. You catching me out here instead of in the gym is, frankly, a little humiliating.\pBut! Good news, the crabs seem back to normal. FINALLY.\p...They still need time to adjust and get back to the sea, though, so don't get any ideas.\pCome back at the end of the day and the gym is yours to challenge.\pUntil then, go have a look around town. Or something."), MSGBOX_AUTOCLOSE)
+        }
+    }
+    else {
+        if (flag(FLAG_SHINY_KRABBY_ENCOUNTER) == FALSE) {
+            msgbox(format("Still! Still not past these blasted crabs!\p...Come back another time. Once this sorts itself out."), MSGBOX_AUTOCLOSE)
+        }
+        else {
+            msgbox(format("Right, right, the crabs are back to normal, but they still need time before I can let anyone through.\pCome back at the end of the day, the gym will be ready.\p...Go look around town in the meantime, would you?"), MSGBOX_AUTOCLOSE)
+        }
+    }
+    waitmessage
+    release
+    end
+}
+
+script Maasje_Advice_Fisher_Crabhill {
+    lock
+    faceplayer
+    applymovement(60, moves(face_player))
+    if(flag(FLAG_RECEIVED_ESCAPE_ROPE) == FALSE){
+    msgbox(format("Whoa there, planning on going in?\pThat place can be a tricky maze. Here, take this with you, just in case."))
+    giveitem(ITEM_ESCAPE_ROPE)
+    setflag(FLAG_RECEIVED_ESCAPE_ROPE)
+    msgbox(format("It's an Escape Rope. A real lifesaver if you ever feel hopelessly lost!"))
+    waitmessage
+    }
+    else {
+        msgbox(format("Can you believe this whole place was once an underwater reef?\p Thanks to the tireless work of crabs, the reef grew over time, creating this safe haven for Pokémon."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Flag_Follower_Prep {
+    setflag(FLAG_DISABLE_FOLLOWER_POKEMON)
+}
+
+script Maasje_Beehive_01 {
+    lock
+    if(flag(FLAG_START_COLLECTING_HONEY) == TRUE){
+    if(flag(FLAG_CLEAR_BEEHIVE_01) == FALSE){
+        msgbox(format("This beehive seems full of honey, do you want to collect it?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{PLAYER} collected the honey."))
+            addvar(VAR_BEEKEEPER_GEURTS, 1)
+            setflag(FLAG_CLEAR_BEEHIVE_01)
+            waitmessage
+        }
+    }
+    else{
+        msgbox(format("The beehive is empty. Better look for another hive."))
+        waitmessage
+    }
+    }
+    else{
+        msgbox(format("It's a beehive, better not touch it."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Beehive_02 {
+    lock
+    if(flag(FLAG_START_COLLECTING_HONEY) == TRUE){
+    if(flag(FLAG_CLEAR_BEEHIVE_02) == FALSE){
+        msgbox(format("This beehive seems full of honey, do you want to collect it?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{PLAYER} collected the honey."))
+            addvar(VAR_BEEKEEPER_GEURTS, 1)
+            setflag(FLAG_CLEAR_BEEHIVE_02)
+            waitmessage
+        }
+    }
+    else{
+        msgbox(format("The beehive is empty. Better look for another hive."))
+        waitmessage
+    }
+    }
+    else{
+        msgbox(format("It's a beehive, better not touch it."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Beehive_03 {
+    lock
+    if(flag(FLAG_START_COLLECTING_HONEY) == TRUE){
+    if(flag(FLAG_CLEAR_BEEHIVE_03) == FALSE){
+        msgbox(format("This beehive seems full of honey, do you want to collect it?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{PLAYER} collected the honey."))
+            addvar(VAR_BEEKEEPER_GEURTS, 1)
+            setflag(FLAG_CLEAR_BEEHIVE_03)
+            waitmessage
+        }
+    }
+    else{
+        msgbox(format("The beehive is empty. Better look for another hive."))
+        waitmessage
+    }
+    }
+    else{
+        msgbox(format("It's a beehive, better not touch it."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Beehive_04 {
+    lock
+    if(flag(FLAG_START_COLLECTING_HONEY) == TRUE){
+    if(flag(FLAG_CLEAR_BEEHIVE_04) == FALSE){
+        msgbox(format("This beehive seems full of honey, do you want to collect it?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{PLAYER} collected the honey."))
+            addvar(VAR_BEEKEEPER_GEURTS, 1)
+            setflag(FLAG_CLEAR_BEEHIVE_04)
+            waitmessage
+        }
+    }
+    else{
+        msgbox(format("The beehive is empty. Better look for another hive."))
+        waitmessage
+    }
+    }
+    else{
+        msgbox(format("It's a beehive, better not touch it."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Beehive_05 {
+    lock
+    if(flag(FLAG_START_COLLECTING_HONEY) == TRUE){
+    if(flag(FLAG_CLEAR_BEEHIVE_05) == FALSE){
+        msgbox(format("This beehive seems full of honey, do you want to collect it?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{PLAYER} collected the honey."))
+            addvar(VAR_BEEKEEPER_GEURTS, 1)
+            setflag(FLAG_CLEAR_BEEHIVE_05)
+            waitmessage
+        }
+    }
+    else{
+        msgbox(format("The beehive is empty. Better look for another hive."))
+        waitmessage
+    }
+    }
+    else{
+        msgbox(format("It's a beehive, better not touch it."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Beehive_06 {
+    lock
+    if(flag(FLAG_START_COLLECTING_HONEY) == TRUE){
+    if(flag(FLAG_CLEAR_BEEHIVE_06) == FALSE){
+        msgbox(format("This beehive seems full of honey, do you want to collect it?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{PLAYER} collected the honey."))
+            addvar(VAR_BEEKEEPER_GEURTS, 1)
+            setflag(FLAG_CLEAR_BEEHIVE_06)
+            waitmessage
+            playmoncry(SPECIES_VOLBEAT, CRY_MODE_ENCOUNTER)
+            msgbox(format("......BZZZZZZZZZZZZZZ"))
+            waitmessage
+            waitmoncry
+            createmon(1,0,SPECIES_VOLBEAT,8)
+            dowildbattle
+        }
+    }
+    else{
+        msgbox(format("The beehive is empty. Better look for another hive."))
+        waitmessage
+    }
+    }
+    else{
+        msgbox(format("It's a beehive, better not touch it."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Beehive_07 {
+    lock
+    if(flag(FLAG_START_COLLECTING_HONEY) == TRUE){
+    if(flag(FLAG_CLEAR_BEEHIVE_07) == FALSE){
+        msgbox(format("This beehive seems full of honey, do you want to collect it?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{PLAYER} collected the honey."))
+            addvar(VAR_BEEKEEPER_GEURTS, 1)
+            setflag(FLAG_CLEAR_BEEHIVE_07)
+            waitmessage
+        }
+    }
+    else{
+        msgbox(format("The beehive is empty. Better look for another hive."))
+        waitmessage
+    }
+    }
+    else{
+        msgbox(format("It's a beehive, better not touch it."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Beehive_08 {
+    lock
+    if(flag(FLAG_START_COLLECTING_HONEY) == TRUE){
+    if(flag(FLAG_CLEAR_BEEHIVE_08) == FALSE){
+        msgbox(format("This beehive seems full of honey, do you want to collect it?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{PLAYER} collected the honey."))
+            addvar(VAR_BEEKEEPER_GEURTS, 1)
+            setflag(FLAG_CLEAR_BEEHIVE_08)
+            waitmessage
+            playmoncry(SPECIES_ILLUMISE, CRY_MODE_ENCOUNTER)
+            msgbox(format("......BZZZZZZZZZZZZZZ"))
+            waitmessage
+            waitmoncry
+            createmon(1,0,SPECIES_ILLUMISE,8)
+            dowildbattle
+        }
+    }
+    else{
+        msgbox(format("The beehive is empty. Better look for another hive."))
+        waitmessage
+    }
+    }
+    else{
+        msgbox(format("It's a beehive, better not touch it."))
+        waitmessage
+    }
+    release
+}
+
+script Maasje_Joris_UpToTheWhiteLight {
+    lock
+    faceplayer
+    setflag(FLAG_UP_TO_THE_WHITELIGHT_MAASJE)
+    getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
+    msgbox(format("..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(5, moves(walk_in_place_fast_down))
+    delay(40)
+    setspeaker("?????")
+    msgbox(format("UP TO THE WHITELIGHT!!!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER,moves(emote_question_mark))
+    delay(40)
+    if(var(VAR_TEMP_0)== 49 && var(VAR_TEMP_1)== 34){
+        applymovement(5, moves(walk_fast_left walk_fast_down*7 walk_fast_left walk_fast_down*2))
+    }
+    else{
+        applymovement(5, moves(walk_fast_down*7 walk_fast_left*2 walk_fast_down*2))
+    }
+    waitmovement
+    removeobject(5)
+    release
+    
+}
+
+script Maasje_Evenscript_Rick {
+    trainerbattle_single(TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated)
+	msgbox(Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Maasje_Evenscript_Allen {
+    trainerbattle_single(TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated)
+	msgbox(Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Maasje_Eventscript_Ivan {
+	trainerbattle_single( TRAINER_IVAN, Route104_Text_IvanIntro, Route104_Text_IvanDefeat)
+	msgbox( Route104_Text_IvanPostBattle, MSGBOX_AUTOCLOSE)
+	end
+}
+
+script Maasje_Eventscript_Winston {
+	trainerbattle_single (TRAINER_WINSTON_1, Route104_Text_WinstonIntro, Route104_Text_WinstonDefeat) 
+	msgbox (Route104_Text_WinstonPostBattle, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Maasje_Eventscript_Maniac {
+    lock
+    faceplayer
+    if(flag(FLAG_SHINY_KRABBY_ENCOUNTER)==FALSE){
+    msgbox(format("This town is overrun by Krabby's.\pEverybody is scared to go outside.\pI still need groceries though, so I'm taking the risk!"))
+    release
+    end
+    }
+    else{
+        msgbox(format("Everybody is still shook by the infestation by those Krabby's.\p You won't seem them outside very often.\p Hopefully one day everyting will be back to normal."))
+        release
+        end
+    }
+}
+script Maasje_EventScript_Tiana {
+    trainerbattle_single(TRAINER_TIANA, Maasje_Text_TianaIntro, Maasje_Text_TianaDefeated)
+    msgbox(Maasje_Text_TianaPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Maasje_Text_TianaIntro {
+    format("I'm going to keep winning and aim\nto be the best TRAINER.\pHelp me further my career!")
+}
+
+text Maasje_Text_TianaDefeated {
+    format("I ended up furthering your career…")
+}
+
+text Maasje_Text_TianaPostBattle {
+    format("To keep winning my way up, I see that\nI have to catch more POKéMON.")
+}

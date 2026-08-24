@@ -1,0 +1,167 @@
+mapscripts Mistcity_Research_Center_MapScripts {MAP_SCRIPT_ON_TRANSITION{
+        call(DeepCloudforest_Healspot_OnTransition)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 7: Mistcity_Research_Center_ReturnRescueMissionDaan
+
+    ]
+}
+
+script Mistcity_Research_Center_Healspot_OnTransition {
+    setrespawn(HEAL_LOCATION_MIST_CITY)
+    end
+}
+
+script Mistcity_Research_Center_Hiker {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+        
+        msgbox(format("The Rangers gave the all-clear signal.\pI'm going to head back out there.\pI need to see for myself what kind of machine could leave tracks that deep in the mud."))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+        
+        msgbox(format("I've hiked those trails for twenty years, but the heavy tread marks I saw deep in the mud today were definitely not made by any Pokémon."))
+    }
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_Scientist {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+        
+        msgbox(format("Moisture levels are stabilizing rapidly.\pWhatever was draining the hydro-energy from the air has been shut down.\pThe forest is literally taking a deep breath again."))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+        
+        msgbox(format("The humidity levels in sector four dropped drastically today, almost as if something massive was sucking the moisture right out of the air to cool a machine."))
+    }
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_LittleGirl {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+        
+        msgbox(format("Is it safe now?\pMy daddy says the angry noise is gone.\pMaybe the Beedrills will be nice to us next time!"))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+        
+        msgbox(format("The nice ranger gave me a ride in the big truck because the Beedrills were chasing us way faster than they usually do!"))
+    }
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_DadBugCatcher {
+    lock
+    faceplayer
+    if (flag(FLAG_RESCUED_DAAN)){
+        
+        msgbox(format("Thank goodness that's over.\pWe're going to wait here a bit longer just to be safe, but the tension in the air is gone.\pMaybe we'll actually find that Heracross tomorrow."))
+    }
+    if(!flag(FLAG_RESCUED_DAAN)) {
+        
+        msgbox(format("We just wanted to look for Heracross, but the whole forest felt... angry; I'm just glad we got back on the last truck safely."))
+    }
+    waitmessage
+    release
+}
+
+script Mistcity_Research_Center_Daan_RescueMission2 {
+    lock
+    setflag(FLAG_DAAN_NASH_TRUCK)
+    if(var(VAR_MISTCITY_RESEARCH_CENTER_LOCATION)== 0) {
+    setspeaker("NASH")
+    msgbox(format("There you are.\pNo time to waste.\pDavid is already in the back of the truck.\pLets go!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(13,moves(walk_right walk_up*3 walk_right face_down))
+    applymovement(3, moves(walk_right*4 walk_up walk_right*6 walk_up*3 face_down))
+    applymovement(LOCALID_PLAYER, moves(walk_right*5 walk_up walk_right*6 walk_up*2))
+    waitmovement
+    setspeaker("NASH")
+    msgbox(format("Allright. Let's load you up!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(jump_left))
+    waitmovement
+    fadescreen(FADE_TO_BLACK)
+    warpsilent (MAP_INSIDE_OF_TRUCK, 1)
+    waitstate
+    }
+    if(var(VAR_MISTCITY_RESEARCH_CENTER_LOCATION)== 10) {
+        setspeaker("NASH")
+        msgbox(format("Hi {PLAYER}, good to see you again.\pDo you want to explore the Deep Cloud Forest?"),MSGBOX_YESNO)
+        waitmessage
+        if(var(VAR_RESULT)==YES) {
+            setspeaker("NASH")
+            msgbox(format("We currently don't have any drivers available, all the rangers are very busy.\pIf you come back tomorrow I might have a place for you somewhere in the back of a truck."))
+            waitmessage
+            release
+            end
+        }
+        if(var(VAR_RESULT)==NO){
+            setspeaker("NASH")
+            msgbox(format("No worries! Feel free to come back whenever you want, you did so much for this forest already!"),MSGBOX_AUTOCLOSE)
+            waitmessage
+            release
+            end
+        }
+    }
+
+}
+
+script Mistcity_Research_Center_ReturnRescueMissionDaan {
+    lock
+    applymovement(LOCALID_PLAYER, moves(jump_right))
+    waitmovement
+    setvar(VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 10)
+    delay(40)
+    applymovement(LOCALID_PLAYER, moves(walk_down*2 walk_left*5))
+    waitmovement
+    setspeaker("NASH")
+    msgbox(format("Whew.\nGlad to be back, but that was intense.\pRegisteel... I still can't believe they pulled it off."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(15, moves(face_left))
+    delay(40)
+    applymovement(15, moves(face_down))
+    delay(40)
+    applymovement(15, moves(face_up))
+    delay(40)
+    applymovement(15, moves(face_right))
+    delay(40)
+    setspeaker("NASH")
+    msgbox(format("I think Daan and David are already gone.\pSoon as the truck stopped, Daan bolted.\pHe was... furious. He's heading for that Faculty sympathizer's house, the one next to the gym.\p He wants to confront them, find out what they knew about the Registeel operation.\pI can't say I blame him, but he was seeing red."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(15, moves(walk_down))
+    applymovement(LOCALID_PLAYER, moves(face_down))
+    waitmovement
+    delay(40)
+    setspeaker("NASH")
+    msgbox(format("And then the weirdest part.\pDaan said something to David... just mumbled it.\pI couldn't make it out.\nBut the kid... he just lit up.\pThe biggest smile I've ever seen on him.\pThen he took off sprinting towards the Gym, of all places.\pAfter what we just saw?\n A smile?\p Baffles me.\p Maybe he's going to the gym archives there to research the 'Silent Guardian'?\pI don't know, but my head's spinning...."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    applymovement(15, moves(walk_up face_right))
+    applymovement(LOCALID_PLAYER, moves(face_left))
+    setspeaker("NASH")
+    msgbox(format("Anyway, you've got a clear path for now.\pI'd check in on Daan at that sympathizer house first, make sure he doesn't do something he'll regret.\pAfter that, you should probably tackle the Gym."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    setspeaker("NASH")
+    msgbox(format("Oh, right! The Gym.\pIt's... unique.\pDaan is actually the official Gym Leader here, but with all this Faculty business, he's had a few of his best ranger trainees on rotation to test challengers.\pHe designed it to replicate the forest at night.\pIt's almost pitch black in there.\pHe always says you don't really know the cloud forest until you've seen the ecosystem that comes alive after dark.\pIt's a real challenge, but you'll be facing a gauntlet of nocturnal Pokémon... think Noctowl, Ariados, maybe even a Mightyena.\pThe Pokémon in there are more than comfortable in the dark.\pIt'll be a good test of your skills before you head out again.\pGood luck, {PLAYER}.\pFind me at the station if you learn anything new, or if you want to explore the forest again."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(walk_down walk_left*6))
+    waitmovement
+    applymovement(15, moves(walk_down walk_left*4))
+    waitmovement
+    applymovement(16, moves(walk_down*2 walk_left))
+    waitmovement
+    delay(40)
+    setflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER1)
+    setflag(FLAG_HELPED_DAN_BEAT_FACULTY)
+    clearflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER2)
+    release
+}

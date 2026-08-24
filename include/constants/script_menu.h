@@ -187,6 +187,11 @@
 #define MULTI_FOSSIL_HNS                   176
 #define MULTI_GAME_CORNER_DOLLS2           177
 
+// ShinyKrabby custom multichoice menus (ported from custom maps)
+#define MULTI_HERB_PREP                    178
+#define MULTI_HERB_GUIDE                   179
+#define MULTI_KASMI_MENU                   180
+
 #define MULTI_NONE 255
 
 // Lilycove SS Tidal Multichoice Selections

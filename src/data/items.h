@@ -10961,9 +10961,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_CHERI_BERRY] =
     {
-        .name = ITEM_NAME("CHERI BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Cheri Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Bruce Banner"),
+        .pluralName = ITEM_PLURAL_NAME("Bruce Banners"),
+        .price = 400,
         .holdEffect = HOLD_EFFECT_CURE_PAR,
         .description = COMPOUND_STRING(
             "A hold item that\n"
@@ -10981,9 +10981,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_CHESTO_BERRY] =
     {
-        .name = ITEM_NAME("CHESTO BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Chesto Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Cannatonic"),
+        .pluralName = ITEM_PLURAL_NAME("Cannatonics"),
+        .price = 400,
         .holdEffect = HOLD_EFFECT_CURE_SLP,
         .description = COMPOUND_STRING(
             "A hold item that\n"
@@ -11001,9 +11001,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_PECHA_BERRY] =
     {
-        .name = ITEM_NAME("PECHA BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Pecha Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Northern Lights"),
+        .pluralName = ITEM_PLURAL_NAME("N. Lights"),
+        .price = 400,
         .holdEffect = HOLD_EFFECT_CURE_PSN,
         .description = COMPOUND_STRING(
             "A hold item that\n"
@@ -11021,9 +11021,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_RAWST_BERRY] =
     {
-        .name = ITEM_NAME("RAWST BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Rawst Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Afghani"),
+        .pluralName = ITEM_PLURAL_NAME("Afghanis"),
+        .price = 400,
         .holdEffect = HOLD_EFFECT_CURE_BRN,
         .description = COMPOUND_STRING(
             "A hold item that\n"
@@ -11041,9 +11041,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_ASPEAR_BERRY] =
     {
-        .name = ITEM_NAME("ASPEAR BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Aspear Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Runtz"),
+        .pluralName = ITEM_PLURAL_NAME("Runtz"),
+        .price = 400,
         .holdEffect = HOLD_EFFECT_CURE_FRZ,
         .description = COMPOUND_STRING(
             "A hold item that\n"
@@ -11061,9 +11061,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_LEPPA_BERRY] =
     {
-        .name = ITEM_NAME("LEPPA BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Leppa Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Lemon Haze"),
+        .pluralName = ITEM_PLURAL_NAME("Lemon Hazes"),
+        .price = 600,
         .holdEffect = HOLD_EFFECT_RESTORE_PP,
         .holdEffectParam = 10,
         .description = COMPOUND_STRING(
@@ -11082,9 +11082,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_ORAN_BERRY] =
     {
-        .name = ITEM_NAME("ORAN BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Oran Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Silver Haze"),
+        .pluralName = ITEM_PLURAL_NAME("Silver Hazes"),
+        .price = 300,
         .holdEffect = HOLD_EFFECT_RESTORE_HP,
         .holdEffectParam = 10,
         .description = COMPOUND_STRING(
@@ -11103,9 +11103,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_PERSIM_BERRY] =
     {
-        .name = ITEM_NAME("PERSIM BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Persim Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Neville's Haze"),
+        .pluralName = ITEM_PLURAL_NAME("N. Hazes"),
+        .price = 400,
         .holdEffect = HOLD_EFFECT_CURE_CONFUSION,
         .description = COMPOUND_STRING(
             "A hold item that\n"
@@ -11123,9 +11123,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_LUM_BERRY] =
     {
-        .name = ITEM_NAME("LUM BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Lum Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Sour Diesel"),
+        .pluralName = ITEM_PLURAL_NAME("Sour Diesels"),
+        .price = 1200,
         .holdEffect = HOLD_EFFECT_CURE_STATUS,
         .description = COMPOUND_STRING(
             "A hold item that\n"
@@ -11143,9 +11143,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_SITRUS_BERRY] =
     {
-        .name = ITEM_NAME("SITRUS BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Sitrus Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("OG Kush"),
+        .pluralName = ITEM_PLURAL_NAME("OG Kushes"),
+        .price = 800,
     #if I_SITRUS_BERRY_HEAL >= GEN_4
         .holdEffect = HOLD_EFFECT_RESTORE_PCT_HP,
         .holdEffectParam = 25,
@@ -11173,9 +11173,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_FIGY_BERRY] =
     {
-        .name = ITEM_NAME("FIGY BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Figy Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("LA Blueberry"),
+        .pluralName = ITEM_PLURAL_NAME("LA Blueberries"),
+        .price = 600,
         .holdEffect = HOLD_EFFECT_CONFUSE_SPICY,
         .holdEffectParam = CONFUSE_BERRY_HEAL_FRACTION,
         .description = sFigyBerryDesc,
@@ -11189,9 +11189,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_WIKI_BERRY] =
     {
-        .name = ITEM_NAME("WIKI BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Wiki Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Skunk nr.1"),
+        .pluralName = ITEM_PLURAL_NAME("Skunk nr.1s"),
+        .price = 600,
         .holdEffect = HOLD_EFFECT_CONFUSE_DRY,
         .holdEffectParam = CONFUSE_BERRY_HEAL_FRACTION,
         .description = sFigyBerryDesc,
@@ -11205,9 +11205,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_MAGO_BERRY] =
     {
-        .name = ITEM_NAME("MAGO BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Mago Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("LA G-13"),
+        .pluralName = ITEM_PLURAL_NAME("LA G-13s"),
+        .price = 600,
         .holdEffect = HOLD_EFFECT_CONFUSE_SWEET,
         .holdEffectParam = CONFUSE_BERRY_HEAL_FRACTION,
         .description = sFigyBerryDesc,
@@ -11221,9 +11221,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_AGUAV_BERRY] =
     {
-        .name = ITEM_NAME("AGUAV BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Aguav Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("LA GD Purple"),
+        .pluralName = ITEM_PLURAL_NAME("LA GD Purples"),
+        .price = 600,
         .holdEffect = HOLD_EFFECT_CONFUSE_BITTER,
         .holdEffectParam = CONFUSE_BERRY_HEAL_FRACTION,
         .description = sFigyBerryDesc,
@@ -11237,9 +11237,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_IAPAPA_BERRY] =
     {
-        .name = ITEM_NAME("IAPAPA BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Iapapa Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("LA Straw. Cough"),
+        .pluralName = ITEM_PLURAL_NAME("LA S. Coughs"),
+        .price = 600,
         .holdEffect = HOLD_EFFECT_CONFUSE_SOUR,
         .holdEffectParam = CONFUSE_BERRY_HEAL_FRACTION,
         .description = sFigyBerryDesc,
@@ -11253,9 +11253,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_RAZZ_BERRY] =
     {
-        .name = ITEM_NAME("RAZZ BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Razz Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("LA Chem '91"),
+        .pluralName = ITEM_PLURAL_NAME("LA Chem '91s"),
+        .price = 200,
         .description = COMPOUND_STRING(
             "{POKEBLOCK} ingredient.\n"
             "Plant in loamy soil\n"
@@ -11270,9 +11270,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_BLUK_BERRY] =
     {
-        .name = ITEM_NAME("BLUK BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Bluk Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Thai Stick"),
+        .pluralName = ITEM_PLURAL_NAME("Thai Sticks"),
+        .price = 200,
         .description = COMPOUND_STRING(
             "{POKEBLOCK} ingredient.\n"
             "Plant in loamy soil\n"
@@ -11287,9 +11287,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_NANAB_BERRY] =
     {
-        .name = ITEM_NAME("NANAB BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Nanab Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("LA White Widow"),
+        .pluralName = ITEM_PLURAL_NAME("LA W. Widows"),
+        .price = 200,
         .description = COMPOUND_STRING(
             "{POKEBLOCK} ingredient.\n"
             "Plant in loamy soil\n"
@@ -11304,9 +11304,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_WEPEAR_BERRY] =
     {
-        .name = ITEM_NAME("WEPEAR BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Wepear Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Durban Poison"),
+        .pluralName = ITEM_PLURAL_NAME("Durban Poisons"),
+        .price = 200,
         .description = COMPOUND_STRING(
             "{POKEBLOCK} ingredient.\n"
             "Plant in loamy soil\n"
@@ -11321,9 +11321,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_PINAP_BERRY] =
     {
-        .name = ITEM_NAME("PINAP BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Pinap Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("LA Hindu Kush"),
+        .pluralName = ITEM_PLURAL_NAME("LA H. Kushes"),
+        .price = 200,
         .description = COMPOUND_STRING(
             "{POKEBLOCK} ingredient.\n"
             "Plant in loamy soil\n"
@@ -11338,9 +11338,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_POMEG_BERRY] =
     {
-        .name = ITEM_NAME("POMEG BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Pomeg Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Critical Mass"),
+        .pluralName = ITEM_PLURAL_NAME("Critical Mass"),
+        .price = 600,
         .description = COMPOUND_STRING(
             "Makes a Pokémon\n"
             "friendly but lowers\n"
@@ -11356,9 +11356,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_KELPSY_BERRY] =
     {
-        .name = ITEM_NAME("KELPSY BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Kelpsy Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Amnesia Haze"),
+        .pluralName = ITEM_PLURAL_NAME("Amnesia Hazes"),
+        .price = 600,
         .description = COMPOUND_STRING(
             "Makes a Pokémon\n"
             "friendly but lowers\n"
@@ -11374,9 +11374,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_QUALOT_BERRY] =
     {
-        .name = ITEM_NAME("QUALOT BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Qualot Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Girl Scout C."),
+        .pluralName = ITEM_PLURAL_NAME("Girl Scout C."),
+        .price = 600,
         .description = COMPOUND_STRING(
             "Makes a Pokémon\n"
             "friendly but lowers\n"
@@ -11392,9 +11392,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_HONDEW_BERRY] =
     {
-        .name = ITEM_NAME("HONDEW BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Hondew Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Acapulco Gold"),
+        .pluralName = ITEM_PLURAL_NAME("Acapulco Golds"),
+        .price = 600,
         .description = COMPOUND_STRING(
             "Makes a Pokémon\n"
             "friendly but lowers\n"
@@ -11410,9 +11410,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_GREPA_BERRY] =
     {
-        .name = ITEM_NAME("GREPA BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Grepa Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Bubba Kush"),
+        .pluralName = ITEM_PLURAL_NAME("Bubba Kushes"),
+        .price = 600,
         .description = COMPOUND_STRING(
             "Makes a Pokémon\n"
             "friendly but lowers\n"
@@ -11428,9 +11428,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_TAMATO_BERRY] =
     {
-        .name = ITEM_NAME("TAMATO BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Tamato Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Jack Herer"),
+        .pluralName = ITEM_PLURAL_NAME("Jack Herers"),
+        .price = 600,
         .description = COMPOUND_STRING(
             "Makes a Pokémon\n"
             "friendly but lowers\n"
@@ -11446,9 +11446,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_CORNN_BERRY] =
     {
-        .name = ITEM_NAME("CORNN BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Cornn Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Power Plant"),
+        .pluralName = ITEM_PLURAL_NAME("Power Plants"),
+        .price = 200,
         .description = COMPOUND_STRING(
             "{POKEBLOCK} ingredient.\n"
             "Plant in loamy soil\n"
@@ -11463,9 +11463,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_MAGOST_BERRY] =
     {
-        .name = ITEM_NAME("MAGOST BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Magost Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Purple Haze"),
+        .pluralName = ITEM_PLURAL_NAME("Purple Hazes"),
+        .price = 200,
         .description = COMPOUND_STRING(
             "{POKEBLOCK} ingredient.\n"
             "Plant in loamy soil\n"
@@ -11480,9 +11480,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_RABUTA_BERRY] =
     {
-        .name = ITEM_NAME("RABUTA BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Rabuta Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Lowryder"),
+        .pluralName = ITEM_PLURAL_NAME("Lowryders"),
+        .price = 200,
         .description = COMPOUND_STRING(
             "{POKEBLOCK} ingredient.\n"
             "Plant in loamy soil\n"
@@ -11497,9 +11497,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_NOMEL_BERRY] =
     {
-        .name = ITEM_NAME("NOMEL BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Nomel Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Bubblegum"),
+        .pluralName = ITEM_PLURAL_NAME("Bubblegums"),
+        .price = 200,
         .description = COMPOUND_STRING(
             "{POKEBLOCK} ingredient.\n"
             "Plant in loamy soil\n"
@@ -11514,9 +11514,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_SPELON_BERRY] =
     {
-        .name = ITEM_NAME("SPELON BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Spelon Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Super Boof"),
+        .pluralName = ITEM_PLURAL_NAME("Super Boofs"),
+        .price = 200,
         .description = COMPOUND_STRING(
             "{POKEBLOCK} ingredient.\n"
             "Plant in loamy soil\n"
@@ -11531,9 +11531,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_PAMTRE_BERRY] =
     {
-        .name = ITEM_NAME("PAMTRE BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Pamtre Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("GhostTrainHaze"),
+        .pluralName = ITEM_PLURAL_NAME("GhostTrainHaze"),
+        .price = 200,
         .description = COMPOUND_STRING(
             "{POKEBLOCK} ingredient.\n"
             "Plant in loamy soil\n"
@@ -11548,9 +11548,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_WATMEL_BERRY] =
     {
-        .name = ITEM_NAME("WATMEL BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Watmel Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Ghodfather OG"),
+        .pluralName = ITEM_PLURAL_NAME("Ghodfather OG"),
+        .price = 200,
         .description = COMPOUND_STRING(
             "{POKEBLOCK} ingredient.\n"
             "Plant in loamy soil\n"
@@ -11565,9 +11565,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_DURIN_BERRY] =
     {
-        .name = ITEM_NAME("DURIN BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Durin Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Chemdawg"),
+        .pluralName = ITEM_PLURAL_NAME("Chemdawgs"),
+        .price = 200,
         .description = COMPOUND_STRING(
             "{POKEBLOCK} ingredient.\n"
             "Plant in loamy soil\n"
@@ -11582,9 +11582,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_BELUE_BERRY] =
     {
-        .name = ITEM_NAME("BELUE BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Belue Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("White Choco"),
+        .pluralName = ITEM_PLURAL_NAME("White Chocos"),
+        .price = 200,
         .description = COMPOUND_STRING(
             "{POKEBLOCK} ingredient.\n"
             "Plant in loamy soil\n"
@@ -11599,9 +11599,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_CHILAN_BERRY] =
     {
-        .name = ITEM_NAME("CHILAN BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Chilan Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Cheetah Piss"),
+        .pluralName = ITEM_PLURAL_NAME("Cheetah Piss"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_NORMAL,
         .description = COMPOUND_STRING(
@@ -11618,9 +11618,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_OCCA_BERRY] =
     {
-        .name = ITEM_NAME("OCCA BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Occa Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("AK-47"),
+        .pluralName = ITEM_PLURAL_NAME("AK-47s"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_FIRE,
         .description = COMPOUND_STRING(
@@ -11637,9 +11637,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_PASSHO_BERRY] =
     {
-        .name = ITEM_NAME("PASSHO BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Passho Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Kali Mist"),
+        .pluralName = ITEM_PLURAL_NAME("Kali Mists"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_WATER,
         .description = COMPOUND_STRING(
@@ -11656,9 +11656,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_WACAN_BERRY] =
     {
-        .name = ITEM_NAME("WACAN BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Wacan Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Lavender"),
+        .pluralName = ITEM_PLURAL_NAME("Lavenders"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_ELECTRIC,
         .description = COMPOUND_STRING(
@@ -11675,9 +11675,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_RINDO_BERRY] =
     {
-        .name = ITEM_NAME("RINDO BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Rindo Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Headband"),
+        .pluralName = ITEM_PLURAL_NAME("Headbands"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_GRASS,
         .description = COMPOUND_STRING(
@@ -11694,9 +11694,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_YACHE_BERRY] =
     {
-        .name = ITEM_NAME("YACHE BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Yache Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Skunkberry"),
+        .pluralName = ITEM_PLURAL_NAME("Skunkberries"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_ICE,
         .description = COMPOUND_STRING(
@@ -11713,9 +11713,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_CHOPLE_BERRY] =
     {
-        .name = ITEM_NAME("CHOPLE BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Chople Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Purple Haze"),
+        .pluralName = ITEM_PLURAL_NAME("Purple Hazes"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_FIGHTING,
         .description = COMPOUND_STRING(
@@ -11732,9 +11732,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_KEBIA_BERRY] =
     {
-        .name = ITEM_NAME("KEBIA BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Kebia Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Chocolope"),
+        .pluralName = ITEM_PLURAL_NAME("Chocolopes"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_POISON,
         .description = COMPOUND_STRING(
@@ -11751,9 +11751,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_SHUCA_BERRY] =
     {
-        .name = ITEM_NAME("SHUCA BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Shuca Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Maui Wowie"),
+        .pluralName = ITEM_PLURAL_NAME("Maui Wowies"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_GROUND,
         .description = COMPOUND_STRING(
@@ -11770,9 +11770,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_COBA_BERRY] =
     {
-        .name = ITEM_NAME("COBA BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Coba Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Super Skunk"),
+        .pluralName = ITEM_PLURAL_NAME("Super Skunks"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_FLYING,
         .description = COMPOUND_STRING(
@@ -11789,9 +11789,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_PAYAPA_BERRY] =
     {
-        .name = ITEM_NAME("PAYAPA BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Payapa Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("GhostTrain OG"),
+        .pluralName = ITEM_PLURAL_NAME("GhostTrain OG"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_PSYCHIC,
         .description = COMPOUND_STRING(
@@ -11808,9 +11808,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_TANGA_BERRY] =
     {
-        .name = ITEM_NAME("TANGA BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Tanga Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Hashplant"),
+        .pluralName = ITEM_PLURAL_NAME("Hashplants"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_BUG,
         .description = COMPOUND_STRING(
@@ -11827,9 +11827,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_CHARTI_BERRY] =
     {
-        .name = ITEM_NAME("CHARTI BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Charti Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Chem '04"),
+        .pluralName = ITEM_PLURAL_NAME("Chem '04s"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_ROCK,
         .description = COMPOUND_STRING(
@@ -11846,9 +11846,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_KASIB_BERRY] =
     {
-        .name = ITEM_NAME("KASIB BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Kasib Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Big Bud"),
+        .pluralName = ITEM_PLURAL_NAME("Big Buds"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_GHOST,
         .description = COMPOUND_STRING(
@@ -11865,9 +11865,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_HABAN_BERRY] =
     {
-        .name = ITEM_NAME("HABAN BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Haban Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Goo"),
+        .pluralName = ITEM_PLURAL_NAME("Goos"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_DRAGON,
         .description = COMPOUND_STRING(
@@ -11884,9 +11884,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_COLBUR_BERRY] =
     {
-        .name = ITEM_NAME("COLBUR BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Colbur Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Gelato"),
+        .pluralName = ITEM_PLURAL_NAME("Gelatos"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_DARK,
         .description = COMPOUND_STRING(
@@ -11903,9 +11903,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_BABIRI_BERRY] =
     {
-        .name = ITEM_NAME("BABIRI BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Babiri Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("99 Problems"),
+        .pluralName = ITEM_PLURAL_NAME("99 Problems"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_STEEL,
         .description = COMPOUND_STRING(
@@ -11922,9 +11922,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_ROSELI_BERRY] =
     {
-        .name = ITEM_NAME("ROSELI BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Roseli Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("PurpleMonkeyB"),
+        .pluralName = ITEM_PLURAL_NAME("PurpleMonkeyB"),
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_FAIRY,
         .description = COMPOUND_STRING(
@@ -11941,9 +11941,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_LIECHI_BERRY] =
     {
-        .name = ITEM_NAME("LIECHI BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Liechi Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Donkey Breath"),
+        .pluralName = ITEM_PLURAL_NAME("Donkey Breath"),
+        .price = 1500,
         .holdEffect = HOLD_EFFECT_ATTACK_UP,
         .holdEffectParam = 4,
         .description = COMPOUND_STRING(
@@ -11960,9 +11960,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_GANLON_BERRY] =
     {
-        .name = ITEM_NAME("GANLON BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Ganlon Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Alaskan TF"),
+        .pluralName = ITEM_PLURAL_NAME("Alaskan TFs"),
+        .price = 1500,
         .holdEffect = HOLD_EFFECT_DEFENSE_UP,
         .holdEffectParam = 4,
         .description = COMPOUND_STRING(
@@ -11979,9 +11979,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_SALAC_BERRY] =
     {
-        .name = ITEM_NAME("SALAC BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Salac Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("TrippyGorilla"),
+        .pluralName = ITEM_PLURAL_NAME("TrippyGorilla"),
+        .price = 1500,
         .holdEffect = HOLD_EFFECT_SPEED_UP,
         .holdEffectParam = 4,
         .description = COMPOUND_STRING(
@@ -11998,9 +11998,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_PETAYA_BERRY] =
     {
-        .name = ITEM_NAME("PETAYA BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Petaya Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("GrandMaster S"),
+        .pluralName = ITEM_PLURAL_NAME("GrandMaster S"),
+        .price = 1500,
         .holdEffect = HOLD_EFFECT_SP_ATTACK_UP,
         .holdEffectParam = 4,
         .description = COMPOUND_STRING(
@@ -12017,9 +12017,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_APICOT_BERRY] =
     {
-        .name = ITEM_NAME("APICOT BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Apicot Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Gorilla Glue"),
+        .pluralName = ITEM_PLURAL_NAME("Gorilla Glues"),
+        .price = 1500,
         .holdEffect = HOLD_EFFECT_SP_DEFENSE_UP,
         .holdEffectParam = 4,
         .description = COMPOUND_STRING(
@@ -12036,9 +12036,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_LANSAT_BERRY] =
     {
-        .name = ITEM_NAME("LANSAT BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Lansat Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Green Crack"),
+        .pluralName = ITEM_PLURAL_NAME("Green Cracks"),
+        .price = 1500,
         .holdEffect = HOLD_EFFECT_CRITICAL_UP,
         .holdEffectParam = 4,
         .description = COMPOUND_STRING(
@@ -12055,9 +12055,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_STARF_BERRY] =
     {
-        .name = ITEM_NAME("STARF BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Starf Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Gandalf OG"),
+        .pluralName = ITEM_PLURAL_NAME("Gandalf OGs"),
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RANDOM_STAT_UP,
         .holdEffectParam = 4,
         .description = COMPOUND_STRING(
@@ -12074,9 +12074,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_ENIGMA_BERRY] =
     {
-        .name = ITEM_NAME("ENIGMA BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Enigma Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Cat Piss"),
+        .pluralName = ITEM_PLURAL_NAME("Cat Piss"),
+        .price = 1500,
         .holdEffect = HOLD_EFFECT_ENIGMA_BERRY,
         .description = COMPOUND_STRING(
             "A hold item that\n"
@@ -12092,9 +12092,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_MICLE_BERRY] =
     {
-        .name = ITEM_NAME("MICLE BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Micle Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Shark Breath"),
+        .pluralName = ITEM_PLURAL_NAME("Shark Breaths"),
+        .price = 1000,
         .holdEffect = HOLD_EFFECT_MICLE_BERRY,
         .holdEffectParam = 4,
         .description = COMPOUND_STRING(
@@ -12111,9 +12111,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_CUSTAP_BERRY] =
     {
-        .name = ITEM_NAME("CUSTAP BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Custap Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Herojuana"),
+        .pluralName = ITEM_PLURAL_NAME("Herojuanas"),
+        .price = 1000,
         .holdEffect = HOLD_EFFECT_CUSTAP_BERRY,
         .holdEffectParam = 4,
         .description = COMPOUND_STRING(
@@ -12130,9 +12130,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_JABOCA_BERRY] =
     {
-        .name = ITEM_NAME("JABOCA BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Jaboca Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("ZombieDeathF"),
+        .pluralName = ITEM_PLURAL_NAME("ZombieDeathF"),
+        .price = 1000,
         .holdEffect = HOLD_EFFECT_JABOCA_BERRY,
         .description = COMPOUND_STRING(
             "If hit by a physical\n"
@@ -12148,9 +12148,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_ROWAP_BERRY] =
     {
-        .name = ITEM_NAME("ROWAP BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Rowap Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("BarackOBubba"),
+        .pluralName = ITEM_PLURAL_NAME("BarackOBubba"),
+        .price = 1000,
         .holdEffect = HOLD_EFFECT_ROWAP_BERRY,
         .description = COMPOUND_STRING(
             "If hit by a special\n"
@@ -12166,9 +12166,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_KEE_BERRY] =
     {
-        .name = ITEM_NAME("KEE BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Kee Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Cheese"),
+        .pluralName = ITEM_PLURAL_NAME("Cheese"),
+        .price = 1200,
         .holdEffect = HOLD_EFFECT_KEE_BERRY,
         .description = COMPOUND_STRING(
             "If hit by a physical\n"
@@ -12184,9 +12184,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_MARANGA_BERRY] =
     {
-        .name = ITEM_NAME("MARANGA BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Maranga Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Blue Dream"),
+        .pluralName = ITEM_PLURAL_NAME("Blue Dreams"),
+        .price = 1200,
         .holdEffect = HOLD_EFFECT_MARANGA_BERRY,
         .description = COMPOUND_STRING(
             "If hit by a special\n"
@@ -12202,9 +12202,9 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_ENIGMA_BERRY_E_READER] =
     {
-        .name = ITEM_NAME("ENIGMA BERRY"),
-        .pluralName = ITEM_PLURAL_NAME("Enigma Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Panama"),
+        .pluralName = ITEM_PLURAL_NAME("Panamas"),
+        .price = 200,
         .description = COMPOUND_STRING(
             "{POKEBLOCK} ingredient.\n"
             "Plant in loamy soil\n"
@@ -16472,6 +16472,23 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .iconPic = gItemIcon_AzureFlute,
         .iconPalette = gItemIconPalette_AzureFlute,
+    },
+
+    // ShinyKrabby custom item (ported from custom maps)
+    [ITEM_CLIMBING_ROPE] =
+    {
+        .name = ITEM_NAME("Dancing Boots"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "A worn pair of boots.\n"
+            "Great for dancing\n"
+            "and climbing."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_HeavyDutyBoots,
+        .iconPalette = gItemIconPalette_HeavyDutyBoots,
     },
 };
 

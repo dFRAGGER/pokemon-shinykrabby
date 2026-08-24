@@ -1,0 +1,115 @@
+mapscripts LionsarchCity_Indoor_House3_MapScripts {}
+
+// House 3 - Shack of old harbor fisher Gramps Olaf.
+// Olaf hid three keepsakes somewhere in his home before his memory started slipping.
+// His granddaughter Mio is visiting for the week.
+// MINIGAME: Find all 3 hidden treasures (compass, clamshell, brass button)
+//           to receive the Dowsing Machine from Olaf.
+
+script House3_Olaf {
+    lock
+    faceplayer
+    if (flag(FLAG_HOUSE3_ITEMFINDER_GIVEN)) {
+        msgbox(format("Heh heh! Good nose on you, kid.\pThat machine'll serve you well out there in the world.\pThere's always something worth finding, if you know how to look."))
+        waitmessage
+    } elif (flag(FLAG_HOUSE3_FOUND_COMPASS) && flag(FLAG_HOUSE3_FOUND_CLAMSHELL) && flag(FLAG_HOUSE3_FOUND_BUTTON)) {
+        msgbox(format("Ayyy! You found them!\pThe compass, the shell, and the old brass button!\pHaha! I knew someone sharp would stumble in eventually!"))
+        waitmessage
+        msgbox(format("Those three things... each one's from a different voyage.\pThe compass from my first time rounding the northern cape.\pThe shell from the year I caught a Lapras in the deep water.\pAnd the button - that came off a sailor's coat.\nHe lost it in a wager."))
+        waitmessage
+        msgbox(format("Now then. A deal's a deal.\pHere. Take this thing.\pMio's been bugging me to get rid of it anyway."))
+        waitmessage
+        giveitem(ITEM_DOWSING_MACHINE)
+        waitmessage
+        setflag(FLAG_HOUSE3_ITEMFINDER_GIVEN)
+        msgbox(format("It's called a Dowsing Machine.\pFancy name for a treasure sniffer.\pThat gadget'd have found my three things in ten seconds flat.\pGo find some real treasure with it, kid.\pThe ocean's still full of surprises."))
+        waitmessage
+    } else {
+        msgbox(format("Heh! Don't mind the mess. I know where everything is.\pWell... mostly.\pFact is, I hid three keepsakes somewhere in this old shack a while back\nand I can't quite recall where."))
+        waitmessage
+        msgbox(format("A compass. A clamshell. And a heavy brass button with an anchor on it.\pThey're each from a different adventure out on the water.\pI put them somewhere safe, I swear.\pMio looked for an hour and gave up."))
+        waitmessage
+        msgbox(format("If you can sniff out all three...\pI'll give you something better than any of 'em.\pA real treasure hunter's tool. Deal?"))
+        waitmessage
+    }
+    release
+}
+
+script House3_Mio {
+    lock
+    faceplayer
+    if (flag(FLAG_HOUSE3_FOUND_COMPASS) && flag(FLAG_HOUSE3_FOUND_CLAMSHELL) && flag(FLAG_HOUSE3_FOUND_BUTTON)) {
+        msgbox(format("You found all three?!\pI looked everywhere!\pGrandpa's going to be absolutely delighted.\pAlso a little smug about it."))
+        waitmessage
+    } elif (flag(FLAG_HOUSE3_FOUND_COMPASS) || flag(FLAG_HOUSE3_FOUND_CLAMSHELL) || flag(FLAG_HOUSE3_FOUND_BUTTON)) {
+        msgbox(format("Oh, you're helping Grandpa look?\pYou've already found some, haven't you!\pHe told me they're all near things that came from the sea.\pThat's his logic for you."))
+        waitmessage
+    } else {
+        msgbox(format("Grandpa hides things.\pHe says it keeps his mind sharp.\pI say it just drives me crazy.\pI gave up after an hour and a sore back.\pHe told me they're near things that came from the sea.\pHopefully that helps you more than it helped me."))
+        waitmessage
+    }
+    release
+}
+
+script House3_TreasureCompass {
+    lockall
+    if (flag(FLAG_HOUSE3_FOUND_COMPASS)) {
+        msgbox(format("A large potted plant with broad leaves yellowing at the edges.\pThe compass is already gone - you found it."))
+        waitmessage
+    } else {
+        msgbox(format("A large potted plant.\pThe soil is dry and the leaves are a bit sorry-looking.\pThe soil seems to be disturbed near the base...\pYou dig around the roots and feel something hard.\pA weathered brass compass, wrapped in a strip of sailcloth."))
+        waitmessage
+        playse(SE_ITEMFINDER)
+        waitse
+        setflag(FLAG_HOUSE3_FOUND_COMPASS)
+        msgbox(format("Found Gramps Olaf's compass!"))
+        waitmessage
+    }
+    releaseall
+}
+
+script House3_TreasureClamshell {
+    lockall
+    if (flag(FLAG_HOUSE3_FOUND_CLAMSHELL)) {
+        msgbox(format("A tall ceramic vase painted with a faded wave pattern.\pThe clamshell is already gone - you found it."))
+        waitmessage
+    } else {
+        msgbox(format("A tall ceramic vase.\pIt looks decorative, but something rattles faintly inside.\pYou tip it carefully...\pA large polished clamshell slides out.\pThe inside gleams like mother-of-pearl in the pale light."))
+        waitmessage
+        playse(SE_ITEMFINDER)
+        waitse
+        setflag(FLAG_HOUSE3_FOUND_CLAMSHELL)
+        msgbox(format("Found Gramps Olaf's clamshell!"))
+        waitmessage
+    }
+    releaseall
+}
+
+script House3_TreasureButton {
+    lockall
+    if (flag(FLAG_HOUSE3_FOUND_BUTTON)) {
+        msgbox(format("A small display case withits glass front fogged with age.\pThe brass button is already gone - you found it."))
+        waitmessage
+    } else {
+        msgbox(format("A small display case.\pBehind the foggy glass, a handful of old knick-knacks: a bent fish hook, a cork, a faded name tag.\pBut tucked behind them, barely visible...\pYou open the latch and reach past the other things.\pA heavy brass button with an anchor engraving."))
+        waitmessage
+        playse(SE_ITEMFINDER)
+        waitse
+        setflag(FLAG_HOUSE3_FOUND_BUTTON)
+        msgbox(format("Found Gramps Olaf's brass button!"))
+        waitmessage
+    }
+    releaseall
+}
+
+script House3_RodRack {
+    lockall
+    msgbox(format("A rack of fishing rods in various states of repair.\pOne has a strip of tape: 'STILL GOOD - DO NOT THROW'\pAnother has a tag: 'BROKEN - FIX SOMEDAY'\pA third has no label but is clearly the nicest one.\pIt's bone dry and smells like varnish and salt."))
+    releaseall
+}
+
+script House3_TideChart {
+    lockall
+    msgbox(format("A tide chart for the northern harbor,covered in Olaf's cramped handwriting.\pCircled dates are marked 'BIG CATCH' or 'NOTHING'.\pA small sketch next to one entry reads: 'Saw something HUGE in sector 7. NOT a Dewgong.'\pThe date is circled three times and underlined."))
+    releaseall
+}

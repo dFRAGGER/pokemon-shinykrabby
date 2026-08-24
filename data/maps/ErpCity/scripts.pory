@@ -1,0 +1,346 @@
+mapscripts ErpCity_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_KICKED_OUT_LAB_CONVO)
+        setflag(FLAG_HIDE_MOM_SHOES)
+        call (ErpCity_Visited)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_RECIEVED_STARTER_POKEMON, 1: ErpCity_ProfessorBirds_Speech_Pokedex
+    ]
+    
+}
+
+script ErpCity_SpearowFearow_Flyby {
+    setvar(VAR_TEMP_0,1)
+    setobjectsubpriority(11, MAP_ERP_CITY, 0)
+    setobjectsubpriority(12, MAP_ERP_CITY, 0)
+    setobjectsubpriority(13, MAP_ERP_CITY, 0)
+    applymovement(13, moves(jump_2_down walk_fast_down*12))
+    applymovement(12, moves(jump_2_down walk_fast_down*12))
+    applymovement(11, moves(jump_2_down walk_fast_down*12))
+    waitmovement(11)
+    setflag(FLAG_TEMP_1)
+    setflag(FLAG_TEMP_2)
+    setflag(FLAG_TEMP_3)
+    removeobject(13)
+    removeobject(12)
+    removeobject(11)
+}
+
+script ErpCity_Visited {
+    setflag(FLAG_VISITED_ERP_CITY)
+}
+
+script ErpCity_Sign_Welcome {
+    lock
+    msgbox(format("ERP TOWN\pTranquil and peaceful."),MSGBOX_SIGN)
+    waitmessage
+    release
+}
+
+script ErpCity_Old_Man_Boekel {
+    lock
+    faceplayer
+    msgbox(format("Some folks mock Erp for being small with just four houses, but at least we aren't Boekel!\pThat place only has one house, occupied by a weird redhead who isn't even home half the time!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script ErpCity_Woman {
+    lock
+    faceplayer
+    msgbox(format("I traveled here from Mosa Town just to gaze at that lake over there!\p The water is so calm and clear it looks like a mirror."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script ErpCity_ProfessorBirds_Speech_Pokedex {
+    lockall
+    playbgm(MUS_RG_ENCOUNTER_RIVAL,FALSE)
+    opendoor(22, 18)
+    applymovement (LOCALID_PLAYER, moves(walk_fast_down walk_fast_left jump_left face_right))
+    clearflag(FLAG_KICKED_OUT_LAB_CONVO)
+    addobject(2)
+    addobject(5)
+    addobject(10)
+    applymovement(2, moves(walk_fast_down*2 walk_fast_left))
+    applymovement(5, moves(walk_down*3 face_left))
+    applymovement(10, moves(jump_down*2 jump_right jump_down))
+    waitmovement
+    setspeaker("PROF. BIRDS")
+    msgbox(format("WHO DO YOU THINK YOU ARE?\nTAYLOR SWIFT OR SOMETHING?\pActually.... I love Taylor Swift hehe.. ANYWAYS!!\pI TOLD YOU TO NOT SNIFF AROUND IN MY SECRET LA... I MEAN STORAGE ROOM!!\p...YOU DIDN'T STEAL ANYTHING RIGHT? RIGHT??!!\p...It doesn't really matter anyways...\pYOU ARE FIRED!!\pI GOT MY SQUIRKY LITTLE INTERN CALLED BARRY ALREADY!\pHE IS LIVING THE DREAM!!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(5, moves(face_up))
+    applymovement(2, moves(walk_right face_down))
+    waitmovement
+    setspeaker("PROF. BIRDS")
+    msgbox(format("AM I RIGHT, BARRY?!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_FAILURE)
+    applymovement(5, moves(emote_x))
+    waitmovement
+    delay(120)
+    applymovement(2, moves(walk_right))
+    waitmovement
+    setspeaker("PROF. BIRDS")
+    msgbox(format(".....wait a second....\p.....maybe this little slob can help me to get some data...\p...that strange anomaly JACOB called about....\p.....yes a very good idea Jari, very smart...."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    playse(SE_PIN)
+    applymovement (2, moves(emote_exclamation_mark walk_left*2))
+    applymovement(5, moves(face_left))
+    setspeaker("PROF. BIRDS")
+    msgbox(format(".....did I say that out loud?\pARGH ANYWAYS! How about I rehire you again to become my data hoarder....\pJUNIOR RESEARCHER OFCOURSE! My beloved partner!\pFor your first assignment I order you to...\pI MEAN I ask you to head to MASO TOWN, and visit my old friend JACOB.\pApparently he has seen a rare pokemon species, an ANOMALY he said.\pHe told me about a GOLDEN KING, the single most magnificent creature to sidle on this earth.\pWell I want you to go and SCAN that POKEMON with this genomic sequence.... I MEAN POKeDEX!!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    setflag(FLAG_SYS_POKEDEX_GET)
+    special(EnableNationalPokedex)
+    setflag(FLAG_SYS_NATIONAL_DEX)
+    setspeaker(NULL)
+    msgbox(format("You have received the Pokédex."))
+    playfanfare(MUS_OBTAIN_ITEM)
+    waitfanfare
+    waitmessage
+    setspeaker("PROF. BIRDS")
+    msgbox(format("This device can collect VITAL DATA ON POKEMON HABITATS, MIGRATION PATTERNS AND ...uh...\p...unique genomic signatures... for the pigs... you know...\pAnd this way I WILL EXTRACT ALL NECESSARY INFORMATION FOR MY BELOVED....\p...sensors for responsible pig farming...\pNOW GO, AND DON'T COME BACK BEFORE YOU HAVE SEQUENC...\p ...scanned that rare Pokémon...\p...\pWHAT DO YOU MEAN... HOW?\pJust use Pokeballs, catch it and scan it after....\pA POKEMON RESEARCHER??? HAHAHA...\p...you got to be joking...\pHERE, CATCH THESE!"))
+    waitmessage
+    playse(SE_BALL_THROW)
+    setspeaker(NULL)
+    giveitem(ITEM_POKE_BALL, 5)
+    waitmessage
+    setspeaker("PROF. BIRDS")
+    msgbox(format("Throw these right at your... at its head, CATCH the ANOMALY and don't come back before..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_FAILURE)
+    applymovement(5, moves(emote_x))
+    waitmovement
+    applymovement(2, moves(emote_question_mark))
+    applymovement(LOCALID_PLAYER, moves(face_right))
+    applymovement(2, moves(face_right))
+    waitmovement
+    delay(60)
+    applymovement(5, moves(walk_fast_left face_up))
+    applymovement(2, moves(face_down))
+    waitmovement
+    setspeaker("BARRY")
+    msgbox(format("HE BREAKS INTO YOUR LAB AND GETS A POKEDEX, POKEBALLS AND AN ACTUAL ASSIGNMENT?\pWHAT DID I GET?\pA FUCKING MAGIKARP?\pTHE MOST USELESS POKEMON EVER IN EXISTENCE?\pI QUIT!!\pAND STOP SAYING BARRY!\pMY NAME IS W O U T E R!!"))
+    waitmessage
+    applymovement(5, moves(walk_fast_left face_up))
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(face_down emote_question_mark))
+    waitmovement
+    setspeaker("W O U T E R")
+    msgbox(format("...\pYOU??\pBECOMING A POKEMON RESEARCHER?\pDON'T MAKE ME LAUGH.\pI WILL TAKE EVERY CHANCE TO PREVENT THAT FROM HAPPENING!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_question_mark face_left))
+    applymovement(5, moves(walk_fast_left*7 walk_fast_down*5))
+    playse(SE_LEDGE)
+    applymovement(10,moves(jump_2_left))
+    waitmovement
+    playse(SE_LEDGE)
+    applymovement(10,moves(jump_2_left))
+    waitmovement
+    playse(SE_LEDGE)
+    applymovement(10,moves(jump_2_left)) 
+    waitmovement
+    playse(SE_LEDGE)
+    removeobject(5)
+    applymovement(2,moves(walk_down face_left))
+    applymovement(10,moves(jump_2_left))
+    waitmovement
+    playse(SE_LEDGE)
+    applymovement(10,moves(jump_2_left))
+    waitmovement
+    playse(SE_LEDGE)
+    applymovement(10,moves(jump_2_down))
+    waitmovement
+    playse(SE_LEDGE)
+    applymovement(10, moves(jump_2_down))
+    waitmovement
+    removeobject(10)
+    setflag (FLAG_KICKED_OUT_LAB_CONVO)
+    setvar(VAR_RECIEVED_STARTER_POKEMON, 2)
+    clearflag(FLAG_HIDE_INTERN_BIRDS_LAB)
+    delay(120)
+    setspeaker("PROF. BIRDS")
+    msgbox(format("...I'd probably should search for another intern right now..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    applymovement(2, moves(walk_up face_left))
+    waitmovement
+    applymovement(LOCALID_PLAYER, moves(face_right))
+    waitmovement
+    setspeaker("PROF. BIRDS")
+    msgbox(format("Well, WHAT ARE YOU WAITING FOR!?\pI want that data TODAY!\pThis could be the perfect start to my genome triangul... I MEAN PIG SENSOR DEVELOPMENT!\pAND STAY AWAY FROM MISPOES...\pHe doesn't like me...\pI MEAN YOU OFCOURSE!!\p...\p...so I was shouting the entire time?\pWHO CARES!\pNOW FUCK OFF!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_LEDGE)
+    applymovement(LOCALID_PLAYER, moves(jump_left face_left))
+    waitmovement
+    applymovement(2, moves(walk_right walk_up*2))
+    waitmovement
+    removeobject(2)
+    closedoor(22, 18)
+    applymovement(LOCALID_PLAYER, moves(face_right))
+    waitmovement
+    delay(60)
+    applymovement(LOCALID_PLAYER, moves(face_down))
+    waitmovement
+    delay(60)
+    applymovement(LOCALID_PLAYER, moves(face_left))
+    waitmovement
+    setflag(FLAG_HIDE_JACOB_SIENNA)
+    clearflag(FLAG_HIDE_INTERN_BIRDS_LAB)
+    delay(60)
+    msgbox(format("...I think it is safe to come out now, lets get out of here!"),MSGBOX_AUTOCLOSE)
+    special(UpdateFollowingPokemon)
+    fadedefaultbgm
+    releaseall
+}
+
+script ErpCity_ProfessorBirds_After_Speech {
+    lockall
+    setspeaker("PROF. BIRDS")
+    msgbox(format("Well, what are you waiting for?\pGet that data for me... I MEAN US."))
+    waitmessage
+    releaseall
+}
+
+script ErpCity_Mispoes_Miauw {
+    lockall
+    faceplayer
+    msgbox(format("MISSSS....POESSSSSSS...."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    releaseall
+}
+
+script ErpCity_Lab_Sign {
+    lockall
+    msgbox(format("Professor Birds's Lab"),MSGBOX_SIGN)
+    waitmessage
+    releaseall
+}
+
+script ErpCity_Hiker_Cave {
+    lockall
+    faceplayer
+    applymovement(5, moves(face_player)    
+    )
+    msgbox(format("The cave is not accessible at this time.\p Recent tremors from a unknown source have caused massive rock slides.\p The path is too dangerous."))
+    waitmessage
+    releaseall
+}
+
+script ErpCity_Cave_Sign {
+    lockall
+    msgbox(format("A large map with a labyrint of routes going through the cave.\p Most of them are crossed out."))
+    waitmessage
+    releaseall
+}
+
+script ErpCity_Trigger_Stopplayer {
+    lockall
+    msgbox(format("Wandering without any pokemon might be dangerous...."))
+    applymovement(LOCALID_PLAYER, ErpCity_Move_Stopplayer)
+    waitmovement(0)
+    releaseall
+}
+
+movement ErpCity_Move_Stopplayer {
+    walk_right
+}
+
+script ErpCity_Trigger_Stopplayer2 {
+    lockall
+    msgbox(format("Mom said the lab was up north I think..."))
+    applymovement(LOCALID_PLAYER, moves(walk_left))
+    waitmovement(0)
+    releaseall
+}
+
+script ErpCity_Receive_Running_Shoes {
+    lockall
+    if(flag(FLAG_RECEIVED_RUNNING_SHOES)==FALSE){
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark face_up))
+    waitmovement
+    opendoor(19, 25)
+    waitdooranim
+    clearflag(FLAG_HIDE_MOM_SHOES)
+    addobject(4)
+    applymovement(4, moves(walk_down face_player))
+    waitmovement
+    setspeaker("MOM")
+    msgbox(format("Honey, I almost forgot!\pIf you want to make an impression on the professor you should wear some different shoes.\pAs a surprise I've bought a new pair for you!"))
+    waitmessage
+    setflag(FLAG_RECEIVED_RUNNING_SHOES)
+    playfanfare(MUS_OBTAIN_ITEM)
+    setspeaker(NULL)
+    msgbox(format("You have received running shoes from Mom."))
+    waitmessage
+    setspeaker(NULL)
+    msgbox(format("Now if you press your 'B muscle' while moving, you will sprint!"))
+    waitmessage
+    setspeaker("MOM")
+    msgbox(format("Look at you, all nice and shiny.\p Say hello to the professor for me.\pThe lab is up the hill, north from here.\pHave fun!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(walk_down))
+    applymovement(4, moves(walk_up))
+    waitmovement
+    setflag(FLAG_HIDE_MOM_SHOES)
+    setflag(FLAG_SYS_B_DASH)
+    setflag(FLAG_HIDE_INTERN_BIRDS_LAB)
+    removeobject(4)
+    closedoor(19, 25)
+    waitdooranim
+    releaseall
+    end
+    }
+    else{
+        setspeaker(NULL)
+        msgbox(format("Better get to the lab, Mom probably won't let me in if I don't try."))
+        waitmessage
+        applymovement(LOCALID_PLAYER, moves(walk_down))
+        waitmovement
+        releaseall
+        end
+    }
+}
+
+script ErpCity_Sign_Mailbox_ProfBirds {
+    lock
+    msgbox(format("This mailbox seems to be filled to the brim, somebody should clean this thing out."),MSGBOX_SIGN)
+    waitmessage
+    release
+}
+
+script ErpCity_Sign_Mailbox_Starthouse {
+    lock
+    msgbox(format("Home."),MSGBOX_SIGN)
+    waitmessage
+    release
+}
+
+script ErpCity_Sign_Mailbox_BarryHouse {
+    lock
+    msgbox(format("Family Stonebakers's house."),MSGBOX_SIGN)
+    waitmessage
+    release
+}
+
+script ErpCity_Sign_Mailbox_JanVogels {
+    lock
+    msgbox(format("Family Birds's house."),MSGBOX_SIGN)
+    waitmessage
+    release
+}
+
+script OldMiner_Sjeng_Reminisce {
+    lock
+    faceplayer
+    msgbox(format("Fifty years ago, this town was just river and rock.\pThen a wild Meowth dug up a nugget of gold deep in the mountains.\pFolks rushed in from everywhere. They laid these tracks and built this station.\pBut in the end, nobody found much more than that one nugget.\pThe rush died, the trains stopped coming, and I'm still waiting on one that won't arrive.\pSome routes still run up toward the mountain, though.\pOnly battle-hardened trainers and folks who know their bushcraft make it past the treeline."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}

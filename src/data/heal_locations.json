@@ -585,6 +585,62 @@
       "map": "MAP_ROUTE4_HNS",
       "x": 12,
       "y": 6
+    },
+    {
+      "id": "HEAL_LOCATION_ERP_CITY",
+      "map": "MAP_ERP_CITY",
+      "x": 19,
+      "y": 26,
+      "respawn_map": "MAP_ERPUS_CITY_START_HOUSE_1F",
+      "respawn_npc": "LOCALID_PLAYERS_HOUSE_1F_MOM",
+      "respawn_x": 2,
+      "respawn_y": 7
+    },
+    {
+      "id": "HEAL_LOCATION_MAASJE",
+      "map": "MAP_MAASJE",
+      "x": 68,
+      "y": 25,
+      "respawn_map": "MAP_MAASJE_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_MAASJE_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_MIST_CITY",
+      "map": "MAP_MIST_CITY",
+      "x": 53,
+      "y": 26,
+      "respawn_map": "MAP_MISTCITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_MISTCITY_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_DEEP_CLOUD_FOREST_FACULTY_GORGE",
+      "map": "MAP_DEEP_CLOUD_FOREST_FACULTY_GORGE",
+      "x": 23,
+      "y": 7
+    },
+    {
+      "id": "HEAL_LOCATION_LIONSARCH_CITY",
+      "map": "MAP_LIONSARCH_CITY",
+      "x": 77,
+      "y": 51
+    },
+    {
+      "id": "HEAL_LOCATION_BIKE_PARK",
+      "map": "MAP_BIKE_PARK",
+      "x": 28,
+      "y": 26
+    },
+    {
+      "id": "HEAL_LOCATION_SILTROOT_TOWN",
+      "map": "MAP_SILTROOT_TOWN",
+      "x": 43,
+      "y": 49
+    },
+    {
+      "id": "HEAL_LOCATION_MARSH_DUKE_CITY",
+      "map": "MAP_MARSH_DUKE_CITY",
+      "x": 27,
+      "y": 60
     }
   ]
 }

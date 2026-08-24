@@ -1,0 +1,196 @@
+mapscripts Route01_MapScripts {
+    
+}
+
+script Route01_Text_Route01 {
+    lock
+    msgbox(format("ROUTE 1\n{LEFT_ARROW} MOSA TOWN\p{RIGHT_ARROW} ERP TOWN"), MSGBOX_SIGN)
+    waitmessage
+    release
+
+}
+
+
+
+script Route01_Convo_Bugcatcher {
+    lock
+    applymovement(4, moves(face_player))
+    msgbox(format("This place is the perfect place to catch some pidgeys.\p Although lately they seem to be a little on edge.\p Yesterday I saw a curly tail sticking out of the grass, but I'm pretty sure it wasn't a Rattata or Sentret.\p Maybe my eyes decieved me..."))
+    waitmessage
+    release
+}
+
+script Route01_Convo_Fatman {
+    lock
+    msgbox(format("A clearing is visible through the trees, but the path is overgrown.\p Someone will have to clear the bushes to get to that place."))
+    waitmessage
+    release
+}
+
+script Route01_Convo_ExIntern {
+    lock
+    applymovement(6, moves(face_player))
+    msgbox(format("I used to be an intern for Professor Birds.\p The day he told me to carve a hole in a stone wall, I quit."))
+    release
+}
+
+script Route01_Factulty_Grunts_Position1 {
+    lockall
+    playse(SE_PIN)
+    applymovement(2, moves(emote_exclamation_mark))
+    applymovement(3, moves(emote_exclamation_mark))
+    delay(40)
+    playse(MUS_AQUA_MAGMA_HIDEOUT)
+    applymovement(2, moves(walk_right * 6 ))
+    applymovement(3, moves(walk_right * 7 walk_down))
+    call(Route01_Battle_Factulty_Grunts)
+    setspeaker("AD")
+    msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\pLet's go ADDY. Forget this kid.\pWe got more important things to do."), MSGBOX_AUTOCLOSE)
+    setflag(FLAG_FACULTY_GRUNTS_ROUT01)
+    applymovement(2, moves(walk_left * 10))
+    applymovement(3, moves(walk_left * 10))
+    waitmovement
+    removeobject(2)
+    removeobject(3)
+    setvar(VAR_RECIEVED_STARTER_POKEMON, 3)
+    releaseall
+}
+
+script Route01_Factulty_Grunts_Position2 {
+    lockall
+    playse(SE_PIN)
+    applymovement(2, moves(emote_exclamation_mark))
+    applymovement(3, moves(emote_exclamation_mark))
+    delay(40)
+    playse(MUS_AQUA_MAGMA_HIDEOUT)
+    applymovement(2, moves(walk_up walk_right * 6 ))
+    applymovement(3, moves(walk_right * 7 face_player))
+    call(Route01_Battle_Factulty_Grunts)
+    setspeaker("AD")
+    msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\pLet's go ADDY. Forget this kid.\pWe got more important things to do."), MSGBOX_AUTOCLOSE)
+    setflag(FLAG_FACULTY_GRUNTS_ROUT01)
+    applymovement(2, moves(walk_left * 10))
+    applymovement(3, moves(walk_left * 10))
+    waitmovement
+    removeobject(2)
+    removeobject(3)
+    setvar(VAR_RECIEVED_STARTER_POKEMON, 3)
+    releaseall
+}
+
+script Route01_Factulty_Grunts_Position3 {
+    lockall
+    playse(SE_PIN)
+    applymovement(2, moves(emote_exclamation_mark))
+    applymovement(3, moves(emote_exclamation_mark))
+    delay(40)
+    playse(MUS_AQUA_MAGMA_HIDEOUT)
+    applymovement(2, moves(walk_up walk_right * 7 face_up))
+    applymovement(3, moves(walk_right * 6 ))
+    call(Route01_Battle_Factulty_Grunts2)
+    setspeaker("AD")
+    msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\pLet's go ADDY. Forget this kid.\pWe got more important things to do."), MSGBOX_AUTOCLOSE)
+    setflag(FLAG_FACULTY_GRUNTS_ROUT01)
+    applymovement(2, moves(walk_left * 10))
+    applymovement(3, moves(walk_left * 10))
+    waitmovement
+    removeobject(2)
+    removeobject(3)
+    setvar(VAR_RECIEVED_STARTER_POKEMON, 3)
+    releaseall
+}
+
+script Route01_Factulty_Grunts_Position4 {
+    lockall
+    playse(SE_PIN)
+    applymovement(2, moves(emote_exclamation_mark))
+    applymovement(3, moves(emote_exclamation_mark))
+    delay(40)
+    playse(MUS_AQUA_MAGMA_HIDEOUT)
+    applymovement(2, moves(walk_up * 2 walk_right * 7 face_up))
+    applymovement(3, moves(walk_right walk_up walk_right * 5))
+    call(Route01_Battle_Factulty_Grunts2)
+    setspeaker("AD")
+    msgbox(format("Argh, nevermind.\p That Pokemon isn't worth registrating anyway.\p He barely listens to his owner and he has a weak personality.\p The Faculty would discard him right away!\pLet's go ADDY. Forget this kid.\pWe got more important things to do."), MSGBOX_AUTOCLOSE)
+    setflag(FLAG_FACULTY_GRUNTS_ROUT01)
+    applymovement(2, moves(walk_down walk_left * 10))
+    applymovement(3, moves(walk_down walk_left * 10))
+    waitmovement
+    removeobject(2)
+    removeobject(3)
+    setvar(VAR_RECIEVED_STARTER_POKEMON, 3)
+    releaseall
+}
+
+
+
+script Route01_Battle_Factulty_Grunts {
+    setspeaker("ADDY")
+    msgbox(format("Do you have registration for that Pokémon?\p No registration?\pAll unregistered Pokémon have to be confiscated by The Faculty!\pLet me take on this loser, AD."))
+    waitmessage
+    trainerbattle_no_intro(TRAINER_GRUNT_FACULTY_1, Route01_Loss_Ton_Cross)
+    playse(MUS_AQUA_MAGMA_HIDEOUT)
+    applymovement(LOCALID_PLAYER, moves(face_up))
+    setspeaker("AD")
+    msgbox(format("ADDY, you are an absolute loser, let me handle this prick."))
+    waitmessage
+    trainerbattle_no_intro(TRAINER_GRUNT_FACULTY_2, Route01_Loss_Ad_Dice)
+    waitse
+}
+
+script Route01_Battle_Factulty_Grunts2 {
+    setspeaker("ADDY")
+    msgbox(format("Do you have registration for that Pokémon?\pNo registration?\pAll unregistered Pokémon have to be confiscated by The Faculty!\pLet me take on this loser, AD."))
+    waitmessage
+    trainerbattle_no_intro(TRAINER_GRUNT_FACULTY_1, Route01_Loss_Ton_Cross)
+    playse(MUS_AQUA_MAGMA_HIDEOUT)
+    applymovement(LOCALID_PLAYER, moves(face_down))
+    setspeaker("AD")
+    msgbox(format("ADDY, you are an absolute loser, let me handle this prick."))
+    waitmessage
+    trainerbattle_no_intro(TRAINER_GRUNT_FACULTY_2, Route01_Loss_Ad_Dice)
+    waitse
+}
+
+text Route01_Loss_Ton_Cross {
+    format("I used to wear more comfortable clothes, but the faculty forced me to wear this uniform.")
+}
+
+text Route01_Loss_Ad_Dice {
+    format("Being a janitor or losing a battle?\p I'd rather lose a battle than spend another minute with my old colleagues.")
+}
+script Route01_EventScript_Calvin {
+    trainerbattle_single(TRAINER_CALVIN_1, Route01_Text_CalvinIntro, Route01_Text_CalvinDefeated)
+    msgbox(Route01_Text_CalvinPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script Route01_EventScript_James {
+    trainerbattle_single(TRAINER_JAMES_1, Route01_Text_JamesIntro, Route01_Text_JamesDefeated)
+    msgbox(Route01_Text_JamesPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route01_Text_CalvinIntro {
+    format("If you have POKéMON with you, then\nyou're an official POKéMON TRAINER!\lYou can't say no to my challenge!")
+}
+
+text Route01_Text_CalvinDefeated {
+    format("Arrgh, I lost…\nI should have trained mine more…")
+}
+
+text Route01_Text_CalvinPostBattle {
+    format("Listen, you. If you're strong,\nyou should have told me before!")
+}
+
+text Route01_Text_JamesIntro {
+    format("If you take BUG POKéMON to school,\nyou get to be instantly popular!")
+}
+
+text Route01_Text_JamesDefeated {
+    format("I can't be popular if I lose.")
+}
+
+text Route01_Text_JamesPostBattle {
+    format("If you have a big BUG POKéMON,\npeople respect you for it.")
+}

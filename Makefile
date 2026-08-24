@@ -477,6 +477,11 @@ clean-teachables: clean-teachables_intermediates
 $(C_BUILDDIR)/librfu_intr.o: CFLAGS := -mthumb-interwork -O2 -mabi=apcs-gnu -mtune=arm7tdmi -march=armv4t -fno-toplevel-reorder -Wno-pointer-to-int-cast
 $(C_BUILDDIR)/berry_crush.o: override CFLAGS += -Wno-address-of-packed-member
 $(C_BUILDDIR)/agb_flash.o: override CFLAGS += -fno-toplevel-reorder
+# Many stock (non-HNS) MAPSEC_* constants alias to 0 under IS_HNS, so the stock sMapHealLocations[]
+# entries for them collide at index 0; harmless (all point at unreachable dummy data), but -Werror
+# treats it as fatal now that this file is finally being recompiled. Also has one FRLG-only helper
+# that's unused under IS_HNS.
+$(C_BUILDDIR)/region_map.o: override CFLAGS += -Wno-override-init -Wno-unused-function
 $(C_BUILDDIR)/pokedex_plus_hgss.o: CFLAGS := -mthumb -mthumb-interwork -O2 -mabi=apcs-gnu -mtune=arm7tdmi -march=armv4t -Wno-pointer-to-int-cast -std=gnu17 -Werror -Wall -Wno-strict-aliasing -Wno-attribute-alias -Woverride-init
 # Annoyingly we can't turn this on just for src/data/trainers.h
 $(C_BUILDDIR)/data.o: CFLAGS += -fno-show-column -fno-diagnostics-show-caret

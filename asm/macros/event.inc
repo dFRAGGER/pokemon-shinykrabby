@@ -2977,3 +2977,12 @@
 	hidehelpwindow
 	closemessage
 	.endm
+
+	@ Show a preview image directly (a PreviewImageId, e.g. IMG_VIRIDIAN_FOREST),
+	@ independent of the current map's own region_map_section.
+	.macro visionpreview image:req
+	fadescreen FADE_TO_BLACK
+	setvar VAR_0x8004, \image
+	callnative Script_VisionPreview
+	waitstate
+	.endm

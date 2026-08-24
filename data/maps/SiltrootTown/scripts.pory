@@ -1,0 +1,626 @@
+mapscripts SiltrootTown_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_VISITED_SILTROOT_TOWN)
+    }
+}
+
+script Siltroottown_Joris_UpToTheWhiteLight {
+    lock
+    faceplayer
+    setflag(FLAG_UP_TO_THE_WHITELIGHT_SILTROOTTOWN)
+    getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
+    msgbox(format("..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(26, moves(walk_in_place_fast_down))
+    delay(40)
+    setspeaker("?????")
+    msgbox(format("UP TO THE WHITELIGHT!!!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER,moves(emote_question_mark))
+    delay(40)
+    if(var(VAR_TEMP_0)== 51 && var(VAR_TEMP_1)== 55){
+        applymovement(2, moves(walk_fast_right walk_fast_down*12))
+    }
+    else{
+        applymovement(2, moves(walk_fast_down*12))
+    }
+    waitmovement
+    removeobject(2)
+    release
+    
+}
+
+script SiltrootTown_Corsola_Jump1 {
+    lock
+    playse(SE_PIN)
+    applymovement(23, moves(emote_exclamation_mark jump_2_left))
+    waitmovement
+    setflag(FLAG_TEMP_1)
+    removeobject(23)
+    release
+}
+
+script SiltrootTown_Corsola_Jump2 {
+    lock
+    playse(SE_PIN)
+    applymovement(24, moves(emote_exclamation_mark jump_2_left))
+    waitmovement
+    setflag(FLAG_TEMP_2)
+    removeobject(24)
+    release
+}
+
+script SiltrootTown_Corsola_Jump3 {
+    lock
+    playse(SE_PIN)
+    applymovement(25, moves(emote_exclamation_mark jump_2_left))
+    waitmovement
+    setflag(FLAG_TEMP_2)
+    removeobject(25)
+    release
+}
+
+script SiltrootTown_Sign_AliApothecary {
+    lock
+    msgbox(format("Coffeeshop the Magical Root!\nWhere the smoke is thick and the leaves burn bright!"),MSGBOX_SIGN)
+    waitmessage
+    release
+}
+
+script SiltrootTown_Sign_Pokecenter {
+    lock
+    msgbox(format("Pokecenter Siltroot\nThe oldest medical facility in the region!"),MSGBOX_SIGN)
+    waitmessage
+    release
+}
+
+script Siltroottown_Sign_SiltrootTown {
+    lock
+    msgbox(format("{LEFT_ARROW} Siltroot Town\n Where the mud is thick and the roots are deep."), MSGBOX_SIGN)
+    waitmessage
+    release
+}
+
+script SiltrootTown_Scott_Boatride {
+    lockall
+    checkitem(ITEM_POKEBLOCK_CASE)
+    if (var(VAR_RESULT) == FALSE) {
+        faceplayer
+        setspeaker("SCOTT")
+        msgbox(format("...I don't know you.\pYou got no credentials.\pGo see Ali first.\pIf he vouches for you, you'll know what to bring."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        releaseall
+        end
+    }
+    setflag(FLAG_HIDE_SCOTT_LIONSARCH_CITY)
+    getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
+    faceplayer
+    setspeaker("SCOTT")
+    msgbox(format("Nobody saw you right?\pLets move before the satellite flies over.\pThe boat ride will be a rough one."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    setobjectsubpriority(12, MAP_SILTROOT_TOWN, 0)
+    setobjectsubpriority(LOCALID_PLAYER, MAP_SILTROOT_TOWN, 0)
+    applymovement(12, moves(walk_right))
+    waitmovement
+    removeobject(12)
+    if(var(VAR_TEMP_0)==22 && var(VAR_TEMP_1)==20){
+        applymovement(LOCALID_PLAYER,moves(walk_right*2))
+    }
+    elif(var(VAR_TEMP_0)== 23 && var(VAR_TEMP_1)==19){
+        applymovement(LOCALID_PLAYER,moves(walk_down walk_right))
+    }
+    elif(var(VAR_TEMP_0)== 23 && var(VAR_TEMP_1)==21){
+        applymovement(LOCALID_PLAYER,moves(walk_up walk_right))      
+    }
+    waitmovement
+    hideobjectat(LOCALID_PLAYER, MAP_SILTROOT_TOWN)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
+	playbgm(MUS_SAILING, FALSE)
+    applymovement(1, Siltroottown_Boat_Ride_To_Lionsarch)
+    applymovement(LOCALID_PLAYER, Siltroottown_Boat_Ride_To_Lionsarch)
+    waitmovement
+    goto(SiltrootTown_Arrive_Boatride)
+}
+
+script SiltrootTown_Arrive_Boatride {
+    delay(50)
+    setspeaker("SCOTT")
+    msgbox(format("Bravo, Tango here.\pReady to disembark?\p...\pCopy that.\pLet's move!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER,moves(walk_fast_up))
+    waitmovement
+    call(Common_EventScript_StopBrineysBoatMusic)
+    showobjectat(LOCALID_PLAYER, MAP_SILTROOT_TOWN)
+    applymovement(LOCALID_PLAYER,moves(walk_fast_up*7 walk_fast_right walk_fast_up walk_fast_right face_left)) 
+    call(Common_EventScript_StopBrineysBoatMusic)
+    setflag(FLAG_HIDE_SCOTT_OUTSIDE_BOAT)
+    setobjectxyperm(5,9,59)
+    addobject(5)
+    setobjectsubpriority(5, MAP_SILTROOT_TOWN,0)
+    clearflag(FLAG_HIDE_SCOTT_LIONSARCH_CITY)
+    applymovement(5,moves(walk_fast_up*8 walk_fast_right walk_fast_up face_right))
+    waitmovement
+    resetobjectsubpriority(LOCALID_PLAYER, MAP_SILTROOT_TOWN)
+    resetobjectsubpriority(5, MAP_LIONSARCH_CITY)
+    setspeaker("Scott")
+    msgbox(format("Touchdown. We are in the blind spot.\pMy scanners show a gap in the harbor security grid for exactly forty-five seconds.\pListen fast because I am burning fuel right now.\pI am not going further into the city.\pToo many facial recognition towers.\pYou have to take the package to the client yourself.\pHe is a DJ.\pPETER.\pIf you hear loud, old-school disco music, that is the drop-off point.\pNow get moving!\pWalk forward and don't look back.\pIf anyone asks, we never met.\pI was never here.\pTango going dark."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(5, moves(walk_fast_down walk_fast_left walk_fast_down*9))
+    waitmovement
+    removeobject(5)
+    setflag(FLAG_HIDE_SCOTT_LIONSARCH_CITY)
+    setrespawn(HEAL_LOCATION_LIONSARCH_CITY)
+    end
+}
+
+
+
+script Siltroottown_Youth_Outide_Ali_Shop_1 {
+    lock
+    msgbox(format("Yo Charmander, give your tail here, I need to light my joint as we..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_PIN)
+    applymovement(14, moves(emote_exclamation_mark face_player))
+    msgbox(format("!!\p...as well as my incense!\pYes, purely medicinal incense.\pFor my... glaucoma.\pPlease don't tell Officer Jenny."))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Youth_Outide_Ali_Shop_2 {
+    lock
+    faceplayer
+    msgbox(format("Dude, be cool!\pStop looking at me!\pIf you stare, they'll know we aren't actually training.\pJust act natural.\p...Is 'acting natural' standing perfectly still or waving my arms? I forgot."))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Youth_Outide_Ali_Shop_3 {
+    lock
+    faceplayer
+    msgbox(format("ALI really knows his botany...\pI feel like a Hoppip floating on a breeze.\pHey, do you have any snacks?\pI would kill for a Lava Cookie right now."))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Stoned_Dude_Outside {
+    lock
+    faceplayer
+    msgbox(format("I came outside for some fresh air, but the air feels... really loud right now.\pI think I'm just going to stare at the sand for a while."))
+    waitmessage
+    release
+    end
+}
+
+
+script Siltroottown_Old_Lady {
+    lock
+    faceplayer
+    msgbox(format("All this beautiful nature, and the youth only care about those dreadful herbs.\pThey should be burying their noses in books, not clouds of smoke."))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Fat_Man {
+    lock
+    faceplayer
+    msgbox(format("Everyone claims the hunger comes from the special grass, but that is total nonsense.\pI am just big-boned and naturally require three pizzas every hour to survive."))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Children_Boy {
+    lock
+    
+    msgbox(format("Hey, cut it out! Janine!\pI am trying to look for a Magikarp down here and you are scaring them away!\pWhy is your face all red? The water isn't even hot!"))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Children_Girl {
+    lock
+    msgbox(format("Take that! Adrian!\pI bet you can't catch me, even with those floaties on!\p...But if you did catch me, I wouldn't be mad or anything."))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Sailor_Biodiversity {
+    lock
+    faceplayer
+    msgbox(format("Back in the day, you couldn't cast a line into these mangroves without hooking something rare.\pSiltroot was legendary, the water was practically bubbling with life.\pBut for the last twenty years? It has been dead silent.\pNow you sit here for hours and catch nothing but old boots and seaweed.\pIt breaks my heart to see the mudflats this empty."))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Fisher_Sad {
+    lock
+    faceplayer
+    msgbox(format("They say the fish are gone because of 'overfishing,' but that is total rubbish.\pIt is the bureaucrats and their endless regulations that killed this town!\pThat is why I sneak into the protected marine reserve to cast my line now.\pYou have to break the law just to find a decent catch these days!"))
+    waitmessage
+    release
+    end
+}
+
+script Siltroottown_Guard_shed {
+    lock
+    faceplayer
+    if(flag(FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1)==FALSE && flag(FLAG_HIDE_SILTROOTTOWN_SHED_GUARD)==FALSE){
+        msgbox(format("Whoa, hold your Ponyta.\pThis is a restricted agricultural facility.\pStrictly authorized personnel only."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+    elif(flag(FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1)==TRUE && flag(FLAG_HIDE_SILTROOTTOWN_SHED_GUARD)==FALSE){
+    getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
+    msgbox(format("Whoa, hold your Ponyta.\pThis is a restricted agricultural facility.\pStrictly authorized personnel only."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    playse(SE_PIN)
+    applymovement(20,moves(emote_exclamation_mark))
+    waitmovement
+    msgbox(format("...\pOh? ALI sent you?\pFor the 'Project Star-Shot' shipment?\pAlright, you're clear."),MSGBOX_AUTOCLOSE)
+    waitmessage    
+    if(var(VAR_TEMP_0) == 62 && var(VAR_TEMP_1) == 65) {
+        applymovement(20, moves(walk_down face_up))
+        waitmovement
+        applymovement(LOCALID_PLAYER, moves(walk_left face_down))
+        waitmovement
+    }
+    elif(var(VAR_TEMP_0) == 61 && var(VAR_TEMP_1) == 66) {
+        applymovement(20, moves(walk_right face_left))
+        waitmovement
+        applymovement(LOCALID_PLAYER, moves(walk_up face_right))
+        waitmovement
+    }
+    msgbox(format("But listen carefully.\pThe production team is inside right now.\pIt's a bunch of Slowbros.\pThey are in a deep, meditative trance while they work.\pIf they see you, it breaks their flow, and they will use their psychic powers to toss you right back out the front door.\pThe bag is in the back.\pMove like a ghost, kid."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(face_up))
+    waitmovement
+    setflag(FLAG_HIDE_SILTROOTTOWN_SHED_GUARD)
+    release
+    end
+    }
+    elif(flag(FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1)==TRUE && flag(FLAG_HIDE_SILTROOTTOWN_SHED_GUARD)==TRUE) {
+        msgbox(format("Remember, don't let the Slowbro's see you.\pThe bag is in the back.\pMove like a ghost, kid."),MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+    release
+    end
+}
+
+movement Siltroottown_Boat_Ride_To_Lionsarch {
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_right
+    walk_fast_right
+    walk_fast_right
+    walk_fast_right
+    walk_fast_right
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_right
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_right
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_faster_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_fast_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+    step_end
+}

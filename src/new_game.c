@@ -189,7 +189,8 @@ static void WarpToTruck(void)
     if (IS_FRLG)
         SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
     else if (IS_HNS)
-        SetWarpDestination(MAP_GROUP(MAP_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_HNS), MAP_NUM(MAP_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_HNS), 1, 0, 0);
+        // ShinyKrabby: start in the custom region's starting bedroom instead of HnS's own New Bark Town.
+        SetWarpDestination(MAP_GROUP(MAP_ERPUS_CITY_START_HOUSE_2F), MAP_NUM(MAP_ERPUS_CITY_START_HOUSE_2F), WARP_ID_NONE, 1, 4);
     else
         SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
     WarpIntoMap();

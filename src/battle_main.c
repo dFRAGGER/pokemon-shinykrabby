@@ -2,6 +2,7 @@
 #include "battle.h"
 #include "battle_anim.h"
 #include "challenge_menu.h"
+#include "pokeblock.h"
 #include "battle_ai_main.h"
 #include "battle_ai_util.h"
 #include "battle_arena.h"
@@ -336,7 +337,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PICNICKER] = { _("PICNICKER"), 4 },
     [TRAINER_CLASS_BUG_MANIAC] = { _("BUG MANIAC"), 15 },
     [TRAINER_CLASS_PSYCHIC] = { _("PSYCHIC"), 6 },
-    [TRAINER_CLASS_GENTLEMAN] = { _("GENTLEMAN"), 20, BALL_LUXURY },
+    [TRAINER_CLASS_GENTLEMAN] = { _("FACULTY"), 20, BALL_LUXURY },
     [TRAINER_CLASS_ELITE_FOUR] = { _("ELITE FOUR"), 25, BALL_ULTRA },
     [TRAINER_CLASS_LEADER] = { _("LEADER"), 25, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_ULTRA : BALL_POKE },
     [TRAINER_CLASS_SCHOOL_KID] = { _("SCHOOL KID") },
@@ -372,6 +373,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PIKE_QUEEN] = { _("PIKE QUEEN") },
     [TRAINER_CLASS_PYRAMID_KING] = { _("PYRAMID KING") },
     [TRAINER_CLASS_RS_PROTAG] = { _("{PKMN} TRAINER") },
+    [TRAINER_CLASS_FACULTY_GRUNT] = { _("FAC. GRUNT"), 20, BALL_LUXURY },
 
     [TRAINER_CLASS_YOUNGSTER_FRLG] =       { _("YOUNGSTER"), 4 },
     [TRAINER_CLASS_BUG_CATCHER_FRLG] =     { _("BUG CATCHER"), 3 },
@@ -404,7 +406,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_TEAM_ROCKET_FRLG] =     { _("TEAM ROCKET"), 8 },
     [TRAINER_CLASS_COOLTRAINER_FRLG] =     { _("COOLTRAINER"), 9, BALL_ULTRA },
     [TRAINER_CLASS_ELITE_FOUR_FRLG] =      { _("ELITE FOUR"), 25, BALL_ULTRA },
-    [TRAINER_CLASS_GENTLEMAN_FRLG] =       { _("GENTLEMAN"), 18, BALL_LUXURY },
+    [TRAINER_CLASS_GENTLEMAN_FRLG] =       { _("FACULTY"), 18, BALL_LUXURY },
     [TRAINER_CLASS_RIVAL_LATE_FRLG] =      { _("RIVAL"), 9 },
     [TRAINER_CLASS_CHAMPION_FRLG] =        { _("CHAMPION"), 25 },
     [TRAINER_CLASS_CHANNELER_FRLG] =       { _("CHANNELER"), 8 },
@@ -6000,6 +6002,9 @@ static void WaitForEvoSceneToFinish(void)
 
 static void ReturnFromBattleToOverworld(void)
 {
+    // Clear all Herb Grinder battle flags — they last only for one battle
+    memset(gHerbEffectFlags, 0, sizeof(gHerbEffectFlags));
+
     if (!(gBattleTypeFlags & BATTLE_TYPE_LINK))
     {
         CalculatePlayerPartyCount();

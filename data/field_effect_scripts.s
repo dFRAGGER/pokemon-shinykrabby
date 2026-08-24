@@ -87,6 +87,8 @@ gFieldEffectScriptPointers::
 	.4byte gFldEffScript_SmileyFaceIcon    		        @ FLDEFF_SMILEY_FACE_ICON
 	.4byte gFieldEffectScript_HallOfFameRecordFrlg      @ FLDEFF_HALL_OF_FAME_RECORD_FRLG
 	.4byte gFldEffScript_PhotoFlash      		        @ FLDEFF_PHOTO_FLASH
+	.4byte gFieldEffectScript_DeepMudFootprints        @ FLDEFF_DEEP_MUD_FOOTPRINTS
+	.4byte gFieldEffectScript_MudPile                  @ FLDEFF_MUD_PILE
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -414,4 +416,12 @@ gFieldEffectScript_HallOfFameRecordFrlg::
 
 gFldEffScript_PhotoFlash::
 	field_eff_callnative FldEff_PhotoFlash
+	field_eff_end
+
+gFieldEffectScript_DeepMudFootprints::
+	field_eff_loadfadedpal_callnative gSpritePalette_Mud, FldEff_DeepMudFootprints
+	field_eff_end
+
+gFieldEffectScript_MudPile::
+	field_eff_loadfadedpal_callnative gSpritePalette_Mud, FldEff_MudPile
 	field_eff_end

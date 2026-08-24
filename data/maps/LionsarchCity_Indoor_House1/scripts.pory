@@ -1,0 +1,47 @@
+mapscripts LionsarchCity_Indoor_House1_MapScripts {}
+
+// House 1 - Home of retired dockworker Sven and his wife Marta.
+// Sven loaded cargo on these docks for forty years. Marta kept the ledgers.
+// Marta gives the player a Stardust she found in an unmarked crate.
+
+script House1_Sven {
+    lock
+    faceplayer
+    msgbox(format("Forty years on those docks.\pLoading crates, offloading barrels, hauling nets.\pYou get a rhythm after a while. A real rhythm.\pThe Krabby used to help us back in the day.\pNow they've got cranes for everything."))
+    waitmessage
+    msgbox(format("That steel factory changed this city.\pDon't get me wrong, the work's steady.\pBut this place used to smell like salt and herring.\pNow it smells like iron and rust.\pMarta says I'm just getting old. Maybe she's right."))
+    waitmessage
+    release
+}
+
+script House1_Marta {
+    lock
+    faceplayer
+    if (flag(FLAG_HOUSE1_STARDUST_GIVEN) == FALSE) {
+        msgbox(format("Oh! Hello there, come in, come in.\pI found something odd last spring in a crate that washed up near berth seven.\pNo label. No manifest. No shipper's mark.\pJust this little thing inside, glittering in the harbor light."))
+        waitmessage
+        msgbox(format("My husband says I should have reported it to the harbor master.\pBut I ask you - who sends an unmarked crate with just one shiny thing in it?\pSomeone who doesn't want it found, that's who.\pYou look sharp. Here. You take it."))
+        waitmessage
+        giveitem(ITEM_STARDUST)
+        waitmessage
+        setflag(FLAG_HOUSE1_STARDUST_GIVEN)
+        msgbox(format("Don't tell my husband, or I'll never hear the end of it."))
+        waitmessage
+    } else {
+        msgbox(format("My husband's been fretting about that crate for months.\pI told him I gave away what was inside.\pHe says I 'can't just give away unlogged harbor goods.'\pRetired forty years and he still thinks like a dockworker."))
+        waitmessage
+    }
+    release
+}
+
+script House1_FishingTrophy {
+    lockall
+    msgbox(format("A weathered bronze plaque rests on a small shelf:\p'1ST PLACE - LIONSARCH HARBOR CATCH CUP\pYear 42\p  Winner: S. BRANDERS\p  One Gyarados, 580 lbs'\pBelow it, a faded photograph of a much younger Sven hoisting a bent rod with both arms, grinning wildly."))
+    releaseall
+}
+
+script House1_ShippingMap {
+    lockall
+    msgbox(format("A large, yellowed map is pinned to the wall.\pRed ink traces the old harbor shipping routes:\p- Lionsarch to Siltroot Town:\n  General goods and passengers\p- Lionsarch to Marshduke City:\n  Steel, coal and minerals\p- Lionsarch to the Southern Ports:\n  Fish, lumber, and manufactured goods\pSome of the routes have been crossed out in pencil."))
+    releaseall
+}

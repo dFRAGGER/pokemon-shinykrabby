@@ -1,0 +1,41 @@
+mapscripts ErpusCity_StartHouse_2F_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_STARTHOUSE_ERP_CITY, 0: ErpCity_Starthouse1F_Mom_Calling
+    ]
+}
+
+script ErpCity_Starthouse1F_Mom_Calling {
+    lock
+    setvar(VAR_STARTHOUSE_ERP_CITY,1)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER,moves(emote_exclamation_mark))
+    waitmovement
+    setspeaker("MOM")
+    msgbox(format("HONEY!!\pWAKE UP!!\pYOU'RE LATE!!"))
+    waitmessage
+    call(Start_FLAGS_Reset)
+    release
+    end
+      
+}
+
+script Start_FLAGS_Reset {
+    setflag(FLAG_HIDE_SCOTT_OUTSIDE_BOAT)
+    return
+}
+
+script ErpCity_Starthouse1F_Mom_Clock {
+    if(!flag(FLAG_SET_WALL_CLOCK)){
+        lock
+        setspeaker("MOM")
+        msgbox(format("OH, AND DON'T FORGET YOUR CLOCK!\pOTHERWISE YOU WILL BE LATE AGAIN TOMORROW!!"))
+        waitmessage
+        applymovement(LOCALID_PLAYER, moves(walk_left))
+        waitmovement
+        release
+        end
+    }
+    else{
+        end
+    }
+}

@@ -11,6 +11,7 @@
 #include "field_effect_helpers.h"
 #include "field_screen_effect.h"
 #include "field_player_avatar.h"
+#include "field_tasks.h"
 #include "fieldmap.h"
 #include "follower_npc.h"
 #include "menu.h"
@@ -929,7 +930,8 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
         return;
     }
 
-    if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER)
+    if (gMudSlowLevel == 0
+     && !(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER)
      && (gSaveBlock3Ptr->challengeSettings.autoRun == 0 || (heldKeys & B_BUTTON))
      && FlagGet(FLAG_SYS_B_DASH)
      && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0
@@ -954,9 +956,12 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
         }
         return;
     }
-    else if (FlagGet(DN_FLAG_SEARCHING) && (heldKeys & A_BUTTON))
+    else if (gMudSlowLevel >= 2
+          || (FlagGet(DN_FLAG_SEARCHING) && (heldKeys & A_BUTTON))
+          || MetatileBehavior_IsDeepMud(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior)
+          || MetatileBehavior_IsDeepSand(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
     {
-        gPlayerAvatar.creeping = TRUE;
+        gPlayerAvatar.creeping = (FlagGet(DN_FLAG_SEARCHING) != 0);
         PlayerWalkSlow(direction);
     }
     else

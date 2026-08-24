@@ -41,6 +41,7 @@
 #define MAP_GROUP_TOWNS_AND_ROUTES MAP_GROUP(MAP_PETALBURG_CITY)
 #define MAP_GROUP_TOWNS_AND_ROUTES_FRLG MAP_GROUP(MAP_PALLET_TOWN)
 #define MAP_GROUP_TOWNS_AND_ROUTES_HNS MAP_GROUP(MAP_NEW_BARK_TOWN_HNS)
+#define MAP_GROUP_TOWNS_AND_ROUTES_SK MAP_GROUP(MAP_ROUTE01)
 #define MAP_GROUP_DUNGEONS MAP_GROUP(MAP_METEOR_FALLS_1F_1R)
 #define MAP_GROUP_DUNGEONS_FRLG MAP_GROUP(MAP_VIRIDIAN_FOREST)
 #define MAP_GROUP_DUNGEONS_HNS MAP_GROUP(MAP_DARK_CAVE_SOUTH_SIDE_HNS)
@@ -331,6 +332,7 @@ static void FindMapsWithMon(u16 species)
             case MAP_GROUP_TOWNS_AND_ROUTES:
             case MAP_GROUP_TOWNS_AND_ROUTES_FRLG:
             case MAP_GROUP_TOWNS_AND_ROUTES_HNS:
+            case MAP_GROUP_TOWNS_AND_ROUTES_SK:
                 SetAreaHasMon(sFeebasData[i][1], sFeebasData[i][2]);
                 break;
             case MAP_GROUP_DUNGEONS:
@@ -367,6 +369,7 @@ static void FindMapsWithMon(u16 species)
             case MAP_GROUP_TOWNS_AND_ROUTES:
             case MAP_GROUP_TOWNS_AND_ROUTES_FRLG:
             case MAP_GROUP_TOWNS_AND_ROUTES_HNS:
+            case MAP_GROUP_TOWNS_AND_ROUTES_SK:
                 SetAreaHasMon(gWildMonHeaders[i].mapGroup, gWildMonHeaders[i].mapNum);
                 break;
             case MAP_GROUP_DUNGEONS:

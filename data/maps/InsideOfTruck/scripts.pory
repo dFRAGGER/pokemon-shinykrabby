@@ -1,0 +1,227 @@
+raw `
+InsideOfTruck_EventScript_SetIntroFlagsMale::
+	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
+	setdynamicwarp MAP_LITTLEROOT_TOWN, 3, 10
+	releaseall
+	end
+
+InsideOfTruck_EventScript_MovingBox::
+	msgbox InsideOfTruck_Text_BoxPrintedWithMonLogo, MSGBOX_SIGN
+	end
+
+InsideOfTruck_Text_BoxPrintedWithMonLogo:
+	.string "The box is printed with a POKéMON logo.\p"
+	.string "It's a POKéMON brand for food and\n"
+	.string "supply service.$"
+`
+mapscripts InsideOfTruck_MapScripts {
+    MAP_SCRIPT_ON_LOAD {call(Mistcity_InsideOfTruck_OnLoad)} 
+	MAP_SCRIPT_ON_RESUME {call(Mistcity_InsideOfTruck_OnResume) }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 0: Miscity_InsideOfTruck_Daan_RescueMission
+        VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 4: Mistcity_InsideOfTruck_Daan_ChaseFaculty
+        VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 6: Mistcity_InsideOfTruck_Daan_Returndrive
+    ]
+}
+
+script Miscity_InsideOfTruck_Daan_RescueMission {
+    lock
+    setvar(VAR_MISTCITY_RESEARCH_CENTER_LOCATION,1)
+    applymovement(LOCALID_PLAYER,moves(walk_left walk_up face_down))
+    waitmovement
+    setdynamicwarp(MAP_DEEP_CLOUD_FOREST_FACULTY_GORGE, 22, 7)
+    call(Mistcity_InsideOfTruck_OnDrive)
+    delay(60)
+    playse(SE_TRUCK_DOOR)
+    special(DrawWholeMapView)
+    delay(60)
+    callnative(StartTruckDrivingScene)
+    setspeaker("DAVID")
+    msgbox(format("The gorge is deep in the forest, it might take a couple of hours.\p Take some rest."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    fadescreen(FADE_TO_BLACK)
+    delay(120)
+    msgbox(format("...A couple of hours later..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    fadescreen(FADE_FROM_BLACK)
+    setspeaker("DAVID")
+    msgbox(format("Ehummmm.... Hello... Wake up.\pI think we're here."),MSGBOX_AUTOCLOSE)
+    callnative(StartTruckSlowingDownScene)
+    delay(200)
+    callnative(WaitForTruckToStop)
+    delay(60)
+    setspeaker("DAVID")
+    msgbox(format("Allright, lets get out there, and keep those Beedrill of me!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    setflag(FLAG_DAVID_TRUCK)
+    setflag(FLAG_FACULTY_GORGE_NASH2)
+    applymovement(4, moves(walk_down walk_right*2 jump_right))
+    waitmovement
+    removeobject(4)
+    waitmessage
+    waitmessage
+    release
+
+}
+
+script Mistcity_InsideOfTruck_OnLoad {
+    setmetatile(4, 1, METATILE_InsideOfTruck_ExitLight_Top, FALSE)
+	setmetatile( 4, 2, METATILE_InsideOfTruck_ExitLight_Mid, FALSE)
+	setmetatile(4, 3, METATILE_InsideOfTruck_ExitLight_Bottom, FALSE)
+	return
+}
+
+script Mistcity_InsideOfTruck_OnDrive {
+    setmetatile(4, 1, METATILE_InsideOfTruck_DoorClosedFloor_Top, FALSE)
+	setmetatile( 4, 2, METATILE_InsideOfTruck_DoorClosedFloor_Mid, FALSE)
+	setmetatile(4, 3, METATILE_InsideOfTruck_DoorClosedFloor_Bottom, FALSE)
+	return
+}
+
+script Mistcity_InsideOfTruck_OnOffLoad {
+    setmetatile(4, 1, METATILE_InsideOfTruck_ExitLight_Top, FALSE)
+	setmetatile( 4, 2, METATILE_InsideOfTruck_ExitLight_Mid, FALSE)
+	setmetatile(4, 3, METATILE_InsideOfTruck_ExitLight_Bottom, FALSE)
+	return
+}
+
+script Mistcity_InsideOfTruck_OnResume {
+	setstepcallback(STEP_CB_TRUCK) 
+	end
+}
+
+script Mistcity_InsideOfTruck_Daan_ChaseFaculty {
+    lock
+    setvar(VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 5)
+    applymovement(LOCALID_PLAYER,moves(walk_left walk_up face_down))
+    waitmovement
+    clearflag(FLAG_DAAN_NASH_TRUCK)
+    addobject(5)
+    applymovement(5, moves(jump_left))
+    waitmovement
+    setdynamicwarp(MAP_DEEP_CLOUDFOREST_FACULTY_ANCIENT_GROTTO, 35, 16)
+    call(Mistcity_InsideOfTruck_OnDrive)
+    delay(60)
+    playse(SE_TRUCK_DOOR)
+    special(DrawWholeMapView)
+    delay(60)
+    callnative(StartTruckDrivingScene)
+    setspeaker("DAVID")
+    msgbox(format("They can't be that far away...\pThe signal seems to be coming from the Ancient Grotto."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(120)
+    setspeaker("DAVID")
+    msgbox(format("BEEP.... BEEP....\pI think this is it!\pNASH!\nSTOP THE CAR!"),MSGBOX_AUTOCLOSE)
+    callnative(StartTruckSlowingDownScene)
+    delay(200)
+    callnative(WaitForTruckToStop)
+    delay(60)
+    waitmessage
+    setspeaker("DAAN")
+    msgbox(format("Let's go!\nStay behind me!"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    setflag(FLAG_DAVID_TRUCK)
+    setflag(FLAG_DAAN_NASH_TRUCK)
+    applymovement(5, moves(jump_right))
+    waitmovement
+    removeobject(5)
+    setspeaker("DAVID")
+    msgbox(format("Well... what are you waiting for?"),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(4, moves(walk_down walk_right*2 jump_right))
+    waitmovement
+    removeobject(4)
+    release
+
+}
+
+script Mistcity_InsideOfTruck_Daan_Returndrive {
+    lock
+    setvar(VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 7)
+    applymovement(LOCALID_PLAYER, moves(walk_left walk_up face_down))
+    waitmovement
+    clearflag(FLAG_DAAN_NASH_TRUCK)
+    addobject(5)
+    applymovement(5, moves(jump_left))
+    waitmovement
+    setdynamicwarp(MAP_MISTCITY_RESEARCH_CENTER, 15, 9)
+    call(Mistcity_InsideOfTruck_OnDrive)
+    delay(60)
+    playse(SE_TRUCK_DOOR)
+    special(DrawWholeMapView)
+    delay(60)
+    callnative(StartTruckDrivingScene)
+    setspeaker("DAAN")
+    msgbox(format("I can't believe it.\nThey just... took it.\pRipped a part of the forest's soul right out of the ground and fled.\pThat 'Silent Guardian'... it was meant to sleep forever."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    applymovement(4, moves(walk_down face_right))
+    setspeaker("DAVID")
+    msgbox(format("The energy signature was off the charts.\pAll my research on ancient Pokémon points to one name...\pThey have Registeel."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    applymovement(5, moves(walk_left))
+    setspeaker("DAAN")
+    msgbox(format("And they were willing to tear down an entire ecosystem just to find it.\pI don't think these are just a group of fanatics, they seem to be a well-funded, highly organized operation."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(4, moves(walk_left))
+    setspeaker("DAVID")
+    msgbox(format("I... I should have been faster.\pIf I'd tracked the signal sooner, maybe we could have..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(5, moves(walk_left))
+    applymovement(4, moves(face_right))
+    setspeaker("DAAN")
+    msgbox(format("Don't.\pYou did everything you could.\pThis is on them, not us.\pWe'll get it back."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(60)
+    applymovement(5, moves(walk_right*2 face_left))
+    applymovement(4, moves(walk_right))
+    setspeaker("DAAN")
+    msgbox(format("Hmmmm.....\pIt's not the first time someone's come searching for secrets in this forest, though.\pA few years back, it was that eccentric Professor. Birds.\pHe was out here for months with all sorts of weird scanners.\pSaid he was mapping 'geothermal pig habitats.'\p...Geothermal. Pig. Habitats.\pIn a forest.\pWhere there are no pigs.\pHe was just as secretive as The Faculty, but his energy felt different.\pMore curious than malicious.\pI wonder what he was really looking for..."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    playse(SE_PIN)
+    applymovement(5, moves(emote_exclamation_mark walk_left face_up))
+    applymovement(4, moves(walk_up face_right emote_exclamation_mark))
+    setspeaker("DAAN")
+    msgbox(format("WHAT?!\pYOU KNOW PROFESSOR BIRDS?\pHow do you know him?\p...\pYou are his intern?\p...\p...jeeezus..."),MSGBOX_AUTOCLOSE)
+    delay(120)
+    applymovement(5, moves(walk_right face_left))
+    applymovement(4, moves(face_down))
+    setspeaker("DAAN")
+    msgbox(format("We should talk about that another time...\pRight now, we fight back.\pTheir rot goes deep... it's even taken root in our own town.\pEleanor and Marcus, two faculty sympathizers who recently moved into town...\pMaybe we should give a little knock on their door."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    setspeaker("DAAN")
+    msgbox(format("...There are also reports coming in from the north.\pI don't want to say too much before I've had a chance to look into it.\pBut if they're moving again... we can't afford to be slow."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(40)
+    applymovement(4, moves(walk_down face_right))
+    setspeaker("DAVID")
+    msgbox(format("I'll keep watching the signals.\pIf The Faculty is active somewhere new, we'll know."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    delay(120)
+    setspeaker("DAAN")
+    msgbox(format("We're here."),MSGBOX_AUTOCLOSE)
+    waitmessage
+    callnative(StartTruckSlowingDownScene)
+    delay(200)
+    callnative(WaitForTruckToStop)
+    delay(60)
+    setflag(FLAG_DAVID_TRUCK)
+    setflag(FLAG_DAAN_NASH_TRUCK)
+    setflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER2)
+    clearflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER1)
+    applymovement(5, moves(jump_right))
+    waitmovement
+    removeobject(5)
+    applymovement(4, moves(walk_right*2 jump_right))
+    waitmovement
+    removeobject(4)
+    release
+
+}
+
+

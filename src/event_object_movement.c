@@ -144,6 +144,7 @@ static void GetGroundEffectFlags_Reflection(struct ObjectEvent *, u32 *);
 static void GetGroundEffectFlags_TallGrassOnSpawn(struct ObjectEvent *, u32 *);
 static void GetGroundEffectFlags_LongGrassOnSpawn(struct ObjectEvent *, u32 *);
 static void GetGroundEffectFlags_SandHeap(struct ObjectEvent *, u32 *);
+static void GetGroundEffectFlags_MudHeap(struct ObjectEvent *, u32 *);
 static void GetGroundEffectFlags_ShallowFlowingWater(struct ObjectEvent *, u32 *);
 static void GetGroundEffectFlags_ShortGrass(struct ObjectEvent *, u32 *);
 static void GetGroundEffectFlags_HotSprings(struct ObjectEvent *, u32 *);
@@ -497,6 +498,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Npc2Reflection,        OBJ_EVENT_PAL_TAG_NPC_2_REFLECTION},
     {gObjectEventPal_Npc3Reflection,        OBJ_EVENT_PAL_TAG_NPC_3_REFLECTION},
     {gObjectEventPal_Npc4Reflection,        OBJ_EVENT_PAL_TAG_NPC_4_REFLECTION},
+    {gObjectEventPal_Statue,                OBJ_EVENT_PAL_TAG_STATUE},
     {gObjectEventPal_Brendan,               OBJ_EVENT_PAL_TAG_BRENDAN},
     {gObjectEventPal_BrendanReflection,     OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION},
     {gObjectEventPal_BridgeReflection,      OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION},
@@ -3369,6 +3371,31 @@ void ObjectEventSetGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup,
 
     if (!TryGetObjectEventIdByLocalIdAndMap(localId, mapNum, mapGroup, &objectEventId))
         ObjectEventSetGraphicsId(&gObjectEvents[objectEventId], graphicsId);
+}
+
+// Like ObjectEventSetGraphicsIdByLocalIdAndMap, but also reloads the sprite's palette. Needed for objects
+// that use a dynamically-loaded palette (the norm under OW_POKEMON_OBJECT_EVENTS). Reuses the same
+// graphics/palette refresh path the follower system uses for mid-scene form changes (e.g. Castform),
+// since plain ObjectEventSetGraphics() never reloads a OBJ_EVENT_PAL_TAG_DYNAMIC palette.
+void RefreshObjectEventGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, u16 graphicsId)
+{
+    u8 objectEventId;
+
+    if (!TryGetObjectEventIdByLocalIdAndMap(localId, mapNum, mapGroup, &objectEventId))
+    {
+        struct ObjectEvent *objectEvent = &gObjectEvents[objectEventId];
+        objectEvent->graphicsId = graphicsId;
+        RefreshFollowerGraphics(objectEvent);
+        // RefreshFollowerGraphics swaps sprite->anims but doesn't restart the sprite's
+        // current animation, so the old species' frame keeps playing until the next
+        // movement action naturally re-triggers it. Force an immediate redraw here,
+        // the same way ObjectEventTurn does for a stationary facing change.
+        if (!objectEvent->inanimate)
+        {
+            StartSpriteAnim(&gSprites[objectEvent->spriteId], GetFaceDirectionAnimNum(objectEvent->facingDirection));
+            SeekSpriteAnim(&gSprites[objectEvent->spriteId], 0);
+        }
+    }
 }
 
 void ObjectEventTurn(struct ObjectEvent *objectEvent, enum Direction direction)
@@ -10017,6 +10044,7 @@ static void GetAllGroundEffectFlags_OnSpawn(struct ObjectEvent *objEvent, u32 *f
     GetGroundEffectFlags_TallGrassOnSpawn(objEvent, flags);
     GetGroundEffectFlags_LongGrassOnSpawn(objEvent, flags);
     GetGroundEffectFlags_SandHeap(objEvent, flags);
+    GetGroundEffectFlags_MudHeap(objEvent, flags);
     GetGroundEffectFlags_ShallowFlowingWater(objEvent, flags);
     GetGroundEffectFlags_ShortGrass(objEvent, flags);
     GetGroundEffectFlags_HotSprings(objEvent, flags);
@@ -10030,6 +10058,7 @@ static void GetAllGroundEffectFlags_OnBeginStep(struct ObjectEvent *objEvent, u3
     GetGroundEffectFlags_LongGrassOnBeginStep(objEvent, flags);
     GetGroundEffectFlags_Tracks(objEvent, flags);
     GetGroundEffectFlags_SandHeap(objEvent, flags);
+    GetGroundEffectFlags_MudHeap(objEvent, flags);
     GetGroundEffectFlags_ShallowFlowingWater(objEvent, flags);
     GetGroundEffectFlags_Puddle(objEvent, flags);
     GetGroundEffectFlags_ShortGrass(objEvent, flags);
@@ -10041,6 +10070,7 @@ static void GetAllGroundEffectFlags_OnFinishStep(struct ObjectEvent *objEvent, u
     ObjectEventUpdateMetatileBehaviors(objEvent);
     GetGroundEffectFlags_ShallowFlowingWater(objEvent, flags);
     GetGroundEffectFlags_SandHeap(objEvent, flags);
+    GetGroundEffectFlags_MudHeap(objEvent, flags);
     GetGroundEffectFlags_Puddle(objEvent, flags);
     GetGroundEffectFlags_Ripple(objEvent, flags);
     GetGroundEffectFlags_ShortGrass(objEvent, flags);
@@ -10106,9 +10136,12 @@ static void GetGroundEffectFlags_Tracks(struct ObjectEvent *objEvent, u32 *flags
     if (objEvent->directionOverwrite)
         return;
 
-    if (MetatileBehavior_IsDeepSand(objEvent->previousMetatileBehavior))
+    if (MetatileBehavior_IsDeepMud(objEvent->previousMetatileBehavior))
+        *flags |= GROUND_EFFECT_FLAG_DEEP_MUD;
+    else if (MetatileBehavior_IsDeepSand(objEvent->previousMetatileBehavior))
         *flags |= GROUND_EFFECT_FLAG_DEEP_SAND;
     else if (MetatileBehavior_IsSandOrDeepSand(objEvent->previousMetatileBehavior)
+             || MetatileBehavior_IsMangroveSand(objEvent->previousMetatileBehavior)
              || MetatileBehavior_IsFootprints(objEvent->previousMetatileBehavior))
         *flags |= GROUND_EFFECT_FLAG_SAND;
 }
@@ -10128,6 +10161,24 @@ static void GetGroundEffectFlags_SandHeap(struct ObjectEvent *objEvent, u32 *fla
     else
     {
         objEvent->inSandPile = FALSE;
+    }
+}
+
+static void GetGroundEffectFlags_MudHeap(struct ObjectEvent *objEvent, u32 *flags)
+{
+    if (MetatileBehavior_IsDeepMud(objEvent->currentMetatileBehavior)
+        && MetatileBehavior_IsDeepMud(objEvent->previousMetatileBehavior))
+    {
+        if (!objEvent->inMudPile)
+        {
+            objEvent->inMudPile = FALSE;
+            objEvent->inMudPile = TRUE;
+            *flags |= GROUND_EFFECT_FLAG_MUD_PILE;
+        }
+    }
+    else
+    {
+        objEvent->inMudPile = FALSE;
     }
 }
 
@@ -10538,6 +10589,12 @@ void GroundEffect_DeepSandTracks(struct ObjectEvent *objEvent, struct Sprite *sp
     sGroundEffectTracksFuncs[objEvent->invisible ? TRACKS_NONE : info->tracks](objEvent, sprite, TRUE);
 }
 
+void GroundEffect_DeepMudTracks(struct ObjectEvent *objEvent, struct Sprite *sprite)
+{
+    const struct ObjectEventGraphicsInfo *info = GetObjectEventGraphicsInfo(objEvent->graphicsId);
+    sGroundEffectTracksFuncs[objEvent->invisible ? TRACKS_NONE : info->tracks](objEvent, sprite, 2);
+}
+
 static void DoTracksGroundEffect_None(struct ObjectEvent *objEvent, struct Sprite *sprite, bool8 isDeepSand)
 {
 }
@@ -10545,9 +10602,10 @@ static void DoTracksGroundEffect_None(struct ObjectEvent *objEvent, struct Sprit
 static void DoTracksGroundEffect_Footprints(struct ObjectEvent *objEvent, struct Sprite *sprite, bool8 isDeepSand)
 {
     // First half-word is a Field Effect script id. (gFieldEffectScriptPointers)
-    u16 sandFootprints_FieldEffectData[2] = {
+    u16 sandFootprints_FieldEffectData[3] = {
         FLDEFF_SAND_FOOTPRINTS,
-        FLDEFF_DEEP_SAND_FOOTPRINTS
+        FLDEFF_DEEP_SAND_FOOTPRINTS,
+        FLDEFF_DEEP_MUD_FOOTPRINTS
     };
 
     gFieldEffectArguments[0] = objEvent->previousCoords.x;
@@ -10561,7 +10619,8 @@ static void DoTracksGroundEffect_Footprints(struct ObjectEvent *objEvent, struct
 static void DoTracksGroundEffect_FootprintsB(struct ObjectEvent *objEvent, struct Sprite *sprite, bool8 isDeepSand)
 {
     // First half-word is a Field Effect script id. (gFieldEffectScriptPointers)
-    u16 otherFootprintsA_FieldEffectData[2] = {
+    u16 otherFootprintsA_FieldEffectData[3] = {
+        FLDEFF_TRACKS_SPOT,
         FLDEFF_TRACKS_SPOT,
         FLDEFF_TRACKS_SPOT
     };
@@ -10578,7 +10637,8 @@ static void DoTracksGroundEffect_FootprintsB(struct ObjectEvent *objEvent, struc
 static void DoTracksGroundEffect_FootprintsC(struct ObjectEvent *objEvent, struct Sprite *sprite, bool8 isDeepSand)
 {
     // First half-word is a Field Effect script id. (gFieldEffectScriptPointers)
-    u16 otherFootprintsB_FieldEffectData[2] = {
+    u16 otherFootprintsB_FieldEffectData[3] = {
+        FLDEFF_TRACKS_BUG,
         FLDEFF_TRACKS_BUG,
         FLDEFF_TRACKS_BUG
     };
@@ -10678,6 +10738,11 @@ void GroundEffect_SandHeap(struct ObjectEvent *objEvent, struct Sprite *sprite)
     StartFieldEffectForObjectEvent(FLDEFF_SAND_PILE, objEvent);
 }
 
+void GroundEffect_MudHeap(struct ObjectEvent *objEvent, struct Sprite *sprite)
+{
+    StartFieldEffectForObjectEvent(FLDEFF_MUD_PILE, objEvent);
+}
+
 void GroundEffect_JumpOnTallGrass(struct ObjectEvent *objEvent, struct Sprite *sprite)
 {
     u8 spriteId;
@@ -10772,7 +10837,9 @@ static void (*const sGroundEffectFuncs[])(struct ObjectEvent *objEvent, struct S
     GroundEffect_JumpLandingDust,       // GROUND_EFFECT_FLAG_LAND_ON_NORMAL_GROUND
     GroundEffect_ShortGrass,            // GROUND_EFFECT_FLAG_SHORT_GRASS
     GroundEffect_HotSprings,            // GROUND_EFFECT_FLAG_HOT_SPRINGS
-    GroundEffect_Seaweed                // GROUND_EFFECT_FLAG_SEAWEED
+    GroundEffect_Seaweed,               // GROUND_EFFECT_FLAG_SEAWEED
+    GroundEffect_DeepMudTracks,         // GROUND_EFFECT_FLAG_DEEP_MUD
+    GroundEffect_MudHeap                // GROUND_EFFECT_FLAG_MUD_PILE
 };
 
 static void DoFlaggedGroundEffects(struct ObjectEvent *objEvent, struct Sprite *sprite, u32 flags)

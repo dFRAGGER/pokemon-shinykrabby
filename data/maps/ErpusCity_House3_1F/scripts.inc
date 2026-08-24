@@ -1,0 +1,35 @@
+ErpusCity_House3_1F_MapScripts::
+	.byte 0
+
+ErpusCity_House3_1F_DadBirds_Conversation::
+	lockall
+	faceplayer
+	setspeaker ErpusCity_House3_1F_DadBirds_Conversation_Text_0
+	msgbox ErpusCity_House3_1F_DadBirds_Conversation_Text_1
+	waitmessage
+	releaseall
+	return
+
+
+ErpusCity_House3_1F_DadBirds_Conversation_Text_0:
+	.string "JOHN BIRDS$"
+
+ErpusCity_House3_1F_DadBirds_Conversation_Text_1:
+	.string "Hi, my name is John Birds. Father of the\n"
+	.string "local professor.\p"
+	.string "Back in the day, my son and I ran a pig\n"
+	.string "farm together in a town much like this\l"
+	.string "one.\p"
+	.string "Nowadays, he's more into advanced\n"
+	.string "technology and runs the local lab.\p"
+	.string "After I retired, I spent years traveling\n"
+	.string "to festivals and partying, but I'm\l"
+	.string "getting too old for that shit now.\p"
+	.string "So, I followed my son when he moved\n"
+	.string "here, looking for a quieter life.\p"
+	.string "He can be a bit chaotic, but he's got a\n"
+	.string "good heart.\p"
+	.string "He should stop using my adress for his\n"
+	.string "packages though.\p"
+	.string "Apparently he can't hear his front door\n"
+	.string "bell when he is working in his lab.$"

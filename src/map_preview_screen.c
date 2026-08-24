@@ -3,6 +3,7 @@
 #include "field_screen_effect.h"
 #include "field_weather.h"
 #include "gpu_regs.h"
+#include "main.h"
 #include "malloc.h"
 #include "map_preview_screen.h"
 #include "menu.h"
@@ -12,6 +13,7 @@
 #include "script.h"
 #include "string_util.h"
 #include "constants/region_map_sections.h"
+#include "constants/rgb.h"
 
 static EWRAM_DATA bool8 sHasVisitedMapBefore = FALSE;
 
@@ -612,4 +614,202 @@ void MapPreview_SetFlag(u16 flagId)
         sHasVisitedMapBefore = FALSE;
     }
     FlagSet(flagId);
+}
+
+// ShinyKrabby: script-triggered preview images, shown via the visionpreview macro.
+// Independent of MapPreviewScreen/mapsec - the script picks the image directly by IMG_ id.
+static EWRAM_DATA bool8 sVisionPreviewAllocedBg0TilemapBuffer = FALSE;
+
+static const u8 sVP_ViridianForestPal[] = INCBIN_U8("graphics/map_preview/viridian_forest/tiles.gbapal");
+static const u8 sVP_ViridianForestTiles[] = INCBIN_U8("graphics/map_preview/viridian_forest/tiles.4bpp.smol");
+static const u8 sVP_ViridianForestTilemap[] = INCBIN_U8("graphics/map_preview/viridian_forest/tilemap.bin.smolTM");
+static const u8 sVP_MtMoonPal[] = INCBIN_U8("graphics/map_preview/mt_moon/tiles.gbapal");
+static const u8 sVP_MtMoonTiles[] = INCBIN_U8("graphics/map_preview/mt_moon/tiles.4bpp.smol");
+static const u8 sVP_MtMoonTilemap[] = INCBIN_U8("graphics/map_preview/mt_moon/tilemap.bin.smolTM");
+static const u8 sVP_DiglettsCavePal[] = INCBIN_U8("graphics/map_preview/digletts_cave/tiles.gbapal");
+static const u8 sVP_DiglettsCaveTiles[] = INCBIN_U8("graphics/map_preview/digletts_cave/tiles.4bpp.smol");
+static const u8 sVP_DiglettsCaveTilemap[] = INCBIN_U8("graphics/map_preview/digletts_cave/tilemap.bin.smolTM");
+static const u8 sVP_RockTunnelPal[] = INCBIN_U8("graphics/map_preview/rock_tunnel/tiles.gbapal");
+static const u8 sVP_RockTunnelTiles[] = INCBIN_U8("graphics/map_preview/rock_tunnel/tiles.4bpp.smol");
+static const u8 sVP_RockTunnelTilemap[] = INCBIN_U8("graphics/map_preview/rock_tunnel/tilemap.bin.smolTM");
+static const u8 sVP_PokemonTowerPal[] = INCBIN_U8("graphics/map_preview/pokemon_tower/tiles.gbapal");
+static const u8 sVP_PokemonTowerTiles[] = INCBIN_U8("graphics/map_preview/pokemon_tower/tiles.4bpp.smol");
+static const u8 sVP_PokemonTowerTilemap[] = INCBIN_U8("graphics/map_preview/pokemon_tower/tilemap.bin.smolTM");
+static const u8 sVP_SafariZonePal[] = INCBIN_U8("graphics/map_preview/safari_zone/tiles.gbapal");
+static const u8 sVP_SafariZoneTiles[] = INCBIN_U8("graphics/map_preview/safari_zone/tiles.4bpp.smol");
+static const u8 sVP_SafariZoneTilemap[] = INCBIN_U8("graphics/map_preview/safari_zone/tilemap.bin.smolTM");
+static const u8 sVP_SeafoamIslandsPal[] = INCBIN_U8("graphics/map_preview/seafoam_islands/tiles.gbapal");
+static const u8 sVP_SeafoamIslandsTiles[] = INCBIN_U8("graphics/map_preview/seafoam_islands/tiles.4bpp.smol");
+static const u8 sVP_SeafoamIslandsTilemap[] = INCBIN_U8("graphics/map_preview/seafoam_islands/tilemap.bin.smolTM");
+static const u8 sVP_PokemonMansionPal[] = INCBIN_U8("graphics/map_preview/pokemon_mansion/tiles.gbapal");
+static const u8 sVP_PokemonMansionTiles[] = INCBIN_U8("graphics/map_preview/pokemon_mansion/tiles.4bpp.smol");
+static const u8 sVP_PokemonMansionTilemap[] = INCBIN_U8("graphics/map_preview/pokemon_mansion/tilemap.bin.smolTM");
+static const u8 sVP_RocketHideoutPal[] = INCBIN_U8("graphics/map_preview/rocket_hideout/tiles.gbapal");
+static const u8 sVP_RocketHideoutTiles[] = INCBIN_U8("graphics/map_preview/rocket_hideout/tiles.4bpp.smol");
+static const u8 sVP_RocketHideoutTilemap[] = INCBIN_U8("graphics/map_preview/rocket_hideout/tilemap.bin.smolTM");
+static const u8 sVP_SilphCoPal[] = INCBIN_U8("graphics/map_preview/silph_co/tiles.gbapal");
+static const u8 sVP_SilphCoTiles[] = INCBIN_U8("graphics/map_preview/silph_co/tiles.4bpp.smol");
+static const u8 sVP_SilphCoTilemap[] = INCBIN_U8("graphics/map_preview/silph_co/tilemap.bin.smolTM");
+static const u8 sVP_VictoryRoadPal[] = INCBIN_U8("graphics/map_preview/victory_road/tiles.gbapal");
+static const u8 sVP_VictoryRoadTiles[] = INCBIN_U8("graphics/map_preview/victory_road/tiles.4bpp.smol");
+static const u8 sVP_VictoryRoadTilemap[] = INCBIN_U8("graphics/map_preview/victory_road/tilemap.bin.smolTM");
+static const u8 sVP_CeruleanCavePal[] = INCBIN_U8("graphics/map_preview/cerulean_cave/tiles.gbapal");
+static const u8 sVP_CeruleanCaveTiles[] = INCBIN_U8("graphics/map_preview/cerulean_cave/tiles.4bpp.smol");
+static const u8 sVP_CeruleanCaveTilemap[] = INCBIN_U8("graphics/map_preview/cerulean_cave/tilemap.bin.smolTM");
+static const u8 sVP_PowerPlantPal[] = INCBIN_U8("graphics/map_preview/power_plant/tiles.gbapal");
+static const u8 sVP_PowerPlantTiles[] = INCBIN_U8("graphics/map_preview/power_plant/tiles.4bpp.smol");
+static const u8 sVP_PowerPlantTilemap[] = INCBIN_U8("graphics/map_preview/power_plant/tilemap.bin.smolTM");
+static const u8 sVP_MtEmberPal[] = INCBIN_U8("graphics/map_preview/mt_ember/tiles.gbapal");
+static const u8 sVP_MtEmberTiles[] = INCBIN_U8("graphics/map_preview/mt_ember/tiles.4bpp.smol");
+static const u8 sVP_MtEmberTilemap[] = INCBIN_U8("graphics/map_preview/mt_ember/tilemap.bin.smolTM");
+static const u8 sVP_RocketWarehousePal[] = INCBIN_U8("graphics/map_preview/rocket_warehouse/tiles.gbapal");
+static const u8 sVP_RocketWarehouseTiles[] = INCBIN_U8("graphics/map_preview/rocket_warehouse/tiles.4bpp.smol");
+static const u8 sVP_RocketWarehouseTilemap[] = INCBIN_U8("graphics/map_preview/rocket_warehouse/tilemap.bin.smolTM");
+static const u8 sVP_MoneanChamberPal[] = INCBIN_U8("graphics/map_preview/monean_chamber/tiles.gbapal");
+static const u8 sVP_MoneanChamberTiles[] = INCBIN_U8("graphics/map_preview/monean_chamber/tiles.4bpp.smol");
+static const u8 sVP_MoneanChamberTilemap[] = INCBIN_U8("graphics/map_preview/monean_chamber/tilemap.bin.smolTM");
+static const u8 sVP_DottedHolePal[] = INCBIN_U8("graphics/map_preview/dotted_hole/tiles.gbapal");
+static const u8 sVP_DottedHoleTiles[] = INCBIN_U8("graphics/map_preview/dotted_hole/tiles.4bpp.smol");
+static const u8 sVP_DottedHoleTilemap[] = INCBIN_U8("graphics/map_preview/dotted_hole/tilemap.bin.smolTM");
+static const u8 sVP_BerryForestPal[] = INCBIN_U8("graphics/map_preview/berry_forest/tiles.gbapal");
+static const u8 sVP_BerryForestTiles[] = INCBIN_U8("graphics/map_preview/berry_forest/tiles.4bpp.smol");
+static const u8 sVP_BerryForestTilemap[] = INCBIN_U8("graphics/map_preview/berry_forest/tilemap.bin.smolTM");
+static const u8 sVP_IcefallCavePal[] = INCBIN_U8("graphics/map_preview/icefall_cave/tiles.gbapal");
+static const u8 sVP_IcefallCaveTiles[] = INCBIN_U8("graphics/map_preview/icefall_cave/tiles.4bpp.smol");
+static const u8 sVP_IcefallCaveTilemap[] = INCBIN_U8("graphics/map_preview/icefall_cave/tilemap.bin.smolTM");
+static const u8 sVP_LostCavePal[] = INCBIN_U8("graphics/map_preview/lost_cave/tiles.gbapal");
+static const u8 sVP_LostCaveTiles[] = INCBIN_U8("graphics/map_preview/lost_cave/tiles.4bpp.smol");
+static const u8 sVP_LostCaveTilemap[] = INCBIN_U8("graphics/map_preview/lost_cave/tilemap.bin.smolTM");
+static const u8 sVP_AlteringCavePal[] = INCBIN_U8("graphics/map_preview/altering_cave/tiles.gbapal");
+static const u8 sVP_AlteringCaveTiles[] = INCBIN_U8("graphics/map_preview/altering_cave/tiles.4bpp.smol");
+static const u8 sVP_AlteringCaveTilemap[] = INCBIN_U8("graphics/map_preview/altering_cave/tilemap.bin.smolTM");
+
+static const struct ImageData sVisionPreviewImageData[IMG_COUNT] = {
+    [IMG_VIRIDIAN_FOREST] = { .tilesptr = sVP_ViridianForestTiles, .tilemapptr = sVP_ViridianForestTilemap, .palptr = sVP_ViridianForestPal },
+    [IMG_MT_MOON] = { .tilesptr = sVP_MtMoonTiles, .tilemapptr = sVP_MtMoonTilemap, .palptr = sVP_MtMoonPal },
+    [IMG_DIGLETTS_CAVE] = { .tilesptr = sVP_DiglettsCaveTiles, .tilemapptr = sVP_DiglettsCaveTilemap, .palptr = sVP_DiglettsCavePal },
+    [IMG_ROCK_TUNNEL] = { .tilesptr = sVP_RockTunnelTiles, .tilemapptr = sVP_RockTunnelTilemap, .palptr = sVP_RockTunnelPal },
+    [IMG_POKEMON_TOWER] = { .tilesptr = sVP_PokemonTowerTiles, .tilemapptr = sVP_PokemonTowerTilemap, .palptr = sVP_PokemonTowerPal },
+    [IMG_SAFARI_ZONE] = { .tilesptr = sVP_SafariZoneTiles, .tilemapptr = sVP_SafariZoneTilemap, .palptr = sVP_SafariZonePal },
+    [IMG_SEAFOAM_ISLANDS] = { .tilesptr = sVP_SeafoamIslandsTiles, .tilemapptr = sVP_SeafoamIslandsTilemap, .palptr = sVP_SeafoamIslandsPal },
+    [IMG_POKEMON_MANSION] = { .tilesptr = sVP_PokemonMansionTiles, .tilemapptr = sVP_PokemonMansionTilemap, .palptr = sVP_PokemonMansionPal },
+    [IMG_ROCKET_HIDEOUT] = { .tilesptr = sVP_RocketHideoutTiles, .tilemapptr = sVP_RocketHideoutTilemap, .palptr = sVP_RocketHideoutPal },
+    [IMG_SILPH_CO] = { .tilesptr = sVP_SilphCoTiles, .tilemapptr = sVP_SilphCoTilemap, .palptr = sVP_SilphCoPal },
+    [IMG_VICTORY_ROAD] = { .tilesptr = sVP_VictoryRoadTiles, .tilemapptr = sVP_VictoryRoadTilemap, .palptr = sVP_VictoryRoadPal },
+    [IMG_CERULEAN_CAVE] = { .tilesptr = sVP_CeruleanCaveTiles, .tilemapptr = sVP_CeruleanCaveTilemap, .palptr = sVP_CeruleanCavePal },
+    [IMG_POWER_PLANT] = { .tilesptr = sVP_PowerPlantTiles, .tilemapptr = sVP_PowerPlantTilemap, .palptr = sVP_PowerPlantPal },
+    [IMG_MT_EMBER] = { .tilesptr = sVP_MtEmberTiles, .tilemapptr = sVP_MtEmberTilemap, .palptr = sVP_MtEmberPal },
+    [IMG_ROCKET_WAREHOUSE] = { .tilesptr = sVP_RocketWarehouseTiles, .tilemapptr = sVP_RocketWarehouseTilemap, .palptr = sVP_RocketWarehousePal },
+    [IMG_MONEAN_CHAMBER] = { .tilesptr = sVP_MoneanChamberTiles, .tilemapptr = sVP_MoneanChamberTilemap, .palptr = sVP_MoneanChamberPal },
+    [IMG_DOTTED_HOLE] = { .tilesptr = sVP_DottedHoleTiles, .tilemapptr = sVP_DottedHoleTilemap, .palptr = sVP_DottedHolePal },
+    [IMG_BERRY_FOREST] = { .tilesptr = sVP_BerryForestTiles, .tilemapptr = sVP_BerryForestTilemap, .palptr = sVP_BerryForestPal },
+    [IMG_ICEFALL_CAVE] = { .tilesptr = sVP_IcefallCaveTiles, .tilemapptr = sVP_IcefallCaveTilemap, .palptr = sVP_IcefallCavePal },
+    [IMG_LOST_CAVE] = { .tilesptr = sVP_LostCaveTiles, .tilemapptr = sVP_LostCaveTilemap, .palptr = sVP_LostCavePal },
+    [IMG_ALTERING_CAVE] = { .tilesptr = sVP_AlteringCaveTiles, .tilemapptr = sVP_AlteringCaveTilemap, .palptr = sVP_AlteringCavePal },
+};
+
+static bool32 VisionPreview_ImageUsesFullPalette(u8 imageId)
+{
+    switch (imageId)
+    {
+    case IMG_VIRIDIAN_FOREST:
+    case IMG_SAFARI_ZONE:
+    case IMG_POKEMON_MANSION:
+    case IMG_ROCKET_HIDEOUT:
+    case IMG_POWER_PLANT:
+    case IMG_ROCKET_WAREHOUSE:
+    case IMG_BERRY_FOREST:
+        return FALSE;
+    default:
+        return TRUE;
+    }
+}
+
+static void VisionPreview_LoadImageGfx(u8 imageId)
+{
+    ResetTempTileDataBuffers();
+    if (VisionPreview_ImageUsesFullPalette(imageId))
+        LoadPalette(sVisionPreviewImageData[imageId].palptr, BG_PLTT_ID(0), 16 * PLTT_SIZE_4BPP);
+    else
+        LoadPalette(sVisionPreviewImageData[imageId].palptr, BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+    DecompressAndCopyTileDataToVram(0, sVisionPreviewImageData[imageId].tilesptr, 0, 0, 0);
+    if (GetBgTilemapBuffer(0) == NULL)
+    {
+        SetBgTilemapBuffer(0, Alloc(BG_SCREEN_SIZE));
+        sVisionPreviewAllocedBg0TilemapBuffer = TRUE;
+    }
+    else
+    {
+        sVisionPreviewAllocedBg0TilemapBuffer = FALSE;
+    }
+    CopyToBgTilemapBuffer(0, sVisionPreviewImageData[imageId].tilemapptr, 0, 0x000);
+    CopyBgTilemapBufferToVram(0);
+}
+
+static void VblankCB_VisionPreviewScript(void)
+{
+    TransferPlttBuffer();
+}
+
+static void CB2_VisionPreviewScript(void)
+{
+    RunTasks();
+    DoScheduledBgTilemapCopiesToVram();
+    UpdatePaletteFade();
+}
+
+#define taskStep     data[0]
+#define frameCounter data[1]
+
+static void Task_RunVisionPreview_Script(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+
+    switch (taskStep)
+    {
+    case 0:
+        if (!FreeTempTileDataBuffersIfPossible() && !IsDma3ManagerBusyWithBgCopy())
+            taskStep++;
+        break;
+    case 1:
+        if (!IsDma3ManagerBusyWithBgCopy())
+        {
+            FadeInFromBlack();
+            taskStep++;
+        }
+        break;
+    case 2:
+        frameCounter++;
+        if (frameCounter > MPS_DURATION_SCRIPT || JOY_HELD(B_BUTTON))
+        {
+            BeginNormalPaletteFade(PALETTES_ALL, MPS_BASIC_FADE_SPEED, 0, 16, RGB_BLACK);
+            frameCounter = 0;
+            taskStep++;
+        }
+        break;
+    case 3:
+        if (!UpdatePaletteFade())
+        {
+            if (sVisionPreviewAllocedBg0TilemapBuffer)
+                Free(GetBgTilemapBuffer(0));
+            DestroyTask(taskId);
+            SetMainCallback2(gMain.savedCallback);
+        }
+        break;
+    }
+}
+
+#undef taskStep
+#undef frameCounter
+
+// gSpecialVar_0x8004: a PreviewImageId (IMG_*) to show. Called by the visionpreview script macro.
+void Script_VisionPreview(void)
+{
+    SetVBlankCallback(NULL);
+    gMain.savedCallback = CB2_ReturnToFieldContinueScript;
+    VisionPreview_LoadImageGfx(gSpecialVar_0x8004);
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0x10, 0, RGB_BLACK);
+    SetVBlankCallback(VblankCB_VisionPreviewScript);
+    SetMainCallback2(CB2_VisionPreviewScript);
+    CreateTask(Task_RunVisionPreview_Script, 0);
 }

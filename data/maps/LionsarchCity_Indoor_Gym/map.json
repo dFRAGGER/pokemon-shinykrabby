@@ -1,0 +1,184 @@
+{
+  "id": "MAP_LIONSARCH_CITY_INDOOR_GYM",
+  "name": "LionsarchCity_Indoor_Gym",
+  "layout": "LAYOUT_LIONSARCH_CITY_INDOOR_GYM",
+  "music": "MUS_GYM",
+  "region_map_section": "MAPSEC_LIONS_ARCH_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_SNOW_LIGHT",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_SNOW_CAVE",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER_FRLG",
+      "x": 15,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "LionsarchGym_Trainer_Hiker1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER_FRLG",
+      "x": 5,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "LionsarchGym_Trainer_Hiker4",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER_FRLG",
+      "x": 17,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "LionsarchGym_Trainer_Hiker3",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER_FRLG",
+      "x": 23,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "LionsarchGym_Trainer_Hiker5",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER_FRLG",
+      "x": 10,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "LionsarchGym_Trainer_Hiker2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GRETA",
+      "x": 6,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LionsarchGym_Leader1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GRETA",
+      "x": 19,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LionsarchGym_Leader2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
+      "x": 15,
+      "y": 32,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LionsarchGym_Guide",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 13,
+      "y": 34,
+      "elevation": 0,
+      "dest_map": "MAP_LIONSARCH_CITY",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 14,
+      "y": 34,
+      "elevation": 0,
+      "dest_map": "MAP_LIONSARCH_CITY",
+      "dest_warp_id": "4"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "weather",
+      "x": 13,
+      "y": 30,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SNOW_HEAVY"
+    },
+    {
+      "type": "weather",
+      "x": 14,
+      "y": 30,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SNOW_HEAVY"
+    },
+    {
+      "type": "weather",
+      "x": 6,
+      "y": 25,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SNOW_BLIZZARD"
+    },
+    {
+      "type": "weather",
+      "x": 10,
+      "y": 24,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SNOW_BLIZZARD"
+    },
+    {
+      "type": "weather",
+      "x": 16,
+      "y": 23,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SNOW_BLIZZARD"
+    },
+    {
+      "type": "weather",
+      "x": 21,
+      "y": 24,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SNOW_BLIZZARD"
+    }
+  ],
+  "bg_events": [],
+  "game_version": "hns"
+}

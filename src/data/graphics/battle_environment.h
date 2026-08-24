@@ -264,3 +264,16 @@ const u32 gBattleEnvironmentAnimTilemap_BuildingModern[] = INCBIN_U32("graphics/
 
 const u32 gBattleEnvironmentAnimTiles_SkyModern[] = INCBIN_U32("graphics/battle_environment/sky_modern/anim_tiles.4bpp.smol");
 const u32 gBattleEnvironmentAnimTilemap_SkyModern[] = INCBIN_U32("graphics/battle_environment/sky_modern/anim_map.bin.smolTM");
+
+// ShinyKrabby custom battle environments (ported from custom maps)
+const u32 gBattleEnvironmentTiles_RedCave[] = INCBIN_U32("graphics/battle_environment/red_cave/tiles.4bpp.smol");
+const u16 gBattleEnvironmentPalette_RedCave[] = INCBIN_U16("graphics/battle_environment/red_cave/palette.gbapal");
+const u32 gBattleEnvironmentTilemap_RedCave[] = INCBIN_U32("graphics/battle_environment/red_cave/map.bin.smolTM");
+const u32 gBattleEnvironmentAnimTiles_RedCave[] = INCBIN_U32("graphics/battle_environment/red_cave/anim_tiles.4bpp.smol");
+const u32 gBattleEnvironmentAnimTilemap_RedCave[] = INCBIN_U32("graphics/battle_environment/red_cave/anim_map.bin.smolTM");
+
+const u32 gBattleEnvironmentTiles_Desert[] = INCBIN_U32("graphics/battle_environment/desert/tiles.4bpp.smol");
+const u16 gBattleEnvironmentPalette_Desert[] = INCBIN_U16("graphics/battle_environment/desert/palette.gbapal");
+const u32 gBattleEnvironmentTilemap_Desert[] = INCBIN_U32("graphics/battle_environment/desert/map.bin.smolTM");
+const u32 gBattleEnvironmentAnimTiles_Desert[] = INCBIN_U32("graphics/battle_environment/desert/anim_tiles.4bpp.smol");
+const u32 gBattleEnvironmentAnimTilemap_Desert[] = INCBIN_U32("graphics/battle_environment/desert/anim_map.bin.smolTM");

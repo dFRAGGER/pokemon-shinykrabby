@@ -252,42 +252,42 @@ static const u16 sBlenderOuter_Pal[] = INCBIN_U16("graphics/berry_blender/outer.
 static const u16 sUnused_Pal[] = INCBIN_U16("graphics/berry_blender/unused.gbapal");
 static const u16 sEmpty_Pal[16 * 14] = {0};
 
-static const u8 sText_BerryBlenderStart[] = _("Starting up the BERRY BLENDER.\pPlease select a BERRY from your BAG\nto put in the BERRY BLENDER.\p");
+static const u8 sText_BerryBlenderStart[] = _("Starting up The Grinder.\pPlease select a BUD from your BAG\nto put in The Grinder.\p");
 static const u8 sText_NewParagraph[] = _("\p");
 static const u8 sText_WasMade[] = _(" was made!");
 
 static const u8 *const sBlenderOpponentsNames[] =
 {
-    [BLENDER_MISTER] = COMPOUND_STRING("MISTER"),
-    [BLENDER_LADDIE] = COMPOUND_STRING("LADDIE"),
-    [BLENDER_LASSIE] = COMPOUND_STRING("LASSIE"),
-    [BLENDER_MASTER] = COMPOUND_STRING("MASTER"),
-    [BLENDER_DUDE]   = COMPOUND_STRING("DUDE"),
-    [BLENDER_MISS]   = COMPOUND_STRING("MISS"),
+    [BLENDER_MISTER] = COMPOUND_STRING("BLAZER"),
+    [BLENDER_LADDIE] = COMPOUND_STRING("KUSHIE"),
+    [BLENDER_LASSIE] = COMPOUND_STRING("MARY J"),
+    [BLENDER_MASTER] = COMPOUND_STRING("GANDALF"),
+    [BLENDER_DUDE]   = COMPOUND_STRING("THE DUDE"),
+    [BLENDER_MISS]   = COMPOUND_STRING("SMOKEY"),
 };
 
 static const u8 sText_CommunicationStandby[] = _("Communication standby…");
-static const u8 sText_WouldLikeToBlendAnotherBerry[] = _("Would you like to blend another BERRY?");
-static const u8 sText_RunOutOfBerriesForBlending[] = _("You've run out of BERRIES for\nblending in the BERRY BLENDER.\p");
-static const u8 sText_YourPokeblockCaseIsFull[] = _("Your {POKEBLOCK} CASE is full.\p");
-static const u8 sText_HasNoBerriesToPut[] = _(" has no BERRIES to put in\nthe BERRY BLENDER.");
-static const u8 sText_ApostropheSPokeblockCaseIsFull[] = _("'s {POKEBLOCK} CASE is full.\p");
-static const u8 sText_BlendingResults[] = _("RESULTS OF BLENDING");
-static const u8 sText_SpaceBerry[] = _(" BERRY");
-static const u8 sText_Time[] = _("Time:");
+static const u8 sText_WouldLikeToBlendAnotherBerry[] = _("Would you like to grind another BUD?");
+static const u8 sText_RunOutOfBerriesForBlending[] = _("You've run out of BUDS for\ngrinding in The Grinder.\p");
+static const u8 sText_YourPokeblockCaseIsFull[] = _("Your STASH CASE is full.\p");
+static const u8 sText_HasNoBerriesToPut[] = _(" has no BUDS to put in\nThe Grinder.");
+static const u8 sText_ApostropheSPokeblockCaseIsFull[] = _("'s STASH CASE is full.\p");
+static const u8 sText_BlendingResults[] = _("RESULTS OF GRINDING");
+static const u8 sText_SpaceBerry[] = _(" BUD");
+static const u8 sText_Time[] = _("Session:");
 static const u8 sText_Min[] = _(" min. ");
 static const u8 sText_Sec[] = _(" sec.");
-static const u8 sText_MaximumSpeed[] = _("MAXIMUM SPEED");
-static const u8 sText_RPM[] = _(" RPM");
+static const u8 sText_MaximumSpeed[] = _("MAX GRIND");
+static const u8 sText_RPM[] = _(" GPM");
 static const u8 sText_Dot[] = _(".");
 static const u8 sText_NewLine[] = _("\n");
 static const u8 sText_Ranking[] = _("RANKING");
 static const u8 sText_TheLevelIs[] = _("The level is ");
-static const u8 sText_TheFeelIs[] = _(", and the feel is ");
+static const u8 sText_TheFeelIs[] = _(", and the potency is ");
 static const u8 sText_Dot2[] = _(".");
 
 static const u8 sText_SavingDontTurnOff2[] = _("SAVING…\nDON'T TURN OFF THE POWER.");
-static const u8 sText_BlenderMaxSpeedRecord[] = _("BERRY BLENDER\nMAXIMUM SPEED RECORD!");
+static const u8 sText_BlenderMaxSpeedRecord[] = _("The Grinder\nMAX GRIND RECORD!");
 static const u8 sText_234Players[] = _("2 PLAYERS\n3 PLAYERS\n4 PLAYERS");
 
 static const struct BgTemplate sBgTemplates[3] =
@@ -2470,6 +2470,29 @@ static void CalculatePokeblock(struct BlenderBerry *berries, struct Pokeblock *p
     pokeblock->bitter = sPokeblockFlavors[FLAVOR_BITTER];
     pokeblock->sour   = sPokeblockFlavors[FLAVOR_SOUR];
     pokeblock->feel   = sPokeblockFlavors[FLAVOR_COUNT];
+
+    // Herb Grinder: use raw berry flavor sums (pre-cancellation) to pick the grind name.
+    // This ensures balanced strains like OG Kush get a meaningful result instead of "BUNK".
+    {
+        static const u8 sDominantGroundColor[FLAVOR_COUNT] = {
+            PBLOCK_CLR_GROUND_SPICY,   // FLAVOR_SPICY  → Energetic Grind
+            PBLOCK_CLR_GROUND_DRY,     // FLAVOR_DRY    → Creative Grind
+            PBLOCK_CLR_GROUND_SWEET,   // FLAVOR_SWEET  → Relaxed Grind
+            PBLOCK_CLR_GROUND_BITTER,  // FLAVOR_BITTER → Focused Grind
+            PBLOCK_CLR_GROUND_SOUR,    // FLAVOR_SOUR   → Uplifted Grind
+        };
+        s32 rawFlavors[FLAVOR_COUNT] = {0};
+        u8 dom = 0;
+        for (i = 0; i < numPlayers; i++)
+            for (j = 0; j < FLAVOR_COUNT; j++)
+                rawFlavors[j] += berries[i].flavors[j];
+        for (i = 1; i < FLAVOR_COUNT; i++)
+            if (rawFlavors[i] > rawFlavors[dom])
+                dom = i;
+        pokeblock->color = (rawFlavors[dom] > 0)
+                           ? sDominantGroundColor[dom]
+                           : PBLOCK_CLR_GROUND;
+    }
 
     for (i = 0; i < FLAVOR_COUNT + 1; i++)
         flavors[i] = sPokeblockFlavors[i];

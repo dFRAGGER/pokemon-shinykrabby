@@ -1,0 +1,113 @@
+mapscripts Marshduke_Indoor_House4_MapScripts {}
+
+script Marshduke_Indoor_House4_Ari {
+    lock
+    faceplayer
+    setspeaker("ARI")
+    if (!flag(FLAG_MET_ARI)) {
+        setflag(FLAG_MET_ARI)
+        setspeaker("ARI")
+        msgbox(format("Hey! Mind the floor, I've just cleaned it.\pWelcome to the Cartesius Gallery. I'm ARI, I collected everything you see here.\pSimple method: work sixty hours a week, then spend your weekends buying from everyone else.\pEspecially watches and sneakers, those are my kryptonite.\pI just wear them once, then place them behind the glass.\pYou can't have them getting dirty, you  know?\pSometimes a historical artifact slips through, but those serve another purpose...\pYou've got to be fast on the marketplaces these days.\pThat's why I can run a sub-ten in the hundred meters as well.\pBut only in those brand new shoes, you know what I mean.\p...\pYou want to race me?\p...\pHa! Not yet. You've got the legs, but not the STRENGTH.\pOut there, the two go together.\pYou can't have speed without STRENGTH.\pCome back when you can move something that doesn't want to move."), MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+    if (!flag(FLAG_STRENGTH_UNLOCKED)) {
+        setspeaker("ARI")
+        msgbox(format("Still no STRENGTH, huh?\pCome back when you can move something that doesn't want to move.\pThe local gym can probably help you train some STRENGTH.\pIn the meantime, you can look around the gallery. I don't mind."), MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    
+    setspeaker("ARI")
+    msgbox(format("Well, look who finally moved something that didn't want to move.\pAlright, you've earned that race.\pJust don't expect me to go easy on you, not in these shoes.\pOut past the platforms, east, where the boards are broken.\pMeet me there. \pWear something you don't mind losing, like those ugly shoes."), MSGBOX_AUTOCLOSE)
+    setflag(FLAG_ARI_SPRINT_CHALLENGE)
+    if(var(VAR_TEMP_0) == 5) {
+        applymovement(3, moves(walk_fast_left walk_fast_down*2 walk_fast_left walk_fast_down*3 walk_fast_right*2 walk_fast_down*4))
+
+    }
+    else {
+        applymovement(3, moves(walk_fast_down*2 walk_fast_left*2 walk_fast_down*3 walk_fast_right*2 walk_fast_down*4))
+    }
+    removeobject(3)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House4_KimonoGirl {
+    lock
+    faceplayer
+    msgbox(format("Oh. So this is where she ended up.\pI always pictured her somewhere quieter. A shrine, maybe. Not behind glass with a price tag.\pIt's strange, seeing centuries of my sisters' dancing reduced to a museum piece for sale.\pBut... the glass is spotless, and the case is dust-free.\pAri may sell everything he loves, but he does take care of it first. I suppose that's worth something."))
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House4_WatchVisitor {
+    lock
+    faceplayer
+    msgbox(format("Look at this thing. Wound, polished, never once worn out the door.\pWhy buy something you're not even going to use?\p...\pThen again, I've got sneakers at home still in the box, so who am I to talk."))
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House4_Sign_BrassTowerBeam {
+    lock
+    msgbox(format("A blackened length of timber, cut clean at one end.\pThe label reads: 'BRASS TOWER - recovered beam."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House4_Sign_Sneaker1 {
+    lock
+    msgbox(format("A single sneaker, still creased at the toe.\pThe card reads: 'Limited release. Ran once around the block. Never again.'"), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House4_Sign_Sneaker2 {
+    lock
+    msgbox(format("White canvas, spotless, laces still knotted from the box.\pThe card reads: 'Queued four hours for these. Wore them to the car and back.'"), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House4_Sign_Sneaker3 {
+    lock
+    msgbox(format("A sneaker with the tag still looped through the laces.\pSomeone has crossed out the price twice and written a higher one both times."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House4_Sign_Watch1 {
+    lock
+    msgbox(format("A watch stopped at some hour that meant something to somebody else.\pThe card reads: 'Keeps perfect time. Ask Ari why that doesn't matter.'"), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House4_Sign_Watch2 {
+    lock
+    msgbox(format("Gold case, hands frozen mid-tick.\pWound once, for the photo, then never again."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House4_Sign_Watch3 {
+    lock
+    msgbox(format("A watch too fine to risk wearing.\pThe glass has fogged, just slightly, where someone's breath got too close."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+

@@ -1081,6 +1081,9 @@ enum __attribute__((packed)) Item
     ITEM_UNUSED_BERRY_3,
     ITEM_AZURE_FLUTE,
 
+    // ShinyKrabby custom item (ported from custom maps)
+    ITEM_CLIMBING_ROPE,
+
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,
 };

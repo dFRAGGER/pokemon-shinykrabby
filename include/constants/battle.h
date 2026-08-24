@@ -660,6 +660,11 @@ enum BattleEnvironments
     BATTLE_ENVIRONMENT_DISTORTION_WORLD,
     BATTLE_ENVIRONMENT_SPACE,
     BATTLE_ENVIRONMENT_ULTRA_SPACE,
+
+    // ShinyKrabby custom battle environments (ported from custom maps)
+    BATTLE_ENVIRONMENT_RED_CAVE,
+    BATTLE_ENVIRONMENT_DESERT,
+
     BATTLE_ENVIRONMENT_COUNT,
 };
 

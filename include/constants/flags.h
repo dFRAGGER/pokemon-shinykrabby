@@ -2504,7 +2504,12 @@
 #define FLAG_DISABLE_EXP_GAIN                      (ENGINE_FLAGS_START + 12)
 #define ENGINE_FLAGS_END                        (ENGINE_FLAGS_START + NUM_ENGINE_FLAGS - 1)
 
-#define FLAGS_COUNT (ENGINE_FLAGS_END + 1)
+// ShinyKrabby custom story flags (reserved block, appended past the engine flags)
+#define SK_FLAGS_START                          (ENGINE_FLAGS_END + 1)
+#define NUM_SK_FLAGS                            200
+#define SK_FLAGS_END                            (SK_FLAGS_START + NUM_SK_FLAGS - 1)
+
+#define FLAGS_COUNT (SK_FLAGS_END + 1)
 
 #if TESTING
 #define TESTING_FLAGS_START                     0x5000

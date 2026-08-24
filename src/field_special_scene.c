@@ -56,6 +56,8 @@ static const u8 sSSTidalSailWestMovementScript[] =
     MOVEMENT_ACTION_STEP_END
 };
 
+static u8 sTruckTaskId = 0;
+
 static void Task_Truck3(u8);
 
 static s16 GetTruckCameraBobbingY(int time)
@@ -86,7 +88,7 @@ static s16 GetTruckBoxYMovement(int time)
 
 #define tTimer data[0]
 
-static void Task_Truck1(u8 taskId)
+void Task_Truck1(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
     s16 cameraXpan = 0, cameraYpan = 0;
@@ -113,7 +115,7 @@ static void Task_Truck1(u8 taskId)
 #define tMoveStep        data[1]
 #define tTimerVertical   data[2]
 
-static void Task_Truck2(u8 taskId)
+void Task_Truck2(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
     s16 cameraYpan, cameraXpan;
@@ -149,7 +151,7 @@ static void Task_Truck2(u8 taskId)
     }
 }
 
-static void Task_Truck3(u8 taskId)
+void Task_Truck3(u8 taskId)
 {
    s16 *data = gTasks[taskId].data;
    s16 cameraXpan, cameraYpan;
@@ -181,10 +183,70 @@ static void Task_Truck3(u8 taskId)
 #undef tMoveStep
 #undef tTimerVertical
 
+// =====================
+// CAVE TREMOR TASK
+// =====================
+
+#define TREMOR_INTERVAL  300  // frames between tremors (~5s at 60fps)
+#define TREMOR_DURATION   24  // frames of shake (~0.4s)
+
+#define tTimer data[0]
+
+static void Task_CaveTremor(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+
+    tTimer++;
+
+    if (tTimer >= TREMOR_INTERVAL)
+    {
+        s16 phase = tTimer - TREMOR_INTERVAL;
+
+        if (phase == 0)
+        {
+            SetCameraPanningCallback(NULL);
+            PlaySE(SE_M_EARTHQUAKE);
+        }
+
+        if (phase < TREMOR_DURATION)
+        {
+            s16 pan = (phase % 4 < 2) ? 2 : -2;
+            SetCameraPanning(pan, pan);
+        }
+        else
+        {
+            SetCameraPanning(0, 0);
+            InstallCameraPanAheadCallback();
+            tTimer = 0;
+        }
+    }
+}
+
+#undef tTimer
+
+void StartCaveTremorScene(void)
+{
+    if (FindTaskIdByFunc(Task_CaveTremor) != TASK_NONE)
+        return;
+    CreateTask(Task_CaveTremor, 0xA);
+}
+
+void StopCaveTremorScene(void)
+{
+    u8 taskId = FindTaskIdByFunc(Task_CaveTremor);
+    if (taskId == TASK_NONE)
+        return;
+    SetCameraPanning(0, 0);
+    InstallCameraPanAheadCallback();
+    DestroyTask(taskId);
+}
+
 #define tState   data[0]
 #define tTimer   data[1]
 #define tTaskId1 data[2]
 #define tTaskId2 data[3]
+
+
 
 static void Task_HandleTruckSequence(u8 taskId)
 {
@@ -254,6 +316,55 @@ static void Task_HandleTruckSequence(u8 taskId)
             UnlockPlayerFieldControls();
         }
         break;
+    }
+}
+
+void StartTruckDrivingScene(void)
+{
+    // Create Task_Truck1 to start the driving animation
+    // The second argument '0xA' is the priority, you can keep it the same.
+   
+    SetCameraPanningCallback(NULL);
+    sTruckTaskId = CreateTask(Task_Truck1, 0xA);
+    PlaySE(SE_TRUCK_MOVE);
+
+}
+
+
+void StartTruckSlowingDownScene(void)
+{
+    // First, destroy the old task if it's running
+    if (gTasks[sTruckTaskId].isActive)
+    {
+        DestroyTask(sTruckTaskId);
+    }    
+    // Now, create the next task in the sequence
+    sTruckTaskId = CreateTask(Task_Truck2, 0xA);
+    PlaySE(SE_TRUCK_STOP);
+}
+
+void WaitForTruckToStop(void)
+{
+    // Task_Truck2 automatically changes itself into Task_Truck3.
+    // You don't need to create Task_Truck3 yourself.
+    // You just need to wait until the task (which is now Task_Truck3)
+    // destroys itself. You can check for this by seeing if it's still active.
+    
+    if (!gTasks[sTruckTaskId].isActive)
+    {
+        // The truck has stopped and the task is finished.
+        // You can now proceed with the rest of your cutscene.
+        sTruckTaskId = 0; // Clear the ID
+        InstallCameraPanAheadCallback();
+        PlaySE(SE_TRUCK_UNLOAD);
+        MapGridSetMetatileIdAt(4 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_InsideOfTruck_ExitLight_Top);
+        MapGridSetMetatileIdAt(4 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_InsideOfTruck_ExitLight_Mid);
+        MapGridSetMetatileIdAt(4 + MAP_OFFSET, 3 + MAP_OFFSET, METATILE_InsideOfTruck_ExitLight_Bottom);
+        DrawWholeMapView();
+        PlaySE(SE_TRUCK_DOOR);
+        DestroyTask(sTruckTaskId);
+        UnlockPlayerFieldControls();
+
     }
 }
 

@@ -1,0 +1,161 @@
+mapscripts MistCity_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_VISITED_MIST_CITY)
+    }
+}
+
+script Mistcity_AipomGuy {
+    lock
+    faceplayer
+    msgbox(format("I can't believe the nerve of that Aipom!\p It swiped my lunch right out of my hands with its tail, and now it's just sitting up there enjoying my sandwich!"))
+    waitmessage
+    release
+}
+
+script Mistcity_LotadGuy {
+    lock
+    faceplayer
+    if (flag(FLAG_RECEIVED_WAILMER_PAIL) == FALSE) {
+        msgbox(format("My Lotad collects fresh rainwater in that leaf of its every morning.\pI grow a few special plants - good for the knees, you know how it is.\pBefore I had Lotad I had to water them myself with a big old pail.\pTook me half the morning with these joints.\pNow Lotad does it better than I ever could.\pHere, take the pail. It will do more good with a young trainer."))
+        waitmessage
+        giveitem(ITEM_WAILMER_PAIL)
+        waitmessage
+        setflag(FLAG_RECEIVED_WAILMER_PAIL)
+    }
+    else {
+        msgbox(format("Lotad was out early again this morning.\pThose plants are doing better than ever.\pGood for the knees."), MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    release
+}
+
+script Mistcity_PuddleKid {
+    lock
+    faceplayer
+    msgbox(format("My mom says I'll catch a cold if I stay out too long, but splashing in puddles is the best way to find invisible Kecleon!"))
+    waitmessage
+    release
+}
+
+script Mistcity_Poliwag {
+    lock
+    faceplayer
+    playmoncry(SPECIES_POLIWAG, CRY_MODE_NORMAL)
+    msgbox(format("Poli!\nPoli-wag!"))
+    waitmessage
+    release
+}
+
+script Mistcity_Lotad {
+    lock
+    faceplayer
+    playmoncry(SPECIES_LOTAD, CRY_MODE_NORMAL)
+    msgbox(format("Looo-tah!\nLotad!"))
+    waitmessage
+    release
+}
+
+script Mistcity_FailedRanger {
+    lock
+    faceplayer
+    msgbox(format("I come here every morning to watch the trucks head out\pIf I hadn't flunked my Ranger exam, I'd be in the driver's seat right now instead of just watching from the sidelines...."))
+    waitmessage
+    release
+}
+
+script Mistcity_SpacedoutGirlMushroom {
+    lock
+    faceplayer
+    msgbox(format("I just bought a bag of 'special' mushrooms from Leaf, and now I can't tell if the rain is moving or if the whole world is just slowly spinning...\pwhoa...."))
+    waitmessage
+    release
+}
+
+script Mistcity_Artist {
+    lock
+    faceplayer
+    msgbox(format("I've been standing here for hours waiting for the rain to let up so I can finally paint the valley, but I'm starting to think my canvas is going to stay blank forever."))
+    waitmessage
+    release
+}
+
+script Mistcity_Smoker {
+    lock
+    faceplayer
+    msgbox(format("I just got fired for 'unauthorized combustion of plant matter' in the locker room.\p Honestly, I think they're just jealous of how relaxed I am about the whole thing.\pI got my special herbs from Siltroot Town.\pTheir stuff is heavvyyy..."))
+    waitmessage
+    release
+}
+
+script Mistcity_Tourist {
+    lock
+    faceplayer
+    msgbox(format("I came here to see the rare Pokémon, but nobody told me the humidity would turn my hair into a Tangela's vine!"))
+    waitmessage
+    release
+}
+
+script Mistcity_Sign_Welcome {
+    lock
+    msgbox(format("{UP_ARROW}Mist City:\nThe Sanctuary in the Clouds."))
+    waitmessage
+    release
+}
+
+script Mistcity_Sign_Woodworkshop {
+    lock
+    msgbox(format("Silas's Woodworks:\nBreathing new life into fallen branches."))
+    waitmessage
+    release
+}
+
+script Mistcity_Sign_ResearchCenter {
+    lock
+    msgbox(format("Pokémon Diversity Center:\nResearch - Conservation - Exploration"))
+    waitmessage
+    release
+}
+
+script Mistcity_Sign_Lookout {
+    lock
+    msgbox(format("{RIGHT_ARROW} Valley Lookout Point Ahead:\nThe Deep Cloud Forest (Restricted Area)"))
+    waitmessage
+    release
+}
+
+script Mistcity_Sign_Mushroomhut {
+    lock
+    msgbox(format("Leaf's Fungi Hut:\nRare spores, damp moss, and magical mushrooms!"))
+    waitmessage
+    release
+}
+
+script Mistcity_Sign_Gym {
+    lock
+    msgbox(format("Mist City Pokémon Gym:\nDarkness in the Cloud Forest."))
+    waitmessage
+    release
+}
+
+script Mistcity_Gymdoor {
+    lock
+    faceplayer
+    msgbox(format("I'm sorry, but the Gym is temporarily closed.\pNormally our team of rangers runs the battles here, but right now everyone is deployed to the deep forest to answer the distress calls."))
+    waitmessage
+    release
+}
+
+script Mistcity_Sign_DarkCave {
+    lock
+    msgbox(format("{LEFT_ARROW} Bat Cave\nCaution: Heavy Bat Population."))
+    waitmessage
+    release
+}
+
+script Mistcity_DarkCaveFail {
+    lock
+    faceplayer
+    msgbox(format("I tried to make it to Siltroot, but it's pitch black inside.\p I barely took five steps before a swarm of Zubats chased me right back out!"))
+    waitmessage
+    release
+}

@@ -1,0 +1,130 @@
+mapscripts WestLionMountain_MapScripts {}
+
+// =====================
+// TRAINER SCRIPTS - WEST LION MOUNTAIN
+// =====================
+
+script WestLionMountain_Trainer_Leroy {
+    trainerbattle_single(TRAINER_LEROY, WestLionMountain_Text_LeroyIntro, WestLionMountain_Text_LeroyDefeated)
+    if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
+        msgbox(WestLionMountain_Text_LeroyPostBattle_After, MSGBOX_AUTOCLOSE)
+    } else {
+        msgbox(WestLionMountain_Text_LeroyPostBattle, MSGBOX_AUTOCLOSE)
+    }
+    end
+}
+
+text WestLionMountain_Text_LeroyIntro {
+    format("I've conquered every peak in this mountain range!\pYou're just another obstacle on my path to greatness!")
+}
+
+text WestLionMountain_Text_LeroyDefeated {
+    format("Maybe I should stick to climbing mountains instead of battling...")
+}
+
+text WestLionMountain_Text_LeroyPostBattle {
+    format("The tremors started about a week ago.\pAt first I thought it was just avalanches, but the pattern is too regular.\pSomething's digging deep underground.")
+}
+
+text WestLionMountain_Text_LeroyPostBattle_After {
+    format("The mountain's all mine again!\pThose suited people had roped off half the eastern trails.\pNow that they're gone I can finally get back to conquering every peak!")
+}
+
+script WestLionMountain_Trainer_Wilton {
+    trainerbattle_single(TRAINER_WILTON_1, WestLionMountain_Text_WiltonIntro, WestLionMountain_Text_WiltonDefeated)
+    msgbox(WestLionMountain_Text_WiltonPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text WestLionMountain_Text_WiltonIntro {
+    format("These mountains are home to my family for generations!\pI won't let some stranger wander through without a proper challenge!")
+}
+
+text WestLionMountain_Text_WiltonDefeated {
+    format("You've proven yourself worthy of these peaks...")
+}
+
+text WestLionMountain_Text_WiltonPostBattle {
+    format("My grandfather used to tell stories about ancient guardians sleeping in these mountains.\pPokemon of immense power, sealed away long ago.\pI always thought they were just legends...")
+}
+
+script WestLionMountain_Trainer_Edgar {
+    trainerbattle_single(TRAINER_EDGAR, WestLionMountain_Text_EdgarIntro, WestLionMountain_Text_EdgarDefeated)
+    if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
+        msgbox(WestLionMountain_Text_EdgarPostBattle_After, MSGBOX_AUTOCLOSE)
+    } else {
+        msgbox(WestLionMountain_Text_EdgarPostBattle, MSGBOX_AUTOCLOSE)
+    }
+    end
+}
+
+text WestLionMountain_Text_EdgarIntro {
+    format("You look lost, traveler!\pLet me show you the power of a true mountain dweller!")
+}
+
+text WestLionMountain_Text_EdgarDefeated {
+    format("I've underestimated you... city folk aren't as weak as I thought.")
+}
+
+text WestLionMountain_Text_EdgarPostBattle {
+    format("If you're heading east, you might run into some trouble.\pSaw some fancy-dressed folks setting up camp near a cave entrance.\pThey didn't look like regular hikers or researchers to me.")
+}
+
+text WestLionMountain_Text_EdgarPostBattle_After {
+    format("Saw those fancy people loading up their gear and heading south.\pDidn't say a word to anyone, just packed up and left.\pFine by me. They never belonged up here anyway.")
+}
+
+// =====================
+// NPC CONVERSATIONS - WEST LION MOUNTAIN
+// =====================
+
+script WestLionMountain_Climber_Convo {
+    lock
+    faceplayer
+    if (flag(FLAG_ITEM_WESTLION_TM_CALM_MIND) == FALSE) {
+        if (flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE) == FALSE) {
+            msgbox(format("I've been climbing these mountains for twenty years.\pThe rocks have been shifting lately, more than I've ever seen.\pIt's like the mountain itself is... unsettled.\pHere, take this before you head further up.\pCalm Mind. Up here, panic gets you killed.\pYou quiet the noise, and suddenly you see the path.\pSame thing in battle."))
+            waitmessage
+            giveitem(ITEM_TM_CALM_MIND)
+            waitmessage
+            setflag(FLAG_ITEM_WESTLION_TM_CALM_MIND)
+        }
+        else {
+            msgbox(format("Twenty years on these peaks and I've seen a lot come and go.\pThose brown-suited folks arrived like they owned the place...\pand left just as suddenly.\pThe mountain outlasts them all.\pCalm Mind. You've earned it."))
+            waitmessage
+            giveitem(ITEM_TM_CALM_MIND)
+            waitmessage
+            setflag(FLAG_ITEM_WESTLION_TM_CALM_MIND)
+        }
+    }
+    else {
+        if (flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE) == FALSE) {
+            msgbox(format("The rocks have been shifting lately.\pStay on the marked paths and watch your footing."), MSGBOX_AUTOCLOSE)
+            waitmessage
+        }
+        else {
+            msgbox(format("Twenty years on these peaks and I've seen a lot come and go.\pThe mountain outlasts them all."), MSGBOX_AUTOCLOSE)
+            waitmessage
+        }
+    }
+    release
+    end
+}
+
+script WestLionMountain_Hiker_Convo {
+    lock
+    faceplayer
+    if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
+        msgbox(format("Have you noticed how quiet it's been up here lately?\pNo more tremors since those people in brown suits disappeared.\pThe Rangers closed their investigation too.\pWhatever was going on down there, it's over."), MSGBOX_AUTOCLOSE)
+    } else {
+        msgbox(format("Did you feel that tremor just now?\pThey've been happening more and more frequently.\pThe Pokemon Rangers are investigating, but they haven't found anything yet."), MSGBOX_AUTOCLOSE)
+    }
+    release
+    end
+}
+
+script WestLionMountain_Sign_EastMountain {
+    lock
+    msgbox(format("East Lion Mountain\nEast"), MSGBOX_AUTOCLOSE)
+    release
+}

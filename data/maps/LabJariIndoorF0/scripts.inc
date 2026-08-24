@@ -1,0 +1,651 @@
+LabJariIndoorF0_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LabJariIndoorF0_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, LabJariIndoorF0_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
+	.byte 0
+
+LabJariIndoorF0_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setflag FLAG_PROFESSOR_BIRDS_DISCOVERY
+	setflag FLAG_DISABLE_FOLLOWER_POKEMON
+	return
+
+LabJariIndoorF0_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_RECIEVED_STARTER_POKEMON, 0, LabJarinIndoorF0_Eventscript_Entrance
+	.2byte 0
+
+
+LabJarinIndoorF0_Eventscript_Entrance::
+	lock
+	setvar VAR_RECIEVED_STARTER_POKEMON, 1
+	msgbox LabJarinIndoorF0_Eventscript_Entrance_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	release
+	return
+
+
+ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection::
+	lockall
+	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_2
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
+ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_1:
+	releaseall
+	return
+
+ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_2:
+	showmonpic SPECIES_CHARMANDER, 10, 3
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_6
+ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_5:
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_9
+ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_8:
+	hidemonpic
+	goto ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_1
+
+ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_6:
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
+	goto ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_5
+
+ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_9:
+	givemon SPECIES_CHARMANDER, 5
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_RECEIVED_STARTER_CHARMANDER
+	removeobject 9
+	setflag FLAG_RECEIVED_STARTER_CHOICE
+	bufferspeciesname STR_VAR_2, SPECIES_CHARMANDER
+	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_11:
+	call Common_EventScript_NameReceivedPartyMon
+	fadescreen FADE_FROM_BLACK
+	goto ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_8
+
+
+ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection::
+	lockall
+	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_2
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
+ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_1:
+	releaseall
+	return
+
+ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_2:
+	showmonpic SPECIES_BULBASAUR, 10, 3
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_6
+ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_5:
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_9
+ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_8:
+	hidemonpic
+	goto ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_1
+
+ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_6:
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
+	goto ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_5
+
+ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_9:
+	givemon SPECIES_BULBASAUR, 5
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_RECEIVED_STARTER_BULBASAUR
+	removeobject 8
+	setflag FLAG_RECEIVED_STARTER_CHOICE
+	bufferspeciesname STR_VAR_2, SPECIES_BULBASAUR
+	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_11:
+	call Common_EventScript_NameReceivedPartyMon
+	fadescreen FADE_FROM_BLACK
+	goto ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_8
+
+
+ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection::
+	lockall
+	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_2
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
+ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_1:
+	releaseall
+	return
+
+ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_2:
+	showmonpic SPECIES_SQUIRTLE, 10, 3
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_6
+ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_5:
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_9
+ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_8:
+	hidemonpic
+	goto ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_1
+
+ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_6:
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
+	goto ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_5
+
+ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_9:
+	givemon SPECIES_SQUIRTLE, 5
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_RECEIVED_STARTER_SQUIRTLE
+	removeobject 7
+	setflag FLAG_RECEIVED_STARTER_CHOICE
+	bufferspeciesname STR_VAR_2, SPECIES_SQUIRTLE
+	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_11:
+	call Common_EventScript_NameReceivedPartyMon
+	fadescreen FADE_FROM_BLACK
+	goto ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_8
+
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection::
+	lockall
+	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_2
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
+ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_1:
+	releaseall
+	return
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_2:
+	showmonpic SPECIES_CYNDAQUIL, 10, 3
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_6
+ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_5:
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_9
+ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_8:
+	hidemonpic
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_1
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_6:
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_5
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_9:
+	givemon SPECIES_CYNDAQUIL, 5
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_RECEIVED_STARTER_CYNDAQUIL
+	removeobject 6
+	setflag FLAG_RECEIVED_STARTER_CHOICE
+	bufferspeciesname STR_VAR_2, SPECIES_CYNDAQUIL
+	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_11:
+	call Common_EventScript_NameReceivedPartyMon
+	fadescreen FADE_FROM_BLACK
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_8
+
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection::
+	lockall
+	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_2
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
+ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_1:
+	releaseall
+	return
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_2:
+	showmonpic SPECIES_CHIKORITA, 10, 3
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_6
+ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_5:
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_9
+ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_8:
+	hidemonpic
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_1
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_6:
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_5
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_9:
+	givemon SPECIES_CHIKORITA, 5
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_RECEIVED_STARTER_CHIKORITA
+	removeobject 5
+	setflag FLAG_RECEIVED_STARTER_CHOICE
+	bufferspeciesname STR_VAR_2, SPECIES_CHIKORITA
+	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_11:
+	call Common_EventScript_NameReceivedPartyMon
+	fadescreen FADE_FROM_BLACK
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_8
+
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection::
+	lockall
+	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_2
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
+ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_1:
+	releaseall
+	return
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_2:
+	showmonpic SPECIES_TOTODILE, 10, 3
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_6
+ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_5:
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_9
+ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_8:
+	hidemonpic
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_1
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_6:
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_5
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_9:
+	givemon SPECIES_TOTODILE, 5
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_RECEIVED_STARTER_TOTODILE
+	removeobject 4
+	setflag FLAG_RECEIVED_STARTER_CHOICE
+	bufferspeciesname STR_VAR_2, SPECIES_TOTODILE
+	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_11:
+	call Common_EventScript_NameReceivedPartyMon
+	fadescreen FADE_FROM_BLACK
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_8
+
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection::
+	lockall
+	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_2
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
+ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_1:
+	releaseall
+	return
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_2:
+	showmonpic SPECIES_TORCHIC, 10, 3
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_6
+ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_5:
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_9
+ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_8:
+	hidemonpic
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_1
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_6:
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_5
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_9:
+	givemon SPECIES_TORCHIC, 5
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_RECEIVED_STARTER_TORCHIC
+	removeobject 3
+	setflag FLAG_RECEIVED_STARTER_CHOICE
+	bufferspeciesname STR_VAR_2, SPECIES_TORCHIC
+	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_11:
+	call Common_EventScript_NameReceivedPartyMon
+	fadescreen FADE_FROM_BLACK
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_8
+
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection::
+	lockall
+	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_2
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
+ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_1:
+	releaseall
+	return
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_2:
+	showmonpic SPECIES_TREECKO, 10, 3
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_6
+ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_5:
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_9
+ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_8:
+	hidemonpic
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_1
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_6:
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_5
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_9:
+	givemon SPECIES_TREECKO, 5
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_RECEIVED_STARTER_TREECKO
+	removeobject 2
+	setflag FLAG_RECEIVED_STARTER_CHOICE
+	bufferspeciesname STR_VAR_2, SPECIES_TREECKO
+	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_11:
+	call Common_EventScript_NameReceivedPartyMon
+	fadescreen FADE_FROM_BLACK
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_8
+
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection::
+	lockall
+	goto_if_unset FLAG_RECEIVED_STARTER_CHOICE, ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_2
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2
+ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_1:
+	releaseall
+	return
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_2:
+	showmonpic SPECIES_MUDKIP, 10, 3
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_6
+ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_5:
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_9
+ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_8:
+	hidemonpic
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_1
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_6:
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_5
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_9:
+	givemon SPECIES_MUDKIP, 5
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_RECEIVED_STARTER_MUDKIP
+	removeobject 1
+	setflag FLAG_RECEIVED_STARTER_CHOICE
+	bufferspeciesname STR_VAR_2, SPECIES_MUDKIP
+	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_11
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_8
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_11:
+	call Common_EventScript_NameReceivedPartyMon
+	fadescreen FADE_FROM_BLACK
+	goto ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_8
+
+
+ErpusCity_ProfessorBirdsLab_Eventscript_Kanto_Sign::
+	lockall
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_Kanto_Sign_Text_0
+	waitmessage
+	releaseall
+	return
+
+
+ErpusCity_ProfessorBirdsLab_Eventscript_Johto_Sign::
+	lockall
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_Johto_Sign_Text_0
+	waitmessage
+	releaseall
+	return
+
+
+ErpusCity_ProfessorBirdsLab_Eventscript_Hoenn_Sign::
+	lockall
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_Hoenn_Sign_Text_0
+	waitmessage
+	releaseall
+	return
+
+
+ErpusCity_ProfessorBirdsLab_Eventscript_TaylorSwift_Sign::
+	lockall
+	msgbox ErpusCity_ProfessorBirdsLab_Eventscript_TaylorSwift_Sign_Text_0
+	waitmessage
+	releaseall
+	return
+
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit::
+	lockall
+	goto_if_set FLAG_RECEIVED_STARTER_CHOICE, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_2
+	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_5
+	applymovement LOCALID_PLAYER, stopplayer
+	waitmovement 0
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_1:
+	releaseall
+	return
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_2:
+	playbgm MUS_RG_ENCOUNTER_RIVAL, FALSE
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Movement_0
+	waitmovement
+	setspeaker LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_0
+	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_1
+	waitmessage
+	setspeaker LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_0
+	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_2
+	waitmessage
+	clearflag FLAG_PROFESSOR_BIRDS_DISCOVERY
+	clearflag FLAG_DISABLE_FOLLOWER_POKEMON
+	addobject 10
+	applymovement 10, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Movement_1
+	waitmovement
+	applymovement LOCALID_PLAYER, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Movement_2
+	setspeaker LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_3
+	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_4
+	waitmessage
+	fadescreen FADE_TO_BLACK
+	warpsilent MAP_ERP_CITY, 0
+	waitstate
+	fadescreen FADE_FROM_BLACK
+	goto LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_1
+
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit::
+	lockall
+	goto_if_set FLAG_RECEIVED_STARTER_CHOICE, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_2
+	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_5
+	applymovement LOCALID_PLAYER, stopplayer
+	waitmovement 0
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_1:
+	releaseall
+	return
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_2:
+	playbgm MUS_RG_ENCOUNTER_RIVAL, FALSE
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Movement_0
+	waitmovement
+	setspeaker LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_0
+	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_1
+	waitmessage
+	setspeaker LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_0
+	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_2
+	waitmessage
+	clearflag FLAG_PROFESSOR_BIRDS_DISCOVERY
+	clearflag FLAG_DISABLE_FOLLOWER_POKEMON
+	addobject 10
+	applymovement 10, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_Movement_0
+	waitmovement
+	applymovement LOCALID_PLAYER, LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_Movement_1
+	setspeaker LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_3
+	msgbox LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_4
+	waitmessage
+	fadescreen FADE_TO_BLACK
+	warpsilent MAP_ERP_CITY, 0
+	waitstate
+	fadescreen FADE_FROM_BLACK
+	goto LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_1
+
+
+stopplayer:
+	walk_down
+	step_end
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Movement_0:
+	emote_exclamation_mark
+	step_end
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Movement_1:
+	walk_fast_right
+	walk_fast_down
+	face_left
+	step_end
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Movement_2:
+	face_right
+	step_end
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_Movement_0:
+	walk_fast_down
+	face_right
+	step_end
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_RightExit_Movement_1:
+	face_left
+	step_end
+
+LabJarinIndoorF0_Eventscript_Entrance_Text_0:
+	.string "HOLY MOLY!!\p"
+	.string "Look at all those Pokeballs!\p"
+	.string "What would be in them?$"
+
+ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_0:
+	.string "This pokeball seems to contain\n"
+	.string "Charmander, want to slide the pokeball\l"
+	.string "in your pocket?$"
+
+ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_1:
+	.string "Lets see what is in the other pokeballs.$"
+
+ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_Text_2:
+	.string "Better leave quickly..$"
+
+ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_Text_0:
+	.string "This pokeball seems to contain\n"
+	.string "Bulbasaur, want to slide the pokeball in\l"
+	.string "your pocket?$"
+
+ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_Text_0:
+	.string "This pokeball seems to contain\n"
+	.string "Squirtle, want to slide the pokeball in\l"
+	.string "your pocket?$"
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_Text_0:
+	.string "This pokeball seems to contain\n"
+	.string "Cyndaquil, want to slide the pokeball in\l"
+	.string "your pocket?$"
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_Text_0:
+	.string "This pokeball seems to contain\n"
+	.string "Chikorita, want to slide the pokeball in\l"
+	.string "your pocket?$"
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_Text_0:
+	.string "This pokeball seems to contain\n"
+	.string "Totodile, want to slide the pokeball in\l"
+	.string "your pocket?$"
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_Text_0:
+	.string "This pokeball seems to contain Torchic,\n"
+	.string "want to slide the pokeball in your\l"
+	.string "pocket?$"
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_Text_0:
+	.string "This pokeball seems to contain Treecko,\n"
+	.string "want to slide the pokeball in your\l"
+	.string "pocket?$"
+
+ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_Text_0:
+	.string "This pokeball seems to contain Mudkip,\n"
+	.string "want to slide the pokeball in your\l"
+	.string "pocket?$"
+
+ErpusCity_ProfessorBirdsLab_Eventscript_Kanto_Sign_Text_0:
+	.string "An almost illegible note is scrawled on\n"
+	.string "the paper:\p"
+	.string "KANTOOOO!!?$"
+
+ErpusCity_ProfessorBirdsLab_Eventscript_Johto_Sign_Text_0:
+	.string "An almost illegible note is scrawled on\n"
+	.string "the paper:\p"
+	.string "JOHTOO?!$"
+
+ErpusCity_ProfessorBirdsLab_Eventscript_Hoenn_Sign_Text_0:
+	.string "An almost illegible note is scrawled on\n"
+	.string "the paper:\p"
+	.string "HOENN??$"
+
+ErpusCity_ProfessorBirdsLab_Eventscript_TaylorSwift_Sign_Text_0:
+	.string "An almost illegible note is scrawled on\n"
+	.string "the paper:\p"
+	.string "I LOVEEEEE TAYLOR SWIFT$"
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_0:
+	.string "?????$"
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_1:
+	.string "HEY..........$"
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_2:
+	.string "WHAT ARE YOU DOING HERE??!!$"
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_3:
+	.string "PROF. BIRDS$"
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_4:
+	.string "I TOLD YOU TO GET SOME BOXES!!\p"
+	.string "NOT WANDER AROUND IN MY SECRET LA.. I\n"
+	.string "MEAN STORAGE ROOM!!\p"
+	.string "GET THE FUCK OUT!!$"
+
+LabJariIndoorF0_Eventscript_DiscoveryStealStarterPokemon_LeftExit_Text_5:
+	.string "Hmmmm, those pokeballs look shiny...\p"
+	.string "Nobody will notice when I take one\n"
+	.string "right?$"

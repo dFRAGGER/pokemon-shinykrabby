@@ -1,0 +1,38 @@
+mapscripts Marshduke_Indoor_PokemonCenter_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+        call(Marshduke_Indoor_PokemonCenter_1F_OnTransition)
+    }
+    MAP_SCRIPT_ON_RESUME{
+        call(CableClub_OnResume)
+    }
+}
+
+script Marshduke_Indoor_PokemonCenter_1F_OnTransition {
+    setrespawn(HEAL_LOCATION_MARSH_DUKE_CITY)
+    end
+}
+
+script Marshduke_Indoor_PokemonCenter_1F_EventScript_Nurse {
+    setvar(VAR_0x800B, 1)
+    call(Common_EventScript_PkmnCenterNurse)
+    waitmessage
+    waitbuttonpress
+    release
+    end
+}
+
+script Marshduke_Indoor_PokemonCenter_1F_HexManiac {
+    lock
+    faceplayer
+    msgbox(format("Shh. Put your ear to the floor.\p...\pNo? Fine. I'll tell you.\pYou know that hum from the ALAKAZAM in the Cathedral?\pIt comes up through the floor everywhere in this city.\pIt has been B-flat for decades.\pHow do I know that?\pMy psyduck hates B-flat. Just like anything else which makes noise to be honest...\pAnyways, last week for ONE second it wavered.\pNobody believes me, but my psyduck stopped running and looked intrigued.\pThen he went back to being anoyed."))
+    waitmessage
+    release
+}
+
+script Marshduke_Indoor_PokemonCenter_1F_FatMan {
+    lock
+    faceplayer
+    msgbox(format("Most towns, trainers heal and leave.\pHere, they heal and go stand in the cathedral for an hour."))
+    waitmessage
+    release
+}

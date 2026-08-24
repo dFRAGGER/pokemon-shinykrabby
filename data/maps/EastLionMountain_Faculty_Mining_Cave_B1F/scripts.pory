@@ -1,0 +1,196 @@
+mapscripts EastLionMountain_Faculty_Mining_Cave_B1F_MapScripts {
+    MAP_SCRIPT_ON_RESUME { call(MiningCaveB1F_StartTremors) }
+}
+
+script MiningCaveB1F_StartTremors {
+    if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
+        end
+    }
+    callnative(StartCaveTremorScene)
+    end
+}
+
+// =====================
+// TRAINER SCRIPTS - MINING CAVE B1F
+// 4 Faculty Members (male) + Barry (Administrator)
+// =====================
+
+script MiningCaveB1F_Trainer_Faculty_Addy {
+    trainerbattle_single(TRAINER_MARY, MiningCaveB1F_Text_MadsIntro, MiningCaveB1F_Text_MadsDefeated)
+    msgbox(MiningCaveB1F_Text_MadsPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text MiningCaveB1F_Text_MadsIntro {
+    format("You don't belong down here.\pTurn back while you still can.")
+}
+
+text MiningCaveB1F_Text_MadsDefeated {
+    format("The tremors... they're getting worse the deeper we dig...")
+}
+
+text MiningCaveB1F_Text_MadsPostBattle {
+    format("Just... stay out of our way.\pThe Administrator has everything under control.")
+}
+
+script MiningCaveB1F_Trainer_Faculty_Ad {
+    trainerbattle_single(TRAINER_ALEXIA, MiningCaveB1F_Text_AdIntro, MiningCaveB1F_Text_AdDefeated)
+    msgbox(MiningCaveB1F_Text_AdPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text MiningCaveB1F_Text_AdIntro {
+    format("This is a restricted excavation!\pI have orders to remove any intruders!")
+}
+
+text MiningCaveB1F_Text_AdDefeated {
+    format("How did you get past the others?")
+}
+
+text MiningCaveB1F_Text_AdPostBattle {
+    format("You shouldn't have come down here.\pSome things are better left undisturbed.")
+}
+
+script MiningCave_Trainer_Faculty_Owen {
+    trainerbattle_single(TRAINER_OWEN, MiningCave_Text_OwenIntro, MiningCave_Text_OwenDefeated)
+    msgbox(MiningCave_Text_OwenPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text MiningCave_Text_OwenIntro {
+    format("You've come far enough!\pThese grounds are closed to outsiders!")
+}
+
+text MiningCave_Text_OwenDefeated {
+    format("...The mountain stirs when strangers pass through.")
+}
+
+text MiningCave_Text_OwenPostBattle {
+    format("Old places like this one don't appreciate being disturbed.\pNeither do I.")
+}
+
+script MiningCave_Trainer_Faculty_Warren {
+    trainerbattle_single(TRAINER_WARREN, MiningCave_Text_WarrenIntro, MiningCave_Text_WarrenDefeated)
+    msgbox(MiningCave_Text_WarrenPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text MiningCave_Text_WarrenIntro {
+    format("Intruder! You're not authorized to be here!")
+}
+
+text MiningCave_Text_WarrenDefeated {
+    format("Tch... Underestimated you.")
+}
+
+text MiningCave_Text_WarrenPostBattle {
+    format("The ore we've found down here...\pit's unlike anything from surface deposits.\pThat's all you need to know.")
+}
+
+
+// =====================
+// BARRY - ADMINISTRATOR BATTLE
+// =====================
+
+script MiningCaveB1F_Barry_Battle {
+    lock
+    faceplayer
+    playse(SE_PIN)
+    applymovement(1, moves(emote_exclamation_mark))
+    waitmovement(0)
+    setspeaker("BARRY")
+    msgbox(format("YOU again?!\pDon't you ever know when to quit?\p...\pIt doesn't matter. We've already found what we came for.\pYou're too late to change anything."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    trainerbattle_no_intro(TRAINER_BARRY, MiningCaveB1F_Text_BarryDefeated)
+    goto(MiningCaveB1F_Barry_PostBattle)
+}
+
+text MiningCaveB1F_Text_BarryDefeated {
+    format("NO! Not again!")
+}
+
+script MiningCaveB1F_Barry_PostBattle {
+    lock
+    setflag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)
+    playse(SE_M_EARTHQUAKE)
+    delay(60)
+    playse(SE_PIN)
+    applymovement(1, moves(emote_exclamation_mark))
+    waitmovement(0)
+    setspeaker("BARRY")
+    msgbox(format("Gah! This entire section is destabilizing!\pWe might have digged to deep..."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(face_right lock_facing_direction walk_left unlock_facing_direction walk_right face_up))
+    applymovement(1, moves(walk_fast_up*3))
+    waitmovement
+    applymovement(2, moves(face_down))
+    delay(30)
+    setspeaker("BARRY")
+    msgbox(format("We gotta go!\pGather the others and move the materials to the factory!"), MSGBOX_AUTOCLOSE)
+    waitmessage    
+    applymovement(2, moves(walk_fast_left walk_fast_up*5))
+    waitmovement
+    removeobject(2)
+    setflag(FLAG_HIDE_MINING_CAVE_B1F_SCIENTIST)
+    callnative(StopCaveTremorScene)
+    applymovement(1, moves(face_down))
+    delay(60)
+    applymovement(1, moves(walk_fast_down))
+    waitmovement
+    applymovement(1, moves(walk_fast_down*2))
+    applymovement(LOCALID_PLAYER, moves(face_up lock_facing_direction walk_fast_down*2 unlock_facing_direction))
+    waitmovement
+    setspeaker("BARRY")
+    msgbox(format("You honestely think I would let you leave and try to ruin our plans again?\pTake this, stupid intern!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    playse(SE_BALL_THROW)
+    applymovement(LOCALID_PLAYER, moves(face_up lock_facing_direction jump_2_down unlock_facing_direction))
+    delay(15)
+    fadescreen(FADE_TO_BLACK)
+    setvar(VAR_MINING_CAVE_STATE, 1)
+    delay(120)
+    warpsilent(MAP_EAST_LION_MOUNTAIN_FACULTY_MINING_CAVE, 9, 10)
+    release
+    end
+}
+
+// =====================
+// NPC CONVERSATIONS - MINING CAVE B1F
+// 3 Scientists
+// =====================
+
+script MiningCaveB1F_Worker1_Convo {
+    lock
+    faceplayer
+    msgbox(format("These rock formations are extraordinary...\pThe crystalline density here is off the charts.\pI've never seen anything like it in my career."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script MiningCaveB1F_Worker2_Convo {
+    lock
+    faceplayer
+    msgbox(format("Something incredible passed through this place long ago.\pThe deeper we excavate, the stronger the energy readings become.\p...I can't explain it. The instruments just go wild."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script MiningCaveB1F_Worker3_Convo {
+    lock
+    faceplayer
+    msgbox(format("There are markings on the walls in this deepest section.\pNot writing exactly... more like impressions.\pAs if something enormous pressed against the rock itself."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script MiningCaveB1F_Sign_DeepMine {
+    lock
+    msgbox(format("RESTRICTED - LEVEL B1\nAdministrator Access Only\n- The sign bears a fresh Faculty emblem."), MSGBOX_AUTOCLOSE)
+    release
+}
+
+script MiningCave_Sign_Danger {
+    lock
+    msgbox(format("CAUTION: Active Excavation\nHard hats mandatory past this point\nReport tremors immediately"), MSGBOX_AUTOCLOSE)
+    release
+}

@@ -1263,6 +1263,43 @@ struct MultichoiceListStruct
     u8 count;
 };
 
+// ShinyKrabby custom multichoice menus (ported from custom maps)
+static const u8 sText_PrepJoint[]  = COMPOUND_STRING("Joint");
+static const u8 sText_PrepBlunt[]  = COMPOUND_STRING("Blunt");
+static const u8 sText_PrepBowl[]   = COMPOUND_STRING("Bowl");
+static const u8 sText_PrepCancel[] = COMPOUND_STRING("Cancel");
+
+static const u8 sText_GuideGrinder[]    = COMPOUND_STRING("The Grinder");
+static const u8 sText_GuideGrindTypes[] = COMPOUND_STRING("Grind types");
+static const u8 sText_GuideRolling[]    = COMPOUND_STRING("Rolling Table");
+static const u8 sText_GuidePreps[]      = COMPOUND_STRING("Joint/Blunt/Bowl");
+static const u8 sText_GuideNevermind[]  = COMPOUND_STRING("Never mind");
+
+static const struct MenuAction sMultichoiceList_HerbGuide[] = {
+    { sText_GuideGrinder    },
+    { sText_GuideGrindTypes },
+    { sText_GuideRolling    },
+    { sText_GuidePreps      },
+    { sText_GuideNevermind  },
+};
+
+static const struct MenuAction sMultichoiceList_HerbPrep[] = {
+    { sText_PrepJoint  },
+    { sText_PrepBlunt  },
+    { sText_PrepBowl   },
+    { sText_PrepCancel },
+};
+
+static const u8 sText_KasmiTaxTricks[]  = COMPOUND_STRING("Tax tricks");
+static const u8 sText_KasmiBike[]       = COMPOUND_STRING("Bike");
+static const u8 sText_KasmiNevermind[]  = COMPOUND_STRING("Never mind");
+
+static const struct MenuAction sMultichoiceList_KasmiMenu[] = {
+    { sText_KasmiTaxTricks },
+    { sText_KasmiBike      },
+    { sText_KasmiNevermind },
+};
+
 static const struct MultichoiceListStruct sMultichoiceLists[] =
 {
     [MULTI_BRINEY_ON_DEWFORD]          = MULTICHOICE(MultichoiceList_BrineyOnDewford),
@@ -1443,6 +1480,9 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_BATTLE_MODE_HNS]            = MULTICHOICE(MultichoiceList_BattleModeHns),
     [MULTI_FOSSIL_HNS]                = MULTICHOICE(MultichoiceList_FossilHns),
     [MULTI_GAME_CORNER_DOLLS2]         = MULTICHOICE(MultichoiceList_GameCornerDolls2),
+    [MULTI_HERB_PREP]                  = MULTICHOICE(sMultichoiceList_HerbPrep),
+    [MULTI_HERB_GUIDE]                 = MULTICHOICE(sMultichoiceList_HerbGuide),
+    [MULTI_KASMI_MENU]                 = MULTICHOICE(sMultichoiceList_KasmiMenu),
 };
 
 const u8 *const gStdStrings[] =

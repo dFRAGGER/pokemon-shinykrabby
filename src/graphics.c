@@ -2245,7 +2245,7 @@ const u16 gMonIconPalettes[][16] =
 
 #if IS_HNS
 const u16 gTitleScreenBgPalettes[]         = INCBIN_U16("graphics/title_screen/hns/pokemon_logo.gbapal",
-                                                        "graphics/title_screen/hns/rayquaza_and_clouds.gbapal");
+                                                        "graphics/title_screen/hns/shiny_krabby.gbapal");
 const u16 gTitleScreenEmeraldVersionPal[]  = INCBIN_U16("graphics/title_screen/hns/emerald_version.gbapal");
 const u32 gTitleScreenCloudsTilemap[]      = INCBIN_U32("graphics/title_screen/clouds.bin.smolTM");
 const u32 gTitleScreenPokemonLogoGfx[]     = INCBIN_U32("graphics/title_screen/hns/pokemon_logo.8bpp.smol");

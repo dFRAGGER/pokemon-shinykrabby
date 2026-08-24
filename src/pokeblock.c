@@ -92,7 +92,8 @@ enum
     PKBL_CANCEL,
     PKBL_USE_IN_BATTLE,
     PKBL_USE_ON_FEEDER,
-    PKBL_GIVE_TO_LADY
+    PKBL_GIVE_TO_LADY,
+    PKBL_ROLL,
 };
 
 static void CB2_InitPokeblockMenu(void);
@@ -116,6 +117,7 @@ static void PokeblockAction_Cancel(u8);
 static void PokeblockAction_UseInBattle(u8);
 static void PokeblockAction_UseOnPokeblockFeeder(u8);
 static void PokeblockAction_GiveToContestLady(u8);
+static void PokeblockAction_Roll(u8);
 static void TossedPokeblockMessage(u8);
 static void CloseTossPokeblockWindow(u8);
 static void Task_FreeDataAndExitPokeblockCase(u8);
@@ -137,6 +139,9 @@ static const u8 sText_Var1ThrownAway[] = _("The {STR_VAR_1}\nwas thrown away.");
 
 EWRAM_DATA static struct PokeblockSavedData sSavedPokeblockData = {0};
 EWRAM_DATA static struct PokeblockMenuStruct *sPokeblockMenu = NULL;
+
+// Herb effect flags per party slot — cleared on battle start, persist until consumed
+u8 gHerbEffectFlags[PARTY_SIZE];
 
 const s8 gPokeblockFlavorCompatibilityTable[NUM_NATURES * FLAVOR_COUNT] =
 {
@@ -201,21 +206,64 @@ static const struct BgTemplate sBgTemplatesForPokeblockMenu[] =
 
 const u8 *const gPokeblockNames[] =
 {
+    // 0: empty slot
     [PBLOCK_CLR_NONE]      = NULL,
-    [PBLOCK_CLR_RED]       = COMPOUND_STRING("RED {POKEBLOCK}"),
-    [PBLOCK_CLR_BLUE]      = COMPOUND_STRING("BLUE {POKEBLOCK}"),
-    [PBLOCK_CLR_PINK]      = COMPOUND_STRING("PINK {POKEBLOCK}"),
-    [PBLOCK_CLR_GREEN]     = COMPOUND_STRING("GREEN {POKEBLOCK}"),
-    [PBLOCK_CLR_YELLOW]    = COMPOUND_STRING("YELLOW {POKEBLOCK}"),
-    [PBLOCK_CLR_PURPLE]    = COMPOUND_STRING("PURPLE {POKEBLOCK}"),
-    [PBLOCK_CLR_INDIGO]    = COMPOUND_STRING("INDIGO {POKEBLOCK}"),
-    [PBLOCK_CLR_BROWN]     = COMPOUND_STRING("BROWN {POKEBLOCK}"),
-    [PBLOCK_CLR_LITE_BLUE] = COMPOUND_STRING("LITEBLUE {POKEBLOCK}"),
-    [PBLOCK_CLR_OLIVE]     = COMPOUND_STRING("OLIVE {POKEBLOCK}"),
-    [PBLOCK_CLR_GRAY]      = COMPOUND_STRING("GRAY {POKEBLOCK}"),
-    [PBLOCK_CLR_BLACK]     = COMPOUND_STRING("BLACK {POKEBLOCK}"),
-    [PBLOCK_CLR_WHITE]     = COMPOUND_STRING("WHITE {POKEBLOCK}"),
-    [PBLOCK_CLR_GOLD]      = COMPOUND_STRING("GOLD {POKEBLOCK}")
+
+    // 1-14: Joint (balanced, base prep)
+    [PBLOCK_CLR_RED]       = COMPOUND_STRING("FIRE Joint"),
+    [PBLOCK_CLR_BLUE]      = COMPOUND_STRING("KUSH Joint"),
+    [PBLOCK_CLR_PINK]      = COMPOUND_STRING("HAZE Joint"),
+    [PBLOCK_CLR_GREEN]     = COMPOUND_STRING("OG Joint"),
+    [PBLOCK_CLR_YELLOW]    = COMPOUND_STRING("DIESEL Joint"),
+    [PBLOCK_CLR_PURPLE]    = COMPOUND_STRING("PURPLE Joint"),
+    [PBLOCK_CLR_INDIGO]    = COMPOUND_STRING("DANK Joint"),
+    [PBLOCK_CLR_BROWN]     = COMPOUND_STRING("THICK Joint"),
+    [PBLOCK_CLR_LITE_BLUE] = COMPOUND_STRING("ICE Joint"),
+    [PBLOCK_CLR_OLIVE]     = COMPOUND_STRING("SOUR Joint"),
+    [PBLOCK_CLR_GRAY]      = COMPOUND_STRING("BLEND Joint"),
+    [PBLOCK_CLR_BLACK]     = COMPOUND_STRING("BUNK Joint"),
+    [PBLOCK_CLR_WHITE]     = COMPOUND_STRING("PREMIUM Joint"),
+    [PBLOCK_CLR_GOLD]      = COMPOUND_STRING("EXOTIC Joint"),
+
+    // 15-20: Ground Material (unfinished, flavor-specific)
+    [PBLOCK_CLR_GROUND]         = COMPOUND_STRING("Ground Material"),
+    [PBLOCK_CLR_GROUND_SPICY]   = COMPOUND_STRING("Energetic Grind"),
+    [PBLOCK_CLR_GROUND_DRY]     = COMPOUND_STRING("Creative Grind"),
+    [PBLOCK_CLR_GROUND_SWEET]   = COMPOUND_STRING("Relaxed Grind"),
+    [PBLOCK_CLR_GROUND_BITTER]  = COMPOUND_STRING("Focused Grind"),
+    [PBLOCK_CLR_GROUND_SOUR]    = COMPOUND_STRING("Uplifted Grind"),
+
+    // 21-34: Blunt (base color + PBLOCK_CLR_BLUNT_OFFSET = +20)
+    [PBLOCK_CLR_RED      + PBLOCK_CLR_BLUNT_OFFSET] = COMPOUND_STRING("FIRE Blunt"),
+    [PBLOCK_CLR_BLUE     + PBLOCK_CLR_BLUNT_OFFSET] = COMPOUND_STRING("KUSH Blunt"),
+    [PBLOCK_CLR_PINK     + PBLOCK_CLR_BLUNT_OFFSET] = COMPOUND_STRING("HAZE Blunt"),
+    [PBLOCK_CLR_GREEN    + PBLOCK_CLR_BLUNT_OFFSET] = COMPOUND_STRING("OG Blunt"),
+    [PBLOCK_CLR_YELLOW   + PBLOCK_CLR_BLUNT_OFFSET] = COMPOUND_STRING("DIESEL Blunt"),
+    [PBLOCK_CLR_PURPLE   + PBLOCK_CLR_BLUNT_OFFSET] = COMPOUND_STRING("PURPLE Blunt"),
+    [PBLOCK_CLR_INDIGO   + PBLOCK_CLR_BLUNT_OFFSET] = COMPOUND_STRING("DANK Blunt"),
+    [PBLOCK_CLR_BROWN    + PBLOCK_CLR_BLUNT_OFFSET] = COMPOUND_STRING("THICK Blunt"),
+    [PBLOCK_CLR_LITE_BLUE+ PBLOCK_CLR_BLUNT_OFFSET] = COMPOUND_STRING("ICE Blunt"),
+    [PBLOCK_CLR_OLIVE    + PBLOCK_CLR_BLUNT_OFFSET] = COMPOUND_STRING("SOUR Blunt"),
+    [PBLOCK_CLR_GRAY     + PBLOCK_CLR_BLUNT_OFFSET] = COMPOUND_STRING("BLEND Blunt"),
+    [PBLOCK_CLR_BLACK    + PBLOCK_CLR_BLUNT_OFFSET] = COMPOUND_STRING("BUNK Blunt"),
+    [PBLOCK_CLR_WHITE    + PBLOCK_CLR_BLUNT_OFFSET] = COMPOUND_STRING("PREMIUM Blunt"),
+    [PBLOCK_CLR_GOLD     + PBLOCK_CLR_BLUNT_OFFSET] = COMPOUND_STRING("EXOTIC Blunt"),
+
+    // 35-48: Bowl (base color + PBLOCK_CLR_BOWL_OFFSET = +34)
+    [PBLOCK_CLR_RED      + PBLOCK_CLR_BOWL_OFFSET]  = COMPOUND_STRING("FIRE Bowl"),
+    [PBLOCK_CLR_BLUE     + PBLOCK_CLR_BOWL_OFFSET]  = COMPOUND_STRING("KUSH Bowl"),
+    [PBLOCK_CLR_PINK     + PBLOCK_CLR_BOWL_OFFSET]  = COMPOUND_STRING("HAZE Bowl"),
+    [PBLOCK_CLR_GREEN    + PBLOCK_CLR_BOWL_OFFSET]  = COMPOUND_STRING("OG Bowl"),
+    [PBLOCK_CLR_YELLOW   + PBLOCK_CLR_BOWL_OFFSET]  = COMPOUND_STRING("DIESEL Bowl"),
+    [PBLOCK_CLR_PURPLE   + PBLOCK_CLR_BOWL_OFFSET]  = COMPOUND_STRING("PURPLE Bowl"),
+    [PBLOCK_CLR_INDIGO   + PBLOCK_CLR_BOWL_OFFSET]  = COMPOUND_STRING("DANK Bowl"),
+    [PBLOCK_CLR_BROWN    + PBLOCK_CLR_BOWL_OFFSET]  = COMPOUND_STRING("THICK Bowl"),
+    [PBLOCK_CLR_LITE_BLUE+ PBLOCK_CLR_BOWL_OFFSET]  = COMPOUND_STRING("ICE Bowl"),
+    [PBLOCK_CLR_OLIVE    + PBLOCK_CLR_BOWL_OFFSET]  = COMPOUND_STRING("SOUR Bowl"),
+    [PBLOCK_CLR_GRAY     + PBLOCK_CLR_BOWL_OFFSET]  = COMPOUND_STRING("BLEND Bowl"),
+    [PBLOCK_CLR_BLACK    + PBLOCK_CLR_BOWL_OFFSET]  = COMPOUND_STRING("BUNK Bowl"),
+    [PBLOCK_CLR_WHITE    + PBLOCK_CLR_BOWL_OFFSET]  = COMPOUND_STRING("PREMIUM Bowl"),
+    [PBLOCK_CLR_GOLD     + PBLOCK_CLR_BOWL_OFFSET]  = COMPOUND_STRING("EXOTIC Bowl"),
 };
 
 static const struct MenuAction sPokeblockMenuActions[] =
@@ -226,12 +274,14 @@ static const struct MenuAction sPokeblockMenuActions[] =
     [PKBL_USE_IN_BATTLE] = {gMenuText_Use, {PokeblockAction_UseInBattle}},
     [PKBL_USE_ON_FEEDER] = {gMenuText_Use, {PokeblockAction_UseOnPokeblockFeeder}},
     [PKBL_GIVE_TO_LADY]  = {gMenuText_Give2, {PokeblockAction_GiveToContestLady}},
+    [PKBL_ROLL]          = {gMenuText_Roll,  {PokeblockAction_Roll}},
 };
 
 static const u8 sActionsOnField[] = {PKBL_USE_ON_FIELD, PKBL_TOSS, PKBL_CANCEL};
 static const u8 sActionsInBattle[] = {PKBL_USE_IN_BATTLE, PKBL_CANCEL};
 static const u8 sActionsOnPokeblockFeeder[] = {PKBL_USE_ON_FEEDER, PKBL_CANCEL};
 static const u8 sActionsWhenGivingToLady[] = {PKBL_GIVE_TO_LADY, PKBL_CANCEL};
+static const u8 sActionsForRolling[] = {PKBL_ROLL, PKBL_CANCEL};
 
 static const struct YesNoFuncTable sTossYesNoFuncTable = {TossedPokeblockMessage, CloseTossPokeblockWindow};
 
@@ -467,6 +517,10 @@ void OpenPokeblockCase(u8 caseId, void (*callback)(void))
     case PBLOCK_CASE_GIVE:
         sPokeblockMenu->pokeblockActionIds = sActionsWhenGivingToLady;
         sPokeblockMenu->numActions = ARRAY_COUNT(sActionsWhenGivingToLady);
+        break;
+    case PBLOCK_CASE_ROLL:
+        sPokeblockMenu->pokeblockActionIds = sActionsForRolling;
+        sPokeblockMenu->numActions = ARRAY_COUNT(sActionsForRolling);
         break;
     default: // PBLOCK_CASE_FIELD
         sPokeblockMenu->pokeblockActionIds = sActionsOnField;
@@ -704,11 +758,11 @@ static void DrawPokeblockMenuTitleText(void)
     const u8 *itemName = GetItemName(ITEM_POKEBLOCK_CASE);
     PrintOnPokeblockWindow(WIN_TITLE, itemName, GetStringCenterAlignXOffset(FONT_NORMAL, itemName, 0x48));
 
-    PrintOnPokeblockWindow(WIN_SPICY,  COMPOUND_STRING("SPICY"),  0);
-    PrintOnPokeblockWindow(WIN_DRY,    COMPOUND_STRING("DRY"),    0);
-    PrintOnPokeblockWindow(WIN_SWEET,  COMPOUND_STRING("SWEET"),  0);
-    PrintOnPokeblockWindow(WIN_BITTER, COMPOUND_STRING("BITTER"), 0);
-    PrintOnPokeblockWindow(WIN_SOUR,   COMPOUND_STRING("SOUR"),   0);
+    PrintOnPokeblockWindow(WIN_SPICY,  COMPOUND_STRING("ENRGTC"), 0);
+    PrintOnPokeblockWindow(WIN_DRY,    COMPOUND_STRING("CREATV"), 0);
+    PrintOnPokeblockWindow(WIN_SWEET,  COMPOUND_STRING("RELAXD"), 0);
+    PrintOnPokeblockWindow(WIN_BITTER, COMPOUND_STRING("FOCUSD"), 0);
+    PrintOnPokeblockWindow(WIN_SOUR,   COMPOUND_STRING("UPLFTD"), 0);
 
     for (i = 0; i < WIN_ACTIONS_TALL; i++)
         PutWindowTilemap(i);
@@ -716,13 +770,32 @@ static void DrawPokeblockMenuTitleText(void)
 
 static void UpdatePokeblockList(void)
 {
-    u16 i;
+    u16 i, filteredIdx = 0;
 
-    for (i = 0; i < sPokeblockMenu->itemsNo - 1; i++)
+    if (sPokeblockMenu->caseId == PBLOCK_CASE_ROLL)
     {
-        PutPokeblockListMenuString(sPokeblockMenu->menuItemsStrings[i], i);
-        sPokeblockMenu->items[i].name = sPokeblockMenu->menuItemsStrings[i];
-        sPokeblockMenu->items[i].id = i;
+        // Rolling Table: only show unfinished grind items; store actual slot in .id
+        for (i = 0; i < POKEBLOCKS_COUNT && filteredIdx < sPokeblockMenu->itemsNo - 1; i++)
+        {
+            u8 color = gSaveBlock1Ptr->pokeblocks[i].color;
+            if (color >= PBLOCK_CLR_GROUND && color <= PBLOCK_CLR_GROUND_SOUR)
+            {
+                PutPokeblockListMenuString(sPokeblockMenu->menuItemsStrings[filteredIdx], i);
+                sPokeblockMenu->items[filteredIdx].name = sPokeblockMenu->menuItemsStrings[filteredIdx];
+                sPokeblockMenu->items[filteredIdx].id = i;
+                filteredIdx++;
+            }
+        }
+        i = filteredIdx;
+    }
+    else
+    {
+        for (i = 0; i < sPokeblockMenu->itemsNo - 1; i++)
+        {
+            PutPokeblockListMenuString(sPokeblockMenu->menuItemsStrings[i], i);
+            sPokeblockMenu->items[i].name = sPokeblockMenu->menuItemsStrings[i];
+            sPokeblockMenu->items[i].id = i;
+        }
     }
 
     StringCopy(sPokeblockMenu->menuItemsStrings[i], sText_StowCase);
@@ -875,10 +948,23 @@ static void SetMenuItemsCountAndMaxShowed(void)
 
     CompactPokeblockSlots();
 
-    for (sPokeblockMenu->itemsNo = 0, i = 0; i < POKEBLOCKS_COUNT; i++)
+    if (sPokeblockMenu->caseId == PBLOCK_CASE_ROLL)
     {
-        if (gSaveBlock1Ptr->pokeblocks[i].color != PBLOCK_CLR_NONE)
-            sPokeblockMenu->itemsNo++;
+        // Rolling Table: only count unfinished grind items
+        for (sPokeblockMenu->itemsNo = 0, i = 0; i < POKEBLOCKS_COUNT; i++)
+        {
+            u8 color = gSaveBlock1Ptr->pokeblocks[i].color;
+            if (color >= PBLOCK_CLR_GROUND && color <= PBLOCK_CLR_GROUND_SOUR)
+                sPokeblockMenu->itemsNo++;
+        }
+    }
+    else
+    {
+        for (sPokeblockMenu->itemsNo = 0, i = 0; i < POKEBLOCKS_COUNT; i++)
+        {
+            if (gSaveBlock1Ptr->pokeblocks[i].color != PBLOCK_CLR_NONE)
+                sPokeblockMenu->itemsNo++;
+        }
     }
 
     sPokeblockMenu->itemsNo++; // STOW CASE menu item
@@ -983,7 +1069,7 @@ static void Task_FreeDataAndExitPokeblockCase(u8 taskId)
 
     if (!gPaletteFade.active)
     {
-        if (sPokeblockMenu->caseId == PBLOCK_CASE_FEEDER || sPokeblockMenu->caseId == PBLOCK_CASE_GIVE)
+        if (sPokeblockMenu->caseId == PBLOCK_CASE_FEEDER || sPokeblockMenu->caseId == PBLOCK_CASE_GIVE || sPokeblockMenu->caseId == PBLOCK_CASE_ROLL)
             gFieldCallback = FieldCB_ContinueScriptHandleMusic;
 
         DestroyListMenuTask(tListTaskId, &sSavedPokeblockData.scrollOffset, &sSavedPokeblockData.selectedRow);
@@ -1455,4 +1541,213 @@ u8 GetPokeblocksFlavor(const struct Pokeblock *pokeblock)
     }
 
     return bestFlavor;
+}
+
+// Derive a color from the flavor values stored on a Pokeblock.
+// Mirrors the logic in CalculatePokeblockColor (berry_blender.c) but works
+// directly from the already-computed flavor fields.
+static NOINLINE u8 DeriveColorFromFlavors(u8 spicy, u8 dry, u8 sweet, u8 bitter, u8 sour)
+{
+    u8 vals[FLAVOR_COUNT];
+    u32 numFlavors = 0;
+    u32 top1 = FLAVOR_SPICY, top2 = FLAVOR_SPICY;
+    u32 i;
+
+    vals[FLAVOR_SPICY]  = spicy;
+    vals[FLAVOR_DRY]    = dry;
+    vals[FLAVOR_SWEET]  = sweet;
+    vals[FLAVOR_BITTER] = bitter;
+    vals[FLAVOR_SOUR]   = sour;
+
+    for (i = 0; i < FLAVOR_COUNT; i++)
+    {
+        if (vals[i] > 50)
+            return PBLOCK_CLR_GOLD;
+        if (vals[i] > 0)
+            numFlavors++;
+    }
+
+    if (numFlavors == 0)
+        return PBLOCK_CLR_BLACK;
+    if (numFlavors > 3)
+        return PBLOCK_CLR_WHITE;
+    if (numFlavors == 3)
+        return PBLOCK_CLR_GRAY;
+
+    // Find dominant flavor index by scanning all 5 flavor values
+    {
+        u8 best1Val = 0, best2Val = 0;
+        u32 best1 = FLAVOR_SPICY, best2 = FLAVOR_DRY;
+
+        for (i = 0; i < FLAVOR_COUNT; i++)
+        {
+            if (vals[i] > best1Val)
+            {
+                best2Val = best1Val; best2 = best1;
+                best1Val = vals[i]; best1 = i;
+            }
+            else if (vals[i] > best2Val && i != best1)
+            {
+                best2Val = vals[i]; best2 = i;
+            }
+        }
+
+        if (numFlavors == 1)
+        {
+            switch (best1 % FLAVOR_COUNT)
+            {
+            case FLAVOR_SPICY:  return PBLOCK_CLR_RED;
+            case FLAVOR_DRY:    return PBLOCK_CLR_BLUE;
+            case FLAVOR_SWEET:  return PBLOCK_CLR_PINK;
+            case FLAVOR_BITTER: return PBLOCK_CLR_GREEN;
+            default:            return PBLOCK_CLR_YELLOW;
+            }
+        }
+
+        // 2 flavors — use the stronger one to pick color family
+        switch ((best1Val >= best2Val ? best1 : best2) % FLAVOR_COUNT)
+        {
+        case FLAVOR_SPICY:  return PBLOCK_CLR_PURPLE;
+        case FLAVOR_DRY:    return PBLOCK_CLR_INDIGO;
+        case FLAVOR_SWEET:  return PBLOCK_CLR_BROWN;
+        case FLAVOR_BITTER: return PBLOCK_CLR_LITE_BLUE;
+        default:            return PBLOCK_CLR_OLIVE;
+        }
+    }
+}
+
+// Finalize Ground Material into a Treat at a Rolling Table.
+// pokeblockSlot: index in gSaveBlock1Ptr->pokeblocks[]
+// prepType: PREP_JOINT / PREP_BLUNT / PREP_BOWL
+void PrepareHerbTreat(u8 pokeblockSlot, u8 prepType)
+{
+    struct Pokeblock *pb;
+    u8 flavors[FLAVOR_COUNT];
+    u8 i, top1, top2, val;
+
+    if (pokeblockSlot >= POKEBLOCKS_COUNT)
+        return;
+
+    pb = &gSaveBlock1Ptr->pokeblocks[pokeblockSlot];
+
+    // Only process unfinished Ground Material (any flavor variant)
+    if (pb->color < PBLOCK_CLR_GROUND || pb->color > PBLOCK_CLR_GROUND_SOUR)
+        return;
+
+    flavors[FLAVOR_SPICY]  = pb->spicy;
+    flavors[FLAVOR_DRY]    = pb->dry;
+    flavors[FLAVOR_SWEET]  = pb->sweet;
+    flavors[FLAVOR_BITTER] = pb->bitter;
+    flavors[FLAVOR_SOUR]   = pb->sour;
+
+    // Balanced strains cancel to all-zero in the blender — treat as 5-way balanced (PREMIUM)
+    if (flavors[FLAVOR_SPICY] == 0 && flavors[FLAVOR_DRY] == 0 && flavors[FLAVOR_SWEET] == 0
+        && flavors[FLAVOR_BITTER] == 0 && flavors[FLAVOR_SOUR] == 0)
+    {
+        for (i = 0; i < FLAVOR_COUNT; i++)
+            flavors[i] = 1;
+    }
+
+    switch (prepType)
+    {
+    case PREP_JOINT:
+        // Joint: balanced — keep flavors as-is, just finalize color
+        break;
+
+    case PREP_BLUNT:
+        // Blunt: find top 2 flavors and boost each by +20 (cap at 99)
+        top1 = 0;
+        for (i = 1; i < FLAVOR_COUNT; i++)
+        {
+            if (flavors[i] > flavors[top1])
+                top1 = i;
+        }
+        top2 = (top1 == 0) ? 1 : 0;
+        for (i = 0; i < FLAVOR_COUNT; i++)
+        {
+            if (i != top1 && flavors[i] > flavors[top2])
+                top2 = i;
+        }
+        val = flavors[top1] + 20;
+        flavors[top1] = (val > 99) ? 99 : val;
+        val = flavors[top2] + 20;
+        flavors[top2] = (val > 99) ? 99 : val;
+        break;
+
+    case PREP_BOWL:
+        // Bowl: concentrate the top flavor (double it, cap at 99), zero all others
+        top1 = 0;
+        for (i = 1; i < FLAVOR_COUNT; i++)
+        {
+            if (flavors[i] > flavors[top1])
+                top1 = i;
+        }
+        for (i = 0; i < FLAVOR_COUNT; i++)
+        {
+            if (i != top1)
+                flavors[i] = 0;
+        }
+        val = flavors[top1] * 2;
+        flavors[top1] = (val > 99) ? 99 : val;
+        break;
+
+    default:
+        return;
+    }
+
+    pb->spicy  = flavors[FLAVOR_SPICY];
+    pb->dry    = flavors[FLAVOR_DRY];
+    pb->sweet  = flavors[FLAVOR_SWEET];
+    pb->bitter = flavors[FLAVOR_BITTER];
+    pb->sour   = flavors[FLAVOR_SOUR];
+
+    // Base color from flavor balance (1-14)
+    pb->color = DeriveColorFromFlavors(pb->spicy, pb->dry, pb->sweet, pb->bitter, pb->sour);
+
+    // Apply prep-type offset so name shows Joint / Blunt / Bowl
+    if (prepType == PREP_BLUNT)
+        pb->color += PBLOCK_CLR_BLUNT_OFFSET;
+    else if (prepType == PREP_BOWL)
+        pb->color += PBLOCK_CLR_BOWL_OFFSET;
+    // PREP_JOINT: no offset (colors 1-14 = "X Joint")
+}
+
+// Script interface: VAR_0x8000 = slot, VAR_0x8001 = prep type
+void Special_PrepareHerbTreat(void)
+{
+    PrepareHerbTreat((u8)gSpecialVar_0x8000, (u8)gSpecialVar_0x8001);
+    gSpecialVar_Result = gSaveBlock1Ptr->pokeblocks[gSpecialVar_0x8000].color;
+}
+
+// Sets gSpecialVar_Result = TRUE if player has Ground Material, gSpecialVar_0x8000 = first slot index
+void Special_HasGroundMaterial(void)
+{
+    u8 i;
+    for (i = 0; i < POKEBLOCKS_COUNT; i++)
+    {
+        u8 color = gSaveBlock1Ptr->pokeblocks[i].color;
+        if (color >= PBLOCK_CLR_GROUND && color <= PBLOCK_CLR_GROUND_SOUR)
+        {
+            gSpecialVar_Result = TRUE;
+            gSpecialVar_0x8000 = i;
+            return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+    gSpecialVar_0x8000 = 0;
+}
+
+// Rolling Table action: store selected slot into VAR_0x8000 and resume script
+static void PokeblockAction_Roll(u8 taskId)
+{
+    gSpecialVar_0x8000 = gSpecialVar_ItemId;
+    gSpecialVar_Result = TRUE;
+    FadePaletteAndSetTaskToClosePokeblockCase(taskId);
+}
+
+// Script special: open Stash Case in Roll mode; script must use waitstate after this
+void Special_OpenCaseForRolling(void)
+{
+    ScriptContext_Stop();
+    OpenPokeblockCase(PBLOCK_CASE_ROLL, CB2_ReturnToField);
 }

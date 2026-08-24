@@ -133,6 +133,7 @@ static const u8 sDoorAnimTiles_TrainerHillLobbyElevator[] = INCBIN_U8("graphics/
 static const u16 sDoorNullPalette48[16] = {};
 static const u8 sDoorAnimTiles_TrainerHillRoofElevator[] = INCBIN_U8("graphics/door_anims/trainer_hill_roof_elevator.4bpp");
 static const u16 sDoorNullPalette49[16] = {};
+static const u8 sDoorAnimTiles_SmallTownWood[] = INCBIN_U8("graphics/door_anims/small_town_wood.4bpp");
 
 #if IS_FRLG
 
@@ -333,6 +334,7 @@ static const u8 sDoorAnimPalettes_LilycoveDeptStore[] = {5, 5, 5, 5, 5, 5, 5, 5}
 static const u8 sDoorAnimPalettes_SafariZone[] = {9, 9, 9, 9, 9, 9, 9, 9};
 static const u8 sDoorAnimPalettes_MossdeepSpaceCenter[] = {8, 8, 8, 8, 8, 8, 8, 8};
 static const u8 sDoorAnimPalettes_CableClub[] = {6, 6, 6, 6, 6, 6, 6, 6};
+static const u8 sDoorAnimPalettes_SmallTownWood[] = {6, 6, 6, 6, 6, 6, 6, 6};
 static const u8 sDoorAnimPalettes_AbandonedShip[] = {7, 7, 7, 7, 7, 7, 7, 7};
 static const u8 sDoorAnimPalettes_FallarborDarkRoof[] = {11, 11, 7, 7, 7, 7, 7, 7};
 static const u8 sDoorAnimPalettes_AbandonedShipRoom[] = {7, 7, 7, 7, 7, 7, 7, 7};
@@ -530,6 +532,11 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 #elif IS_HNS
     {METATILE_General_Door_PokeCenter,                         &gTileset_General, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeCenter, sDoorAnimPalettes_PokeCenter},
     {METATILE_General_Door_PokeMart,                           &gTileset_General, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeMart, sDoorAnimPalettes_PokeMart},
+    {METATILE_Snow_Door,                                       &gTileset_Snow, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_General, sDoorAnimPalettes_General},
+    {METATILE_Snow_Door_PokeCenter,                            &gTileset_Snow, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeCenter, sDoorAnimPalettes_PokeCenter},
+    {METATILE_Snow_Door_Gym,                                   &gTileset_Snow, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_Gym, sDoorAnimPalettes_Gym},
+    {METATILE_Snow_Door_PokeMart,                              &gTileset_Snow, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeMart, sDoorAnimPalettes_PokeMart},
+    {METATILE_Snow_Door_Contest,                               &gTileset_Snow, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_Contest, sDoorAnimPalettes_Contest},
     {METATILE_Johto_General_Door_Hns,                          &gTileset_Johto_General_Hns, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_JohtoGeneral, sDoorAnimPalettes_JohtoGeneral},
     {METATILE_Johto_General_Door_Sliding_Hns,                  &gTileset_Johto_General_Hns, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_JohtoPokeCenter, sDoorAnimPalettes_JohtoPokeCenter},
     {METATILE_Johto_General_Door_Gym_Hns,                      &gTileset_Johto_General_Hns, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_JohtoGym, sDoorAnimPalettes_JohtoGym},
@@ -605,6 +612,9 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_Alola_Door_Hns,                               &gTileset_AlolaIsland, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_AlolaDoor, sDoorAnimPalettes_AlolaDoor},
     {METATILE_Alola_Pokecenter_Door_Hns,                    &gTileset_AlolaIsland, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_AlolaPokecenterDoor, sDoorAnimPalettes_AlolaDoor},
     {METATILE_DragonDen_Shrine_Door_Hns,                    &gTileset_Cave_DragonsDen_Hns, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_DojoDoor, sDoorAnimPalettes_DragonsDenShrine},
+    {0x211,                                                 &gTileset_newsmalltownlab, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_SmallTownWood, sDoorAnimPalettes_SmallTownWood},
+    {0x23B,                                                 &gTileset_newsmalltownlab, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_SmallTownWood, sDoorAnimPalettes_SmallTownWood},
+    {0x269,                                                 &gTileset_newsmalltownlab, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_SmallTownWood, sDoorAnimPalettes_SmallTownWood},
 #endif // !IS_FRLG
     {},
 };

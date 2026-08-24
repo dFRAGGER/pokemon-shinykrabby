@@ -33,6 +33,13 @@ enum __attribute__((__packed__)) Flavor
     FLAVOR_COUNT,
 };
 
+// Herb Grinder thematic aliases (do NOT change numeric values — transmitted over link cable)
+#define FLAVOR_ENERGETIC  FLAVOR_SPICY
+#define FLAVOR_CREATIVE   FLAVOR_DRY
+#define FLAVOR_RELAXED    FLAVOR_SWEET
+#define FLAVOR_FOCUSED    FLAVOR_BITTER
+#define FLAVOR_UPLIFTED   FLAVOR_SOUR
+
 #define BERRY_STAGE_NO_BERRY    0  // there is no tree planted and the soil is completely flat.
 #define BERRY_STAGE_PLANTED     1
 #define BERRY_STAGE_SPROUTED    2
