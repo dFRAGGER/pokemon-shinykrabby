@@ -21,6 +21,7 @@
 #include "palette.h"
 #include "party_menu.h"
 #include "player_pc.h"
+#include "challenge_menu.h"
 #include "script.h"
 #include "sound.h"
 #include "sprite.h"
@@ -36,6 +37,7 @@ enum {
     MENU_ITEMSTORAGE,
     MENU_MAILBOX,
     MENU_DECORATION,
+    MENU_CHALLENGES,
     MENU_TURNOFF
 };
 
@@ -101,6 +103,7 @@ static void Mailbox_MailOptionsProcessInput(u8);
 static void PlayerPC_ItemStorage(u8);
 static void PlayerPC_Mailbox(u8);
 static void PlayerPC_Decoration(u8);
+static void PlayerPC_Challenges(u8);
 static void PlayerPC_TurnOff(u8);
 
 static void Mailbox_DoMailMoveToBag(u8);
@@ -191,6 +194,7 @@ static const struct MenuAction sPlayerPCMenuActions[] =
     [MENU_ITEMSTORAGE] = { COMPOUND_STRING("ITEM STORAGE"), {PlayerPC_ItemStorage} },
     [MENU_MAILBOX]     = { sText_Mailbox,                   {PlayerPC_Mailbox} },
     [MENU_DECORATION]  = { COMPOUND_STRING("DECORATION"),   {PlayerPC_Decoration} },
+    [MENU_CHALLENGES]  = { gText_Challenges,                {PlayerPC_Challenges} },
     [MENU_TURNOFF]     = { COMPOUND_STRING("TURN OFF"),     {PlayerPC_TurnOff} }
 };
 
@@ -199,6 +203,7 @@ static const u8 sBedroomPC_OptionOrder[] =
     MENU_ITEMSTORAGE,
     MENU_MAILBOX,
     MENU_DECORATION,
+    MENU_CHALLENGES,
     MENU_TURNOFF
 };
 #define NUM_BEDROOM_PC_OPTIONS ARRAY_COUNT(sBedroomPC_OptionOrder)
@@ -249,7 +254,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenus[] =
         .tilemapLeft = 1,
         .tilemapTop = 1,
         .width = 9,
-        .height = 8,
+        .height = 10,
         .paletteNum = 15,
         .baseBlock = 1
     },
@@ -488,6 +493,13 @@ static void PlayerPC_Mailbox(u8 taskId)
 static void PlayerPC_Decoration(u8 taskId)
 {
     DoPlayerRoomDecorationMenu(taskId);
+}
+
+static void PlayerPC_Challenges(u8 taskId)
+{
+    gMain.savedCallback = CB2_ReturnToFieldWithOpenMenu;
+    SetMainCallback2(CB2_InitChallengeMenu);
+    DestroyTask(taskId);
 }
 
 static void PlayerPC_TurnOff(u8 taskId)
