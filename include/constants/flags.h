@@ -2506,7 +2506,7 @@
 
 // ShinyKrabby custom story flags (reserved block, appended past the engine flags)
 #define SK_FLAGS_START                          (ENGINE_FLAGS_END + 1)
-#define NUM_SK_FLAGS                            200
+#define NUM_SK_FLAGS                            250
 #define SK_FLAGS_END                            (SK_FLAGS_START + NUM_SK_FLAGS - 1)
 
 #define FLAGS_COUNT (SK_FLAGS_END + 1)

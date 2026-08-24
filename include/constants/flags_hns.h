@@ -3522,11 +3522,12 @@
 #define FLAG_WOKE_UP_ROUTE_12_SNORLAX                           0
 
 // ShinyKrabby custom maps: InsideOfTruck / DeepCloudForest_FacultyGorge / Mistcity_Research_Center storyline
-#define FLAG_DAVID_TRUCK                                        0x942
-#define FLAG_FACULTY_GORGE_NASH2                                0x943
-#define FLAG_DAAN_NASH_TRUCK                                    0x944
-#define FLAG_NASH_ENTRANCE_RESEARCH_CENTER1                     0x945
-#define FLAG_NASH_ENTRANCE_RESEARCH_CENTER2                     0x946
+// (moved into the SK_FLAGS reserved block; previously hardcoded to 0x942-0x946, inside HNS's own flag range)
+#define FLAG_DAVID_TRUCK                                        (SK_FLAGS_START + 180)
+#define FLAG_FACULTY_GORGE_NASH2                                (SK_FLAGS_START + 181)
+#define FLAG_DAAN_NASH_TRUCK                                    (SK_FLAGS_START + 182)
+#define FLAG_NASH_ENTRANCE_RESEARCH_CENTER1                     (SK_FLAGS_START + 183)
+#define FLAG_NASH_ENTRANCE_RESEARCH_CENTER2                     (SK_FLAGS_START + 184)
 
 
 // ShinyKrabby custom story flags (ported from custom maps)

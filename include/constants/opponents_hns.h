@@ -715,7 +715,7 @@
 #define TRAINER_TRIATHLETE_M_REED                      698
 #define TRAINER_WILFRED                                699
 
-#define TRAINERS_COUNT_HNS                       700
+#define TRAINERS_COUNT_HNS                       750
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H
