@@ -224,13 +224,17 @@ Debug_EventScript_Script_2::
 	end
 
 Debug_EventScript_Script_3::
+.if INCLUDE_HNS_CONTENT
 	goto SinjohRuins_EventScript_StevenBattle
+.endif
 	release
 	end
 
 Debug_EventScript_Script_4::
+.if INCLUDE_HNS_CONTENT
 	msgbox SinjohRuins_Lab_Text_StevenCall3Plates, MSGBOX_DEFAULT
 	pokenavcall SinjohRuins_Lab_Text_StevenCall6Plates
+.endif
 	release
 	end
 

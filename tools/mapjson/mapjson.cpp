@@ -174,7 +174,7 @@ string generate_map_header_text(Json map_data, Json layouts_data) {
 
     if (version == "ruby")
         text << "\t.byte " << json_to_string(map_data, "show_map_name") << "\n";
-    else if (version == "emerald" || version == "firered" || version == "hns")
+    else if (version == "emerald" || version == "firered" || version == "hns" || version == "sk")
         text << "\tmap_header_flags "
              << "allow_cycling=" << json_to_string(map_data, "allow_cycling") << ", "
              << "allow_escaping=" << json_to_string(map_data, "allow_escaping") << ", "
@@ -919,8 +919,8 @@ int main(int argc, char *argv[]) {
 
     char *version_arg = argv[2];
     version = string(version_arg);
-    if (version != "emerald" && version != "ruby" && version != "firered" && version != "hns")
-        FATAL_ERROR("ERROR: <game-version> must be 'emerald', 'firered', 'hns', or 'ruby'.\n");
+    if (version != "emerald" && version != "ruby" && version != "firered" && version != "hns" && version != "sk")
+        FATAL_ERROR("ERROR: <game-version> must be 'emerald', 'firered', 'hns', 'sk', or 'ruby'.\n");
 
     char *mode_arg = argv[1];
     string mode(mode_arg);

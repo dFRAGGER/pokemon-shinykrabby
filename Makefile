@@ -24,8 +24,25 @@ ifeq (hns, $(or $(BUILD), $(MAKECMDGOALS)))
 	GAME_CODE   	:= BPEE
 	BUILD_NAME  	:= hns
 	MAP_VERSION 	:= hns
+else
+ifeq (sk, $(or $(BUILD), $(MAKECMDGOALS)))
+	GAME_VERSION 	:= POKEMON_HNS
+	TITLE       	:= POKEMON HNS
+	GAME_CODE   	:= BPEE
+	BUILD_NAME  	:= sk
+	MAP_VERSION 	:= sk
 endif
 endif
+endif
+endif
+
+# Whether HNS's own Johto/Kanto map scripts (data/event_scripts.s) should be assembled in.
+# Kept separate from GAME_VERSION/IS_HNS, which stays POKEMON_HNS for the `sk` build too
+# (it gates shared engine features, not HNS's own region content).
+ifeq ($(BUILD_NAME),hns)
+	INCLUDE_HNS_CONTENT := 1
+else
+	INCLUDE_HNS_CONTENT := 0
 endif
 
 # GBA rom header
@@ -154,7 +171,7 @@ TEST_BUILDDIR = $(OBJ_DIR)/$(TEST_SUBDIR)
 SHELL := bash -o pipefail
 
 # Set flags for tools
-ASFLAGS := -mcpu=arm7tdmi -march=armv4t -meabi=5 --defsym MODERN=1 --defsym $(GAME_VERSION)=1
+ASFLAGS := -mcpu=arm7tdmi -march=armv4t -meabi=5 --defsym MODERN=1 --defsym $(GAME_VERSION)=1 --defsym INCLUDE_HNS_CONTENT=$(INCLUDE_HNS_CONTENT)
 
 INCLUDE_DIRS := include
 INCLUDE_CPP_ARGS := $(INCLUDE_DIRS:%=-iquote %)
@@ -165,7 +182,7 @@ O_LEVEL ?= g
 else
 O_LEVEL ?= 2
 endif
-CPPFLAGS := $(INCLUDE_CPP_ARGS) -Wno-trigraphs -DMODERN=1 -DTESTING=$(TEST) -D$(GAME_VERSION) -std=gnu17
+CPPFLAGS := $(INCLUDE_CPP_ARGS) -Wno-trigraphs -DMODERN=1 -DTESTING=$(TEST) -D$(GAME_VERSION) -DINCLUDE_HNS_CONTENT=$(INCLUDE_HNS_CONTENT) -std=gnu17
 ifeq ($(RELEASE),1)
 	override CPPFLAGS += -DRELEASE
 	ifeq ($(USE_LTO_ON_RELEASE),1)
@@ -625,6 +642,7 @@ emerald: all
 firered: all
 leafgreen: all
 hns: all
+sk: all
 # Symbol file (`make syms`)
 $(SYM): $(ELF)
 	$(OBJDUMP) -t $< | sort -u | grep -E "^0[2389]" | $(PERL) -p -e 's/^(\w{8}) (\w).{6} \S+\t(\w{8}) (\S+)$$/\1 \2 \3 \4/g' > $@
