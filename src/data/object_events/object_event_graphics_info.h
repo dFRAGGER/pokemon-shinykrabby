@@ -4467,8 +4467,6 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ApricornTree = {
     .images = sPicTable_ApricornTree,
 };
 
-#if IS_FRLG
-
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedNormal = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_PLAYER_RED,
@@ -7223,8 +7221,6 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSAnne = {
     .images = sPicTable_SSAnne,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
-
-#endif // IS_FRLG
 
 #if IS_HNS
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AttendantF_hns = {TAG_NONE, OBJ_EVENT_PAL_TAG_NPC_1_HNS, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 4, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_AttendantF_hns, gDummySpriteAffineAnimTable};
