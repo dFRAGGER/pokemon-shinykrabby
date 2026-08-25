@@ -1057,7 +1057,7 @@ static void AddHnsSpeechObjects(u8 taskId)
     u8 goldSpriteId;
     u8 krisSpriteId;
 
-    professorSpriteId = AddNewGameOakObject(0x88, 0x3C, 1);
+    professorSpriteId = AddNewGameBirchObject(0x88, 0x3C, 1);
     gSprites[professorSpriteId].callback = SpriteCB_Null;
     gSprites[professorSpriteId].oam.priority = 0;
     gSprites[professorSpriteId].invisible = TRUE;
