@@ -141,154 +141,12 @@ static const u8 sRegionMapPlayerIcon_KrisGfx[] = INCBIN_U8("graphics/pokenav/reg
 #endif
 
 #include "data/region_map/region_map_layout.h"
-#include "data/region_map/region_map_layout_kanto.h"
-#include "data/region_map/region_map_layout_sevii123.h"
-#include "data/region_map/region_map_layout_sevii45.h"
-#include "data/region_map/region_map_layout_sevii67.h"
-#if IS_HNS
-#include "data/region_map/region_map_layout_johto.h"
-#include "data/region_map/region_map_layout_jk.h"
-#endif
 #include "data/region_map/region_map_entries.h"
 
-#if IS_HNS
-// Johto-only map coordinates (before FLAG_VISITED_KANTO is set).
-// The auto-generated gRegionMapEntries has JK combined coordinates.
-static const struct RegionMapLocation sRegionMapEntries_Johto[] = {
-    [MAPSEC_VIOLET_CITY]       = { 7,  5,  1, 1, COMPOUND_STRING("VIOLET CITY") },
-    [MAPSEC_AZALEA_TOWN]       = { 6,  12, 1, 1, COMPOUND_STRING("AZALEA TOWN") },
-    [MAPSEC_GOLDENROD_CITY]    = { 5,  7,  1, 2, COMPOUND_STRING("GOLDENROD CITY") },
-    [MAPSEC_ECRUTEAK_CITY]     = { 6,  3,  1, 1, COMPOUND_STRING("ECRUTEAK CITY") },
-    [MAPSEC_OLIVINE_CITY]      = { 3,  6,  1, 1, COMPOUND_STRING("OLIVINE CITY") },
-    [MAPSEC_CIANWOOD_CITY]     = { 1,  9,  1, 1, COMPOUND_STRING("CIANWOOD CITY") },
-    [MAPSEC_SAFARI_ZONE_GATE]  = { 0,  7,  1, 1, COMPOUND_STRING("SAFARI ZONE GATE") },
-    [MAPSEC_MAHOGANY_TOWN]     = { 9,  3,  1, 1, COMPOUND_STRING("MAHOGANY TOWN") },
-    [MAPSEC_BLACKTHORN_CITY]   = { 12, 3,  1, 1, COMPOUND_STRING("BLACKTHORN CITY") },
-    [MAPSEC_CHERRYGROVE_CITY]  = { 9,  11, 1, 1, COMPOUND_STRING("CHERRYGROVE CITY") },
-    [MAPSEC_NEW_BARK_TOWN]     = { 13, 11, 1, 1, COMPOUND_STRING("NEW BARK TOWN") },
-    [MAPSEC_INDIGO_PLATEAU]    = { 16, 2,  1, 2, COMPOUND_STRING("INDIGO PLATEAU") },
-    [MAPSEC_BATTLE_FRONTIER]   = { 12, 14, 1, 1, COMPOUND_STRING("BATTLE FRONTIER") },
-    [MAPSEC_ROUTE_26]          = { 16, 8,  1, 4, COMPOUND_STRING("ROUTE 26") },
-    [MAPSEC_ROUTE_27]          = { 14, 11, 3, 1, COMPOUND_STRING("ROUTE 27") },
-    [MAPSEC_ROUTE_28]          = { 15, 7,  1, 1, COMPOUND_STRING("ROUTE 28") },
-    [MAPSEC_ROUTE_29]          = { 10, 11, 3, 1, COMPOUND_STRING("ROUTE 29") },
-    [MAPSEC_ROUTE_30]          = { 9,  6,  1, 5, COMPOUND_STRING("ROUTE 30") },
-    [MAPSEC_ROUTE_31]          = { 8,  5,  2, 1, COMPOUND_STRING("ROUTE 31") },
-    [MAPSEC_ROUTE_32]          = { 7,  6,  1, 5, COMPOUND_STRING("ROUTE 32") },
-    [MAPSEC_ROUTE_33]          = { 7,  12, 1, 1, COMPOUND_STRING("ROUTE 33") },
-    [MAPSEC_ROUTE_34]          = { 5,  9,  1, 2, COMPOUND_STRING("ROUTE 34") },
-    [MAPSEC_ROUTE_35]          = { 5,  6,  1, 1, COMPOUND_STRING("ROUTE 35") },
-    [MAPSEC_ROUTE_36]          = { 6,  5,  1, 1, COMPOUND_STRING("ROUTE 36") },
-    [MAPSEC_ROUTE_37]          = { 6,  4,  1, 1, COMPOUND_STRING("ROUTE 37") },
-    [MAPSEC_ROUTE_38]          = { 4,  3,  2, 1, COMPOUND_STRING("ROUTE 38") },
-    [MAPSEC_ROUTE_39]          = { 3,  3,  1, 3, COMPOUND_STRING("ROUTE 39") },
-    [MAPSEC_ROUTE_40]          = { 2,  6,  1, 3, COMPOUND_STRING("ROUTE 40") },
-    [MAPSEC_ROUTE_41]          = { 2,  9,  1, 1, COMPOUND_STRING("ROUTE 41") },
-    [MAPSEC_ROUTE_42]          = { 7,  3,  2, 1, COMPOUND_STRING("ROUTE 42") },
-    [MAPSEC_ROUTE_43]          = { 9,  2,  1, 1, COMPOUND_STRING("ROUTE 43") },
-    [MAPSEC_ROUTE_44]          = { 10, 3,  2, 1, COMPOUND_STRING("ROUTE 44") },
-    [MAPSEC_ROUTE_45]          = { 12, 4,  1, 5, COMPOUND_STRING("ROUTE 45") },
-    [MAPSEC_ROUTE_46]          = { 11, 8,  1, 3, COMPOUND_STRING("ROUTE 46") },
-    [MAPSEC_ROUTE_47]          = { 0,  9,  1, 1, COMPOUND_STRING("ROUTE 47") },
-    [MAPSEC_ROUTE_48]          = { 0,  8,  1, 1, COMPOUND_STRING("ROUTE 48") },
-    [MAPSEC_SAFARI_ZONE]       = { 0,  6,  1, 1, COMPOUND_STRING("SAFARI ZONE") },
-    [MAPSEC_VICTORY_ROAD_HNS]  = { 16, 4,  1, 4, COMPOUND_STRING("VICTORY ROAD") },
-    [MAPSEC_PALLET_TOWN]       = { 19, 11, 1, 1, COMPOUND_STRING("PALLET TOWN") },
-    [MAPSEC_VIRIDIAN_CITY]     = { 19, 7,  1, 1, COMPOUND_STRING("VIRIDIAN CITY") },
-    [MAPSEC_PEWTER_CITY]       = { 19, 2,  1, 1, COMPOUND_STRING("PEWTER CITY") },
-    [MAPSEC_CERULEAN_CITY]     = { 24, 2,  1, 1, COMPOUND_STRING("CERULEAN CITY") },
-    [MAPSEC_LAVENDER_TOWN]     = { 27, 5,  1, 1, COMPOUND_STRING("LAVENDER TOWN") },
-    [MAPSEC_VERMILION_CITY]    = { 24, 7,  1, 1, COMPOUND_STRING("VERMILION CITY") },
-    [MAPSEC_CELADON_CITY]      = { 22, 5,  1, 1, COMPOUND_STRING("CELADON CITY") },
-    [MAPSEC_FUCHSIA_CITY]      = { 24, 11, 1, 1, COMPOUND_STRING("FUCHSIA CITY") },
-    [MAPSEC_SOUTHERN_ISLAND]   = { 9,  14, 1, 1, COMPOUND_STRING("SOUTHERN ISLAND") },
-    [MAPSEC_FARAWAY_ISLAND]    = { 9,  14, 1, 1, COMPOUND_STRING("FARAWAY ISLAND") },
-    [MAPSEC_BIRTH_ISLAND]      = { 9,  14, 1, 1, COMPOUND_STRING("BIRTH ISLAND") },
-    [MAPSEC_CINNABAR_ISLAND]   = { 19, 13, 1, 1, COMPOUND_STRING("CINNABAR ISLAND") },
-    [MAPSEC_SAFFRON_CITY]      = { 24, 5,  1, 1, COMPOUND_STRING("SAFFRON CITY") },
-    [MAPSEC_ROUTE_1]           = { 19, 8,  1, 3, COMPOUND_STRING("ROUTE 1") },
-    [MAPSEC_ROUTE_2]           = { 19, 3,  1, 4, COMPOUND_STRING("ROUTE 2") },
-    [MAPSEC_ROUTE_3]           = { 20, 2,  2, 1, COMPOUND_STRING("ROUTE 3") },
-    [MAPSEC_ROUTE_4]           = { 21, 2,  1, 1, COMPOUND_STRING("ROUTE 4") },
-    [MAPSEC_ROUTE_5]           = { 24, 3,  1, 2, COMPOUND_STRING("ROUTE 5") },
-    [MAPSEC_ROUTE_6]           = { 24, 6,  1, 1, COMPOUND_STRING("ROUTE 6") },
-    [MAPSEC_ROUTE_7]           = { 23, 5,  1, 1, COMPOUND_STRING("ROUTE 7") },
-    [MAPSEC_ROUTE_8]           = { 25, 5,  2, 1, COMPOUND_STRING("ROUTE 8") },
-    [MAPSEC_ROUTE_9]           = { 25, 2,  3, 1, COMPOUND_STRING("ROUTE 9") },
-    [MAPSEC_ROUTE_10]          = { 27, 3,  1, 1, COMPOUND_STRING("ROUTE 10") },
-    [MAPSEC_ROUTE_11]          = { 25, 5,  2, 1, COMPOUND_STRING("ROUTE 11") },
-    [MAPSEC_ROUTE_12]          = { 27, 6,  1, 4, COMPOUND_STRING("ROUTE 12") },
-    [MAPSEC_ROUTE_13]          = { 26, 10, 2, 1, COMPOUND_STRING("ROUTE 13") },
-    [MAPSEC_ROUTE_14]          = { 26, 11, 1, 1, COMPOUND_STRING("ROUTE 14") },
-    [MAPSEC_ROUTE_15]          = { 25, 11, 1, 1, COMPOUND_STRING("ROUTE 15") },
-    [MAPSEC_ROUTE_16]          = { 21, 5,  1, 1, COMPOUND_STRING("ROUTE 16") },
-    [MAPSEC_ROUTE_17]          = { 21, 6,  1, 6, COMPOUND_STRING("ROUTE 17") },
-    [MAPSEC_ROUTE_18]          = { 22, 11, 2, 1, COMPOUND_STRING("ROUTE 18") },
-    [MAPSEC_ROUTE_19]          = { 22, 12, 3, 2, COMPOUND_STRING("ROUTE 19") },
-    [MAPSEC_ROUTE_20]          = { 20, 13, 2, 1, COMPOUND_STRING("ROUTE 20") },
-    [MAPSEC_ROUTE_21]          = { 19, 12, 1, 1, COMPOUND_STRING("ROUTE 21") },
-    [MAPSEC_ROUTE_22]          = { 17, 7,  2, 1, COMPOUND_STRING("ROUTE 22") },
-    [MAPSEC_ROUTE_24]          = { 24, 0,  1, 2, COMPOUND_STRING("ROUTE 24") },
-    [MAPSEC_ROUTE_25]          = { 25, 0,  1, 1, COMPOUND_STRING("ROUTE 25") },
-    [MAPSEC_VIRIDIAN_FOREST]   = { 19, 4,  1, 2, COMPOUND_STRING("VIRIDIAN FOREST") },
-    [MAPSEC_MT_MOON]           = { 22, 2,  1, 1, COMPOUND_STRING("MT. MOON") },
-    [MAPSEC_DIGLETTS_CAVE]     = { 20, 3,  6, 4, COMPOUND_STRING("DIGLETT'S CAVE") },
-    [MAPSEC_ROCKET_HIDEOUT_HNS] = { 9,  3,  1, 1, COMPOUND_STRING("ROCKET HIDEOUT") },
-    [MAPSEC_ROCK_TUNNEL]       = { 27, 3,  1, 1, COMPOUND_STRING("ROCK TUNNEL") },
-    [MAPSEC_SEAFOAM_ISLANDS]   = { 22, 13, 1, 1, COMPOUND_STRING("SEAFOAM ISLANDS") },
-    [MAPSEC_CERULEAN_CAVE]     = { 23, 1,  1, 1, COMPOUND_STRING("CERULEAN CAVE") },
-    [MAPSEC_POWER_PLANT]       = { 27, 3,  1, 1, COMPOUND_STRING("POWER PLANT") },
-    [MAPSEC_DARK_CAVE]         = { 10, 5,  1, 1, COMPOUND_STRING("DARK CAVE") },
-    [MAPSEC_UNION_CAVE]        = { 7,  11, 1, 2, COMPOUND_STRING("UNION CAVE") },
-    [MAPSEC_ILEX_FOREST]       = { 5,  11, 1, 2, COMPOUND_STRING("ILEX FOREST") },
-    [MAPSEC_NATIONAL_PARK]     = { 5,  5,  1, 1, COMPOUND_STRING("NATIONAL PARK") },
-    [MAPSEC_WHIRL_ISLANDS]     = { 2,  9,  1, 1, COMPOUND_STRING("WHIRL ISLANDS") },
-    [MAPSEC_CLIFF_CAVE]        = { 0,  9,  1, 1, COMPOUND_STRING("CLIFF CAVE") },
-    [MAPSEC_MT_MORTAR]         = { 10, 3,  1, 1, COMPOUND_STRING("MT MORTAR") },
-    [MAPSEC_LAKE_OF_RAGE]      = { 9,  1,  1, 1, COMPOUND_STRING("LAKE OF RAGE") },
-    [MAPSEC_ICE_PATH]          = { 11, 2,  2, 1, COMPOUND_STRING("ICE PATH") },
-    [MAPSEC_MT_SILVER]         = { 14, 7,  1, 1, COMPOUND_STRING("MT. SILVER") },
-    [MAPSEC_SNOWSWEPT_CAVERN]  = { 14, 6,  1, 1, COMPOUND_STRING("SNOWSWEPT CAVERN") },
-    [MAPSEC_ROUTE_49]          = { 14, 6,  1, 1, COMPOUND_STRING("ROUTE 49") },
-    [MAPSEC_NEW_SINJOH]        = { 14, 5,  1, 1, COMPOUND_STRING("NEW SINJOH") },
-    [MAPSEC_ROUTE_50]          = { 14, 4,  1, 1, COMPOUND_STRING("ROUTE 50") },
-    [MAPSEC_SINJOH_RUINS]      = { 14, 3,  1, 1, COMPOUND_STRING("SINJOH RUINS") },
-    [MAPSEC_TOHJO_FALLS]       = { 14, 10, 1, 1, COMPOUND_STRING("TOHJO FALLS") },
-    [MAPSEC_SPROUT_TOWER]      = { 7,  5,  1, 1, COMPOUND_STRING("SPROUT TOWER") },
-    [MAPSEC_SLOWPOKE_WELL]     = { 6,  12, 1, 1, COMPOUND_STRING("SLOWPOKE WELL") },
-    [MAPSEC_BURNED_TOWER]      = { 6,  3,  1, 1, COMPOUND_STRING("BURNED TOWER") },
-    [MAPSEC_TIN_TOWER]         = { 6,  2,  1, 1, COMPOUND_STRING("TIN TOWER") },
-    [MAPSEC_DRAGONS_DEN]       = { 12, 2,  1, 1, COMPOUND_STRING("DRAGON'S DEN") },
-    [MAPSEC_RUINS_OF_ALPH]     = { 6,  6,  1, 1, COMPOUND_STRING("RUINS OF ALPH") },
-    [MAPSEC_SS_AQUA]           = { 9,  14, 10, 1, COMPOUND_STRING("S.S. AQUA") },
-    [MAPSEC_EMBEDDED_TOWER]    = { 1,  10, 1, 1, COMPOUND_STRING("EMBEDDED TOWER") },
-    [MAPSEC_OLIVINE_LIGHTHOUSE] = { 3, 6,  1, 1, COMPOUND_STRING("LIGHTHOUSE") },
-    [MAPSEC_TRAINER_HILL]      = { 2,  5,  1, 1, COMPOUND_STRING("TRAINER HILL") },
-    [MAPSEC_MELEMELE_ISLAND]   = { 26, 13, 1, 1, COMPOUND_STRING("MELEMELE ISLE") },
-    [MAPSEC_AKALA_ISLAND]     = { 27, 12, 1, 1, COMPOUND_STRING("AKALA ISLE") },
-    [MAPSEC_ULAULA_ISLAND]    = { 27, 13, 1, 1, COMPOUND_STRING("ULA'ULA ISLE") },
-    [MAPSEC_PONI_ISLAND]      = { 25, 13, 1, 1, COMPOUND_STRING("PONI ISLE") },
-    [MAPSEC_ALOLA_OCEAN]      = { 25, 12, 1, 1, COMPOUND_STRING("ALOLA SEA") },
-    [MAPSEC_AKALA_CAVE]       = { 27, 14, 1, 1, COMPOUND_STRING("AKALA CAVE") },
-    [MAPSEC_AKALA_FOREST]     = { 27, 11, 1, 1, COMPOUND_STRING("AKALA FOREST") },
-    [MAPSEC_PONI_CAVE]        = { 25, 14, 1, 1, COMPOUND_STRING("PONI CAVE") },
-    [MAPSEC_ULAULA_CAVE]     = { 26, 14, 1, 1, COMPOUND_STRING("ULA'ULA CAVE") },
-    [MAPSEC_ULAULA_CAVE_2]   = { 26, 12, 1, 1, COMPOUND_STRING("ULA'ULA CAVE") },
-};
-#endif
 
 const struct RegionMapLocation *GetActiveRegionMapEntries(void)
 {
-#if IS_HNS
-    const struct RegionMapLocation *entries;
-    if (FlagGet(FLAG_VISITED_KANTO))
-        entries = sRegionMapEntries_Johto;
-    else
-        entries = gRegionMapEntries;
-    return entries;
-#else
     return gRegionMapEntries;
-#endif
 }
 
 static const mapsec_u16_t sRegionMap_SpecialPlaceLocations[][2] =
@@ -1494,31 +1352,7 @@ void PokedexAreaScreen_UpdateRegionMapVariablesAndVideoRegs(s16 x, s16 y)
 
 enum RegionMapType GetRegionMapType(u32 mapSecId)
 {
-#if IS_HNS
-    if (FlagGet(FLAG_VISITED_KANTO))
-        return REGION_MAP_JK;
-    return REGION_MAP_JOHTO;
-#else
-    switch (GetRegionForSectionId(mapSecId))
-    {
-    case REGION_KANTO:
-        switch (GetKantoSubregion(mapSecId))
-        {
-        case KANTO_SUBREGION_SEVII123:
-            return REGION_MAP_SEVII123;
-        case KANTO_SUBREGION_SEVII45:
-            return REGION_MAP_SEVII45;
-        case KANTO_SUBREGION_SEVII67:
-            return REGION_MAP_SEVII67;
-        case KANTO_SUBREGION_KANTO:
-        default:
-            return REGION_MAP_KANTO;
-        }
-    case REGION_HOENN:
-    default:
-        return REGION_MAP_HOENN;
-    }
-#endif
+    return REGION_MAP_HOENN;
 }
 
 static mapsec_u16_t GetMapSecIdAt(u16 x, u16 y)
@@ -1530,31 +1364,7 @@ static mapsec_u16_t GetMapSecIdAt(u16 x, u16 y)
     y -= MAPCURSOR_Y_MIN;
     x -= MAPCURSOR_X_MIN;
 
-#if IS_HNS
-    if (FlagGet(FLAG_VISITED_KANTO))
-        return sRegionMapSections_JK[y][x];
-    return sRegionMapSections_Johto[y][x];
-#else
-    switch (GetCurrentRegion())
-    {
-    case REGION_KANTO:
-        switch (GetKantoSubregion(gMapHeader.regionMapSectionId))
-        {
-        case KANTO_SUBREGION_SEVII123:
-                return sRegionMapSections_Sevii123[y][x];
-        case KANTO_SUBREGION_SEVII45:
-                return sRegionMapSections_Sevii45[y][x];
-        case KANTO_SUBREGION_SEVII67:
-                return sRegionMapSections_Sevii67[y][x];
-        case KANTO_SUBREGION_KANTO:
-        default:
-                return sRegionMapSections_Kanto[y][x];
-        }
-    case REGION_HOENN:
-    default:
-            return sRegionMap_MapSectionLayout[y][x];
-    }
-#endif
+    return sRegionMap_MapSectionLayout[y][x];
 }
 
 static void InitMapBasedOnPlayerLocation(void)
@@ -2597,83 +2407,28 @@ static const struct FlyLocation sFlyLocations[] =
 {
     {
         .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_LITTLEROOT_TOWN,
-        .flag = FLAG_VISITED_LITTLEROOT_TOWN,
+        .mapsec = MAPSEC_ERPUS_CITY,
+        .flag = FLAG_VISITED_ERP_CITY,
     },
     {
         .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_OLDALE_TOWN,
-        .flag = FLAG_VISITED_OLDALE_TOWN,
+        .mapsec = MAPSEC_MAASJE,
+        .flag = FLAG_VISITED_MAASJE,
     },
     {
         .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_DEWFORD_TOWN,
-        .flag = FLAG_VISITED_DEWFORD_TOWN,
+        .mapsec = MAPSEC_MIST_CITY,
+        .flag = FLAG_VISITED_MIST_CITY,
     },
     {
         .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_LAVARIDGE_TOWN,
-        .flag = FLAG_VISITED_LAVARIDGE_TOWN,
+        .mapsec = MAPSEC_LIONS_ARCH_CITY,
+        .flag = FLAG_VISITED_LIONSARCH_CITY,
     },
     {
         .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_FALLARBOR_TOWN,
-        .flag = FLAG_VISITED_FALLARBOR_TOWN,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_VERDANTURF_TOWN,
-        .flag = FLAG_VISITED_VERDANTURF_TOWN,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_PACIFIDLOG_TOWN,
-        .flag = FLAG_VISITED_PACIFIDLOG_TOWN,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_PETALBURG_CITY,
-        .flag = FLAG_VISITED_PETALBURG_CITY,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_SLATEPORT_CITY,
-        .flag = FLAG_VISITED_SLATEPORT_CITY,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_MAUVILLE_CITY,
-        .flag = FLAG_VISITED_MAUVILLE_CITY,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_RUSTBORO_CITY,
-        .flag = FLAG_VISITED_RUSTBORO_CITY,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_FORTREE_CITY,
-        .flag = FLAG_VISITED_FORTREE_CITY,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_LILYCOVE_CITY,
-        .flag = FLAG_VISITED_LILYCOVE_CITY,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_MOSSDEEP_CITY,
-        .flag = FLAG_VISITED_MOSSDEEP_CITY,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_SOOTOPOLIS_CITY,
-        .flag = FLAG_VISITED_SOOTOPOLIS_CITY,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_EVER_GRANDE_CITY,
-        .flag = FLAG_VISITED_EVER_GRANDE_CITY,
+        .mapsec = MAPSEC_SILTROOT_TOWN,
+        .flag = FLAG_VISITED_SILTROOT_TOWN,
     },
     {
         .regionMapType = REGION_MAP_KANTO,

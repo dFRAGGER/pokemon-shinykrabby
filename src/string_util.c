@@ -531,12 +531,7 @@ static const u8 *ExpandPlaceholder_Groudon(void)
 
 static const u8 *ExpandPlaceholder_Region(void)
 {
-    if (IS_HNS)
-        return FlagGet(FLAG_VISITED_KANTO) ? gText_JohtoKanto : gText_Johto;
-    else if (IS_FRLG)
-        return gText_Kanto;
-    else
-        return gText_Hoenn;
+    return gText_Tessera;
 }
 
 const u8 *GetExpandedPlaceholder(u32 id)
