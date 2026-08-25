@@ -495,6 +495,52 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Worker_dp;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungCoupleF_dp;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungCoupleM_dp;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster_dp;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AceTrainerFSnow_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AceTrainerM_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AceTrainerMSnow_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BattleGirl_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreederF_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BugCatcher_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Clerk2_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Clerk_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cowgirl_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CueBall_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DragonTamer_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Firebreather_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fisherman_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gamer_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gentleman_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Girl_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Guard_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hiker_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lass_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Leaf_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man2_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man3_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man4_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MartialArtist_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Nerd_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NurseJoy_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldMan2_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldMan_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldWoman2_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldWoman_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PicnickerF_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PicnickerM_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeFan_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeManiac_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PsychicM_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rancher_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerF_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerM_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGrunt_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinManiac_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sailor_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ScientistM_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman4_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Worker_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster_sk;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AttendantF_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AttendantM_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BaldingMan_hns;
@@ -1115,6 +1161,52 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_YOUNG_COUPLE_F_DP] = &gObjectEventGraphicsInfo_YoungCoupleF_dp,
     [OBJ_EVENT_GFX_YOUNG_COUPLE_M_DP] = &gObjectEventGraphicsInfo_YoungCoupleM_dp,
     [OBJ_EVENT_GFX_YOUNGSTER_DP] = &gObjectEventGraphicsInfo_Youngster_dp,
+    [OBJ_EVENT_GFX_ACE_TRAINER_F_SNOW_SK] = &gObjectEventGraphicsInfo_AceTrainerFSnow_sk,
+    [OBJ_EVENT_GFX_ACE_TRAINER_M_SK] = &gObjectEventGraphicsInfo_AceTrainerM_sk,
+    [OBJ_EVENT_GFX_ACE_TRAINER_M_SNOW_SK] = &gObjectEventGraphicsInfo_AceTrainerMSnow_sk,
+    [OBJ_EVENT_GFX_BATTLE_GIRL_SK] = &gObjectEventGraphicsInfo_BattleGirl_sk,
+    [OBJ_EVENT_GFX_BREEDER_F_SK] = &gObjectEventGraphicsInfo_BreederF_sk,
+    [OBJ_EVENT_GFX_BUG_CATCHER_SK] = &gObjectEventGraphicsInfo_BugCatcher_sk,
+    [OBJ_EVENT_GFX_CLERK2_SK] = &gObjectEventGraphicsInfo_Clerk2_sk,
+    [OBJ_EVENT_GFX_CLERK_SK] = &gObjectEventGraphicsInfo_Clerk_sk,
+    [OBJ_EVENT_GFX_COWGIRL_SK] = &gObjectEventGraphicsInfo_Cowgirl_sk,
+    [OBJ_EVENT_GFX_CUE_BALL_SK] = &gObjectEventGraphicsInfo_CueBall_sk,
+    [OBJ_EVENT_GFX_DRAGON_TAMER_SK] = &gObjectEventGraphicsInfo_DragonTamer_sk,
+    [OBJ_EVENT_GFX_FIREBREATHER_SK] = &gObjectEventGraphicsInfo_Firebreather_sk,
+    [OBJ_EVENT_GFX_FISHERMAN_SK] = &gObjectEventGraphicsInfo_Fisherman_sk,
+    [OBJ_EVENT_GFX_GAMER_SK] = &gObjectEventGraphicsInfo_Gamer_sk,
+    [OBJ_EVENT_GFX_GENTLEMAN_SK] = &gObjectEventGraphicsInfo_Gentleman_sk,
+    [OBJ_EVENT_GFX_GIRL_SK] = &gObjectEventGraphicsInfo_Girl_sk,
+    [OBJ_EVENT_GFX_GUARD_SK] = &gObjectEventGraphicsInfo_Guard_sk,
+    [OBJ_EVENT_GFX_HIKER_SK] = &gObjectEventGraphicsInfo_Hiker_sk,
+    [OBJ_EVENT_GFX_LASS_SK] = &gObjectEventGraphicsInfo_Lass_sk,
+    [OBJ_EVENT_GFX_LEAF_SK] = &gObjectEventGraphicsInfo_Leaf_sk,
+    [OBJ_EVENT_GFX_MAN2_SK] = &gObjectEventGraphicsInfo_Man2_sk,
+    [OBJ_EVENT_GFX_MAN3_SK] = &gObjectEventGraphicsInfo_Man3_sk,
+    [OBJ_EVENT_GFX_MAN4_SK] = &gObjectEventGraphicsInfo_Man4_sk,
+    [OBJ_EVENT_GFX_MAN_SK] = &gObjectEventGraphicsInfo_Man_sk,
+    [OBJ_EVENT_GFX_MARTIAL_ARTIST_SK] = &gObjectEventGraphicsInfo_MartialArtist_sk,
+    [OBJ_EVENT_GFX_NERD_SK] = &gObjectEventGraphicsInfo_Nerd_sk,
+    [OBJ_EVENT_GFX_NURSE_JOY_SK] = &gObjectEventGraphicsInfo_NurseJoy_sk,
+    [OBJ_EVENT_GFX_OLD_MAN2_SK] = &gObjectEventGraphicsInfo_OldMan2_sk,
+    [OBJ_EVENT_GFX_OLD_MAN_SK] = &gObjectEventGraphicsInfo_OldMan_sk,
+    [OBJ_EVENT_GFX_OLD_WOMAN2_SK] = &gObjectEventGraphicsInfo_OldWoman2_sk,
+    [OBJ_EVENT_GFX_OLD_WOMAN_SK] = &gObjectEventGraphicsInfo_OldWoman_sk,
+    [OBJ_EVENT_GFX_PICNICKER_F_SK] = &gObjectEventGraphicsInfo_PicnickerF_sk,
+    [OBJ_EVENT_GFX_PICNICKER_M_SK] = &gObjectEventGraphicsInfo_PicnickerM_sk,
+    [OBJ_EVENT_GFX_POKE_FAN_SK] = &gObjectEventGraphicsInfo_PokeFan_sk,
+    [OBJ_EVENT_GFX_POKE_MANIAC_SK] = &gObjectEventGraphicsInfo_PokeManiac_sk,
+    [OBJ_EVENT_GFX_PSYCHIC_M_SK] = &gObjectEventGraphicsInfo_PsychicM_sk,
+    [OBJ_EVENT_GFX_RANCHER_SK] = &gObjectEventGraphicsInfo_Rancher_sk,
+    [OBJ_EVENT_GFX_RANGER_F_SK] = &gObjectEventGraphicsInfo_RangerF_sk,
+    [OBJ_EVENT_GFX_RANGER_M_SK] = &gObjectEventGraphicsInfo_RangerM_sk,
+    [OBJ_EVENT_GFX_ROCKET_GRUNT_SK] = &gObjectEventGraphicsInfo_RocketGrunt_sk,
+    [OBJ_EVENT_GFX_RUIN_MANIAC_SK] = &gObjectEventGraphicsInfo_RuinManiac_sk,
+    [OBJ_EVENT_GFX_SAILOR_SK] = &gObjectEventGraphicsInfo_Sailor_sk,
+    [OBJ_EVENT_GFX_SCIENTIST_M_SK] = &gObjectEventGraphicsInfo_ScientistM_sk,
+    [OBJ_EVENT_GFX_WOMAN4_SK] = &gObjectEventGraphicsInfo_Woman4_sk,
+    [OBJ_EVENT_GFX_WORKER_SK] = &gObjectEventGraphicsInfo_Worker_sk,
+    [OBJ_EVENT_GFX_YOUNGSTER_SK] = &gObjectEventGraphicsInfo_Youngster_sk,
     [OBJ_EVENT_GFX_ATTENDANT_F_HNS] = &gObjectEventGraphicsInfo_AttendantF_hns,
     [OBJ_EVENT_GFX_ATTENDANT_M_HNS] = &gObjectEventGraphicsInfo_AttendantM_hns,
     [OBJ_EVENT_GFX_BALDING_MAN_HNS] = &gObjectEventGraphicsInfo_BaldingMan_hns,
