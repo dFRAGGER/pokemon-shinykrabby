@@ -642,7 +642,19 @@ emerald: all
 firered: all
 leafgreen: all
 hns: all
-sk: all
+
+# `make sk` auto-toggles include/fieldmap.h to the build-safe HNS/FRLG
+# porymap convention before building, then back to the Emerald convention
+# (the one all Tessera content actually uses) afterward, so porymap.exe
+# always shows the right tiles by default without needing
+# `./porymap_layout.sh` run by hand. If the build fails, this deliberately
+# does NOT flip back to emerald -- fieldmap.h stays in the build-safe hns
+# state so a retry build still works correctly.
+.PHONY: sk
+sk:
+	@./porymap_layout.sh hns
+	$(MAKE) BUILD=sk all
+	@./porymap_layout.sh emerald
 # Symbol file (`make syms`)
 $(SYM): $(ELF)
 	$(OBJDUMP) -t $< | sort -u | grep -E "^0[2389]" | $(PERL) -p -e 's/^(\w{8}) (\w).{6} \S+\t(\w{8}) (\S+)$$/\1 \2 \3 \4/g' > $@
