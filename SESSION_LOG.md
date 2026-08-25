@@ -22,6 +22,138 @@ before touching this codebase again.
   missing — several bugs this session were found exactly that way (diff the port
   against what OLD actually has).
 
+## The foundational porting work (before this log's window)
+
+Everything below this point happened in earlier sessions, before the conversation this
+log was written from began — that conversation picked up mid-way through an already
+long porting effort. Included here because it's the work that made the `sk` build
+(and everything in the section below) possible in the first place, and because the
+original ShinyKrabby repo (`pokemon-shinykrabby(OLD)`) was constantly used as the
+reference/source-of-truth throughout it — expect to need it again for anything similar.
+
+**The porting method, in general**: pokehns-expansion is a *different base* than plain
+pokeemerald-expansion (ShinyKrabby's own original base) — not a fork of it, so there's no
+`git diff` between the two repos. Every piece of ShinyKrabby content had to be manually
+re-identified in the OLD repo and manually re-implemented against HNS's differently-
+structured codebase (which often has 2-3 conditional build variants —
+`#if IS_HNS / #elif IS_FRLG / #else` — where OLD just has one). **When something in the
+port looks wrong, missing, or half-finished, the first move is almost always to go find
+the equivalent in `pokemon-shinykrabby(OLD)` and compare.** This is how most of the bugs
+in the session log above were actually found (the Magikarp text bug, the Oak-vs-Birch
+sprite bug, the title screen bubbles/subtitle, the Lavaridge gym trainers, etc.) — not
+by reading the port in isolation, but by diffing it against what OLD actually does.
+
+Established convention (also written to persistent memory): **mirror OLD's code
+verbatim when porting a mechanic** — copy comparisons/logic exactly rather than
+rewriting "equivalently." Deviating from this has caused real bugs before (e.g. an
+unusual reversed array-indexing style, `playerObjEventId[gObjectEvents]`, is *correct*
+in `bike.c` because it matches OLD's own established pattern there, not a typo to "fix").
+
+### The porymap tileset investigation (led to `porymap_layout.sh`)
+
+Started as "porymap shows magenta/scrambled tiles for Building/General/Snow tilesets" —
+turned out not to be a bug at all, just the same dual 512/640-tile-boundary situation
+described in this session's log's "porymap tileset toggle" section, except HNS's own
+Battle Pyramid content hits the same issue and HNS's own team just lives with it via
+manual toggling. `porymap_layout.sh` was written as that toggle mechanism (later made
+automatic for builds in this session — see above).
+
+A full migration was then attempted to standardize all ~91 ShinyKrabby-authored layouts
+onto the 640 (`layout_version: "hns"`) convention, to eliminate the need to ever toggle
+for Tessera content. **This was aborted partway through** — 27 of 91 maps hit an
+unfixable metatile ID overflow (needed more than 384 secondary metatile slots, which
+doesn't exist under the 640 boundary for those tilesets). Explicit user call: "Stop
+here, revert everything to Emerald." Fully reverted and verified at the time. Separately
+investigated whether patching porymap itself to understand per-map `layoutVersion`
+would be a better permanent fix — concluded tractable (~1 day of work) but parked,
+not pursued.
+
+### The full content-completeness audit
+
+At some point the user asked for a systematic audit: compare `pokemon-shinykrabby(OLD)`
+against the port for *everything* not yet ported, not just things noticed by accident.
+This turned up a large categorized punch list, worked through over several passes:
+
+- **Priority 1** (done first): clock-trigger script (a `FLAG_SET_WALL_CLOCK`-gated Mom
+  reaction in the player's house), textbox palette *and* graphics (the user had changed
+  the actual PNG, not just the palette — confirmed later to be byte-identical to OLD via
+  MD5), map-preview-on-warp art (explicitly *not* the full map-preview-on-warp *system*
+  — that stayed out of scope the whole time, called "visionpreview" in later
+  discussion).
+- **NPC sprites**: an initial pass ported 129 sprites (this session's log above covers
+  a much later, much bigger second batch of ~170 more, plus fixing 145 FRLG sprites that
+  were present but disabled).
+- **Title screen**: initial pass — Shiny Krabby logo, shimmer animation, boot-skip.
+  (This session's log above covers a follow-up fix — the bubbles animation and the
+  "SHINYKRABBY VERSION" subtitle text, both missed in this initial pass.)
+- **Region map**: Tessera's own layout/graphics/heal locations replacing Hoenn's. Hit
+  and fixed a real pre-existing bug this unmasked: 65 mapsec names were all aliased to
+  value 0 across the `map_sections`/`hns_map_sections` JSON lists, and 7 SK mapsecs
+  referenced by map.jsons were never defined at all.
+- **Theme renaming**: 67 berry names, 68 item names/prices, Berry Blender → "The
+  Grinder", Hoenn → "Tessera" in strings, Gentleman trainer class → "Faculty".
+- **Mud puddle visual effects**, **Herb Grinder battle effects** (5 consumers) — ported.
+- **A config-define review pass**, applied per explicit user confirmation on each:
+  `OW_ROCK_CLIMB_FIELD_MOVE`, `OW_HM_ITEMS_ALLOW_FIELD_USE` (new define, didn't exist
+  in OLD, added), `OW_SHOW_ITEM_DESCRIPTIONS`, `OW_POPUP_GENERATION`/`TIME_MODE`,
+  `OW_UNION_DISABLE_CHECK`, `B_RUN_TRAINER_BATTLE`, `I_REUSABLE_TMS`,
+  `DEBUG_OVERWORLD_IN_MENU`, plus `B_FLAG_NO_CATCHING`/`B_FLAG_FOLLOWERS_DISABLED`
+  repointed to SK's own flags (`FLAG_NOCATCH_ENCOUNTER`, `FLAG_DISABLE_FOLLOWER_POKEMON`).
+- **Rock Climb → "Dancing Boots"/"Climbing Rope"** item reskin.
+- **Cycling Road pull-right/pull-left bike mechanics** — added by mirroring the
+  existing pull-down mechanic exactly (per the "mirror OLD verbatim" convention above).
+- **Custom door animation** for the `newsmalltownlab`/small-town-wood tileset — found
+  and fixed a missing `extern` declaration for `gTileset_newsmalltownlab` (and, while
+  there, for `gTileset_Snow`/`AutumnRuins`/`BrickCity`/`ShadyForest` too — all 5
+  originally-custom tilesets were missing from the central extern-declarations file).
+- **The full Birch/Oak intro speech rewrite**: `oak_speech_hns.inc`'s text content fully
+  replaced with OLD's "Prof Birds" internship-comedy script (kept the `gText_Oak_*`
+  symbol *names*, replaced their string *content*), Wooper → Magikarp at 2 sprite call
+  sites, the settings-disclaimer text rewritten in Prof Birds' voice as a fake contract
+  clause (HNS's cutscene background/transition mechanic deliberately kept as-is, per
+  explicit request). This is also where the `AddNewGameOakObject` vs
+  `AddNewGameBirchObject` sprite bug (fixed in this session's log above) and the
+  `gText_ThisIsAPokemon` dead-code bug (also fixed above) originated — the text got
+  rewritten correctly at the time, but two separate call sites referencing the *wrong*
+  underlying symbols weren't caught until much later.
+- **Miscellaneous fixes along the way**: `heal_location.c` Erp City special-case,
+  `save_location.c` Maasje Pokémon Center added to the save-list, `pokedex_area_screen.c`
+  map-group handling for Tessera, a stale/broken `secret_base.c` table entry removed,
+  trainer obedience thresholds shifted up by one badge tier across the board, Lavaridge
+  gym's trainer roster swapped to SK's own trainers, a `battle_bg.c` fallback fixed to
+  use the actual current battle environment instead of a hardcoded default, a dedicated
+  palette split off for the Trick House statue (previously sharing a palette it didn't
+  need to), a new `RefreshObjectEventGraphicsIdByLocalIdAndMap` function added for
+  dynamically-repalette'd sprites like Castform (plain
+  `ObjectEventSetGraphicsIdByLocalIdAndMap` doesn't reload dynamic palettes mid-scene),
+  and several stock Hoenn trainers (Rose, Cindy, Gabrielle, Sawyer) removed from
+  `match_call.c`'s always-active trainer table since they're not part of Tessera.
+- **The "DAAN" match-call NPC** (a personal cameo) — started here, actually finished in
+  this session's log above (commit `579e5b959a`) after being interrupted mid-edit.
+
+### Things that came up and are worth remembering from this earlier work
+
+- **Struct size differences are real and can silently truncate data**: HNS's
+  `struct TrainerClass` has `name[13]` where OLD has `name[14]` — a 13-character name
+  that fit fine in OLD overflowed here (`"FACULTY GRUNT"` needed shortening to
+  `"FAC. GRUNT"`). Any struct ported from OLD that has fixed-size arrays needs its sizes
+  double-checked against HNS's own definition, not assumed identical.
+- **An em-dash (`—`, U+2014) in a text string literal caused a bizarre, misleading
+  compiler error** — "function used but never defined" for *unrelated* functions later
+  in the same file, not any kind of encoding error. Root cause: the charmap couldn't
+  handle it, which corrupted the compiler's parse state for the rest of the file. Fixed
+  by using `...` instead, which also happens to match OLD's own established ellipsis
+  style. If a similarly bizarre, seemingly-unrelated compile error shows up after adding
+  new text, check for exotic Unicode punctuation first.
+- **Careful branch-tracing matters more than text-matching** when a construct HNS has
+  is a `#if IS_HNS / #elif IS_FRLG / #else` triple (or double) branch and OLD's
+  equivalent code is a plain single branch. More than once, a change that looked right
+  by literal text search actually landed in a branch that's *inactive* for this build
+  (e.g. `battle_setup.c`'s `gRematchTable` has an inactive `#else` branch still carrying
+  OLD's original Hoenn trainer names, harmless dead code — vs `match_call.c`'s
+  `sMatchCallTrainers[]`, which is unguarded/always-active and *did* need the same
+  change). Always confirm which branch is actually compiled before editing.
+
 ## What got done this session, roughly in order
 
 All of this is committed on `port-shinykrabby-maps`. Commit subjects below match
