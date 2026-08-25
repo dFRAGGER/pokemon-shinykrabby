@@ -711,7 +711,9 @@
 #define OBJ_EVENT_GFX_WOMAN4_SK                  728
 #define OBJ_EVENT_GFX_WORKER_SK                  729
 #define OBJ_EVENT_GFX_YOUNGSTER_SK               730
-#define NUM_OBJ_EVENT_GFX                        731
+#define OBJ_EVENT_GFX_BIKER_SK                   731
+#define OBJ_EVENT_GFX_SWIMMER_F_WATER_SK         732
+#define NUM_OBJ_EVENT_GFX                        733
 
 
 // These are dynamic object gfx ids.
@@ -1085,6 +1087,8 @@
 // Not a real OW palette tag; used for the white flash applied to followers
 #define OBJ_EVENT_PAL_TAG_WHITE                   (OBJ_EVENT_PAL_TAG_NONE - 1)
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
+#define OBJ_EVENT_PAL_TAG_BIKER_SK               0x12b2
+#define OBJ_EVENT_PAL_TAG_SWIMMER_F_WATER_SK     0x12b3
 
 // This + localId is used as the tileTag
 // for compressed graphicsInfos

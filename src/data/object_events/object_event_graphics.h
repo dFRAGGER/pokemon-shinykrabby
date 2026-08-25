@@ -1133,4 +1133,8 @@ const u32 gObjectEventPic_KrisFishing_hns[] = INCBIN_U32("graphics/object_events
 const u32 gObjectEventPic_KrisWatering_hns[] = INCBIN_U32("graphics/object_events/pics/people/kris/watering_hns.4bpp");
 const u32 gObjectEventPic_KrisDecorating_hns[] = INCBIN_U32("graphics/object_events/pics/people/kris/decorating_hns.4bpp");
 const u32 gObjectEventPic_KrisUnderwater_hns[] = INCBIN_U32("graphics/object_events/pics/people/kris/underwater_hns.4bpp");
+const u16 gObjectEventPal_Biker_sk[] = INCBIN_U16("graphics/object_events/palettes/SK_biker__SK.gbapal");
+const u16 gObjectEventPal_SwimmerFWater_sk[] = INCBIN_U16("graphics/object_events/palettes/SK_swimmer_f_water__SK.gbapal");
+const u32 gObjectEventPic_Biker_sk[] = INCBIN_U32("graphics/object_events/pics/people/biker_SK.4bpp");
+const u32 gObjectEventPic_SwimmerFWater_sk[] = INCBIN_U32("graphics/object_events/pics/people/swimmer_f_water_SK.4bpp");
 #endif // IS_HNS

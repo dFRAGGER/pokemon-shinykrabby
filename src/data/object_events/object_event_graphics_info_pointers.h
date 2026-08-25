@@ -680,6 +680,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisFishing
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisWatering_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisDecorating_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AlolaOak_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Biker_sk;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerFWater_sk;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -1349,6 +1351,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_KRIS_FISHING_HNS] =      &gObjectEventGraphicsInfo_KrisFishing_hns,
     [OBJ_EVENT_GFX_KRIS_WATERING_HNS] =     &gObjectEventGraphicsInfo_KrisWatering_hns,
     [OBJ_EVENT_GFX_KRIS_DECORATING_HNS] =   &gObjectEventGraphicsInfo_KrisDecorating_hns,
+    [OBJ_EVENT_GFX_BIKER_SK] = &gObjectEventGraphicsInfo_Biker_sk,
+    [OBJ_EVENT_GFX_SWIMMER_F_WATER_SK] = &gObjectEventGraphicsInfo_SwimmerFWater_sk,
 #endif // IS_HNS
 };
 
