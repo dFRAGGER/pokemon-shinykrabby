@@ -715,6 +715,25 @@
 #define TRAINER_TRIATHLETE_M_REED                      698
 #define TRAINER_WILFRED                                699
 
+// ShinyKrabby trainers adopted from leftover vanilla placeholder scripts
+// (same names/parties, given their own non-colliding ids)
+#define TRAINER_CALVIN_1_SK                            700
+#define TRAINER_LYLE_SK                                701
+#define TRAINER_TIANA_SK                               702
+#define TRAINER_WINSTON_1_SK                           703
+#define TRAINER_PRESTON_SK                             704
+#define TRAINER_BLAKE_SK                               705
+#define TRAINER_MAURA_SK                               706
+#define TRAINER_SAMANTHA_SK                            707
+#define TRAINER_VIRGIL_SK                              708
+#define TRAINER_HANNAH_SK                              709
+#define TRAINER_NATE_SK                                710
+#define TRAINER_SYLVIA_SK                              711
+#define TRAINER_CLIFFORD_SK                            712
+#define TRAINER_MACEY_SK                               713
+#define TRAINER_KATHLEEN_SK                            714
+#define TRAINER_NICHOLAS_SK                            715
+
 #define TRAINERS_COUNT_HNS                       750
 #define MAX_TRAINERS_COUNT_HNS                   864
 
