@@ -508,6 +508,8 @@ static void PlayerPC_TurnOff(u8 taskId)
     {
         if (gMapHeader.mapLayoutId == LAYOUT_PALLET_TOWN_PLAYERS_HOUSE_2F_FRLG)
             ScriptContext_SetupScript(EventScript_PalletTown_PlayersHouse_2F_ShutDownPC);
+        else if (gMapHeader.mapLayoutId == LAYOUT_ERPUS_CITY_START_HOUSE_2F)
+            ScriptContext_SetupScript(ErpusCity_StartHouse_2F_EventScript_TurnOffPlayerPC);
 #if INCLUDE_HNS_CONTENT
         else if (IS_HNS)
             ScriptContext_SetupScript(NewBarkTown_PlayersHouse_2F_EventScript_TurnOffPlayerPC);
