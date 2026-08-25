@@ -743,6 +743,7 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     bool8 gmaxFactor         = PARSE_FLAG(22, FALSE);
     enum Type teraType       = PARSE_FLAG(23, NUMBER_OF_MON_TYPES);
     u8 dmaxLevel             = PARSE_FLAG(24, 0);
+    bool8 isStarterOrGift    = PARSE_FLAG(25, FALSE);
 
     enum Move moves[MAX_MON_MOVES];
     for (i = 0; i < MAX_MON_MOVES; i++)
@@ -774,8 +775,15 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
 #if RANDOMIZER_AVAILABLE
     if (FlagGet(FLAG_SYS_POKEMON_GET))
     {
-        if (RandomizerFeatureEnabled(RANDOMIZE_FIXED_MON))
+        if (isStarterOrGift)
+        {
+            if (RandomizerFeatureEnabled(RANDOMIZE_STARTER_AND_GIFT_MON))
+                species = RandomizeMon(RANDOMIZER_REASON_STARTER_AND_GIFT_MON, GetRandomizerOption(RANDOMIZER_OPTION_SPECIES_MODE), Random32(), species);
+        }
+        else if (RandomizerFeatureEnabled(RANDOMIZE_FIXED_MON))
+        {
             species = RandomizeMon(RANDOMIZER_REASON_FIXED_ENCOUNTER, GetRandomizerOption(RANDOMIZER_OPTION_SPECIES_MODE), Random32(), species);
+        }
     }
 #endif
 
@@ -784,6 +792,7 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     if (nature == NATURE_MAY_SYNCHRONIZE)
         nature = GetSynchronizedNature(origin, species);
 
+    VarSet(VAR_0x8009, species);
     gSpecialVar_Result = ScriptGiveMonParameterized(side, slot, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, shinyMode, gmaxFactor, teraType, dmaxLevel);
 }
 

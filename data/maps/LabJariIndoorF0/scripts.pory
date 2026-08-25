@@ -28,14 +28,14 @@ script ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection {
         msgbox(format("Lets see what is in the other pokeballs."))
     }
     if(var(VAR_RESULT) == YES) {
-        givemon(SPECIES_CHARMANDER, 5)
+        givemon(SPECIES_CHARMANDER, 5, isStarterOrGift=TRUE)
         playfanfare(MUS_OBTAIN_ITEM)
         waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_CHARMANDER)
         removeobject(9)
         setflag(FLAG_RECEIVED_STARTER_CHOICE)
-        bufferspeciesname(STR_VAR_2, SPECIES_CHARMANDER)
+        bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
@@ -61,14 +61,14 @@ script ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection {
         msgbox(format("Lets see what is in the other pokeballs."))
     }
     if(var(VAR_RESULT) == YES) {
-        givemon(SPECIES_BULBASAUR, 5)
+        givemon(SPECIES_BULBASAUR, 5, isStarterOrGift=TRUE)
         playfanfare(MUS_OBTAIN_ITEM)
         waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_BULBASAUR)
         removeobject(8)
         setflag(FLAG_RECEIVED_STARTER_CHOICE)
-        bufferspeciesname(STR_VAR_2, SPECIES_BULBASAUR)
+        bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
@@ -94,14 +94,14 @@ script ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection {
         msgbox(format("Lets see what is in the other pokeballs."))
     }
     if(var(VAR_RESULT) == YES) {
-        givemon(SPECIES_SQUIRTLE, 5)
+        givemon(SPECIES_SQUIRTLE, 5, isStarterOrGift=TRUE)
         playfanfare(MUS_OBTAIN_ITEM)
         waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_SQUIRTLE)
         removeobject(7)
         setflag(FLAG_RECEIVED_STARTER_CHOICE)
-        bufferspeciesname(STR_VAR_2, SPECIES_SQUIRTLE)
+        bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
@@ -128,14 +128,14 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection {
         msgbox(format("Lets see what is in the other pokeballs."))
     }
     if(var(VAR_RESULT) == YES) {
-        givemon(SPECIES_CYNDAQUIL, 5)
+        givemon(SPECIES_CYNDAQUIL, 5, isStarterOrGift=TRUE)
         playfanfare(MUS_OBTAIN_ITEM)
         waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_CYNDAQUIL)
         removeobject(6)
         setflag(FLAG_RECEIVED_STARTER_CHOICE)
-        bufferspeciesname(STR_VAR_2, SPECIES_CYNDAQUIL)
+        bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
@@ -161,14 +161,14 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection {
         msgbox(format("Lets see what is in the other pokeballs."))
     }
     if(var(VAR_RESULT) == YES) {
-        givemon(SPECIES_CHIKORITA, 5)
+        givemon(SPECIES_CHIKORITA, 5, isStarterOrGift=TRUE)
         playfanfare(MUS_OBTAIN_ITEM)
         waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_CHIKORITA)
         removeobject(5)
         setflag(FLAG_RECEIVED_STARTER_CHOICE)
-        bufferspeciesname(STR_VAR_2, SPECIES_CHIKORITA)
+        bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
@@ -194,14 +194,14 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection {
         msgbox(format("Lets see what is in the other pokeballs."))
     }
     if(var(VAR_RESULT) == YES) {
-        givemon(SPECIES_TOTODILE, 5)
+        givemon(SPECIES_TOTODILE, 5, isStarterOrGift=TRUE)
         playfanfare(MUS_OBTAIN_ITEM)
         waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_TOTODILE)
         removeobject(4)
         setflag(FLAG_RECEIVED_STARTER_CHOICE)
-        bufferspeciesname(STR_VAR_2, SPECIES_TOTODILE)
+        bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
@@ -227,14 +227,14 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection {
         msgbox(format("Lets see what is in the other pokeballs."))
     }
     if(var(VAR_RESULT) == YES) {
-        givemon(SPECIES_TORCHIC, 5)
+        givemon(SPECIES_TORCHIC, 5, isStarterOrGift=TRUE)
         playfanfare(MUS_OBTAIN_ITEM)
         waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_TORCHIC)
         removeobject(3)
         setflag(FLAG_RECEIVED_STARTER_CHOICE)
-        bufferspeciesname(STR_VAR_2, SPECIES_TORCHIC)
+        bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
@@ -260,14 +260,14 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection {
         msgbox(format("Lets see what is in the other pokeballs."))
     }
     if(var(VAR_RESULT) == YES) {
-        givemon(SPECIES_TREECKO, 5)
+        givemon(SPECIES_TREECKO, 5, isStarterOrGift=TRUE)
         playfanfare(MUS_OBTAIN_ITEM)
         waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_TREECKO)
         removeobject(2)
         setflag(FLAG_RECEIVED_STARTER_CHOICE)
-        bufferspeciesname(STR_VAR_2, SPECIES_TREECKO)
+        bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
@@ -293,14 +293,14 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection {
         msgbox(format("Lets see what is in the other pokeballs."))
     }
     if(var(VAR_RESULT) == YES) {
-        givemon(SPECIES_MUDKIP, 5)
+        givemon(SPECIES_MUDKIP, 5, isStarterOrGift=TRUE)
         playfanfare(MUS_OBTAIN_ITEM)
         waitfanfare
         setflag(FLAG_SYS_POKEMON_GET)
         setflag(FLAG_RECEIVED_STARTER_MUDKIP)
         removeobject(1)
         setflag(FLAG_RECEIVED_STARTER_CHOICE)
-        bufferspeciesname(STR_VAR_2, SPECIES_MUDKIP)
+        bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameReceivedPartyMon)
