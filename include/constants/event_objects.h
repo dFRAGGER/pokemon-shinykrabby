@@ -426,7 +426,6 @@
 #define OBJ_EVENT_GFX_BUG_CATCHER_HNS            407
 #define OBJ_EVENT_GFX_BURGLAR_HNS                408
 #define OBJ_EVENT_GFX_CAMPER_HNS                 409
-#define OBJ_EVENT_GFX_CAPTAIN_HNS                410
 #define OBJ_EVENT_GFX_CHANNELER_HNS              411
 #define OBJ_EVENT_GFX_COOK_HNS                   412
 #define OBJ_EVENT_GFX_COOLTRAINER_F_HNS          413
@@ -435,10 +434,8 @@
 #define OBJ_EVENT_GFX_FAT_MAN_HNS                416
 #define OBJ_EVENT_GFX_FIREBREATHER_HNS           417
 #define OBJ_EVENT_GFX_FISHERMAN_HNS              418
-#define OBJ_EVENT_GFX_GAMEBOY_KID_HNS            419
 #define OBJ_EVENT_GFX_GENTLEMAN_HNS              420
 #define OBJ_EVENT_GFX_GIRL_1_HNS                 421
-#define OBJ_EVENT_GFX_GYM_GUY_HNS               422
 #define OBJ_EVENT_GFX_HIKER_HNS                  423
 #define OBJ_EVENT_GFX_JUGGLER_HNS                424
 #define OBJ_EVENT_GFX_LASS_HNS                   425
@@ -448,11 +445,9 @@
 #define OBJ_EVENT_GFX_MAN_HNS                    429
 #define OBJ_EVENT_GFX_MART_EMPLOYEE_HNS          430
 #define OBJ_EVENT_GFX_MOM_HNS                    431
-#define OBJ_EVENT_GFX_MYSTERY_EVENT_DELIVERYMAN_HNS 432
 #define OBJ_EVENT_GFX_NURSE_HNS                  433
 #define OBJ_EVENT_GFX_OFFICER_HNS                434
 #define OBJ_EVENT_GFX_OLD_MAN_HNS                435
-#define OBJ_EVENT_GFX_OLD_MAN_2_HNS              436
 #define OBJ_EVENT_GFX_OLD_WOMAN_HNS              437
 #define OBJ_EVENT_GFX_PICNICKER_HNS              438
 #define OBJ_EVENT_GFX_PSYCHIC_M_HNS              439
@@ -461,12 +456,10 @@
 #define OBJ_EVENT_GFX_SAGE_ELDER_HNS             442
 #define OBJ_EVENT_GFX_SAILOR_HNS                 443
 #define OBJ_EVENT_GFX_SCIENTIST_F_HNS            444
-#define OBJ_EVENT_GFX_SCIENTIST_M_HNS            445
 #define OBJ_EVENT_GFX_SCOTT_HNS                  446
 #define OBJ_EVENT_GFX_STEVEN_HNS                 447
 #define OBJ_EVENT_GFX_SUPER_NERD_HNS             448
 #define OBJ_EVENT_GFX_SWIMMER_F_HNS              449
-#define OBJ_EVENT_GFX_SWIMMER_F_LAND_HNS         450
 #define OBJ_EVENT_GFX_SWIMMER_M_HNS              451
 #define OBJ_EVENT_GFX_TUBER_F_HNS                452
 #define OBJ_EVENT_GFX_TUBER_M_HNS                453
@@ -475,8 +468,6 @@
 #define OBJ_EVENT_GFX_WOMAN_1_HNS                456
 #define OBJ_EVENT_GFX_WOMAN_2_HNS                457
 #define OBJ_EVENT_GFX_WOMAN_3_HNS                458
-#define OBJ_EVENT_GFX_WORKER_F_HNS               459
-#define OBJ_EVENT_GFX_WORKER_M_HNS               460
 #define OBJ_EVENT_GFX_YOUNGSTER_HNS              461
 // HnS gym leaders
 #define OBJ_EVENT_GFX_BLAINE_HNS                 462
