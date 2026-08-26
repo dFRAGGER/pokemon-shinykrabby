@@ -5,6 +5,31 @@
 // Lives in the SK_FLAGS reserved block (see flags.h) - offsets below are absolute
 // bit indices baked into save files, do not renumber an existing flag.
 
+// --- Reclaimed HNS Johto/Kanto/Alola content-flag addresses ---
+// 542 of HNS's own content-flag addresses (flags_hns.h's "Content flags" and
+// "Extended content flags" ranges) were deleted from flags_hns.h - genuinely dead
+// for the sk build, verified against the actual assembled data/event_scripts.o
+// output (not just src/*.c: reachability tracing through data/scripts/*.inc and
+// per-map scripts turned out to be insufficient - some "dead" scripts are still
+// unconditionally assembled even when never called, so an address is only truly
+// free once nothing anywhere in the final linked object references its name).
+// This costs zero save-block bytes: the flags[] bit array is already sized to
+// cover this whole range regardless, via SK_FLAGS_END below.
+//
+// Freed, by original section/base constant (see flags_hns.h's remaining content
+// for what's still in use under each - anything not currently #defined there is
+// free to claim):
+//   HNS_ITEM_BALL_START (Item Ball Flags):        226 freed
+//   HNS_EXTENDED_CONTENT_START (Extended content): 182 freed
+//   HNS_ITEMS_2_START (Unused hidden items):       119 freed
+//   scattered small sections (Hide Pokemon, NPC Trade, Move Tutor,
+//     Battle Frontier, Safari Zone, Feature/Toggle, Misc, Legendary/Boss
+//     Defeated, Legendary/Rare Caught, Quest/Story Progress):  15 freed
+//
+// To use one: pick any free offset under the relevant base constant, add
+// #define FLAG_YOUR_NEW_THING (BASE + N) here (or add a new NUM_SK_FLAGS-style
+// entry if none of these fit) - do not reuse an offset flags_hns.h still defines.
+
 // Starters
 #define FLAG_RECEIVED_STARTER_CHOICE                     (SK_FLAGS_START + 140)
 #define FLAG_RECEIVED_STARTER_BULBASAUR                  (SK_FLAGS_START + 137)
