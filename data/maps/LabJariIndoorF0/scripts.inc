@@ -47,20 +47,21 @@ ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_6:
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_9:
-	givemon SPECIES_CHARMANDER, 5
+	givemon SPECIES_CHARMANDER, 5, isStarterOrGift = TRUE
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RECEIVED_STARTER_CHARMANDER
 	removeobject 9
 	setflag FLAG_RECEIVED_STARTER_CHOICE
-	bufferspeciesname STR_VAR_2, SPECIES_CHARMANDER
+	bufferspeciesname STR_VAR_2, VAR_0x8009
 	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_11
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_8
 
 ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_11:
+	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
 	fadescreen FADE_FROM_BLACK
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection_8
@@ -91,20 +92,21 @@ ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_6:
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_9:
-	givemon SPECIES_BULBASAUR, 5
+	givemon SPECIES_BULBASAUR, 5, isStarterOrGift = TRUE
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RECEIVED_STARTER_BULBASAUR
 	removeobject 8
 	setflag FLAG_RECEIVED_STARTER_CHOICE
-	bufferspeciesname STR_VAR_2, SPECIES_BULBASAUR
+	bufferspeciesname STR_VAR_2, VAR_0x8009
 	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_11
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_8
 
 ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_11:
+	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
 	fadescreen FADE_FROM_BLACK
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection_8
@@ -135,20 +137,21 @@ ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_6:
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_9:
-	givemon SPECIES_SQUIRTLE, 5
+	givemon SPECIES_SQUIRTLE, 5, isStarterOrGift = TRUE
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RECEIVED_STARTER_SQUIRTLE
 	removeobject 7
 	setflag FLAG_RECEIVED_STARTER_CHOICE
-	bufferspeciesname STR_VAR_2, SPECIES_SQUIRTLE
+	bufferspeciesname STR_VAR_2, VAR_0x8009
 	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_11
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_8
 
 ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_11:
+	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
 	fadescreen FADE_FROM_BLACK
 	goto ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection_8
@@ -179,20 +182,21 @@ ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_6:
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_9:
-	givemon SPECIES_CYNDAQUIL, 5
+	givemon SPECIES_CYNDAQUIL, 5, isStarterOrGift = TRUE
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RECEIVED_STARTER_CYNDAQUIL
 	removeobject 6
 	setflag FLAG_RECEIVED_STARTER_CHOICE
-	bufferspeciesname STR_VAR_2, SPECIES_CYNDAQUIL
+	bufferspeciesname STR_VAR_2, VAR_0x8009
 	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_11
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_8
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_11:
+	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
 	fadescreen FADE_FROM_BLACK
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection_8
@@ -223,20 +227,21 @@ ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_6:
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_9:
-	givemon SPECIES_CHIKORITA, 5
+	givemon SPECIES_CHIKORITA, 5, isStarterOrGift = TRUE
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RECEIVED_STARTER_CHIKORITA
 	removeobject 5
 	setflag FLAG_RECEIVED_STARTER_CHOICE
-	bufferspeciesname STR_VAR_2, SPECIES_CHIKORITA
+	bufferspeciesname STR_VAR_2, VAR_0x8009
 	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_11
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_8
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_11:
+	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
 	fadescreen FADE_FROM_BLACK
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection_8
@@ -267,20 +272,21 @@ ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_6:
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_9:
-	givemon SPECIES_TOTODILE, 5
+	givemon SPECIES_TOTODILE, 5, isStarterOrGift = TRUE
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RECEIVED_STARTER_TOTODILE
 	removeobject 4
 	setflag FLAG_RECEIVED_STARTER_CHOICE
-	bufferspeciesname STR_VAR_2, SPECIES_TOTODILE
+	bufferspeciesname STR_VAR_2, VAR_0x8009
 	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_11
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_8
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_11:
+	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
 	fadescreen FADE_FROM_BLACK
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection_8
@@ -311,20 +317,21 @@ ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_6:
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_9:
-	givemon SPECIES_TORCHIC, 5
+	givemon SPECIES_TORCHIC, 5, isStarterOrGift = TRUE
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RECEIVED_STARTER_TORCHIC
 	removeobject 3
 	setflag FLAG_RECEIVED_STARTER_CHOICE
-	bufferspeciesname STR_VAR_2, SPECIES_TORCHIC
+	bufferspeciesname STR_VAR_2, VAR_0x8009
 	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_11
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_8
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_11:
+	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
 	fadescreen FADE_FROM_BLACK
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection_8
@@ -355,20 +362,21 @@ ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_6:
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_9:
-	givemon SPECIES_TREECKO, 5
+	givemon SPECIES_TREECKO, 5, isStarterOrGift = TRUE
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RECEIVED_STARTER_TREECKO
 	removeobject 2
 	setflag FLAG_RECEIVED_STARTER_CHOICE
-	bufferspeciesname STR_VAR_2, SPECIES_TREECKO
+	bufferspeciesname STR_VAR_2, VAR_0x8009
 	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_11
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_8
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_11:
+	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
 	fadescreen FADE_FROM_BLACK
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection_8
@@ -399,20 +407,21 @@ ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_6:
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_5
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_9:
-	givemon SPECIES_MUDKIP, 5
+	givemon SPECIES_MUDKIP, 5, isStarterOrGift = TRUE
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RECEIVED_STARTER_MUDKIP
 	removeobject 1
 	setflag FLAG_RECEIVED_STARTER_CHOICE
-	bufferspeciesname STR_VAR_2, SPECIES_MUDKIP
+	bufferspeciesname STR_VAR_2, VAR_0x8009
 	msgbox gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_11
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_8
 
 ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_11:
+	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
 	fadescreen FADE_FROM_BLACK
 	goto ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection_8

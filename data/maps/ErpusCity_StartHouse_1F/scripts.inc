@@ -37,6 +37,7 @@ Erpuscity_Starthouse_1F_WoodStatue::
 
 Erpuscity_Starthouse_1F_LittleSister::
 	lock
+	faceplayer
 	setspeaker Erpuscity_Starthouse_1F_LittleSister_Text_0
 	msgbox Erpuscity_Starthouse_1F_LittleSister_Text_1, MSGBOX_AUTOCLOSE
 	waitmessage

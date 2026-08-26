@@ -41,6 +41,26 @@ ErpCity_Starthouse1F_Mom_Clock_1:
 	end
 
 
+ErpusCity_StartHouse_2F_EventScript_PC::
+	lockall
+	setvar VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE
+	special DoPCTurnOnEffect
+	playse SE_PC_ON
+	msgbox gText_PlayerHouseBootPC, MSGBOX_DEFAULT
+	special BedroomPC
+	waitstate
+	releaseall
+	end
+
+
+ErpusCity_StartHouse_2F_EventScript_TurnOffPlayerPC::
+	setvar VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE
+	playse SE_PC_OFF
+	special DoPCTurnOffEffect
+	releaseall
+	end
+
+
 ErpCity_Starthouse1F_Mom_Calling_Movement_0:
 	emote_exclamation_mark
 	step_end
@@ -61,21 +81,3 @@ ErpCity_Starthouse1F_Mom_Clock_Text_0:
 	.string "OH, AND DON'T FORGET YOUR CLOCK!\p"
 	.string "OTHERWISE YOU WILL BE LATE AGAIN\n"
 	.string "TOMORROW!!$"
-
-ErpusCity_StartHouse_2F_EventScript_PC::
-	lockall
-	setvar VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE
-	special DoPCTurnOnEffect
-	playse SE_PC_ON
-	msgbox gText_PlayerHouseBootPC, MSGBOX_DEFAULT
-	special BedroomPC
-	waitstate
-	releaseall
-	end
-
-ErpusCity_StartHouse_2F_EventScript_TurnOffPlayerPC::
-	setvar VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE
-	playse SE_PC_OFF
-	special DoPCTurnOffEffect
-	releaseall
-	end

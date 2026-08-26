@@ -38,6 +38,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscript_CharmanderSelection {
         bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_GetGiftMonPartySlot)
         call(Common_EventScript_NameReceivedPartyMon)
         fadescreen(FADE_FROM_BLACK)
         }
@@ -71,6 +72,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscript_BulbasaurSelection {
         bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_GetGiftMonPartySlot)
         call(Common_EventScript_NameReceivedPartyMon)
         fadescreen(FADE_FROM_BLACK)
         }
@@ -104,6 +106,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscript_SquirtleSelection {
         bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_GetGiftMonPartySlot)
         call(Common_EventScript_NameReceivedPartyMon)
         fadescreen(FADE_FROM_BLACK)
         }
@@ -138,6 +141,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_CyndaquilSelection {
         bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_GetGiftMonPartySlot)
         call(Common_EventScript_NameReceivedPartyMon)
         fadescreen(FADE_FROM_BLACK)
         }
@@ -171,6 +175,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_ChikoritaSelection {
         bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_GetGiftMonPartySlot)
         call(Common_EventScript_NameReceivedPartyMon)
         fadescreen(FADE_FROM_BLACK)
         }
@@ -204,6 +209,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_TotodileSelection {
         bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_GetGiftMonPartySlot)
         call(Common_EventScript_NameReceivedPartyMon)
         fadescreen(FADE_FROM_BLACK)
         }
@@ -237,6 +243,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_TorchicSelection {
         bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_GetGiftMonPartySlot)
         call(Common_EventScript_NameReceivedPartyMon)
         fadescreen(FADE_FROM_BLACK)
         }
@@ -270,6 +277,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_TreeckoSelection {
         bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_GetGiftMonPartySlot)
         call(Common_EventScript_NameReceivedPartyMon)
         fadescreen(FADE_FROM_BLACK)
         }
@@ -303,6 +311,7 @@ script ErpusCity_ProfessorBirdsLab_Eventscrip_MudkipSelection {
         bufferspeciesname(STR_VAR_2, VAR_0x8009)
         msgbox(gText_UnusedNicknameReceivedPokemon, MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_GetGiftMonPartySlot)
         call(Common_EventScript_NameReceivedPartyMon)
         fadescreen(FADE_FROM_BLACK)
         }
