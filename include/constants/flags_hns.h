@@ -14,45 +14,10 @@
 // Hide Pokemon
 #define HNS_HIDE_POKEMON_START                      0x22
 
-#define FLAG_HIDE_CHIKORITABALL                     0x022
-#define FLAG_HIDE_CYNDAQUILBALL                     0x023
-#define FLAG_HIDE_TOTODILEBALL                      0x024
-#define FLAG_HIDE_AZALEA_TOWN_FARFETCHD             0x025
-#define FLAG_HIDE_AZALEA_TOWN_SLOWPOKE              0x026
-#define FLAG_HIDE_AZALEA_ARIADOS_LEFT               0x027
-#define FLAG_HIDE_AZALEA_ARIADOS_MID                0x028
-#define FLAG_HIDE_AZALEA_ARIADOS_RIGHT              0x029
-#define FLAG_HIDE_ILEX_FOREST_FARFETCHD_1           0x02A
-#define FLAG_HIDE_ILEX_FOREST_FARFETCHD_2           0x02B
-#define FLAG_HIDE_ILEX_FOREST_FARFETCHD_3           0x02C
-#define FLAG_HIDE_ILEX_FOREST_FARFETCHD_4           0x02D
-#define FLAG_HIDE_BURNED_TOWER_BEASTS               0x02E
-#define FLAG_HIDE_CIANWOOD_SUICUNE                  0x02F
-#define FLAG_HIDE_ROCKETHIDEOUT_ELECTRODE1          0x030
-#define FLAG_HIDE_ROCKETHIDEOUT_ELECTRODE2          0x031
-#define FLAG_HIDE_ROCKETHIDEOUT_ELECTRODE3          0x032
-#define FLAG_HIDE_LAKE_OF_RAGE_GYARADOS             0x033
-#define FLAG_HIDE_ROUTE42_SUICUNE                   0x034
-#define FLAG_HIDE_WHIRL_ISLANDS_TENTACRUEL          0x035
-#define FLAG_HIDE_SUDOWOODO                         0x036
-#define FLAG_HIDE_UNION_CAVE_LAPRAS                 0x037
 #define FLAG_HIDE_CERULEAN_GYM_POKEMON              0x038
-#define FLAG_HIDE_ROUTE25_SUICUNE                   0x039
-#define FLAG_HIDE_VERMILION_SNORLAX                 0x03A
-#define FLAG_HIDE_ROUTE14_SUICUNE                   0x03B
 #define FLAG_HIDE_BATTLE_FRONTIER_SUDOWOODO         0x03C
 #define FLAG_HIDE_HO_OH                             0x03D
 #define FLAG_HIDE_LUGIA                             0x03E
-#define FLAG_HIDE_CELEBI                            0x03F
-#define FLAG_HIDE_ARTICUNO                          0x040
-#define FLAG_HIDE_ZAPDOS                            0x041
-#define FLAG_HIDE_MOLTRES                           0x042
-#define FLAG_HIDE_MEWTWO                            0x043
-#define FLAG_HIDE_GROUDON                           0x044
-#define FLAG_HIDE_KYOGRE                            0x045
-#define FLAG_HIDE_RAYQUAZA                          0x046
-#define FLAG_HIDE_LATIAS                            0x047
-#define FLAG_HIDE_LATIOS                            0x048
 #define FLAG_HIDE_MTMOON_JIRACHI                    0x049
 
 #define HNS_HIDE_POKEMON_COUNT                      40
@@ -60,125 +25,30 @@
 // NPC Hide
 #define HNS_NPC_HIDE_START                          0x4A
 
-#define FLAG_HIDE_SILVER_NEWBARKTOWN                0x04A
 #define FLAG_HIDE_NEWBARKTOWN_LAB_AIDE              0x04B
-#define FLAG_HIDE_LAB_POLICEMAN                     0x04C
-#define FLAG_HIDE_MOMS_FRIEND                       0x04D
 #define FLAG_HIDE_MOMS_FRIEND2                      0x04E
 #define FLAG_HIDE_ROUTE_30_NPCS                     0x04F
 #define FLAG_HIDE_MRPOKEMON                         0x050
 #define FLAG_HIDE_SILVER_CHERRYGROVE                0x051
-#define FLAG_HIDE_CHERRYGROVE_GUIDE_GENT_HOUSE      0x052
 #define FLAG_HIDE_GUIDE_GENT_CHERRYGROVE            0x053
-#define FLAG_HIDE_VIOLET_CITY_AIDE                  0x054
-#define FLAG_HIDE_VIOLET_CITY_EARL                  0x055
-#define FLAG_HIDE_VIOLET_CITY_KIMONO_GIRL           0x056
-#define FLAG_HIDE_TRAINER_SCHOOL_EARL               0x057
-#define FLAG_HIDE_SPROUT_TOWER_SILVER               0x058
 #define FLAG_HIDE_AZALEA_TOWN_CUT_MASTER            0x059
-#define FLAG_HIDE_AZALEA_TOWN_KURT                  0x05A
-#define FLAG_HIDE_AZALEA_TOWN_ROCKETS               0x05B
-#define FLAG_HIDE_AZALEA_TOWN_SILVER                0x05C
-#define FLAG_HIDE_AZALEA_TOWN_WELL_ROCKET           0x05D
-#define FLAG_HIDE_SLOWPOKE_WELL_KURT                0x05E
-#define FLAG_HIDE_ILEX_FOREST_APPRENTICE            0x05F
-#define FLAG_HIDE_ILEX_FOREST_KIMONO                0x060
-#define FLAG_HIDE_ILEX_FOREST_KURT                  0x061
-#define FLAG_HIDE_ILEX_FOREST_MASTER                0x062
 #define FLAG_HIDE_ILEX_FOREST_SECOND_CELEBI         0x063
-#define FLAG_HIDE_KURT_1                            0x064
-#define FLAG_HIDE_KURT_2                            0x065
-#define FLAG_HIDE_GOLDENROD_BEAUTY                  0x066
-#define FLAG_HIDE_GOLDENROD_BILL                    0x067
-#define FLAG_HIDE_GOLDENROD_NPCS                    0x068
-#define FLAG_HIDE_GOLDENROD_RADIOTOWER_DIRECTOR     0x069
-#define FLAG_HIDE_GOLDENROD_RADIOTOWER_DIRECTOR_2   0x06A
-#define FLAG_HIDE_GOLDENROD_RADIOTOWER_PETREL       0x06B
 #define FLAG_HIDE_GOLDENROD_ROCKETS                 0x06C
-#define FLAG_HIDE_GOLDENROD_ROCKET_SCOUT            0x06D
-#define FLAG_HIDE_GOLDENROD_UNDERGROUND_KIMONO      0x06E
-#define FLAG_HIDE_GOLDENROD_UNDERGROUND_SILVER      0x06F
 #define FLAG_HIDE_DEPTSTORE_WHITNEY                 0x070
-#define FLAG_HIDE_RADIOTOWER_GATE                   0x071
-#define FLAG_HIDE_ROCKET_GOLDENROD_RADIOTOWER_1     0x072
-#define FLAG_HIDE_BUG_CONTEST_ATTENDANT_SIDE        0x073
-#define FLAG_HIDE_ECRUTEAK_BILL                     0x074
-#define FLAG_HIDE_ECRUTEAK_CITY_SAGE                0x075
-#define FLAG_HIDE_ECRUTEAK_CITY_THEATER_KIMONOS     0x076
-#define FLAG_HIDE_ECRUTEAK_CITY_THEATER_NPCS        0x077
-#define FLAG_HIDE_ECRUTEAK_CITY_THEATER_ZUKI        0x078
-#define FLAG_HIDE_ECRUTEAK_ROCKET                   0x079
-#define FLAG_HIDE_ECRUTEAK_SILVER                   0x07A
-#define FLAG_HIDE_BURNED_TOWER_B1F_EUSINE           0x07B
-#define FLAG_HIDE_BURNED_TOWER_NPCS                 0x07C
-#define FLAG_HIDE_TINTOWER_GUARD                    0x07D
-#define FLAG_HIDE_TIN_TOWER_KIMONO_GIRLS            0x07E
 #define FLAG_HIDE_BELLCHIME_MORTY                   0x07F
-#define FLAG_HIDE_OLIVINE_CITY_GYM_JASMINE          0x080
 #define FLAG_HIDE_OLIVINE_PORT_OAK                  0x081
 #define FLAG_HIDE_OLIVINE_SABRINA                   0x082
-#define FLAG_HIDE_OLIVINE_SILVER                    0x083
-#define FLAG_HIDE_LIGHTHOUSE_JASMINE                0x084
 #define FLAG_HIDE_SSAQUA_1F_GRANDPA                 0x085
-#define FLAG_HIDE_SSAQUA_CAPTAINS_ROOM_GRANDDAUGHTER 0x086
-#define FLAG_HIDE_SSAQUA_ROOM_SSE_GRANDDAUGHTER     0x087
-#define FLAG_HIDE_SSAQUA_SAILOR                     0x088
 #define FLAG_HIDE_CAFE_JASMINE                      0x089
-#define FLAG_HIDE_CIANWOOD_EUSINE                   0x08A
-#define FLAG_HIDE_MAHOGANY_COP                      0x08B
 #define FLAG_HIDE_MAHOGANY_ROCKETS                  0x08C
-#define FLAG_HIDE_MAHOGANY_TOWN_FATMAN              0x08D
-#define FLAG_HIDE_MAHOGANY_TOWN_SHOP_NPCS           0x08E
-#define FLAG_HIDE_ROCKETHIDEOUT_ROCKETS             0x08F
-#define FLAG_HIDE_ROCKETHIDEOUT2_ARIANA_AND_GRUNT   0x090
-#define FLAG_HIDE_ROCKETHIDEOUT2_GATE               0x091
-#define FLAG_HIDE_ROCKETHIDEOUT2_LANCE_DRAGONITE    0x092
-#define FLAG_HIDE_ROCKETHIDEOUT2_MURKROWGATE        0x093
-#define FLAG_HIDE_ROCKETHIDEOUT2_MURKROWSTAIRS      0x094
-#define FLAG_HIDE_ROCKETHIDEOUT3_GATE               0x095
-#define FLAG_HIDE_ROCKETHIDEOUT3_GIOVANNI           0x096
-#define FLAG_HIDE_ROCKETHIDEOUT3_LANCE_DRAGONITE    0x097
-#define FLAG_HIDE_ROCKETHIDEOUT3_MURKROW            0x098
-#define FLAG_HIDE_ROCKETHIDEOUT3_MURKROWSTAIRS      0x099
-#define FLAG_HIDE_ROCKETHIDEOUT3_PETREL             0x09A
-#define FLAG_HIDE_ROCKETHIDEOUT3_SILVER             0x09B
-#define FLAG_HIDE_LAKE_OF_RAGE_LANCE                0x09C
 #define FLAG_HIDE_LAKE_PRYCE                        0x09D
 #define FLAG_HIDE_DEN_CLAIR                         0x09E
-#define FLAG_HIDE_DRAGONS_DEN_CAVERN_CLAIR          0x09F
-#define FLAG_HIDE_DRAGONS_DEN_CAVERN_LANCE          0x0A0
-#define FLAG_HIDE_DRAGONS_DEN_CAVERN_SILVER         0x0A1
-#define FLAG_HIDE_DRAGONS_DEN_SHRINE_CLAIR          0x0A2
-#define FLAG_HIDE_ICE_PATH_KIMONO                   0x0A3
-#define FLAG_HIDE_WHIRL_ISLANDS_KIMONO_GIRLS        0x0A4
-#define FLAG_HIDE_INDIGO_PLATEAU_MARY_OAK           0x0A5
-#define FLAG_HIDE_INDIGO_PLATEAU_SILVER             0x0A6
 #define FLAG_HIDE_LEAGUE_BLACKBELT                  0x0A7
-#define FLAG_HIDE_VICTORY_ROAD_SILVER               0x0A8
-#define FLAG_HIDE_MTSILVER_RED                      0x0A9
-#define FLAG_HIDE_MTMOON_SILVER                     0x0AA
-#define FLAG_INDIGOJUNCTION_HIDE_KANTO_GUARD        0x0AB
-#define FLAG_INDIGOJUNCTION_HIDE_SILVER_GUARD       0x0AC
-#define FLAG_HIDE_ROUTE39_SHADOW                    0x0AD
-#define FLAG_HIDE_ROUTE42_EUSINE                    0x0AE
-#define FLAG_HIDE_VIRIDIAN_BLUE                     0x0AF
 #define FLAG_HIDE_VIRIDIAN_BUGSY                    0x0B0
-#define FLAG_HIDE_PEWTER_CLAW_FOSSIL                0x0B1
-#define FLAG_HIDE_PEWTER_ROOT_FOSSIL                0x0B2
 #define FLAG_HIDE_DIGLETT_BROCK                     0x0B3
-#define FLAG_HIDE_CERULEANCAVE_GUARD                0x0B4
-#define FLAG_HIDE_CERULEAN_CAPE_ROCKET              0x0B5
-#define FLAG_HIDE_CERULEAN_GYM_ROCKET               0x0B6
-#define FLAG_HIDE_CERULEAN_GYM_TRAINERS             0x0B7
 #define FLAG_HIDE_CAPE_MISTY                        0x0B8
-#define FLAG_HIDE_ROUTE25_EUSINE                    0x0B9
-#define FLAG_HIDE_ROUTE25_MISTY                     0x0BA
-#define FLAG_HIDE_VERMILION_EUSINE_SUICUNE          0x0BB
-#define FLAG_HIDE_POWER_PLANT_ENGINEER              0x0BC
 #define FLAG_HIDE_PLANT_SURGE                       0x0BD
-#define FLAG_HIDE_CELADON_EUSINE                    0x0BE
 #define FLAG_HIDE_CELADON_FALKNER                   0x0BF
-#define FLAG_HIDE_ROUTE14_EUSINE                    0x0C0
 #define FLAG_HIDE_FOUNTAIN_ERIKA                    0x0C1
 #define FLAG_HIDE_DOJO_BLAINE                       0x0C2
 #define FLAG_HIDE_DOJO_BLUE                         0x0C3
@@ -196,16 +66,10 @@
 #define FLAG_HIDE_DOJO_SABRINA                      0x0CF
 #define FLAG_HIDE_DOJO_SURGE                        0x0D0
 #define FLAG_HIDE_DOJO_WHITNEY                      0x0D1
-#define FLAG_HIDE_COPYCAT_CLEFAIRY_DOLL             0x0D2
-#define FLAG_HIDE_FAN_CLUB_CLEFAIRY_DOLL            0x0D3
 #define FLAG_HIDE_CINNABAR_BLAINE                   0x0D4
-#define FLAG_HIDE_CINNABAR_BLUE                     0x0D5
-#define FLAG_HIDE_SEAFOAM_BLAINE                    0x0D6
-#define FLAG_HIDE_SEAFOAM_GYMGUY                    0x0D7
 #define FLAG_HIDE_ROUTE22_GIOVANNI_SILVER           0x0D8
 #define FLAG_HIDE_ROUTE22_JANINE                    0x0D9
 #define FLAG_HIDE_TOHJO_GIOVANNI                    0x0DA
-#define FLAG_HIDE_BATTLEFRONTIER_ENGINEER           0x0DB
 #define FLAG_HIDE_APPRENTICE                        0x0DC
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_1  0x0DE
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_2  0x0DF
@@ -218,7 +82,6 @@
 #define FLAG_HIDE_BATTLE_TOWER_OPPONENT              0x0E6
 #define FLAG_HIDE_BATTLE_TOWER_REPORTER              0x0E7
 #define FLAG_HIDE_POKEMON_CENTER_2F_MYSTERY_GIFT_MAN 0x0E8
-#define FLAG_HIDE_JOHTO_GYM_LEADERS                 0x0E9
 
 #define HNS_NPC_HIDE_COUNT                          160
 
@@ -227,14 +90,8 @@
 
 #define FLAG_HIDDEN_ITEMS_START                     HNS_ITEM_BALL_START
 
-#define FLAG_ITEM_SLOWPOKE_WELL_RAIN_DANCE          (HNS_ITEM_BALL_START + 13)
 #define FLAG_ITEM_ICEPATH4_TM_AVALANCHE             (HNS_ITEM_BALL_START + 74)
 #define FLAG_ITEM_VICTORYROAD1_TM_EARTHQUAKE            (HNS_ITEM_BALL_START + 135)
-#define FLAG_ITEM_DOME_FOSSIL                       (HNS_ITEM_BALL_START + 228)
-#define FLAG_ITEM_HELIX_FOSSIL                      (HNS_ITEM_BALL_START + 229)
-#define FLAG_ITEM_OLD_AMBER                         (HNS_ITEM_BALL_START + 230)
-#define FLAG_ITEM_GS_BALL                           (HNS_ITEM_BALL_START + 231)
-#define FLAG_HIDDEN_ITEM_MACHINE_PART               (HNS_ITEM_BALL_START + 233)
 
 #define HNS_ITEM_BALL_COUNT                         234
 
@@ -245,32 +102,13 @@
 #define FLAG_AMPHAROS_HEALED                        0x1D5
 #define FLAG_DELIVERED_EGG                          0x1D6
 #define FLAG_SHOWN_ELM_TOGEPI                       0x1D7
-#define FLAG_RELEASED_BEASTS                        0x1D8
-#define FLAG_BEAT_KIYO                              0x1D9
 #define FLAG_BATTLED_DEOXYS                         0x1DA
-#define FLAG_COMPLETED_SWITCHES                     0x1DB
-#define FLAG_FOUND_BOTH_VERMILION_GYM_SWITCHES      0x1DC
 #define FLAG_RETURNED_MACHINE_PART                  0x1DD
-#define FLAG_ROCKETHIDEOUT2_BATTLE                  0x1DE
-#define FLAG_ROCKETHIDEOUT_SWITCH                   0x1DF
-#define FLAG_ROUTE25_GOT_NUGGET                     0x1E0
 #define FLAG_SUMMONED_MTMOON_JIRACHI                0x1E1
 #define FLAG_COMPLETED_AERODACTYL_PUZZLE            0x1E2
 #define FLAG_COMPLETED_HOOH_PUZZLE                  0x1E3
 #define FLAG_COMPLETED_KABUTO_PUZZLE                0x1E4
 #define FLAG_COMPLETED_OMANYTE_PUZZLE               0x1E5
-#define FLAG_AERODACTYL_BROUGHT                     0x1E6
-#define FLAG_HOOH_BROUGHT                           0x1E7
-#define FLAG_KABUTO_BROUGHT                         0x1E8
-#define FLAG_OMANYTE_BROUGHT                        0x1E9
-#define FLAG_GOLDENROD_MACHOKE_1                    0x1EA
-#define FLAG_GOLDENROD_MACHOKE_2                    0x1EB
-#define FLAG_GOLDENROD_MACHOKE_3                    0x1EC
-#define FLAG_GOLDENROD_SWITCH_1                     0x1ED
-#define FLAG_GOLDENROD_SWITCH_2                     0x1EE
-#define FLAG_GOLDENROD_SWITCH_3                     0x1EF
-#define FLAG_GOLDENROD_SWITCH_ORDER                 0x1F0
-#define FLAG_UNLOCKED_GOLDENROD_UNDERGROUND_DOOR    0x1F1
 
 #define HNS_QUEST_COUNT                             30
 
@@ -279,7 +117,6 @@
 
 #define FLAG_RECEIVED_BIKE                          0x1F2
 #define FLAG_HAS_MATCH_CALL                         0x1F3
-#define FLAG_RECEIVED_FIRST_POTION                  0x1F4
 #define FLAG_RECEIVED_HM_CUT                        0x1F5
 #define FLAG_RECEIVED_HM_FLASH                      0x1F6
 #define FLAG_RECEIVED_HM_ROCK_SMASH                 0x1F7
@@ -289,69 +126,24 @@
 #define FLAG_RECEIVED_POKENAV                       0x1FB
 #define FLAG_RECEIVED_REVIVED_FOSSIL_MON            0x1FC
 #define FLAG_RECEIVED_RUNNING_SHOES                 0x1FD
-#define FLAG_RECEIVED_SQUIRTBOTTLE                  0x1FE
 #define FLAG_RECEIVED_TOGEPI_EGG                    0x1FF
 #define FLAG_GET_HEADBUTT                           0x200
-#define FLAG_GOT_SUPER_ROD                          0x201
-#define FLAG_GOT_HOENN_STARTER                      0x202
-#define FLAG_GOT_DRATINI                            0x203
-#define FLAG_GOT_EEVEE                              0x204
-#define FLAG_GOT_TYROGUE                            0x205
-#define FLAG_GOT_FRUSTRATION                        0x206
-#define FLAG_GOT_HIDDEN_POWER                       0x207
-#define FLAG_GOT_RETURN                             0x208
-#define FLAG_GOT_SUNNY_DAY                          0x209
-#define FLAG_GOT_TM_FROM_MAHOGANY_COP               0x20A
-#define FLAG_GOT_TM_PSYCHIC                         0x20B
-#define FLAG_GOT_TM_SLEEP_TALK                      0x20C
-#define FLAG_GOT_TM_SANDSTORM                       0x20D
-#define FLAG_GOT_TM_SNATCH                          0x20E
-#define FLAG_GOT_TM_STEEL_WING                      0x20F
-#define FLAG_GOT_ROUTE_14_AERIAL_ACE                0x210
-#define FLAG_GOT_VIRIDIAN_TM_DREAM_EATER            0x211
-#define FLAG_GOT_BERRY_ROUTE_30_HOUSE               0x212
-#define FLAG_GOT_BLACK_BELT                         0x213
-#define FLAG_GOT_BLACK_GLASSES                      0x214
-#define FLAG_GOT_CHARCOAL                           0x215
-#define FLAG_GOT_CLEANSE_TAG                        0x216
-#define FLAG_GOT_HARD_STONE                         0x217
-#define FLAG_GOT_MAGNET                             0x218
-#define FLAG_GOT_MARY_BRIGHT_POWDER                 0x219
 #define FLAG_GOT_MYSTICWATER                        0x21A
-#define FLAG_GOT_POISON_BARB                        0x21B
-#define FLAG_GOT_QUICK_CLAW                         0x21C
-#define FLAG_GOT_ROUTE2_NUGGET                      0x21D
-#define FLAG_GOT_SHARP_BEAK                         0x21E
 #define FLAG_GOT_SILK_SCARF                         0x21F
-#define FLAG_GOT_SPELL_TAG                          0x220
-#define FLAG_GOT_UP_GRADE                           0x221
-#define FLAG_GOT_VERMILION_HP_UP                    0x222
 #define FLAG_RECEIVED_GOLD_SHIELD                   0x223
 #define FLAG_RECEIVED_SILVER_SHIELD                 0x224
-#define FLAG_GOT_PASSWORD_FROM_ETO                  0x225
-#define FLAG_GOT_PASSWORD_FROM_GRUNTF               0x226
 
 #define HNS_RECEIVED_COUNT                          53
 
 // Gym Defeated
 #define HNS_GYM_DEFEATED_START                      0x227
 
-#define FLAG_DEFEATED_VIOLET_GYM                    0x227
 #define FLAG_DEFEATED_AZALEA_TOWN_GYM               0x228
-#define FLAG_DEFEATED_GOLDENROD_CITY_GYM            0x229
 #define FLAG_DEFEATED_ECRUTEAK_CITY_GYM             0x22A
 #define FLAG_DEFEATED_CIANWOOD_GYM                  0x22B
 #define FLAG_DEFEATED_OLIVINE_CITY_GYM              0x22C
 #define FLAG_DEFEATED_MAHOGANY_TOWN_GYM             0x22D
 #define FLAG_DEFEATED_BLACKTHORN_GYM                0x22E
-#define FLAG_DEFEATED_PEWTER_GYM                    0x22F
-#define FLAG_DEFEATED_CERULEAN_GYM                  0x230
-#define FLAG_DEFEATED_VERMILION_GYM                 0x231
-#define FLAG_DEFEATED_CELADON_GYM                   0x232
-#define FLAG_DEFEATED_FUCHSIA_GYM                   0x233
-#define FLAG_DEFEATED_SAFFRON_GYM                   0x234
-#define FLAG_DEFEATED_CINNABAR_ISLAND_GYM           0x235
-#define FLAG_DEFEATED_VIRIDIAN_GYM                  0x236
 
 #define HNS_GYM_DEFEATED_COUNT                      16
 
@@ -371,8 +163,6 @@
 
 #define FLAG_CAUGHT_HO_OH                           0x23C
 #define FLAG_CAUGHT_LUGIA                           0x23D
-#define FLAG_CAUGHT_ENTEI                           0x23E
-#define FLAG_CAUGHT_RAIKOU                          0x23F
 #define FLAG_CAUGHT_CELEBI                          0x240
 #define FLAG_CAUGHT_MEW                             0x241
 
@@ -381,10 +171,6 @@
 // NPC Trade
 #define HNS_NPC_TRADE_START                         0x242
 
-#define FLAG_BLACKTHORN_NPC_TRADE_COMPLETED         0x242
-#define FLAG_GOLDENROD_NPC_TRADE_COMPLETED          0x243
-#define FLAG_OLIVINE_NPC_TRADE_COMPLETED            0x244
-#define FLAG_VIOLET_NPC_TRADE_COMPLETED             0x245
 
 #define HNS_NPC_TRADE_COUNT                         4
 
@@ -404,7 +190,6 @@
 #define FLAG_MET_FRONTIER_BEAUTY_MOVE_TUTOR         0x24A
 #define FLAG_MET_FRONTIER_ELEMENTAL_MOVE_TUTOR      0x24B
 #define FLAG_MET_FRONTIER_SWIMMER_MOVE_TUTOR        0x24C
-#define FLAG_MOVE_TUTOR_TAUGHT_HEADBUTT             0x24D
 
 #define HNS_MOVE_TUTOR_COUNT                        4
 
@@ -429,8 +214,6 @@
 
 #define FLAG_GOOD_LUCK_SAFARI_ZONE                  0x258
 #define FLAG_IN_KANTO_SAFARI_ZONE                   0x259
-#define FLAG_SAFARI_ZONE_EAST_EXPANSION             0x25A
-#define FLAG_SAFARI_ZONE_WEST_EXPANSION             0x25B
 
 #define HNS_SAFARI_ZONE_COUNT                       4
 
@@ -449,7 +232,6 @@
 // Misc
 #define HNS_MISC_START                              0x265
 
-#define FLAG_MOM_VISITED                            0x265
 #define FLAG_PENDING_DAYCARE_EGG                    0x266
 #define FLAG_SET_WALL_CLOCK                         0x267
 
@@ -457,18 +239,15 @@
 
 // Unused hidden items
 #define HNS_ITEMS_2_START                           0x268
-#define FLAG_ITEM_UNDERGROUND_PATH_TM_EXPLOSION     (HNS_ITEMS_2_START + 18)
 #define HNS_ITEMS_2_COUNT                120
 
 // Unused general-purpose
 #define HNS_UNUSED_START                            0x2E0
-#define FLAG_TELEPORTER_UNLOCKED                    0x2E0
 #define FLAG_MAP_SCRIPT_CHECKED_DEOXYS              0x2E3
 #define FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE      0x2E4
 #define FLAG_DEOXYS_ROCK_COMPLETE                   0x2E5
 #define FLAG_HIDE_DEOXYS                            0x2E6
 #define FLAG_DEOXYS_FLEW_AWAY                       0x2E7
-#define FLAG_FOUGHT_DEOXYS                          0x2E8
 #define FLAG_POKERUS_EXPLAINED                      0x2E9
 #define FLAG_WADE_HAS_ITEM_HNS                      0x2EA
 #define FLAG_ALAN_HAS_ITEM_HNS                      0x2EB
@@ -485,11 +264,6 @@
 #define FLAG_HIDE_ICEPATH_B2F_BOULDER4              0x2FA
 #define FLAG_LATIOS_OR_LATIAS_ROAMING               0x2FB
 #define FLAG_MOM_HAS_GIFT                           0x2FD
-#define FLAG_PEWTER_NPC_TRADE_COMPLETED             0x2FE
-#define FLAG_POWERPLANT_NPC_TRADE_COMPLETED          0x2FF
-#define FLAG_FUCHSIA_SAFARI_NPC_TRADE_COMPLETED      0x300
-#define FLAG_PEWTER_GYM_NPC_TRADE_COMPLETED          0x301
-#define FLAG_OLIVINE_GYM_NPC_TRADE_COMPLETED         0x302
 #define FLAG_ENABLE_CONDITION                       0x303
 #define HNS_UNUSED_COUNT                            40
 
@@ -525,51 +299,19 @@
 #define FLAG_DECORATION_13                          (HNS_EXTENDED_CONTENT_START + 12)
 #define FLAG_DECORATION_14                          (HNS_EXTENDED_CONTENT_START + 13)
 
-#define FLAG_MT_SILVER_1F_HIDE_SCIENTIST                      (HNS_EXTENDED_CONTENT_START + 15)
 
-#define FLAG_ROUTE_49_KIMONOGIRL                  (HNS_EXTENDED_CONTENT_START + 19)
 
-#define FLAG_GOT_FIST_PLATE                     (HNS_EXTENDED_CONTENT_START + 25)
 
 #define FLAG_VISITED_NEW_SINJOH                     (HNS_EXTENDED_CONTENT_START + 29)
-#define FLAG_NEWSINJOH_POKEMONCENTER_ARTIST_GIFT                     (HNS_EXTENDED_CONTENT_START + 30)
-#define FLAG_NEWSINJOH_HOUSE1_ELIZABETH_GAVEWOOPER                     (HNS_EXTENDED_CONTENT_START + 31)
-
-#define FLAG_HIDE_NEWSINJOH_HOUSE3_NOBLE_TYPHLOSION                     (HNS_EXTENDED_CONTENT_START + 32)
 
 
 
 
 
-#define FLAG_HIDE_SNOWSWEPT_NOBLE_SNEASLER                     (HNS_EXTENDED_CONTENT_START + 49)
-#define FLAG_HIDE_ROUTE49_NOBLE_WYRDEER                     (HNS_EXTENDED_CONTENT_START + 50)
-#define FLAG_HIDE_ROUTE49_NOBLE_OVERQWIL                     (HNS_EXTENDED_CONTENT_START + 51)
-#define FLAG_HIDE_HOTSPRINGS_NOBLE_ARCANINE                     (HNS_EXTENDED_CONTENT_START + 52)
-#define FLAG_HIDE_HOTSPRINGS_NOBLE_URSALUNA                     (HNS_EXTENDED_CONTENT_START + 53)
-#define FLAG_HIDE_ROUTE50_NOBLE_ELECTRODE                     (HNS_EXTENDED_CONTENT_START + 54)
-#define FLAG_HIDE_ROUTE50_NOBLE_KLEAVOR                     (HNS_EXTENDED_CONTENT_START + 55)
-#define FLAG_HIDE_SINJOHRUINS_STEVEN                     (HNS_EXTENDED_CONTENT_START + 56)
-#define FLAG_HIDE_SINJOHRUINS_LAB_STEVEN                     (HNS_EXTENDED_CONTENT_START + 57)
-#define FLAG_HIDE_SINJOHRUINS_ARCEUSROOM_ARCEUS                     (HNS_EXTENDED_CONTENT_START + 58)
-#define FLAG_HIDE_SINJOHRUINS_ARCEUSROOM_STEVEN                  (HNS_EXTENDED_CONTENT_START + 59)
-#define FLAG_HIDE_NEWSINJOH_STEVEN                   (HNS_EXTENDED_CONTENT_START + 60)
 
-#define FLAG_BROUGHT_REGICE                    (HNS_EXTENDED_CONTENT_START + 61)
-#define FLAG_BROUGHT_REGIROCK                    (HNS_EXTENDED_CONTENT_START + 62)
-#define FLAG_BROUGHT_REGISTEEL                    (HNS_EXTENDED_CONTENT_START + 63)
-#define FLAG_BROUGHT_REGIELEKI                     (HNS_EXTENDED_CONTENT_START + 64)
-#define FLAG_BROUGHT_REGIDRAGO                     (HNS_EXTENDED_CONTENT_START + 65)
-#define FLAG_HIDE_SINJOHRUINS_REGICE                     (HNS_EXTENDED_CONTENT_START + 66)
-#define FLAG_HIDE_SINJOHRUINS_REGIROCK                    (HNS_EXTENDED_CONTENT_START + 67)
-#define FLAG_HIDE_SINJOHRUINS_REGISTEEL                    (HNS_EXTENDED_CONTENT_START + 68)
-#define FLAG_HIDE_SINJOHRUINS_REGIELEKI                     (HNS_EXTENDED_CONTENT_START + 69)
-#define FLAG_HIDE_SINJOHRUINS_REGIDRAGO                     (HNS_EXTENDED_CONTENT_START + 70)
-#define FLAG_HIDE_SINJOHRUINS_REGIGIGAS                     (HNS_EXTENDED_CONTENT_START + 71)
+
 #define FLAG_VISITED_ROUTE10                     (HNS_EXTENDED_CONTENT_START + 72)
 #define FLAG_VISITED_ROUTE4                     (HNS_EXTENDED_CONTENT_START + 73)
-#define FLAG_COMPLETED_TAUROS_TRADE                     (HNS_EXTENDED_CONTENT_START + 75)
-#define FLAG_HIDE_SLOWPOKE_WELL_TAILLESS_SLOWPOKES                    (HNS_EXTENDED_CONTENT_START + 76)
-#define FLAG_ULAULA_MOVE_TUTOR_PAID                 (HNS_EXTENDED_CONTENT_START + 77) // paid the Ula'ula move tutor his 5 HEART SCALES
 
 #define FLAG_HIDE_AZALEA_TOWN_TAILED_SLOWPOKES                   (HNS_EXTENDED_CONTENT_START + 100)
 #define FLAG_EXTENDED_CONTENT_SET_101                   (HNS_EXTENDED_CONTENT_START + 101)
@@ -587,58 +329,7 @@
 #define FLAG_HIDE_VIRIDIAN_FOREST_SPIKY_EARED_PICHU3                   (HNS_EXTENDED_CONTENT_START + 218)
 #define FLAG_HIDE_VIRIDIAN_FOREST_SPIKY_EARED_PICHU4                   (HNS_EXTENDED_CONTENT_START + 219)
 #define FLAG_HIDE_VIRIDIAN_FOREST_SPIKY_EARED_PICHU                   (HNS_EXTENDED_CONTENT_START + 220)
-#define FLAG_AKALA_TOTEM_DAY                            (HNS_EXTENDED_CONTENT_START + 226) // sets totem to day variant on akala
-#define FLAG_ULAULA_TOTEM_DAY                           (HNS_EXTENDED_CONTENT_START + 227) // sets totem to day variant on ulaula
-#define FLAG_MELEMELE_TOTEM_DAY                         (HNS_EXTENDED_CONTENT_START + 228) // sets totem to day variant on melemele
-#define FLAG_HIDE_PHANT_INSIDE                          (HNS_EXTENDED_CONTENT_START + 229) // hide phantonomy inside on ulaula
-#define FLAG_HIDE_PHANT_OUTSIDE                         (HNS_EXTENDED_CONTENT_START + 230) // hide phantonomy outside on ulaula
-#define FLAG_BATTLED_TAPU_FINI                          (HNS_EXTENDED_CONTENT_START + 231) // battled tapu fini
-#define FLAG_BATTLED_TAPU_BULU                          (HNS_EXTENDED_CONTENT_START + 232) // battled tapu bulu
-#define FLAG_BATTLED_TAPU_LELE                          (HNS_EXTENDED_CONTENT_START + 233) // battled tapu lele
-#define FLAG_BATTLED_TAPU_KOKO                          (HNS_EXTENDED_CONTENT_START + 234) // battled tapu koko
-#define FLAG_HIDE_FLYOVER                               (HNS_EXTENDED_CONTENT_START + 235) // hide flyover object
-#define FLAG_HIDE_TAPU_BULU                             (HNS_EXTENDED_CONTENT_START + 236) // hide tapu bulu if caught or defeated
-#define FLAG_HIDE_TAPU_LELE                             (HNS_EXTENDED_CONTENT_START + 237) // hide tapu lele if caught or defeated
-#define FLAG_HIDE_TAPU_FINI                             (HNS_EXTENDED_CONTENT_START + 238) // hide tapu fini if caught or defeated
-#define FLAG_HIDE_TAPU_KOKO                             (HNS_EXTENDED_CONTENT_START + 239) // hide tapu koko if caught or defeated
-#define FLAG_FLYOVER_TAPU_BULU                          (HNS_EXTENDED_CONTENT_START + 240) // flyover tapu bulu in the wild
-#define FLAG_FLYOVER_TAPU_LELE                          (HNS_EXTENDED_CONTENT_START + 241) // flyover tapu lele in the wild
-#define FLAG_FLYOVER_TAPU_FINI                          (HNS_EXTENDED_CONTENT_START + 242) // flyover tapu fini in the wild
-#define FLAG_FLYOVER_TAPU_KOKO                          (HNS_EXTENDED_CONTENT_START + 243) // flyover tapu koko in the wild
 #define FLAG_HIDE_ROUTE13_BOAT                       (HNS_EXTENDED_CONTENT_START + 244) 
-#define FLAG_TRIGGERED_PONI_TOTEM                       (HNS_EXTENDED_CONTENT_START + 247) // for use in triggering poni totem anim
-#define FLAG_TRIGGERED_ULAULA_TOTEM                     (HNS_EXTENDED_CONTENT_START + 248) // for use in triggering ulaula totem anim
-#define FLAG_TRIGGERED_AKALA_TOTEM                      (HNS_EXTENDED_CONTENT_START + 249) // for use in triggering akala totem anim
-#define FLAG_TRIGGERED_MELEMELE_TOTEM                   (HNS_EXTENDED_CONTENT_START + 250) // for use in triggering melemele totem anim
-#define FLAG_DEFEATED_SAMSON_OAK                        (HNS_EXTENDED_CONTENT_START + 251) // if the player defeated Samson Oak
-#define FLAG_DEFEATED_ULAULA_TOTEM                      (HNS_EXTENDED_CONTENT_START + 252) // if the player defeated the ulaula totem
-#define FLAG_DEFEATED_PONI_TOTEM                        (HNS_EXTENDED_CONTENT_START + 253) // if the player defeated the poni totem
-#define FLAG_DEFEATED_AKALA_TOTEM                       (HNS_EXTENDED_CONTENT_START + 254) // if the player defeated the akala totem
-#define FLAG_DEFEATED_MELEMELE_TOTEM                    (HNS_EXTENDED_CONTENT_START + 255) // if the player defeated the melemele totem
-#define FLAG_CAUGHT_ALL_ULAULA                          (HNS_EXTENDED_CONTENT_START + 256) // caught all of ulaulas regional variants
-#define FLAG_CAUGHT_ALL_PONI                            (HNS_EXTENDED_CONTENT_START + 257) // caught all of ponis regional variants
-#define FLAG_CAUGHT_ALL_AKALA                           (HNS_EXTENDED_CONTENT_START + 258) // caught all of akalas regional variants
-#define FLAG_CAUGHT_ALL_MELEMELE                        (HNS_EXTENDED_CONTENT_START + 259) // caught all of melemeles regional variants
-#define FLAG_BATTLED_GOLEM                              (HNS_EXTENDED_CONTENT_START + 260) // used for progression if battled golem at all
-#define FLAG_BATTLED_SANDSLASH                          (HNS_EXTENDED_CONTENT_START + 261) // used for progression if battled sandslash at all
-#define FLAG_BATTLED_NINETALES                          (HNS_EXTENDED_CONTENT_START + 262) // used for progression if battled ninetales at all
-#define FLAG_BATTLED_DUGTRIO                            (HNS_EXTENDED_CONTENT_START + 264) // used for progression if battled dugtrio at all
-#define FLAG_BATTLED_MAROWAK                            (HNS_EXTENDED_CONTENT_START + 265) // used for progression if battled marowak at all
-#define FLAG_BATTLED_RAICHU                             (HNS_EXTENDED_CONTENT_START + 266) // used for progression if battled raichu at all
-#define FLAG_BATTLED_EXEGGUTOR                          (HNS_EXTENDED_CONTENT_START + 267) // used for progression if battled exeggutor at all
-#define FLAG_HIDE_SAMSONOAK_INTRO                       (HNS_EXTENDED_CONTENT_START + 268) // hides the samson oak intro object
-#define FLAG_HIDE_SANDSLASH_ALOLA                     (HNS_EXTENDED_CONTENT_START + 271) // hide alolan sandslash if caught or defeated
-#define FLAG_HIDE_NINETALES_ALOLA                     (HNS_EXTENDED_CONTENT_START + 272) // hide alolan ninetales if caught or defeated
-#define FLAG_HIDE_MUK_ALOLA                           (HNS_EXTENDED_CONTENT_START + 273) // hide alolan muk if caught or defeated
-#define FLAG_HIDE_DUGTRIO_ALOLA                       (HNS_EXTENDED_CONTENT_START + 274) // hide alolan dugtrio if caught or defeated
-#define FLAG_HIDE_MAROWAK_ALOLA                       (HNS_EXTENDED_CONTENT_START + 275) // hide alolan marowak if caught or defeated
-#define FLAG_HIDE_RAICHU_ALOLA                        (HNS_EXTENDED_CONTENT_START + 276) // hide alolan raichu if caught or defeated
-#define FLAG_HIDE_GOLEM_ALOLA                         (HNS_EXTENDED_CONTENT_START + 277) // hide alolan golem if caught or defeated
-#define FLAG_HIDE_EXEGGUTOR_ALOLA                     (HNS_EXTENDED_CONTENT_START + 278) // hide alolan exceggutor if caught or defeated
-#define FLAG_HIDE_PONI_TOTEM                            (HNS_EXTENDED_CONTENT_START + 279) // hide the poni totem mon
-#define FLAG_HIDE_ULAULA_TOTEM                          (HNS_EXTENDED_CONTENT_START + 280) // hide the ula'ula totem mon
-#define FLAG_HIDE_AKALA_TOTEM                           (HNS_EXTENDED_CONTENT_START + 281) // hide the akala totem mon
-#define FLAG_HIDE_MELEMELE_TOTEM                        (HNS_EXTENDED_CONTENT_START + 282) // hide the melemele totem mon
 #define FLAG_VISITED_ALOLA                              (HNS_EXTENDED_CONTENT_START + 284) // track if the player has been to alola before.
 #define HNS_EXTENDED_CONTENT_COUNT                  300
 #define HNS_EXTENDED_CONTENT_END                    (HNS_EXTENDED_CONTENT_START + HNS_EXTENDED_CONTENT_COUNT - 1)

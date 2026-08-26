@@ -6,25 +6,39 @@
 // bit indices baked into save files, do not renumber an existing flag.
 
 // --- Reclaimed HNS Johto/Kanto/Alola content-flag addresses ---
-// 542 of HNS's own content-flag addresses (flags_hns.h's "Content flags" and
+// 851 of HNS's own content-flag addresses (flags_hns.h's "Content flags" and
 // "Extended content flags" ranges) were deleted from flags_hns.h - genuinely dead
-// for the sk build, verified against the actual assembled data/event_scripts.o
-// output (not just src/*.c: reachability tracing through data/scripts/*.inc and
-// per-map scripts turned out to be insufficient - some "dead" scripts are still
-// unconditionally assembled even when never called, so an address is only truly
-// free once nothing anywhere in the final linked object references its name).
+// for the sk build, verified against the real build's linked output (data/
+// event_scripts.o), not just src/*.c or script-reachability tracing. That
+// verification needed two corrections along the way, both worth remembering:
+//   1. Assembly content doesn't get pruned like C does - a script nobody calls
+//      still needs every flag name it references to exist, or the final link
+//      fails ("undefined reference"), even though the script is dead code.
+//   2. But .if INCLUDE_HNS_CONTENT / .endif blocks in data/event_scripts.s ARE
+//      a real assembler-level exclusion (not just a runtime branch) - content
+//      inside one is never even assembled for the sk build. A naive check that
+//      stops at the C-preprocessor stage (arm-none-eabi-cpp) won't see that,
+//      since .if/.endif are GNU-AS directives the C preprocessor doesn't touch -
+//      only running the real arm-none-eabi-as --defsym INCLUDE_HNS_CONTENT=0
+//      step (i.e. the actual `make sk` build) resolves them correctly.
+// The 851 total reflects both corrections applied; a small number of flags
+// (~26, mostly Battle Frontier / Birth Island / Navel Rock) turned out to be
+// vanilla Emerald postgame content that ISN'T behind INCLUDE_HNS_CONTENT at
+// all (that flag only gates HNS's own added Johto/Kanto/Alola content, not
+// base Emerald's own features) - those stayed excluded correctly.
 // This costs zero save-block bytes: the flags[] bit array is already sized to
 // cover this whole range regardless, via SK_FLAGS_END below.
 //
 // Freed, by original section/base constant (see flags_hns.h's remaining content
 // for what's still in use under each - anything not currently #defined there is
 // free to claim):
-//   HNS_ITEM_BALL_START (Item Ball Flags):        226 freed
-//   HNS_EXTENDED_CONTENT_START (Extended content): 182 freed
-//   HNS_ITEMS_2_START (Unused hidden items):       119 freed
-//   scattered small sections (Hide Pokemon, NPC Trade, Move Tutor,
-//     Battle Frontier, Safari Zone, Feature/Toggle, Misc, Legendary/Boss
-//     Defeated, Legendary/Rare Caught, Quest/Story Progress):  15 freed
+//   HNS_EXTENDED_CONTENT_START (Extended content):      265 freed
+//   raw hex literal (Hide Pokemon, NPC Hide, Quest/Story,
+//     Received/Got, Gym/Legendary Defeated, NPC Trade, Move
+//     Tutor, Battle Frontier, Safari Zone, Feature/Toggle, Misc,
+//     Visited/World Map):                                234 freed
+//   HNS_ITEM_BALL_START (Item Ball Flags):                232 freed
+//   HNS_ITEMS_2_START (Unused hidden items):              120 freed
 //
 // To use one: pick any free offset under the relevant base constant, add
 // #define FLAG_YOUR_NEW_THING (BASE + N) here (or add a new NUM_SK_FLAGS-style
