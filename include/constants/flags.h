@@ -5,6 +5,17 @@
 #include "constants/opponents.h"
 #include "constants/rematches.h"
 
+// Where flags actually live for the sk/hns build (IS_HNS is always 1 here):
+//   - Temp flags (below) and this file's own "system flags" section (badges,
+//     Pokedex, game-clear, etc.) - that section is dead code for this build,
+//     it's the #else branch of the #if IS_FRLG/#elif IS_HNS/#else split below.
+//   - The system flags that are ACTUALLY active - plus all of HNS's own
+//     Johto/Kanto content flags - live in flags_hns.h instead, redefined at
+//     different offsets (e.g. FLAG_BADGE01_GET, FLAG_SYS_POKEDEX_GET).
+//   - ShinyKrabby's (Tessera's) own story/quest/item flags live in
+//     flags_sk.h, included from the end of flags_hns.h.
+//   - flags_frlg.h holds FRLG's own flags - unused by this build (only
+//     reachable if IS_FRLG were set, which it never is here).
 
 // Temporary Flags
 // These temporary flags are are cleared every time a map is loaded. They are used
