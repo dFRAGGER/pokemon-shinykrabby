@@ -234,7 +234,9 @@ const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 #if IS_FRLG
 #include "data/trainers_frlg.h"
 #elif IS_HNS
+#if INCLUDE_HNS_CONTENT
 #include "data/trainers_hns.h"
+#endif
 #include "data/trainers_sk.h"
 #else
 #include "data/trainers.h"
