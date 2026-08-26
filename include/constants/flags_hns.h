@@ -1251,7 +1251,13 @@
 #define FLAG_BADGE14_GET                            (SYS_FLAGS + 0x2D)
 #define FLAG_BADGE15_GET                            (SYS_FLAGS + 0x2E)
 #define FLAG_BADGE16_GET                            (SYS_FLAGS + 0x2F)
+// Tessera has 8 gyms; badges 9-16 above stay defined (harmless, no ROM/flag cost)
+// for the plain hns build, which still needs its own 16-badge Johto+Kanto count.
+#if INCLUDE_HNS_CONTENT
 #define NUM_BADGES                                  16
+#else
+#define NUM_BADGES                                  8
+#endif
 
 // Core system
 #define FLAG_SYS_POKEMON_GET                        (SYS_FLAGS + 0x30)

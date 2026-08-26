@@ -168,7 +168,7 @@ static void PrintStatOnBackOfCard(u8 top, const u8 *str1, u8 *str2, const u8 *co
 static void LoadStickerGfx(void);
 static u8 SetCardBgsAndPals(void);
 static void DrawCardBackStats(void);
-#if IS_HNS
+#if INCLUDE_HNS_CONTENT
 static void DrawExtraBadgesOnBack(void);
 #endif
 static void Task_DoCardFlipTask(u8);
@@ -1629,7 +1629,7 @@ static void DrawStarsAndBadgesOnCard(void)
     {
         x = 4;
         y = IS_FRLG ? 16 : 15;
-#if IS_HNS
+#if INCLUDE_HNS_CONTENT
         for (i = 0; i < NUM_BADGES_FRONT; i++, tileNum += 2, x += 3)
 #else
         for (i = 0; i < NUM_BADGES; i++, tileNum += 2, x += 3)
@@ -1647,7 +1647,7 @@ static void DrawStarsAndBadgesOnCard(void)
     CopyBgTilemapBufferToVram(3);
 }
 
-#if IS_HNS
+#if INCLUDE_HNS_CONTENT
 static void DrawExtraBadgesOnBack(void)
 {
     u8 i, x = 4;
@@ -1849,7 +1849,7 @@ static bool8 Task_DrawFlippedCardSide(struct Task *task)
             if (!sData->onBack)
             {
                 DrawCardBackStats();
-#if IS_HNS
+#if INCLUDE_HNS_CONTENT
                 DrawExtraBadgesOnBack();
 #endif
             }
