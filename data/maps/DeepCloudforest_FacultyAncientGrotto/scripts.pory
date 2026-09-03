@@ -30,8 +30,9 @@ script DeepCloudForest_AncientGrotto_GetOutTruck {
     waitmessage
     applymovement(LOCALID_PLAYER, moves(walk_fast_up*2 walk_fast_left*2 walk_fast_up walk_fast_left*3 walk_fast_up*6))
     waitmovement
+    playbgm(MUS_AQUA_MAGMA_HIDEOUT,FALSE)
     special(SpawnCameraObject)
-    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up*16))
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up*10))
     waitmovement
     setspeaker("THE RECTOR")
     msgbox(format("Allright teachers, to make a long story short...\pForce the golem out of that meteorite and lets get out of here."),MSGBOX_AUTOCLOSE)
@@ -157,9 +158,22 @@ script DeepCloudForest_AncientGrotto_GetOutTruck {
     setmetatile(31,19,0x3AB, FALSE)
     setmetatile(31,20,0x3A3, FALSE)
     special(DrawWholeMapView)
+    applymovement(6, moves(walk_up face_right))
+    applymovement(11, moves(walk_up face_left))
+    applymovement(5, moves(walk_left face_right))
+    applymovement(4, moves(walk_right face_left))
+    applymovement(15, moves(walk_faster_down*7))
+    waitmovement
+    playse(SE_M_THUNDERBOLT)
+    waitse
     setspeaker("NASH")
     msgbox(format("WATCH OUT!\nTAKE COVER!"),MSGBOX_AUTOCLOSE)
     delay(60)
+    playse(SE_M_ROCK_THROW)
+    waitse
+    delay(60)
+    playse(SE_M_ROCK_THROW)
+    waitse
     fadescreen(FADE_FROM_BLACK)
     delay(120)
 

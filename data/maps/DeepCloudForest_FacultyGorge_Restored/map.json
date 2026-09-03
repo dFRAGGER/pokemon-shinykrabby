@@ -2,7 +2,7 @@
   "id": "MAP_DEEP_CLOUD_FOREST_FACULTY_GORGE_RESTORED",
   "name": "DeepCloudForest_FacultyGorge_Restored",
   "layout": "LAYOUT_DEEP_CLOUD_FOREST_FACULTY_GORGE_RESTORED",
-  "music": "MUS_DUMMY",
+  "music": "MUS_SAFARI_ZONE",
   "region_map_section": "MAPSEC_CLOUD_FOREST",
   "requires_flash": false,
   "weather": "WEATHER_ROUTE119_CYCLE",
