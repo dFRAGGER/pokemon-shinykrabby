@@ -105,6 +105,7 @@ static void PlayerPC_Mailbox(u8);
 static void PlayerPC_Decoration(u8);
 static void PlayerPC_Challenges(u8);
 static void PlayerPC_TurnOff(u8);
+static void PlayerPC_SetBedroomTurnOffScript(void);
 
 static void Mailbox_DoMailMoveToBag(u8);
 static void Mailbox_DoMailRead(u8);
@@ -497,27 +498,35 @@ static void PlayerPC_Decoration(u8 taskId)
 
 static void PlayerPC_Challenges(u8 taskId)
 {
-    gMain.savedCallback = CB2_ReturnToFieldWithOpenMenu;
-    SetMainCallback2(CB2_InitChallengeMenu);
+    // Returning from the challenge screen continues the field script. Replace
+    // the suspended PC script with the normal bedroom-PC shutdown sequence so
+    // its lit-screen metatile does not remain behind.
+    PlayerPC_SetBedroomTurnOffScript();
     DestroyTask(taskId);
+    OpenChallengeMenuFromScript();
+}
+
+static void PlayerPC_SetBedroomTurnOffScript(void)
+{
+    if (gMapHeader.mapLayoutId == LAYOUT_PALLET_TOWN_PLAYERS_HOUSE_2F_FRLG)
+        ScriptContext_SetupScript(EventScript_PalletTown_PlayersHouse_2F_ShutDownPC);
+    else if (gMapHeader.mapLayoutId == LAYOUT_ERPUS_CITY_START_HOUSE_2F)
+        ScriptContext_SetupScript(ErpusCity_StartHouse_2F_EventScript_TurnOffPlayerPC);
+#if INCLUDE_HNS_CONTENT
+    else if (IS_HNS)
+        ScriptContext_SetupScript(NewBarkTown_PlayersHouse_2F_EventScript_TurnOffPlayerPC);
+#endif
+    else if (gSaveBlock2Ptr->playerGender == MALE)
+        ScriptContext_SetupScript(LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC);
+    else
+        ScriptContext_SetupScript(LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC);
 }
 
 static void PlayerPC_TurnOff(u8 taskId)
 {
     if (sTopMenuNumOptions == NUM_BEDROOM_PC_OPTIONS) // Flimsy way to determine if Bedroom PC is in use
     {
-        if (gMapHeader.mapLayoutId == LAYOUT_PALLET_TOWN_PLAYERS_HOUSE_2F_FRLG)
-            ScriptContext_SetupScript(EventScript_PalletTown_PlayersHouse_2F_ShutDownPC);
-        else if (gMapHeader.mapLayoutId == LAYOUT_ERPUS_CITY_START_HOUSE_2F)
-            ScriptContext_SetupScript(ErpusCity_StartHouse_2F_EventScript_TurnOffPlayerPC);
-#if INCLUDE_HNS_CONTENT
-        else if (IS_HNS)
-            ScriptContext_SetupScript(NewBarkTown_PlayersHouse_2F_EventScript_TurnOffPlayerPC);
-#endif
-        else if (gSaveBlock2Ptr->playerGender == MALE)
-            ScriptContext_SetupScript(LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC);
-        else
-            ScriptContext_SetupScript(LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC);
+        PlayerPC_SetBedroomTurnOffScript();
     }
     else
     {

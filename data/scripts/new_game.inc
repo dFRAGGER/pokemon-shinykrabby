@@ -452,7 +452,9 @@ EventScript_ResetAllMapFlagsHnS::
 	setvar VAR_ROUTE22_GIOVANNI_STATE, 0
 	setvar VAR_ROUTE27_BAOBA_CALL, 0
 
+#if !IS_SK
 	additem ITEM_EXP_SHARE
+#endif
 	additem ITEM_GB_PLAYER
 	setrespawn HEAL_LOCATION_NEW_BARK_TOWN_HNS
 	

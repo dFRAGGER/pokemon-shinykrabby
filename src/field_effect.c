@@ -1161,6 +1161,7 @@ void MultiplyPaletteRGBComponents(u16 i, u8 r, u8 g, u8 b)
 #define sState      data[0]
 #define sTimer      data[1]
 #define sCounter    data[2]
+#define sFastHeal   data[4]
 #define sPlayHealSe data[5]
 #define sNumMons    data[6]
 #define sSpriteId   data[7]
@@ -1301,6 +1302,7 @@ static u8 CreateGlowingPokeballsEffect(s16 numMons, s16 x, s16 y, bool16 playHea
     sprite->x2 = x;
     sprite->y2 = y;
     sprite->sPlayHealSe = playHealSe;
+    sprite->sFastHeal = playHealSe && FlagGet(FLAG_EVEN_FASTER_JOY);
     sprite->sNumMons = numMons;
     sprite->sSpriteId = spriteId;
     return spriteId;
@@ -1316,7 +1318,7 @@ static void PokeballGlowEffect_PlaceBalls(struct Sprite *sprite)
     u8 spriteId;
     if (sprite->sTimer == 0 || (--sprite->sTimer) == 0)
     {
-        sprite->sTimer = 25;
+        sprite->sTimer = sprite->sFastHeal ? 6 : 25;
         spriteId = CreateSpriteAtEnd(&sSpriteTemplate_PokeballGlow, sPokeballCoordOffsets[sprite->sCounter].x + sprite->x2, sPokeballCoordOffsets[sprite->sCounter].y + sprite->y2, 0);
         gSprites[spriteId].oam.priority = 3;
         gSprites[spriteId].sEffectSpriteId = sprite->sSpriteId;
@@ -1326,7 +1328,7 @@ static void PokeballGlowEffect_PlaceBalls(struct Sprite *sprite)
     }
     if (sprite->sNumMons == 0)
     {
-        sprite->sTimer = 32;
+        sprite->sTimer = sprite->sFastHeal ? 8 : 32;
         sprite->sState++;
     }
 }
@@ -1336,12 +1338,15 @@ static void PokeballGlowEffect_TryPlaySe(struct Sprite *sprite)
     if ((--sprite->sTimer) == 0)
     {
         sprite->sState++;
-        sprite->sTimer = 8;
+        sprite->sTimer = sprite->sFastHeal ? 4 : 8;
         sprite->sCounter = 0;
         sprite->data[3] = 0;
         if (sprite->sPlayHealSe)
         {
-            PlayFanfare(MUS_HEAL);
+            if (sprite->sFastHeal)
+                PlaySE(SE_FASTER_JOY_HEAL);
+            else
+                PlayFanfare(MUS_HEAL);
         }
     }
 }
@@ -1351,7 +1356,7 @@ static void PokeballGlowEffect_Flash1(struct Sprite *sprite)
     u8 phase;
     if ((--sprite->sTimer) == 0)
     {
-        sprite->sTimer = 8;
+        sprite->sTimer = sprite->sFastHeal ? 4 : 8;
         sprite->sCounter++;
         sprite->sCounter &= 3;
 
@@ -1367,10 +1372,10 @@ static void PokeballGlowEffect_Flash1(struct Sprite *sprite)
     phase = sprite->sCounter;
     MultiplyInvertedPaletteRGBComponents(OBJ_PLTT_ID(IndexOfSpritePaletteTag(FLDEFF_PAL_TAG_POKEBALL_GLOW)) + 5, sPokeballGlowReds[phase], sPokeballGlowGreens[phase], sPokeballGlowBlues[phase]);
     MultiplyInvertedPaletteRGBComponents(OBJ_PLTT_ID(IndexOfSpritePaletteTag(FLDEFF_PAL_TAG_POKEBALL_GLOW)) + 3, sPokeballGlowReds[phase], sPokeballGlowGreens[phase], sPokeballGlowBlues[phase]);
-    if (sprite->data[3] > 2)
+    if (sprite->data[3] > (sprite->sFastHeal ? 0 : 2))
     {
         sprite->sState++;
-        sprite->sTimer = 8;
+        sprite->sTimer = sprite->sFastHeal ? 4 : 8;
         sprite->sCounter = 0;
     }
 }
@@ -1380,13 +1385,13 @@ static void PokeballGlowEffect_Flash2(struct Sprite *sprite)
     u8 phase;
     if ((--sprite->sTimer) == 0)
     {
-        sprite->sTimer = 8;
+        sprite->sTimer = sprite->sFastHeal ? 4 : 8;
         sprite->sCounter++;
         sprite->sCounter &= 3;
         if (sprite->sCounter == 3)
         {
             sprite->sState++;
-            sprite->sTimer = 30;
+            sprite->sTimer = sprite->sFastHeal ? 12 : 30;
         }
     }
     phase = sprite->sCounter;
@@ -1523,6 +1528,7 @@ static void SpriteCB_HallOfFameMonitorFrlg(struct Sprite *sprite)
 #undef sState
 #undef sTimer
 #undef sCounter
+#undef sFastHeal
 #undef sPlayHealSe
 #undef sNumMons
 #undef sSpriteId
