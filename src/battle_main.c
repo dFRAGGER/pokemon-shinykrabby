@@ -1984,7 +1984,11 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
         if (partyEntry->moves[j] != MOVE_NONE)
             noMoveSet = FALSE;
     }
+#if RANDOMIZER_AVAILABLE
+    if (noMoveSet || RandomizerFeatureEnabled(RANDOMIZE_TRAINER_MON) || RandomizerFeatureEnabled(RANDOMIZE_LEARNSET))
+#else
     if (noMoveSet)
+#endif
     {
         GiveMonInitialMoveset(mon);
         // TODO: Figure out a default strategy when moves are not set, to generate a good moveset
@@ -5862,12 +5866,15 @@ static void HandleEndTurn_FinishBattle(void)
                                         | BATTLE_TYPE_BATTLE_TOWER
                                         | BATTLE_TYPE_CATCH_TUTORIAL
                                         | BATTLE_TYPE_LEGENDARY
+                                        | BATTLE_TYPE_ROAMER
                                         | BATTLE_TYPE_TWO_OPPONENTS
                                         | BATTLE_TYPE_INGAME_PARTNER
                                         | BATTLE_TYPE_TOWER_LINK_MULTI
                                         | BATTLE_TYPE_RECORDED_LINK)))
             {
-                if (!NuzlockeIsSpeciesClauseActive)
+                // An off-type mon under the One Type Challenge could never have been
+                // caught, so it must not burn the route's Nuzlocke encounter.
+                if (!NuzlockeIsSpeciesClauseActive && !OneTypeChallengeCaptureBlocked)
                     NuzlockeFlagSet(NuzlockeGetCurrentRegionMapSectionId());
             }
             NuzlockeIsCaptureBlocked = FALSE;

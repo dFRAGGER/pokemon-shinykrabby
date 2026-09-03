@@ -573,7 +573,7 @@ static void Task_NewGameHnsSpeech_SlideInNewGenderSprite(u8 taskId)
 
 static void Task_NewGameHnsSpeech_ChallengeDisclaimer(u8 taskId)
 {
-    static const u8 sText_Disclaimer[] = _("One more clause for the\ncontract.\p{COLOR RED}Your probation... I mean, GAME\nsettings can be changed from\lthe PC once you start.\lHowever, once you're on the\lclock, the nuzlocke, randomizer,\ldifficulty and challenge terms\lcan only be loosened. Never\ltightened. HR's orders.\lNot mine. Definitely not mine.");
+    static const u8 sText_Disclaimer[] = _("Oh, one more tiny clause for the\ncontract.\pIt's just ticking a couple of boxes,\nnothing to worry about.\pIt determines how hard your internship\nwill be.\pIn my opinion playing without a salary\nshould be mandatory...\p...But the law thinks differently.\pThese internship(GAME) settings can be\nchanged from your personal PC once you\lstart.\pHowever, once you're on the clock, the\nnuzlocke, randomizer, difficulty\land challenge terms can only be loosened.\nNever tightened.\pGovernment requirements these days...");
     NewGameHnsSpeech_ClearWindow(0);
     StringCopy(gStringVar4, sText_Disclaimer);
     AddTextPrinterWithCustomSpeedForMessage(FALSE, 2);

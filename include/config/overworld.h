@@ -149,7 +149,7 @@
 // Trainer Rematches
 // NOTE: this header is included from constants/global.h *before* IS_HNS is
 // defined, so test the raw build define here instead.
-#ifdef POKEMON_HNS
+#if defined(POKEMON_HNS) || defined(POKEMON_SK)
 #define OW_REMATCH_BADGE_COUNT      3 // After Whitney
 #else
 #define OW_REMATCH_BADGE_COUNT      5 // Number of badges necessary before the match call or vs seeker features allow rematches
