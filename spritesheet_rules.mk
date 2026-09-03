@@ -5,6 +5,26 @@ BATINTGFXDIR := graphics/battle_interface
 MISCGFXDIR := graphics/misc
 SLIDINGPUZZLESDIR := graphics/sliding_puzzle/puzzles
 
+# Tessera/DP overworld sheets are laid out as horizontal rows of complete
+# animation frames.  The generic PNG -> 4bpp rule emits tiles in whole-image
+# row order, but overworld_frame() expects every frame's tiles to be contiguous.
+# Keep this list pattern-based so newly added sprites from either imported set
+# cannot silently fall back to the generic conversion rule.
+SK_IMPORTED_OBJ_PNGS := \
+	$(wildcard $(OBJEVENTGFXDIR)/people/DP_*.png) \
+	$(wildcard $(OBJEVENTGFXDIR)/people/*_SK.png)
+SK_IMPORTED_OBJ_4BPP := $(SK_IMPORTED_OBJ_PNGS:.png=.4bpp)
+
+$(filter-out $(OBJEVENTGFXDIR)/people/biker_SK.4bpp,$(SK_IMPORTED_OBJ_4BPP)): %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/biker_SK.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+# Preserved Brendan backup sheet; keep it valid if it is wired back in later.
+$(OBJEVENTGFXDIR)/people/brendan/og_underwater.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/brendan/walking.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 

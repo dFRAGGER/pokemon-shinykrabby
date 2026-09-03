@@ -713,7 +713,8 @@
 #define OBJ_EVENT_GFX_YOUNGSTER_SK               730
 #define OBJ_EVENT_GFX_BIKER_SK                   731
 #define OBJ_EVENT_GFX_SWIMMER_F_WATER_SK         732
-#define NUM_OBJ_EVENT_GFX                        733
+#define OBJ_EVENT_GFX_TRUCK_BLACK                733
+#define NUM_OBJ_EVENT_GFX                        734
 
 
 // These are dynamic object gfx ids.
@@ -1089,6 +1090,9 @@
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 #define OBJ_EVENT_PAL_TAG_BIKER_SK               0x12b2
 #define OBJ_EVENT_PAL_TAG_SWIMMER_F_WATER_SK     0x12b3
+#define OBJ_EVENT_PAL_TAG_BRANDON_SK              0x12b4
+#define OBJ_EVENT_PAL_TAG_LT_SURGE_SK             0x12b5
+#define OBJ_EVENT_PAL_TAG_TRUCK_BLACK             0x12b6
 
 // This + localId is used as the tileTag
 // for compressed graphicsInfos

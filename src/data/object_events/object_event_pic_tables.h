@@ -374,6 +374,10 @@ static const struct SpriteFrameImage sPicTable_Truck[] = {
     obj_frame_tiles(gObjectEventPic_Truck),
 };
 
+static const struct SpriteFrameImage sPicTable_TruckBlack[] = {
+    obj_frame_tiles(gObjectEventPic_TruckBlack),
+};
+
 static const struct SpriteFrameImage sPicTable_VigorothCarryingBox[] = {
     overworld_frame(gObjectEventPic_VigorothMover, 4, 4, 0),
     overworld_frame(gObjectEventPic_VigorothMover, 4, 4, 0),
@@ -2340,12 +2344,12 @@ static const struct SpriteFrameImage sPicTable_LtSurge[] = {
     overworld_frame(gObjectEventPic_LtSurge, 2, 4, 0),
     overworld_frame(gObjectEventPic_LtSurge, 2, 4, 1),
     overworld_frame(gObjectEventPic_LtSurge, 2, 4, 2),
-    overworld_frame(gObjectEventPic_LtSurge, 2, 4, 0),
-    overworld_frame(gObjectEventPic_LtSurge, 2, 4, 0),
-    overworld_frame(gObjectEventPic_LtSurge, 2, 4, 1),
-    overworld_frame(gObjectEventPic_LtSurge, 2, 4, 1),
-    overworld_frame(gObjectEventPic_LtSurge, 2, 4, 2),
-    overworld_frame(gObjectEventPic_LtSurge, 2, 4, 2),
+    overworld_frame(gObjectEventPic_LtSurge, 2, 4, 3),
+    overworld_frame(gObjectEventPic_LtSurge, 2, 4, 4),
+    overworld_frame(gObjectEventPic_LtSurge, 2, 4, 5),
+    overworld_frame(gObjectEventPic_LtSurge, 2, 4, 6),
+    overworld_frame(gObjectEventPic_LtSurge, 2, 4, 7),
+    overworld_frame(gObjectEventPic_LtSurge, 2, 4, 8),
 };
 
 static const struct SpriteFrameImage sPicTable_Erika[] = {
@@ -6211,4 +6215,3 @@ static const struct SpriteFrameImage sPicTable_SwimmerFWater_sk[] = {
 };
 
 #endif // IS_HNS
-

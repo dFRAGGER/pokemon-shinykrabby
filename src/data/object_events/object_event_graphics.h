@@ -229,6 +229,8 @@ const u32 gObjectEventPic_SubmarineShadow[] = INCBIN_U32("graphics/object_events
 const u16 gObjectEventPal_SubmarineShadow[] = INCBIN_U16("graphics/object_events/palettes/submarine_shadow.gbapal");
 const u32 gObjectEventPic_Truck[] = INCBIN_U32("graphics/object_events/pics/misc/truck.4bpp");
 const u16 gObjectEventPal_Truck[] = INCBIN_U16("graphics/object_events/palettes/truck.gbapal");
+const u32 gObjectEventPic_TruckBlack[] = INCBIN_U32("graphics/object_events/pics/misc/truck_black.4bpp");
+const u16 gObjectEventPal_TruckBlack[] = INCBIN_U16("graphics/object_events/palettes/truck_black.gbapal");
 const u16 gObjectEventPal_Vigoroth[] = INCBIN_U16("graphics/object_events/palettes/vigoroth.gbapal");
 const u32 gObjectEventPic_BirchsBag[] = INCBIN_U32("graphics/object_events/pics/misc/birchs_bag.4bpp");
 const u32 gObjectEventPic_EnemyZigzagoon[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/enemy_zigzagoon.4bpp");
@@ -239,7 +241,7 @@ const u16 gObjectEventPal_CableCar[] = INCBIN_U16("graphics/object_events/palett
 const u32 gObjectEventPic_SSTidal[] = INCBIN_U32("graphics/object_events/pics/misc/ss_tidal.4bpp");
 const u16 gObjectEventPal_SSTidal[] = INCBIN_U16("graphics/object_events/palettes/ss_tidal.gbapal");
 const u32 gFieldEffectObjectPic_Sparkle[] = INCBIN_U32("graphics/field_effects/pics/sparkle.4bpp");
-#if IS_HNS
+#if IS_HNS && !IS_SK
 const u32 gObjectEventPic_BerryTreeDirtPile[] = INCBIN_U32("graphics/object_events/pics/berry_trees/dirt_pile_hns.4bpp");
 const u32 gObjectEventPic_BerryTreeSprout[] = INCBIN_U32("graphics/object_events/pics/berry_trees/sprout_hns.4bpp");
 const u32 gObjectEventPic_CheriBerryTree[] = INCBIN_U32("graphics/object_events/pics/berry_trees/cheri_hns.4bpp");
@@ -315,7 +317,7 @@ const u32 gObjectEventPic_KasibBerryTree[] = INCBIN_U32("graphics/object_events/
 const u32 gObjectEventPic_HabanBerryTree[] = INCBIN_U32("graphics/object_events/pics/berry_trees/haban.4bpp");
 const u32 gObjectEventPic_ColburBerryTree[] = INCBIN_U32("graphics/object_events/pics/berry_trees/colbur.4bpp");
 const u32 gObjectEventPic_RoseliBerryTree[] = INCBIN_U32("graphics/object_events/pics/berry_trees/roseli.4bpp");
-#if !IS_HNS
+#if !IS_HNS || IS_SK
 const u32 gObjectEventPic_LiechiBerryTree[] = INCBIN_U32("graphics/object_events/pics/berry_trees/liechi.4bpp");
 const u32 gObjectEventPic_LansatBerryTree[] = INCBIN_U32("graphics/object_events/pics/berry_trees/lansat.4bpp");
 #endif
@@ -681,6 +683,10 @@ const u16 gObjectEventPic_ClefairyOld[] = INCBIN_U16("graphics/object_events/pic
 
 #if IS_HNS
 // HnS sprite data
+#if IS_SK
+const u16 gObjectEventPal_Brandon_sk[] = INCBIN_U16("graphics/object_events/palettes/SK_brandon__SK.gbapal");
+const u16 gObjectEventPal_LtSurge_sk[] = INCBIN_U16("graphics/object_events/palettes/SK_lt_surge__SK.gbapal");
+#endif
 const u16 gObjectEventPal_Blaine_sk[] = INCBIN_U16("graphics/object_events/palettes/SK_Blaine__SK.gbapal");
 const u16 gObjectEventPal_Blue_sk[] = INCBIN_U16("graphics/object_events/palettes/SK_Blue__SK.gbapal");
 const u16 gObjectEventPal_Bugsy_sk[] = INCBIN_U16("graphics/object_events/palettes/SK_Bugsy__SK.gbapal");
