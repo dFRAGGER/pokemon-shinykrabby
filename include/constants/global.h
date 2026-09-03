@@ -66,18 +66,28 @@ enum Language
     #define GAME_VERSION (VERSION_FIRE_RED)
     #define IS_FRLG 1
     #define IS_HNS 0
+    #define IS_SK 0
 #elif defined(LEAFGREEN)
     #define GAME_VERSION (VERSION_LEAF_GREEN)
     #define IS_FRLG 1
     #define IS_HNS 0
+    #define IS_SK 0
 #elif defined(POKEMON_HNS)
     #define GAME_VERSION (VERSION_EMERALD)
     #define IS_FRLG 0
     #define IS_HNS 1
+    #define IS_SK 0
+#elif defined(POKEMON_SK)
+    #define GAME_VERSION (VERSION_EMERALD)
+    #define IS_FRLG 0
+    // SK keeps the shared HNS engine conventions but has its own content data.
+    #define IS_HNS 1
+    #define IS_SK 1
 #else
     #define GAME_VERSION (VERSION_EMERALD)
     #define IS_FRLG 0
     #define IS_HNS 0
+    #define IS_SK 0
 #endif
 #define GAME_LANGUAGE (LANGUAGE_ENGLISH)
 
@@ -220,6 +230,11 @@ enum Gender
 
 #define OPTIONS_BATTLE_STYLE_SHIFT 0
 #define OPTIONS_BATTLE_STYLE_SET 1
+
+#define OPTIONS_EXP_MULTIPLIER_1X   0   // 1x EXP multiplier    Normal Difficulty
+#define OPTIONS_EXP_MULTIPLIER_1_5X 1   // 1.5x EXP multiplier  Easier Difficulty
+#define OPTIONS_EXP_MULTIPLIER_2X   2   // 2x EXP multiplier    Easiest Difficulty
+#define OPTIONS_EXP_MULTIPLIER_0X   3   // 0x EXP multiplier    Hardest Difficulty
 
 enum __attribute__((packed)) Direction
 {

@@ -3,7 +3,7 @@
   "name": "TheShadowLands",
   "layout": "LAYOUT_THE_SHADOW_LANDS",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_SHADOW_LANDS",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_OCEAN_ROUTE",

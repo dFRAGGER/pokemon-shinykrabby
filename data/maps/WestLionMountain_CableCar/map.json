@@ -3,7 +3,7 @@
   "name": "WestLionMountain_CableCar",
   "layout": "LAYOUT_WEST_LION_MOUNTAIN_CABLE_CAR",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_LIONS_ARCH_CITY",
+  "region_map_section": "MAPSEC_WEST_LION_MOUNTAIN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

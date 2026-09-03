@@ -3,7 +3,7 @@
   "name": "Island_Mecherchar",
   "layout": "LAYOUT_ISLAND_MECHERCHAR",
   "music": "MUS_FORTREE",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_ISLAND_MECHERCHAR",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",

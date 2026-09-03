@@ -3,7 +3,7 @@
   "name": "Route019",
   "layout": "LAYOUT_ROUTE019",
   "music": "MUS_DESERT",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_SK_ROUTE_19",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",

@@ -1,32 +1,25 @@
 #ifndef GUARD_FIELDMAP_H
 #define GUARD_FIELDMAP_H
 
-/* PORYMAP MAP EDITING — MANUAL SWAP UNTIL PORYMAP SUPPORTS LAYOUT VERSIONS.
-
-To edit and visualize HNS/FRLG maps, you want:
- 
+// Compiled HNS/SK code always receives the runtime-safe 640/512 split.
+// Porymap sees the Emerald/Tessera 512/640 editing split unless the manual
+// porymap helper inserts PORYMAP_HNS below.  Editing state can no longer alter
+// the values compiled into a ROM.
+#if defined(POKEMON_HNS) || defined(POKEMON_SK) || defined(PORYMAP_HNS)
+#define NUM_TILES_IN_PRIMARY 640
+#define NUM_METATILES_IN_PRIMARY 640
+#define NUM_PALS_IN_PRIMARY 7
+#define NUM_TILES_IN_PRIMARY_EMERALD 512
+#define NUM_METATILES_IN_PRIMARY_EMERALD 512
+#define NUM_PALS_IN_PRIMARY_EMERALD 6
+#else
 #define NUM_TILES_IN_PRIMARY 512
 #define NUM_METATILES_IN_PRIMARY 512
 #define NUM_PALS_IN_PRIMARY 6
 #define NUM_TILES_IN_PRIMARY_EMERALD 640
 #define NUM_METATILES_IN_PRIMARY_EMERALD 640
 #define NUM_PALS_IN_PRIMARY_EMERALD 7
- 
-To edit and visualize EMERALD maps, you want:
- 
-#define NUM_TILES_IN_PRIMARY 512
-#define NUM_METATILES_IN_PRIMARY 512
-#define NUM_PALS_IN_PRIMARY 6
-#define NUM_TILES_IN_PRIMARY_EMERALD 640
-#define NUM_METATILES_IN_PRIMARY_EMERALD 640
-#define NUM_PALS_IN_PRIMARY_EMERALD 7
-*/
-#define NUM_TILES_IN_PRIMARY 512
-#define NUM_METATILES_IN_PRIMARY 512
-#define NUM_PALS_IN_PRIMARY 6
-#define NUM_TILES_IN_PRIMARY_EMERALD 640
-#define NUM_METATILES_IN_PRIMARY_EMERALD 640
-#define NUM_PALS_IN_PRIMARY_EMERALD 7
+#endif
 
 #define NUM_METATILES_TOTAL 1024
 #define NUM_TILES_TOTAL 1024

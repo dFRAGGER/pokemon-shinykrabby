@@ -3,7 +3,7 @@
   "name": "Route012",
   "layout": "LAYOUT_ROUTE012",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_ROUTE_012",
   "requires_flash": false,
   "weather": "WEATHER_RAIN_THUNDERSTORM",
   "map_type": "MAP_TYPE_ROUTE",

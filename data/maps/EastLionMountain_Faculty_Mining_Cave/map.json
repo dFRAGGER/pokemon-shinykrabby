@@ -3,7 +3,7 @@
   "name": "EastLionMountain_Faculty_Mining_Cave",
   "layout": "LAYOUT_EAST_LION_MOUNTAIN_FACULTY_MINING_CAVE",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_LIONS_ARCH_CITY",
+  "region_map_section": "MAPSEC_EAST_LION_MOUNTAIN",
   "requires_flash": true,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

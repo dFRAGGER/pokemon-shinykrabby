@@ -26,8 +26,8 @@ ifeq (hns, $(or $(BUILD), $(MAKECMDGOALS)))
 	MAP_VERSION 	:= hns
 else
 ifeq (sk, $(or $(BUILD), $(MAKECMDGOALS)))
-	GAME_VERSION 	:= POKEMON_HNS
-	TITLE       	:= POKEMON HNS
+	GAME_VERSION 	:= POKEMON_SK
+	TITLE       	:= POKEMON SK
 	GAME_CODE   	:= BPEE
 	BUILD_NAME  	:= sk
 	MAP_VERSION 	:= sk
@@ -37,8 +37,8 @@ endif
 endif
 
 # Whether HNS's own Johto/Kanto map scripts (data/event_scripts.s) should be assembled in.
-# Kept separate from GAME_VERSION/IS_HNS, which stays POKEMON_HNS for the `sk` build too
-# (it gates shared engine features, not HNS's own region content).
+# Kept separate from IS_HNS, which is also true for `sk` because it gates shared
+# engine conventions rather than HNS's own region content.
 ifeq ($(BUILD_NAME),hns)
 	INCLUDE_HNS_CONTENT := 1
 else
@@ -211,7 +211,7 @@ ifeq ($(UNUSED_ERROR),0)
   endif
 endif
 
-ifeq ($(GAME_VERSION),POKEMON_HNS)
+ifneq (,$(filter POKEMON_HNS POKEMON_SK,$(GAME_VERSION)))
   override CFLAGS += -Wno-error=override-init
 endif
 
@@ -639,25 +639,13 @@ firered: all
 leafgreen: all
 hns: all
 
-# `make sk` auto-toggles include/fieldmap.h to the build-safe HNS/FRLG
-# porymap convention before building, then back to the Emerald convention
-# (the one all Tessera content actually uses) afterward, so porymap.exe
-# always shows the right tiles by default without needing
-# `./porymap_layout.sh` run by hand. If the build fails, this deliberately
-# does NOT flip back to emerald -- fieldmap.h stays in the build-safe hns
-# state so a retry build still works correctly.
-#
-# It also runs dedupe_region_map_sections.py first: porymap's Region Map
-# Editor periodically re-injects bare duplicate MAPSEC stub entries into
-# region_map_sections.json (it doesn't understand this repo's per-game
-# map_sections split), which breaks the build with a "redeclaration of
-# enumerator" error. The script strips those stubs before they can matter.
+# Older porymap versions always write newly-seen map sections to the base
+# map_sections array, even when this project selects sk_map_sections. Remove
+# only those bare duplicate stubs before jsonproc reads the file.
 .PHONY: sk
 sk:
-	@python3 tools/dedupe_region_map_sections.py
-	@./porymap_layout.sh hns
+	@python3 tools/dedupe_region_map_sections.py --fix
 	$(MAKE) BUILD=sk all
-	@./porymap_layout.sh emerald
 # Symbol file (`make syms`)
 $(SYM): $(ELF)
 	$(OBJDUMP) -t $< | sort -u | grep -E "^0[2389]" | $(PERL) -p -e 's/^(\w{8}) (\w).{6} \S+\t(\w{8}) (\S+)$$/\1 \2 \3 \4/g' > $@

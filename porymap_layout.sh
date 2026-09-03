@@ -1,66 +1,57 @@
 #!/usr/bin/env bash
-# Toggles include/fieldmap.h between the two porymap-editing conventions.
+# Toggles only porymap's editing convention. Compiled HNS/SK builds select
+# their runtime constants through POKEMON_HNS/POKEMON_SK and are unaffected.
 #
 # porymap has no concept of pokehns' per-map dynamic layoutVersion boundary
 # (512 tiles/metatiles for Emerald-convention maps vs 640 for HNS/FRLG-convention
 # maps) -- it only ever reads whatever NUM_TILES_IN_PRIMARY / NUM_METATILES_IN_PRIMARY
 # / NUM_PALS_IN_PRIMARY currently say. This script flips those (and their _EMERALD
 # counterparts) between the two states so you can correctly view/edit whichever
-# kind of map you're working on.
-#
-# IMPORTANT: this file is also compiled into the actual game. The engine's
-# runtime layoutVersion switch (GetNumTilesInPrimary() etc. in src/fieldmap.c)
-# relies on NUM_TILES_IN_PRIMARY meaning "the HNS/FRLG 640 case" and
-# NUM_TILES_IN_PRIMARY_EMERALD meaning "the Emerald 512 case" -- always, regardless
-# of which literal values are currently assigned to them. Building the ROM while
-# in "emerald" state (i.e. with those meanings swapped) will silently swap the
-# primary/secondary boundary for every map in the game. Always switch back to
-# "hns" before running `make`.
+# kind of map you're working on. It also selects that game's region-map section
+# array so Porymap does not inject missing-location stubs into map_sections.
 #
 # Usage:
-#   ./porymap_layout.sh hns       # 640/640/7 -- for editing HNS/FRLG-convention maps in porymap (default/build-safe state)
-#   ./porymap_layout.sh emerald   # 512/512/6 -- for editing Emerald-convention maps in porymap (DO NOT BUILD in this state)
+#   ./porymap_layout.sh hns       # 640/640/7 -- edit HNS/FRLG-convention maps
+#   ./porymap_layout.sh emerald   # 512/512/6 -- edit Emerald/Tessera maps
 #   ./porymap_layout.sh status    # show current state
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 FIELDMAP="$SCRIPT_DIR/include/fieldmap.h"
+PORYMAP_PROJECT="$SCRIPT_DIR/porymap.project.json"
 
-current_value() {
-    grep -m1 -E '^#define NUM_TILES_IN_PRIMARY [0-9]+$' "$FIELDMAP" | awk '{print $3}'
-}
-
-set_values() {
-    local tiles=$1 metatiles=$2 pals=$3 tiles_em=$4 metatiles_em=$5 pals_em=$6
-    sed -i \
-        -e "s/^#define NUM_TILES_IN_PRIMARY [0-9]\+\$/#define NUM_TILES_IN_PRIMARY $tiles/" \
-        -e "s/^#define NUM_METATILES_IN_PRIMARY [0-9]\+\$/#define NUM_METATILES_IN_PRIMARY $metatiles/" \
-        -e "s/^#define NUM_PALS_IN_PRIMARY [0-9]\+\$/#define NUM_PALS_IN_PRIMARY $pals/" \
-        -e "s/^#define NUM_TILES_IN_PRIMARY_EMERALD [0-9]\+\$/#define NUM_TILES_IN_PRIMARY_EMERALD $tiles_em/" \
-        -e "s/^#define NUM_METATILES_IN_PRIMARY_EMERALD [0-9]\+\$/#define NUM_METATILES_IN_PRIMARY_EMERALD $metatiles_em/" \
-        -e "s/^#define NUM_PALS_IN_PRIMARY_EMERALD [0-9]\+\$/#define NUM_PALS_IN_PRIMARY_EMERALD $pals_em/" \
-        "$FIELDMAP"
+set_region_map_sections() {
+    local section_key=$1
+    sed -i -E \
+        "s/(\"key_region_map_sections\"[[:space:]]*:[[:space:]]*\")[^\"]+(\")/\\1${section_key}\\2/" \
+        "$PORYMAP_PROJECT"
 }
 
 case "${1:-status}" in
     hns)
-        set_values 640 640 7 512 512 6
+        if ! grep -q '^#define PORYMAP_HNS 1$' "$FIELDMAP"; then
+            sed -i '/^#define GUARD_FIELDMAP_H$/a #define PORYMAP_HNS 1' "$FIELDMAP"
+        fi
+        set_region_map_sections hns_map_sections
         echo "fieldmap.h -> HNS/FRLG porymap convention (640/640/7)."
-        echo "This is the build-safe state. Safe to 'make hns' now."
+        echo "porymap.project.json -> hns_map_sections."
+        echo "ROM builds remain safe in either porymap state."
         ;;
     emerald)
-        set_values 512 512 6 640 640 7
+        sed -i '/^#define PORYMAP_HNS 1$/d' "$FIELDMAP"
+        set_region_map_sections sk_map_sections
         echo "fieldmap.h -> Emerald porymap convention (512/512/6)."
-        echo "WARNING: do NOT build the ROM in this state -- run './porymap_layout.sh hns' first."
+        echo "porymap.project.json -> sk_map_sections."
+        echo "ROM builds remain safe in either porymap state."
         ;;
     status)
-        v=$(current_value)
-        case "$v" in
-            640) echo "Currently: HNS/FRLG convention (640/640/7) -- build-safe." ;;
-            512) echo "Currently: Emerald convention (512/512/6) -- NOT build-safe, switch back to 'hns' before make." ;;
-            *)   echo "Currently: unrecognized value ($v)" ;;
-        esac
+        if grep -q '^#define PORYMAP_HNS 1$' "$FIELDMAP"; then
+            echo "Currently: HNS/FRLG porymap convention (640/640/7)."
+        else
+            echo "Currently: Emerald/Tessera porymap convention (512/512/6)."
+        fi
+        grep -m1 '"key_region_map_sections"' "$PORYMAP_PROJECT"
         ;;
     *)
         echo "Usage: $0 [hns|emerald|status]"

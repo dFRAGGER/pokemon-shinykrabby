@@ -676,8 +676,10 @@ string generate_map_constants_text(string groups_filepath, Json groups_data, vec
 
 void clean_heal_locations(vector<string> &valid_map_ids)
 {
+    const string filepath = "src/data/heal_locations.json";
+    const string original_json = read_text_file(filepath);
     std::stringstream new_json;
-    std::ifstream infile("src/data/heal_locations.json");
+    std::istringstream infile(original_json);
     bool deleted_flag = false;
 
     std::regex map_regex("\"respawn_map\"\\s*:\\s*\"(MAP_\\w+)\"");
@@ -699,7 +701,12 @@ void clean_heal_locations(vector<string> &valid_map_ids)
         }
     }
 
-    write_text_file("src/data/heal_locations.json", new_json.str());
+    if (new_json.str() != original_json)
+    {
+        const string temporary_filepath = filepath + ".tmp";
+        write_text_file(temporary_filepath, new_json.str());
+        std::filesystem::rename(temporary_filepath, filepath);
+    }
 }
 
 // Output paths are directories with trailing path separators

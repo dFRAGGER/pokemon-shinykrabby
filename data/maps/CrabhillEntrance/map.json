@@ -258,11 +258,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "PetalburgWoods_EventScript_Lyle",
+      "script": "CrabhillEntrance_EventScript_Lyle",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_SK",
       "x": 10,
       "y": 41,
       "elevation": 0,
@@ -276,12 +276,12 @@
     },
     {
       "local_id": "LOCALID_JACOB",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "graphics_id": "OBJ_EVENT_GFX_SAGE_SK",
       "x": 33,
       "y": 13,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
-      "movement_range_x": 0,
+      "movement_range_x": 1,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
@@ -335,7 +335,7 @@
       "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
@@ -445,7 +445,7 @@
       "flag": "FLAG_SHINY_KRABBY_ENCOUNTER"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_SK",
       "x": 36,
       "y": 10,
       "elevation": 0,

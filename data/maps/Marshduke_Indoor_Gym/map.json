@@ -3,7 +3,7 @@
   "name": "Marshduke_Indoor_Gym",
   "layout": "LAYOUT_MARSHDUKE_INDOOR_GYM",
   "music": "MUS_GYM",
-  "region_map_section": "MAPSEC_MOSSDEEP_CITY",
+  "region_map_section": "MAPSEC_MARSHDUKE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "MossdeepCity_Gym_EventScript_Preston",
+      "script": "Marshduke_Indoor_Gym_EventScript_Preston",
       "flag": "0"
     },
     {
@@ -50,7 +50,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "MossdeepCity_Gym_EventScript_Blake",
+      "script": "Marshduke_Indoor_Gym_EventScript_Blake",
       "flag": "0"
     },
     {
@@ -63,7 +63,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "MossdeepCity_Gym_EventScript_Maura",
+      "script": "Marshduke_Indoor_Gym_EventScript_Maura",
       "flag": "0"
     },
     {
@@ -76,7 +76,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "MossdeepCity_Gym_EventScript_Samantha",
+      "script": "Marshduke_Indoor_Gym_EventScript_Samantha",
       "flag": "0"
     },
     {
@@ -89,7 +89,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "MossdeepCity_Gym_EventScript_Virgil",
+      "script": "Marshduke_Indoor_Gym_EventScript_Virgil",
       "flag": "0"
     },
     {
@@ -102,7 +102,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "MossdeepCity_Gym_EventScript_Hannah",
+      "script": "Marshduke_Indoor_Gym_EventScript_Hannah",
       "flag": "0"
     },
     {
@@ -232,7 +232,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "MossdeepCity_Gym_EventScript_Nate",
+      "script": "Marshduke_Indoor_Gym_EventScript_Nate",
       "flag": "0"
     },
     {
@@ -245,7 +245,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "MossdeepCity_Gym_EventScript_Sylvia",
+      "script": "Marshduke_Indoor_Gym_EventScript_Sylvia",
       "flag": "0"
     },
     {
@@ -336,7 +336,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "MossdeepCity_Gym_EventScript_Clifford",
+      "script": "Marshduke_Indoor_Gym_EventScript_Clifford",
       "flag": "0"
     },
     {
@@ -362,7 +362,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "MossdeepCity_Gym_EventScript_Macey",
+      "script": "Marshduke_Indoor_Gym_EventScript_Macey",
       "flag": "0"
     },
     {
@@ -375,7 +375,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "MossdeepCity_Gym_EventScript_Kathleen",
+      "script": "Marshduke_Indoor_Gym_EventScript_Kathleen",
       "flag": "0"
     },
     {
@@ -427,7 +427,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "MossdeepCity_Gym_EventScript_Nicholas",
+      "script": "Marshduke_Indoor_Gym_EventScript_Nicholas",
       "flag": "0"
     },
     {

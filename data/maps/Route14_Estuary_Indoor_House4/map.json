@@ -3,7 +3,7 @@
   "name": "Route14_Estuary_Indoor_House4",
   "layout": "LAYOUT_ROUTE14_ESTUARY_INDOOR_HOUSE4",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_SK_ROUTE_14",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",

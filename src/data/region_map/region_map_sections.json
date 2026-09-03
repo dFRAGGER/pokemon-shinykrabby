@@ -709,7 +709,7 @@
     },
     {
       "id": "MAPSEC_POKEMON_MANSION",
-      "name": "POK\u00e9MON MANSION",
+      "name": "POKéMON MANSION",
       "x": 4,
       "y": 14,
       "width": 1,
@@ -725,7 +725,7 @@
     },
     {
       "id": "MAPSEC_POKEMON_LEAGUE",
-      "name": "POK\u00e9MON LEAGUE",
+      "name": "POKéMON LEAGUE",
       "x": 2,
       "y": 3,
       "width": 1,
@@ -733,7 +733,7 @@
     },
     {
       "id": "MAPSEC_POKEMON_TOWER",
-      "name": "POK\u00e9MON TOWER",
+      "name": "POKéMON TOWER",
       "x": 18,
       "y": 6,
       "width": 1,
@@ -1218,78 +1218,6 @@
     {
       "id": "MAPSEC_NAVEL_ROCK",
       "name": "NAVEL ROCK"
-    },
-    {
-      "id": "MAPSEC_ROUTE_06",
-      "name": "Route 6",
-      "x": 7,
-      "y": 6,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_WEST_LION_MOUNTAIN",
-      "name": "West Lion Mountain",
-      "x": 7,
-      "y": 6,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_ROUTE_012",
-      "name": "Route 12",
-      "x": 7,
-      "y": 6,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_ROUTE_05",
-      "name": "Route 5",
-      "x": 7,
-      "y": 6,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_EAST_LION_MOUNTAIN",
-      "name": "East Lion Mountain",
-      "x": 7,
-      "y": 6,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_CLOUD_FOREST",
-      "name": "The Cloud Forest",
-      "x": 7,
-      "y": 6,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_ROUTE_07",
-      "name": "Route 7",
-      "x": 7,
-      "y": 6,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_ROUTE_08",
-      "name": "Route 8",
-      "x": 7,
-      "y": 6,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_ROUTE_09",
-      "name": "Route 9",
-      "x": 7,
-      "y": 6,
-      "width": 1,
-      "height": 1
     }
   ],
   "hns_map_sections": [
@@ -2245,86 +2173,336 @@
       "width": 1,
       "x": 6,
       "y": 11
-    },
+    }
+  ],
+  "sk_map_sections": [
     {
+      "height": 1,
       "id": "MAPSEC_SK_ROUTE_10",
       "name": "Route 10",
-      "x": 7,
-      "y": 6,
       "width": 1,
-      "height": 1
+      "x": 1,
+      "y": 11
     },
     {
+      "height": 1,
       "id": "MAPSEC_LIONS_ARCH_CITY",
       "name": "Lions Arch City",
-      "x": 0,
-      "y": 2,
       "width": 1,
-      "height": 1
+      "x": 0,
+      "y": 2
     },
     {
+      "height": 1,
       "id": "MAPSEC_ROUTE_04",
       "name": "Route 4",
+      "width": 4,
       "x": 3,
-      "y": 10,
-      "width": 3,
-      "height": 1
+      "y": 10
     },
     {
+      "height": 1,
       "id": "MAPSEC_SILTROOT_TOWN",
       "name": "Siltroot Town",
-      "x": 2,
-      "y": 10,
       "width": 1,
-      "height": 1
+      "x": 2,
+      "y": 10
     },
     {
+      "height": 1,
       "id": "MAPSEC_ROUTE_01",
       "name": "Route 1",
-      "x": 7,
-      "y": 14,
       "width": 2,
-      "height": 1
+      "x": 7,
+      "y": 14
     },
     {
+      "height": 1,
       "id": "MAPSEC_MAASJE",
       "name": "Maasje",
-      "x": 7,
-      "y": 13,
       "width": 1,
-      "height": 1
+      "x": 7,
+      "y": 13
     },
     {
+      "height": 1,
       "id": "MAPSEC_ERPUS_CITY",
       "name": "Erp Town",
-      "x": 9,
-      "y": 14,
       "width": 1,
-      "height": 1
+      "x": 9,
+      "y": 14
     },
     {
+      "height": 1,
       "id": "MAPSEC_MIST_CITY",
       "name": "Mist City",
-      "x": 6,
-      "y": 9,
       "width": 2,
-      "height": 1
+      "x": 6,
+      "y": 9
     },
     {
+      "height": 2,
       "id": "MAPSEC_ROUTE_02",
       "name": "Route 2",
-      "x": 7,
-      "y": 11,
       "width": 1,
-      "height": 2
+      "x": 7,
+      "y": 11
     },
     {
+      "height": 1,
       "id": "MAPSEC_ROUTE_03",
       "name": "Route 3",
-      "x": 7,
-      "y": 10,
       "width": 1,
-      "height": 1
+      "x": 7,
+      "y": 10
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_ROUTE_06",
+      "name": "Route 6",
+      "width": 3,
+      "x": 1,
+      "y": 1
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_WEST_LION_MOUNTAIN",
+      "name": "West Lion Mountain",
+      "width": 2,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "height": 6,
+      "id": "MAPSEC_ROUTE_012",
+      "name": "Route 12",
+      "width": 1,
+      "x": 1,
+      "y": 3
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_ROUTE_05",
+      "name": "Route 5",
+      "width": 1,
+      "x": 0,
+      "y": 1
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_EAST_LION_MOUNTAIN",
+      "name": "East Lion Mountain",
+      "width": 2,
+      "x": 2,
+      "y": 0
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_CLOUD_FOREST",
+      "name": "The Cloud Forest",
+      "width": 2,
+      "x": 5,
+      "y": 8
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_ROUTE_07",
+      "name": "Route 7",
+      "width": 4,
+      "x": 2,
+      "y": 11
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_ROUTE_08",
+      "name": "Route 8",
+      "width": 1,
+      "x": 5,
+      "y": 13
+    },
+    {
+      "height": 2,
+      "id": "MAPSEC_ROUTE_09",
+      "name": "Route 9",
+      "width": 1,
+      "x": 6,
+      "y": 11
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_SK_ROUTE_11",
+      "name": "Route 11",
+      "width": 1,
+      "x": 2,
+      "y": 9
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_SK_ROUTE_13",
+      "name": "Route 13",
+      "width": 3,
+      "x": 7,
+      "y": 2
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_SK_ROUTE_14",
+      "name": "Route 14",
+      "width": 4,
+      "x": 10,
+      "y": 2
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_SK_ROUTE_15",
+      "name": "Route 15",
+      "width": 3,
+      "x": 1,
+      "y": 2
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_SK_ROUTE_16",
+      "name": "Route 16",
+      "width": 3,
+      "x": 4,
+      "y": 2
+    },
+    {
+      "height": 2,
+      "id": "MAPSEC_SK_ROUTE_17",
+      "name": "Route 17",
+      "width": 1,
+      "x": 13,
+      "y": 3
+    },
+    {
+      "height": 2,
+      "id": "MAPSEC_SK_ROUTE_18",
+      "name": "Route 18",
+      "width": 1,
+      "x": 13,
+      "y": 5
+    },
+    {
+      "height": 2,
+      "id": "MAPSEC_SK_ROUTE_19",
+      "name": "Route 19",
+      "width": 1,
+      "x": 13,
+      "y": 7
+    },
+    {
+      "height": 2,
+      "id": "MAPSEC_SK_ROUTE_20",
+      "name": "Route 20",
+      "width": 1,
+      "x": 13,
+      "y": 9
+    },
+    {
+      "height": 2,
+      "id": "MAPSEC_SK_ROUTE_21",
+      "name": "Route 21",
+      "width": 1,
+      "x": 13,
+      "y": 11
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_SK_ROUTE_22",
+      "name": "Route 22",
+      "width": 1,
+      "x": 10,
+      "y": 13
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_SK_ROUTE_23",
+      "name": "Route 23",
+      "width": 3,
+      "x": 10,
+      "y": 14
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_MARSHDUKE_CITY",
+      "name": "Marshduke City",
+      "width": 1,
+      "x": 10,
+      "y": 1
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_BALKUM_TOWN",
+      "name": "Balkum Town",
+      "width": 1,
+      "x": 12,
+      "y": 7
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_HEZIK_TOWN",
+      "name": "Hezik Town",
+      "width": 1,
+      "x": 14,
+      "y": 11
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_UJE_TOWN",
+      "name": "Uje Town",
+      "width": 1,
+      "x": 18,
+      "y": 12
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_BIKE_PARK",
+      "name": "Bike Park",
+      "width": 1,
+      "x": 4,
+      "y": 1
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_AUTUMN_RUINS",
+      "name": "Autumn Ruins",
+      "width": 1,
+      "x": 14,
+      "y": 8
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_ISLAND_MECHERCHAR",
+      "name": "Mecherchar Island",
+      "width": 1,
+      "x": 18,
+      "y": 13
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_ISLAND_OHIANA",
+      "name": "Ohiana Island",
+      "width": 1,
+      "x": 19,
+      "y": 13
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_SHADOW_LANDS",
+      "name": "The Shadow Lands",
+      "width": 1,
+      "x": 16,
+      "y": 7
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_BERNRODE",
+      "name": "Bernrode",
+      "width": 1,
+      "x": 16,
+      "y": 10
     }
   ]
 }

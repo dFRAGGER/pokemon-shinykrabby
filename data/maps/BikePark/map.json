@@ -3,7 +3,7 @@
   "name": "BikePark",
   "layout": "LAYOUT_BIKE_PARK",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ROUTE_06",
+  "region_map_section": "MAPSEC_BIKE_PARK",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",

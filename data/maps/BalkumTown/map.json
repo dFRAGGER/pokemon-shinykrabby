@@ -3,7 +3,7 @@
   "name": "BalkumTown",
   "layout": "LAYOUT_BALKUM_TOWN",
   "music": "MUS_B_ARENA",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_BALKUM_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",

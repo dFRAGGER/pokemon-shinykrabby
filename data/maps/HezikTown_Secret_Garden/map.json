@@ -3,7 +3,7 @@
   "name": "HezikTown_Secret_Garden",
   "layout": "LAYOUT_HEZIK_TOWN_SECRET_GARDEN",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_HEZIK_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
