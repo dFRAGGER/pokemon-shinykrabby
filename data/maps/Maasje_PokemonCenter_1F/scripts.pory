@@ -10,6 +10,7 @@ mapscripts Maasje_PokemonCenter_1F_MapScripts {
 script Maasje_PokemonCenter_1F_OnTransition {
     setrespawn(HEAL_LOCATION_MAASJE)
     setflag(FLAG_DISABLE_FOLLOWER_POKEMON)
+    callnative(UpdateFollowingPokemon)
     end
 }
 
@@ -40,7 +41,6 @@ script Maasje_Krabby_Cry_1F_Pokecenter {
 script Maasje_PokemonCenter_1F_Bryan_Trigger0 {
     lock
     setvar(VAR_BRYAN_POSITION, 1)
-    clearflag(FLAG_DISABLE_FOLLOWER_POKEMON)
     playse(SE_PIN)
     applymovement(2, moves(emote_exclamation_mark))
     delay(60)
@@ -54,7 +54,6 @@ script Maasje_PokemonCenter_1F_Bryan_Trigger0 {
 script Maasje_PokemonCenter_1F_Bryan_Trigger1 {
     lock
     setvar(VAR_BRYAN_POSITION, 1)
-    clearflag(FLAG_DISABLE_FOLLOWER_POKEMON)
     playse(SE_PIN)
     applymovement(2, moves(emote_exclamation_mark))
     delay(60)
@@ -68,7 +67,6 @@ script Maasje_PokemonCenter_1F_Bryan_Trigger1 {
 script Maasje_PokemonCenter_1F_Bryan_Trigger2 {
     lock
     setvar(VAR_BRYAN_POSITION, 1)
-    clearflag(FLAG_DISABLE_FOLLOWER_POKEMON)
     playse(SE_PIN)
     applymovement(2, moves(emote_exclamation_mark))
     delay(60)
@@ -82,7 +80,6 @@ script Maasje_PokemonCenter_1F_Bryan_Trigger2 {
 script Maasje_PokemonCenter_1F_Bryan_Trigger3 {
     lock
     setvar(VAR_BRYAN_POSITION, 1)
-    clearflag(FLAG_DISABLE_FOLLOWER_POKEMON)
     playse(SE_PIN)
     applymovement(2, moves(emote_exclamation_mark))
     delay(60)

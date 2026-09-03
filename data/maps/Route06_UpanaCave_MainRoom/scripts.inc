@@ -3,7 +3,7 @@ Route06_UpanaCave_MainRoom_MapScripts::
 
 
 UpanaCavesystem_Trainer_Charlie::
-	trainerbattle_double TRAINER_CHARLIE, UpanaCavesystem_Text_CharlieIntro, UpanaCavesystem_Text_CharlieDefeated, UpanaCavesystem_Text_CharlieNotEnoughMons
+	trainerbattle_double TRAINER_CHARLIE_UPANA_SK, UpanaCavesystem_Text_CharlieIntro, UpanaCavesystem_Text_CharlieDefeated, UpanaCavesystem_Text_CharlieNotEnoughMons
 	msgbox UpanaCavesystem_Text_CharliePostBattle, MSGBOX_AUTOCLOSE
 	end
 

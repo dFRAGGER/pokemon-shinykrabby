@@ -158,13 +158,13 @@ Route01_Battle_Factulty_Grunts2::
 
 
 Route01_EventScript_Calvin::
-	trainerbattle_single TRAINER_CALVIN_1, Route01_Text_CalvinIntro, Route01_Text_CalvinDefeated
+	trainerbattle_single TRAINER_CALVIN_1_SK, Route01_Text_CalvinIntro, Route01_Text_CalvinDefeated
 	msgbox Route01_Text_CalvinPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route01_EventScript_James::
-	trainerbattle_single TRAINER_JAMES_1, Route01_Text_JamesIntro, Route01_Text_JamesDefeated
+	trainerbattle_single TRAINER_JAMES_ROUTE01_SK, Route01_Text_JamesIntro, Route01_Text_JamesDefeated
 	msgbox Route01_Text_JamesPostBattle, MSGBOX_AUTOCLOSE
 	end
 

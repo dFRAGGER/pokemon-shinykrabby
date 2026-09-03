@@ -17,25 +17,25 @@ MiningCaveB1F_StartTremors_2:
 
 
 MiningCaveB1F_Trainer_Faculty_Addy::
-	trainerbattle_single TRAINER_MARY, MiningCaveB1F_Text_MadsIntro, MiningCaveB1F_Text_MadsDefeated
+	trainerbattle_single TRAINER_MADS_MINING_SK, MiningCaveB1F_Text_MadsIntro, MiningCaveB1F_Text_MadsDefeated
 	msgbox MiningCaveB1F_Text_MadsPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 MiningCaveB1F_Trainer_Faculty_Ad::
-	trainerbattle_single TRAINER_ALEXIA, MiningCaveB1F_Text_AdIntro, MiningCaveB1F_Text_AdDefeated
+	trainerbattle_single TRAINER_AD_MINING_SK, MiningCaveB1F_Text_AdIntro, MiningCaveB1F_Text_AdDefeated
 	msgbox MiningCaveB1F_Text_AdPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 MiningCave_Trainer_Faculty_Owen::
-	trainerbattle_single TRAINER_OWEN, MiningCave_Text_OwenIntro, MiningCave_Text_OwenDefeated
+	trainerbattle_single TRAINER_OWEN_MINING_SK, MiningCave_Text_OwenIntro, MiningCave_Text_OwenDefeated
 	msgbox MiningCave_Text_OwenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 MiningCave_Trainer_Faculty_Warren::
-	trainerbattle_single TRAINER_WARREN, MiningCave_Text_WarrenIntro, MiningCave_Text_WarrenDefeated
+	trainerbattle_single TRAINER_WARREN_MINING_SK, MiningCave_Text_WarrenIntro, MiningCave_Text_WarrenDefeated
 	msgbox MiningCave_Text_WarrenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -49,7 +49,7 @@ MiningCaveB1F_Barry_Battle::
 	setspeaker MiningCaveB1F_Barry_Battle_Text_0
 	msgbox MiningCaveB1F_Barry_Battle_Text_1, MSGBOX_AUTOCLOSE
 	waitmessage
-	trainerbattle_no_intro TRAINER_BARRY, MiningCaveB1F_Text_BarryDefeated
+	trainerbattle_no_intro TRAINER_BARRY_MINING_SK, MiningCaveB1F_Text_BarryDefeated
 	goto MiningCaveB1F_Barry_PostBattle
 	return
 

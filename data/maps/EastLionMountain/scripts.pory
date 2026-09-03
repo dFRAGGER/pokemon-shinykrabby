@@ -7,7 +7,7 @@ mapscripts EastLionMountain_MapScripts {}
 
 // FACULTY MEMBER 1 - Guards the mining cave entrance
 script EastLionMountain_Trainer_Faculty_Albert {
-    trainerbattle_single(TRAINER_ALBERT, EastLionMountain_Text_AlbertIntro, EastLionMountain_Text_AlbertDefeated)
+    trainerbattle_single(TRAINER_ALBERT_EAST_LION_SK, EastLionMountain_Text_AlbertIntro, EastLionMountain_Text_AlbertDefeated)
     msgbox(EastLionMountain_Text_AlbertPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
@@ -26,7 +26,7 @@ text EastLionMountain_Text_AlbertPostBattle {
 
 // FACULTY MEMBER 2 - Patrols the area
 script EastLionMountain_Trainer_Faculty_Samuel {
-    trainerbattle_single(TRAINER_SAMUEL, EastLionMountain_Text_SamuelIntro, EastLionMountain_Text_SamuelDefeated)
+    trainerbattle_single(TRAINER_SAMUEL_EAST_LION_SK, EastLionMountain_Text_SamuelIntro, EastLionMountain_Text_SamuelDefeated)
     msgbox(EastLionMountain_Text_SamuelPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
@@ -45,7 +45,7 @@ text EastLionMountain_Text_SamuelPostBattle {
 
 // REGULAR TRAINER - A hiker who witnessed the Faculty
 script EastLionMountain_Trainer_Vito {
-    trainerbattle_single(TRAINER_VITO, EastLionMountain_Text_VitoIntro, EastLionMountain_Text_VitoDefeated)
+    trainerbattle_single(TRAINER_VITO_EAST_LION_SK, EastLionMountain_Text_VitoIntro, EastLionMountain_Text_VitoDefeated)
     if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
         msgbox(EastLionMountain_Text_VitoPostBattle_After, MSGBOX_AUTOCLOSE)
     } else {

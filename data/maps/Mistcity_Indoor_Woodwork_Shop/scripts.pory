@@ -5,7 +5,7 @@ script Mistcity_Indoor_Woodwork_Shop_Silas {
     faceplayer
     if(!flag(FLAG_HELPED_DAN_BEAT_FACULTY)) {
         setspeaker("SILAS")
-        msgbox(format("Hello there.\p Welcome to my workshop.\p Or what's left of it.\p I'm {COLOR GREEN}Silas{COLOR DARK_GRAY}.\pI make my living carving figures from the fallen branches in the deepest part of the forest.\pBut...\pThe Faculty has blocked all paths.\pThey call the ancient trees 'safety hazards.'\pNow, I can't get the materials I need.\pI don't know what I'm going to do..."))
+        msgbox(format("Hello there.\p Welcome to my workshop.\p Or what's left of it.\p I'm {COLOR GREEN}Silas{COLOR DARK_GRAY}.\pI make my living carving figures from the fallen branches in the deepest part of the forest.\pBut...\pA group of men wearing brown suits has blocked all paths.\pThey call the ancient trees 'safety hazards.'\pNow, I can't get the materials I need.\pI don't know what I'm going to do..."))
         waitmessage
         release
         end 

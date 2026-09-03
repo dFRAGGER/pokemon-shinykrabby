@@ -27,6 +27,17 @@ DeepCloudForest_FacultyGorge_David_Dialogue::
 	return
 
 
+DeepCloudforest_FacultyGorge_Nash_Holding_On::
+	lock
+	faceplayer
+	setspeaker DeepCloudforest_FacultyGorge_Nash_Holding_On_Text_0
+	msgbox DeepCloudforest_FacultyGorge_Nash_Holding_On_Text_1, MSGBOX_AUTOCLOSE
+	applymovement 22, DeepCloudforest_FacultyGorge_Nash_Holding_On_Movement_0
+	waitmovement
+	release
+	return
+
+
 DeepCloudForest_FacultyGorge_GetOutTruck::
 	lock
 	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_0
@@ -37,14 +48,14 @@ DeepCloudForest_FacultyGorge_GetOutTruck::
 	waitmovement
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_2
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_0
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_1, MSGBOX_AUTOCLOSE
+	setspeaker DeepCloudforest_FacultyGorge_Nash_Holding_On_Text_0
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_0, MSGBOX_AUTOCLOSE
 	waitmessage
 	delay 60
 	applymovement 7, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_3
 	waitmovement
 	setspeaker DeepCloudForest_FacultyGorge_David_Dialogue_Text_0
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_2, MSGBOX_AUTOCLOSE
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_1, MSGBOX_AUTOCLOSE
 	waitmessage
 	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_4
 	waitmovement
@@ -54,12 +65,12 @@ DeepCloudForest_FacultyGorge_GetOutTruck::
 	applymovement 7, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_5
 	waitmovement
 	setspeaker DeepCloudForest_FacultyGorge_David_Dialogue_Text_0
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_3, MSGBOX_AUTOCLOSE
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_2, MSGBOX_AUTOCLOSE
 	waitmessage
 	applymovement 7, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_6
 	waitmovement
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_0
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_4, MSGBOX_AUTOCLOSE
+	setspeaker DeepCloudforest_FacultyGorge_Nash_Holding_On_Text_0
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_3, MSGBOX_AUTOCLOSE
 	applymovement 6, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_6
 	waitmovement
 	applymovement 16, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_6
@@ -73,37 +84,40 @@ DeepCloudForest_FacultyGorge_GetOutTruck::
 	waitmovement
 	clearflag FLAG_FACULTY_GORGE_NASH2
 	clearflag FLAG_DAVID_TRUCK
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_5
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_6, MSGBOX_AUTOCLOSE
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_4
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_5, MSGBOX_AUTOCLOSE
 	waitmessage
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_7
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_8, MSGBOX_AUTOCLOSE
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_6
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_7, MSGBOX_AUTOCLOSE
 	waitmessage
 	playse SE_PIN
 	applymovement 2, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_9
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_9
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_10, MSGBOX_AUTOCLOSE
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_8
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_9, MSGBOX_AUTOCLOSE
 	waitmessage
 	delay 40
 	applymovement 2, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_10
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_9
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_11, MSGBOX_AUTOCLOSE
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_8
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_10, MSGBOX_AUTOCLOSE
 	waitmessage
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_5
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_12, MSGBOX_AUTOCLOSE
+	playse SE_PIN
+	applymovement 5, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_11
+	waitmovement
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_4
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_11, MSGBOX_AUTOCLOSE
 	waitmessage
 	playse SE_PIN
 	applymovement 2, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_11
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_9
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_13, MSGBOX_AUTOCLOSE
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_8
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_12, MSGBOX_AUTOCLOSE
 	waitmessage
 	applymovement 3, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_12
 	applymovement 1, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_12
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_14
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_15, MSGBOX_AUTOCLOSE
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_13
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_14, MSGBOX_AUTOCLOSE
 	waitmessage
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_5
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_16, MSGBOX_AUTOCLOSE
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_4
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_15, MSGBOX_AUTOCLOSE
 	waitmessage
 	playse SE_M_HEADBUTT
 	applymovement 14, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_13
@@ -114,11 +128,11 @@ DeepCloudForest_FacultyGorge_GetOutTruck::
 	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_10
 	applymovement 17, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_3
 	waitmovement
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_0
-	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_17, MSGBOX_AUTOCLOSE
-	applymovement 17, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_15
-	applymovement 18, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_16
-	applymovement 19, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_17
+	setspeaker DeepCloudforest_FacultyGorge_Nash_Holding_On_Text_0
+	msgbox DeepCloudForest_FacultyGorge_GetOutTruck_Text_16, MSGBOX_AUTOCLOSE
+	applymovement 17, DeepCloudforest_FacultyGorge_Nash_Holding_On_Movement_0
+	applymovement 18, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_15
+	applymovement 19, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_16
 	waitmovement
 	setflag FLAG_FACULTY_GORGE_NASH2
 	removeobject 18
@@ -133,7 +147,7 @@ DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts::
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_2
 	waitmovement
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_0
+	setspeaker DeepCloudforest_FacultyGorge_Nash_Holding_On_Text_0
 	msgbox DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Text_0
 	waitmessage
 	playse SE_M_BITE
@@ -141,10 +155,10 @@ DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts::
 	waitmovement
 	applymovement 22, DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Movement_1
 	waitmovement
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_0
+	setspeaker DeepCloudforest_FacultyGorge_Nash_Holding_On_Text_0
 	msgbox DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Text_1, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement 22, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_15
+	applymovement 22, DeepCloudforest_FacultyGorge_Nash_Holding_On_Movement_0
 	waitmovement
 	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Movement_2
 	waitmovement
@@ -173,7 +187,7 @@ DeepCloudForest_FacultyGorge_Daan_Rescue_Start_4:
 	playse SE_PIN
 	applymovement 5, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_5
 	waitmovement
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_5
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_4
 	msgbox DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_0, MSGBOX_AUTOCLOSE
 	waitmessage
 	delay 40
@@ -186,18 +200,18 @@ DeepCloudForest_FacultyGorge_Daan_Rescue_Start_4:
 	applymovement 2, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_9
 	applymovement 12, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_10
 	waitmovement
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_9
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_8
 	msgbox DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_1, MSGBOX_AUTOCLOSE
 	waitmessage
 	applymovement 2, DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Movement_1
 	waitmovement
 	delay 40
-	applymovement 2, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_15
+	applymovement 2, DeepCloudforest_FacultyGorge_Nash_Holding_On_Movement_0
 	waitmovement
 	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_11
 	waitmovement
 	special RemoveCameraObject
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_9
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_8
 	msgbox DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_2, MSGBOX_AUTOCLOSE
 	waitmessage
 	applymovement 2, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_12
@@ -213,7 +227,7 @@ DeepCloudForest_FacultyGorge_Daan_Rescue_Start_4:
 	applymovement 13, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_17
 	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_3
 	waitmovement
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_9
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_8
 	msgbox DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_3
 	waitmessage
 	trainerbattle_no_intro TRAINER_BARRY_DEEPCLOUDFOREST, Deepcloudforest_Barry_Defeattext
@@ -248,24 +262,24 @@ Deepcloudforest_Barry_Defeated::
 	applymovement 4, Deepcloudforest_Barry_Defeated_Movement_0
 	applymovement 13, Deepcloudforest_Barry_Defeated_Movement_0
 	waitmovement
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_9
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_8
 	msgbox Deepcloudforest_Barry_Defeated_Text_0
 	waitmessage
 	playse SE_PIN
 	applymovement 4, Deepcloudforest_Barry_Defeated_Movement_1
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_7
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_6
 	msgbox Deepcloudforest_Barry_Defeated_Text_1, MSGBOX_AUTOCLOSE
 	waitmessage
 	playse SE_PIN
 	applymovement 5, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_11
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_5
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_4
 	msgbox Deepcloudforest_Barry_Defeated_Text_2, MSGBOX_AUTOCLOSE
 	delay 60
 	playse SE_POKENAV_CALL
 	delay 60
 	playse SE_PIN
 	applymovement 4, Deepcloudforest_Barry_Defeated_Movement_2
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_7
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_6
 	msgbox Deepcloudforest_Barry_Defeated_Text_3
 	waitmessage
 	applymovement 4, Deepcloudforest_Barry_Defeated_Movement_3
@@ -275,20 +289,20 @@ Deepcloudforest_Barry_Defeated::
 	playse SE_POKENAV_HANG_UP
 	applymovement 4, DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Movement_6
 	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Movement_1
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_7
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_6
 	msgbox Deepcloudforest_Barry_Defeated_Text_6, MSGBOX_AUTOCLOSE
 	waitmessage
 	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_3
 	playse SE_PIN
 	applymovement 2, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_11
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_9
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_8
 	msgbox Deepcloudforest_Barry_Defeated_Text_7, MSGBOX_AUTOCLOSE
 	waitmessage
 	playse SE_BALL_THROW
 	delay 40
 	playse SE_PIN
 	applymovement 26, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_11
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_0
+	setspeaker DeepCloudforest_FacultyGorge_Nash_Holding_On_Text_0
 	msgbox Deepcloudforest_Barry_Defeated_Text_8, MSGBOX_AUTOCLOSE
 	waitmessage
 	playse SE_BANG
@@ -308,10 +322,10 @@ Deepcloudforest_Barry_Defeated::
 	applymovement 5, Deepcloudforest_Barry_Defeated_Movement_4
 	waitmovement
 	special SpawnCameraObject
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_5
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_4
 	msgbox Deepcloudforest_Barry_Defeated_Text_9, MSGBOX_AUTOCLOSE
 	waitmessage
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_0
+	setspeaker DeepCloudforest_FacultyGorge_Nash_Holding_On_Text_0
 	msgbox Deepcloudforest_Barry_Defeated_Text_10, MSGBOX_AUTOCLOSE
 	waitmessage
 	applymovement 26, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_10
@@ -321,7 +335,7 @@ Deepcloudforest_Barry_Defeated::
 	applymovement LOCALID_PLAYER, DeepCloudForest_FacultyGorge_GetOutTruck_Movement_10
 	applymovement OBJ_EVENT_ID_CAMERA, Deepcloudforest_Barry_Defeated_Movement_5
 	waitmovement
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_0
+	setspeaker DeepCloudforest_FacultyGorge_Nash_Holding_On_Text_0
 	msgbox Deepcloudforest_Barry_Defeated_Text_11, MSGBOX_AUTOCLOSE
 	waitmessage
 	playse SE_PIN
@@ -333,7 +347,7 @@ Deepcloudforest_Barry_Defeated::
 	applymovement 5, Deepcloudforest_Barry_Defeated_Movement_6
 	waitmovement
 	applymovement 26, DeepCloudForest_FacultyGorge_Nash_Holds_2Grunts_Movement_1
-	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_5
+	setspeaker DeepCloudForest_FacultyGorge_GetOutTruck_Text_4
 	msgbox Deepcloudforest_Barry_Defeated_Text_13
 	waitmessage
 	setflag FLAG_DAAN_NASH_TRUCK
@@ -383,6 +397,10 @@ Deepcloudforest_Gorge_Goback::
 	release
 	return
 
+
+DeepCloudforest_FacultyGorge_Nash_Holding_On_Movement_0:
+	face_down
+	step_end
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_0:
 	jump_right
@@ -516,27 +534,23 @@ DeepCloudForest_FacultyGorge_GetOutTruck_Movement_14:
 	step_end
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_15:
-	face_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
 	step_end
 
 DeepCloudForest_FacultyGorge_GetOutTruck_Movement_16:
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	step_end
-
-DeepCloudForest_FacultyGorge_GetOutTruck_Movement_17:
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
@@ -758,43 +772,48 @@ DeepCloudForest_FacultyGorge_David_Dialogue_Text_0:
 	.string "DAVID$"
 
 DeepCloudForest_FacultyGorge_David_Dialogue_Text_1:
-	.string "Daan charged in there to fight the\n"
-	.string "Faculty, but I... I freeze up every time\l"
+	.string "DAAN charged in there to fight those\n"
+	.string "bastards, but I... I freeze up every time\l"
 	.string "I hear the buzzing of a Beedrill.\p"
 	.string "I'll just guard the entrance, you go\n"
 	.string "ahead and help him before I pass out\l"
 	.string "from the stress.$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_0:
+DeepCloudforest_FacultyGorge_Nash_Holding_On_Text_0:
 	.string "NASH$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_1:
+DeepCloudforest_FacultyGorge_Nash_Holding_On_Text_1:
+	.string "I'll hold these two off for now!\p"
+	.string "I'll be right behind you!$"
+
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_0:
 	.string "By Arceus... This is a massacre.\p"
 	.string "This isn't the usual logging activities\n"
 	.string "we see.\p"
-	.string "All the trees have been completely\n"
+	.string "Those trees have been completely\n"
 	.string "uprooted and removed.\p"
 	.string "Looks like somebody is looking for\n"
 	.string "something they can't find.$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_2:
-	.string "The signal... it's deafening here.\p"
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_1:
+	.string "The data... my sensors are going crazy\n"
+	.string "here.\p"
 	.string "All this random destruction is creating\n"
 	.string "so much chaotic energy...\p"
-	.string "But the Faculty's frequency...\p"
-	.string "...the clean, repeating pattern...\p"
-	.string "...it's close. Very close.$"
+	.string "One sec...\p"
+	.string "...DAAN should be...\p"
+	.string "...he's close. Very close.$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_3:
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_2:
 	.string "That way! Just over that ridge!$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_4:
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_3:
 	.string "Alright, team, let's move! Stay sharp!$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_5:
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_4:
 	.string "DAAN$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_6:
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_5:
 	.string "...and I won't let you touch these trees!\p"
 	.string "This forest is alive! It has a right to\n"
 	.string "exist!\p"
@@ -802,23 +821,23 @@ DeepCloudForest_FacultyGorge_GetOutTruck_Text_6:
 	.string "standing in your way? We depend on\l"
 	.string "every single one of them!$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_7:
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_6:
 	.string "JOS VANDERLOO$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_8:
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_7:
 	.string "Analysis: Subject is displaying\n"
 	.string "irrational, sentimental attachment to\l"
 	.string "non-productive biomass.\p"
 	.string "His methods are inefficient.$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_9:
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_8:
 	.string "BARRY$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_10:
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_9:
 	.string "Shut up Jos! I've got this.$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_11:
-	.string "...Listen to yourself, Daan!\p"
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_10:
+	.string "...Listen to yourself, DAAN!\p"
 	.string "You're clinging to this messy,\n"
 	.string "inefficient past.\p"
 	.string "The Faculty offers a real path to\n"
@@ -826,33 +845,33 @@ DeepCloudForest_FacultyGorge_GetOutTruck_Text_11:
 	.string "A structured path! Something you and\n"
 	.string "your 'friends' would never understand.$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_12:
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_11:
 	.string "Strength? You call this strength?!\p"
 	.string "Tearing down something that's taken a\n"
 	.string "thousand years to grow?\p"
-	.string "You're a coward, Barry, hiding behind\n"
+	.string "You're a coward, BARRY, hiding behind\n"
 	.string "their machines!$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_13:
-	.string "STOP CALLING ME BARRY, MY NAME IS\n"
-	.string "WOUTER YOU IDIOT!$"
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_12:
+	.string "STOP CALLING ME BARRY, MY NAME IS W O U\n"
+	.string "T E R YOU IDIOT!$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_14:
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_13:
 	.string "TON CROSS$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_15:
-	.string "Hey! Show some respect for the Junior\n"
-	.string "Administrator!\p"
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_14:
+	.string "Hey! Show some respect for the new\n"
+	.string "protégé of the boss!\p"
 	.string "Why don't you and your tree-hugging\n"
 	.string "Pokémon just give it up?$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_16:
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_15:
 	.string "NEVER!!\p"
 	.string "VENUSAUR, HEADBUTT!$"
 
-DeepCloudForest_FacultyGorge_GetOutTruck_Text_17:
+DeepCloudForest_FacultyGorge_GetOutTruck_Text_16:
 	.string "There he is.\p"
-	.string "Holding off two grunts and their leader.\p"
+	.string "Holding 3 people off on his own.\p"
 	.string "DAVID, stay back and monitor that\n"
 	.string "device.\p"
 	.string "{PLAYER}, looks like DAAN could use some\n"
@@ -874,14 +893,14 @@ DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_0:
 
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_1:
 	.string "YOU!?\p"
-	.string "Of course you'd show up to ruin\n"
-	.string "everything!\p"
+	.string "Of course you'd show up to ruin my\n"
+	.string "career again!\p"
 	.string "I should have known you'd be involved in\n"
 	.string "this chaos.$"
 
 DeepCloudForest_FacultyGorge_Daan_Rescue_Start_Text_2:
-	.string "Enough talk!\p"
-	.string "Grunts, deal with the ranger and that\n"
+	.string "But enough talk!\p"
+	.string "JOS, TON, deal with the ranger and that\n"
 	.string "tree hugger! {PLAYER} is mine!\p"
 	.string "Let's show them the true meaning of\n"
 	.string "order!$"
@@ -899,17 +918,17 @@ Deepcloudforest_Barry_Defeated_Text_0:
 	.string "sentimental...!$"
 
 Deepcloudforest_Barry_Defeated_Text_1:
-	.string "Administrator Barry... I mean Wouter!\n"
+	.string "Intern BARR... I mean WOUTER!\n"
 	.string "Cease communications at once!\p"
 	.string "That information is classified.\n"
 	.string "We are falling back.$"
 
 Deepcloudforest_Barry_Defeated_Text_2:
 	.string "Geological scans?\n"
-	.string "What are you talking about, Barry?\p"
-	.string "This was never just about cutting down\n"
-	.string "trees, was it?\p"
-	.string "What were you really looking for out\n"
+	.string "What are you talking about, BARRY?\p"
+	.string "This was never just about the trees,\n"
+	.string "was it?\p"
+	.string "What are you really looking for out\n"
 	.string "here?$"
 
 Deepcloudforest_Barry_Defeated_Text_3:
@@ -925,27 +944,30 @@ Deepcloudforest_Barry_Defeated_Text_4:
 Deepcloudforest_Barry_Defeated_Text_5:
 	.string ".....Well hello there children.\p"
 	.string "This is THE RECTOR speaking.\p"
-	.string "We have secured the Objective.\p"
+	.string "We are close to securing the Objective.\p"
 	.string "The target, codename: SILENT GUARDIAN,\n"
-	.string "is in our possession.\p"
-	.string "I repeat, the Silent Guardian has been\n"
-	.string "secured.\p"
+	.string "has been found.\p"
+	.string "I repeat, the SILENT GUARDIAN has been\n"
+	.string "found.\p"
 	.string "MUAHAHAHAHA...$"
 
 Deepcloudforest_Barry_Defeated_Text_6:
 	.string "It seems your victory here is\n"
 	.string "irrelevant.\p"
 	.string "While you were playing hero in the mud,\n"
-	.string "our primary team accomplished the\l"
-	.string "mission.\p"
+	.string "our primary team is securing the\l"
+	.string "Objective as we speak.\p"
 	.string "This was merely a distraction.$"
 
 Deepcloudforest_Barry_Defeated_Text_7:
-	.string "That's right!\n"
-	.string "You didn't win anything!\p"
+	.string "Wait... we weren't the primary team...?\p"
+	.string "But I thought...\p"
+	.string "Argghh who cares!\p"
+	.string "You lose, we win!\p"
 	.string "The Faculty always thinks two steps\n"
 	.string "ahead.\p"
-	.string "You haven't stopped a thing!\p"
+	.string "Did you hear that? You haven't stopped\n"
+	.string "a thing!\p"
 	.string "You've just proven how insignificant\n"
 	.string "you really are!\p"
 	.string "Catch this!$"
@@ -955,29 +977,31 @@ Deepcloudforest_Barry_Defeated_Text_8:
 	.string "away!$"
 
 Deepcloudforest_Barry_Defeated_Text_9:
-	.string "The 'Silent Guardian'... that's what\n"
-	.string "Elara called the legend!\p"
-	.string "I think they found it!$"
+	.string "The 'SILENT GUARDIAN'...\p"
+	.string "I thought that was just a legend...$"
 
 Deepcloudforest_Barry_Defeated_Text_10:
-	.string "They played us perfectly.$"
+	.string "Well, time to find out!$"
 
 Deepcloudforest_Barry_Defeated_Text_11:
-	.string "David! Can you track them?\p"
-	.string "That comms signal, the new objective...\n"
+	.string "DAVID! Can you track them?\p"
+	.string "A comms signal, the new objective...\n"
 	.string "anything!$"
 
 Deepcloudforest_Barry_Defeated_Text_12:
-	.string "I... I can't track them.\p"
-	.string "But the objective... the 'Guardian'... the\n"
-	.string "energy it's giving off is immense!\p"
+	.string "I... I can't track them directly.\p"
+	.string "But my scanner... I have never seen this\n"
+	.string "before...\p"
+	.string "There is a huge uptick in magnetic\n"
+	.string "energy!\p"
 	.string "It's overwhelming everything else!\p"
-	.string "It's moving fast, heading west!$"
+	.string "It's at the ancient meteorite, much\n"
+	.string "further to the west!$"
 
 Deepcloudforest_Barry_Defeated_Text_13:
-	.string "Nash! We have to go!\p"
-	.string "We can't let them get away with a piece\n"
-	.string "of this forest's soul!\p"
+	.string "NASH! We have to go!\p"
+	.string "We can't let them get away with\n"
+	.string "whatever they are trying to find!\p"
 	.string "Lets get back to the truck!$"
 
 Deepcloudforest_Gorge_Goback_Text_0:
@@ -989,12 +1013,12 @@ Deepcloudforest_Barry_Defeattext::
 	.string "him a while ago!$"
 
 Deepcloudforest_Text_Grunt1Intro::
-	.string "Chopping down these ancient trees is\n"
-	.string "hard work. You better not get in my way!$"
+	.string "Uprooting these ancient trees is hard\n"
+	.string "work. You better not get in my way!$"
 
 Deepcloudforest_Text_Grunt1Defeated::
-	.string "I'm too tired from all this woodcutting\n"
-	.string "to battle properly...$"
+	.string "I'm too tired from all this work to\n"
+	.string "battle properly...$"
 
 Deepcloudforest_Text_Grunt1PostBattle::
 	.string "We have orders to clear this whole area.\n"
@@ -1012,7 +1036,8 @@ Deepcloudforest_Text_Grunt2Defeated::
 Deepcloudforest_Text_Grunt2PostBattle::
 	.string "The readings aren't coming from a\n"
 	.string "normal Pokémon. It feels like living\l"
-	.string "metal is sleeping beneath this gorge.$"
+	.string "metal is sleeping somewhere in this part\l"
+	.string "of the forest.$"
 
 Deepcloudforest_Text_Grunt3Intro::
 	.string "This gorge is off-limits by order of the\n"

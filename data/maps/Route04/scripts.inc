@@ -101,31 +101,31 @@ Route04_Trainer_Deryck::
 
 
 Route04_Trainer_Leah::
-	trainerbattle_single TRAINER_LEAH, Route04_Text_LeahIntro, Route04_Text_LeahDefeated
+	trainerbattle_single TRAINER_LEAH_ROUTE04_SK, Route04_Text_LeahIntro, Route04_Text_LeahDefeated
 	msgbox Route04_Text_LeahPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route04_Trainer_Fredrick::
-	trainerbattle_single TRAINER_FREDRICK, Route04_Text_FredrickIntro, Route04_Text_FredrickDefeated
+	trainerbattle_single TRAINER_FREDRICK_ROUTE04_SK, Route04_Text_FredrickIntro, Route04_Text_FredrickDefeated
 	msgbox Route04_Text_FredrickPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route04_Trainer_Matt::
-	trainerbattle_single TRAINER_MATT, Route04_Text_MattIntro, Route04_Text_MattDefeated
+	trainerbattle_single TRAINER_MATT_ROUTE04_SK, Route04_Text_MattIntro, Route04_Text_MattDefeated
 	msgbox Route04_Text_MattPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route04_Trainer_Daisy::
-	trainerbattle_single TRAINER_DAISY, Route04_Text_DaisyIntro, Route04_Text_DaisyDefeated
+	trainerbattle_single TRAINER_DAISY_ROUTE04_SK, Route04_Text_DaisyIntro, Route04_Text_DaisyDefeated
 	msgbox Route04_Text_DaisyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route04_Trainer_Zander::
-	trainerbattle_single TRAINER_ZANDER, Route04_Text_ZanderIntro, Route04_Text_ZanderDefeated
+	trainerbattle_single TRAINER_ZANDER_ROUTE04_SK, Route04_Text_ZanderIntro, Route04_Text_ZanderDefeated
 	msgbox Route04_Text_ZanderPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -137,7 +137,7 @@ Route04_Trainer_Arielle::
 
 
 Route04_Trainer_Archie::
-	trainerbattle_single TRAINER_ARCHIE, Route04_Text_ArchieIntro, Route04_Text_ArchieDefeated
+	trainerbattle_single TRAINER_ARCHIE_ROUTE04_SK, Route04_Text_ArchieIntro, Route04_Text_ArchieDefeated
 	msgbox Route04_Text_ArchiePostBattle, MSGBOX_AUTOCLOSE
 	end
 

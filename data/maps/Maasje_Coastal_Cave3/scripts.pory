@@ -1,7 +1,7 @@
 mapscripts Maasje_Coastal_Cave3_MapScripts {}
 
 script Maasje_Coastal_Cave3_EventScript_Winston {
-    trainerbattle_single(TRAINER_WINSTON_1, Maasje_Coastal_Cave3_Text_WinstonIntro, Maasje_Coastal_Cave3_Text_WinstonDefeated)
+    trainerbattle_single(TRAINER_WINSTON_1_SK, Maasje_Coastal_Cave3_Text_WinstonIntro, Maasje_Coastal_Cave3_Text_WinstonDefeated)
     msgbox(Maasje_Coastal_Cave3_Text_WinstonPostBattle, MSGBOX_AUTOCLOSE)
     end
 }

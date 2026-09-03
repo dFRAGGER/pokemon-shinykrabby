@@ -195,7 +195,7 @@ Crabhill_Faculty_Lost_grunt::
 
 
 CrabhillEntrance_EventScript_Lyle::
-	trainerbattle_single TRAINER_LYLE, CrabhillEntrance_Text_LyleIntro, CrabhillEntrance_Text_LyleDefeated
+	trainerbattle_single TRAINER_LYLE_SK, CrabhillEntrance_Text_LyleIntro, CrabhillEntrance_Text_LyleDefeated
 	msgbox CrabhillEntrance_Text_LylePostBattle, MSGBOX_AUTOCLOSE
 	end
 

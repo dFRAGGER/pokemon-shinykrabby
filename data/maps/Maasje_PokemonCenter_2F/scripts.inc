@@ -1,5 +1,16 @@
 Maasje_PokemonCenter_2F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Maasje_PokemonCenter_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Maasje_PokemonCenter_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	call Maasje_PokemonCenter_2F_OnTransition
+	return
+
+
+Maasje_PokemonCenter_2F_OnTransition::
+	clearflag FLAG_DISABLE_FOLLOWER_POKEMON
+	callnative UpdateFollowingPokemon
+	end
 
 
 Maasje_PokemonCenter_2F_Red::

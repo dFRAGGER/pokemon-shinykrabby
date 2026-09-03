@@ -170,6 +170,8 @@ class WildEncounterAssembler:
                 version = "LEAFGREEN"
             elif "_Hns" in shared_label or "_hns" in shared_label:
                 version = "POKEMON_HNS"
+            elif "_SK" in shared_label or "_sk" in shared_label:
+                version = "POKEMON_SK"
 
             self.WriteLine(f"#ifdef {version}")
 
@@ -245,6 +247,8 @@ class WildEncounterAssembler:
                     version = "LEAFGREEN"
                 elif "_Hns" in shared_label or "_hns" in shared_label:
                     version = "POKEMON_HNS"
+                elif "_SK" in shared_label or "_sk" in shared_label:
+                    version = "POKEMON_SK"
                 self.WriteLine(f"#ifdef {version}")
                 for mon_type in self.config.mon_types:
                     if mon_type not in map_encounters:

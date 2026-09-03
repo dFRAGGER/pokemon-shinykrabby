@@ -256,7 +256,7 @@ Mistcity_Research_Center_Entrance_Daan_RescueMission_4:
 	waitmessage
 	applymovement 20, Mistcity_Research_Center_Entrance_Scientist_Tropius_Movement_0
 	waitmovement
-	delay 40
+	delay 90
 	applymovement 20, Mistcity_Research_Center_Entrance_Scientist_Shiftry_Movement_0
 	waitmovement
 	setspeaker Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_7
@@ -644,7 +644,10 @@ Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_0:
 Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_1:
 	.string "Hold it right there.\p"
 	.string "You're a skilled trainer, right?\p"
-	.string "...Good. We have a serious situation.\p"
+	.string "...\p"
+	.string "Researcher?\p"
+	.string "Even better.\p"
+	.string "We have a serious situation.\p"
 	.string "Join us.$"
 
 Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_2:
@@ -654,7 +657,7 @@ Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_2:
 	.string "getting all these weird reports from.\p"
 	.string "The alarm was triggered by a report of\n"
 	.string "illegal deforestation.\p"
-	.string "Our best ranger, Daan, took the first\n"
+	.string "Our best ranger, DAAN, took the first\n"
 	.string "truck out to investigate.\p"
 	.string "We were expecting a radio check-in an\n"
 	.string "hour ago, but we've gotten nothing but\l"
@@ -684,7 +687,7 @@ Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_4:
 	.string "well-equipped, and they're after\l"
 	.string "something specific.\p"
 	.string "Look for tracks, listen for machinery,\n"
-	.string "and find Daan.\p"
+	.string "and find DAAN.\p"
 	.string "But be careful, whoever is out there is\n"
 	.string "trying to tear the heart out of the\l"
 	.string "forest.$"
@@ -706,14 +709,13 @@ Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_5:
 	.string "well-equipped, and they're after\l"
 	.string "something specific.\p"
 	.string "Look for tracks, listen for machinery,\n"
-	.string "and find Daan.\p"
-	.string "But be careful, whoever is out there is\n"
-	.string "trying to tear the heart out of the\l"
-	.string "forest.$"
+	.string "and find DAAN.\p"
+	.string "But be careful, whoever is out there\n"
+	.string "seems to be organised and prepared.$"
 
 Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_6:
 	.string "I want to introduce you to two of my\n"
-	.string "people, Nash & David.$"
+	.string "people, NASH & DAVID.$"
 
 Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_7:
 	.string "NASH$"
@@ -726,9 +728,9 @@ Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_8:
 	.string "our six for any ambushes.\p"
 	.string "The reports about organized\n"
 	.string "trespassers are what worry me most.\p"
-	.string "Amateurs get lost; professionals leave\n"
-	.string "tracks like the ones we've seen.\p"
-	.string "Let's move out, find Daan, and make sure\n"
+	.string "The tracks we've seen seem to be from\n"
+	.string "professionals.\p"
+	.string "Let's move out, find DAAN, and make sure\n"
 	.string "whoever is doing this regrets stepping\l"
 	.string "foot in our forest.$"
 
@@ -746,10 +748,10 @@ Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_10:
 	.string "DAVID$"
 
 Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_11:
-	.string "I'm {COLOR GREEN}David Heartfield{COLOR DARK_GRAY}.\p"
+	.string "I'm DAVID HEARTFIELD.\p"
 	.string "I'm...\p"
 	.string "I'm not a great battler.\p"
-	.string "Nash is for the fighting.\p"
+	.string "NASH is for the fighting.\p"
 	.string "I'm here to find the wrongness.\p"
 	.string "The scientists... they said the\n"
 	.string "Parasect's mushroom was glowing.\p"
@@ -757,8 +759,8 @@ Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_11:
 	.string "energy pulse.\p"
 	.string "I built a scanner to detect that\n"
 	.string "specific frequency.\p"
-	.string "It won't find Pokémon... it will find the\n"
-	.string "source of what's hurting them.$"
+	.string "It won't find Pokémon... but it will find\n"
+	.string "the source of what's hurting them.$"
 
 Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_12:
 	.string "It's... loud out there.\p"
@@ -778,19 +780,19 @@ Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_13:
 	.string "me.$"
 
 Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_14:
-	.string "Nash.\n"
-	.string "David.\p"
+	.string "NASH.\n"
+	.string "DAVID.\p"
 	.string "Go downstairs and prepare the truck.\p"
 	.string "Keep me updated on your progress.$"
 
 Mistcity_Research_Center_Entrance_Daan_RescueMission_Text_15:
 	.string "Don't be afraid.\p"
-	.string "Nash & David are the best people I got.\p"
+	.string "NASH & DAVID are the best people I got.\p"
 	.string "Make sure you heal your Pokémon and\n"
 	.string "stack up on some potions, the forest\l"
 	.string "can be a very harsh place.\p"
 	.string "I'll keep in contact trough the radio.\p"
-	.string "Nash and David should be ready any\n"
+	.string "NASH and DAVID should be ready any\n"
 	.string "minute now.$"
 
 Mistcity_Research_Center_Entrance_LeadScientist_Text_0:
@@ -808,7 +810,7 @@ Mistcity_Research_Center_Entrance_LeadScientist_Text_1:
 	.string "You actually did it.\p"
 	.string "DAAN is safe, and the seismic\n"
 	.string "disturbances have completely ceased.\p"
-	.string "Nash and David said you handled\n"
+	.string "NASH and DAVID said you handled\n"
 	.string "yourself like a veteran out there.\p"
 	.string "We owe you a great debt, {PLAYER}.\p"
 	.string "The forest can finally heal.\p"

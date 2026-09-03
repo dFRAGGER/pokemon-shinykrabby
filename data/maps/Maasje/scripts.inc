@@ -10,6 +10,7 @@ Maasje_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 Maasje_On_Transition::
 	setflag FLAG_VISITED_MAASJE
 	clearflag FLAG_DISABLE_FOLLOWER_POKEMON
+	callnative UpdateFollowingPokemon
 	return
 
 
@@ -96,7 +97,7 @@ Maasje_PeteLongfellow_Crabs_Gymhill::
 	setspeaker Maasje_PeteLongfellow_Crabs_Gymhill_Text_0
 	goto_if_unset FLAG_MET_PETE_LONGFELLOW_GYMHILL, Maasje_PeteLongfellow_Crabs_Gymhill_2
 	goto_if_unset FLAG_SHINY_KRABBY_ENCOUNTER, Maasje_PeteLongfellow_Crabs_Gymhill_8
-	msgbox Maasje_PeteLongfellow_Crabs_Gymhill_Text_4, MSGBOX_AUTOCLOSE
+	msgbox Maasje_PeteLongfellow_Crabs_Gymhill_Text_6, MSGBOX_AUTOCLOSE
 Maasje_PeteLongfellow_Crabs_Gymhill_1:
 	waitmessage
 	release
@@ -105,22 +106,33 @@ Maasje_PeteLongfellow_Crabs_Gymhill_1:
 Maasje_PeteLongfellow_Crabs_Gymhill_2:
 	setflag FLAG_MET_PETE_LONGFELLOW_GYMHILL
 	goto_if_unset FLAG_SHINY_KRABBY_ENCOUNTER, Maasje_PeteLongfellow_Crabs_Gymhill_5
-	msgbox Maasje_PeteLongfellow_Crabs_Gymhill_Text_2, MSGBOX_AUTOCLOSE
+	msgbox Maasje_PeteLongfellow_Crabs_Gymhill_Text_4, MSGBOX_AUTOCLOSE
 	goto Maasje_PeteLongfellow_Crabs_Gymhill_1
 
 Maasje_PeteLongfellow_Crabs_Gymhill_5:
 	msgbox Maasje_PeteLongfellow_Crabs_Gymhill_Text_1, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 64, Maasje_PeteLongfellow_Crabs_Gymhill_Movement_0
+	waitmovement
+	setspeaker Maasje_PeteLongfellow_Crabs_Gymhill_Text_0
+	msgbox Maasje_PeteLongfellow_Crabs_Gymhill_Text_2, MSGBOX_AUTOCLOSE
+	waitmessage
+	delay 60
+	applymovement 64, Maasje_PeteLongfellow_Crabs_Gymhill_Movement_1
+	waitmovement
+	setspeaker Maasje_PeteLongfellow_Crabs_Gymhill_Text_0
+	msgbox Maasje_PeteLongfellow_Crabs_Gymhill_Text_3, MSGBOX_AUTOCLOSE
 	goto Maasje_PeteLongfellow_Crabs_Gymhill_1
 
 Maasje_PeteLongfellow_Crabs_Gymhill_8:
-	msgbox Maasje_PeteLongfellow_Crabs_Gymhill_Text_3, MSGBOX_AUTOCLOSE
+	msgbox Maasje_PeteLongfellow_Crabs_Gymhill_Text_5, MSGBOX_AUTOCLOSE
 	goto Maasje_PeteLongfellow_Crabs_Gymhill_1
 
 
 Maasje_Advice_Fisher_Crabhill::
 	lock
 	faceplayer
-	applymovement 60, Maasje_Advice_Fisher_Crabhill_Movement_0
+	applymovement 60, Maasje_PeteLongfellow_Crabs_Gymhill_Movement_1
 	goto_if_unset FLAG_RECEIVED_ESCAPE_ROPE, Maasje_Advice_Fisher_Crabhill_2
 	msgbox Maasje_Advice_Fisher_Crabhill_Text_2
 	waitmessage
@@ -421,27 +433,26 @@ Maasje_Joris_UpToTheWhiteLight_4:
 
 
 Maasje_Evenscript_Rick::
-	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated
-	msgbox Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_RICK_MAASJE_SK, Maasje_Text_RickIntro, Maasje_Text_RickDefeated
+	msgbox Maasje_Text_RickPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Maasje_Evenscript_Allen::
-	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated
-	msgbox Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_ALLEN_MAASJE_SK, Maasje_Text_AllenIntro, Maasje_Text_AllenDefeated
+	msgbox Maasje_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Maasje_Eventscript_Ivan::
-	trainerbattle_single TRAINER_IVAN, Route104_Text_IvanIntro, Route104_Text_IvanDefeat
-	msgbox Route104_Text_IvanPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_IVAN_MAASJE_SK, Maasje_Text_IvanIntro, Maasje_Text_IvanDefeated
+	msgbox Maasje_Text_IvanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Maasje_Eventscript_Winston::
-	trainerbattle_single TRAINER_WINSTON_1, Route104_Text_WinstonIntro, Route104_Text_WinstonDefeat
-	msgbox Route104_Text_WinstonPostBattle, MSGBOX_DEFAULT
-	release
+	trainerbattle_single TRAINER_WINSTON_1_SK, Maasje_Text_WinstonIntro, Maasje_Text_WinstonDefeated
+	msgbox Maasje_Text_WinstonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -460,12 +471,16 @@ Maasje_Eventscript_Maniac_1:
 
 
 Maasje_EventScript_Tiana::
-	trainerbattle_single TRAINER_TIANA, Maasje_Text_TianaIntro, Maasje_Text_TianaDefeated
+	trainerbattle_single TRAINER_TIANA_SK, Maasje_Text_TianaIntro, Maasje_Text_TianaDefeated
 	msgbox Maasje_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
-Maasje_Advice_Fisher_Crabhill_Movement_0:
+Maasje_PeteLongfellow_Crabs_Gymhill_Movement_0:
+	face_left
+	step_end
+
+Maasje_PeteLongfellow_Crabs_Gymhill_Movement_1:
 	face_player
 	step_end
 
@@ -548,22 +563,27 @@ Maasje_PeteLongfellow_Crabs_Gymhill_Text_0:
 	.string "PETE$"
 
 Maasje_PeteLongfellow_Crabs_Gymhill_Text_1:
-	.string "Ah, a challenger! Or, no, LOOK at this,\n"
-	.string "how am I supposed to-\p"
+	.string "Ah, a challenger! Or, no...$"
+
+Maasje_PeteLongfellow_Crabs_Gymhill_Text_2:
+	.string "LOOK at this, how am I supposed to-$"
+
+Maasje_PeteLongfellow_Crabs_Gymhill_Text_3:
 	.string "...sorry. Sorry.\p"
-	.string "I'm Pete Longfellow, the gym leader\n"
+	.string "I'm PETE LONGFELLOW, the gym leader\n"
 	.string "here. For what that's worth right now.\p"
 	.string "The gym is CLOSED. Just look at them!\p"
 	.string "In all my years sailing every sea this\n"
-	.string "world has to offer, through the pages\l"
-	.string "of my finest geography books, of\l"
-	.string "course, I have NEVER once come across\l"
+	.string "world has to offer...\p"
+	.string "...through the pages of my finest\n"
+	.string "geography books, of course...\p"
+	.string "I have NEVER once come across\n"
 	.string "behaviour like this. Never!\p"
 	.string "...I just don't understand it.\p"
 	.string "Come back another time. Please. Once\n"
 	.string "this sorts itself out.$"
 
-Maasje_PeteLongfellow_Crabs_Gymhill_Text_2:
+Maasje_PeteLongfellow_Crabs_Gymhill_Text_4:
 	.string "Oh - h-hello there.\p"
 	.string "Sorry, I'm Pete Longfellow, the gym\n"
 	.string "leader. You catching me out here\l"
@@ -579,13 +599,13 @@ Maasje_PeteLongfellow_Crabs_Gymhill_Text_2:
 	.string "Until then, go have a look around town.\n"
 	.string "Or something.$"
 
-Maasje_PeteLongfellow_Crabs_Gymhill_Text_3:
+Maasje_PeteLongfellow_Crabs_Gymhill_Text_5:
 	.string "Still! Still not past these blasted\n"
 	.string "crabs!\p"
 	.string "...Come back another time. Once this\n"
 	.string "sorts itself out.$"
 
-Maasje_PeteLongfellow_Crabs_Gymhill_Text_4:
+Maasje_PeteLongfellow_Crabs_Gymhill_Text_6:
 	.string "Right, right, the crabs are back to\n"
 	.string "normal, but they still need time before\l"
 	.string "I can let anyone through.\p"
@@ -648,6 +668,54 @@ Maasje_Eventscript_Maniac_Text_1:
 	.string "You won't seem them outside very often.\p"
 	.string "Hopefully one day everyting will be\n"
 	.string "back to normal.$"
+
+Maasje_Text_RickIntro::
+	.string "Hahah! Our eyes met!\n"
+	.string "I'll take you on with my BUG POKéMON!$"
+
+Maasje_Text_RickDefeated::
+	.string "Ow! Down and out!$"
+
+Maasje_Text_RickPostBattle::
+	.string "If you lock eyes with a TRAINER,\n"
+	.string "you have to challenge! It's a rule!$"
+
+Maasje_Text_AllenIntro::
+	.string "Did you just become a TRAINER?\n"
+	.string "We're both beginners!$"
+
+Maasje_Text_AllenDefeated::
+	.string "I called you because I thought\n"
+	.string "I could beat you…$"
+
+Maasje_Text_AllenPostBattle::
+	.string "I haven't won once yet…\n"
+	.string "I wish I would win soon…$"
+
+Maasje_Text_IvanIntro::
+	.string "Why keep it a secret?\n"
+	.string "I'm the WATER POKéMON expert!\p"
+	.string "Huh?\n"
+	.string "You don't know me?$"
+
+Maasje_Text_IvanDefeated::
+	.string "I thought I wasn't too bad, if I may\n"
+	.string "say so, but I guess not… Bleah…$"
+
+Maasje_Text_IvanPostBattle::
+	.string "I got too into fishing.\n"
+	.string "I forgot I had to raise my POKéMON…$"
+
+Maasje_Text_WinstonIntro::
+	.string "Oh, sure, I'll accept your challenge.\n"
+	.string "I have a lot of money.$"
+
+Maasje_Text_WinstonDefeated::
+	.string "Why couldn't I win?$"
+
+Maasje_Text_WinstonPostBattle::
+	.string "There are some things money can't buy.\n"
+	.string "That's POKéMON…$"
 
 Maasje_Text_TianaIntro::
 	.string "I'm going to keep winning and aim\n"

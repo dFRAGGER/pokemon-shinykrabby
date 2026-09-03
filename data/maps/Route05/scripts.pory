@@ -5,7 +5,7 @@ mapscripts Route05_MapScripts {}
 // =====================
 
 script Route05_Trainer_Randall {
-    trainerbattle_single(TRAINER_RANDALL, Route05_Text_RandallIntro, Route05_Text_RandallDefeated)
+    trainerbattle_single(TRAINER_RANDALL_ROUTE05_SK, Route05_Text_RandallIntro, Route05_Text_RandallDefeated)
     if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
         msgbox(Route05_Text_RandallPostBattle_After, MSGBOX_AUTOCLOSE)
     } else {
@@ -31,7 +31,7 @@ text Route05_Text_RandallPostBattle_After {
 }
 
 script Route05_Trainer_Parker {
-    trainerbattle_single(TRAINER_PARKER, Route05_Text_ParkerIntro, Route05_Text_ParkerDefeated)
+    trainerbattle_single(TRAINER_PARKER_ROUTE05_SK, Route05_Text_ParkerIntro, Route05_Text_ParkerDefeated)
     if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
         msgbox(Route05_Text_ParkerPostBattle_After, MSGBOX_AUTOCLOSE)
     } else {
@@ -57,7 +57,7 @@ text Route05_Text_ParkerPostBattle_After {
 }
 
 script Route05_Trainer_George {
-    trainerbattle_single(TRAINER_GEORGE, Route05_Text_GeorgeIntro, Route05_Text_GeorgeDefeated)
+    trainerbattle_single(TRAINER_GEORGE_ROUTE05_SK, Route05_Text_GeorgeIntro, Route05_Text_GeorgeDefeated)
     msgbox(Route05_Text_GeorgePostBattle, MSGBOX_AUTOCLOSE)
     end
 }
@@ -75,7 +75,7 @@ text Route05_Text_GeorgePostBattle {
 }
 
 script Route05_Trainer_Berke {
-    trainerbattle_single(TRAINER_BERKE, Route05_Text_BerkeIntro, Route05_Text_BerkeDefeated)
+    trainerbattle_single(TRAINER_BERKE_ROUTE05_SK, Route05_Text_BerkeIntro, Route05_Text_BerkeDefeated)
     if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
         msgbox(Route05_Text_BerkePostBattle_After, MSGBOX_AUTOCLOSE)
     } else {
@@ -101,7 +101,7 @@ text Route05_Text_BerkePostBattle_After {
 }
 
 script Route05_Trainer_Braxton {
-    trainerbattle_single(TRAINER_BRAXTON, Route05_Text_BraxtonIntro, Route05_Text_BraxtonDefeated)
+    trainerbattle_single(TRAINER_BRAXTON_ROUTE05_SK, Route05_Text_BraxtonIntro, Route05_Text_BraxtonDefeated)
     msgbox(Route05_Text_BraxtonPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
@@ -119,7 +119,7 @@ text Route05_Text_BraxtonPostBattle {
 }
 
 script Route05_Trainer_Vincent {
-    trainerbattle_single(TRAINER_VINCENT, Route05_Text_VincentIntro, Route05_Text_VincentDefeated)
+    trainerbattle_single(TRAINER_VINCENT_ROUTE05_SK, Route05_Text_VincentIntro, Route05_Text_VincentDefeated)
     if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
         msgbox(Route05_Text_VincentPostBattle_After, MSGBOX_AUTOCLOSE)
     } else {

@@ -57,6 +57,86 @@ Mistcity_Research_Center_Scientist_5:
 	goto Mistcity_Research_Center_Scientist_4
 
 
+Mistcity_Research_Center_Ranger_Laptop::
+	lock
+	faceplayer
+	setspeaker Mistcity_Research_Center_Ranger_Laptop_Text_0
+	goto_if_set FLAG_RESCUED_DAAN, Mistcity_Research_Center_Ranger_Laptop_2
+	msgbox Mistcity_Research_Center_Ranger_Laptop_Text_2
+Mistcity_Research_Center_Ranger_Laptop_1:
+	waitmessage
+	applymovement 4, Mistcity_Research_Center_Ranger_Laptop_Movement_0
+	waitmovement
+	release
+	return
+
+Mistcity_Research_Center_Ranger_Laptop_2:
+	msgbox Mistcity_Research_Center_Ranger_Laptop_Text_1
+	goto Mistcity_Research_Center_Ranger_Laptop_1
+
+
+Mistcity_Research_Center_Ranger_VigorothGuide::
+	lock
+	setspeaker Mistcity_Research_Center_Ranger_Laptop_Text_0
+	goto_if_set FLAG_RESCUED_DAAN, Mistcity_Research_Center_Ranger_VigorothGuide_2
+	msgbox Mistcity_Research_Center_Ranger_VigorothGuide_Text_2, MSGBOX_AUTOCLOSE
+	waitmessage
+	faceplayer
+	msgbox Mistcity_Research_Center_Ranger_VigorothGuide_Text_3, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 4, Mistcity_Research_Center_Ranger_VigorothGuide_Movement_0
+	waitmovement
+Mistcity_Research_Center_Ranger_VigorothGuide_1:
+	release
+	return
+
+Mistcity_Research_Center_Ranger_VigorothGuide_2:
+	msgbox Mistcity_Research_Center_Ranger_VigorothGuide_Text_0, MSGBOX_AUTOCLOSE
+	waitmessage
+	faceplayer
+	msgbox Mistcity_Research_Center_Ranger_VigorothGuide_Text_1, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 4, Mistcity_Research_Center_Ranger_VigorothGuide_Movement_0
+	waitmovement
+	goto Mistcity_Research_Center_Ranger_VigorothGuide_1
+
+
+Mistcity_Research_Center_Ranger_LoadingOverlook::
+	lock
+	faceplayer
+	setspeaker Mistcity_Research_Center_Ranger_Laptop_Text_0
+	goto_if_set FLAG_RESCUED_DAAN, Mistcity_Research_Center_Ranger_LoadingOverlook_2
+	msgbox Mistcity_Research_Center_Ranger_LoadingOverlook_Text_1
+Mistcity_Research_Center_Ranger_LoadingOverlook_1:
+	waitmessage
+	applymovement 12, Mistcity_Research_Center_Ranger_VigorothGuide_Movement_0
+	waitmovement
+	release
+	return
+
+Mistcity_Research_Center_Ranger_LoadingOverlook_2:
+	msgbox Mistcity_Research_Center_Ranger_LoadingOverlook_Text_0
+	goto Mistcity_Research_Center_Ranger_LoadingOverlook_1
+
+
+Mistcity_Research_Center_Scientist_Server::
+	lock
+	faceplayer
+	setspeaker Mistcity_Research_Center_Scientist_Server_Text_0
+	goto_if_set FLAG_RESCUED_DAAN, Mistcity_Research_Center_Scientist_Server_2
+	msgbox Mistcity_Research_Center_Scientist_Server_Text_2
+Mistcity_Research_Center_Scientist_Server_1:
+	waitmessage
+	applymovement 10, Mistcity_Research_Center_Ranger_Laptop_Movement_0
+	waitmovement
+	release
+	return
+
+Mistcity_Research_Center_Scientist_Server_2:
+	msgbox Mistcity_Research_Center_Scientist_Server_Text_1
+	goto Mistcity_Research_Center_Scientist_Server_1
+
+
 Mistcity_Research_Center_LittleGirl::
 	lock
 	faceplayer
@@ -99,6 +179,8 @@ Mistcity_Research_Center_DadBugCatcher_5:
 
 Mistcity_Research_Center_Daan_RescueMission2::
 	lock
+	faceplayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	setflag FLAG_DAAN_NASH_TRUCK
 	compare VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 0
 	goto_if_eq Mistcity_Research_Center_Daan_RescueMission2_2
@@ -111,14 +193,17 @@ Mistcity_Research_Center_Daan_RescueMission2_2:
 	setspeaker Mistcity_Research_Center_Daan_RescueMission2_Text_0
 	msgbox Mistcity_Research_Center_Daan_RescueMission2_Text_1, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement 13, Mistcity_Research_Center_Daan_RescueMission2_Movement_0
+	compare VAR_TEMP_0, 12
+	goto_if_eq Mistcity_Research_Center_Daan_RescueMission2_7
+	applymovement 11, Mistcity_Research_Center_Daan_RescueMission2_Movement_0
 	applymovement 3, Mistcity_Research_Center_Daan_RescueMission2_Movement_1
-	applymovement LOCALID_PLAYER, Mistcity_Research_Center_Daan_RescueMission2_Movement_2
+	applymovement LOCALID_PLAYER, Mistcity_Research_Center_Daan_RescueMission2_Movement_3
+Mistcity_Research_Center_Daan_RescueMission2_6:
 	waitmovement
 	setspeaker Mistcity_Research_Center_Daan_RescueMission2_Text_0
 	msgbox Mistcity_Research_Center_Daan_RescueMission2_Text_2, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement LOCALID_PLAYER, Mistcity_Research_Center_Daan_RescueMission2_Movement_3
+	applymovement LOCALID_PLAYER, Mistcity_Research_Center_Daan_RescueMission2_Movement_4
 	waitmovement
 	fadescreen FADE_TO_BLACK
 	warpsilent MAP_INSIDE_OF_TRUCK, 1
@@ -130,19 +215,25 @@ Mistcity_Research_Center_Daan_RescueMission2_4:
 	msgbox Mistcity_Research_Center_Daan_RescueMission2_Text_3, MSGBOX_YESNO
 	waitmessage
 	compare VAR_RESULT, YES
-	goto_if_eq Mistcity_Research_Center_Daan_RescueMission2_7
+	goto_if_eq Mistcity_Research_Center_Daan_RescueMission2_11
 	compare VAR_RESULT, NO
-	goto_if_eq Mistcity_Research_Center_Daan_RescueMission2_9
+	goto_if_eq Mistcity_Research_Center_Daan_RescueMission2_13
 	return
 
 Mistcity_Research_Center_Daan_RescueMission2_7:
+	applymovement 11, Mistcity_Research_Center_Daan_RescueMission2_Movement_0
+	applymovement 3, Mistcity_Research_Center_Daan_RescueMission2_Movement_1
+	applymovement LOCALID_PLAYER, Mistcity_Research_Center_Daan_RescueMission2_Movement_2
+	goto Mistcity_Research_Center_Daan_RescueMission2_6
+
+Mistcity_Research_Center_Daan_RescueMission2_11:
 	setspeaker Mistcity_Research_Center_Daan_RescueMission2_Text_0
 	msgbox Mistcity_Research_Center_Daan_RescueMission2_Text_4
 	waitmessage
 	release
 	end
 
-Mistcity_Research_Center_Daan_RescueMission2_9:
+Mistcity_Research_Center_Daan_RescueMission2_13:
 	setspeaker Mistcity_Research_Center_Daan_RescueMission2_Text_0
 	msgbox Mistcity_Research_Center_Daan_RescueMission2_Text_5, MSGBOX_AUTOCLOSE
 	waitmessage
@@ -161,26 +252,26 @@ Mistcity_Research_Center_ReturnRescueMissionDaan::
 	setspeaker Mistcity_Research_Center_Daan_RescueMission2_Text_0
 	msgbox Mistcity_Research_Center_ReturnRescueMissionDaan_Text_0, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement 15, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_2
+	applymovement 13, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_2
 	delay 40
-	applymovement 15, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_3
+	applymovement 13, Mistcity_Research_Center_Ranger_VigorothGuide_Movement_0
 	delay 40
-	applymovement 15, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_4
+	applymovement 13, Mistcity_Research_Center_Ranger_Laptop_Movement_0
 	delay 40
-	applymovement 15, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_5
+	applymovement 13, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_3
 	delay 40
 	setspeaker Mistcity_Research_Center_Daan_RescueMission2_Text_0
 	msgbox Mistcity_Research_Center_ReturnRescueMissionDaan_Text_1, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement 15, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_6
-	applymovement LOCALID_PLAYER, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_3
+	applymovement 13, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_4
+	applymovement LOCALID_PLAYER, Mistcity_Research_Center_Ranger_VigorothGuide_Movement_0
 	waitmovement
 	delay 40
 	setspeaker Mistcity_Research_Center_Daan_RescueMission2_Text_0
 	msgbox Mistcity_Research_Center_ReturnRescueMissionDaan_Text_2, MSGBOX_AUTOCLOSE
 	waitmessage
 	delay 40
-	applymovement 15, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_7
+	applymovement 13, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_5
 	applymovement LOCALID_PLAYER, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_2
 	setspeaker Mistcity_Research_Center_Daan_RescueMission2_Text_0
 	msgbox Mistcity_Research_Center_ReturnRescueMissionDaan_Text_3, MSGBOX_AUTOCLOSE
@@ -189,13 +280,6 @@ Mistcity_Research_Center_ReturnRescueMissionDaan::
 	setspeaker Mistcity_Research_Center_Daan_RescueMission2_Text_0
 	msgbox Mistcity_Research_Center_ReturnRescueMissionDaan_Text_4, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement LOCALID_PLAYER, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_8
-	waitmovement
-	applymovement 15, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_9
-	waitmovement
-	applymovement 16, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_10
-	waitmovement
-	delay 40
 	setflag FLAG_NASH_ENTRANCE_RESEARCH_CENTER1
 	setflag FLAG_HELPED_DAN_BEAT_FACULTY
 	clearflag FLAG_NASH_ENTRANCE_RESEARCH_CENTER2
@@ -203,12 +287,20 @@ Mistcity_Research_Center_ReturnRescueMissionDaan::
 	return
 
 
+Mistcity_Research_Center_Ranger_Laptop_Movement_0:
+	face_up
+	step_end
+
+Mistcity_Research_Center_Ranger_VigorothGuide_Movement_0:
+	face_down
+	step_end
+
 Mistcity_Research_Center_Daan_RescueMission2_Movement_0:
-	walk_right
-	walk_up
-	walk_up
-	walk_up
-	walk_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
 	face_down
 	step_end
 
@@ -216,15 +308,6 @@ Mistcity_Research_Center_Daan_RescueMission2_Movement_1:
 	walk_right
 	walk_right
 	walk_right
-	walk_right
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
 	walk_up
 	walk_up
 	face_down
@@ -235,19 +318,18 @@ Mistcity_Research_Center_Daan_RescueMission2_Movement_2:
 	walk_right
 	walk_right
 	walk_right
-	walk_right
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
 	walk_up
 	step_end
 
 Mistcity_Research_Center_Daan_RescueMission2_Movement_3:
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+Mistcity_Research_Center_Daan_RescueMission2_Movement_4:
 	jump_left
 	step_end
 
@@ -270,48 +352,16 @@ Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_2:
 	step_end
 
 Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_3:
-	face_down
+	face_right
 	step_end
 
 Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_4:
-	face_up
+	walk_down
 	step_end
 
 Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_5:
-	face_right
-	step_end
-
-Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_6:
-	walk_down
-	step_end
-
-Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_7:
 	walk_up
 	face_right
-	step_end
-
-Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_8:
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_9:
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_10:
-	walk_down
-	walk_down
-	walk_left
 	step_end
 
 Mistcity_Research_Center_Hiker_Text_0:
@@ -340,6 +390,69 @@ Mistcity_Research_Center_Scientist_Text_1:
 	.string "something massive was sucking the\l"
 	.string "moisture right out of the air to cool a\l"
 	.string "machine.$"
+
+Mistcity_Research_Center_Ranger_Laptop_Text_0:
+	.string "RANGER$"
+
+Mistcity_Research_Center_Ranger_Laptop_Text_1:
+	.string "I'm logging all the equipment that came\n"
+	.string "back from the rescue.\p"
+	.string "Now that DAAN is safe, Vigoroth can\n"
+	.string "take its time loading the remaining\l"
+	.string "cargo.$"
+
+Mistcity_Research_Center_Ranger_Laptop_Text_2:
+	.string "I'm updating the cargo manifest while\n"
+	.string "Vigoroth brings over the crates.\p"
+	.string "With DAAN missing, every rescue truck\n"
+	.string "has to leave fully supplied.$"
+
+Mistcity_Research_Center_Ranger_VigorothGuide_Text_0:
+	.string "Steady, Vigoroth!\p"
+	.string "Put that crate in the truck, then we're\n"
+	.string "done.$"
+
+Mistcity_Research_Center_Ranger_VigorothGuide_Text_1:
+	.string "Now that DAAN is safe, we can finally\n"
+	.string "restock at a normal pace.$"
+
+Mistcity_Research_Center_Ranger_VigorothGuide_Text_2:
+	.string "Easy, Vigoroth!\p"
+	.string "Load that crate into the truck.$"
+
+Mistcity_Research_Center_Ranger_VigorothGuide_Text_3:
+	.string "We're sending supplies after DAAN, so we\n"
+	.string "can't afford any delays.$"
+
+Mistcity_Research_Center_Ranger_LoadingOverlook_Text_0:
+	.string "The loading floor is running smoothly\n"
+	.string "again.\p"
+	.string "Seeing DAAN return safely was worth\n"
+	.string "every frantic minute I spent watching\l"
+	.string "over this place.$"
+
+Mistcity_Research_Center_Ranger_LoadingOverlook_Text_1:
+	.string "I can see the entire loading floor from\n"
+	.string "up here.\p"
+	.string "I'm checking every truck before it\n"
+	.string "leaves; one missing crate could put\l"
+	.string "DAAN's rescue team at risk.$"
+
+Mistcity_Research_Center_Scientist_Server_Text_0:
+	.string "SCIENTIST$"
+
+Mistcity_Research_Center_Scientist_Server_Text_1:
+	.string "The server has a clean connection to\n"
+	.string "the forest again.\p"
+	.string "I've archived the data from DAAN's\n"
+	.string "rescue; whatever caused the\l"
+	.string "interference is gone.$"
+
+Mistcity_Research_Center_Scientist_Server_Text_2:
+	.string "The server is filtering ranger\n"
+	.string "telemetry from deep in the forest.\p"
+	.string "DAAN's signal keeps disappearing\n"
+	.string "beneath a wall of interference.$"
 
 Mistcity_Research_Center_LittleGirl_Text_0:
 	.string "Is it safe now?\p"

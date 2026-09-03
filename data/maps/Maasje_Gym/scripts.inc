@@ -55,13 +55,15 @@ Maasje_Gym_Introduction_12:
 
 Maasje_Gym_Leader_Pete_Longfellow::
 	trainerbattle_single TRAINER_PETELONGFELLOW, Maasje_Gym_PeteLongfellow_Introtext, Maasje_Gym_PeteLongfellow_Defeattext, Maasje_Gym_PeteLongfellow_Defeated, NO_MUSIC
+	setspeaker Maasje_Gym_Leader_Pete_Longfellow_Text_0
+	msgbox Maasje_Gym_Leader_Pete_Longfellow_Text_1, MSGBOX_AUTOCLOSE
 	release
 	end
 
 
 Maasje_Gym_PeteLongfellow_Defeated::
-	setspeaker Maasje_Gym_PeteLongfellow_Defeated_Text_0
-	msgbox Maasje_Gym_PeteLongfellow_Defeated_Text_1
+	setspeaker Maasje_Gym_Leader_Pete_Longfellow_Text_0
+	msgbox Maasje_Gym_PeteLongfellow_Defeated_Text_0
 	waitmessage
 	call Maasje_Gym_Set_Gym_Trainers
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -69,15 +71,15 @@ Maasje_Gym_PeteLongfellow_Defeated::
 	setflag FLAG_DEFEATED_RUSTBORO_GYM
 	setflag FLAG_FACULTY_SYMPATHIZERS_1
 	setspeaker NULL
-	msgbox Maasje_Gym_PeteLongfellow_Defeated_Text_2
+	msgbox Maasje_Gym_PeteLongfellow_Defeated_Text_1
 	waitmessage
-	setspeaker Maasje_Gym_PeteLongfellow_Defeated_Text_0
-	msgbox Maasje_Gym_PeteLongfellow_Defeated_Text_3
+	setspeaker Maasje_Gym_Leader_Pete_Longfellow_Text_0
+	msgbox Maasje_Gym_PeteLongfellow_Defeated_Text_2
 	waitmessage
 	giveitem ITEM_TM_WATER_PULSE
 	waitmessage
-	setspeaker Maasje_Gym_PeteLongfellow_Defeated_Text_0
-	msgbox Maasje_Gym_PeteLongfellow_Defeated_Text_4, MSGBOX_AUTOCLOSE
+	setspeaker Maasje_Gym_Leader_Pete_Longfellow_Text_0
+	msgbox Maasje_Gym_PeteLongfellow_Defeated_Text_3, MSGBOX_AUTOCLOSE
 	playse SE_CLICK
 	fadescreen FADE_TO_BLACK
 	setvar VAR_MAASJE_GYM_TIDE_STATE, 5
@@ -911,8 +913,7 @@ Maasje_Gym_Introduction_Text_0:
 	.string "pokemon seen during tide shifts,\l"
 	.string "whatever that means...\p"
 	.string "Grass pokemon seem to have an edge,\n"
-	.string "while electric pokemon are not\l"
-	.string "recommended.\p"
+	.string "while electric could be strong as well.\p"
 	.string "The gym leader is called Pete\n"
 	.string "Longfellow, he used to be a geography\l"
 	.string "teacher.\p"
@@ -932,8 +933,8 @@ Maasje_Gym_Introduction_Text_2:
 	.string "pokemon seen during tide shifts,\l"
 	.string "whatever that means...\p"
 	.string "Grass pokemon seem to have an edge,\n"
-	.string "while electric pokemon are not\l"
-	.string "recommended.\p"
+	.string "while electric pokemon could be strong\l"
+	.string "as well.\p"
 	.string "The gym leader is called Pete\n"
 	.string "Longfellow, he used to be a geography\l"
 	.string "teacher.\p"
@@ -949,10 +950,16 @@ Maasje_Gym_Introduction_Text_3:
 	.string "he's still down there waiting for the\l"
 	.string "next challenger.$"
 
-Maasje_Gym_PeteLongfellow_Defeated_Text_0:
+Maasje_Gym_Leader_Pete_Longfellow_Text_0:
 	.string "PETE$"
 
-Maasje_Gym_PeteLongfellow_Defeated_Text_1:
+Maasje_Gym_Leader_Pete_Longfellow_Text_1:
+	.string "The tide favored you that day, but it\n"
+	.string "never stands still.\p"
+	.string "Come back at full moon sometime. My\n"
+	.string "Pokemon will be even stronger then.$"
+
+Maasje_Gym_PeteLongfellow_Defeated_Text_0:
 	.string "In geography we call this longshore\n"
 	.string "drift, the tide always reshapes the\l"
 	.string "shore in the end.\p"
@@ -960,10 +967,10 @@ Maasje_Gym_PeteLongfellow_Defeated_Text_1:
 	.string "nothing else beats it.\p"
 	.string "Here, take this:$"
 
-Maasje_Gym_PeteLongfellow_Defeated_Text_2:
+Maasje_Gym_PeteLongfellow_Defeated_Text_1:
 	.string "You received the TIDE BADGE!$"
 
-Maasje_Gym_PeteLongfellow_Defeated_Text_3:
+Maasje_Gym_PeteLongfellow_Defeated_Text_2:
 	.string "That badge lets any pokemon up to level\n"
 	.string "30 obey you, no matter whose it was\l"
 	.string "originally.\p"
@@ -971,7 +978,7 @@ Maasje_Gym_PeteLongfellow_Defeated_Text_3:
 	.string "outside of battle now.\p"
 	.string "For future battles, this might help:$"
 
-Maasje_Gym_PeteLongfellow_Defeated_Text_4:
+Maasje_Gym_PeteLongfellow_Defeated_Text_3:
 	.string "That's TM Water Pulse.\p"
 	.string "It sends out an ultrasonic wave that\n"
 	.string "may leave the foe confused.\p"

@@ -3,7 +3,7 @@ Route05_MapScripts::
 
 
 Route05_Trainer_Randall::
-	trainerbattle_single TRAINER_RANDALL, Route05_Text_RandallIntro, Route05_Text_RandallDefeated
+	trainerbattle_single TRAINER_RANDALL_ROUTE05_SK, Route05_Text_RandallIntro, Route05_Text_RandallDefeated
 	goto_if_set FLAG_HIDE_FACULTY_AT_WESTLION_MINE, Route05_Trainer_Randall_2
 	msgbox Route05_Text_RandallPostBattle, MSGBOX_AUTOCLOSE
 Route05_Trainer_Randall_1:
@@ -15,7 +15,7 @@ Route05_Trainer_Randall_2:
 
 
 Route05_Trainer_Parker::
-	trainerbattle_single TRAINER_PARKER, Route05_Text_ParkerIntro, Route05_Text_ParkerDefeated
+	trainerbattle_single TRAINER_PARKER_ROUTE05_SK, Route05_Text_ParkerIntro, Route05_Text_ParkerDefeated
 	goto_if_set FLAG_HIDE_FACULTY_AT_WESTLION_MINE, Route05_Trainer_Parker_2
 	msgbox Route05_Text_ParkerPostBattle, MSGBOX_AUTOCLOSE
 Route05_Trainer_Parker_1:
@@ -27,13 +27,13 @@ Route05_Trainer_Parker_2:
 
 
 Route05_Trainer_George::
-	trainerbattle_single TRAINER_GEORGE, Route05_Text_GeorgeIntro, Route05_Text_GeorgeDefeated
+	trainerbattle_single TRAINER_GEORGE_ROUTE05_SK, Route05_Text_GeorgeIntro, Route05_Text_GeorgeDefeated
 	msgbox Route05_Text_GeorgePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route05_Trainer_Berke::
-	trainerbattle_single TRAINER_BERKE, Route05_Text_BerkeIntro, Route05_Text_BerkeDefeated
+	trainerbattle_single TRAINER_BERKE_ROUTE05_SK, Route05_Text_BerkeIntro, Route05_Text_BerkeDefeated
 	goto_if_set FLAG_HIDE_FACULTY_AT_WESTLION_MINE, Route05_Trainer_Berke_2
 	msgbox Route05_Text_BerkePostBattle, MSGBOX_AUTOCLOSE
 Route05_Trainer_Berke_1:
@@ -45,13 +45,13 @@ Route05_Trainer_Berke_2:
 
 
 Route05_Trainer_Braxton::
-	trainerbattle_single TRAINER_BRAXTON, Route05_Text_BraxtonIntro, Route05_Text_BraxtonDefeated
+	trainerbattle_single TRAINER_BRAXTON_ROUTE05_SK, Route05_Text_BraxtonIntro, Route05_Text_BraxtonDefeated
 	msgbox Route05_Text_BraxtonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route05_Trainer_Vincent::
-	trainerbattle_single TRAINER_VINCENT, Route05_Text_VincentIntro, Route05_Text_VincentDefeated
+	trainerbattle_single TRAINER_VINCENT_ROUTE05_SK, Route05_Text_VincentIntro, Route05_Text_VincentDefeated
 	goto_if_set FLAG_HIDE_FACULTY_AT_WESTLION_MINE, Route05_Trainer_Vincent_2
 	msgbox Route05_Text_VincentPostBattle, MSGBOX_AUTOCLOSE
 Route05_Trainer_Vincent_1:

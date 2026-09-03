@@ -5,13 +5,26 @@ mapscripts Maasje_Mart_MapScripts {
 script Maasje_Mart_Employer {
     lock
 	faceplayer
-	message(gText_HowMayIServeYou) 
-	waitmessage
-	pokemart(Maasje_Mart_Items)
-	msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
-	release
-	end
-    
+
+    // Nature Mints are an opt-in challenge setting. Keep the ordinary mart
+    // reachable from the same clerk instead of relying on the HnS-only
+    // Goldenrod flower shop.
+    if (!flag(FLAG_MINTS_DISABLED) && flag(FLAG_BADGE03_GET)) {
+        msgbox(format("Would you like to browse our NATURE MINTS?\pChoose NO for regular supplies."), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            pokemart(Maasje_Mart_Mints)
+            msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+            release
+            end
+        }
+    }
+
+    message(gText_HowMayIServeYou)
+    waitmessage
+    pokemart(Maasje_Mart_Items)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    release
+    end
 }
 
 mart Maasje_Mart_Items {
@@ -20,6 +33,31 @@ mart Maasje_Mart_Items {
     ITEM_ANTIDOTE
     ITEM_PARALYZE_HEAL
 	ITEM_AWAKENING
+}
+
+mart Maasje_Mart_Mints {
+    ITEM_SERIOUS_MINT
+    ITEM_ADAMANT_MINT
+    ITEM_BOLD_MINT
+    ITEM_BRAVE_MINT
+    ITEM_CALM_MINT
+    ITEM_CAREFUL_MINT
+    ITEM_GENTLE_MINT
+    ITEM_HASTY_MINT
+    ITEM_IMPISH_MINT
+    ITEM_JOLLY_MINT
+    ITEM_LAX_MINT
+    ITEM_LONELY_MINT
+    ITEM_MILD_MINT
+    ITEM_MODEST_MINT
+    ITEM_NAIVE_MINT
+    ITEM_NAUGHTY_MINT
+    ITEM_QUIET_MINT
+    ITEM_RASH_MINT
+    ITEM_RELAXED_MINT
+    ITEM_SASSY_MINT
+    ITEM_TIMID_MINT
+    ITEM_MIRROR_HERB
 }
 
 script Maasje_Mart_Fat_Man {

@@ -1,4 +1,14 @@
-mapscripts Maasje_PokemonCenter_2F_MapScripts {}
+mapscripts Maasje_PokemonCenter_2F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        call(Maasje_PokemonCenter_2F_OnTransition)
+    }
+}
+
+script Maasje_PokemonCenter_2F_OnTransition {
+    clearflag(FLAG_DISABLE_FOLLOWER_POKEMON)
+    callnative(UpdateFollowingPokemon)
+    end
+}
 
 script Maasje_PokemonCenter_2F_Red {
     lock

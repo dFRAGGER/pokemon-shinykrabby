@@ -15,6 +15,7 @@ Maasje_PokemonCenter_1F_MapScripts_MAP_SCRIPT_ON_RESUME:
 Maasje_PokemonCenter_1F_OnTransition::
 	setrespawn HEAL_LOCATION_MAASJE
 	setflag FLAG_DISABLE_FOLLOWER_POKEMON
+	callnative UpdateFollowingPokemon
 	end
 
 
@@ -47,7 +48,6 @@ Maasje_Krabby_Cry_1F_Pokecenter::
 Maasje_PokemonCenter_1F_Bryan_Trigger0::
 	lock
 	setvar VAR_BRYAN_POSITION, 1
-	clearflag FLAG_DISABLE_FOLLOWER_POKEMON
 	playse SE_PIN
 	applymovement 2, Maasje_PokemonCenter_1F_Bryan_Trigger0_Movement_0
 	delay 60
@@ -62,7 +62,6 @@ Maasje_PokemonCenter_1F_Bryan_Trigger0::
 Maasje_PokemonCenter_1F_Bryan_Trigger1::
 	lock
 	setvar VAR_BRYAN_POSITION, 1
-	clearflag FLAG_DISABLE_FOLLOWER_POKEMON
 	playse SE_PIN
 	applymovement 2, Maasje_PokemonCenter_1F_Bryan_Trigger0_Movement_0
 	delay 60
@@ -77,7 +76,6 @@ Maasje_PokemonCenter_1F_Bryan_Trigger1::
 Maasje_PokemonCenter_1F_Bryan_Trigger2::
 	lock
 	setvar VAR_BRYAN_POSITION, 1
-	clearflag FLAG_DISABLE_FOLLOWER_POKEMON
 	playse SE_PIN
 	applymovement 2, Maasje_PokemonCenter_1F_Bryan_Trigger0_Movement_0
 	delay 60
@@ -92,7 +90,6 @@ Maasje_PokemonCenter_1F_Bryan_Trigger2::
 Maasje_PokemonCenter_1F_Bryan_Trigger3::
 	lock
 	setvar VAR_BRYAN_POSITION, 1
-	clearflag FLAG_DISABLE_FOLLOWER_POKEMON
 	playse SE_PIN
 	applymovement 2, Maasje_PokemonCenter_1F_Bryan_Trigger0_Movement_0
 	delay 60

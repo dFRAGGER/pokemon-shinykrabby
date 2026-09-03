@@ -5,7 +5,7 @@ mapscripts WestLionMountain_MapScripts {}
 // =====================
 
 script WestLionMountain_Trainer_Leroy {
-    trainerbattle_single(TRAINER_LEROY, WestLionMountain_Text_LeroyIntro, WestLionMountain_Text_LeroyDefeated)
+    trainerbattle_single(TRAINER_LEROY_WEST_LION_SK, WestLionMountain_Text_LeroyIntro, WestLionMountain_Text_LeroyDefeated)
     if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
         msgbox(WestLionMountain_Text_LeroyPostBattle_After, MSGBOX_AUTOCLOSE)
     } else {
@@ -31,7 +31,7 @@ text WestLionMountain_Text_LeroyPostBattle_After {
 }
 
 script WestLionMountain_Trainer_Wilton {
-    trainerbattle_single(TRAINER_WILTON_1, WestLionMountain_Text_WiltonIntro, WestLionMountain_Text_WiltonDefeated)
+    trainerbattle_single(TRAINER_WILTON_WEST_LION_SK, WestLionMountain_Text_WiltonIntro, WestLionMountain_Text_WiltonDefeated)
     msgbox(WestLionMountain_Text_WiltonPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
@@ -49,7 +49,7 @@ text WestLionMountain_Text_WiltonPostBattle {
 }
 
 script WestLionMountain_Trainer_Edgar {
-    trainerbattle_single(TRAINER_EDGAR, WestLionMountain_Text_EdgarIntro, WestLionMountain_Text_EdgarDefeated)
+    trainerbattle_single(TRAINER_EDGAR_WEST_LION_SK, WestLionMountain_Text_EdgarIntro, WestLionMountain_Text_EdgarDefeated)
     if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
         msgbox(WestLionMountain_Text_EdgarPostBattle_After, MSGBOX_AUTOCLOSE)
     } else {

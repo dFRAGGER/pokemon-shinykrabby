@@ -208,7 +208,6 @@
 #define FLAG_NASH_ENTRANCE_RESEARCH_CENTER2              (SK_FLAGS_START + 184)
 #define FLAG_RESCUED_DAAN                                (SK_FLAGS_START + 147)
 #define FLAG_PROFESSOR_BIRDS_DISCOVERY                   (SK_FLAGS_START + 134)
-#define FLAG_HIDE_LABJARI_BARRY_BIRCH_MAGIKARP           (SK_FLAGS_START + 185)
 
 // Marshduke Cathedral / Mist City museum
 #define FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR        (SK_FLAGS_START + 114)

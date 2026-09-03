@@ -111,7 +111,7 @@ Mistcity_InsideOfTruck_Daan_ChaseFaculty::
 	addobject 5
 	applymovement 5, Mistcity_InsideOfTruck_Daan_ChaseFaculty_Movement_0
 	waitmovement
-	setdynamicwarp MAP_DEEP_CLOUDFOREST_FACULTY_ANCIENT_GROTTO, 35, 16
+	setdynamicwarp MAP_DEEP_CLOUDFOREST_FACULTY_ANCIENT_GROTTO, 28, 37
 	call Mistcity_InsideOfTruck_OnDrive
 	delay 60
 	playse SE_TRUCK_DOOR
@@ -326,13 +326,14 @@ Miscity_InsideOfTruck_Daan_RescueMission_Text_4:
 	.string "those Beedrill of me!$"
 
 Mistcity_InsideOfTruck_Daan_ChaseFaculty_Text_0:
-	.string "They can't be that far away...\p"
-	.string "The signal seems to be coming from the\n"
-	.string "Ancient Grotto.$"
+	.string "They are still at the ancient meteorite\n"
+	.string "I think.\p"
+	.string "The signal is increasing the closer we\n"
+	.string "get...$"
 
 Mistcity_InsideOfTruck_Daan_ChaseFaculty_Text_1:
 	.string "BEEP.... BEEP....\p"
-	.string "I think this is it!\p"
+	.string "We're here!\p"
 	.string "NASH!\n"
 	.string "STOP THE CAR!$"
 
@@ -349,20 +350,21 @@ Mistcity_InsideOfTruck_Daan_ChaseFaculty_Text_4:
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_0:
 	.string "I can't believe it.\n"
 	.string "They just... took it.\p"
-	.string "Ripped a part of the forest's soul right\n"
-	.string "out of the ground and fled.\p"
+	.string "Destroyed the ancient meteorite,\n"
+	.string "ripped it right out of its resting place.\p"
 	.string "That 'Silent Guardian'... it was meant to\n"
 	.string "sleep forever.$"
 
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_1:
 	.string "The energy signature was off the\n"
 	.string "charts.\p"
-	.string "All my research on ancient Pokémon\n"
-	.string "points to one name...\p"
-	.string "They have Registeel.$"
+	.string "Maybe the old legends were real after\n"
+	.string "all...\p"
+	.string "How were they able to capture an\n"
+	.string "ancient golem?$"
 
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_2:
-	.string "And they were willing to tear down an\n"
+	.string "Worse, they were willing to tear down an\n"
 	.string "entire ecosystem just to find it.\p"
 	.string "I don't think these are just a group of\n"
 	.string "fanatics, they seem to be a\l"
@@ -377,8 +379,7 @@ Mistcity_InsideOfTruck_Daan_Returndrive_Text_3:
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_4:
 	.string "Don't.\p"
 	.string "You did everything you could.\p"
-	.string "This is on them, not us.\p"
-	.string "We'll get it back.$"
+	.string "This is on them, not us.$"
 
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_5:
 	.string "Hmmmm.....\p"
@@ -386,7 +387,7 @@ Mistcity_InsideOfTruck_Daan_Returndrive_Text_5:
 	.string "searching for secrets in this forest,\l"
 	.string "though.\p"
 	.string "A few years back, it was that eccentric\n"
-	.string "Professor. Birds.\p"
+	.string "PROFESSOR. BIRDS.\p"
 	.string "He was out here for months with all\n"
 	.string "sorts of weird scanners.\p"
 	.string "Said he was mapping 'geothermal pig\n"
@@ -398,7 +399,8 @@ Mistcity_InsideOfTruck_Daan_Returndrive_Text_5:
 	.string "Faculty, but his energy felt different.\p"
 	.string "More curious than malicious.\p"
 	.string "I wonder what he was really looking\n"
-	.string "for...$"
+	.string "for...\p"
+	.string "...$"
 
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_6:
 	.string "WHAT?!\p"
@@ -412,7 +414,7 @@ Mistcity_InsideOfTruck_Daan_Returndrive_Text_6:
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_7:
 	.string "We should talk about that another\n"
 	.string "time...\p"
-	.string "Right now, we fight back.\p"
+	.string "Right now, we have to fight back.\p"
 	.string "Their rot goes deep... it's even taken\n"
 	.string "root in our own town.\p"
 	.string "Eleanor and Marcus, two faculty\n"
@@ -431,8 +433,8 @@ Mistcity_InsideOfTruck_Daan_Returndrive_Text_8:
 
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_9:
 	.string "I'll keep watching the signals.\p"
-	.string "If The Faculty is active somewhere new,\n"
-	.string "we'll know.$"
+	.string "If The Faculty is active in this forest\n"
+	.string "again, we'll know.$"
 
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_10:
 	.string "We're here.$"

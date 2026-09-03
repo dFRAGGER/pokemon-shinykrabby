@@ -1,7 +1,7 @@
 mapscripts Route06_UpanaCave_MainRoom_MapScripts {}
 
 script UpanaCavesystem_Trainer_Charlie {
-    trainerbattle_double(TRAINER_CHARLIE, UpanaCavesystem_Text_CharlieIntro, UpanaCavesystem_Text_CharlieDefeated, UpanaCavesystem_Text_CharlieNotEnoughMons)
+    trainerbattle_double(TRAINER_CHARLIE_UPANA_SK, UpanaCavesystem_Text_CharlieIntro, UpanaCavesystem_Text_CharlieDefeated, UpanaCavesystem_Text_CharlieNotEnoughMons)
     msgbox(UpanaCavesystem_Text_CharliePostBattle, MSGBOX_AUTOCLOSE)
     end
 }
@@ -258,5 +258,4 @@ text UpanaCavesystem_Text_RexDefeated {
 text UpanaCavesystem_Text_RexPostBattle {
     format("The downhill run from the ridgeline is wild. My Doduo can't keep pace with me on a bike so they stay in here and race the stalagmites.")
 }
-
 

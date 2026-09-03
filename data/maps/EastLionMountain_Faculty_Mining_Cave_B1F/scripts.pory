@@ -16,7 +16,7 @@ script MiningCaveB1F_StartTremors {
 // =====================
 
 script MiningCaveB1F_Trainer_Faculty_Addy {
-    trainerbattle_single(TRAINER_MARY, MiningCaveB1F_Text_MadsIntro, MiningCaveB1F_Text_MadsDefeated)
+    trainerbattle_single(TRAINER_MADS_MINING_SK, MiningCaveB1F_Text_MadsIntro, MiningCaveB1F_Text_MadsDefeated)
     msgbox(MiningCaveB1F_Text_MadsPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
@@ -34,7 +34,7 @@ text MiningCaveB1F_Text_MadsPostBattle {
 }
 
 script MiningCaveB1F_Trainer_Faculty_Ad {
-    trainerbattle_single(TRAINER_ALEXIA, MiningCaveB1F_Text_AdIntro, MiningCaveB1F_Text_AdDefeated)
+    trainerbattle_single(TRAINER_AD_MINING_SK, MiningCaveB1F_Text_AdIntro, MiningCaveB1F_Text_AdDefeated)
     msgbox(MiningCaveB1F_Text_AdPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
@@ -52,7 +52,7 @@ text MiningCaveB1F_Text_AdPostBattle {
 }
 
 script MiningCave_Trainer_Faculty_Owen {
-    trainerbattle_single(TRAINER_OWEN, MiningCave_Text_OwenIntro, MiningCave_Text_OwenDefeated)
+    trainerbattle_single(TRAINER_OWEN_MINING_SK, MiningCave_Text_OwenIntro, MiningCave_Text_OwenDefeated)
     msgbox(MiningCave_Text_OwenPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
@@ -70,7 +70,7 @@ text MiningCave_Text_OwenPostBattle {
 }
 
 script MiningCave_Trainer_Faculty_Warren {
-    trainerbattle_single(TRAINER_WARREN, MiningCave_Text_WarrenIntro, MiningCave_Text_WarrenDefeated)
+    trainerbattle_single(TRAINER_WARREN_MINING_SK, MiningCave_Text_WarrenIntro, MiningCave_Text_WarrenDefeated)
     msgbox(MiningCave_Text_WarrenPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
@@ -101,7 +101,7 @@ script MiningCaveB1F_Barry_Battle {
     setspeaker("BARRY")
     msgbox(format("YOU again?!\pDon't you ever know when to quit?\p...\pIt doesn't matter. We've already found what we came for.\pYou're too late to change anything."), MSGBOX_AUTOCLOSE)
     waitmessage
-    trainerbattle_no_intro(TRAINER_BARRY, MiningCaveB1F_Text_BarryDefeated)
+    trainerbattle_no_intro(TRAINER_BARRY_MINING_SK, MiningCaveB1F_Text_BarryDefeated)
     goto(MiningCaveB1F_Barry_PostBattle)
 }
 

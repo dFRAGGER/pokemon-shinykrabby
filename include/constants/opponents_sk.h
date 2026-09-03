@@ -5,7 +5,7 @@
 // from SK_TRAINERS_END, so growing NUM_SK_TRAINERS is the only thing needed to add
 // more trainers here - no need to touch opponents_hns.h.
 #define SK_TRAINERS_START                              619
-#define NUM_SK_TRAINERS                                200
+#define NUM_SK_TRAINERS                               128
 #define SK_TRAINERS_END                                (SK_TRAINERS_START + NUM_SK_TRAINERS - 1)
 
 // ShinyKrabby custom trainers (ported from custom maps)
@@ -108,5 +108,38 @@
 #define TRAINER_MACEY_SK                             (SK_TRAINERS_START + 94)
 #define TRAINER_KATHLEEN_SK                          (SK_TRAINERS_START + 95)
 #define TRAINER_NICHOLAS_SK                          (SK_TRAINERS_START + 96)
+
+// Tessera NPCs that previously borrowed Emerald trainer ids.
+#define TRAINER_RICK_MAASJE_SK                       (SK_TRAINERS_START + 97)
+#define TRAINER_ALLEN_MAASJE_SK                      (SK_TRAINERS_START + 98)
+#define TRAINER_IVAN_MAASJE_SK                       (SK_TRAINERS_START + 99)
+#define TRAINER_JAMES_ROUTE01_SK                     (SK_TRAINERS_START + 100)
+#define TRAINER_MARCEL_ROUTE03_SK                    (SK_TRAINERS_START + 101)
+#define TRAINER_ALBERTO_ROUTE03_SK                   (SK_TRAINERS_START + 102)
+#define TRAINER_ED_ROUTE03_SK                        (SK_TRAINERS_START + 103)
+#define TRAINER_ALBERT_EAST_LION_SK                  (SK_TRAINERS_START + 104)
+#define TRAINER_SAMUEL_EAST_LION_SK                  (SK_TRAINERS_START + 105)
+#define TRAINER_VITO_EAST_LION_SK                    (SK_TRAINERS_START + 106)
+#define TRAINER_MADS_MINING_SK                       (SK_TRAINERS_START + 107)
+#define TRAINER_AD_MINING_SK                         (SK_TRAINERS_START + 108)
+#define TRAINER_OWEN_MINING_SK                       (SK_TRAINERS_START + 109)
+#define TRAINER_WARREN_MINING_SK                     (SK_TRAINERS_START + 110)
+#define TRAINER_BARRY_MINING_SK                      (SK_TRAINERS_START + 111)
+#define TRAINER_LEAH_ROUTE04_SK                      (SK_TRAINERS_START + 112)
+#define TRAINER_FREDRICK_ROUTE04_SK                  (SK_TRAINERS_START + 113)
+#define TRAINER_MATT_ROUTE04_SK                      (SK_TRAINERS_START + 114)
+#define TRAINER_DAISY_ROUTE04_SK                     (SK_TRAINERS_START + 115)
+#define TRAINER_ZANDER_ROUTE04_SK                    (SK_TRAINERS_START + 116)
+#define TRAINER_ARCHIE_ROUTE04_SK                    (SK_TRAINERS_START + 117)
+#define TRAINER_RANDALL_ROUTE05_SK                   (SK_TRAINERS_START + 118)
+#define TRAINER_PARKER_ROUTE05_SK                    (SK_TRAINERS_START + 119)
+#define TRAINER_GEORGE_ROUTE05_SK                    (SK_TRAINERS_START + 120)
+#define TRAINER_BERKE_ROUTE05_SK                     (SK_TRAINERS_START + 121)
+#define TRAINER_BRAXTON_ROUTE05_SK                   (SK_TRAINERS_START + 122)
+#define TRAINER_VINCENT_ROUTE05_SK                   (SK_TRAINERS_START + 123)
+#define TRAINER_CHARLIE_UPANA_SK                     (SK_TRAINERS_START + 124)
+#define TRAINER_LEROY_WEST_LION_SK                  (SK_TRAINERS_START + 125)
+#define TRAINER_WILTON_WEST_LION_SK                 (SK_TRAINERS_START + 126)
+#define TRAINER_EDGAR_WEST_LION_SK                  (SK_TRAINERS_START + 127)
 
 #endif // GUARD_CONSTANTS_OPPONENTS_SK_H

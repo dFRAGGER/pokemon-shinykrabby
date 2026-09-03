@@ -3,19 +3,19 @@ EastLionMountain_MapScripts::
 
 
 EastLionMountain_Trainer_Faculty_Albert::
-	trainerbattle_single TRAINER_ALBERT, EastLionMountain_Text_AlbertIntro, EastLionMountain_Text_AlbertDefeated
+	trainerbattle_single TRAINER_ALBERT_EAST_LION_SK, EastLionMountain_Text_AlbertIntro, EastLionMountain_Text_AlbertDefeated
 	msgbox EastLionMountain_Text_AlbertPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 EastLionMountain_Trainer_Faculty_Samuel::
-	trainerbattle_single TRAINER_SAMUEL, EastLionMountain_Text_SamuelIntro, EastLionMountain_Text_SamuelDefeated
+	trainerbattle_single TRAINER_SAMUEL_EAST_LION_SK, EastLionMountain_Text_SamuelIntro, EastLionMountain_Text_SamuelDefeated
 	msgbox EastLionMountain_Text_SamuelPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 EastLionMountain_Trainer_Vito::
-	trainerbattle_single TRAINER_VITO, EastLionMountain_Text_VitoIntro, EastLionMountain_Text_VitoDefeated
+	trainerbattle_single TRAINER_VITO_EAST_LION_SK, EastLionMountain_Text_VitoIntro, EastLionMountain_Text_VitoDefeated
 	goto_if_set FLAG_HIDE_FACULTY_AT_WESTLION_MINE, EastLionMountain_Trainer_Vito_2
 	msgbox EastLionMountain_Text_VitoPostBattle, MSGBOX_AUTOCLOSE
 EastLionMountain_Trainer_Vito_1:

@@ -100,7 +100,7 @@ script Mistcity_InsideOfTruck_Daan_ChaseFaculty {
     addobject(5)
     applymovement(5, moves(jump_left))
     waitmovement
-    setdynamicwarp(MAP_DEEP_CLOUDFOREST_FACULTY_ANCIENT_GROTTO, 35, 16)
+    setdynamicwarp(MAP_DEEP_CLOUDFOREST_FACULTY_ANCIENT_GROTTO, 28, 37)
     call(Mistcity_InsideOfTruck_OnDrive)
     delay(60)
     playse(SE_TRUCK_DOOR)
@@ -108,11 +108,11 @@ script Mistcity_InsideOfTruck_Daan_ChaseFaculty {
     delay(60)
     callnative(StartTruckDrivingScene)
     setspeaker("DAVID")
-    msgbox(format("They can't be that far away...\pThe signal seems to be coming from the Ancient Grotto."),MSGBOX_AUTOCLOSE)
+    msgbox(format("They are still at the ancient meteorite I think.\pThe signal is increasing the closer we get..."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(120)
     setspeaker("DAVID")
-    msgbox(format("BEEP.... BEEP....\pI think this is it!\pNASH!\nSTOP THE CAR!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("BEEP.... BEEP....\pWe're  here!\pNASH!\nSTOP THE CAR!"),MSGBOX_AUTOCLOSE)
     callnative(StartTruckSlowingDownScene)
     delay(200)
     callnative(WaitForTruckToStop)
@@ -153,17 +153,17 @@ script Mistcity_InsideOfTruck_Daan_Returndrive {
     delay(60)
     callnative(StartTruckDrivingScene)
     setspeaker("DAAN")
-    msgbox(format("I can't believe it.\nThey just... took it.\pRipped a part of the forest's soul right out of the ground and fled.\pThat 'Silent Guardian'... it was meant to sleep forever."),MSGBOX_AUTOCLOSE)
+    msgbox(format("I can't believe it.\nThey just... took it.\pDestroyed the ancient meteorite, ripped it right out of its resting place.\pThat 'Silent Guardian'... it was meant to sleep forever."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
     applymovement(4, moves(walk_down face_right))
     setspeaker("DAVID")
-    msgbox(format("The energy signature was off the charts.\pAll my research on ancient Pokémon points to one name...\pThey have Registeel."),MSGBOX_AUTOCLOSE)
+    msgbox(format("The energy signature was off the charts.\pMaybe the old legends were real after all...\pHow were they able to capture an ancient golem?"),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
     applymovement(5, moves(walk_left))
     setspeaker("DAAN")
-    msgbox(format("And they were willing to tear down an entire ecosystem just to find it.\pI don't think these are just a group of fanatics, they seem to be a well-funded, highly organized operation."),MSGBOX_AUTOCLOSE)
+    msgbox(format("Worse, they were willing to tear down an entire ecosystem just to find it.\pI don't think these are just a group of fanatics, they seem to be a well-funded, highly organized operation."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
     applymovement(4, moves(walk_left))
@@ -173,13 +173,13 @@ script Mistcity_InsideOfTruck_Daan_Returndrive {
     applymovement(5, moves(walk_left))
     applymovement(4, moves(face_right))
     setspeaker("DAAN")
-    msgbox(format("Don't.\pYou did everything you could.\pThis is on them, not us.\pWe'll get it back."),MSGBOX_AUTOCLOSE)
+    msgbox(format("Don't.\pYou did everything you could.\pThis is on them, not us."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
     applymovement(5, moves(walk_right*2 face_left))
     applymovement(4, moves(walk_right))
     setspeaker("DAAN")
-    msgbox(format("Hmmmm.....\pIt's not the first time someone's come searching for secrets in this forest, though.\pA few years back, it was that eccentric Professor. Birds.\pHe was out here for months with all sorts of weird scanners.\pSaid he was mapping 'geothermal pig habitats.'\p...Geothermal. Pig. Habitats.\pIn a forest.\pWhere there are no pigs.\pHe was just as secretive as The Faculty, but his energy felt different.\pMore curious than malicious.\pI wonder what he was really looking for..."),MSGBOX_AUTOCLOSE)
+    msgbox(format("Hmmmm.....\pIt's not the first time someone's come searching for secrets in this forest, though.\pA few years back, it was that eccentric PROFESSOR. BIRDS.\pHe was out here for months with all sorts of weird scanners.\pSaid he was mapping 'geothermal pig habitats.'\p...Geothermal. Pig. Habitats.\pIn a forest.\pWhere there are no pigs.\pHe was just as secretive as The Faculty, but his energy felt different.\pMore curious than malicious.\pI wonder what he was really looking for...\p..."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
     playse(SE_PIN)
@@ -191,7 +191,7 @@ script Mistcity_InsideOfTruck_Daan_Returndrive {
     applymovement(5, moves(walk_right face_left))
     applymovement(4, moves(face_down))
     setspeaker("DAAN")
-    msgbox(format("We should talk about that another time...\pRight now, we fight back.\pTheir rot goes deep... it's even taken root in our own town.\pEleanor and Marcus, two faculty sympathizers who recently moved into town...\pMaybe we should give a little knock on their door."),MSGBOX_AUTOCLOSE)
+    msgbox(format("We should talk about that another time...\pRight now, we have to fight back.\pTheir rot goes deep... it's even taken root in our own town.\pEleanor and Marcus, two faculty sympathizers who recently moved into town...\pMaybe we should give a little knock on their door."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
     setspeaker("DAAN")
@@ -200,7 +200,7 @@ script Mistcity_InsideOfTruck_Daan_Returndrive {
     delay(40)
     applymovement(4, moves(walk_down face_right))
     setspeaker("DAVID")
-    msgbox(format("I'll keep watching the signals.\pIf The Faculty is active somewhere new, we'll know."),MSGBOX_AUTOCLOSE)
+    msgbox(format("I'll keep watching the signals.\pIf The Faculty is active in this forest again, we'll know."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(120)
     setspeaker("DAAN")

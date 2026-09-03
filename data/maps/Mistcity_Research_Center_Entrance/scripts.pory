@@ -166,14 +166,14 @@ script Mistcity_Research_Center_Entrance_Daan_RescueMission {
     waitmovement
     applymovement(LOCALID_PLAYER,moves(face_left))
     setspeaker("LEAD SCIENTIST")
-    msgbox(format("Hold it right there.\pYou're a skilled trainer, right?\p...Good. We have a serious situation.\pJoin us."),MSGBOX_AUTOCLOSE)
+    msgbox(format("Hold it right there.\pYou're a skilled trainer, right?\p...\pResearcher?\pEven better.\pWe have a serious situation.\pJoin us."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER,moves(walk_left*3 face_up))
     waitmovement
     applymovement(19, moves(face_up))
     waitmovement
     setspeaker("LEAD SCIENTIST")
-    msgbox(format("About two hours ago, a distress alarm went off in the Whisperwood Grove.\pIt's in the same sector we've been getting all these weird reports from.\pThe alarm was triggered by a report of illegal deforestation.\pOur best ranger, Daan, took the first truck out to investigate.\pWe were expecting a radio check-in an hour ago, but we've gotten nothing but static.\pWe need someone to head to his last known coordinates to provide backup and find out what's going on.\pWe're stretched thin here with all these agitated Pokémon."),MSGBOX_AUTOCLOSE)
+    msgbox(format("About two hours ago, a distress alarm went off in the Whisperwood Grove.\pIt's in the same sector we've been getting all these weird reports from.\pThe alarm was triggered by a report of illegal deforestation.\pOur best ranger, DAAN, took the first truck out to investigate.\pWe were expecting a radio check-in an hour ago, but we've gotten nothing but static.\pWe need someone to head to his last known coordinates to provide backup and find out what's going on.\pWe're stretched thin here with all these agitated Pokémon."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(19, moves(face_right))
     applymovement(LOCALID_PLAYER,moves(face_left))
@@ -183,11 +183,11 @@ script Mistcity_Research_Center_Entrance_Daan_RescueMission {
     waitmessage
     if(var(VAR_RESULT)==YES){
     setspeaker("LEAD SCIENTIST")
-    msgbox(format("...Great!\pDon't go in there unprepared.\pEvery Pokémon we've rescued recently has come from that sector.\pThey're all on edge, so expect wild Pokémon to be more aggressive than usual.\pThe reports mentioned there were tracks from vehicles that have no business being that deep in a protected forest.\pThis group, whoever they are, are well-equipped, and they're after something specific.\pLook for tracks, listen for machinery, and find Daan.\pBut be careful, whoever is out there is trying to tear the heart out of the forest."),MSGBOX_AUTOCLOSE)
+    msgbox(format("...Great!\pDon't go in there unprepared.\pEvery Pokémon we've rescued recently has come from that sector.\pThey're all on edge, so expect wild Pokémon to be more aggressive than usual.\pThe reports mentioned there were tracks from vehicles that have no business being that deep in a protected forest.\pThis group, whoever they are, are well-equipped, and they're after something specific.\pLook for tracks, listen for machinery, and find DAAN.\pBut be careful, whoever is out there is trying to tear the heart out of the forest."),MSGBOX_AUTOCLOSE)
     }
     if(var(VAR_RESULT)==NO){
         setspeaker("LEAD SCIENTIST")
-        msgbox(format("Well, I'm afraid you have no choice.\pWe are understaffed but you won't go in there alone.\pEvery Pokémon we've rescued recently has come from that sector.\pThey're all on edge, so expect wild Pokémon to be more aggressive than usual.\pThe reports mentioned there were tracks from vehicles that have no business being that deep in a protected forest.\pThis group, whoever they are, are well-equipped, and they're after something specific.\pLook for tracks, listen for machinery, and find Daan.\pBut be careful, whoever is out there is trying to tear the heart out of the forest."),MSGBOX_AUTOCLOSE)
+        msgbox(format("Well, I'm afraid you have no choice.\pWe are understaffed but you won't go in there alone.\pEvery Pokémon we've rescued recently has come from that sector.\pThey're all on edge, so expect wild Pokémon to be more aggressive than usual.\pThe reports mentioned there were tracks from vehicles that have no business being that deep in a protected forest.\pThis group, whoever they are, are well-equipped, and they're after something specific.\pLook for tracks, listen for machinery, and find DAAN.\pBut be careful, whoever is out there seems to be organised and prepared."),MSGBOX_AUTOCLOSE)
     }
     waitmessage
     applymovement(LOCALID_PLAYER,moves(walk_right*2 face_up))
@@ -200,16 +200,16 @@ script Mistcity_Research_Center_Entrance_Daan_RescueMission {
     applymovement(18, moves(face_down))
     waitmovement
     setspeaker("LEAD SCIENTIST")
-    msgbox(format("I want to introduce you to two of my people, Nash & David."),MSGBOX_AUTOCLOSE)
+    msgbox(format("I want to introduce you to two of my people, NASH & DAVID."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(20, moves(walk_down))
     waitmovement
     setspeaker("NASH")
-    msgbox(format("Glad to have you with us.\pMy partner, Arcanine, and I know that sector like the back of our hands.\pI'll handle communications and watch our six for any ambushes.\pThe reports about organized trespassers are what worry me most.\pAmateurs get lost; professionals leave tracks like the ones we've seen.\pLet's move out, find Daan, and make sure whoever is doing this regrets stepping foot in our forest."),MSGBOX_AUTOCLOSE)
+    msgbox(format("Glad to have you with us.\pMy partner, Arcanine, and I know that sector like the back of our hands.\pI'll handle communications and watch our six for any ambushes.\pThe reports about organized trespassers are what worry me most.\pThe tracks we've seen seem to be from professionals.\pLet's move out, find DAAN, and make sure whoever is doing this regrets stepping foot in our forest."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(20, moves(face_up))
     waitmovement
-    delay(40)
+    delay(90)
     applymovement(20, moves(face_down))
     waitmovement
     setspeaker("NASH")
@@ -220,7 +220,7 @@ script Mistcity_Research_Center_Entrance_Daan_RescueMission {
     applymovement(18, moves(walk_down walk_right face_down))
     waitmovement
     setspeaker("DAVID")
-    msgbox(format("I'm {COLOR GREEN}David Heartfield{COLOR DARK_GRAY}.\pI'm...\pI'm not a great battler.\pNash is for the fighting.\pI'm here to find the wrongness.\pThe scientists... they said the Parasect's mushroom was glowing.\pA stress reaction to a high-frequency energy pulse.\pI built a scanner to detect that specific frequency.\pIt won't find Pokémon... it will find the source of what's hurting them."),MSGBOX_AUTOCLOSE)
+    msgbox(format("I'm DAVID HEARTFIELD.\pI'm...\pI'm not a great battler.\pNASH is for the fighting.\pI'm here to find the wrongness.\pThe scientists... they said the Parasect's mushroom was glowing.\pA stress reaction to a high-frequency energy pulse.\pI built a scanner to detect that specific frequency.\pIt won't find Pokémon... but it will find the source of what's hurting them."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
     applymovement(18,moves(face_right))
@@ -238,7 +238,7 @@ script Mistcity_Research_Center_Entrance_Daan_RescueMission {
     applymovement(18, moves(walk_left walk_up face_down))
     waitmovement
     setspeaker("LEAD SCIENTIST")
-    msgbox(format("Nash.\nDavid.\pGo downstairs and prepare the truck.\pKeep me updated on your progress."))
+    msgbox(format("NASH.\nDAVID.\pGo downstairs and prepare the truck.\pKeep me updated on your progress."))
     waitmessage
     applymovement(20, moves(walk_up*2))
     waitmovement
@@ -255,7 +255,7 @@ script Mistcity_Research_Center_Entrance_Daan_RescueMission {
     applymovement(LOCALID_PLAYER,moves(face_left))
     waitmovement
     setspeaker("LEAD SCIENTIST")
-    msgbox(format("Don't be afraid.\pNash & David are the best people I got.\pMake sure you heal your Pokémon and stack up on some potions, the forest can be a very harsh place.\pI'll keep in contact trough the radio.\pNash and David should be ready any minute now."))
+    msgbox(format("Don't be afraid.\pNASH & DAVID are the best people I got.\pMake sure you heal your Pokémon and stack up on some potions, the forest can be a very harsh place.\pI'll keep in contact trough the radio.\pNASH and DAVID should be ready any minute now."))
     waitmessage
     setvar(VAR_MISTCITY_RESEARCH_CENTER,1)
     setflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER1)
@@ -274,7 +274,7 @@ script Mistcity_Research_Center_Entrance_LeadScientist {
     }
     else {
         if (flag(FLAG_ITEM_RESEARCH_CENTER_EXP_SHARE) == FALSE) {
-            msgbox(format("You actually did it.\pDAAN is safe, and the seismic disturbances have completely ceased.\pNash and David said you handled yourself like a veteran out there.\pWe owe you a great debt, {PLAYER}.\pThe forest can finally heal.\pAs a reward, I want to give you a piece of technology we've been developing here.\pWe call it Experience Sharing, or in short Exp. Share.\pThe idea came from studying Venusaur's in their natural habitat.\pYou probably know that Venusaur's collect solar energy through the flower on their back right?\pTurns out, that this energy is not only going to its own body, but is shared among every living thing around the Venusaur through tiny roots in his foots.\pFascinating right?\pSometimes new technology is not the answer, but just looking at what nature is doing around us and take that as an example.\pAfter all, Pokémon have been on this planet far longer than us.\pThey've already solved problems we're still scribbling equations for.\pWe just have to pay attention.\pThis technology does the same thing, it shares the experience of battle across your whole team.\pTake it."))
+            msgbox(format("You actually did it.\pDAAN is safe, and the seismic disturbances have completely ceased.\pNASH and DAVID said you handled yourself like a veteran out there.\pWe owe you a great debt, {PLAYER}.\pThe forest can finally heal.\pAs a reward, I want to give you a piece of technology we've been developing here.\pWe call it Experience Sharing, or in short Exp. Share.\pThe idea came from studying Venusaur's in their natural habitat.\pYou probably know that Venusaur's collect solar energy through the flower on their back right?\pTurns out, that this energy is not only going to its own body, but is shared among every living thing around the Venusaur through tiny roots in his foots.\pFascinating right?\pSometimes new technology is not the answer, but just looking at what nature is doing around us and take that as an example.\pAfter all, Pokémon have been on this planet far longer than us.\pThey've already solved problems we're still scribbling equations for.\pWe just have to pay attention.\pThis technology does the same thing, it shares the experience of battle across your whole team.\pTake it."))
             waitmessage
             giveitem(ITEM_EXP_SHARE)
             waitmessage

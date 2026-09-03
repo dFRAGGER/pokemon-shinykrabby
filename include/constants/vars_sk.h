@@ -42,5 +42,6 @@
 #define VAR_SILTROOT_TOWN_STATE                           (SK_VARS_START + 12)
 #define VAR_STARTHOUSE_ERP_CITY                           (SK_VARS_START + 13)
 #define VAR_STARTHOUSE_ERP_CITY_1F                        (SK_VARS_START + 14)
+#define VAR_DEEPCLOUDFOREST_GORGE_NO_LEAVE                (SK_VARS_START + 15)
 
 #endif // GUARD_CONSTANTS_VARS_SK_H

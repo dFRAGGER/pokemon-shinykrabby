@@ -46,19 +46,19 @@ Route03_Trainer_Lawson::
 
 
 Route03_Trainer_Marcel::
-	trainerbattle_single TRAINER_MARCEL, Route03_Text_MarcelIntro, Route03_Text_MarcelDefeated
+	trainerbattle_single TRAINER_MARCEL_ROUTE03_SK, Route03_Text_MarcelIntro, Route03_Text_MarcelDefeated
 	msgbox Route03_Text_MarcelPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route03_Trainer_Alberto::
-	trainerbattle_single TRAINER_ALBERTO, Route03_Text_AlbertoIntro, Route03_Text_AlbertoDefeated
+	trainerbattle_single TRAINER_ALBERTO_ROUTE03_SK, Route03_Text_AlbertoIntro, Route03_Text_AlbertoDefeated
 	msgbox Route03_Text_AlbertoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 Route03_Trainer_Ed::
-	trainerbattle_single TRAINER_ED, Route03_Text_EdIntro, Route03_Text_EdDefeated
+	trainerbattle_single TRAINER_ED_ROUTE03_SK, Route03_Text_EdIntro, Route03_Text_EdDefeated
 	msgbox Route03_Text_EdPostBattle, MSGBOX_AUTOCLOSE
 	end
 

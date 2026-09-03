@@ -3,7 +3,7 @@ WestLionMountain_MapScripts::
 
 
 WestLionMountain_Trainer_Leroy::
-	trainerbattle_single TRAINER_LEROY, WestLionMountain_Text_LeroyIntro, WestLionMountain_Text_LeroyDefeated
+	trainerbattle_single TRAINER_LEROY_WEST_LION_SK, WestLionMountain_Text_LeroyIntro, WestLionMountain_Text_LeroyDefeated
 	goto_if_set FLAG_HIDE_FACULTY_AT_WESTLION_MINE, WestLionMountain_Trainer_Leroy_2
 	msgbox WestLionMountain_Text_LeroyPostBattle, MSGBOX_AUTOCLOSE
 WestLionMountain_Trainer_Leroy_1:
@@ -15,13 +15,13 @@ WestLionMountain_Trainer_Leroy_2:
 
 
 WestLionMountain_Trainer_Wilton::
-	trainerbattle_single TRAINER_WILTON_1, WestLionMountain_Text_WiltonIntro, WestLionMountain_Text_WiltonDefeated
+	trainerbattle_single TRAINER_WILTON_WEST_LION_SK, WestLionMountain_Text_WiltonIntro, WestLionMountain_Text_WiltonDefeated
 	msgbox WestLionMountain_Text_WiltonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 WestLionMountain_Trainer_Edgar::
-	trainerbattle_single TRAINER_EDGAR, WestLionMountain_Text_EdgarIntro, WestLionMountain_Text_EdgarDefeated
+	trainerbattle_single TRAINER_EDGAR_WEST_LION_SK, WestLionMountain_Text_EdgarIntro, WestLionMountain_Text_EdgarDefeated
 	goto_if_set FLAG_HIDE_FACULTY_AT_WESTLION_MINE, WestLionMountain_Trainer_Edgar_2
 	msgbox WestLionMountain_Text_EdgarPostBattle, MSGBOX_AUTOCLOSE
 WestLionMountain_Trainer_Edgar_1:
