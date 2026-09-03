@@ -836,6 +836,12 @@ enum __attribute__((packed)) Item
     #undef ENUM_HM
     #undef TO_TMHM_NUMS
 
+#if IS_SK
+    // HNS map content is still compiled into the SK build, but SK uses HM08
+    // for Dive. Keep the old name as a compile-time compatibility alias only.
+    #define ITEM_HM_WHIRLPOOL ITEM_HM08
+#endif
+
     // Charms
     ITEM_OVAL_CHARM = 690,
     ITEM_SHINY_CHARM = 691,

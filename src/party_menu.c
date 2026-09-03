@@ -2916,9 +2916,10 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
 
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
-    u8 i, j;
-    bool32 hasFlyAlready = FALSE;
-    bool32 hasFlashAlready = FALSE;
+    u8 fieldMove;
+    u8 numFieldMoves = 0;
+    u8 reservedActions = 1; // Cancel
+    u8 maxFieldMoves;
 
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
@@ -2930,70 +2931,40 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUB_MOVES);
     }
 
-    if (HMsOverwriteOptionActive() && slotId == 0)
+    if (!InBattlePike())
     {
-        for (i = 0; i < MAX_MON_MOVES; i++)
-        {
-            for (j = 0; j != FIELD_MOVES_COUNT; j++)
-            {
-                if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == FieldMove_GetMoveId(j))
-                {
-                    if (FieldMove_GetMoveId(j) == MOVE_FLY)
-                        hasFlyAlready = TRUE;
-                    if (FieldMove_GetMoveId(j) == MOVE_FLASH)
-                        hasFlashAlready = TRUE;
-                    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
-                    break;
-                }
-            }
-        }
-        if (CheckBagHasItem(ITEM_HM02, 1) && sPartyMenuInternal->numActions < 5 && !hasFlyAlready)
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLY + MENU_FIELD_MOVES);
-        if (CheckBagHasItem(ITEM_HM05, 1) && sPartyMenuInternal->numActions < 5 && !hasFlashAlready)
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLASH + MENU_FIELD_MOVES);
+        reservedActions++; // Item or Mail
+        if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE)
+            reservedActions++; // Switch
     }
-    else
+    if (slotId == GetFirstLiveMonIndex())
+        reservedActions++; // Follower
+
+    maxFieldMoves = ARRAY_COUNT(sPartyMenuInternal->actions) - sPartyMenuInternal->numActions - reservedActions;
+
+    // One shared check now drives both the party menu and direct obstacle
+    // interaction: badge permission, required item, and a capable Pokémon.
+    // Fly and Flash have no direct obstacle interaction, so keep them ahead of
+    // the obstacle-driven moves when the compact party menu reaches capacity.
+    if (numFieldMoves < maxFieldMoves && CanMonUseFieldMove(&mons[slotId], FIELD_MOVE_FLY))
     {
-        for (i = 0; i < MAX_MON_MOVES; i++)
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLY + MENU_FIELD_MOVES);
+        numFieldMoves++;
+    }
+    if (numFieldMoves < maxFieldMoves && CanMonUseFieldMove(&mons[slotId], FIELD_MOVE_FLASH))
+    {
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLASH + MENU_FIELD_MOVES);
+        numFieldMoves++;
+    }
+    for (fieldMove = 0; fieldMove < FIELD_MOVES_COUNT && numFieldMoves < maxFieldMoves; fieldMove++)
+    {
+        if (fieldMove == FIELD_MOVE_FLY || fieldMove == FIELD_MOVE_FLASH)
+            continue;
+        if (CanMonUseFieldMove(&mons[slotId], fieldMove))
         {
-            for (j = 0; j != FIELD_MOVES_COUNT; j++)
-            {
-                if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == FieldMove_GetMoveId(j))
-                {
-                    if (FieldMove_GetMoveId(j) != MOVE_FLY && FieldMove_GetMoveId(j) != MOVE_FLASH
-                     && FieldMove_GetMoveId(j) != MOVE_CUT && FieldMove_GetMoveId(j) != MOVE_SURF
-                     && FieldMove_GetMoveId(j) != MOVE_STRENGTH && FieldMove_GetMoveId(j) != MOVE_ROCK_SMASH
-                     && FieldMove_GetMoveId(j) != MOVE_WATERFALL && FieldMove_GetMoveId(j) != MOVE_DIVE)
-                        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
-                    break;
-                }
-            }
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, fieldMove + MENU_FIELD_MOVES);
+            numFieldMoves++;
         }
-        if (sPartyMenuInternal->numActions < 5 && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), MOVE_FLY))
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLY + MENU_FIELD_MOVES);
-        if (sPartyMenuInternal->numActions < 5 && CheckBagHasItem(ITEM_HM05, 1)
-         && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), MOVE_FLASH))
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLASH + MENU_FIELD_MOVES);
-#if OW_HM_ITEMS_ALLOW_FIELD_USE == TRUE
-        if (sPartyMenuInternal->numActions < 5 && CheckBagHasItem(ITEM_HM01, 1)
-         && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), MOVE_CUT))
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_CUT + MENU_FIELD_MOVES);
-        if (sPartyMenuInternal->numActions < 5 && CheckBagHasItem(ITEM_HM03, 1)
-         && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), MOVE_SURF))
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_SURF + MENU_FIELD_MOVES);
-        if (sPartyMenuInternal->numActions < 5 && CheckBagHasItem(ITEM_HM04, 1)
-         && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), MOVE_STRENGTH))
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_STRENGTH + MENU_FIELD_MOVES);
-        if (sPartyMenuInternal->numActions < 5 && CheckBagHasItem(ITEM_HM06, 1)
-         && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), MOVE_ROCK_SMASH))
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_ROCK_SMASH + MENU_FIELD_MOVES);
-        if (sPartyMenuInternal->numActions < 5 && CheckBagHasItem(ITEM_HM07, 1)
-         && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), MOVE_WATERFALL))
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_WATERFALL + MENU_FIELD_MOVES);
-        if (sPartyMenuInternal->numActions < 5 && CheckBagHasItem(ITEM_HM08, 1)
-         && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), MOVE_DIVE))
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_DIVE + MENU_FIELD_MOVES);
-#endif
     }
 
     if (!InBattlePike())
@@ -7012,7 +6983,7 @@ void ItemUseCB_PokeBall(u8 taskId, TaskFunc task)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     u16 currBall = GetMonData(mon, MON_DATA_POKEBALL);
-    u16 newBall = gSpecialVar_ItemId;
+    u16 newBall = ItemIdToBallId(gSpecialVar_ItemId);
     static const u8 sText_MonBallWasChanged[] = _("{STR_VAR_1} was put in the {STR_VAR_2}.{PAUSE_UNTIL_PRESS}");
 
     if (currBall == newBall)

@@ -12956,9 +12956,9 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("TM52"),
         .price = 10000,
         .description = COMPOUND_STRING(
-            "Attacks at full power.\n"
-            "May lower the foe's\n"
-            "Sp. Def."),
+            "Attacks at full\n"
+            "power. May lower\n"
+            "the foe's Sp. Def."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13726,7 +13726,7 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-#if IS_HNS
+#if IS_HNS && !IS_SK
     [ITEM_HM_WHIRLPOOL] =
     {
         .name = ITEM_NAME("HM08"),
@@ -14545,12 +14545,23 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_SCANNER] =
     {
+#if IS_SK
+        .name = ITEM_NAME("Strange Device"),
+#else
         .name = ITEM_NAME("SCANNER"),
+#endif
         .price = 0,
+#if IS_SK
+        .description = COMPOUND_STRING(
+            "A device found\n"
+            "inside the\n"
+            "Crab Hill."),
+#else
         .description = COMPOUND_STRING(
             "A device found\n"
             "inside the\n"
             "Abandoned Ship."),
+#endif
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

@@ -97,6 +97,17 @@
     F(FLASH_CANNON) \
     F(TRICK_ROOM)
 
+#if IS_SK
+#define FOREACH_HM(F) \
+    F(CUT) \
+    F(FLY) \
+    F(SURF) \
+    F(STRENGTH) \
+    F(FLASH) \
+    F(ROCK_SMASH) \
+    F(WATERFALL) \
+    F(DIVE)
+#else
 #define FOREACH_HM(F) \
     F(CUT) \
     F(FLY) \
@@ -106,6 +117,7 @@
     F(ROCK_SMASH) \
     F(WATERFALL) \
     F(WHIRLPOOL)
+#endif
 
 #else
 

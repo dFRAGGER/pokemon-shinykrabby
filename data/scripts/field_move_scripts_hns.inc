@@ -1,9 +1,7 @@
 @ Interact with cuttable tree
 EventScript_CutTree::
 	lockall
-	goto_if_unset FLAG_RECEIVED_HM_CUT, EventScript_CheckTreeCantCut
-	goto_if_unset FLAG_BADGE02_GET, EventScript_CheckTreeCantCut
-	checkpartymove MOVE_CUT
+	checkfieldmove FIELD_MOVE_CUT, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CheckTreeCantCut
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -66,9 +64,7 @@ EventScript_UseRockSmash::
 @ Interact with smashable rock
 EventScript_RockSmash::
 	lockall
-	checkpartymove MOVE_ROCK_SMASH
-	goto_if_unset FLAG_BADGE01_GET, EventScript_CantSmashRock
-	goto_if_unset FLAG_RECEIVED_HM_ROCK_SMASH, EventScript_CantSmashRock
+	checkfieldmove FIELD_MOVE_ROCK_SMASH, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -323,11 +319,8 @@ Text_CantHeadbutt:
 
 EventScript_StrengthBoulder::
 	lockall
-	goto_if_unset FLAG_BADGE03_GET, EventScript_CantStrength
-	checkitem ITEM_HM_STRENGTH
-	goto_if_eq VAR_RESULT, FALSE, EventScript_CantStrength
 	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_CheckActivatedBoulder
-	checkpartymove MOVE_STRENGTH
+	checkfieldmove FIELD_MOVE_STRENGTH, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantStrength
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -385,8 +378,7 @@ Text_StrengthActivated:
 
 EventScript_UseWaterfall::
 	lockall
-	goto_if_unset FLAG_BADGE08_GET, EventScript_CantWaterfall
-	checkpartymove MOVE_WATERFALL
+	checkfieldmove FIELD_MOVE_WATERFALL, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantWaterfall
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -419,7 +411,7 @@ Text_MonUsedWaterfall:
 
 EventScript_UseDive::
 	lockall
-	checkpartymove MOVE_DIVE
+	checkfieldmove FIELD_MOVE_DIVE, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantDive
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -442,7 +434,7 @@ EventScript_EndDive::
 
 EventScript_UseDiveUnderwater::
 	lockall
-	checkpartymove MOVE_DIVE
+	checkfieldmove FIELD_MOVE_DIVE, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSurface
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -467,9 +459,13 @@ EventScript_EndSurface::
 @HnS
 EventScript_Whirlpool::
 	lockall
+#if IS_SK
+	goto EventScript_CantWhirlpool
+#else
 	goto_if_unset FLAG_BADGE07_GET, EventScript_CantWhirlpool
-	@checkpartymove MOVE_WHIRLPOOL @checkpartymove doesn't work for the 8th hm i guess.
-	@goto_if_eq VAR_RESULT, FALSE, EventScript_CantWhirlpool
+	checkpartymove MOVE_WHIRLPOOL
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantWhirlpool
+#endif
 	playse SE_M_WATERFALL
 	goto_if_eq VAR_FACING, DIR_NORTH, EventScript_WhirlpoolGoNorth
 	goto_if_eq VAR_FACING, DIR_SOUTH, EventScript_WhirlpoolGoSouth

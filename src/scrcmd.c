@@ -3036,69 +3036,18 @@ bool8 ScrCmd_setmonmove(struct ScriptContext *ctx)
 bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
 {
     enum FieldMove fieldMove = ScriptReadByte(ctx);
-    bool32 doUnlockedCheck = ScriptReadByte(ctx);
-    enum Move move;
+    bool32 legacyDoUnlockedCheck = ScriptReadByte(ctx);
+    u8 partyIndex;
 
     Script_RequestEffects(SCREFF_V1);
+    // Retain the script argument for bytecode compatibility. Badge permission is
+    // now always part of the shared field-move authorization check.
+    (void)legacyDoUnlockedCheck;
 
-    gSpecialVar_Result = PARTY_SIZE;
-    if (doUnlockedCheck && !IsFieldMoveUnlocked(fieldMove))
-        return FALSE;
-
-    move = FieldMove_GetMoveId(fieldMove);
-    for (u32 i = 0; i < GetMaxPartySize(); i++)
-    {
-        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
-        if (!species)
-            break;
-        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], move) == TRUE)
-        {
-            gSpecialVar_Result = i;
-            gSpecialVar_0x8004 = species;
-            break;
-        }
-    }
-    if (gSpecialVar_Result == PARTY_SIZE)
-    {
-        u16 itemId = GetTMHMItemIdFromMoveId(move);
-        if (itemId != ITEM_NONE && CheckBagHasItem(itemId, 1))
-        {
-            for (u32 i = 0; i < GetMaxPartySize(); i++)
-            {
-                u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
-                if (!species)
-                    break;
-                if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && CanLearnTeachableMove(species, move))
-                {
-                    gSpecialVar_Result = i;
-                    gSpecialVar_0x8004 = species;
-                    break;
-                }
-            }
-        }
-    }
-    if (gSpecialVar_Result == PARTY_SIZE && HMsOverwriteOptionActive())
-    {
-        // No party mon knows the move or can learn it, which a challenge run (mono-type,
-        // randomized moves, etc.) can make permanent. Owning the TM/HM is enough: let the first
-        // non-egg mon use it regardless of its learnset.
-        enum Item itemId = GetTMHMItemIdFromMoveId(move);
-        if (itemId != ITEM_NONE && CheckBagHasItem(itemId, 1))
-        {
-            for (u32 i = 0; i < GetMaxPartySize(); i++)
-            {
-                u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
-                if (!species)
-                    break;
-                if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
-                {
-                    gSpecialVar_Result = i;
-                    gSpecialVar_0x8004 = species;
-                    break;
-                }
-            }
-        }
-    }
+    partyIndex = GetPartyFieldMoveUser(fieldMove);
+    gSpecialVar_Result = partyIndex;
+    if (partyIndex != PARTY_SIZE)
+        gSpecialVar_0x8004 = GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES);
 
     return FALSE;
 }
@@ -3106,64 +3055,20 @@ bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
 bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
 {
     u16 moveId = ScriptReadHalfword(ctx);
+    u16 itemId = GetTMHMItemIdFromMoveId(moveId);
+    u8 partyIndex;
 
-    gSpecialVar_Result = PARTY_SIZE;
-    for (u32 i = 0; i < GetMaxPartySize(); i++)
-    {
-        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
-        if (!species)
-            break;
-        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], moveId) == TRUE)
-        {
-            gSpecialVar_Result = i;
-            gSpecialVar_0x8004 = species;
-            break;
-        }
-    }
-    if (gSpecialVar_Result == PARTY_SIZE)
-    {
-        // A mon that can learn the move may use it without knowing it, but only while the
-        // player actually carries the TM/HM. Moves with no machine at all (Headbutt) have no
-        // item to require, so party learnability alone is enough there.
-        enum Item itemId = GetTMHMItemIdFromMoveId(moveId);
-        if (itemId == ITEM_NONE || CheckBagHasItem(itemId, 1))
-        {
-            for (u32 i = 0; i < GetMaxPartySize(); i++)
-            {
-                u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
-                if (!species)
-                    break;
-                if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && CanLearnTeachableMove(species, moveId))
-                {
-                    gSpecialVar_Result = i;
-                    gSpecialVar_0x8004 = species;
-                    break;
-                }
-            }
-        }
-    }
-    if (gSpecialVar_Result == PARTY_SIZE && HMsOverwriteOptionActive())
-    {
-        // No party mon knows the move or can learn it, which a challenge run (mono-type,
-        // randomized moves, etc.) can make permanent. Owning the TM/HM is enough: let the first
-        // non-egg mon use it regardless of its learnset.
-        enum Item itemId = GetTMHMItemIdFromMoveId(moveId);
-        if (itemId != ITEM_NONE && CheckBagHasItem(itemId, 1))
-        {
-            for (u32 i = 0; i < GetMaxPartySize(); i++)
-            {
-                u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
-                if (!species)
-                    break;
-                if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
-                {
-                    gSpecialVar_Result = i;
-                    gSpecialVar_0x8004 = species;
-                    break;
-                }
-            }
-        }
-    }
+    // Generic move checks (Headbutt and HNS Whirlpool) share the same
+    // item-and-compatibility lookup as field moves. Badge checks remain with
+    // the field-move table or the custom script that owns the permission.
+    partyIndex = GetPartyMoveUser(moveId,
+                                 itemId,
+                                 TRUE,
+                                 itemId != ITEM_NONE && IsFieldMoveCompatibilityBypassActive());
+    gSpecialVar_Result = partyIndex;
+    if (partyIndex != PARTY_SIZE)
+        gSpecialVar_0x8004 = GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES);
+
     return FALSE;
 }
 
