@@ -1320,7 +1320,9 @@ static void PokeballGlowEffect_PlaceBalls(struct Sprite *sprite)
     {
         sprite->sTimer = sprite->sFastHeal ? 6 : 25;
         spriteId = CreateSpriteAtEnd(&sSpriteTemplate_PokeballGlow, sPokeballCoordOffsets[sprite->sCounter].x + sprite->x2, sPokeballCoordOffsets[sprite->sCounter].y + sprite->y2, 0);
-        gSprites[spriteId].oam.priority = 3;
+        // The Hall of Fame balls need priority 3 for its background, but that
+        // puts Pokemon Center balls behind the healing-machine foreground.
+        gSprites[spriteId].oam.priority = sprite->sPlayHealSe ? 2 : 3;
         gSprites[spriteId].sEffectSpriteId = sprite->sSpriteId;
         sprite->sCounter++;
         sprite->sNumMons--;
