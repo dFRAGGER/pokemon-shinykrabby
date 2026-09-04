@@ -149,6 +149,19 @@ static const struct WindowTemplate sMapSecInfoWindowTemplate =
     .baseBlock = 0x4C
 };
 
+#if IS_SK
+static const struct WindowTemplate sMapSecNameWindowTemplate =
+{
+    .bg = 1,
+    .tilemapLeft = 17,
+    .tilemapTop = 1,
+    .width = 12,
+    .height = 2,
+    .paletteNum = 1,
+    .baseBlock = 0x4C
+};
+#endif
+
 static const struct WindowTemplate sMapSecInfoWindowTemplate_Right =
 {
     .bg = 1,
@@ -546,9 +559,14 @@ static void LoadPokenavRegionMapGfx(struct Pokenav_RegionMapGfx *state)
     BgDmaFill(1, PIXEL_FILL(1), 0x41, 1);
     CpuFill16(0x1040, state->tilemapBuffer, 0x800);
     SetBgTilemapBuffer(1, state->tilemapBuffer);
+#if IS_SK
+    // SK only needs the compact location-name panel in the upper-right.
+    state->infoWindowId = AddWindow(&sMapSecNameWindowTemplate);
+#else
     state->infoWindowId = AddWindow(FlagGet(FLAG_VISITED_KANTO)
         ? &sMapSecInfoWindowTemplate_Right
         : &sMapSecInfoWindowTemplate);
+#endif
     LoadUserWindowBorderGfx_(state->infoWindowId, 0x42, BG_PLTT_ID(4));
     DrawTextBorderOuter(state->infoWindowId, 0x42, 4);
     DecompressAndCopyTileDataToVram(1, sRegionMapCityZoomTiles_Gfx, 0, 0, 0);
@@ -557,7 +575,7 @@ static void LoadPokenavRegionMapGfx(struct Pokenav_RegionMapGfx *state)
     CopyWindowToVram(state->infoWindowId, COPYWIN_FULL);
     CopyPaletteIntoBufferUnfaded(sMapSecInfoWindow_Pal, BG_PLTT_ID(1), sizeof(sMapSecInfoWindow_Pal));
     CopyPaletteIntoBufferUnfaded(gRegionMapCityZoomTiles_Pal, BG_PLTT_ID(3), PLTT_SIZE_4BPP);
-    if (!IsRegionMapZoomed())
+    if (!IS_SK && !IsRegionMapZoomed())
         ChangeBgY(1, -0x6000, BG_COORD_SET);
     else
         ChangeBgY(1, 0, BG_COORD_SET);
@@ -573,6 +591,16 @@ static bool32 TryFreeTempTileDataBuffers(void)
 static void UpdateMapSecInfoWindow(struct Pokenav_RegionMapGfx *state)
 {
     struct RegionMap *regionMap = GetSubstructPtr(POKENAV_SUBSTRUCT_REGION_MAP);
+#if IS_SK
+    FillWindowPixelBuffer(state->infoWindowId, PIXEL_FILL(1));
+    PutWindowTilemap(state->infoWindowId);
+    if (regionMap->mapSecType != MAPSECTYPE_NONE)
+        AddTextPrinterParameterized(state->infoWindowId, FONT_NARROW, regionMap->mapSecName, 0, 1, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(state->infoWindowId, COPYWIN_FULL);
+    SetCityZoomTextInvisibility(TRUE);
+    return;
+#endif
+
     switch (regionMap->mapSecType)
     {
     case MAPSECTYPE_CITY_CANFLY:
@@ -617,6 +645,14 @@ static bool32 IsDma3ManagerBusyWithBgCopy_(struct Pokenav_RegionMapGfx *state)
 
 static void ChangeBgYForZoom(bool32 zoomIn)
 {
+    if (IS_SK)
+    {
+        // The compact SK location panel stays in the upper-right.
+        ChangeBgY(1, 0, BG_COORD_SET);
+        UpdateCityZoomTextPosition();
+        return;
+    }
+
     u8 taskId = CreateTask(Task_ChangeBgYForZoom, 3);
     gTasks[taskId].tZoomIn = zoomIn;
 }
@@ -709,8 +745,8 @@ static void CreateCityZoomTextSprites(void)
     struct Sprite *sprite;
     struct Pokenav_RegionMapGfx *state = GetSubstructPtr(POKENAV_SUBSTRUCT_REGION_MAP_ZOOM);
 
-    // When not zoomed in the text is still created but its pushed off screen
-    if (!IsRegionMapZoomed())
+    // The compact SK panel does not display the city-map legend sprites.
+    if (!IS_SK && !IsRegionMapZoomed())
         y = 228;
     else
         y = 132;

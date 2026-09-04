@@ -237,7 +237,7 @@ static const match_call_text_data_t sMomTextScripts[] = {
 static const struct MatchCallStructNPC sMomMatchCallHeader =
 {
     .type = MC_TYPE_NPC,
-    .mapSec = MAPSEC_NEW_BARK_TOWN,
+    .mapSec = MAPSEC_ERPUS_CITY,
     .flag = ALWAYS_AVAILABLE,
     .desc = COMPOUND_STRING("CALM & KIND"),
     .name = COMPOUND_STRING("MOM"),
