@@ -18,8 +18,10 @@ DeepCloudForest_AncientGrotto_GetOutTruck::
 	applymovement LOCALID_PLAYER, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_2
 	waitmovement
 	delay 40
-	playse SE_PIN
 	applymovement 14, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_3
+	waitmovement
+	playse SE_PIN
+	applymovement 14, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_2
 	waitmovement
 	delay 60
 	playmoncry SPECIES_MEW, CRY_MODE_ENCOUNTER
@@ -42,17 +44,20 @@ DeepCloudForest_AncientGrotto_GetOutTruck::
 	delay 40
 	applymovement 6, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_7
 	applymovement 11, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_8
+	applymovement 7, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_9
 	waitmovement
 	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_1
 	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_3, MSGBOX_AUTOCLOSE
 	waitmessage
 	applymovement 5, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_0
-	applymovement 4, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_9
-	applymovement 13, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_10
+	applymovement 4, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_10
+	applymovement 13, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_11
 	waitmovement
 	playse SE_M_EARTHQUAKE
 	waitse
-	fadescreen FADE_TO_BLACK
+	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_4
+	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_5, MSGBOX_AUTOCLOSE
+	fadescreenswapbuffers FADE_TO_BLACK
 	delay 60
 	setmetatile 22, 14, 0x35E, TRUE
 	setmetatile 22, 15, 0x349, TRUE
@@ -160,91 +165,120 @@ DeepCloudForest_AncientGrotto_GetOutTruck::
 	setmetatile 31, 19, 0x3AB, FALSE
 	setmetatile 31, 20, 0x3A3, FALSE
 	special DrawWholeMapView
-	applymovement 6, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_11
-	applymovement 11, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_12
-	applymovement 5, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_13
-	applymovement 4, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_14
-	applymovement 15, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_15
+	addobject 15
+	applymovement 6, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_12
+	applymovement 7, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_13
+	applymovement 11, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_14
+	applymovement 5, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_15
+	applymovement 4, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_16
+	applymovement 13, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_17
+	applymovement 15, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_18
 	waitmovement
 	playse SE_M_THUNDERBOLT
 	waitse
-	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_4
-	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_5, MSGBOX_AUTOCLOSE
 	delay 60
 	playse SE_M_ROCK_THROW
 	waitse
 	delay 60
 	playse SE_M_ROCK_THROW
 	waitse
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 120
-	applymovement LOCALID_PLAYER, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_16
-	applymovement 9, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_17
-	applymovement 8, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_16
-	applymovement 10, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_16
+	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_19
+	applymovement LOCALID_PLAYER, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_20
+	applymovement 8, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_20
+	applymovement 10, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_20
+	applymovement 9, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_21
+	waitmovement
+	playse SE_PIN
+	applymovement 9, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_22
 	waitmovement
 	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_6
 	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_7, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement 7, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_18
-	playse SE_PIN
-	applymovement 6, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_19
+	applymovement 7, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_23
+	playse SE_M_JUMP_KICK
+	applymovement 12, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_24
+	applymovement 9, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_25
+	applymovement 6, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_26
+	applymovement 11, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_26
+	applymovement 13, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_27
+	applymovement 3, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_23
+	applymovement 5, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_23
+	applymovement 4, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_23
 	waitmovement
-	applymovement LOCALID_PLAYER, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_20
-	applymovement 12, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_21
-	applymovement 11, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_21
-	applymovement 13, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_21
-	applymovement 3, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_21
-	applymovement 5, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_21
-	applymovement 4, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_21
-	waitmovement
-	applymovement 6, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_22
-	waitmovement
+	delay 60
+	applymovement 7, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_28
 	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_1
 	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_8, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement 8, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_23
-	delay 40
+	applymovement 8, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_29
+	delay 60
 	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_9
 	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_10, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_30
+	waitmovement
+	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_9
+	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_11, MSGBOX_AUTOCLOSE
+	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_31
 	delay 60
-	applymovement 7, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_24
+	applymovement 7, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_32
 	waitmovement
 	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_1
-	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_11, MSGBOX_AUTOCLOSE
+	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_12, MSGBOX_AUTOCLOSE
 	waitmessage
 	playse SE_PIN
-	applymovement 9, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_25
-	waitmovement
-	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_6
-	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_12, MSGBOX_AUTOCLOSE
-	delay 40
-	applymovement 7, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_26
-	delay 60
-	applymovement 7, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_21
-	waitmessage
-	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_1
-	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_13, MSGBOX_AUTOCLOSE
-	waitmessage
-	applymovement 10, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_27
+	applymovement 8, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_25
+	applymovement 10, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_33
 	waitmovement
 	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_4
+	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_13, MSGBOX_AUTOCLOSE
+	delay 40
+	applymovement 7, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_34
+	waitmovement
+	delay 90
+	applymovement 7, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_35
+	waitmovement
+	delay 60
+	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_1
 	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_14, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement 7, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_28
-	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_1
+	playse SE_PIN
+	applymovement 12, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_36
+	applymovement 9, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_37
+	waitmovement
+	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_4
 	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_15, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement 7, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_26
+	applymovement 7, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_38
 	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_1
 	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_16, MSGBOX_AUTOCLOSE
+	waitmessage
+	applymovement 9, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_39
+	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_13
+	applymovement 12, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_39
+	applymovement 13, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_40
+	applymovement 6, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_41
+	applymovement 11, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_42
+	applymovement 5, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_43
+	applymovement 4, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_44
+	waitmovement
+	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_1
+	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_17, MSGBOX_AUTOCLOSE
 	setflag FLAG_ANCIENTGROTTO_DISAPPEAR_SHIP
 	delay 40
+	applymovement 10, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_38
 	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_4
-	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_17, MSGBOX_AUTOCLOSE
+	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_18, MSGBOX_AUTOCLOSE
 	waitmessage
-	playse SE_BANG
+	playse SE_M_THUNDERBOLT2
 	fadescreenswapbuffers FADE_TO_WHITE
+	clearflag FLAG_DAVID_TRUCK
+	delay 120
+	removeobject 16
+	removeobject 17
+	removeobject 2
 	removeobject 12
 	removeobject 7
 	removeobject 6
@@ -253,23 +287,45 @@ DeepCloudForest_AncientGrotto_GetOutTruck::
 	removeobject 3
 	removeobject 4
 	removeobject 5
+	removeobject 15
+	addobject 18
+	addobject 19
+	addobject 20
 	delay 60
 	fadescreenswapbuffers FADE_FROM_WHITE
-	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_1
-	applymovement LOCALID_PLAYER, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_29
-	applymovement 9, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_29
-	applymovement 10, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_29
-	applymovement 8, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_29
+	delay 60
+	playse SE_PIN
+	applymovement 10, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_45
 	waitmovement
-	applymovement 2, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_30
-	special RemoveCameraObject
-	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_6
-	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_18, MSGBOX_AUTOCLOSE
-	delay 120
-	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_6
+	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_4
 	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_19, MSGBOX_AUTOCLOSE
 	waitmessage
-	clearflag FLAG_DAVID_TRUCK
+	applymovement OBJ_EVENT_ID_CAMERA, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_46
+	applymovement LOCALID_PLAYER, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_47
+	applymovement 9, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_48
+	applymovement 10, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_49
+	applymovement 8, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_50
+	waitmovement
+	delay 10
+	playse SE_TRUCK_MOVE
+	applymovement 18, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_51
+	applymovement 19, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_51
+	applymovement 20, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_51
+	waitmovement
+	fadedefaultbgm
+	special RemoveCameraObject
+	playse SE_PIN
+	applymovement 9, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_52
+	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_6
+	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_20, MSGBOX_AUTOCLOSE
+	delay 120
+	applymovement 9, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_23
+	applymovement LOCALID_PLAYER, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_39
+	applymovement 10, DeepCloudForest_AncientGrotto_GetOutTruck_Movement_53
+	waitmovement
+	setspeaker DeepCloudForest_AncientGrotto_GetOutTruck_Text_4
+	msgbox DeepCloudForest_AncientGrotto_GetOutTruck_Text_21, MSGBOX_AUTOCLOSE
+	waitmessage
 	fadescreen FADE_TO_BLACK
 	delay 40
 	playse SE_TRUCK_DOOR
@@ -296,7 +352,6 @@ DeepCloudForest_AncientGrotto_GetOutTruck_Movement_3:
 	walk_fast_down
 	walk_fast_left
 	walk_fast_left
-	emote_question_mark
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_4:
@@ -334,7 +389,6 @@ DeepCloudForest_AncientGrotto_GetOutTruck_Movement_6:
 	walk_up
 	walk_up
 	walk_up
-	walk_up
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_7:
@@ -350,127 +404,335 @@ DeepCloudForest_AncientGrotto_GetOutTruck_Movement_8:
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_9:
-	jump_left
+	walk_slow_down
+	face_up
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_10:
-	jump_up
+	jump_left
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_11:
-	walk_up
-	face_right
+	jump_up
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_12:
 	walk_up
-	face_left
-	step_end
-
-DeepCloudForest_AncientGrotto_GetOutTruck_Movement_13:
-	walk_left
 	face_right
 	step_end
 
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_13:
+	walk_up
+	step_end
+
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_14:
-	walk_right
+	walk_up
 	face_left
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_15:
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
+	walk_left
+	face_right
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_16:
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
+	walk_right
+	face_left
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_17:
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	emote_exclamation_mark
+	walk_down
+	face_up
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_18:
-	walk_right
-	walk_right
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_19:
-	emote_exclamation_mark
-	walk_slow_right
+	walk_down
+	walk_down
+	walk_down
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_20:
-	jump_right
-	face_left
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_21:
-	face_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_22:
-	walk_slow_left
-	face_right
+	emote_exclamation_mark
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_23:
-	walk_down
-	face_left
+	face_down
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_24:
-	walk_down
-	walk_down
-	face_right
+	walk_fast_left
+	walk_fast_down
+	walk_slow_up
+	face_down
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_25:
-	emote_exclamation_mark
-	walk_fast_left
-	walk_fast_down
-	walk_fast_down
-	face_left
+	jump_down
+	face_up
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_26:
-	face_left
+	walk_left
+	face_down
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_27:
-	emote_exclamation_mark
-	walk_fast_left
-	walk_fast_left
+	walk_left
+	walk_up
 	face_down
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_28:
-	face_up
+	walk_slow_down
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Movement_29:
+	walk_left
+	walk_up
+	face_up
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_30:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_31:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_32:
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	face_down
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_33:
+	emote_exclamation_mark
+	walk_fast_left
+	walk_fast_left
+	face_up
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_34:
+	walk_right
+	walk_right
+	face_up
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_35:
+	walk_left
+	walk_left
+	face_down
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_36:
+	face_left
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_37:
+	emote_exclamation_mark
+	walk_fast_left
+	walk_fast_left
+	walk_fast_up
+	walk_fast_up
+	face_left
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_38:
+	face_right
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_39:
+	face_up
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_40:
+	walk_slow_up
+	jump_2_right
+	face_down
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_41:
+	walk_slow_right
+	face_right
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_42:
+	walk_slow_left
+	face_left
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_43:
+	walk_slow_right
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_44:
+	walk_slow_left
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_45:
+	walk_right
+	face_down
+	emote_exclamation_mark
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_46:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_47:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
 	step_end
 
-DeepCloudForest_AncientGrotto_GetOutTruck_Movement_30:
-	walk_slow_left
-	walk_slow_left
-	walk_slow_left
-	walk_slow_left
-	walk_slow_left
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_48:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_49:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	face_left
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_50:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	face_left
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_51:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_52:
+	emote_double_exclamation_mark
+	step_end
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Movement_53:
+	walk_left
+	face_up
 	step_end
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_0:
@@ -507,7 +769,12 @@ DeepCloudForest_AncientGrotto_GetOutTruck_Text_7:
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_8:
 	.string "Impressive!\p"
-	.string "How did you guys find us that quickly?$"
+	.string "How did you guys find us that quickly?\p"
+	.string "I'm THE RECTOR, leader of The Faculty.\p"
+	.string "We believe in pushing boundaries,\n"
+	.string "developing talent, and inspiring others.\p"
+	.string "But above all, we believe in bringing\n"
+	.string "order to a chaotic world.$"
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_9:
 	.string "DAVID$"
@@ -515,50 +782,64 @@ DeepCloudForest_AncientGrotto_GetOutTruck_Text_9:
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_10:
 	.string "That energy...\p"
 	.string "the pressure...\p"
-	.string "It must be the 'Silent Guardian'...\p"
+	.string "It must be the 'Silent Guardian'...$"
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Text_11:
 	.string "It's exactly what the legends\n"
 	.string "described.\p"
 	.string "Made from steel not of this earth...\p"
 	.string "It is one of the three ancient golems...\p"
 	.string "...they call it... REGISTEEL.$"
 
-DeepCloudForest_AncientGrotto_GetOutTruck_Text_11:
+DeepCloudForest_AncientGrotto_GetOutTruck_Text_12:
 	.string "Look at you, young man.\p"
 	.string "You seem to be an intelligent kid.\p"
 	.string "Why don't you join the faculty?\p"
-	.string "At the faculty we Push Boundaries,\n"
-	.string "Develop Talent and Inspire!!\p"
+	.string "At the faculty you can push your\n"
+	.string "Boundaries, develop your Talent and\l"
+	.string "Inspire others!!\p"
 	.string "You would be the perfect fit!$"
 
-DeepCloudForest_AncientGrotto_GetOutTruck_Text_12:
+DeepCloudForest_AncientGrotto_GetOutTruck_Text_13:
 	.string "Don't talk to him, you fool!\p"
 	.string "Don't you dare to touch the golem, he\n"
 	.string "belongs in this forest!$"
 
-DeepCloudForest_AncientGrotto_GetOutTruck_Text_13:
+DeepCloudForest_AncientGrotto_GetOutTruck_Text_14:
 	.string "Unfortunately, I can't do that.\p"
 	.string "Our plan is bigger than this chaotic\n"
 	.string "forest.\p"
 	.string "He is a necessary piece to bring order\n"
 	.string "to this world.$"
 
-DeepCloudForest_AncientGrotto_GetOutTruck_Text_14:
+DeepCloudForest_AncientGrotto_GetOutTruck_Text_15:
 	.string "What do you mean?$"
 
-DeepCloudForest_AncientGrotto_GetOutTruck_Text_15:
-	.string "You will see my friend, you will see.\p"
-	.string "Teachers, lets get out of here.$"
-
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_16:
-	.string "ELECTABUZZ, FLASH!!$"
+	.string "You will see my friend, you will see.\p"
+	.string "Teachers, get the golem into a truck.\p"
+	.string "I'll deal with these children.$"
 
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_17:
+	.string "ELECTABUZZ, FLASH!!$"
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Text_18:
 	.string "Goddamn, not again...\n"
 	.string "I should have brought my sunglasses...$"
 
-DeepCloudForest_AncientGrotto_GetOutTruck_Text_18:
-	.string "We can't catch them...$"
-
 DeepCloudForest_AncientGrotto_GetOutTruck_Text_19:
-	.string "Lets get back to the research station,\n"
-	.string "it's getting dark.$"
+	.string "They headed for the trucks!\p"
+	.string "Let's go!$"
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Text_20:
+	.string "Damn...\p"
+	.string "We can't catch them...\p"
+	.string "It's getting dark, and chasing them in\n"
+	.string "this forest is dangerous.$"
+
+DeepCloudForest_AncientGrotto_GetOutTruck_Text_21:
+	.string "Hmmm...\p"
+	.string "Let's get back to the research\n"
+	.string "station...\p"
+	.string "We need to regroup and think about our\n"
+	.string "next steps.$"

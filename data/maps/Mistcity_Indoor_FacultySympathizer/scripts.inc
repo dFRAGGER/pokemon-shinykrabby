@@ -25,6 +25,8 @@ Mistcity_Indoor_FacultySympathizer_Escape::
 	applymovement 5, Mistcity_Indoor_FacultySympathizer_Escape_Movement_4
 	waitmovement
 	applymovement 3, Mistcity_Indoor_FacultySympathizer_Escape_Movement_5
+	applymovement LOCALID_PLAYER, Mistcity_Indoor_FacultySympathizer_Escape_Movement_3
+	waitmovement
 	setspeaker Mistcity_Indoor_FacultySympathizer_Escape_Text_2
 	msgbox Mistcity_Indoor_FacultySympathizer_Escape_Text_3, MSGBOX_AUTOCLOSE
 	waitmessage
@@ -38,7 +40,7 @@ Mistcity_Indoor_FacultySympathizer_Escape::
 	applymovement LOCALID_PLAYER, Mistcity_Indoor_FacultySympathizer_Escape_Movement_3
 	waitmovement
 	setspeaker Mistcity_Indoor_FacultySympathizer_Escape_Text_4
-	msgbox Mistcity_Indoor_FacultySympathizer_Escape_Text_5
+	msgbox Mistcity_Indoor_FacultySympathizer_Escape_Text_5, MSGBOX_AUTOCLOSE
 	waitmessage
 	setspeaker Mistcity_Indoor_FacultySympathizer_Escape_Text_4
 	msgbox Mistcity_Indoor_FacultySympathizer_Escape_Text_6, MSGBOX_AUTOCLOSE
@@ -126,7 +128,7 @@ Mistcity_Indoor_Faculty_Wife_4:
 
 Mistcity_Indoor_FacultySympathizer_Escape_Movement_0:
 	walk_right
-	face_left
+	face_down
 	step_end
 
 Mistcity_Indoor_FacultySympathizer_Escape_Movement_1:
@@ -155,7 +157,6 @@ Mistcity_Indoor_FacultySympathizer_Escape_Movement_5:
 	step_end
 
 Mistcity_Indoor_FacultySympathizer_Escape_Movement_6:
-	walk_down
 	walk_down
 	step_end
 
@@ -194,14 +195,16 @@ Mistcity_Indoor_FacultySympathizer_Escape_Text_5:
 	.string "They knew exactly what The Faculty was\n"
 	.string "doing to the forest.\p"
 	.string "...\p"
+	.string "...\p"
 	.string "What? There were problems in MASO TOWN\n"
 	.string "as well?\p"
 	.string "...\p"
-	.string "That device looks very similar to the\n"
-	.string "ones the faculty were using in the\l"
-	.string "forest.\p"
-	.string "But this... this feels too big for just\n"
-	.string "them.\p"
+	.string "That device...\p"
+	.string "it looks familiar...\p"
+	.string "I can't remember where I've seen it\n"
+	.string "before though...\p"
+	.string "But The Faculty... this feels too big for\n"
+	.string "just them.\p"
 	.string "I can't shake this feeling about PROF.\n"
 	.string "BIRDS.\p"
 	.string "You remember what I said in the truck?\p"
@@ -212,38 +215,50 @@ Mistcity_Indoor_FacultySympathizer_Escape_Text_5:
 	.string "He's got a way of making people talk...\n"
 	.string "after a few drinks... if you know what I\l"
 	.string "mean.\p"
-	.string "We're going to pay the Professor a visit\n"
-	.string "at his lab.\p"
+	.string "We're going to pay the PROF. BIRDS a\n"
+	.string "visit at his lab.\p"
 	.string "We need to know what he was really\n"
 	.string "looking for back then.\p"
 	.string "If he knows anything about Registeel,\n"
 	.string "we're going to get it out of him.\p"
-	.string "While we sort out Prof. Birds, I want you\n"
-	.string "to start heading west, through\l"
-	.string "batcave.\p"
-	.string "Forget the internship for a moment,\n"
-	.string "this is bigger now.$"
+	.string "While we sort out PROF. BIRDS, I want\n"
+	.string "you to start heading west, through\l"
+	.string "BATCAVE.\p"
+	.string "...\p"
+	.string "What about the Shiny Krabby?\p"
+	.string "...\p"
+	.string "Forget that internship for a moment,\n"
+	.string "{PLAYER}, this is bigger then a weird\l"
+	.string "colored Krabby right now.\p"
+	.string "...\p"
+	.string "What do you mean you are scared?\p"
+	.string "The best adventures are those that\n"
+	.string "happen when you least expect them.\p"
+	.string "We are a team now, {PLAYER}.\n"
+	.string "You and me.\p"
+	.string "Don't you worry, after my visit to PROF.\n"
+	.string "BIRDS, I'll be right behind you.$"
 
 Mistcity_Indoor_FacultySympathizer_Escape_Text_6:
 	.string "Here. Take this.\p"
 	.string "I've already added my number.\p"
-	.string "I'll call you on the Pokénav once we've\n"
-	.string "dealt with the Professor.\p"
+	.string "I'll call you on the Poké Gear once we've\n"
+	.string "dealt with PROF. BIRDS.\p"
 	.string "There's more I need to tell you but I'd\n"
 	.string "rather not say it all out loud in here.$"
 
 Mistcity_Indoor_FacultySympathizer_Escape_Text_7:
-	.string "DAAN handed you the Pokénav!\n"
+	.string "DAAN handed you the Poké Gear!\n"
 	.string "His number has been registered!$"
 
 Mistcity_Indoor_FacultySympathizer_Escape_Text_8:
 	.string "DAAN's number has been\n"
-	.string "registered in your Pokénav!$"
+	.string "registered in your Poké Gear!$"
 
 Mistcity_Indoor_FacultySympathizer_Escape_Text_9:
 	.string "Oh, you already beat DAVID?\n"
 	.string "Impressive.\p"
-	.string "You're ready for the swamps, then.\p"
+	.string "You're ready for BATCAVE, then.\p"
 	.string "Good luck, {PLAYER}.$"
 
 Mistcity_Indoor_FacultySympathizer_Escape_Text_10:

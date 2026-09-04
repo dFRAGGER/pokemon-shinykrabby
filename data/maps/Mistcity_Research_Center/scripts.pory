@@ -201,38 +201,44 @@ script Mistcity_Research_Center_ReturnRescueMissionDaan {
     waitmovement
     setvar(VAR_MISTCITY_RESEARCH_CENTER_LOCATION, 10)
     delay(40)
-    applymovement(LOCALID_PLAYER, moves(walk_down*2 walk_left*5))
+    applymovement(LOCALID_PLAYER, moves(walk_down walk_left walk_down walk_left*2 face_up))
     waitmovement
     setspeaker("NASH")
     msgbox(format("Whew.\nGlad to be back, but that was intense.\pRegisteel... I still can't believe they pulled it off."),MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(13, moves(face_left))
-    delay(40)
-    applymovement(13, moves(face_down))
-    delay(40)
-    applymovement(13, moves(face_up))
-    delay(40)
-    applymovement(13, moves(face_right))
-    delay(40)
+    applymovement(LOCALID_PLAYER, moves(face_left))
+    applymovement(3, moves(walk_left*2 face_left))
+    waitmovement
+    delay(60)
+    applymovement(3, moves(face_down))
+    waitmovement
+    delay(60)
+    applymovement(3, moves(face_up))
+    waitmovement
+    delay(60)
+    applymovement(LOCALID_PLAYER, moves(face_up))
+    applymovement(3, moves(walk_right*2 face_down))
+    waitmovement
+    delay(60)
     setspeaker("NASH")
-    msgbox(format("I think Daan and David are already gone.\pSoon as the truck stopped, Daan bolted.\pHe was... furious. He's heading for that Faculty sympathizer's house, the one next to the gym.\p He wants to confront them, find out what they knew about the Registeel operation.\pI can't say I blame him, but he was seeing red."),MSGBOX_AUTOCLOSE)
+    msgbox(format("I think DAAN and DAVID are already gone.\pSoon as the truck stopped, DAAN bolted.\pHe was... furious. He's heading for that Faculty sympathizer's house, the one next to the gym.\pHe wants to confront them, find out what they knew about the Registeel operation.\pI can't say I blame him, but he was seeing red."),MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(13, moves(walk_down))
-    applymovement(LOCALID_PLAYER, moves(face_down))
+    applymovement(3, moves(walk_left))
+    applymovement(LOCALID_PLAYER, moves(face_left))
     waitmovement
     delay(40)
     setspeaker("NASH")
-    msgbox(format("And then the weirdest part.\pDaan said something to David... just mumbled it.\pI couldn't make it out.\nBut the kid... he just lit up.\pThe biggest smile I've ever seen on him.\pThen he took off sprinting towards the Gym, of all places.\pAfter what we just saw?\n A smile?\p Baffles me.\p Maybe he's going to the gym archives there to research the 'Silent Guardian'?\pI don't know, but my head's spinning...."),MSGBOX_AUTOCLOSE)
+    msgbox(format("And then the weirdest part.\pDAAN said something to DAVID... just mumbled it.\pI couldn't make it out.\nBut the kid... he just lit up.\pThe biggest smile I've ever seen on him.\pThen he took off sprinting towards the Gym, of all places.\pAfter what we just saw?\n A smile?\p Baffles me.\p Maybe he's going to the gym archives there to research the 'Silent Guardian'?\pI don't know, but my head's spinning...."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
-    applymovement(13, moves(walk_up face_right))
-    applymovement(LOCALID_PLAYER, moves(face_left))
+    applymovement(3, moves(walk_right face_down))
+    applymovement(LOCALID_PLAYER, moves(face_up))
     setspeaker("NASH")
-    msgbox(format("Anyway, you've got a clear path for now.\pI'd check in on Daan at that sympathizer house first, make sure he doesn't do something he'll regret.\pAfter that, you should probably tackle the Gym."),MSGBOX_AUTOCLOSE)
+    msgbox(format("Anyway, you've got a clear path for now.\pI'd check in on DAAN at that sympathizer house first, make sure he doesn't do something he'll regret.\pAfter that, you should probably tackle the Gym."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
     setspeaker("NASH")
-    msgbox(format("Oh, right! The Gym.\pIt's... unique.\pDaan is actually the official Gym Leader here, but with all this Faculty business, he's had a few of his best ranger trainees on rotation to test challengers.\pHe designed it to replicate the forest at night.\pIt's almost pitch black in there.\pHe always says you don't really know the cloud forest until you've seen the ecosystem that comes alive after dark.\pIt's a real challenge, but you'll be facing a gauntlet of nocturnal Pokémon... think Noctowl, Ariados, maybe even a Mightyena.\pThe Pokémon in there are more than comfortable in the dark.\pIt'll be a good test of your skills before you head out again.\pGood luck, {PLAYER}.\pFind me at the station if you learn anything new, or if you want to explore the forest again."),MSGBOX_AUTOCLOSE)
+    msgbox(format("Oh, right! The Gym.\pIt's... unique.\pDAAN is actually the official Gym Leader here, but with all this Faculty business, he's had a few of his best ranger trainees on rotation to test challengers.\pHe designed it to replicate the forest at night.\pIt's almost pitch black in there.\pHe always says you don't really know the forest until you've seen the ecosystem that comes alive after dark.\pIt's a real challenge, but you'll be facing a gauntlet of nocturnal Pokémon... think Noctowl, Ariados, maybe even a Mightyena.\pThe Pokémon in there are more than comfortable in the dark.\pIt'll be a good test of your skills before you head out again.\pGood luck, {PLAYER}.\pFind me at the station if you learn anything new, or if you want to explore the forest again."),MSGBOX_AUTOCLOSE)
     waitmessage
     setflag(FLAG_NASH_ENTRANCE_RESEARCH_CENTER1)
     setflag(FLAG_HELPED_DAN_BEAT_FACULTY)

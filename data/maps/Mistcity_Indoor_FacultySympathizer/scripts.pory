@@ -11,7 +11,7 @@ script Mistcity_Indoor_FacultySympathizer_Escape {
     setspeaker("MARCUS")
     msgbox(format("... I'M TELLING YOU NOTHING, YOU STUPID TREE HUGGER!!\pNOW GET OUT OF MY WAY!"),MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(LOCALID_PLAYER, moves(walk_right face_left))
+    applymovement(LOCALID_PLAYER, moves(walk_right face_down))
     applymovement(4, moves(walk_fast_down walk_fast_left walk_fast_down*2))
     waitmovement
     applymovement(3, moves(face_down))
@@ -23,10 +23,12 @@ script Mistcity_Indoor_FacultySympathizer_Escape {
     applymovement(5,moves(walk_down*2 face_right))
     waitmovement
     applymovement(3, moves(face_left))
+    applymovement(LOCALID_PLAYER, moves(face_up))
+    waitmovement
     setspeaker("ELEANOR")
     msgbox(format("Mph.\pI suppose you think you are some kind of hero?\pEnjoy your precious, muddy trees.\p Progress will find a way, with or without your approval."),MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(5,moves(walk_down*2))
+    applymovement(5,moves(walk_down))
     waitmovement
     removeobject(5)
     applymovement(LOCALID_PLAYER, moves(face_down))
@@ -36,14 +38,14 @@ script Mistcity_Indoor_FacultySympathizer_Escape {
     applymovement(LOCALID_PLAYER, moves(face_up))
     waitmovement
     setspeaker("DAAN")
-    msgbox(format("I think they're gone.\pRan like Rattata the second I started asking real questions about the excavation.\pThey knew exactly what The Faculty was doing to the forest.\p...\pWhat? There were problems in MASO TOWN as well?\p...\pThat device looks very similar to the ones the faculty were using in the forest.\pBut this... this feels too big for just them.\pI can't shake this feeling about PROF. BIRDS.\pYou remember what I said in the truck?\pAbout him scanning the forest years ago?\pIt's too much of a coincidence.\nI'm going to call JACOB.\pHe's got a way of making people talk... after a few drinks... if you know what I mean.\pWe're going to pay the Professor a visit at his lab.\pWe need to know what he was really looking for back then.\pIf he knows anything about Registeel, we're going to get it out of him.\pWhile we sort out Prof. Birds, I want you to start heading west, through batcave.\pForget the internship for a moment, this is bigger now."))
+    msgbox(format("I think they're gone.\pRan like Rattata the second I started asking real questions about the excavation.\pThey knew exactly what The Faculty was doing to the forest.\p...\p...\pWhat? There were problems in MASO TOWN as well?\p...\pThat device...\pit looks familiar...\pI can't remember where I've seen it before though...\pBut The Faculty... this feels too big for just them.\pI can't shake this feeling about PROF. BIRDS.\pYou remember what I said in the truck?\pAbout him scanning the forest years ago?\pIt's too much of a coincidence.\nI'm going to call JACOB.\pHe's got a way of making people talk... after a few drinks... if you know what I mean.\pWe're going to pay the PROF. BIRDS a visit at his lab.\pWe need to know what he was really looking for back then.\pIf he knows anything about Registeel, we're going to get it out of him.\pWhile we sort out PROF. BIRDS, I want you to start heading west, through BATCAVE.\p...\pWhat about the Shiny Krabby?\p...\pForget that internship for a moment, {PLAYER}, this is bigger then a weird colored Krabby right now.\p...\pWhat do you mean you are scared?\pThe best adventures are those that happen when you least expect them.\pWe are a team now, {PLAYER}.\nYou and me.\pDon't you worry, after my visit to PROF. BIRDS, I'll be right behind you."),MSGBOX_AUTOCLOSE)
     waitmessage
     setspeaker("DAAN")
-    msgbox(format("Here. Take this.\pI've already added my number.\pI'll call you on the Pokénav once we've dealt with the Professor.\pThere's more I need to tell you but I'd rather not say it all out loud in here."),MSGBOX_AUTOCLOSE)
+    msgbox(format("Here. Take this.\pI've already added my number.\pI'll call you on the Poké Gear once we've dealt with PROF. BIRDS.\pThere's more I need to tell you but I'd rather not say it all out loud in here."),MSGBOX_AUTOCLOSE)
     waitmessage
     if(flag(FLAG_SYS_POKENAV_GET)==FALSE){
         playfanfare(MUS_OBTAIN_ITEM)
-        message(format("DAAN handed you the Pokénav!\nHis number has been registered!"))
+        message(format("DAAN handed you the Poké Gear!\nHis number has been registered!"))
         waitfanfare
         closemessage
         setflag(FLAG_SYS_POKENAV_GET)
@@ -51,7 +53,7 @@ script Mistcity_Indoor_FacultySympathizer_Escape {
     }
     else{
         playfanfare(MUS_OBTAIN_ITEM)
-        message(format("DAAN's number has been\nregistered in your Pokénav!"))
+        message(format("DAAN's number has been\nregistered in your Poké Gear!"))
         waitfanfare
         closemessage
     }
@@ -61,7 +63,7 @@ script Mistcity_Indoor_FacultySympathizer_Escape {
     setvar(VAR_FORTREE_CITY_STATE, 1)
     if(flag(FLAG_BADGE02_GET)==TRUE){
         setspeaker("DAAN")
-        msgbox(format("Oh, you already beat DAVID?\nImpressive.\pYou're ready for the swamps, then.\pGood luck, {PLAYER}."),MSGBOX_AUTOCLOSE)
+        msgbox(format("Oh, you already beat DAVID?\nImpressive.\pYou're ready for BATCAVE, then.\pGood luck, {PLAYER}."),MSGBOX_AUTOCLOSE)
         waitmessage
     }
     else{

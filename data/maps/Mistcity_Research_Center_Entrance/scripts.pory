@@ -278,7 +278,7 @@ script Mistcity_Research_Center_Entrance_LeadScientist {
             waitmessage
             giveitem(ITEM_EXP_SHARE)
             waitmessage
-            msgbox(format("One more thing, you can turn it off any time.\pSometimes the best thing for a Pokémon is to face a battle alone.\pThere's a bond that forms when it's just the two of you out there.\pOr if you want a harder road, well... the forest will respect that too."), MSGBOX_AUTOCLOSE)
+            msgbox(format("One more thing, you can turn it on or off any time.\pSometimes the best thing for a Pokémon is to face a battle alone.\pThere's a bond that forms when it's just the two of you out there.\pOr if you want a harder road, well... the forest will respect that too."), MSGBOX_AUTOCLOSE)
             waitmessage
             setflag(FLAG_ITEM_RESEARCH_CENTER_EXP_SHARE)
         }

@@ -286,8 +286,7 @@ Mistcity_InsideOfTruck_Daan_Returndrive_Movement_5:
 	step_end
 
 Mistcity_InsideOfTruck_Daan_Returndrive_Movement_6:
-	walk_up
-	face_right
+	face_up
 	emote_exclamation_mark
 	step_end
 
@@ -297,6 +296,7 @@ Mistcity_InsideOfTruck_Daan_Returndrive_Movement_7:
 	step_end
 
 Mistcity_InsideOfTruck_Daan_Returndrive_Movement_8:
+	walk_up
 	face_down
 	step_end
 
@@ -399,10 +399,11 @@ Mistcity_InsideOfTruck_Daan_Returndrive_Text_5:
 	.string "Faculty, but his energy felt different.\p"
 	.string "More curious than malicious.\p"
 	.string "I wonder what he was really looking\n"
-	.string "for...\p"
-	.string "...$"
+	.string "for...$"
 
 Mistcity_InsideOfTruck_Daan_Returndrive_Text_6:
+	.string "...\p"
+	.string "...\p"
 	.string "WHAT?!\p"
 	.string "YOU KNOW PROFESSOR BIRDS?\p"
 	.string "How do you know him?\p"
@@ -417,7 +418,7 @@ Mistcity_InsideOfTruck_Daan_Returndrive_Text_7:
 	.string "Right now, we have to fight back.\p"
 	.string "Their rot goes deep... it's even taken\n"
 	.string "root in our own town.\p"
-	.string "Eleanor and Marcus, two faculty\n"
+	.string "ELEANOR and MARCUS, two Faculty\n"
 	.string "sympathizers who recently moved into\l"
 	.string "town...\p"
 	.string "Maybe we should give a little knock on\n"

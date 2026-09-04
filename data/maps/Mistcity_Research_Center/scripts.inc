@@ -252,27 +252,33 @@ Mistcity_Research_Center_ReturnRescueMissionDaan::
 	setspeaker Mistcity_Research_Center_Daan_RescueMission2_Text_0
 	msgbox Mistcity_Research_Center_ReturnRescueMissionDaan_Text_0, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement 13, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_2
-	delay 40
-	applymovement 13, Mistcity_Research_Center_Ranger_VigorothGuide_Movement_0
-	delay 40
-	applymovement 13, Mistcity_Research_Center_Ranger_Laptop_Movement_0
-	delay 40
-	applymovement 13, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_3
-	delay 40
+	applymovement LOCALID_PLAYER, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_2
+	applymovement 3, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_3
+	waitmovement
+	delay 60
+	applymovement 3, Mistcity_Research_Center_Ranger_VigorothGuide_Movement_0
+	waitmovement
+	delay 60
+	applymovement 3, Mistcity_Research_Center_Ranger_Laptop_Movement_0
+	waitmovement
+	delay 60
+	applymovement LOCALID_PLAYER, Mistcity_Research_Center_Ranger_Laptop_Movement_0
+	applymovement 3, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_4
+	waitmovement
+	delay 60
 	setspeaker Mistcity_Research_Center_Daan_RescueMission2_Text_0
 	msgbox Mistcity_Research_Center_ReturnRescueMissionDaan_Text_1, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement 13, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_4
-	applymovement LOCALID_PLAYER, Mistcity_Research_Center_Ranger_VigorothGuide_Movement_0
+	applymovement 3, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_5
+	applymovement LOCALID_PLAYER, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_2
 	waitmovement
 	delay 40
 	setspeaker Mistcity_Research_Center_Daan_RescueMission2_Text_0
 	msgbox Mistcity_Research_Center_ReturnRescueMissionDaan_Text_2, MSGBOX_AUTOCLOSE
 	waitmessage
 	delay 40
-	applymovement 13, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_5
-	applymovement LOCALID_PLAYER, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_2
+	applymovement 3, Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_6
+	applymovement LOCALID_PLAYER, Mistcity_Research_Center_Ranger_Laptop_Movement_0
 	setspeaker Mistcity_Research_Center_Daan_RescueMission2_Text_0
 	msgbox Mistcity_Research_Center_ReturnRescueMissionDaan_Text_3, MSGBOX_AUTOCLOSE
 	waitmessage
@@ -339,12 +345,11 @@ Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_0:
 
 Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_1:
 	walk_down
+	walk_left
 	walk_down
 	walk_left
 	walk_left
-	walk_left
-	walk_left
-	walk_left
+	face_up
 	step_end
 
 Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_2:
@@ -352,16 +357,24 @@ Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_2:
 	step_end
 
 Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_3:
-	face_right
+	walk_left
+	walk_left
+	face_left
 	step_end
 
 Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_4:
-	walk_down
+	walk_right
+	walk_right
+	face_down
 	step_end
 
 Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_5:
-	walk_up
-	face_right
+	walk_left
+	step_end
+
+Mistcity_Research_Center_ReturnRescueMissionDaan_Movement_6:
+	walk_right
+	face_down
 	step_end
 
 Mistcity_Research_Center_Hiker_Text_0:
@@ -517,8 +530,9 @@ Mistcity_Research_Center_ReturnRescueMissionDaan_Text_0:
 	.string "pulled it off.$"
 
 Mistcity_Research_Center_ReturnRescueMissionDaan_Text_1:
-	.string "I think Daan and David are already gone.\p"
-	.string "Soon as the truck stopped, Daan bolted.\p"
+	.string "I think DAAN and DAVID are already\n"
+	.string "gone.\p"
+	.string "Soon as the truck stopped, DAAN bolted.\p"
 	.string "He was... furious. He's heading for that\n"
 	.string "Faculty sympathizer's house, the one\l"
 	.string "next to the gym.\p"
@@ -530,7 +544,7 @@ Mistcity_Research_Center_ReturnRescueMissionDaan_Text_1:
 
 Mistcity_Research_Center_ReturnRescueMissionDaan_Text_2:
 	.string "And then the weirdest part.\p"
-	.string "Daan said something to David... just\n"
+	.string "DAAN said something to DAVID... just\n"
 	.string "mumbled it.\p"
 	.string "I couldn't make it out.\n"
 	.string "But the kid... he just lit up.\p"
@@ -547,7 +561,7 @@ Mistcity_Research_Center_ReturnRescueMissionDaan_Text_2:
 
 Mistcity_Research_Center_ReturnRescueMissionDaan_Text_3:
 	.string "Anyway, you've got a clear path for now.\p"
-	.string "I'd check in on Daan at that\n"
+	.string "I'd check in on DAAN at that\n"
 	.string "sympathizer house first, make sure he\l"
 	.string "doesn't do something he'll regret.\p"
 	.string "After that, you should probably tackle\n"
@@ -556,7 +570,7 @@ Mistcity_Research_Center_ReturnRescueMissionDaan_Text_3:
 Mistcity_Research_Center_ReturnRescueMissionDaan_Text_4:
 	.string "Oh, right! The Gym.\p"
 	.string "It's... unique.\p"
-	.string "Daan is actually the official Gym\n"
+	.string "DAAN is actually the official Gym\n"
 	.string "Leader here, but with all this Faculty\l"
 	.string "business, he's had a few of his best\l"
 	.string "ranger trainees on rotation to test\l"
@@ -565,7 +579,7 @@ Mistcity_Research_Center_ReturnRescueMissionDaan_Text_4:
 	.string "at night.\p"
 	.string "It's almost pitch black in there.\p"
 	.string "He always says you don't really know\n"
-	.string "the cloud forest until you've seen the\l"
+	.string "the forest until you've seen the\l"
 	.string "ecosystem that comes alive after dark.\p"
 	.string "It's a real challenge, but you'll be\n"
 	.string "facing a gauntlet of nocturnal\l"

@@ -845,8 +845,8 @@ Mistcity_Research_Center_Entrance_LeadScientist_Text_1:
 	.string "Take it.$"
 
 Mistcity_Research_Center_Entrance_LeadScientist_Text_2:
-	.string "One more thing, you can turn it off any\n"
-	.string "time.\p"
+	.string "One more thing, you can turn it on or\n"
+	.string "off any time.\p"
 	.string "Sometimes the best thing for a Pokémon\n"
 	.string "is to face a battle alone.\p"
 	.string "There's a bond that forms when it's just\n"
