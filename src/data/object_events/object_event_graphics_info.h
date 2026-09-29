@@ -2284,6 +2284,24 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roxanne = {
     .images = sPicTable_Roxanne,
 };
 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Phildy = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_PHILDY,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_1,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Roxanne,
+};
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brawly = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
@@ -3528,7 +3546,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayDecorating = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Archie = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .paletteTag = IS_SK ? OBJ_EVENT_PAL_TAG_ARCHIE_SK : OBJ_EVENT_PAL_TAG_NPC_1,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -7237,6 +7255,25 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSAnne = {
     .subspriteTables = gObjectEventSpriteOamTables_128x64,
     .anims = sAnimTable_Standard,
     .images = sPicTable_SSAnne,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FacultyBoat = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_FACULTY_BOAT,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 4096,
+    .width = 128,
+    .height = 64,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_8x8,
+    .subspriteTables = gObjectEventSpriteOamTables_128x64,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_FacultyBoat,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

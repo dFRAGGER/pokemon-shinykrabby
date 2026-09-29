@@ -1597,6 +1597,10 @@ $(OBJEVENTGFXDIR)/misc/surf_blob.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/misc/ss_anne.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 8 -mheight 4
 
+# The Faculty Boat uses the same four 64x32 subsprite layout as the SS Anne.
+$(OBJEVENTGFXDIR)/misc/faculty_boat.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 4
+
 $(OBJEVENTGFXDIR)/misc/town_map.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 

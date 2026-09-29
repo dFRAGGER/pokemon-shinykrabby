@@ -124,6 +124,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Phoebe;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Glacia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Drake;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roxanne;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Phildy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brawly;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wattson;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Flannery;
@@ -388,6 +389,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysD;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysA;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysN;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSAnne;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FacultyBoat;
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -812,6 +814,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_GLACIA] =                   &gObjectEventGraphicsInfo_Glacia,
     [OBJ_EVENT_GFX_DRAKE] =                    &gObjectEventGraphicsInfo_Drake,
     [OBJ_EVENT_GFX_ROXANNE] =                  &gObjectEventGraphicsInfo_Roxanne,
+    [OBJ_EVENT_GFX_PHILDY] =                   &gObjectEventGraphicsInfo_Phildy,
     [OBJ_EVENT_GFX_BRAWLY] =                   &gObjectEventGraphicsInfo_Brawly,
     [OBJ_EVENT_GFX_WATTSON] =                  &gObjectEventGraphicsInfo_Wattson,
     [OBJ_EVENT_GFX_FLANNERY] =                 &gObjectEventGraphicsInfo_Flannery,
@@ -1073,6 +1076,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_DEOXYS_A]                 = &gObjectEventGraphicsInfo_DeoxysA,
     [OBJ_EVENT_GFX_DEOXYS_N]                 = &gObjectEventGraphicsInfo_DeoxysN,
     [OBJ_EVENT_GFX_SS_ANNE]                  = &gObjectEventGraphicsInfo_SSAnne,
+    [OBJ_EVENT_GFX_FACULTY_BOAT]             = &gObjectEventGraphicsInfo_FacultyBoat,
 #if IS_HNS
     [OBJ_EVENT_GFX_BLAINE_SK] = &gObjectEventGraphicsInfo_Blaine_sk,
     [OBJ_EVENT_GFX_BLUE_SK] = &gObjectEventGraphicsInfo_Blue_sk,
