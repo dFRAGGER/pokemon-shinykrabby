@@ -70,19 +70,23 @@ Marshduke_Indoor_ResearchCenter_NPC_Reception_Text_0:
 	.string "goo.' It was somebody's soup.$"
 
 Marshduke_Indoor_ResearchCenter_NPC_RekindledResearcher_Text_0:
-	.string "My team studies the Rekindled vision.\n"
-	.string "If your body changes, are you still the\l"
-	.string "same Pokémon inside?\p"
+	.string "My team studies the Rekindled vision.\p"
+	.string "Let me ask you something: If your body\n"
+	.string "changes, are you still the same Pokémon\l"
+	.string "inside?\p"
 	.string "We compare the three Pokémon before\n"
-	.string "and after the fire. Everything else in\l"
-	.string "the vision? Not our department!$"
+	.string "and after the fire.\p"
+	.string "Everything else in the vision? Not our\n"
+	.string "department!$"
 
 Marshduke_Indoor_ResearchCenter_NPC_RekindledMonk_Text_0:
-	.string "My partner tracks how they behave. I\n"
-	.string "want to know if they still remember who\l"
-	.string "they were.\p"
-	.string "We've filled six whole notebooks. So far,\n"
-	.string "we only agree on the question.$"
+	.string "My partner tracks how they behave, but\n"
+	.string "I want to know if they still remember\l"
+	.string "who they were.\p"
+	.string "This week we've filled six whole\n"
+	.string "notebooks.\p"
+	.string "Unfortunately we only agree on the\n"
+	.string "question.$"
 
 Marshduke_Indoor_ResearchCenter_NPC_BalancedResearcher_Text_0:
 	.string "My team studies the Balanced Sky. Is\n"
@@ -98,7 +102,7 @@ Marshduke_Indoor_ResearchCenter_NPC_BalancedMonk_Text_0:
 	.string "hearts, all agreeing for just one\l"
 	.string "moment.\p"
 	.string "Our team meetings have never managed\n"
-	.string "that. Not even once.$"
+	.string "that... that's for sure.$"
 
 Marshduke_Indoor_ResearchCenter_NPC_FirstDawnResearcher_Text_0:
 	.string "My team studies the First Dawn. We zoom\n"
@@ -111,5 +115,6 @@ Marshduke_Indoor_ResearchCenter_NPC_FirstDawnMonk_Text_0:
 	.string "If all Pokémon started in the same\n"
 	.string "place, are they all connected? Or do\l"
 	.string "they just look a bit alike?\p"
-	.string "My partner wants me to define 'started.'\n"
-	.string "I just want more tea.$"
+	.string "My partner wants me to define\n"
+	.string "'started.', something about the\l"
+	.string "scientific method.$"

@@ -74,13 +74,14 @@ Marshduke_Indoor_ResearchCenter_2F_NPC_RecordingAssistant_2:
 
 Marshduke_Indoor_ResearchCenter_2F_NPC_DividedResearcher_Text_0:
 	.string "My team studies the Divided World\n"
-	.string "vision. When you watch it, do you really\l"
-	.string "feel the heat and the rain? Or is\l"
-	.string "Alakazam just making you think you do?\p"
-	.string "Our volunteers say they're sweating.\n"
-	.string "The thermometer says it's room\l"
-	.string "temperature. Now they're both mad at\l"
-	.string "me.$"
+	.string "vision.\p"
+	.string "Tell me, when you watch it, do you really\n"
+	.string "feel the heat and the rain?\p"
+	.string "Or is Alakazam just making you think\n"
+	.string "you do?\p"
+	.string "When our volunteers say they're\n"
+	.string "sweating, the thermometer still says\l"
+	.string "it's room temperature.$"
 
 Marshduke_Indoor_ResearchCenter_2F_NPC_DividedMonk_Text_0:
 	.string "A fire in a memory can't burn paper. But\n"
@@ -94,25 +95,21 @@ Marshduke_Indoor_ResearchCenter_2F_NPC_TwoHeartsResearcher_Text_0:
 	.string "Two people watch the same moment and\l"
 	.string "describe it totally differently!\p"
 	.string "So I cut all the water out of the\n"
-	.string "pictures. Now they can only look at\l"
-	.string "Latios and Latias. Much easier to\l"
-	.string "grade!$"
+	.string "pictures. Much easier to grade!$"
 
 Marshduke_Indoor_ResearchCenter_2F_NPC_TwoHeartsMonk_Text_0:
 	.string "If two people feel the same thing, did\n"
 	.string "they really share the same moment?\p"
-	.string "We tested it at lunch. Everyone agreed\n"
-	.string "the food was terrible. Nobody could\l"
-	.string "agree why.$"
+	.string "We just tested it at lunch.\p"
+	.string "Everyone agreed the food was terrible,\n"
+	.string "but nobody could agree why.$"
 
 Marshduke_Indoor_ResearchCenter_2F_NPC_SixthResearcher_Text_0:
 	.string "The sixth altar keeps changing on us!\n"
 	.string "We never get the same picture twice.\p"
 	.string "Is it remembering something that hasn't\n"
 	.string "happened yet? Or are our brains just\l"
-	.string "filling in the blanks?\p"
-	.string "If you tell anyone, please tell them\n"
-	.string "both ideas! Not just the spooky one!$"
+	.string "filling in the blanks?$"
 
 Marshduke_Indoor_ResearchCenter_2F_NPC_SixthMonk_Text_0:
 	.string "Maybe the space is empty on purpose. A\n"
@@ -123,12 +120,14 @@ Marshduke_Indoor_ResearchCenter_2F_NPC_SixthMonk_Text_0:
 
 Marshduke_Indoor_ResearchCenter_2F_NPC_TranceCoordinator_Text_0:
 	.string "We also want to know how the\n"
-	.string "Rememberer stays Mega Evolved. No Mega\l"
-	.string "Stone, no trainer, and it never takes a\l"
-	.string "break!\p"
-	.string "Maybe the visions will tell us why. But\n"
-	.string "first I need six teams to agree on what\l"
-	.string "an explanation even is. Wish me luck...$"
+	.string "Rememberer stays Mega Evolved.\p"
+	.string "No Mega Stone, no trainer, and it has\n"
+	.string "never taken a break!\p"
+	.string "As far as I know...\p"
+	.string "Maybe the visions will tell us why?\p"
+	.string "But first I need six teams to agree on\n"
+	.string "what an explanation even is.\p"
+	.string "Wish me luck...$"
 
 Marshduke_Indoor_ResearchCenter_2F_NPC_RecordingAssistant_Text_0:
 	.string "You saw the fish too? Phew! I thought\n"
@@ -141,6 +140,4 @@ Marshduke_Indoor_ResearchCenter_2F_NPC_RecordingAssistant_Text_1:
 	.string "My job is to write down everything the\n"
 	.string "teams ignore. Fish, plants, birds in the\l"
 	.string "corners of the recordings...\p"
-	.string "My 'background' folder is HUGE now. They\n"
-	.string "keep asking me to make it smaller. I\l"
-	.string "keep saying no.$"
+	.string "My 'background' folder is HUGE now.$"
