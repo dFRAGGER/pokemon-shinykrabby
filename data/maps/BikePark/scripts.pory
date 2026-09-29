@@ -29,7 +29,7 @@ script BikePark_EventScript_Route06ExitTrigger {
 script BikePark_EventScript_SteepDownhillSign {
     lock
     faceplayer
-    msgbox(format("!!{DOWN_ARROW} DANGER!!\pOnly enter downhill with proper bike and experience required.\pVery steep."), MSGBOX_DEFAULT)
+    msgbox(format("!!DANGER!!\pOnly enter downhill with proper bike and experience required.\pVery steep."), MSGBOX_DEFAULT)
     release
     end
 }
@@ -38,6 +38,17 @@ script BikePark_EventScript_BikeShopSign {
     lock
     faceplayer
     msgbox(format("Mr. Kasmi's Bikeshop"), MSGBOX_SIGN)
+    release
+    end
+}
+
+script BikePark_Npc_NervousCyclist {
+    lock
+    faceplayer
+    msgbox(format("Whoa! No BIKE, no BIKE ROUTE.\pThose are the rules.\pMe? Oh, I'm ready.\pCompletely ready.\pI'm going in any minute now...\p...as soon as my knees stop making that noise."), MSGBOX_DEFAULT)
+    applymovement(VAR_LAST_TALKED, moves(face_right))
+    waitmovement(0)
+    msgbox(format("If you need a BIKE, Mr. Kasmi's shop is the big black building to the west.\pHe might be able to help you out.\pAsk if he sells courage too."), MSGBOX_DEFAULT)
     release
     end
 }
@@ -107,7 +118,7 @@ script BikePark_Npc_RidgeRanger {
 script BikePark_Npc_Milo {
     lock
     faceplayer
-    msgbox(format("That drop right there? I've been meaning to ride it all week.\pJust waiting on the right gear. Wrong tires for that grade. Wrong suspension too, honestly."), MSGBOX_AUTOCLOSE)
+    msgbox(format("That drop right there? I've been meaning to ride it all week.\pA recent rockslide has blocked the path, though.\pMaybe I'll try it next week."), MSGBOX_AUTOCLOSE)
     waitmessage
     release
     end
@@ -386,5 +397,4 @@ text BikePark_Text_DuneDefeated {
 text BikePark_Text_DunePostBattle {
     format("Three runs in a row something has dropped on my head from above.\pNo trees up here. It's the birds. It's always the birds.")
 }
-
 

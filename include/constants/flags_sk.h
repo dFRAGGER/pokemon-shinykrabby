@@ -168,6 +168,7 @@
 #define FLAG_KICKED_OUT_LAB_CONVO                        (SK_FLAGS_START + 111)
 #define FLAG_SIENNA_CONVO                                (SK_FLAGS_START + 149)
 #define FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1                (SK_FLAGS_START + 150)
+#define FLAG_MET_PHILDY                                  (SK_FLAGS_START + 185)
 #define FLAG_DELIVERED_ALIS_PACKAGE_TO_PETER              (SK_FLAGS_START + 14)
 #define FLAG_LIONSARCH_GYM_GUIDE_GAVE_WATER               (SK_FLAGS_START + 112)
 

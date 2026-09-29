@@ -56,6 +56,8 @@ static bool8 IsRunningDisallowedByMetatile(u8);
 static void Bike_TryAdvanceCyclingRoadCollisions();
 static u8 CanBikeFaceDirOnMetatile(enum Direction, u8);
 static bool8 WillPlayerCollideWithCollision(enum Collision, enum Direction);
+static bool8 IsShinyKrabbyRailCollisionPassable(enum Collision, enum Direction);
+static bool8 IsShinyKrabbyRailSideJump(u8, enum Direction);
 static void Bike_SetBikeStill(void);
 static void MovePlayerOnStandardBike(u8 direction, u16 newKeys, u16 heldKeys);
 static void StandardBikeTransition_FaceDirection(u8);
@@ -174,6 +176,8 @@ static bool8 ShouldForceCyclingRoadDownward(void)
 
 void MovePlayerOnBike(enum Direction direction, u16 newKeys, u16 heldKeys)
 {
+    u8 currentBehavior = gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior;
+
     if (IS_HNS || IS_FRLG)
     {
         newKeys &= ~B_BUTTON;
@@ -190,6 +194,18 @@ void MovePlayerOnBike(enum Direction direction, u16 newKeys, u16 heldKeys)
             PlayerJumpLedge(DIR_SOUTH);
 
         gPlayerAvatar.runningState = MOVING;
+        return;
+    }
+
+    // SK uses one combined bike. Use its Acro-style rail handling regardless
+    // of which speed was selected with R.
+    if (IS_SK
+     && (MetatileBehavior_IsVerticalRail(currentBehavior)
+      || MetatileBehavior_IsHorizontalRail(currentBehavior)
+      || MetatileBehavior_IsIsolatedVerticalRail(currentBehavior)
+      || MetatileBehavior_IsIsolatedHorizontalRail(currentBehavior)))
+    {
+        MovePlayerOnAcroBike(direction, newKeys, heldKeys);
         return;
     }
 
@@ -385,7 +401,9 @@ static void StandardBikeTransition_MoveDirection(u8 direction)
         return;
     }
     collision = GetBikeCollision(direction);
-    if (collision > 0 && collision < COLLISION_VERTICAL_RAIL)
+    if (collision > 0
+     && collision < COLLISION_VERTICAL_RAIL
+     && !IsShinyKrabbyRailCollisionPassable(collision, direction))
     {
         if (collision == COLLISION_LEDGE_JUMP)
             PlayerJumpLedge(direction);
@@ -423,7 +441,9 @@ static void StandardBikeTransition_Righthill(u8 v)
 {
     u8 collision = GetBikeCollision(DIR_EAST);
 
-    if (collision == COLLISION_NONE)
+    // Shiny Krabby's right-pull approach tiles can lead directly onto a rail.
+    // Rail collision values describe the permitted axis rather than a wall.
+    if (collision == COLLISION_NONE || IsShinyKrabbyRailCollisionPassable(collision, DIR_EAST))
         PlayerWalkFaster(DIR_EAST);
     else if (collision == COLLISION_LEDGE_JUMP)
         PlayerJumpLedge(DIR_EAST);
@@ -431,7 +451,9 @@ static void StandardBikeTransition_Righthill(u8 v)
 
 static void StandardBikeTransition_Lefthill(u8 direction)
 {
-    if (GetBikeCollision(direction) == COLLISION_NONE)
+    u8 collision = GetBikeCollision(direction);
+
+    if (collision == COLLISION_NONE || IsShinyKrabbyRailCollisionPassable(collision, direction))
         PlayerWalkNormal(direction);
 }
 
@@ -532,7 +554,9 @@ static void MachBikeTransition_TrySpeedUp(enum Direction direction)
     else
     {
         collision = GetBikeCollision(direction);
-        if (collision > COLLISION_NONE && collision < COLLISION_VERTICAL_RAIL)
+        if (collision > COLLISION_NONE
+         && collision < COLLISION_VERTICAL_RAIL
+         && !IsShinyKrabbyRailCollisionPassable(collision, direction))
         {
             // we hit a solid object, but check to see if its a ledge and then jump.
             if (collision == COLLISION_LEDGE_JUMP)
@@ -572,7 +596,9 @@ static void MachBikeTransition_TrySlowDown(enum Direction direction)
 
     collision = GetBikeCollision(direction);
 
-    if (collision > 0 && collision < COLLISION_VERTICAL_RAIL)
+    if (collision > 0
+     && collision < COLLISION_VERTICAL_RAIL
+     && !IsShinyKrabbyRailCollisionPassable(collision, direction))
     {
         if (collision == COLLISION_LEDGE_JUMP)
         {
@@ -610,6 +636,12 @@ static enum AcroTransition AcroBikeHandleInputNormal(enum Direction *newDirectio
     enum Direction direction = GetPlayerMovementDirection();
 
     gPlayerAvatar.bikeFrameCounter = 0;
+    if (IsShinyKrabbyRailSideJump(playerObjEvent->currentMetatileBehavior, *newDirection))
+    {
+        gPlayerAvatar.runningState = MOVING;
+        gPlayerAvatar.acroBikeState = ACRO_STATE_SIDE_JUMP;
+        return ACRO_TRANS_SIDE_JUMP;
+    }
     if (MetatileBehavior_IsCyclingRoadPullDownTile(playerObjEvent->currentMetatileBehavior) == TRUE)
     {
         if (!JOY_HELD(B_BUTTON))
@@ -975,7 +1007,9 @@ static void AcroBikeTransition_Moving(enum Direction direction)
         return;
     }
     collision = GetBikeCollision(direction);
-    if (collision > COLLISION_NONE && collision < COLLISION_VERTICAL_RAIL)
+    if (collision > COLLISION_NONE
+     && collision < COLLISION_VERTICAL_RAIL
+     && !IsShinyKrabbyRailCollisionPassable(collision, direction))
     {
         if (collision == COLLISION_LEDGE_JUMP)
             PlayerJumpLedge(direction);
@@ -1316,7 +1350,9 @@ static void AcroBikeTransition_Righthill(enum Direction v)
 {
     u8 collision = GetBikeCollision(DIR_EAST);
 
-    if (collision == COLLISION_NONE)
+    // Shiny Krabby's right-pull approach tiles can lead directly onto a rail.
+    // Rail collision values describe the permitted axis rather than a wall.
+    if (collision == COLLISION_NONE || IsShinyKrabbyRailCollisionPassable(collision, DIR_EAST))
         PlayerWalkFaster(DIR_EAST);
     else if (collision == COLLISION_LEDGE_JUMP)
         PlayerJumpLedge(DIR_EAST);
@@ -1324,7 +1360,9 @@ static void AcroBikeTransition_Righthill(enum Direction v)
 
 static void AcroBikeTransition_Lefthill(enum Direction direction)
 {
-    if (GetBikeCollision(direction) == COLLISION_NONE)
+    u8 collision = GetBikeCollision(direction);
+
+    if (collision == COLLISION_NONE || IsShinyKrabbyRailCollisionPassable(collision, direction))
         PlayerWalkNormal(direction);
 }
 
@@ -1410,6 +1448,72 @@ static bool8 WillPlayerCollideWithCollision(enum Collision newTileCollision, enu
     }
 
     return TRUE;
+}
+
+static bool8 IsShinyKrabbyRailCollisionPassable(enum Collision collision, enum Direction direction)
+{
+    struct ObjectEvent *playerObjEvent;
+    u8 currentBehavior;
+    u8 collisionFlags;
+    s16 x;
+    s16 y;
+
+    if (!IS_SK)
+        return FALSE;
+
+    if (collision >= COLLISION_ISOLATED_VERTICAL_RAIL
+     && collision <= COLLISION_HORIZONTAL_RAIL)
+        return !WillPlayerCollideWithCollision(collision, direction);
+
+    // The Bike Park rails are drawn at bridge elevation 4, while their
+    // walkable endpoints use the surrounding ground elevation. Allow that
+    // elevation transition only when riding off a rail along its axis. Check
+    // every collision flag so this cannot bypass walls, objects, or borders.
+    if (collision != COLLISION_ELEVATION_MISMATCH)
+        return FALSE;
+
+    playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+    currentBehavior = playerObjEvent->currentMetatileBehavior;
+    if (!CanBikeFaceDirOnMetatile(direction, currentBehavior)
+     || (!MetatileBehavior_IsVerticalRail(currentBehavior)
+      && !MetatileBehavior_IsHorizontalRail(currentBehavior)
+      && !MetatileBehavior_IsIsolatedVerticalRail(currentBehavior)
+      && !MetatileBehavior_IsIsolatedHorizontalRail(currentBehavior)))
+        return FALSE;
+
+    x = playerObjEvent->currentCoords.x;
+    y = playerObjEvent->currentCoords.y;
+    MoveCoords(direction, &x, &y);
+    collisionFlags = GetCollisionFlagsAtCoords(playerObjEvent, x, y, direction);
+    return collisionFlags == (1 << (COLLISION_ELEVATION_MISMATCH - 1));
+}
+
+static bool8 IsShinyKrabbyRailSideJump(u8 currentBehavior, enum Direction direction)
+{
+    struct ObjectEvent *playerObjEvent;
+    u8 nextBehavior;
+    s16 x;
+    s16 y;
+
+    if (!IS_SK
+     || direction == DIR_NONE)
+        return FALSE;
+
+    playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+    x = playerObjEvent->currentCoords.x;
+    y = playerObjEvent->currentCoords.y;
+    MoveCoords(direction, &x, &y);
+    nextBehavior = MapGridGetMetatileBehaviorAt(x, y);
+
+    if (MetatileBehavior_IsIsolatedHorizontalRail(currentBehavior)
+     || MetatileBehavior_IsIsolatedHorizontalRail(nextBehavior))
+        return direction == DIR_NORTH || direction == DIR_SOUTH;
+
+    if (MetatileBehavior_IsIsolatedVerticalRail(currentBehavior)
+     || MetatileBehavior_IsIsolatedVerticalRail(nextBehavior))
+        return direction == DIR_EAST || direction == DIR_WEST;
+
+    return FALSE;
 }
 
 bool8 IsBikingDisallowedByPlayer(void)

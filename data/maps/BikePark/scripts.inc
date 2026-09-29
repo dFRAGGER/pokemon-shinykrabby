@@ -35,6 +35,17 @@ BikePark_EventScript_BikeShopSign::
 	end
 
 
+BikePark_Npc_NervousCyclist::
+	lock
+	faceplayer
+	msgbox BikePark_Npc_NervousCyclist_Text_0, MSGBOX_DEFAULT
+	applymovement VAR_LAST_TALKED, BikePark_Npc_NervousCyclist_Movement_0
+	waitmovement 0
+	msgbox BikePark_Npc_NervousCyclist_Text_1, MSGBOX_DEFAULT
+	release
+	end
+
+
 BikePark_Npc_LegendWatcher::
 	lock
 	faceplayer
@@ -196,14 +207,33 @@ BikePark_Trainer_Dune::
 	end
 
 
+BikePark_Npc_NervousCyclist_Movement_0:
+	face_right
+	step_end
+
 BikePark_EventScript_SteepDownhillSign_Text_0:
-	.string "!!{DOWN_ARROW} DANGER!!\p"
+	.string "!!DANGER!!\p"
 	.string "Only enter downhill with proper bike and\n"
 	.string "experience required.\p"
 	.string "Very steep.$"
 
 BikePark_EventScript_BikeShopSign_Text_0:
 	.string "Mr. Kasmi's Bikeshop$"
+
+BikePark_Npc_NervousCyclist_Text_0:
+	.string "Whoa! No BIKE, no BIKE ROUTE.\p"
+	.string "Those are the rules.\p"
+	.string "Me? Oh, I'm ready.\p"
+	.string "Completely ready.\p"
+	.string "I'm going in any minute now...\p"
+	.string "...as soon as my knees stop making that\n"
+	.string "noise.$"
+
+BikePark_Npc_NervousCyclist_Text_1:
+	.string "If you need a BIKE, Mr. Kasmi's shop is\n"
+	.string "the big black building to the west.\p"
+	.string "He might be able to help you out.\p"
+	.string "Ask if he sells courage too.$"
 
 BikePark_Npc_LegendWatcher_Text_0:
 	.string "You know, there's a story about a rider\n"
@@ -288,9 +318,9 @@ BikePark_Npc_RidgeRanger_Text_1:
 BikePark_Npc_Milo_Text_0:
 	.string "That drop right there? I've been\n"
 	.string "meaning to ride it all week.\p"
-	.string "Just waiting on the right gear. Wrong\n"
-	.string "tires for that grade. Wrong suspension\l"
-	.string "too, honestly.$"
+	.string "A recent rockslide has blocked the\n"
+	.string "path, though.\p"
+	.string "Maybe I'll try it next week.$"
 
 BikePark_Text_SkyeIntro::
 	.string "Every time I ride down here a whole\n"

@@ -548,6 +548,17 @@ void SwapRegisteredBike(void)
     }
 }
 
+void ConvertRegisteredBikeToBicycle(void)
+{
+    if (gSaveBlock1Ptr->registeredItem == ITEM_MACH_BIKE
+     || gSaveBlock1Ptr->registeredItem == ITEM_ACRO_BIKE)
+        gSaveBlock1Ptr->registeredItem = ITEM_BICYCLE;
+
+    if (gSaveBlock3Ptr->registeredItemHold == ITEM_MACH_BIKE
+     || gSaveBlock3Ptr->registeredItemHold == ITEM_ACRO_BIKE)
+        gSaveBlock3Ptr->registeredItemHold = ITEM_BICYCLE;
+}
+
 void CompactItemsInBagPocket(enum Pocket pocketId)
 {
     BagPocket_CompactItems(&gBagPockets[pocketId]);

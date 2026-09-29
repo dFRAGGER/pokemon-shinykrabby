@@ -715,3 +715,4 @@ gSpecials::
 	def_special Special_HasGroundMaterial
 	def_special Special_OpenCaseForRolling
 	def_special UpdateFollowingPokemon
+	def_special ConvertRegisteredBikeToBicycle

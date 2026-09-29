@@ -9,8 +9,6 @@ BikeShop_Jaouad_EventScript_Kasmi::
 BikeShop_Jaouad_EventScript_Kasmi_1:
 	setspeaker BikeShop_Jaouad_EventScript_Kasmi_Text_0
 	msgbox BikeShop_Jaouad_EventScript_Kasmi_Text_1, MSGBOX_DEFAULT
-	msgbox BikeShop_Jaouad_EventScript_Kasmi_Text_2, MSGBOX_DEFAULT
-	msgbox BikeShop_Jaouad_EventScript_Kasmi_Text_3, MSGBOX_DEFAULT
 	goto BikeShop_Jaouad_EventScript_MainMenu
 	return
 
@@ -58,167 +56,97 @@ BikeShop_Jaouad_EventScript_TaxTips::
 BikeShop_Jaouad_EventScript_BikeSection::
 	goto_if_set FLAG_RECEIVED_BIKE, BikeShop_Jaouad_EventScript_BikeSection_2
 BikeShop_Jaouad_EventScript_BikeSection_1:
-	goto_if_set FLAG_MACH_BIKE_READY, BikeShop_Jaouad_EventScript_BikeSection_5
-BikeShop_Jaouad_EventScript_BikeSection_4:
-	goto BikeShop_Jaouad_EventScript_AcroBikeOnly
+	goto BikeShop_Jaouad_EventScript_GetBike
 	return
 
 BikeShop_Jaouad_EventScript_BikeSection_2:
-	goto BikeShop_Jaouad_EventScript_SwitchPrompt
+	goto BikeShop_Jaouad_EventScript_CheckBike
 	goto BikeShop_Jaouad_EventScript_BikeSection_1
 
-BikeShop_Jaouad_EventScript_BikeSection_5:
-	goto BikeShop_Jaouad_EventScript_BikeChoice
-	goto BikeShop_Jaouad_EventScript_BikeSection_4
 
-
-BikeShop_Jaouad_EventScript_AcroBikeOnly::
+BikeShop_Jaouad_EventScript_GetBike::
 	setspeaker BikeShop_Jaouad_EventScript_Kasmi_Text_0
-	msgbox BikeShop_Jaouad_EventScript_AcroBikeOnly_Text_0, MSGBOX_DEFAULT
-	goto BikeShop_Jaouad_EventScript_GetAcroBike
-	return
-
-
-BikeShop_Jaouad_EventScript_BikeChoice::
-	setspeaker BikeShop_Jaouad_EventScript_Kasmi_Text_0
-	msgbox BikeShop_Jaouad_EventScript_BikeChoice_Text_0, MSGBOX_DEFAULT
-	multichoice 21, 8, MULTI_BIKE, TRUE
-	compare VAR_RESULT, 0
-	goto_if_eq BikeShop_Jaouad_EventScript_BikeChoice_2
-BikeShop_Jaouad_EventScript_BikeChoice_1:
-	compare VAR_RESULT, 1
-	goto_if_eq BikeShop_Jaouad_EventScript_BikeChoice_5
-BikeShop_Jaouad_EventScript_BikeChoice_4:
-	goto BikeShop_Jaouad_EventScript_MainMenu
-	return
-
-BikeShop_Jaouad_EventScript_BikeChoice_2:
-	goto BikeShop_Jaouad_EventScript_GetMachBike
-	goto BikeShop_Jaouad_EventScript_BikeChoice_1
-
-BikeShop_Jaouad_EventScript_BikeChoice_5:
-	goto BikeShop_Jaouad_EventScript_GetAcroBike
-	goto BikeShop_Jaouad_EventScript_BikeChoice_4
-
-
-BikeShop_Jaouad_EventScript_GetMachBike::
-	msgbox BikeShop_Jaouad_EventScript_GetMachBike_Text_0, MSGBOX_DEFAULT
-	giveitem ITEM_MACH_BIKE
+	msgbox BikeShop_Jaouad_EventScript_GetBike_Text_0, MSGBOX_DEFAULT
+	giveitem ITEM_BICYCLE
 	compare VAR_RESULT, FALSE
-	goto_if_eq BikeShop_Jaouad_EventScript_GetMachBike_2
-BikeShop_Jaouad_EventScript_GetMachBike_1:
+	goto_if_eq BikeShop_Jaouad_EventScript_GetBike_2
+BikeShop_Jaouad_EventScript_GetBike_1:
 	setflag FLAG_RECEIVED_BIKE
 	goto BikeShop_Jaouad_EventScript_AfterGive
 	return
 
-BikeShop_Jaouad_EventScript_GetMachBike_2:
+BikeShop_Jaouad_EventScript_GetBike_2:
 	goto Common_EventScript_ShowBagIsFull
-	goto BikeShop_Jaouad_EventScript_GetMachBike_1
-
-
-BikeShop_Jaouad_EventScript_GetAcroBike::
-	msgbox BikeShop_Jaouad_EventScript_GetAcroBike_Text_0, MSGBOX_DEFAULT
-	giveitem ITEM_ACRO_BIKE
-	compare VAR_RESULT, FALSE
-	goto_if_eq BikeShop_Jaouad_EventScript_GetAcroBike_2
-BikeShop_Jaouad_EventScript_GetAcroBike_1:
-	setflag FLAG_RECEIVED_BIKE
-	goto BikeShop_Jaouad_EventScript_AfterGive
-	return
-
-BikeShop_Jaouad_EventScript_GetAcroBike_2:
-	goto Common_EventScript_ShowBagIsFull
-	goto BikeShop_Jaouad_EventScript_GetAcroBike_1
+	goto BikeShop_Jaouad_EventScript_GetBike_1
 
 
 BikeShop_Jaouad_EventScript_AfterGive::
-	goto_if_unset FLAG_MACH_BIKE_READY, BikeShop_Jaouad_EventScript_AfterGive_2
-	setspeaker BikeShop_Jaouad_EventScript_Kasmi_Text_0
-	msgbox BikeShop_Jaouad_EventScript_AfterGive_Text_1, MSGBOX_DEFAULT
-	special SwapRegisteredBike
-	release
-	end
-
-BikeShop_Jaouad_EventScript_AfterGive_2:
 	setspeaker BikeShop_Jaouad_EventScript_Kasmi_Text_0
 	msgbox BikeShop_Jaouad_EventScript_AfterGive_Text_0, MSGBOX_DEFAULT
-	special SwapRegisteredBike
 	release
 	end
 
 
-BikeShop_Jaouad_EventScript_SwitchPrompt::
-	goto_if_unset FLAG_MACH_BIKE_READY, BikeShop_Jaouad_EventScript_SwitchPrompt_2
-	setspeaker BikeShop_Jaouad_EventScript_Kasmi_Text_0
-	msgbox BikeShop_Jaouad_EventScript_SwitchPrompt_Text_1, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq BikeShop_Jaouad_EventScript_SwitchPrompt_5
-BikeShop_Jaouad_EventScript_SwitchPrompt_4:
-	setspeaker BikeShop_Jaouad_EventScript_Kasmi_Text_0
-	msgbox BikeShop_Jaouad_EventScript_SwitchPrompt_Text_2, MSGBOX_DEFAULT
-	release
-	end
-
-BikeShop_Jaouad_EventScript_SwitchPrompt_2:
-	setspeaker BikeShop_Jaouad_EventScript_Kasmi_Text_0
-	msgbox BikeShop_Jaouad_EventScript_SwitchPrompt_Text_0, MSGBOX_DEFAULT
-	release
-	end
-
-BikeShop_Jaouad_EventScript_SwitchPrompt_5:
-	goto BikeShop_Jaouad_EventScript_SwitchBikes
-	goto BikeShop_Jaouad_EventScript_SwitchPrompt_4
-
-
-BikeShop_Jaouad_EventScript_SwitchBikes::
-	setspeaker BikeShop_Jaouad_EventScript_Kasmi_Text_0
-	msgbox BikeShop_Jaouad_EventScript_SwitchBikes_Text_0, MSGBOX_DEFAULT
-	checkitem ITEM_ACRO_BIKE
+BikeShop_Jaouad_EventScript_CheckBike::
+	checkitem ITEM_BICYCLE
 	compare VAR_RESULT, TRUE
-	goto_if_eq BikeShop_Jaouad_EventScript_SwitchBikes_2
-BikeShop_Jaouad_EventScript_SwitchBikes_1:
+	goto_if_eq BikeShop_Jaouad_EventScript_CheckBike_2
+BikeShop_Jaouad_EventScript_CheckBike_1:
 	checkitem ITEM_MACH_BIKE
 	compare VAR_RESULT, TRUE
-	goto_if_eq BikeShop_Jaouad_EventScript_SwitchBikes_5
-BikeShop_Jaouad_EventScript_SwitchBikes_4:
+	goto_if_eq BikeShop_Jaouad_EventScript_CheckBike_5
+BikeShop_Jaouad_EventScript_CheckBike_4:
+	checkitem ITEM_ACRO_BIKE
+	compare VAR_RESULT, TRUE
+	goto_if_eq BikeShop_Jaouad_EventScript_CheckBike_8
+BikeShop_Jaouad_EventScript_CheckBike_7:
 	setspeaker BikeShop_Jaouad_EventScript_Kasmi_Text_0
-	msgbox BikeShop_Jaouad_EventScript_SwitchBikes_Text_1, MSGBOX_DEFAULT
+	msgbox BikeShop_Jaouad_EventScript_CheckBike_Text_0, MSGBOX_DEFAULT
 	release
 	end
 
-BikeShop_Jaouad_EventScript_SwitchBikes_2:
-	goto BikeShop_Jaouad_EventScript_SwitchAcroForMach
-	goto BikeShop_Jaouad_EventScript_SwitchBikes_1
+BikeShop_Jaouad_EventScript_CheckBike_2:
+	goto BikeShop_Jaouad_EventScript_BikeInstructions
+	goto BikeShop_Jaouad_EventScript_CheckBike_1
 
-BikeShop_Jaouad_EventScript_SwitchBikes_5:
-	goto BikeShop_Jaouad_EventScript_SwitchMachForAcro
-	goto BikeShop_Jaouad_EventScript_SwitchBikes_4
+BikeShop_Jaouad_EventScript_CheckBike_5:
+	goto BikeShop_Jaouad_EventScript_ConvertMachBike
+	goto BikeShop_Jaouad_EventScript_CheckBike_4
+
+BikeShop_Jaouad_EventScript_CheckBike_8:
+	goto BikeShop_Jaouad_EventScript_ConvertAcroBike
+	goto BikeShop_Jaouad_EventScript_CheckBike_7
 
 
-BikeShop_Jaouad_EventScript_SwitchAcroForMach::
-	incrementgamestat GAME_STAT_TRADED_BIKES
-	removeitem ITEM_ACRO_BIKE
-	giveitem ITEM_MACH_BIKE
+BikeShop_Jaouad_EventScript_ConvertMachBike::
 	setspeaker BikeShop_Jaouad_EventScript_Kasmi_Text_0
-	msgbox BikeShop_Jaouad_EventScript_SwitchAcroForMach_Text_0, MSGBOX_DEFAULT
-	goto BikeShop_Jaouad_EventScript_AfterSwap
-	return
-
-
-BikeShop_Jaouad_EventScript_SwitchMachForAcro::
-	incrementgamestat GAME_STAT_TRADED_BIKES
+	msgbox BikeShop_Jaouad_EventScript_ConvertMachBike_Text_0, MSGBOX_DEFAULT
 	removeitem ITEM_MACH_BIKE
-	giveitem ITEM_ACRO_BIKE
-	setspeaker BikeShop_Jaouad_EventScript_Kasmi_Text_0
-	msgbox BikeShop_Jaouad_EventScript_SwitchMachForAcro_Text_0, MSGBOX_DEFAULT
-	goto BikeShop_Jaouad_EventScript_AfterSwap
+	giveitem ITEM_BICYCLE
+	goto BikeShop_Jaouad_EventScript_AfterConversion
 	return
 
 
-BikeShop_Jaouad_EventScript_AfterSwap::
+BikeShop_Jaouad_EventScript_ConvertAcroBike::
 	setspeaker BikeShop_Jaouad_EventScript_Kasmi_Text_0
-	msgbox BikeShop_Jaouad_EventScript_AfterGive_Text_1, MSGBOX_DEFAULT
-	special SwapRegisteredBike
+	msgbox BikeShop_Jaouad_EventScript_ConvertMachBike_Text_0, MSGBOX_DEFAULT
+	removeitem ITEM_ACRO_BIKE
+	giveitem ITEM_BICYCLE
+	goto BikeShop_Jaouad_EventScript_AfterConversion
+	return
+
+
+BikeShop_Jaouad_EventScript_AfterConversion::
+	special ConvertRegisteredBikeToBicycle
+	setspeaker BikeShop_Jaouad_EventScript_Kasmi_Text_0
+	msgbox BikeShop_Jaouad_EventScript_AfterConversion_Text_0, MSGBOX_DEFAULT
+	goto BikeShop_Jaouad_EventScript_BikeInstructions
+	return
+
+
+BikeShop_Jaouad_EventScript_BikeInstructions::
+	setspeaker BikeShop_Jaouad_EventScript_Kasmi_Text_0
+	msgbox BikeShop_Jaouad_EventScript_BikeInstructions_Text_0, MSGBOX_DEFAULT
 	release
 	end
 
@@ -257,9 +185,7 @@ BikeShop_Jaouad_EventScript_Kasmi_Text_1:
 	.string "The name is Kasmi. Mr. Kasmi. My real\n"
 	.string "surname has four vowels in a row.\p"
 	.string "Nobody can say it right.\p"
-	.string "So. Kasmi it is.$"
-
-BikeShop_Jaouad_EventScript_Kasmi_Text_2:
+	.string "So. Kasmi it is.\p"
 	.string "Before all this? I was a transfer\n"
 	.string "pricing specialist. Corporate tax\l"
 	.string "structures, intercompany deals, profit\l"
@@ -272,9 +198,7 @@ BikeShop_Jaouad_EventScript_Kasmi_Text_2:
 	.string "Mostly...\p"
 	.string "One day I looked at the numbers and\n"
 	.string "thought: enough. I bought a motorcycle\l"
-	.string "and left.$"
-
-BikeShop_Jaouad_EventScript_Kasmi_Text_3:
+	.string "and left.\p"
 	.string "War zones. Remote lands. Eventually I\n"
 	.string "found these vast temperate steppes...\p"
 	.string "Just grass and sky, horizon to horizon.\n"
@@ -312,66 +236,60 @@ BikeShop_Jaouad_EventScript_TaxTips_Text_0:
 	.string "I found mine a long time ago. I do\n"
 	.string "alright for myself.$"
 
-BikeShop_Jaouad_EventScript_AcroBikeOnly_Text_0:
-	.string "Truth is, I've only got the ACRO BIKE\n"
-	.string "ready to go.\p"
-	.string "The MACH BIKE's still in pieces on my\n"
-	.string "bench. Give me your number, I'll call you\l"
-	.string "the second it's fixed.\p"
-	.string "Until then, take the ACRO BIKE. Hops,\n"
-	.string "tricks, tight spots. I do alright for\l"
-	.string "myself.$"
-
-BikeShop_Jaouad_EventScript_BikeChoice_Text_0:
-	.string "I've got two kinds: the MACH BIKE and\n"
-	.string "the ACRO BIKE.\p"
-	.string "MACH BIKE is pure speed. Great for\n"
-	.string "steep sandy slopes.\p"
-	.string "ACRO BIKE is more technical. Hops,\n"
-	.string "tricks, tight spots.\p"
-	.string "Take one. I do alright for myself.\p"
-	.string "Which one will it be?$"
-
-BikeShop_Jaouad_EventScript_GetMachBike_Text_0:
-	.string "{PLAYER} chose the MACH BIKE.$"
-
-BikeShop_Jaouad_EventScript_GetAcroBike_Text_0:
-	.string "{PLAYER} chose the ACRO BIKE.$"
+BikeShop_Jaouad_EventScript_GetBike_Text_0:
+	.string "Trying to get onto the BIKE ROUTE, are\n"
+	.string "you?\p"
+	.string "They won't let anyone through without\n"
+	.string "proper wheels. Sensible people, for\l"
+	.string "once.\p"
+	.string "Good timing. I've rebuilt a model with\n"
+	.string "two setups.\p"
+	.string "It can handle hops and tight obstacles,\n"
+	.string "but it can build serious speed too.\p"
+	.string "What it still needs is a field test.\p"
+	.string "In transfer pricing, you learn never to\n"
+	.string "give anything away.\p"
+	.string "You simply move its value somewhere\n"
+	.string "more useful.\p"
+	.string "I record the BIKE as promotional\n"
+	.string "equipment, and you as my field tester.\p"
+	.string "You get wheels. I get test data, free\n"
+	.string "publicity, and a beautifully empty line\l"
+	.string "in my inventory.\p"
+	.string "Much tidier than hiding money.\p"
+	.string "So, {PLAYER}: ride it hard, tell everyone\n"
+	.string "Mr. Kasmi built it, and bring back any\l"
+	.string "pieces that fall off.\p"
+	.string "Deal?\p"
+	.string "Good. I've already filed the paperwork.$"
 
 BikeShop_Jaouad_EventScript_AfterGive_Text_0:
-	.string "I've got your number. Once the MACH\n"
-	.string "BIKE's fixed, I'll call you and you can\l"
-	.string "come swap it out.$"
+	.string "There. A perfectly legitimate\n"
+	.string "sponsorship.\p"
+	.string "Press R while you're standing still to\n"
+	.string "change its setup.\p"
+	.string "Use the quick setup for jumps and\n"
+	.string "tricks, or switch over when you need\l"
+	.string "pure speed.$"
 
-BikeShop_Jaouad_EventScript_AfterGive_Text_1:
-	.string "Come back any time you want the other\n"
-	.string "one. I'll swap it out for you.$"
-
-BikeShop_Jaouad_EventScript_SwitchPrompt_Text_0:
-	.string "Still working on the MACH BIKE. Don't\n"
-	.string "worry, I've got your number.\p"
-	.string "I'll call you the second it's ready.$"
-
-BikeShop_Jaouad_EventScript_SwitchPrompt_Text_1:
-	.string "Want to switch BIKES?$"
-
-BikeShop_Jaouad_EventScript_SwitchPrompt_Text_2:
-	.string "Good choice. It'll serve you well.$"
-
-BikeShop_Jaouad_EventScript_SwitchBikes_Text_0:
-	.string "Sure. Hand it over.$"
-
-BikeShop_Jaouad_EventScript_SwitchBikes_Text_1:
+BikeShop_Jaouad_EventScript_CheckBike_Text_0:
 	.string "Your BIKE is in PC storage? Hmm.\p"
-	.string "Take it out first. Then we can swap.$"
+	.string "Take it out first and I'll give it a look.$"
 
-BikeShop_Jaouad_EventScript_SwitchAcroForMach_Text_0:
-	.string "{PLAYER} swapped the ACRO BIKE for a\n"
-	.string "MACH BIKE.$"
+BikeShop_Jaouad_EventScript_ConvertMachBike_Text_0:
+	.string "That's one of my old single-setup\n"
+	.string "models. Let me upgrade it so you can\l"
+	.string "switch riding styles whenever you like.$"
 
-BikeShop_Jaouad_EventScript_SwitchMachForAcro_Text_0:
-	.string "{PLAYER} swapped the MACH BIKE for an\n"
-	.string "ACRO BIKE.$"
+BikeShop_Jaouad_EventScript_AfterConversion_Text_0:
+	.string "There. One frame, both setups. Much\n"
+	.string "cleaner.$"
+
+BikeShop_Jaouad_EventScript_BikeInstructions_Text_0:
+	.string "Press R while you're standing still to\n"
+	.string "switch setups.\p"
+	.string "One is built for jumps and tricks. The\n"
+	.string "other is built for speed.$"
 
 BikeShop_Jaouad_EventScript_Customer_Text_0:
 	.string "Did you see that ridge out there?\p"
