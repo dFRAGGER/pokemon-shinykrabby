@@ -1,1 +1,35 @@
 mapscripts WestLionMountain_CableCar_MapScripts {}
+
+script WestlionMountain_cablecar_receptionist {
+    lock
+    faceplayer
+    msgbox(format("Welcome to the West Lion Mountain Cable Car!\pUnfortunately, we are currently experiencing some technical difficulties.\pThe weather is too poor for safe operation.\pCheck back later!"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    // Additional logic for boarding the cable car can be added here.
+    release
+    end
+}
+
+script WestLionMountain_CableCar_Snowboarder {
+    lock
+    faceplayer
+    msgbox(format("I came all this way for the fresh powder!\pBut the cable car is grounded, and even I won't ride in a whiteout.\pGuess my board and I will have to wait."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script WestLionMountain_CableCar_Skier_Cautious {
+    lock
+    faceplayer
+    msgbox(format("The Rangers say the wind has buried the trail markers near the summit.\pClosing the mountain was the right decision.\pThe slopes will still be there when the storm passes."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script WestLionMountain_CableCar_Skier_Impatient {
+    lock
+    faceplayer
+    msgbox(format("My skis are waxed, my boots are fastened, and now the cable car won't move!\pI'll wait here a little longer. Maybe the weather will clear."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}

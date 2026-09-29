@@ -46,7 +46,7 @@ script Mistcity_Research_Center_Entrance_Rangers_Tropius {
     faceplayer
     if (flag(FLAG_RESCUED_DAAN)){
 
-        msgbox(format("It is happily munching on some Nanab berries now.\pThat metallic grinding sound must have ceased, because this big guy is totally relaxed again."))
+        msgbox(format("It is happily munching on some LA White Widow now.\pThat metallic grinding sound must have ceased, because this big guy is totally relaxed again."))
     }
     if(!flag(FLAG_RESCUED_DAAN)) {
 

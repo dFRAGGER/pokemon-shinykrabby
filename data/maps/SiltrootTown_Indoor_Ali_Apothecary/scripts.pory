@@ -30,16 +30,20 @@ script SiltrootTown_RollingTable {
     faceplayer
     if (!flag(FLAG_MET_ROLLING_TABLE_GUY)) {
         setflag(FLAG_MET_ROLLING_TABLE_GUY)
+        setspeaker("RUDO")
         msgbox(format("Hey. Name's Rudo.\pI've been rolling longer than Ali's been stargazing.\pUsed to work the underground prep circuit in Lionsarch before he brought me in.\pNow I handle all the prep here - Joints, Blunts, Bowls.\pYou bring me the grind, I'll turn it into something your Pokémon won't forget."),MSGBOX_AUTOCLOSE)
         waitmessage
     }
     special(Special_HasGroundMaterial)
     if (var(VAR_RESULT) == FALSE) {
+        setspeaker("RUDO")
         msgbox(format("No grind, no roll.\pFind someone with a Grinder, grind your buds, then come back."),MSGBOX_AUTOCLOSE)
         waitmessage
         release
         end
     }
+    
+    setspeaker("RUDO")
     msgbox(format("Nice. Pick which grind you want to roll."),MSGBOX_AUTOCLOSE)
     waitmessage
     // Open the Stash Case so the player picks which grind to roll.
@@ -48,15 +52,18 @@ script SiltrootTown_RollingTable {
     special(Special_OpenCaseForRolling)
     waitstate
     if (var(VAR_RESULT) == 0xFFFF) {
+        setspeaker("RUDO")
         msgbox(format("No worries. Come back when you're ready."),MSGBOX_AUTOCLOSE)
         waitmessage
         release
         end
     }
+    setspeaker("RUDO")
     msgbox(format("Alright. What prep do you want?"),MSGBOX_AUTOCLOSE)
     waitmessage
     multichoice(0, 0, MULTI_HERB_PREP, FALSE)
     if (var(VAR_RESULT) == 3) {
+        setspeaker("RUDO")
         msgbox(format("No worries. Come back when you're ready."),MSGBOX_AUTOCLOSE)
         waitmessage
         release
@@ -66,14 +73,17 @@ script SiltrootTown_RollingTable {
     // VAR_0x8000 = slot (set by Special_OpenCaseForRolling), VAR_0x8001 = prep type (0=Joint,1=Blunt,2=Bowl)
     special(Special_PrepareHerbTreat)
     if (var(VAR_0x8001) == 0) {
+        setspeaker("RUDO")
         msgbox(format("There you go - rolled it into a Joint.\pNice and even. Use it with your Pokemon and they'll feel it."),MSGBOX_AUTOCLOSE)
         waitmessage
     }
     elif (var(VAR_0x8001) == 1) {
+        setspeaker("RUDO")
         msgbox(format("Blunt's done.\pTwo dominant strains packed tight. Hits harder than a Joint.\pUse it with your Pokemon."),MSGBOX_AUTOCLOSE)
         waitmessage
     }
     else {
+        setspeaker("RUDO")
         msgbox(format("Bowl's packed.\pPure concentrated top strain - nothing balanced about it.\pUse it with your Pokemon."),MSGBOX_AUTOCLOSE)
         waitmessage
     }
@@ -130,15 +140,15 @@ script SiltrootTown_Indoor_Apothecary_Ali_Giel {
     waitmovement
     applymovement(2, moves(face_left))
     setspeaker("GIEL")
-    msgbox(format("cough... COUGH!\pDon't let him start on the space stuff, kid.\pHe stares at the sky all night.\pIt's just lights in the dark, Ali.\pcough...\pLike an Artic Monkey concert but further away."),MSGBOX_AUTOCLOSE)
+    msgbox(format("cough... COUGH!\pDon't let him start on the space stuff, kid.\pHe stares at the sky all night.\pIt's just lights in the dark, ALI.\pcough...\pLike an Artic Monkey concert but further away."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(2, moves(face_down))
     delay(60)
     setspeaker("ALI")
-    msgbox(format("Wait... the vibrations are shifting.\pDaan sent you?\pWhoa. That guy is intense.\pAlways shouting about 'Mother Nature'...\pHe thinks too small.\pI'm thinking about the bigger picture. The cosmos. The singularity.\pTalking about singularity... Slowbro, bring me a sample of that OG Kush."),MSGBOX_AUTOCLOSE)
+    msgbox(format("Wait... the vibrations are shifting.\pDAAN sent you?\pWhoa. That guy is intense.\pAlways shouting about 'Mother Nature'...\pHe thinks too small.\pI'm thinking about the bigger picture. The cosmos. The singularity.\pTalking about singularity... Slowbro, bring us a sampleof that OG Kush."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
-    applymovement(5,moves(walk_slow_down*5 walk_slow_right*3 face_down emote_question_mark))
+    applymovement(4,moves(walk_slow_down walk_slow_right walk_slow_down*2 walk_slow_right face_down emote_question_mark))
     waitmovement
     playse(SE_PIN)
     delay(60)
@@ -147,17 +157,19 @@ script SiltrootTown_Indoor_Apothecary_Ali_Giel {
     waitmessage
     delay(60)
     applymovement(2, moves(face_left))
-    applymovement(5,moves(walk_slow_up face_right))
+    applymovement(4,moves(walk_slow_up face_right))
     waitmovement
     delay(60)
-    applymovement(5,moves(face_up))
+    applymovement(4,moves(face_up))
     waitmovement
+    applymovement(1, moves(face_down))
     delay(60)
     setspeaker("GIEL")
-    msgbox(format("Thanks Slowbro. These herbs will do me good.\pcough... COUGH!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("Thanks Slowbro. These 'herbs' will do me good.\pcough... COUGH!"),MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(5,moves(walk_slow_down walk_slow_left*3 walk_slow_up*5))
+    applymovement(4,moves(walk_slow_left*2 walk_slow_up*2 face_down))
     waitmovement
+    
     applymovement(2, moves(face_left))
     setspeaker("GIEL")
     msgbox(format("So you need a ride to Lion's Arch?\pThat cold ass harbor up north?\pWhy would anyone want to go there?\pThere's no good music scene, apart from a disco club in a random basement."))
@@ -177,7 +189,7 @@ script SiltrootTown_Indoor_Apothecary_Ali_Giel {
     applymovement(2, moves(face_left))
     applymovement(1, moves(emote_question_mark))
     setspeaker("GIEL")
-    msgbox(format("...\pWait... that's my phone?\pOh for the love of...\pIt's her.\pShe probably crashed her car again or needs 'emotional support'.\pI can't deal with this drama right now, but I have to take this.\p...COUGH!\pSee you around, kid. Don't let the system grind you down."),MSGBOX_AUTOCLOSE)
+    msgbox(format("...\pWait... that's my phone?\pOh for the love of...\pIt's her.\pShe probably needs 'emotional support'.\pI can't deal with this drama right now, but I have to take this.\p...COUGH!\pSee you around, kid. Don't let the system grind you down."),MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(1,moves(walk_down*3 face_right))
     applymovement(2, moves(face_down))
@@ -190,7 +202,6 @@ script SiltrootTown_Indoor_Apothecary_Ali_Giel {
     waitmovement
     setflag(FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1)
     removeobject(1)
-    removeobject(5)
     delay(120)
     applymovement(LOCALID_PLAYER,moves(face_up))
     waitmovement

@@ -1,4 +1,88 @@
-mapscripts Mistcity_Indoor_Gym_MapScripts {}
+mapscripts Mistcity_Indoor_Gym_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        call(MistcityGym_SetFlashLevel)
+    }
+}
+
+// Keep the gym's light level in sync with the six regular trainers.
+// Flash level 7 is the darkest normal level; level 1 is the brightest circle.
+script MistcityGym_SetFlashLevel {
+    call(MistcityGym_CountTrainersDefeated)
+    copyvar(VAR_0x8001, VAR_0x8000)
+
+    if (var(VAR_0x8000) == 0) {
+        setflashlevel(7)
+    } elif (var(VAR_0x8000) == 1) {
+        setflashlevel(6)
+    } elif (var(VAR_0x8000) == 2) {
+        setflashlevel(5)
+    } elif (var(VAR_0x8000) == 3) {
+        setflashlevel(4)
+    } elif (var(VAR_0x8000) == 4) {
+        setflashlevel(3)
+    } elif (var(VAR_0x8000) == 5) {
+        setflashlevel(2)
+    } else {
+        setflashlevel(1)
+    }
+    return
+}
+
+script MistcityGym_BrightenRoom {
+    call(MistcityGym_CountTrainersDefeated)
+
+    // Talking to an already-defeated trainer must not brighten the room again.
+    if (var(VAR_0x8000) == VAR_0x8001) {
+        return
+    }
+    copyvar(VAR_0x8001, VAR_0x8000)
+    playse(SE_SWITCH)
+
+    if (var(VAR_0x8000) == 1) {
+        animateflash(6)
+    } elif (var(VAR_0x8000) == 2) {
+        animateflash(5)
+    } elif (var(VAR_0x8000) == 3) {
+        animateflash(4)
+    } elif (var(VAR_0x8000) == 4) {
+        animateflash(3)
+    } elif (var(VAR_0x8000) == 5) {
+        animateflash(2)
+    } else {
+        animateflash(1)
+    }
+    call(MistcityGym_SetFlashLevel)
+    return
+}
+
+script MistcityGym_CountTrainersDefeated {
+    setvar(VAR_0x8000, 0)
+    if (defeated(TRAINER_LINTON)) {
+        addvar(VAR_0x8000, 1)
+    }
+    if (defeated(TRAINER_ROYSTON)) {
+        addvar(VAR_0x8000, 1)
+    }
+    if (defeated(TRAINER_CHUCKIE)) {
+        addvar(VAR_0x8000, 1)
+    }
+    if (defeated(TRAINER_HARDY)) {
+        addvar(VAR_0x8000, 1)
+    }
+    if (defeated(TRAINER_LAYTON)) {
+        addvar(VAR_0x8000, 1)
+    }
+    if (defeated(TRAINER_NEELY)) {
+        addvar(VAR_0x8000, 1)
+    }
+    return
+}
+
+script MistcityGym_TrainerDefeated {
+    call(MistcityGym_BrightenRoom)
+    release
+    end
+}
 
 script Mistcity_Gym_Introduction {
     lock
@@ -52,12 +136,11 @@ script Mistcity_Gym_David_Defeated {
     waitmessage
     giveitem(ITEM_HM05)
     setflag(FLAG_RECEIVED_HM_FLASH)
-    setflag(FLAG_DEFEATED_DEWFORD_GYM )
     setspeaker("DAVID")
     msgbox(format("That Hidden Machine contains the move Flash.\pIt creates a brilliant light.\pIt can light up even the darkest of areas to guide your path.\pI learned it from studying that Faculty scum.\pSometimes you have to fight fire with fire!\pGood luck on your further endeavours."))
     waitmessage
-    animateflash(1)
-    setflashlevel(1)
+    animateflash(0)
+    setflashlevel(0)
     call(MistcityGym_Set_Gym_Trainers)
     release
     end
@@ -82,7 +165,7 @@ text Mistcity_Gym_David_Defeattext {
 }
 
 script MistcityGym_Trainer_Linton {
-    trainerbattle_single(TRAINER_LINTON, MistcityGym_Text_LintonIntro, Mistcity_Text_LintonDefeated)
+	trainerbattle_single(TRAINER_LINTON, MistcityGym_Text_LintonIntro, Mistcity_Text_LintonDefeated, MistcityGym_TrainerDefeated)
 	msgbox(Mistcity_Text_LintonPostBattle, MSGBOX_AUTOCLOSE)
 	end
 }
@@ -100,7 +183,7 @@ text Mistcity_Text_LintonPostBattle {
 }
 
 script MistcityGym_Trainer_Royston {
-    trainerbattle_single(TRAINER_ROYSTON, MistcityGym_Text_RoystonIntro, Mistcity_Text_RoystonDefeated)
+	trainerbattle_single(TRAINER_ROYSTON, MistcityGym_Text_RoystonIntro, Mistcity_Text_RoystonDefeated, MistcityGym_TrainerDefeated)
 	msgbox(Mistcity_Text_RoystonPostBattle, MSGBOX_AUTOCLOSE)
 	end
 }
@@ -118,7 +201,7 @@ text Mistcity_Text_RoystonPostBattle {
 }
 
 script MistcityGym_Trainer_Chuckie {
-    trainerbattle_single(TRAINER_CHUCKIE, MistcityGym_Text_ChuckieIntro, Mistcity_Text_ChuckieDefeated)
+	trainerbattle_single(TRAINER_CHUCKIE, MistcityGym_Text_ChuckieIntro, Mistcity_Text_ChuckieDefeated, MistcityGym_TrainerDefeated)
 	msgbox(Mistcity_Text_ChuckiePostBattle, MSGBOX_AUTOCLOSE)
 	end
 }
@@ -136,7 +219,7 @@ text Mistcity_Text_ChuckiePostBattle {
 }
 
 script MistcityGym_Trainer_Hardy {
-    trainerbattle_single(TRAINER_HARDY, MistcityGym_Text_HardyIntro, Mistcity_Text_HardyDefeated)
+	trainerbattle_single(TRAINER_HARDY, MistcityGym_Text_HardyIntro, Mistcity_Text_HardyDefeated, MistcityGym_TrainerDefeated)
 	msgbox(Mistcity_Text_HardyPostBattle, MSGBOX_AUTOCLOSE)
 	end
 }
@@ -154,7 +237,7 @@ text Mistcity_Text_HardyPostBattle {
 }
 
 script MistcityGym_Trainer_Layton {
-    trainerbattle_single(TRAINER_LAYTON, MistcityGym_Text_LaytonIntro, Mistcity_Text_LaytonDefeated)
+	trainerbattle_single(TRAINER_LAYTON, MistcityGym_Text_LaytonIntro, Mistcity_Text_LaytonDefeated, MistcityGym_TrainerDefeated)
 	msgbox(Mistcity_Text_LaytonPostBattle, MSGBOX_AUTOCLOSE)
 	end
 }
@@ -172,7 +255,7 @@ text Mistcity_Text_LaytonPostBattle {
 }
 
 script MistcityGym_Trainer_Neely {
-    trainerbattle_single(TRAINER_NEELY, MistcityGym_Text_NeelyIntro, Mistcity_Text_NeelyDefeated)
+	trainerbattle_single(TRAINER_NEELY, MistcityGym_Text_NeelyIntro, Mistcity_Text_NeelyDefeated, MistcityGym_TrainerDefeated)
 	msgbox(Mistcity_Text_NeelyPostBattle, MSGBOX_AUTOCLOSE)
 	end
 }

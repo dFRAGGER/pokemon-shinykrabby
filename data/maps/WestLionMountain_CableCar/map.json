@@ -28,7 +28,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PICNICKER_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_RANGER_F_DP",
       "x": 6,
       "y": 6,
       "elevation": 0,
@@ -37,21 +37,60 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "WestlionMountain_cablecar_receptionist",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SKIER_M_DP",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WestLionMountain_CableCar_Skier_Cautious",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SKIER_M_HNS",
+      "x": 4,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WestLionMountain_CableCar_Snowboarder",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SKIER_F_HNS",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WestLionMountain_CableCar_Skier_Impatient",
       "flag": "0"
     }
   ],
   "warp_events": [
     {
       "x": 6,
-      "y": 11,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_WEST_LION_MOUNTAIN",
       "dest_warp_id": "0"
     },
     {
       "x": 7,
-      "y": 11,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_WEST_LION_MOUNTAIN",
       "dest_warp_id": "0"

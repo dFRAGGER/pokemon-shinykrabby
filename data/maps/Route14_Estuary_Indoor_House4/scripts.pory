@@ -1,1 +1,19 @@
 mapscripts Route14_Estuary_Indoor_House4_MapScripts {}
+
+// Staging rows: reposition in Porymap before playtesting.
+
+script Route14_Estuary_Indoor_House4_NPC_FloodplainRanger {
+    lock
+    faceplayer
+    msgbox(format("This ranger post overlooks the open floodplain.\pSTANTLER crosses between patches of cover. Sometimes the whole view stays still for an hour.\pWrite down an empty watch too. If we only record exciting days, our records tell a rather different story."))
+    release
+    end
+}
+
+script Route14_Estuary_Indoor_House4_NPC_FloodplainObserver {
+    lock
+    faceplayer
+    msgbox(format("I wanted a dramatic sighting for my notebook. So far I have wind direction, one STANTLER and a rather good drawing of my shoe."))
+    release
+    end
+}

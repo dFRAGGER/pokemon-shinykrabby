@@ -16,4 +16,7 @@ Route04_CenterCave_Geologist_Text_0:
 	.string "indicates a massive vertical drop right\l"
 	.string "here.\p"
 	.string "I wouldn't try swimming without heavy\n"
-	.string "equipment unless you have a death wish.$"
+	.string "equipment unless you have a death wish.\p"
+	.string "From a scientific perspective though,\n"
+	.string "this could be a sign of a larger\l"
+	.string "geological formation.$"

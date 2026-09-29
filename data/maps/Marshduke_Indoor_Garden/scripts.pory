@@ -1,1 +1,99 @@
 mapscripts Marshduke_Indoor_Garden_MapScripts {}
+
+// Transferred from the cemetery; reposition staging rows in Porymap.
+
+script Marshduke_Indoor_Garden_Trainer_Cas {
+    trainerbattle_single(TRAINER_DELTA_CAS_SK, Marshduke_Indoor_Garden_Trainer_Cas_Intro, Marshduke_Indoor_Garden_Trainer_Cas_Defeat)
+    msgbox(Marshduke_Indoor_Garden_Trainer_Cas_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Marshduke_Indoor_Garden_Trainer_Cas_Intro {
+    format("Try battling without saying a word!")
+}
+
+text Marshduke_Indoor_Garden_Trainer_Cas_Defeat {
+    format("Oops, I shouted!")
+}
+
+text Marshduke_Indoor_Garden_Trainer_Cas_After {
+    format("NATU won't stop staring at you. Please don't stare back or we'll be here all day.")
+}
+
+script Marshduke_Indoor_Garden_Trainer_Bert {
+    trainerbattle_single(TRAINER_DELTA_BERT_SK, Marshduke_Indoor_Garden_Trainer_Bert_Intro, Marshduke_Indoor_Garden_Trainer_Bert_Defeat)
+    msgbox(Marshduke_Indoor_Garden_Trainer_Bert_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Marshduke_Indoor_Garden_Trainer_Bert_Intro {
+    format("Have you got time for an old trainer?")
+}
+
+text Marshduke_Indoor_Garden_Trainer_Bert_Defeat {
+    format("You've got a fine team!")
+}
+
+text Marshduke_Indoor_Garden_Trainer_Bert_After {
+    format("IVYSAUR used to fit inside my coat. It still tries to sit on my lap.")
+}
+
+script Marshduke_Indoor_Garden_Trainer_Noor {
+    trainerbattle_single(TRAINER_DELTA_NOOR_SK, Marshduke_Indoor_Garden_Trainer_Noor_Intro, Marshduke_Indoor_Garden_Trainer_Noor_Defeat)
+    msgbox(Marshduke_Indoor_Garden_Trainer_Noor_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Marshduke_Indoor_Garden_Trainer_Noor_Intro {
+    format("Let's see if my studying paid off!")
+}
+
+text Marshduke_Indoor_Garden_Trainer_Noor_Defeat {
+    format("I need more practice!")
+}
+
+text Marshduke_Indoor_Garden_Trainer_Noor_After {
+    format("I watch Alakazam for hours, but my own KADABRA won't sit still for five minutes.")
+}
+
+script Marshduke_Indoor_Garden_Trainer_Ivo {
+    trainerbattle_single(TRAINER_DELTA_IVO_SK, Marshduke_Indoor_Garden_Trainer_Ivo_Intro, Marshduke_Indoor_Garden_Trainer_Ivo_Defeat)
+    msgbox(Marshduke_Indoor_Garden_Trainer_Ivo_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Marshduke_Indoor_Garden_Trainer_Ivo_Intro {
+    format("One last battle before we head home?")
+}
+
+text Marshduke_Indoor_Garden_Trainer_Ivo_Defeat {
+    format("You caught us off guard!")
+}
+
+text Marshduke_Indoor_Garden_Trainer_Ivo_After {
+    format("GOLBAT gets restless indoors, so we come here most evenings. The caretaker knows us by now.")
+}
+
+script Marshduke_Indoor_Garden_NPC_DollChild {
+    lock
+    faceplayer
+    msgbox(format("The doll is for Grandma's CLEFAIRY.\pI know it can't play with it. I still thought it should have one."))
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_NPC_StoneCaretaker {
+    lock
+    faceplayer
+    msgbox(format("I clean the lettering with a soft brush. The little plants between the stones can stay.\pTidy doesn't have to mean nothing is allowed to grow."))
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_NPC_QuietVisitor {
+    lock
+    faceplayer
+    msgbox(format("The city sounds different here. Water, leaves, a distant bell.\pI came to remember someone. It's a good place to sit for a while."))
+    release
+    end
+}

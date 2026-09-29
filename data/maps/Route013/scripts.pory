@@ -1,1 +1,69 @@
 mapscripts Route013_MapScripts {}
+
+// Staging rows: reposition in Porymap before playtesting.
+
+script Route013_Trainer_Sanne {
+    trainerbattle_single(TRAINER_DELTA_SANNE_SK, Route013_Trainer_Sanne_Intro, Route013_Trainer_Sanne_Defeat)
+    msgbox(Route013_Trainer_Sanne_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route013_Trainer_Sanne_Intro {
+    format("Think you can keep up with STANTLER?")
+}
+
+text Route013_Trainer_Sanne_Defeat {
+    format("You certainly can!")
+}
+
+text Route013_Trainer_Sanne_After {
+    format("A herd came through here last spring with little ones in tow. I hope they use this crossing again.")
+}
+
+script Route013_NPC_HerdWarden {
+    lock
+    faceplayer
+    msgbox(format("The gaps between the trees are crossing places. Watch for movement before you walk through.\pWe leave those gaps open. Wild Pokemon don't use our signposts."))
+    release
+    end
+}
+
+script Route013_NPC_DryLanding {
+    lock
+    faceplayer
+    msgbox(format("That old landing served a ferry once. Now the water runs well away from it.\pMy grandson thinks we built a pier in a field for a joke. We weren't THAT bored."))
+    release
+    end
+}
+
+script Route013_NPC_WindSketcher {
+    lock
+    faceplayer
+    msgbox(format("I paint the same view every month. People complain the river is in the wrong place.\pI tell them to complain to the river. So far nobody has."))
+    release
+    end
+}
+
+script Route013_NPC_GaugeReader {
+    lock
+    faceplayer
+    msgbox(format("A water mark records one height on one day.\pPut several years together and you have something to discuss. Put one on a poster and you have something to argue about."))
+    release
+    end
+}
+
+script Route013_NPC_CathedralVisitor {
+    lock
+    faceplayer
+    msgbox(format("The cathedral was my reason for coming. I didn't expect to spend an hour watching the lake on the way.\pI'm already late. I think it was worth it."))
+    release
+    end
+}
+
+script Route013_NPC_PatientChild {
+    lock
+    faceplayer
+    msgbox(format("I saw a brown shape near the trees! I waited and waited.\pIt was a stump. Then something walked out from behind the stump! Waiting worked eventually."))
+    release
+    end
+}

@@ -4,6 +4,19 @@ SiltrootTown_MapScripts::
 
 SiltrootTown_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setflag FLAG_VISITED_SILTROOT_TOWN
+	goto_if_set FLAG_HIDE_SILTROOTTOWN_SHED_GUARD, SiltrootTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+SiltrootTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	goto_if_set FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN, SiltrootTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+	return
+
+SiltrootTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+	setflag FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN
+	clearflag FLAG_HIDE_SILTROOTTOWN_SHED_GUARD
+	goto SiltrootTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+SiltrootTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
+	setobjectxyperm 20, 62, 65
+	setobjectmovementtype 20, MOVEMENT_TYPE_FACE_LEFT
 	return
 
 
@@ -14,7 +27,7 @@ Siltroottown_Joris_UpToTheWhiteLight::
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	msgbox Siltroottown_Joris_UpToTheWhiteLight_Text_0, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement 26, Siltroottown_Joris_UpToTheWhiteLight_Movement_0
+	applymovement 25, Siltroottown_Joris_UpToTheWhiteLight_Movement_0
 	delay 40
 	setspeaker Siltroottown_Joris_UpToTheWhiteLight_Text_1
 	msgbox Siltroottown_Joris_UpToTheWhiteLight_Text_2, MSGBOX_AUTOCLOSE
@@ -25,15 +38,15 @@ Siltroottown_Joris_UpToTheWhiteLight::
 	compare VAR_TEMP_0, 51
 	goto_if_eq Siltroottown_Joris_UpToTheWhiteLight_4
 Siltroottown_Joris_UpToTheWhiteLight_3:
-	applymovement 2, Siltroottown_Joris_UpToTheWhiteLight_Movement_3
+	applymovement 25, Siltroottown_Joris_UpToTheWhiteLight_Movement_3
 Siltroottown_Joris_UpToTheWhiteLight_1:
 	waitmovement
-	removeobject 2
+	removeobject 25
 	release
 	return
 
 Siltroottown_Joris_UpToTheWhiteLight_2:
-	applymovement 2, Siltroottown_Joris_UpToTheWhiteLight_Movement_2
+	applymovement 25, Siltroottown_Joris_UpToTheWhiteLight_Movement_2
 	goto Siltroottown_Joris_UpToTheWhiteLight_1
 
 Siltroottown_Joris_UpToTheWhiteLight_4:
@@ -45,10 +58,10 @@ Siltroottown_Joris_UpToTheWhiteLight_4:
 SiltrootTown_Corsola_Jump1::
 	lock
 	playse SE_PIN
-	applymovement 23, SiltrootTown_Corsola_Jump1_Movement_0
+	applymovement 22, SiltrootTown_Corsola_Jump1_Movement_0
 	waitmovement
 	setflag FLAG_TEMP_1
-	removeobject 23
+	removeobject 22
 	release
 	return
 
@@ -56,10 +69,10 @@ SiltrootTown_Corsola_Jump1::
 SiltrootTown_Corsola_Jump2::
 	lock
 	playse SE_PIN
-	applymovement 24, SiltrootTown_Corsola_Jump1_Movement_0
+	applymovement 23, SiltrootTown_Corsola_Jump1_Movement_0
 	waitmovement
 	setflag FLAG_TEMP_2
-	removeobject 24
+	removeobject 23
 	release
 	return
 
@@ -67,10 +80,10 @@ SiltrootTown_Corsola_Jump2::
 SiltrootTown_Corsola_Jump3::
 	lock
 	playse SE_PIN
-	applymovement 25, SiltrootTown_Corsola_Jump1_Movement_0
+	applymovement 24, SiltrootTown_Corsola_Jump1_Movement_0
 	waitmovement
 	setflag FLAG_TEMP_2
-	removeobject 25
+	removeobject 24
 	release
 	return
 
@@ -328,9 +341,10 @@ Siltroottown_Guard_shed_18:
 Siltroottown_Guard_shed_14:
 	msgbox Siltroottown_Guard_shed_Text_2, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement LOCALID_PLAYER, Siltroottown_Guard_shed_Movement_5
+	applymovement LOCALID_PLAYER, Siltroottown_Guard_shed_Movement_6
 	waitmovement
-	setflag FLAG_HIDE_SILTROOTTOWN_SHED_GUARD
+	setflag FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN
+	clearflag FLAG_HIDE_SILTROOTTOWN_SHED_GUARD
 	release
 	end
 
@@ -341,15 +355,15 @@ Siltroottown_Guard_shed_4:
 	end
 
 Siltroottown_Guard_shed_5:
-	goto_if_set FLAG_HIDE_SILTROOTTOWN_SHED_GUARD, Siltroottown_Guard_shed_4
+	goto_if_set FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN, Siltroottown_Guard_shed_4
 	goto Siltroottown_Guard_shed_1
 
 Siltroottown_Guard_shed_8:
-	goto_if_unset FLAG_HIDE_SILTROOTTOWN_SHED_GUARD, Siltroottown_Guard_shed_3
+	goto_if_unset FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN, Siltroottown_Guard_shed_3
 	goto Siltroottown_Guard_shed_6
 
 Siltroottown_Guard_shed_11:
-	goto_if_unset FLAG_HIDE_SILTROOTTOWN_SHED_GUARD, Siltroottown_Guard_shed_2
+	goto_if_unset FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN, Siltroottown_Guard_shed_2
 	goto Siltroottown_Guard_shed_9
 
 Siltroottown_Guard_shed_15:
@@ -357,12 +371,14 @@ Siltroottown_Guard_shed_15:
 	waitmovement
 	applymovement LOCALID_PLAYER, Siltroottown_Guard_shed_Movement_2
 	waitmovement
+	applymovement 20, Siltroottown_Guard_shed_Movement_3
+	waitmovement
 	goto Siltroottown_Guard_shed_14
 
 Siltroottown_Guard_shed_16:
-	applymovement 20, Siltroottown_Guard_shed_Movement_3
+	applymovement 20, Siltroottown_Guard_shed_Movement_4
 	waitmovement
-	applymovement LOCALID_PLAYER, Siltroottown_Guard_shed_Movement_4
+	applymovement LOCALID_PLAYER, Siltroottown_Guard_shed_Movement_5
 	waitmovement
 	goto Siltroottown_Guard_shed_14
 
@@ -833,15 +849,21 @@ Siltroottown_Guard_shed_Movement_2:
 
 Siltroottown_Guard_shed_Movement_3:
 	walk_right
+	walk_up
 	face_left
 	step_end
 
 Siltroottown_Guard_shed_Movement_4:
+	walk_right
+	face_left
+	step_end
+
+Siltroottown_Guard_shed_Movement_5:
 	walk_up
 	face_right
 	step_end
 
-Siltroottown_Guard_shed_Movement_5:
+Siltroottown_Guard_shed_Movement_6:
 	face_up
 	step_end
 

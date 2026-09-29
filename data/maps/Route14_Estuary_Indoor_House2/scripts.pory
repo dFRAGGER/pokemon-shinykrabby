@@ -1,1 +1,19 @@
 mapscripts Route14_Estuary_Indoor_House2_MapScripts {}
+
+// Staging rows: reposition in Porymap before playtesting.
+
+script Route14_Estuary_Indoor_House2_NPC_ReedsRanger {
+    lock
+    faceplayer
+    msgbox(format("This ranger post overlooks the reed beds.\pPSYDUCK slips between the stems. A moving reed may be the only sign you get.\pNotice where the stems part. From ground level, the opening is easier to find than the Pokemon."))
+    release
+    end
+}
+
+script Route14_Estuary_Indoor_House2_NPC_ReedsObserver {
+    lock
+    faceplayer
+    msgbox(format("I've been staring at one reed for ten minutes. It moved! Oh. That was the ranger opening the door."))
+    release
+    end
+}

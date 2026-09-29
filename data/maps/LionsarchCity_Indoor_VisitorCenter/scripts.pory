@@ -44,7 +44,7 @@ script VisitorCenter_Ranger {
         releaseall
         end
     }
-    msgbox(format("I'm a ranger stationed in the mountains.\pWe've noticed increased activity from the Faculty lately.\pThey claim to have mining permits, but something feels... off.\pHere, take this before you head up."))
+    msgbox(format("I'm a ranger stationed in the mountains.\pThe Faculty has mining permits, but their new drills went straight through the oldest ice.\pThen a sealed transport came down under guard. Why all that security for ore?\pHere, take this before you head up."))
     waitmessage
     giveitem(ITEM_FULL_HEAL)
     setflag(FLAG_ITEM_LIONSARCH_VISITOR_CENTER_FULL_HEAL)

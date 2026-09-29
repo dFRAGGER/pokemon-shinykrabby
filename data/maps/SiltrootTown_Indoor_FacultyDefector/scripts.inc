@@ -25,26 +25,26 @@ SiltrootTown_Indoor_Scott_2:
 	msgbox SiltrootTown_Indoor_Scott_Text_3, MSGBOX_AUTOCLOSE
 	waitmessage
 	waitmessage
-	compare VAR_TEMP_0, 3
+	compare VAR_TEMP_0, 2
 	goto_if_eq SiltrootTown_Indoor_Scott_14
-	compare VAR_TEMP_0, 4
+	compare VAR_TEMP_0, 3
 	goto_if_eq SiltrootTown_Indoor_Scott_15
 SiltrootTown_Indoor_Scott_13:
 	setspeaker SiltrootTown_Indoor_Scott_Text_0
 	msgbox SiltrootTown_Indoor_Scott_Text_4, MSGBOX_AUTOCLOSE
 	waitmessage
 	delay 40
-	compare VAR_TEMP_0, 3
+	compare VAR_TEMP_0, 2
 	goto_if_eq SiltrootTown_Indoor_Scott_19
-	compare VAR_TEMP_0, 4
+	compare VAR_TEMP_0, 3
 	goto_if_eq SiltrootTown_Indoor_Scott_20
 SiltrootTown_Indoor_Scott_18:
 	setspeaker SiltrootTown_Indoor_Scott_Text_0
 	msgbox SiltrootTown_Indoor_Scott_Text_6, MSGBOX_AUTOCLOSE
 	waitmessage
-	compare VAR_TEMP_0, 3
+	compare VAR_TEMP_0, 2
 	goto_if_eq SiltrootTown_Indoor_Scott_24
-	compare VAR_TEMP_0, 4
+	compare VAR_TEMP_0, 3
 	goto_if_eq SiltrootTown_Indoor_Scott_25
 SiltrootTown_Indoor_Scott_23:
 	setflag FLAG_HIDE_SCOTT_AFTER_CONVO
@@ -57,9 +57,9 @@ SiltrootTown_Indoor_Scott_3:
 	setspeaker SiltrootTown_Indoor_Scott_Text_7
 	msgbox SiltrootTown_Indoor_Scott_Text_8, MSGBOX_AUTOCLOSE
 	waitmessage
-	compare VAR_TEMP_0, 3
+	compare VAR_TEMP_0, 2
 	goto_if_eq SiltrootTown_Indoor_Scott_9
-	compare VAR_TEMP_0, 4
+	compare VAR_TEMP_0, 3
 	goto_if_eq SiltrootTown_Indoor_Scott_10
 	goto SiltrootTown_Indoor_Scott_1
 
@@ -241,6 +241,7 @@ SiltrootTown_Indoor_Scott_Movement_13:
 SiltrootTown_Indoor_Scott_Movement_14:
 	walk_down
 	walk_down
+	walk_right
 	walk_down
 	step_end
 

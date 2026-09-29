@@ -162,7 +162,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN_HNS",
       "x": 38,
       "y": 50,
       "elevation": 0,
@@ -254,8 +254,8 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 45,
+      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN_FRLG",
+      "x": 44,
       "y": 30,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -280,7 +280,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR_DP",
       "x": 61,
       "y": 65,
       "elevation": 0,
@@ -304,19 +304,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
-      "x": 62,
-      "y": 65,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Siltroottown_Guard_shed",
-      "flag": "FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(CORSOLA)",
@@ -380,7 +367,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 25,
+      "x": 26,
       "y": 27,
       "elevation": 0,
       "dest_map": "MAP_SILTROOT_TOWN_INDOOR_FACULTY_DEFECTOR",

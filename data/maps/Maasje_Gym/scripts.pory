@@ -52,7 +52,7 @@ script Maasje_Gym_PeteLongfellow_Defeated {
     msgbox(format("You received the TIDE BADGE!"))
     waitmessage
     setspeaker("PETE")
-    msgbox(format("That badge lets any pokemon up to level 30 obey you, no matter whose it was originally.\pAlso, you'll be able to use the move Cut outside of battle now.\pFor future battles, this might help:"))
+    msgbox(format("That badge lets any pokemon up to level 20 obey you, no matter whose it was originally.\pAlso, you'll be able to use the move Cut outside of battle now.\pFor future battles, this might help:"))
     waitmessage
     giveitem(ITEM_TM_WATER_PULSE)
     waitmessage

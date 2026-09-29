@@ -972,7 +972,7 @@ Maasje_Gym_PeteLongfellow_Defeated_Text_1:
 
 Maasje_Gym_PeteLongfellow_Defeated_Text_2:
 	.string "That badge lets any pokemon up to level\n"
-	.string "30 obey you, no matter whose it was\l"
+	.string "20 obey you, no matter whose it was\l"
 	.string "originally.\p"
 	.string "Also, you'll be able to use the move Cut\n"
 	.string "outside of battle now.\p"

@@ -84,7 +84,7 @@ text MiningCave_Text_WarrenDefeated {
 }
 
 text MiningCave_Text_WarrenPostBattle {
-    format("The ore we've found down here...\pit's unlike anything from surface deposits.\pThat's all you need to know.")
+    format("Ore samples? That's what the public paperwork calls them.\pThe sealed transport needed its own power supply.\pI've never guarded a rock that needed batteries before.")
 }
 
 
@@ -99,14 +99,14 @@ script MiningCaveB1F_Barry_Battle {
     applymovement(1, moves(emote_exclamation_mark))
     waitmovement(0)
     setspeaker("BARRY")
-    msgbox(format("YOU again?!\pDon't you ever know when to quit?\p...\pIt doesn't matter. We've already found what we came for.\pYou're too late to change anything."), MSGBOX_AUTOCLOSE)
+    msgbox(format("YOU again?!\pDon't you ever know when to quit?\p...\pIt doesn't matter. I just got promoted from intern to ADMINISTRATOR.\pAnd you are still a little intern right?\pHAHAHAHA!"), MSGBOX_AUTOCLOSE)
     waitmessage
     trainerbattle_no_intro(TRAINER_BARRY_MINING_SK, MiningCaveB1F_Text_BarryDefeated)
     goto(MiningCaveB1F_Barry_PostBattle)
 }
 
 text MiningCaveB1F_Text_BarryDefeated {
-    format("NO! Not again!")
+    format("How could a little intern defeat me?!")
 }
 
 script MiningCaveB1F_Barry_PostBattle {
@@ -118,7 +118,7 @@ script MiningCaveB1F_Barry_PostBattle {
     applymovement(1, moves(emote_exclamation_mark))
     waitmovement(0)
     setspeaker("BARRY")
-    msgbox(format("Gah! This entire section is destabilizing!\pWe might have digged to deep..."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Gah! The drilling cracked the ice supports!\pThis entire section is destabilizing!"), MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER, moves(face_right lock_facing_direction walk_left unlock_facing_direction walk_right face_up))
     applymovement(1, moves(walk_fast_up*3))
@@ -126,7 +126,7 @@ script MiningCaveB1F_Barry_PostBattle {
     applymovement(2, moves(face_down))
     delay(30)
     setspeaker("BARRY")
-    msgbox(format("We gotta go!\pGather the others and move the materials to the factory!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("We gotta go!\pREGICE is already at the factory. Get the remaining equipment and transfer records out!\pGather the others. Nobody stays down here!"), MSGBOX_AUTOCLOSE)
     waitmessage    
     applymovement(2, moves(walk_fast_left walk_fast_up*5))
     waitmovement
@@ -141,7 +141,7 @@ script MiningCaveB1F_Barry_PostBattle {
     applymovement(LOCALID_PLAYER, moves(face_up lock_facing_direction walk_fast_down*2 unlock_facing_direction))
     waitmovement
     setspeaker("BARRY")
-    msgbox(format("You honestely think I would let you leave and try to ruin our plans again?\pTake this, stupid intern!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("You honestely think I would let you leave and try to ruin our plans for the 3rd time?\pTake this, stupid intern!"), MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_BALL_THROW)
     applymovement(LOCALID_PLAYER, moves(face_up lock_facing_direction jump_2_down unlock_facing_direction))
@@ -150,6 +150,7 @@ script MiningCaveB1F_Barry_PostBattle {
     setvar(VAR_MINING_CAVE_STATE, 1)
     delay(120)
     warpsilent(MAP_EAST_LION_MOUNTAIN_FACULTY_MINING_CAVE, 9, 10)
+    waitstate
     release
     end
 }
@@ -162,7 +163,7 @@ script MiningCaveB1F_Barry_PostBattle {
 script MiningCaveB1F_Worker1_Convo {
     lock
     faceplayer
-    msgbox(format("These rock formations are extraordinary...\pThe crystalline density here is off the charts.\pI've never seen anything like it in my career."), MSGBOX_AUTOCLOSE)
+    msgbox(format("That chamber was sealed in ancient ice.\pOur permit was for ore, but the orders were very clear: preserve the specimen, remove everything around it.\pThe support ice didn't survive the drilling nearly as well."), MSGBOX_AUTOCLOSE)
     release
     end
 }
@@ -170,7 +171,7 @@ script MiningCaveB1F_Worker1_Convo {
 script MiningCaveB1F_Worker2_Convo {
     lock
     faceplayer
-    msgbox(format("Something incredible passed through this place long ago.\pThe deeper we excavate, the stronger the energy readings become.\p...I can't explain it. The instruments just go wild."), MSGBOX_AUTOCLOSE)
+    msgbox(format("REGICE was intact when we uncovered it.\pThe containment crew took it to the Lionsarch steelworks before this shift started.\pMy job is to record what remains of the chamber.\pThe instruments keep picking up the drills. Or the ice cracking. It's getting hard to tell."), MSGBOX_AUTOCLOSE)
     release
     end
 }
@@ -178,19 +179,19 @@ script MiningCaveB1F_Worker2_Convo {
 script MiningCaveB1F_Worker3_Convo {
     lock
     faceplayer
-    msgbox(format("There are markings on the walls in this deepest section.\pNot writing exactly... more like impressions.\pAs if something enormous pressed against the rock itself."), MSGBOX_AUTOCLOSE)
+    msgbox(format("The hollow in the ice is where the specimen rested.\pThose newer scars are from the transport frame.\pWe widened the passage to get it out. The Administrator refused to wait for a stability survey."), MSGBOX_AUTOCLOSE)
     release
     end
 }
 
 script MiningCaveB1F_Sign_DeepMine {
     lock
-    msgbox(format("RESTRICTED - LEVEL B1\nAdministrator Access Only\n- The sign bears a fresh Faculty emblem."), MSGBOX_AUTOCLOSE)
+    msgbox(format("FACULTY EXTRACTION RECORD\pSpecimen: REGICE. Recovered intact from the sealed ice chamber.\pTransfer completed: LIONSARCH STEEL FACTORY, containment bay.\pPortable controller must remain powered throughout transport.\pPublic freight declaration: mineral samples.\pRemaining crew: recover equipment and records. Excavation supports are unstable."), MSGBOX_AUTOCLOSE)
     release
 }
 
 script MiningCave_Sign_Danger {
     lock
-    msgbox(format("CAUTION: Active Excavation\nHard hats mandatory past this point\nReport tremors immediately"), MSGBOX_AUTOCLOSE)
+    msgbox(format("CAUTION: ICE EXCAVATION\pDrilling has weakened the chamber supports.\pReport new cracks or tremors immediately. Keep the freight passage clear."), MSGBOX_AUTOCLOSE)
     release
 }

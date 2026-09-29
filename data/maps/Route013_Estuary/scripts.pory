@@ -1,1 +1,27 @@
 mapscripts Route013_Estuary_MapScripts {}
+
+// Staging rows: reposition in Porymap before playtesting.
+
+script Route013_Estuary_NPC_WoodlandPatrol {
+    lock
+    faceplayer
+    msgbox(format("URSARING leaves more than footprints: bent stems, claw marks, a very unhappy berry bush.\pWatch from the hut first. Give the animal room to choose where it goes."))
+    release
+    end
+}
+
+script Route013_Estuary_NPC_ReedPatrol {
+    lock
+    faceplayer
+    msgbox(format("A reed moving against the wind is worth watching.\pA whole patch shaking usually means my assistant has dropped the measuring pole again."))
+    release
+    end
+}
+
+script Route013_Estuary_NPC_SurveyVolunteer {
+    lock
+    faceplayer
+    msgbox(format("I wrote 'nothing' in the sightings book. The ranger asked how long I watched.\pThree seconds. Apparently that was the problem."))
+    release
+    end
+}

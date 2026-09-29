@@ -34,13 +34,15 @@ SiltrootTown_RollingTable_1:
 	special Special_HasGroundMaterial
 	compare VAR_RESULT, FALSE
 	goto_if_eq SiltrootTown_RollingTable_5
-	msgbox SiltrootTown_RollingTable_Text_2, MSGBOX_AUTOCLOSE
+	setspeaker SiltrootTown_RollingTable_Text_0
+	msgbox SiltrootTown_RollingTable_Text_3, MSGBOX_AUTOCLOSE
 	waitmessage
 	special Special_OpenCaseForRolling
 	waitstate
 	compare VAR_RESULT, 0xFFFF
 	goto_if_eq SiltrootTown_RollingTable_8
-	msgbox SiltrootTown_RollingTable_Text_4, MSGBOX_AUTOCLOSE
+	setspeaker SiltrootTown_RollingTable_Text_0
+	msgbox SiltrootTown_RollingTable_Text_5, MSGBOX_AUTOCLOSE
 	waitmessage
 	multichoice 0, 0, MULTI_HERB_PREP, FALSE
 	compare VAR_RESULT, 3
@@ -51,7 +53,8 @@ SiltrootTown_RollingTable_1:
 	goto_if_eq SiltrootTown_RollingTable_14
 	compare VAR_0x8001, 1
 	goto_if_eq SiltrootTown_RollingTable_15
-	msgbox SiltrootTown_RollingTable_Text_7, MSGBOX_AUTOCLOSE
+	setspeaker SiltrootTown_RollingTable_Text_0
+	msgbox SiltrootTown_RollingTable_Text_8, MSGBOX_AUTOCLOSE
 	waitmessage
 SiltrootTown_RollingTable_13:
 	release
@@ -59,35 +62,41 @@ SiltrootTown_RollingTable_13:
 
 SiltrootTown_RollingTable_2:
 	setflag FLAG_MET_ROLLING_TABLE_GUY
-	msgbox SiltrootTown_RollingTable_Text_0, MSGBOX_AUTOCLOSE
+	setspeaker SiltrootTown_RollingTable_Text_0
+	msgbox SiltrootTown_RollingTable_Text_1, MSGBOX_AUTOCLOSE
 	waitmessage
 	goto SiltrootTown_RollingTable_1
 
 SiltrootTown_RollingTable_5:
-	msgbox SiltrootTown_RollingTable_Text_1, MSGBOX_AUTOCLOSE
+	setspeaker SiltrootTown_RollingTable_Text_0
+	msgbox SiltrootTown_RollingTable_Text_2, MSGBOX_AUTOCLOSE
 	waitmessage
 	release
 	end
 
 SiltrootTown_RollingTable_8:
-	msgbox SiltrootTown_RollingTable_Text_3, MSGBOX_AUTOCLOSE
+	setspeaker SiltrootTown_RollingTable_Text_0
+	msgbox SiltrootTown_RollingTable_Text_4, MSGBOX_AUTOCLOSE
 	waitmessage
 	release
 	end
 
 SiltrootTown_RollingTable_11:
-	msgbox SiltrootTown_RollingTable_Text_3, MSGBOX_AUTOCLOSE
+	setspeaker SiltrootTown_RollingTable_Text_0
+	msgbox SiltrootTown_RollingTable_Text_4, MSGBOX_AUTOCLOSE
 	waitmessage
 	release
 	end
 
 SiltrootTown_RollingTable_14:
-	msgbox SiltrootTown_RollingTable_Text_5, MSGBOX_AUTOCLOSE
+	setspeaker SiltrootTown_RollingTable_Text_0
+	msgbox SiltrootTown_RollingTable_Text_6, MSGBOX_AUTOCLOSE
 	waitmessage
 	goto SiltrootTown_RollingTable_13
 
 SiltrootTown_RollingTable_15:
-	msgbox SiltrootTown_RollingTable_Text_6, MSGBOX_AUTOCLOSE
+	setspeaker SiltrootTown_RollingTable_Text_0
+	msgbox SiltrootTown_RollingTable_Text_7, MSGBOX_AUTOCLOSE
 	waitmessage
 	goto SiltrootTown_RollingTable_13
 
@@ -149,7 +158,7 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel::
 	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_4, MSGBOX_AUTOCLOSE
 	waitmessage
 	delay 60
-	applymovement 5, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_4
+	applymovement 4, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_4
 	waitmovement
 	playse SE_PIN
 	delay 60
@@ -158,16 +167,17 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel::
 	waitmessage
 	delay 60
 	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_2
-	applymovement 5, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_5
+	applymovement 4, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_5
 	waitmovement
 	delay 60
-	applymovement 5, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_6
+	applymovement 4, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_6
 	waitmovement
+	applymovement 1, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_3
 	delay 60
 	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_2
 	msgbox SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_6, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement 5, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_7
+	applymovement 4, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_7
 	waitmovement
 	applymovement 2, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_2
 	setspeaker SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_2
@@ -201,7 +211,6 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel::
 	waitmovement
 	setflag FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1
 	removeobject 1
-	removeobject 5
 	delay 120
 	applymovement LOCALID_PLAYER, SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_6
 	waitmovement
@@ -374,12 +383,9 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_3:
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_4:
 	walk_slow_down
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
 	walk_slow_right
-	walk_slow_right
+	walk_slow_down
+	walk_slow_down
 	walk_slow_right
 	face_down
 	emote_question_mark
@@ -395,15 +401,11 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_6:
 	step_end
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_7:
-	walk_slow_down
 	walk_slow_left
 	walk_slow_left
-	walk_slow_left
 	walk_slow_up
 	walk_slow_up
-	walk_slow_up
-	walk_slow_up
-	walk_slow_up
+	face_down
 	step_end
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Movement_8:
@@ -439,6 +441,9 @@ SiltrootTown_Ali_Employer_Text_0:
 	.string "How can I help?$"
 
 SiltrootTown_RollingTable_Text_0:
+	.string "RUDO$"
+
+SiltrootTown_RollingTable_Text_1:
 	.string "Hey. Name's Rudo.\p"
 	.string "I've been rolling longer than Ali's been\n"
 	.string "stargazing.\p"
@@ -450,32 +455,32 @@ SiltrootTown_RollingTable_Text_0:
 	.string "You bring me the grind, I'll turn it into\n"
 	.string "something your Pokémon won't forget.$"
 
-SiltrootTown_RollingTable_Text_1:
+SiltrootTown_RollingTable_Text_2:
 	.string "No grind, no roll.\p"
 	.string "Find someone with a Grinder, grind your\n"
 	.string "buds, then come back.$"
 
-SiltrootTown_RollingTable_Text_2:
+SiltrootTown_RollingTable_Text_3:
 	.string "Nice. Pick which grind you want to roll.$"
 
-SiltrootTown_RollingTable_Text_3:
+SiltrootTown_RollingTable_Text_4:
 	.string "No worries. Come back when you're ready.$"
 
-SiltrootTown_RollingTable_Text_4:
+SiltrootTown_RollingTable_Text_5:
 	.string "Alright. What prep do you want?$"
 
-SiltrootTown_RollingTable_Text_5:
+SiltrootTown_RollingTable_Text_6:
 	.string "There you go - rolled it into a Joint.\p"
 	.string "Nice and even. Use it with your Pokemon\n"
 	.string "and they'll feel it.$"
 
-SiltrootTown_RollingTable_Text_6:
+SiltrootTown_RollingTable_Text_7:
 	.string "Blunt's done.\p"
 	.string "Two dominant strains packed tight. Hits\n"
 	.string "harder than a Joint.\p"
 	.string "Use it with your Pokemon.$"
 
-SiltrootTown_RollingTable_Text_7:
+SiltrootTown_RollingTable_Text_8:
 	.string "Bowl's packed.\p"
 	.string "Pure concentrated top strain - nothing\n"
 	.string "balanced about it.\p"
@@ -534,21 +539,21 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_3:
 	.string "Don't let him start on the space stuff,\n"
 	.string "kid.\p"
 	.string "He stares at the sky all night.\p"
-	.string "It's just lights in the dark, Ali.\p"
+	.string "It's just lights in the dark, ALI.\p"
 	.string "cough...\p"
 	.string "Like an Artic Monkey concert but\n"
 	.string "further away.$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_4:
 	.string "Wait... the vibrations are shifting.\p"
-	.string "Daan sent you?\p"
+	.string "DAAN sent you?\p"
 	.string "Whoa. That guy is intense.\p"
 	.string "Always shouting about 'Mother Nature'...\p"
 	.string "He thinks too small.\p"
 	.string "I'm thinking about the bigger picture.\n"
 	.string "The cosmos. The singularity.\p"
 	.string "Talking about singularity... Slowbro,\n"
-	.string "bring me a sample of that OG Kush.$"
+	.string "bring us a sampleof that OG Kush.$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_5:
 	.string "Slowbro, abort launch.\p"
@@ -559,7 +564,7 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_5:
 	.string "black holes isn't going to write itself.$"
 
 SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_6:
-	.string "Thanks Slowbro. These herbs will do me\n"
+	.string "Thanks Slowbro. These 'herbs' will do me\n"
 	.string "good.\p"
 	.string "cough... COUGH!$"
 
@@ -596,8 +601,7 @@ SiltrootTown_Indoor_Apothecary_Ali_Giel_Text_10:
 	.string "Wait... that's my phone?\p"
 	.string "Oh for the love of...\p"
 	.string "It's her.\p"
-	.string "She probably crashed her car again or\n"
-	.string "needs 'emotional support'.\p"
+	.string "She probably needs 'emotional support'.\p"
 	.string "I can't deal with this drama right now,\n"
 	.string "but I have to take this.\p"
 	.string "...COUGH!\p"

@@ -1,1 +1,19 @@
 mapscripts Route14_Estuary_Indoor_Boathouse_MapScripts {}
+
+// Staging rows: reposition in Porymap before playtesting.
+
+script Route14_Estuary_Indoor_Boathouse_NPC_PatrolStores {
+    lock
+    faceplayer
+    msgbox(format("Patrol stores. Spare lenses, dry maps, boat equipment.\pIf you've come for a fishing licence, you've followed a very old sign."))
+    release
+    end
+}
+
+script Route14_Estuary_Indoor_Boathouse_NPC_LogKeeper {
+    lock
+    faceplayer
+    msgbox(format("Each hut sends its observations here. We keep the dates and locations together.\pThe same URSARING walking past two posts is still one URSARING. An easy way to double our numbers, though."))
+    release
+    end
+}

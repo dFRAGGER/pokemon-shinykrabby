@@ -192,13 +192,14 @@ script Marshduke_Indoor_Chatedral_EventScript_Sign_GroundonKyogreRayquaza {
     release
 }
 
+// Keep the existing event labels so map references remain compatible.
 script Marshduke_Indoor_Chatedral_EventScript_Sign_MewMewtwo {
     lock
     faceplayer
-    msgbox(format("MEGA ALAKAZAM's spoons glow with a faint psychic light...\pAncient memories stir at the edge of your mind, visions of MEW and MEWTWO long past.\pWill you open your mind to them?"), MSGBOX_YESNO)
+    msgbox(format("MEGA ALAKAZAM's spoons glow with a faint psychic light...\pA vision stirs at the edge of your mind: MEW, and a world awakening to life.\pWill you open your mind to it?"), MSGBOX_YESNO)
     waitmessage
     if(var(VAR_RESULT) == YES) {
-        visionpreview(0) // placeholder: IMG_VIRIDIAN_FOREST - swap for real Mew/Mewtwo art
+        visionpreview(0) // placeholder: IMG_VIRIDIAN_FOREST - swap for Mew origin-legend art
         applymovement(23, moves(walk_left))
         applymovement(LOCALID_PLAYER, moves(face_right))
         waitmovement
@@ -313,8 +314,8 @@ script Marshduke_Indoor_Chatedral_EventScript_Priest_EnteiRaikouSuicune{
 script Marshduke_Indoor_Chatedral_EventScript_NPC_MewMewtwo{
     lock
     faceplayer
-    visionpreview(0) // IMG_VIRIDIAN_FOREST - enum isn't assembler-visible, no #define exists for it yet
-    msgbox(format("I've been standing here an hour, staring at a creature made in a lab beside the one it was copied from.\pMost pilgrims argue about which one's the 'real' one, but the memory never says, and I don't think it's supposed to.\pThe circumstances of one's birth are irrelevant; it's what you do with the gift of life that determines who you are."), MSGBOX_AUTOCLOSE)
+    visionpreview(0) // placeholder: IMG_VIRIDIAN_FOREST - swap for Mew origin-legend art
+    msgbox(format("I've watched this vision three times now.\pThe first time, I only looked at MEW.\pThen I noticed the little things swimming around it. And the shapes moving on the shore.\pEvery time I look somewhere else, there's another kind of POKéMON.\pI came here to see where life began. Now I wish I could name everything in it."), MSGBOX_AUTOCLOSE)
     waitmessage
     release
 }
@@ -325,7 +326,7 @@ script Marshduke_Indoor_Chatedral_EventScript_Priest_MewMewtwo{
     lock
     faceplayer
     setspeaker("SISTER RUTH")
-    msgbox(format("The Order teaches that origin doesn't matter, only choice...\pI think that's a comfort we tell MEWTWO so we don't have to sit with what was actually done to it in that laboratory.\pSome wounds aren't erased by a nice philosophy."), MSGBOX_AUTOCLOSE)
+    msgbox(format("The Order teaches that all POKéMON life began with MEW. One great family.\pA lovely thought. We put it in practically every sermon.\pThen someone complains about the PIDGEY nesting above the door and wants the nest removed.\pApparently some relatives are only welcome in the painting."), MSGBOX_AUTOCLOSE)
     waitmessage
     release
 }
@@ -543,14 +544,14 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     applymovement(LOCALID_PLAYER, moves(walk_down walk_left*6 walk_up*9 walk_right*8 walk_up*2 ))
     waitmovement
     setspeaker("Ms. STONE")
-    msgbox(format("The MIRROR. A creature made in a laboratory, and the creature it was made from.\pOne the original, one the perfect copy.\pPilgrims come here to argue about which one is stronger, better, more perfect.\pIn my opinion, they need each other, they strengthen each other, they can learn from each other.\pI think it ends with a question instead: What if we work together, instead of against each other?"), MSGBOX_AUTOCLOSE)
+    msgbox(format("The FIRST DAWN.\pThe Order tells this as the beginning of the POKéMON universe: MEW bringing the first POKéMON into being.\pWatch the water, then the shore. All those different forms of life, with that little pink creature among them.\pDid MEW make the world itself, or bring life to a world already waiting?\pPilgrims have argued about that for centuries. The vision comes without a narrator, fortunately.\pWhat it does show is how much difference can grow from a shared beginning."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
     playse(SE_PIN)
     applymovement(17, moves(emote_exclamation_mark))
     waitmovement
     setspeaker("BROTHER ANDRÉ")
-    msgbox(format("And who among us is not asking that same..."))
+    msgbox(format("And from that first small ripple, the great ocean of all..."))
     waitmessage
     applymovement(14, moves(face_left))
     waitmovement
@@ -572,7 +573,7 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     applymovement(17, moves(face_up))
     waitmovement
     setspeaker("Ms. STONE")
-    msgbox(format("Watch that one to the end, by the way. It lingers on the little one, Mew.\pLonger than it needs to. Nobody knows why."))
+    msgbox(format("Watch that one to the end, by the way. It returns to MEW, still there among all that life.\pThen it seems to look straight at you.\pAn odd feeling, being noticed by something in a memory."))
     waitmessage
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark))
@@ -584,7 +585,7 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     waitmovement
     delay(60)
     setspeaker("Ms. STONE")
-    msgbox(format("...\p...\pYou saw the little one? Mew?\p...\pNot possible. Mew hasn't been seen in the wild for decades.\pI think you have mistaken it for something else.\pLets go to the next altar."), MSGBOX_AUTOCLOSE)
+    msgbox(format("...\p...\pYou've seen MEW? Outside this vision?\p...\pNot possible. There hasn't been a confirmed wild sighting for decades.\pAre you certain it wasn't something else?\p...\pLet's go to the next altar."), MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(14, moves(walk_down*2 walk_left*4 walk_up))
     waitmovement
@@ -593,7 +594,7 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     applymovement(LOCALID_PLAYER, moves(walk_down walk_left*6 walk_up*9 walk_right*2 walk_up*2 ))
     waitmovement
     setspeaker("Ms. STONE")
-    msgbox(format("Careful, this one's cold on the left and hot on the right, we're not sure why.\pThe oldest memory we have. Land and sea, tearing a young world in half.\pContinents rising. Continents drowning.\pNeither of them was wrong, mind you.\pLand wanted land. Sea wanted sea. Perfectly reasonable, both of them.\pBut eventually everything needs a balance, and the answer came from above.\pThe sky split open and the green serpent came down from very high up and simply stopped it.\pLegends say it was just a glance, and the world was saved.\pSometimes seeing both sides and not choosing at all, is the only way to choose."), MSGBOX_AUTOCLOSE)
+    msgbox(format("Careful, this one's cold on the left and hot on the right, we're not sure why.\pAnother vision of the young world. Land and sea, tearing it in half.\pContinents rising. Continents drowning.\pNeither of them was wrong, mind you.\pLand wanted land. Sea wanted sea. Perfectly reasonable, both of them.\pBut eventually everything needs a balance, and the answer came from above.\pThe sky split open and the green serpent came down from very high up and simply stopped it.\pLegends say it was just a glance, and the world was saved.\pSometimes seeing both sides and not choosing at all, is the only way to choose."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
     playse(SE_PIN)
@@ -767,4 +768,3 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     addobject(29)
     release
 }
-

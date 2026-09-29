@@ -1,1 +1,71 @@
 mapscripts Marshduke_Indoor_ResearchCenter_2F_MapScripts {}
+
+// Staging rows: reposition in Porymap before playtesting.
+
+script Marshduke_Indoor_ResearchCenter_2F_NPC_DividedResearcher {
+    lock
+    faceplayer
+    msgbox(format("My team studies the Divided World vision.\p Tell me,  when you watch it, do you really feel the heat and the rain?\pOr is Alakazam just making you think you do?\pWhen our volunteers say they're sweating, the thermometer still says it's room temperature."))
+    release
+    end
+}
+
+script Marshduke_Indoor_ResearchCenter_2F_NPC_DividedMonk {
+    lock
+    faceplayer
+    msgbox(format("A fire in a memory can't burn paper. But watching it still makes you sweat!\pSo where does the memory stop and your body start? I used to know... Then we bought the thermometer."))
+    release
+    end
+}
+
+script Marshduke_Indoor_ResearchCenter_2F_NPC_TwoHeartsResearcher {
+    lock
+    faceplayer
+    msgbox(format("My team studies the Two Hearts vision. Two people watch the same moment and describe it totally differently!\pSo I cut all the water out of the pictures. Much easier to grade!"))
+    release
+    end
+}
+
+script Marshduke_Indoor_ResearchCenter_2F_NPC_TwoHeartsMonk {
+    lock
+    faceplayer
+    msgbox(format("If two people feel the same thing, did they really share the same moment?\pWe just tested it at lunch.\pEveryone agreed the food was terrible, but nobody could agree why."))
+    release
+    end
+}
+
+script Marshduke_Indoor_ResearchCenter_2F_NPC_SixthResearcher {
+    lock
+    faceplayer
+    msgbox(format("The sixth altar keeps changing on us! We never get the same picture twice.\pIs it remembering something that hasn't happened yet? Or are our brains just filling in the blanks?"))
+    release
+    end
+}
+
+script Marshduke_Indoor_ResearchCenter_2F_NPC_SixthMonk {
+    lock
+    faceplayer
+    msgbox(format("Maybe the space is empty on purpose. A question nobody has answered yet.\pMy partner says it's just missing data. So we take turns watching it, in case one of us is right."))
+    release
+    end
+}
+
+script Marshduke_Indoor_ResearchCenter_2F_NPC_TranceCoordinator {
+    lock
+    faceplayer
+    msgbox(format("We also want to know how the Rememberer stays Mega Evolved.\pNo Mega Stone, no trainer, and it has never taken a break!\pAs far as I know...\pMaybe the visions will tell us why?\pBut first I need six teams to agree on what an explanation even is.\pWish me luck..."))
+    release
+    end
+}
+
+script Marshduke_Indoor_ResearchCenter_2F_NPC_RecordingAssistant {
+    lock
+    faceplayer
+    if (flag(FLAG_MARSHDUKE_CATHEDRAL_TOUR)) {
+        msgbox(format("You saw the fish too? Phew! I thought I'd just counted wrong.\pI'm keeping every recording, uncut. Someday, someone might want to look at the edges again."))
+    } else {
+        msgbox(format("My job is to write down everything the teams ignore. Fish, plants, birds in the corners of the recordings...\pMy 'background' folder is HUGE now."))
+    }
+    release
+    end
+}

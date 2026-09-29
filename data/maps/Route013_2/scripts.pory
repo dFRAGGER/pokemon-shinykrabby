@@ -122,3 +122,285 @@ script Route013_2_WarpBack_Platform4 {
 text Route013_2_Text_StuckInMud {
     format("You got stuck in the mud\nand had to turn back!")
 }
+
+// Staging rows: reposition in Porymap before playtesting.
+
+script Route013_2_Trainer_Fenner {
+    trainerbattle_single(TRAINER_DELTA_FENNER_SK, Route013_2_Trainer_Fenner_Intro, Route013_2_Trainer_Fenner_Defeat)
+    msgbox(Route013_2_Trainer_Fenner_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route013_2_Trainer_Fenner_Intro {
+    format("I've finally found somewhere dry enough to battle!")
+}
+
+text Route013_2_Trainer_Fenner_Defeat {
+    format("I should've stuck to fishing!")
+}
+
+text Route013_2_Trainer_Fenner_After {
+    format("WOOPER keeps splashing mud into my boots, so I've stopped emptying them.")
+}
+
+script Route013_2_Trainer_Mieke {
+    trainerbattle_single(TRAINER_DELTA_MIEKE_SK, Route013_2_Trainer_Mieke_Intro, Route013_2_Trainer_Mieke_Defeat)
+    msgbox(Route013_2_Trainer_Mieke_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route013_2_Trainer_Mieke_Intro {
+    format("Watch where you step while we battle!")
+}
+
+text Route013_2_Trainer_Mieke_Defeat {
+    format("Oh, my flowers!")
+}
+
+text Route013_2_Trainer_Mieke_After {
+    format("I was pressing flowers in my notebook until PARAS sat on it. Now they're a bit too flat.")
+}
+
+script Route013_2_Trainer_Otis {
+    trainerbattle_single(TRAINER_DELTA_OTIS_SK, Route013_2_Trainer_Otis_Intro, Route013_2_Trainer_Otis_Defeat)
+    msgbox(Route013_2_Trainer_Otis_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route013_2_Trainer_Otis_Intro {
+    format("You're just in time for a battle before lunch!")
+}
+
+text Route013_2_Trainer_Otis_Defeat {
+    format("Is it lunchtime yet?")
+}
+
+text Route013_2_Trainer_Otis_After {
+    format("Don't let TEDDIURSA near your bag unless you've already eaten your sandwiches.")
+}
+
+script Route013_2_Trainer_Jori {
+    trainerbattle_single(TRAINER_DELTA_JORI_SK, Route013_2_Trainer_Jori_Intro, Route013_2_Trainer_Jori_Defeat)
+    msgbox(Route013_2_Trainer_Jori_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route013_2_Trainer_Jori_Intro {
+    format("You won't believe what I caught out here!")
+}
+
+text Route013_2_Trainer_Jori_Defeat {
+    format("They looked bigger in the water!")
+}
+
+text Route013_2_Trainer_Jori_After {
+    format("Try the little pools off the main channel if you're fishing. That's where I caught my KRABBY.")
+}
+
+script Route013_2_Trainer_Ellis {
+    trainerbattle_single(TRAINER_DELTA_ELLIS_SK, Route013_2_Trainer_Ellis_Intro, Route013_2_Trainer_Ellis_Defeat)
+    msgbox(Route013_2_Trainer_Ellis_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route013_2_Trainer_Ellis_Intro {
+    format("I've got time for a quick battle!")
+}
+
+text Route013_2_Trainer_Ellis_Defeat {
+    format("You had me working hard!")
+}
+
+text Route013_2_Trainer_Ellis_After {
+    format("Stay near the boards if you don't know this marsh. I'd rather meet you here than have to fish you out.")
+}
+
+script Route013_2_Trainer_Len {
+    trainerbattle_single(TRAINER_DELTA_LEN_SK, Route013_2_Trainer_Len_Intro, Route013_2_Trainer_Len_Defeat)
+    msgbox(Route013_2_Trainer_Len_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route013_2_Trainer_Len_Intro {
+    format("Let's battle before I sink any deeper!")
+}
+
+text Route013_2_Trainer_Len_Defeat {
+    format("I'm sinking!")
+}
+
+text Route013_2_Trainer_Len_After {
+    format("I followed FURRET across a root and went straight through it. Please tell me there's a drier way back.")
+}
+
+script Route013_2_Trainer_Runa {
+    trainerbattle_single(TRAINER_DELTA_RUNA_SK, Route013_2_Trainer_Runa_Intro, Route013_2_Trainer_Runa_Defeat)
+    msgbox(Route013_2_Trainer_Runa_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route013_2_Trainer_Runa_Intro {
+    format("My bug Pokemon could use a battle!")
+}
+
+text Route013_2_Trainer_Runa_Defeat {
+    format("Aw, we nearly had you!")
+}
+
+text Route013_2_Trainer_Runa_After {
+    format("SPINARAK keeps building webs across my tent flap. I have to ask permission to go to bed.")
+}
+
+script Route013_2_Trainer_Bo {
+    trainerbattle_single(TRAINER_DELTA_BO_SK, Route013_2_Trainer_Bo_Intro, Route013_2_Trainer_Bo_Defeat)
+    msgbox(Route013_2_Trainer_Bo_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route013_2_Trainer_Bo_Intro {
+    format("I knew you'd come looking for a battle!")
+}
+
+text Route013_2_Trainer_Bo_Defeat {
+    format("That's not what I foresaw!")
+}
+
+text Route013_2_Trainer_Bo_After {
+    format("All right, I heard the boards squeaking. You won't tell anyone, will you?")
+}
+
+script Route013_2_Trainer_Tessa {
+    trainerbattle_single(TRAINER_DELTA_TESSA_SK, Route013_2_Trainer_Tessa_Intro, Route013_2_Trainer_Tessa_Defeat)
+    msgbox(Route013_2_Trainer_Tessa_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route013_2_Trainer_Tessa_Intro {
+    format("My birds spotted you before I did!")
+}
+
+text Route013_2_Trainer_Tessa_Defeat {
+    format("They didn't warn me you're good!")
+}
+
+text Route013_2_Trainer_Tessa_After {
+    format("SPEAROW likes perching on that old sign. It gets quite cross when somebody stops to read it.")
+}
+
+script Route013_2_Trainer_Niels {
+    trainerbattle_single(TRAINER_DELTA_NIELS_SK, Route013_2_Trainer_Niels_Intro, Route013_2_Trainer_Niels_Defeat)
+    msgbox(Route013_2_Trainer_Niels_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route013_2_Trainer_Niels_Intro {
+    format("Let's battle while the wind's died down!")
+}
+
+text Route013_2_Trainer_Niels_Defeat {
+    format("Can't blame the wind for that!")
+}
+
+text Route013_2_Trainer_Niels_After {
+    format("I've spent half the morning chasing SKIPLOOM with my lunch still in my hand.")
+}
+
+script Route013_2_Trainer_Koen {
+    trainerbattle_single(TRAINER_DELTA_KOEN_SK, Route013_2_Trainer_Koen_Intro, Route013_2_Trainer_Koen_Defeat)
+    msgbox(Route013_2_Trainer_Koen_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route013_2_Trainer_Koen_Intro {
+    format("Show me how you've been training!")
+}
+
+text Route013_2_Trainer_Koen_Defeat {
+    format("You've put the work in!")
+}
+
+text Route013_2_Trainer_Koen_After {
+    format("GROWLITHE kept barking at my pocket while we searched for my glove. You can probably guess where it was.")
+}
+
+script Route013_2_Trainer_Iris {
+    trainerbattle_single(TRAINER_DELTA_IRIS_SK, Route013_2_Trainer_Iris_Intro, Route013_2_Trainer_Iris_Defeat)
+    msgbox(Route013_2_Trainer_Iris_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route013_2_Trainer_Iris_Intro {
+    format("Don't be scared of my BEEDRILL!")
+}
+
+text Route013_2_Trainer_Iris_Defeat {
+    format("Maybe we should've been scared!")
+}
+
+text Route013_2_Trainer_Iris_After {
+    format("I've raised BEEDRILL since it was a WEEDLE. It's really sweet once you stop waving your arms about.")
+}
+
+script Route013_2_NPC_MarshGuide {
+    lock
+    faceplayer
+    msgbox(format("The marsh is crossed in stages. Stop on firm platforms and study the next stretch before heading out.\pThose dark patches will take your boots if you dawdle. I know because they already own mine."))
+    release
+    end
+}
+
+script Route013_2_NPC_BootCollector {
+    lock
+    faceplayer
+    msgbox(format("I came here to train my legs. I've trained one leg, lost one shoe and developed a powerful respect for benches."))
+    release
+    end
+}
+
+script Route013_2_NPC_RootWatcher {
+    lock
+    faceplayer
+    msgbox(format("Look under the roots before you call a patch empty.\pI found three kinds of tiny Pokemon there. And somebody's wedding ring. The Pokemon were less grateful to be found."))
+    release
+    end
+}
+
+script Route013_2_NPC_PicnicCook {
+    lock
+    faceplayer
+    msgbox(format("Hot soup, dry socks, hot soup again. That's the marsh menu.\pNo, I don't cook anything I find wriggling in a puddle. I have a supplier and a very serious apron."))
+    release
+    end
+}
+
+script Route013_2_NPC_Reporter {
+    lock
+    faceplayer
+    msgbox(format("Our segment was called 'Untouched Wilderness.' Then a ranger pointed out the old drainage ditch behind me.\pNow it's called 'A Closer Look.' Much harder to film."))
+    release
+    end
+}
+
+script Route013_2_NPC_Cameraman {
+    lock
+    faceplayer
+    msgbox(format("My camera caught something moving in the reeds.\pCould be a rare Pokemon. Could be my colleague retrieving her microphone. Both are being equally uncooperative."))
+    release
+    end
+}
+
+script Route013_2_NPC_BicycleVisitor {
+    lock
+    faceplayer
+    msgbox(format("The bike handles the park beautifully. The marsh handles the bike like a snack.\pI'm walking this part. We all need boundaries."))
+    release
+    end
+}
+
+script Route013_2_NPC_OldSurveyor {
+    lock
+    faceplayer
+    msgbox(format("My first map put a channel right here. My second put it over there.\pI stopped drawing in ink. The river has a very firm editing policy."))
+    release
+    end
+}

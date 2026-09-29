@@ -33,6 +33,6 @@ MiningCave_WakeUp_Text_2:
 	.string "The crevice. BARRY pushed me in.$"
 
 MiningCave_WakeUp_Text_3:
-	.string "He's heading to Lionsarch...\p"
-	.string "the Steel Factory.\p"
+	.string "They've taken REGICE to the steel\n"
+	.string "factory in Lionsarch.\p"
 	.string "I have to get out of here.$"

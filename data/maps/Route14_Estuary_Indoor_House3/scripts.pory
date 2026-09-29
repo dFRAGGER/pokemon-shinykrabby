@@ -1,1 +1,19 @@
 mapscripts Route14_Estuary_Indoor_House3_MapScripts {}
+
+// Staging rows: reposition in Porymap before playtesting.
+
+script Route14_Estuary_Indoor_House3_NPC_PoolsRanger {
+    lock
+    faceplayer
+    msgbox(format("This ranger post overlooks the shallow pools.\pWOOPER rests in the shallows. POLIWAG sometimes crosses the open water. They use different parts of the same pool.\pTrace the banks before heading out. A pool that looks close from this window may be a long walk away."))
+    release
+    end
+}
+
+script Route14_Estuary_Indoor_House3_NPC_PoolsObserver {
+    lock
+    faceplayer
+    msgbox(format("The view shows three pools. My first sketch made them one big pond. That would have been an awkward walking route."))
+    release
+    end
+}

@@ -1,1 +1,19 @@
 mapscripts Route14_Indoor_House1_MapScripts {}
+
+// Staging rows: reposition in Porymap before playtesting.
+
+script Route14_Indoor_House1_NPC_CausewayResident {
+    lock
+    faceplayer
+    msgbox(format("Come in and get out of the wind.\pThe old road was raised above the wet ground. Every repair lifts a bit of it again. At this rate my doorstep will need a ladder."))
+    release
+    end
+}
+
+script Route14_Indoor_House1_NPC_BridgeAssistant {
+    lock
+    faceplayer
+    msgbox(format("Ari says he can clear the broken span. Wonderful.\pNow ask him to do it carrying six planks and a bucket of nails."))
+    release
+    end
+}

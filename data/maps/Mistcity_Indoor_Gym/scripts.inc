@@ -1,5 +1,152 @@
 Mistcity_Indoor_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Mistcity_Indoor_Gym_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Mistcity_Indoor_Gym_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	call MistcityGym_SetFlashLevel
+	return
+
+
+MistcityGym_SetFlashLevel::
+	call MistcityGym_CountTrainersDefeated
+	copyvar VAR_0x8001, VAR_0x8000
+	compare VAR_0x8000, 0
+	goto_if_eq MistcityGym_SetFlashLevel_2
+	compare VAR_0x8000, 1
+	goto_if_eq MistcityGym_SetFlashLevel_3
+	compare VAR_0x8000, 2
+	goto_if_eq MistcityGym_SetFlashLevel_4
+	compare VAR_0x8000, 3
+	goto_if_eq MistcityGym_SetFlashLevel_5
+	compare VAR_0x8000, 4
+	goto_if_eq MistcityGym_SetFlashLevel_6
+	compare VAR_0x8000, 5
+	goto_if_eq MistcityGym_SetFlashLevel_7
+	setflashlevel 1
+MistcityGym_SetFlashLevel_1:
+	return
+
+MistcityGym_SetFlashLevel_2:
+	setflashlevel 7
+	goto MistcityGym_SetFlashLevel_1
+
+MistcityGym_SetFlashLevel_3:
+	setflashlevel 6
+	goto MistcityGym_SetFlashLevel_1
+
+MistcityGym_SetFlashLevel_4:
+	setflashlevel 5
+	goto MistcityGym_SetFlashLevel_1
+
+MistcityGym_SetFlashLevel_5:
+	setflashlevel 4
+	goto MistcityGym_SetFlashLevel_1
+
+MistcityGym_SetFlashLevel_6:
+	setflashlevel 3
+	goto MistcityGym_SetFlashLevel_1
+
+MistcityGym_SetFlashLevel_7:
+	setflashlevel 2
+	goto MistcityGym_SetFlashLevel_1
+
+
+MistcityGym_BrightenRoom::
+	call MistcityGym_CountTrainersDefeated
+	compare VAR_0x8000, VAR_0x8001
+	goto_if_eq MistcityGym_BrightenRoom_2
+	copyvar VAR_0x8001, VAR_0x8000
+	playse SE_SWITCH
+	compare VAR_0x8000, 1
+	goto_if_eq MistcityGym_BrightenRoom_5
+	compare VAR_0x8000, 2
+	goto_if_eq MistcityGym_BrightenRoom_6
+	compare VAR_0x8000, 3
+	goto_if_eq MistcityGym_BrightenRoom_7
+	compare VAR_0x8000, 4
+	goto_if_eq MistcityGym_BrightenRoom_8
+	compare VAR_0x8000, 5
+	goto_if_eq MistcityGym_BrightenRoom_9
+	animateflash 1
+MistcityGym_BrightenRoom_4:
+	call MistcityGym_SetFlashLevel
+	return
+
+MistcityGym_BrightenRoom_2:
+	return
+
+MistcityGym_BrightenRoom_5:
+	animateflash 6
+	goto MistcityGym_BrightenRoom_4
+
+MistcityGym_BrightenRoom_6:
+	animateflash 5
+	goto MistcityGym_BrightenRoom_4
+
+MistcityGym_BrightenRoom_7:
+	animateflash 4
+	goto MistcityGym_BrightenRoom_4
+
+MistcityGym_BrightenRoom_8:
+	animateflash 3
+	goto MistcityGym_BrightenRoom_4
+
+MistcityGym_BrightenRoom_9:
+	animateflash 2
+	goto MistcityGym_BrightenRoom_4
+
+
+MistcityGym_CountTrainersDefeated::
+	setvar VAR_0x8000, 0
+	checktrainerflag TRAINER_LINTON
+	goto_if 1, MistcityGym_CountTrainersDefeated_2
+MistcityGym_CountTrainersDefeated_1:
+	checktrainerflag TRAINER_ROYSTON
+	goto_if 1, MistcityGym_CountTrainersDefeated_5
+MistcityGym_CountTrainersDefeated_4:
+	checktrainerflag TRAINER_CHUCKIE
+	goto_if 1, MistcityGym_CountTrainersDefeated_8
+MistcityGym_CountTrainersDefeated_7:
+	checktrainerflag TRAINER_HARDY
+	goto_if 1, MistcityGym_CountTrainersDefeated_11
+MistcityGym_CountTrainersDefeated_10:
+	checktrainerflag TRAINER_LAYTON
+	goto_if 1, MistcityGym_CountTrainersDefeated_14
+MistcityGym_CountTrainersDefeated_13:
+	checktrainerflag TRAINER_NEELY
+	goto_if 1, MistcityGym_CountTrainersDefeated_17
+MistcityGym_CountTrainersDefeated_16:
+	return
+
+MistcityGym_CountTrainersDefeated_2:
+	addvar VAR_0x8000, 1
+	goto MistcityGym_CountTrainersDefeated_1
+
+MistcityGym_CountTrainersDefeated_5:
+	addvar VAR_0x8000, 1
+	goto MistcityGym_CountTrainersDefeated_4
+
+MistcityGym_CountTrainersDefeated_8:
+	addvar VAR_0x8000, 1
+	goto MistcityGym_CountTrainersDefeated_7
+
+MistcityGym_CountTrainersDefeated_11:
+	addvar VAR_0x8000, 1
+	goto MistcityGym_CountTrainersDefeated_10
+
+MistcityGym_CountTrainersDefeated_14:
+	addvar VAR_0x8000, 1
+	goto MistcityGym_CountTrainersDefeated_13
+
+MistcityGym_CountTrainersDefeated_17:
+	addvar VAR_0x8000, 1
+	goto MistcityGym_CountTrainersDefeated_16
+
+
+MistcityGym_TrainerDefeated::
+	call MistcityGym_BrightenRoom
+	release
+	end
 
 
 Mistcity_Gym_Introduction::
@@ -66,12 +213,11 @@ Mistcity_Gym_David_Defeated::
 	waitmessage
 	giveitem ITEM_HM05
 	setflag FLAG_RECEIVED_HM_FLASH
-	setflag FLAG_DEFEATED_DEWFORD_GYM
 	setspeaker Mistcity_Gym_David_Defeated_Text_0
 	msgbox Mistcity_Gym_David_Defeated_Text_4
 	waitmessage
-	animateflash 1
-	setflashlevel 1
+	animateflash 0
+	setflashlevel 0
 	call MistcityGym_Set_Gym_Trainers
 	release
 	end
@@ -88,37 +234,37 @@ MistcityGym_Set_Gym_Trainers::
 
 
 MistcityGym_Trainer_Linton::
-	trainerbattle_single TRAINER_LINTON, MistcityGym_Text_LintonIntro, Mistcity_Text_LintonDefeated
+	trainerbattle_single TRAINER_LINTON, MistcityGym_Text_LintonIntro, Mistcity_Text_LintonDefeated, MistcityGym_TrainerDefeated
 	msgbox Mistcity_Text_LintonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 MistcityGym_Trainer_Royston::
-	trainerbattle_single TRAINER_ROYSTON, MistcityGym_Text_RoystonIntro, Mistcity_Text_RoystonDefeated
+	trainerbattle_single TRAINER_ROYSTON, MistcityGym_Text_RoystonIntro, Mistcity_Text_RoystonDefeated, MistcityGym_TrainerDefeated
 	msgbox Mistcity_Text_RoystonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 MistcityGym_Trainer_Chuckie::
-	trainerbattle_single TRAINER_CHUCKIE, MistcityGym_Text_ChuckieIntro, Mistcity_Text_ChuckieDefeated
+	trainerbattle_single TRAINER_CHUCKIE, MistcityGym_Text_ChuckieIntro, Mistcity_Text_ChuckieDefeated, MistcityGym_TrainerDefeated
 	msgbox Mistcity_Text_ChuckiePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 MistcityGym_Trainer_Hardy::
-	trainerbattle_single TRAINER_HARDY, MistcityGym_Text_HardyIntro, Mistcity_Text_HardyDefeated
+	trainerbattle_single TRAINER_HARDY, MistcityGym_Text_HardyIntro, Mistcity_Text_HardyDefeated, MistcityGym_TrainerDefeated
 	msgbox Mistcity_Text_HardyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 MistcityGym_Trainer_Layton::
-	trainerbattle_single TRAINER_LAYTON, MistcityGym_Text_LaytonIntro, Mistcity_Text_LaytonDefeated
+	trainerbattle_single TRAINER_LAYTON, MistcityGym_Text_LaytonIntro, Mistcity_Text_LaytonDefeated, MistcityGym_TrainerDefeated
 	msgbox Mistcity_Text_LaytonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 MistcityGym_Trainer_Neely::
-	trainerbattle_single TRAINER_NEELY, MistcityGym_Text_NeelyIntro, Mistcity_Text_NeelyDefeated
+	trainerbattle_single TRAINER_NEELY, MistcityGym_Text_NeelyIntro, Mistcity_Text_NeelyDefeated, MistcityGym_TrainerDefeated
 	msgbox Mistcity_Text_NeelyPostBattle, MSGBOX_AUTOCLOSE
 	end
 

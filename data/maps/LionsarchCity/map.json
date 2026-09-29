@@ -41,9 +41,9 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
-      "x": 62,
-      "y": 68,
+      "graphics_id": "OBJ_EVENT_GFX_SS_ANNE",
+      "x": 63,
+      "y": 69,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -54,9 +54,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
-      "x": 31,
-      "y": 66,
+      "graphics_id": "OBJ_EVENT_GFX_SS_ANNE",
+      "x": 38,
+      "y": 65,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -67,9 +67,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
-      "x": 18,
-      "y": 51,
+      "graphics_id": "OBJ_EVENT_GFX_FACULTY_BOAT",
+      "x": 13,
+      "y": 48,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -80,9 +80,9 @@
       "flag": "FLAG_HIDE_LIONSARCH_FACULTY_SHIPS"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
-      "x": 16,
-      "y": 54,
+      "graphics_id": "OBJ_EVENT_GFX_FACULTY_BOAT",
+      "x": 11,
+      "y": 55,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -94,8 +94,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCOTT",
-      "x": 9,
-      "y": 59,
+      "x": 25,
+      "y": 62,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -132,7 +132,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
+      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT_DP",
       "x": 64,
       "y": 25,
       "elevation": 0,
@@ -145,9 +145,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
-      "x": 25,
-      "y": 58,
+      "graphics_id": "OBJ_EVENT_GFX_MAN2_SK",
+      "x": 56,
+      "y": 43,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -184,9 +184,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 14,
-      "y": 43,
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_SK",
+      "x": 16,
+      "y": 42,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -197,11 +197,11 @@
       "flag": "FLAG_HIDE_LIONSARCH_FACULTY_SHIPS"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 20,
-      "y": 49,
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_SK",
+      "x": 12,
+      "y": 50,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -210,9 +210,9 @@
       "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 15,
-      "y": 47,
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_SK",
+      "x": 23,
+      "y": 52,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -223,9 +223,9 @@
       "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 7,
-      "y": 48,
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_SK",
+      "x": 21,
+      "y": 43,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -236,8 +236,8 @@
       "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 11,
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_SK",
+      "x": 25,
       "y": 47,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -250,8 +250,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MACHAMP)",
-      "x": 15,
-      "y": 43,
+      "x": 17,
+      "y": 42,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -262,7 +262,7 @@
       "flag": "FLAG_HIDE_LIONSARCH_FACULTY_SHIPS"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "graphics_id": "OBJ_EVENT_GFX_HIKER_DP",
       "x": 69,
       "y": 8,
       "elevation": 0,
@@ -301,9 +301,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 32,
-      "y": 46,
+      "graphics_id": "OBJ_EVENT_GFX_LASS_SK",
+      "x": 37,
+      "y": 50,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -315,8 +315,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR_FRLG",
-      "x": 32,
-      "y": 62,
+      "x": 36,
+      "y": 61,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -340,7 +340,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR_DP",
       "x": 62,
       "y": 65,
       "elevation": 0,
@@ -367,8 +367,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_REPORTER_M",
-      "x": 22,
-      "y": 36,
+      "x": 28,
+      "y": 42,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -393,8 +393,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS_FRLG",
-      "x": 53,
-      "y": 44,
+      "x": 52,
+      "y": 45,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -405,7 +405,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_HIKER_SK",
       "x": 34,
       "y": 32,
       "elevation": 0,
@@ -418,7 +418,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_HNS",
       "x": 59,
       "y": 7,
       "elevation": 0,
@@ -444,7 +444,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PICNICKER_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_RANGER_F_DP",
       "x": 22,
       "y": 11,
       "elevation": 0,
@@ -457,7 +457,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN_HNS",
       "x": 48,
       "y": 66,
       "elevation": 0,
@@ -496,9 +496,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_JUAN",
+      "graphics_id": "OBJ_EVENT_GFX_GIOVANNI_HNS",
       "x": 14,
-      "y": 38,
+      "y": 37,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -511,8 +511,8 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKARMORY)",
       "x": 14,
-      "y": 35,
-      "elevation": 3,
+      "y": 34,
+      "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -522,9 +522,9 @@
       "flag": "FLAG_HIDE_LIONSARCH_RECTOR_SENDOFF"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WALLY",
-      "x": 19,
-      "y": 48,
+      "graphics_id": "OBJ_EVENT_GFX_BARRY_DP",
+      "x": 9,
+      "y": 50,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -536,8 +536,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_FRLG",
-      "x": 19,
-      "y": 49,
+      "x": 9,
+      "y": 48,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -550,8 +550,8 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MEW",
       "x": 4,
-      "y": 38,
-      "elevation": 0,
+      "y": 37,
+      "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -562,8 +562,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAGIKARP)",
-      "x": 20,
-      "y": 48,
+      "x": 8,
+      "y": 50,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -576,7 +576,7 @@
   ],
   "warp_events": [
     {
-      "x": 59,
+      "x": 58,
       "y": 58,
       "elevation": 0,
       "dest_map": "MAP_LIONSARCH_CITY_INDOOR_HOUSE2",
@@ -590,8 +590,8 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 14,
-      "y": 42,
+      "x": 16,
+      "y": 41,
       "elevation": 0,
       "dest_map": "MAP_LIONSARCH_CITY_STEEL_FACTORY",
       "dest_warp_id": "0"
@@ -618,21 +618,21 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 15,
-      "y": 42,
+      "x": 17,
+      "y": 41,
       "elevation": 0,
       "dest_map": "MAP_LIONSARCH_CITY_STEEL_FACTORY",
       "dest_warp_id": "1"
     },
     {
       "x": 30,
-      "y": 52,
+      "y": 51,
       "elevation": 0,
       "dest_map": "MAP_LIONSARCH_CITY_INDOOR_HOUSE1",
       "dest_warp_id": "0"
     },
     {
-      "x": 58,
+      "x": 57,
       "y": 25,
       "elevation": 0,
       "dest_map": "MAP_LIONSARCH_CITY_INDOOR_HOUSE3",
@@ -640,14 +640,14 @@
     },
     {
       "x": 14,
-      "y": 37,
+      "y": 36,
       "elevation": 0,
       "dest_map": "MAP_LIONSARCH_CITY_STEEL_FACTORY_2F",
       "dest_warp_id": "1"
     },
     {
       "x": 15,
-      "y": 37,
+      "y": 36,
       "elevation": 0,
       "dest_map": "MAP_LIONSARCH_CITY_STEEL_FACTORY_2F",
       "dest_warp_id": "2"
@@ -713,8 +713,8 @@
     },
     {
       "type": "sign",
-      "x": 20,
-      "y": 43,
+      "x": 26,
+      "y": 59,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LionsarchCity_Sign_IndustrialPort"

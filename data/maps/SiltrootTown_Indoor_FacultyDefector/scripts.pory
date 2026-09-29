@@ -22,7 +22,7 @@ script SiltrootTown_Indoor_Scott {
         msgbox(format("Wait...\pIs that Ali's Stash Case?\pThat beat-up old thing with the dent on the side?\pOnly one person in the world has that.\p...\p... so Ali sent you?\pAnd you have the inventory?\pHmm.\pOne sec..."),MSGBOX_AUTOCLOSE)
         waitmessage
         waitmessage
-        if(var(VAR_TEMP_0)==3){
+        if(var(VAR_TEMP_0)==2){
             applymovement(1, moves(walk_down walk_left face_up))
             waitmovement
             delay(60)
@@ -33,7 +33,7 @@ script SiltrootTown_Indoor_Scott {
             waitmovement
             delay(60)
         }
-        elif(var(VAR_TEMP_0)==4){
+        elif(var(VAR_TEMP_0)==3){
             applymovement(1, moves(walk_left walk_down face_right))
             waitmovement
             delay(60)
@@ -48,7 +48,7 @@ script SiltrootTown_Indoor_Scott {
         msgbox(format("Okay, your heat signature is normal.\pYou aren't wearing a wire.\pI suppose I can trust you."),MSGBOX_AUTOCLOSE)
         waitmessage
         delay(40)
-        if(var(VAR_TEMP_0)==3){
+        if(var(VAR_TEMP_0)==2){
             applymovement(1, moves(walk_fast_down*2 walk_fast_left walk_fast_down))
             waitmovement
             applymovement(LOCALID_PLAYER, moves(face_down))            
@@ -65,7 +65,7 @@ script SiltrootTown_Indoor_Scott {
             waitmovement
             applymovement(LOCALID_PLAYER, moves(face_right))    
         }
-        elif(var(VAR_TEMP_0)==4){
+        elif(var(VAR_TEMP_0)==3){
             applymovement(1, moves(walk_fast_left walk_fast_down*3))
             waitmovement 
             applymovement(LOCALID_PLAYER, moves(face_down))               
@@ -85,13 +85,13 @@ script SiltrootTown_Indoor_Scott {
         setspeaker("SCOTT")
         msgbox(format("My boat is hidden in the mangroves, right behind the house, camouflaged under the roots.\pMeet me out back.\pI will prep the engine.\pWe are dropping you at the Industrial Harbor in Lion's Arch.\pIt's a rough ride, so don't eat anything heavy before we leave.\pLets move..."),MSGBOX_AUTOCLOSE)
         waitmessage
-        if(var(VAR_TEMP_0)==3){
-            applymovement(1, moves(walk_down*3))
+        if(var(VAR_TEMP_0)==2){
+            applymovement(1, moves(walk_down*2 walk_right walk_down))
             waitmovement
         }
-        elif(var(VAR_TEMP_0)==4){
+        elif(var(VAR_TEMP_0)==3){
             applymovement(LOCALID_PLAYER, moves(jump_left face_down))
-            applymovement(1, moves(walk_down*3))
+            applymovement(1, moves(walk_down*2 walk_right walk_down))
             waitmovement
         }
         setflag(FLAG_HIDE_SCOTT_AFTER_CONVO)
@@ -105,11 +105,11 @@ script SiltrootTown_Indoor_Scott {
         setspeaker("Scott")
         msgbox(format("No answers?\nGET OUT! NOW!"),MSGBOX_AUTOCLOSE)
         waitmessage
-        if(var(VAR_TEMP_0)==3){
+        if(var(VAR_TEMP_0)==2){
             applymovement(LOCALID_PLAYER, moves(jump_left))
             waitmovement
         }
-        elif(var(VAR_TEMP_0)==4){
+        elif(var(VAR_TEMP_0)==3){
             applymovement(LOCALID_PLAYER, moves(jump_down))
             waitmovement
         }

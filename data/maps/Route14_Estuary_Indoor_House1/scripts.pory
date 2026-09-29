@@ -1,1 +1,19 @@
 mapscripts Route14_Estuary_Indoor_House1_MapScripts {}
+
+// Staging rows: reposition in Porymap before playtesting.
+
+script Route14_Estuary_Indoor_House1_NPC_WoodlandRanger {
+    lock
+    faceplayer
+    msgbox(format("This ranger post overlooks the woodland edge.\pAn URSARING sometimes comes out along the treeline. Watch the gaps, not just the tallest trees.\pFresh marks on bark can help you follow its route. Keep your distance; seeing it doesn't mean it wants company."))
+    release
+    end
+}
+
+script Route14_Estuary_Indoor_House1_NPC_WoodlandObserver {
+    lock
+    faceplayer
+    msgbox(format("I thought the bear was watching me. The ranger says it was watching my lunch. I put the lunch away."))
+    release
+    end
+}

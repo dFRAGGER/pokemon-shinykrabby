@@ -151,7 +151,9 @@ SteelFactory_2F_OverhearCutscene_12:
 	applymovement 1, SteelFactory_2F_OverhearCutscene_Movement_10
 	applymovement 8, SteelFactory_2F_OverhearCutscene_Movement_11
 	setspeaker SteelFactory_2F_OverhearCutscene_Text_0
-	msgbox SteelFactory_2F_Rector_TurnsOnConrector, MSGBOX_AUTOCLOSE
+	goto_if_set FLAG_STEEL_FACTORY_FREED_POKEMON, SteelFactory_2F_OverhearCutscene_17
+	msgbox SteelFactory_2F_Rector_OrdersWorkerTransfer, MSGBOX_AUTOCLOSE
+SteelFactory_2F_OverhearCutscene_16:
 	waitmessage
 	applymovement 2, SteelFactory_2F_OverhearCutscene_Movement_5
 	setspeaker SteelFactory_2F_OverhearCutscene_Text_0
@@ -210,6 +212,10 @@ SteelFactory_2F_OverhearCutscene_13:
 	waitmessage
 	goto SteelFactory_2F_OverhearCutscene_12
 
+SteelFactory_2F_OverhearCutscene_17:
+	msgbox SteelFactory_2F_Rector_TurnsOnConrector, MSGBOX_AUTOCLOSE
+	goto SteelFactory_2F_OverhearCutscene_16
+
 
 SteelFactory_2F_Rector_Defeated::
 	setspeaker SteelFactory_2F_OverhearCutscene_Text_0
@@ -220,16 +226,16 @@ SteelFactory_2F_Rector_Defeated::
 	waitmessage
 	setspeaker NULL
 	applymovement 7, SteelFactory_2F_Rector_Defeated_Movement_0
-	applymovement 12, SteelFactory_2F_Rector_Defeated_Movement_0
+	applymovement 13, SteelFactory_2F_Rector_Defeated_Movement_0
 	waitmovement 7
-	waitmovement 12
+	waitmovement 13
 	setflag FLAG_HIDE_RECTOR_ELECTABUZZ_AFTER_BATTLE
 	applymovement 11, SteelFactory_2F_Rector_Defeated_Movement_1
 	applymovement 1, SteelFactory_2F_Rector_Defeated_Movement_1
 	waitmovement 11
 	waitmovement 1
 	removeobject 11
-	removeobject 12
+	removeobject 13
 	removeobject 7
 	removeobject 1
 	setflag FLAG_STEEL_FACTORY_RECTOR_DEFEATED
@@ -243,6 +249,7 @@ SteelFactory_2F_Rector_Defeated::
 	playse SE_SLIDING_DOOR
 	setvar VAR_LIONSARCH_CITY_STATE, 1
 	warpsilent MAP_LIONSARCH_CITY, 10
+	waitstate
 	releaseall
 	end
 
@@ -465,10 +472,11 @@ SteelFactory_2F_OverhearCutscene_Movement_18:
 
 SteelFactory_2F_OverhearCutscene_Movement_19:
 	walk_down
-	walk_down
+	walk_right
 	walk_right
 	walk_down
-	walk_right
+	walk_down
+	face_right
 	step_end
 
 SteelFactory_2F_OverhearCutscene_Movement_20:
@@ -477,17 +485,19 @@ SteelFactory_2F_OverhearCutscene_Movement_20:
 	walk_left
 	walk_down
 	walk_down
+	walk_right
+	walk_right
 	walk_down
-	walk_right
-	walk_right
+	face_right
 	step_end
 
 SteelFactory_2F_OverhearCutscene_Movement_21:
 	walk_down
+	walk_left
+	walk_left
+	walk_left
 	walk_down
-	walk_left
-	walk_left
-	walk_left
+	face_left
 	step_end
 
 SteelFactory_2F_Rector_Defeated_Movement_0:
@@ -571,24 +581,23 @@ SteelFactory_2F_Rector_After::
 	.string "There are others.$"
 
 SteelFactory_2F_Rector_OpensMeeting::
-	.string "Looks like the iron processing is ahead\n"
-	.string "of schedule.\p"
-	.string "You've both performed adequately this\n"
-	.string "quarter, the yield figures are\l"
-	.string "impressive.\p"
-	.string "To make a long story short: Order wins,\n"
-	.string "chaos loses.$"
+	.string "REGICE recovered intact. Containment\n"
+	.string "tests complete. Its scheduled transfer\l"
+	.string "to the harbor is underway.\p"
+	.string "The coastal transmitter needed\n"
+	.string "improvement. The independent\l"
+	.string "controller has performed adequately.\p"
+	.string "A legendary POKéMON, responding to our\n"
+	.string "commands. Limited commands, for now.\p"
+	.string "Order wins, chaos loses.$"
 
 SteelFactory_2F_Conrector_LaironsFreed::
-	.string "Indeed, the processing yield was\n"
-	.string "exceptional, sir.\p"
-	.string "There was one small hiccup with the\n"
-	.string "Lairon containment unit this morning,\l"
-	.string "but I managed the issue, no problems at\l"
-	.string "all sir.\p"
-	.string "You see, the specimens had become\n"
-	.string "unreliable. Diminishing returns. Worn\l"
-	.string "teeth. Stress fractures.\p"
+	.string "The containment frames are finished,\n"
+	.string "sir. REGICE's portable controller is\l"
+	.string "unaffected by the work-floor\l"
+	.string "shutdown.\p"
+	.string "As for the LAIRON unit... diminishing\n"
+	.string "returns. Worn teeth. Stress fractures.\p"
 	.string "I made the executive call to release\n"
 	.string "them before the voyage.\p"
 	.string "Not worth shipping livestock that can't\n"
@@ -596,16 +605,17 @@ SteelFactory_2F_Conrector_LaironsFreed::
 	.string "about, sir.$"
 
 SteelFactory_2F_Conrector_LaironsGood::
-	.string "Processing is complete, sir. Excellent\n"
-	.string "yield.\p"
-	.string "The Lairon unit consumed all\n"
-	.string "impurity-heavy ore as intended.\p"
-	.string "Only the highest-grade iron remains.\p"
-	.string "One little Aron escaped this morning,\n"
-	.string "but we managed to contain it.\p"
-	.string "I've arranged for the specimens to be\n"
-	.string "loaded onto the transport vessels in\l"
-	.string "any moment.$"
+	.string "The containment frames are finished,\n"
+	.string "sir. REGICE's portable controller is\l"
+	.string "ready for the voyage.\p"
+	.string "The LAIRON unit processed the ore as\n"
+	.string "intended. The workers remain in their\l"
+	.string "cells, ready for transport.\p"
+	.string "One small ARON escaped this morning. It\n"
+	.string "hasn't affected dispatch.\p"
+	.string "The work-floor relays are separate\n"
+	.string "from the portable controller, as\l"
+	.string "ordered.$"
 
 SteelFactory_2F_Rector_ShockSuggestion::
 	.string "How about you Barr.. Wouter?\p"
@@ -628,12 +638,14 @@ SteelFactory_2F_Barry_ShockDecline::
 	.string "...That would be irresponsible.$"
 
 SteelFactory_2F_Barry_MiningReport::
-	.string "The mining operation hit every target,\n"
-	.string "sir.\p"
-	.string "We did have a brief evacuation. A\n"
-	.string "civilian wandered into the tunnels.\p"
-	.string "I handled it personally. Pushed them\n"
-	.string "into a deep dark crevice.\p"
+	.string "REGICE reached the factory before the\n"
+	.string "ice supports failed, sir.\p"
+	.string "The cleanup crew recovered the\n"
+	.string "remaining equipment. The public records\l"
+	.string "still say mineral extraction.\p"
+	.string "A civilian wandered into the tunnels. I\n"
+	.string "handled it personally. Pushed them into\l"
+	.string "a deep dark crevice.\p"
 	.string "Hazard of the mine, really. Nothing\n"
 	.string "special.$"
 
@@ -653,10 +665,18 @@ SteelFactory_2F_Rector_TurnsOnConrector::
 	.string "'Diminishing returns.'\p"
 	.string "How convenient.$"
 
+SteelFactory_2F_Rector_OrdersWorkerTransfer::
+	.string "The workers are still secured? Good.\n"
+	.string "Complete their transfer.\p"
+	.string "And explain to me later how this\n"
+	.string "intruder reached my floor.$"
+
 SteelFactory_2F_Rector_AngryOrders::
-	.string "Load the boats.\p"
-	.string "Both of you. NOW. I want neither of you\n"
-	.string "on this floor when I am finished.$"
+	.string "Get to the boats. Both of you. NOW.\p"
+	.string "Keep REGICE's controller powered.\n"
+	.string "Secure the frames and the research\l"
+	.string "records.\p"
+	.string "I will deal with our visitor.$"
 
 SteelFactory_2F_Rector_BattleChallenge::
 	.string "You've become quite the nuisance.\p"
@@ -676,10 +696,13 @@ SteelFactory_2F_Rector_DefeatedText1::
 	.string "...How.$"
 
 SteelFactory_2F_Rector_DefeatedText2::
-	.string "This changes nothing.\p"
+	.string "You've cost us this production site. I\n"
+	.string "won't pretend otherwise.\p"
+	.string "But REGICE's transfer was already\n"
+	.string "scheduled. Its controller needs\l"
+	.string "nothing from these machines.\p"
 	.string "The Faculty's reach goes further than\n"
 	.string "this building.\p"
-	.string "Far further.\p"
 	.string "Follow me.$"
 
 SteelFactory_2F_Barry_After::
@@ -687,23 +710,37 @@ SteelFactory_2F_Barry_After::
 	.string "He's not going to run. He never does.$"
 
 SteelFactory_2F_PC_Research_Text::
-	.string "FACULTY INTERNAL - CYCLE 14 SUMMARY\p"
-	.string "- Output targets exceeded by 12%%.\p"
-	.string "Specimen endurance remains within\n"
-	.string "acceptable range.\p"
-	.string "Note: biological variance in batch 7\n"
-	.string "requires monitoring.\p"
-	.string "Rector review pending. -$"
+	.string "FACULTY INTERNAL - REGICE TRIAL\p"
+	.string "Origin: sealed ice chamber, Lion\n"
+	.string "Mountains. Specimen recovered intact.\p"
+	.string "Portable frame restricts movement.\n"
+	.string "Controller induces a limited repeated\l"
+	.string "response.\p"
+	.string "Independent supply maintained\n"
+	.string "throughout testing. Disconnecting the\l"
+	.string "worker relays does not interrupt\l"
+	.string "containment.\p"
+	.string "Coastal broadcast prototype:\n"
+	.string "superseded after the Crabhill field\l"
+	.string "failure.\p"
+	.string "Further command training authorized by\n"
+	.string "THE RECTOR.$"
 
 SteelFactory_2F_PC_Logistics_Text::
-	.string "TRANSPORT MANIFEST - PENDING\n"
+	.string "TRANSPORT MANIFEST - SCHEDULED\n"
 	.string "DISPATCH\p"
-	.string "- Three shipments awaiting clearance.\p"
-	.string "Contents: processed material, grade A.\p"
-	.string "Destination: redacted.\p"
-	.string "Estimated transit: 4 days by sea.\p"
-	.string "All documentation has been filed under\n"
-	.string "Rector authorization. -$"
+	.string "Priority load: REGICE in a powered\n"
+	.string "portable containment frame.\p"
+	.string "Additional cargo: completed frames,\n"
+	.string "controller components, research\l"
+	.string "records.\p"
+	.string "Public declaration: processed steel\n"
+	.string "and mineral samples. Destination:\l"
+	.string "redacted.\p"
+	.string "Internal instruction: transfer priority\n"
+	.string "load to harbor before staff\l"
+	.string "evacuation. Never disconnect its\l"
+	.string "controller.$"
 
 SteelFactory_2F_PC_Locked_Text::
 	.string "FACULTY ACCESS ONLY\p"
@@ -711,26 +748,36 @@ SteelFactory_2F_PC_Locked_Text::
 	.string "You cannot interact with it.$"
 
 SteelFactory_2F_Blueprint_Materials_Text::
-	.string "COMPONENT SPECIFICATION - DRAFT 9\p"
-	.string "- Primary substrate: high-density ore,\n"
-	.string "origin Lions Mountains.\p"
-	.string "Secondary binding agent: unspecified\n"
-	.string "biological compound, sourced on-site.\p"
-	.string "Alloy stability under sustained\n"
-	.string "resonance: 94%%.\p"
-	.string "Warning: do not substitute substrate\n"
-	.string "without Rector approval. -$"
+	.string "CONTAINMENT FRAME - MATERIALS\p"
+	.string "Reinforced steel produced on-site.\n"
+	.string "LAIRON processing removes impurities\l"
+	.string "from the ore.\p"
+	.string "Frame anchors restrict specimen\n"
+	.string "movement. Insulated mounts protect\l"
+	.string "the controller.\p"
+	.string "Legendary units require their own\n"
+	.string "controller and power supply. Do not\l"
+	.string "connect them to the worker-cell\l"
+	.string "network.$"
 
 SteelFactory_2F_Blueprint_Assembly_Text::
-	.string "ASSEMBLY PHASE - STRUCTURAL OVERVIEW\p"
-	.string "- Layer configuration classified. See\n"
-	.string "Rector annex.\p"
-	.string "Core channel dimensions have been\n"
-	.string "adjusted per Cycle 11 findings.\p"
-	.string "Note from lead researcher: the material\n"
-	.string "responds differently than anticipated.\p"
-	.string "Further testing required before full\n"
-	.string "production begins. -$"
+	.string "CONTROLLER ASSEMBLY - DEVELOPMENT\n"
+	.string "RECORD\p"
+	.string "Coastal model: short-range broadcast\n"
+	.string "transmitter.\p"
+	.string "Work-floor model: five fixed relays\n"
+	.string "controlling labour commands and cell\l"
+	.string "lockout.\p"
+	.string "Portable model: reinforced frame,\n"
+	.string "isolated command unit, independent\l"
+	.string "supply.\p"
+	.string "The transmitter housing matches the\n"
+	.string "damaged device Jacob gave you. This is\l"
+	.string "the same technology, developed\l"
+	.string "further.\p"
+	.string "A note warns that damaged transmitters\n"
+	.string "cannot be used to issue release\l"
+	.string "commands.$"
 
 SteelFactory_2F_Blueprint_RockSmash_Text::
 	.string "FIELD OBSERVATION - MINING DIVISION\p"

@@ -15,11 +15,11 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_JUAN",
-      "x": 9,
-      "y": 19,
+      "graphics_id": "OBJ_EVENT_GFX_GIOVANNI_HNS",
+      "x": 13,
+      "y": 15,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -28,9 +28,9 @@
       "flag": "FLAG_STEEL_FACTORY_RECTOR_CUTSCENE_TRIGGERED"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WALLY",
-      "x": 8,
-      "y": 22,
+      "graphics_id": "OBJ_EVENT_GFX_BARRY_DP",
+      "x": 15,
+      "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -41,24 +41,11 @@
       "flag": "FLAG_STEEL_FACTORY_RECTOR_CUTSCENE_TRIGGERED"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 9,
-      "y": 14,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_STEEL_FACTORY_COMPLETE"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
       "x": 3,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -67,11 +54,11 @@
       "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 13,
-      "y": 8,
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_SK",
+      "x": 9,
+      "y": 13,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -81,10 +68,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
-      "x": 15,
-      "y": 13,
+      "x": 18,
+      "y": 3,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -94,8 +81,21 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELECTABUZZ)",
-      "x": 6,
-      "y": 20,
+      "x": 13,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_STEEL_FACTORY_RECTOR_CUTSCENE_TRIGGERED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_FRLG",
+      "x": 15,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -106,22 +106,9 @@
       "flag": "FLAG_STEEL_FACTORY_RECTOR_CUTSCENE_TRIGGERED"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_FRLG",
-      "x": 9,
-      "y": 22,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_STEEL_FACTORY_RECTOR_CUTSCENE_TRIGGERED"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
-      "x": 14,
-      "y": 3,
+      "x": 8,
+      "y": 2,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -133,8 +120,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAGIKARP)",
-      "x": 7,
-      "y": 23,
+      "x": 16,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -145,9 +132,9 @@
       "flag": "FLAG_STEEL_FACTORY_RECTOR_CUTSCENE_TRIGGERED"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_JUAN",
-      "x": 8,
-      "y": 22,
+      "graphics_id": "OBJ_EVENT_GFX_GIOVANNI_HNS",
+      "x": 20,
+      "y": 15,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -159,8 +146,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 2,
-      "y": 25,
+      "x": 6,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -172,8 +159,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELECTABUZZ)",
-      "x": 7,
-      "y": 22,
+      "x": 19,
+      "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -193,15 +180,15 @@
       "dest_warp_id": "3"
     },
     {
-      "x": 8,
-      "y": 24,
+      "x": 20,
+      "y": 18,
       "elevation": 0,
       "dest_map": "MAP_LIONSARCH_CITY",
       "dest_warp_id": "9"
     },
     {
-      "x": 9,
-      "y": 24,
+      "x": 21,
+      "y": 18,
       "elevation": 0,
       "dest_map": "MAP_LIONSARCH_CITY",
       "dest_warp_id": "10"
@@ -210,8 +197,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 13,
-      "y": 16,
+      "x": 21,
+      "y": 12,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -219,8 +206,8 @@
     },
     {
       "type": "trigger",
-      "x": 14,
-      "y": 16,
+      "x": 22,
+      "y": 12,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -230,40 +217,120 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 3,
-      "y": 7,
+      "x": 21,
+      "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SteelFactory_2F_PC_Research"
     },
     {
       "type": "sign",
-      "x": 15,
-      "y": 7,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SteelFactory_2F_PC_Locked"
-    },
-    {
-      "type": "sign",
-      "x": 1,
-      "y": 13,
+      "x": 9,
+      "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SteelFactory_2F_Blueprint_Materials"
     },
     {
       "type": "sign",
-      "x": 15,
-      "y": 15,
+      "x": 17,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SteelFactory_2F_Blueprint_Assembly"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SteelFactory_2F_PC_Locked"
     },
     {
       "type": "sign",
-      "x": 15,
+      "x": 18,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SteelFactory_2F_PC_Logistics"
+    },
+    {
+      "type": "hidden_item",
+      "x": 22,
+      "y": 18,
+      "elevation": 3,
+      "item": "ITEM_RARE_CANDY",
+      "flag": "FLAG_HIDDEN_ITEM_STEELFACTORY_2F_RARE_CANDY"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SteelFactory_2F_Blueprint_RockSmash"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SteelFactory_2F_Blueprint_RockSmash"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SteelFactory_2F_Blueprint_RockSmash"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SteelFactory_2F_Blueprint_RockSmash"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SteelFactory_2F_Blueprint_Materials"
+    },
+    {
+      "type": "sign",
+      "x": 9,
       "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SteelFactory_2F_Blueprint_Materials"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SteelFactory_2F_Blueprint_Materials"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SteelFactory_2F_Blueprint_Assembly"
+    },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 12,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SteelFactory_2F_Blueprint_Assembly"
@@ -272,110 +339,6 @@
       "type": "sign",
       "x": 15,
       "y": 12,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SteelFactory_2F_PC_Locked"
-    },
-    {
-      "type": "sign",
-      "x": 3,
-      "y": 4,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SteelFactory_2F_PC_Locked"
-    },
-    {
-      "type": "sign",
-      "x": 15,
-      "y": 25,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SteelFactory_2F_PC_Logistics"
-    },
-    {
-      "type": "hidden_item",
-      "x": 13,
-      "y": 27,
-      "elevation": 3,
-      "item": "ITEM_RARE_CANDY",
-      "flag": "FLAG_HIDDEN_ITEM_STEELFACTORY_2F_RARE_CANDY"
-    },
-    {
-      "type": "sign",
-      "x": 2,
-      "y": 25,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SteelFactory_2F_Blueprint_RockSmash"
-    },
-    {
-      "type": "sign",
-      "x": 3,
-      "y": 25,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SteelFactory_2F_Blueprint_RockSmash"
-    },
-    {
-      "type": "sign",
-      "x": 2,
-      "y": 26,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SteelFactory_2F_Blueprint_RockSmash"
-    },
-    {
-      "type": "sign",
-      "x": 3,
-      "y": 26,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SteelFactory_2F_Blueprint_RockSmash"
-    },
-    {
-      "type": "sign",
-      "x": 2,
-      "y": 13,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SteelFactory_2F_Blueprint_Materials"
-    },
-    {
-      "type": "sign",
-      "x": 1,
-      "y": 14,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SteelFactory_2F_Blueprint_Materials"
-    },
-    {
-      "type": "sign",
-      "x": 2,
-      "y": 14,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SteelFactory_2F_Blueprint_Materials"
-    },
-    {
-      "type": "sign",
-      "x": 16,
-      "y": 3,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SteelFactory_2F_Blueprint_Assembly"
-    },
-    {
-      "type": "sign",
-      "x": 15,
-      "y": 4,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SteelFactory_2F_Blueprint_Assembly"
-    },
-    {
-      "type": "sign",
-      "x": 16,
-      "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SteelFactory_2F_Blueprint_Assembly"

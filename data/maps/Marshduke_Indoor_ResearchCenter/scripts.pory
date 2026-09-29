@@ -1,1 +1,59 @@
 mapscripts Marshduke_Indoor_ResearchCenter_MapScripts {}
+
+// Staging rows: reposition in Porymap before playtesting.
+
+script Marshduke_Indoor_ResearchCenter_NPC_Reception {
+    lock
+    faceplayer
+    msgbox(format("Welcome to the research centre! We study the Mega Alakazam in the cathedral, and the six altars.\pThere are three teams on this floor and three upstairs. Every team has a scientist and a monk.\pOh, and please label your cups! Last week we found some 'mystery psychic goo.' It was somebody's soup."))
+    release
+    end
+}
+
+script Marshduke_Indoor_ResearchCenter_NPC_RekindledResearcher {
+    lock
+    faceplayer
+    msgbox(format("My team studies the Rekindled vision.\p Let me ask you something: If your body changes, are you still the same Pokémon inside?\pWe compare the three Pokémon before and after the fire.\pEverything else in the vision? Not our department!"))
+    release
+    end
+}
+
+script Marshduke_Indoor_ResearchCenter_NPC_RekindledMonk {
+    lock
+    faceplayer
+    msgbox(format("My partner tracks how they behave, but I want to know if they still remember who they were.\pThis week we've filled six whole notebooks.\pUnfortunately we only agree on the question."))
+    release
+    end
+}
+
+script Marshduke_Indoor_ResearchCenter_NPC_BalancedResearcher {
+    lock
+    faceplayer
+    msgbox(format("My team studies the Balanced Sky. Is one Pokémon giving the orders, or are they all just following each other?\pI'm supposed to count the legendary birds. But all these little birds keep flying in the way and messing up my count!"))
+    release
+    end
+}
+
+script Marshduke_Indoor_ResearchCenter_NPC_BalancedMonk {
+    lock
+    faceplayer
+    msgbox(format("I think they share a rhythm. Many hearts, all agreeing for just one moment.\pOur team meetings have never managed that... that's for sure."))
+    release
+    end
+}
+
+script Marshduke_Indoor_ResearchCenter_NPC_FirstDawnResearcher {
+    lock
+    faceplayer
+    msgbox(format("My team studies the First Dawn. We zoom in on Mew until it fills the whole screen!\pIt's a great view of Mew. We just can't see anything else anymore."))
+    release
+    end
+}
+
+script Marshduke_Indoor_ResearchCenter_NPC_FirstDawnMonk {
+    lock
+    faceplayer
+    msgbox(format("If all Pokémon started in the same place, are they all connected? Or do they just look a bit alike?\pMy partner wants me to define 'started.', something about the scientific method."))
+    release
+    end
+}

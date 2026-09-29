@@ -1,1 +1,59 @@
 mapscripts Marshduke_Indoor_Garden_Cemetery_MapScripts {}
+
+// Staging rows: reposition in Porymap before playtesting.
+
+script Marshduke_Indoor_Garden_Cemetery_Trainer_Selma {
+    trainerbattle_single(TRAINER_DELTA_SELMA_SK, Marshduke_Indoor_Garden_Cemetery_Trainer_Selma_Intro, Marshduke_Indoor_Garden_Cemetery_Trainer_Selma_Defeat)
+    msgbox(Marshduke_Indoor_Garden_Cemetery_Trainer_Selma_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Marshduke_Indoor_Garden_Cemetery_Trainer_Selma_Intro {
+    format("Will you keep my GASTLY company?")
+}
+
+text Marshduke_Indoor_Garden_Cemetery_Trainer_Selma_Defeat {
+    format("That cheered us up!")
+}
+
+text Marshduke_Indoor_Garden_Cemetery_Trainer_Selma_After {
+    format("GASTLY scares off most visitors before I can introduce myself. I'm glad you stayed.")
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Trainer_Mara {
+    trainerbattle_single(TRAINER_DELTA_MARA_SK, Marshduke_Indoor_Garden_Cemetery_Trainer_Mara_Intro, Marshduke_Indoor_Garden_Cemetery_Trainer_Mara_Defeat)
+    msgbox(Marshduke_Indoor_Garden_Cemetery_Trainer_Mara_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Marshduke_Indoor_Garden_Cemetery_Trainer_Mara_Intro {
+    format("We can battle if you're careful around the flowers!")
+}
+
+text Marshduke_Indoor_Garden_Cemetery_Trainer_Mara_Defeat {
+    format("You nearly flattened my bouquet!")
+}
+
+text Marshduke_Indoor_Garden_Cemetery_Trainer_Mara_After {
+    format("MURKROW keeps pinching ribbon off the bouquets. If you see any in its beak, that's mine to put back.")
+}
+
+script Marshduke_Indoor_Garden_Cemetery_NPC_PlantKeeper {
+    lock
+    faceplayer
+    if (flag(FLAG_MARSHDUKE_CATHEDRAL_TOUR)) {
+        msgbox(format("Back again? I remembered another one. A blue flower, no bigger than your thumbnail, beside the old ditch.\pPeople keep asking me about the grand visions. I'd be pleased just to find that little flower again."))
+    } else {
+        msgbox(format("Oh, stand still. There's a little fern beside your shoe.\pI used to see those all along the river. And a white flower that shut before rain. Haven't seen that one in years.\pNames on the stones? You'll have to lean closer. My eyes mostly find the leaves these days."))
+    }
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_NPC_BouquetVisitor {
+    lock
+    faceplayer
+    msgbox(format("I bring the flowers my partner liked. The plant keeper tells me their names every visit.\pSometimes I already know. I let him tell me anyway."))
+    release
+    end
+}

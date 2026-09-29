@@ -3606,3 +3606,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/WestLionMountain_CableCar/scripts.inc"
 	.include "data/maps/WestLionMountain_SnowTop/scripts.inc"
 .endif
+
+	.include "data/maps/Island_Ohiana_Crater/scripts.inc"

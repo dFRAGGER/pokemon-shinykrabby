@@ -1,6 +1,21 @@
 mapscripts SiltrootTown_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_VISITED_SILTROOT_TOWN)
+
+        // Migrate saves made by the old script, which hid the guard after he
+        // moved, to the persistent moved-state flag.
+        if (flag(FLAG_HIDE_SILTROOTTOWN_SHED_GUARD)) {
+            setflag(FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN)
+            clearflag(FLAG_HIDE_SILTROOTTOWN_SHED_GUARD)
+        }
+
+        // The map's object template is reloaded at its original coordinates
+        // whenever Siltroot Town is entered, so restore the moved position
+        // before its object events are spawned.
+        if (flag(FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN)) {
+            setobjectxyperm(20, 62, 65)
+            setobjectmovementtype(20, MOVEMENT_TYPE_FACE_LEFT)
+        }
     }
 }
 
@@ -11,7 +26,7 @@ script Siltroottown_Joris_UpToTheWhiteLight {
     getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
     msgbox(format("..."),MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(26, moves(walk_in_place_fast_down))
+    applymovement(25, moves(walk_in_place_fast_down))
     delay(40)
     setspeaker("?????")
     msgbox(format("UP TO THE WHITELIGHT!!!"), MSGBOX_AUTOCLOSE)
@@ -20,13 +35,13 @@ script Siltroottown_Joris_UpToTheWhiteLight {
     applymovement(LOCALID_PLAYER,moves(emote_question_mark))
     delay(40)
     if(var(VAR_TEMP_0)== 51 && var(VAR_TEMP_1)== 55){
-        applymovement(2, moves(walk_fast_right walk_fast_down*12))
+        applymovement(25, moves(walk_fast_right walk_fast_down*12))
     }
     else{
-        applymovement(2, moves(walk_fast_down*12))
+        applymovement(25, moves(walk_fast_down*12))
     }
     waitmovement
-    removeobject(2)
+    removeobject(25)
     release
     
 }
@@ -34,30 +49,30 @@ script Siltroottown_Joris_UpToTheWhiteLight {
 script SiltrootTown_Corsola_Jump1 {
     lock
     playse(SE_PIN)
-    applymovement(23, moves(emote_exclamation_mark jump_2_left))
+    applymovement(22, moves(emote_exclamation_mark jump_2_left))
     waitmovement
     setflag(FLAG_TEMP_1)
-    removeobject(23)
+    removeobject(22)
     release
 }
 
 script SiltrootTown_Corsola_Jump2 {
     lock
     playse(SE_PIN)
-    applymovement(24, moves(emote_exclamation_mark jump_2_left))
+    applymovement(23, moves(emote_exclamation_mark jump_2_left))
     waitmovement
     setflag(FLAG_TEMP_2)
-    removeobject(24)
+    removeobject(23)
     release
 }
 
 script SiltrootTown_Corsola_Jump3 {
     lock
     playse(SE_PIN)
-    applymovement(25, moves(emote_exclamation_mark jump_2_left))
+    applymovement(24, moves(emote_exclamation_mark jump_2_left))
     waitmovement
     setflag(FLAG_TEMP_2)
-    removeobject(25)
+    removeobject(24)
     release
 }
 
@@ -252,13 +267,13 @@ script Siltroottown_Fisher_Sad {
 script Siltroottown_Guard_shed {
     lock
     faceplayer
-    if(flag(FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1)==FALSE && flag(FLAG_HIDE_SILTROOTTOWN_SHED_GUARD)==FALSE){
+    if(flag(FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1)==FALSE && flag(FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN)==FALSE){
         msgbox(format("Whoa, hold your Ponyta.\pThis is a restricted agricultural facility.\pStrictly authorized personnel only."),MSGBOX_AUTOCLOSE)
         waitmessage
         release
         end
     }
-    elif(flag(FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1)==TRUE && flag(FLAG_HIDE_SILTROOTTOWN_SHED_GUARD)==FALSE){
+    elif(flag(FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1)==TRUE && flag(FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN)==FALSE){
     getplayerxy(VAR_TEMP_0,VAR_TEMP_1)
     msgbox(format("Whoa, hold your Ponyta.\pThis is a restricted agricultural facility.\pStrictly authorized personnel only."),MSGBOX_AUTOCLOSE)
     waitmessage
@@ -273,6 +288,10 @@ script Siltroottown_Guard_shed {
         waitmovement
         applymovement(LOCALID_PLAYER, moves(walk_left face_down))
         waitmovement
+        // Finish at the same permanent position used when approached from
+        // below, now that the player is no longer blocking that tile.
+        applymovement(20, moves(walk_right walk_up face_left))
+        waitmovement
     }
     elif(var(VAR_TEMP_0) == 61 && var(VAR_TEMP_1) == 66) {
         applymovement(20, moves(walk_right face_left))
@@ -284,11 +303,12 @@ script Siltroottown_Guard_shed {
     waitmessage
     applymovement(LOCALID_PLAYER, moves(face_up))
     waitmovement
-    setflag(FLAG_HIDE_SILTROOTTOWN_SHED_GUARD)
+    setflag(FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN)
+    clearflag(FLAG_HIDE_SILTROOTTOWN_SHED_GUARD)
     release
     end
     }
-    elif(flag(FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1)==TRUE && flag(FLAG_HIDE_SILTROOTTOWN_SHED_GUARD)==TRUE) {
+    elif(flag(FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1)==TRUE && flag(FLAG_UNHIDE_GUARD_SHED_SILTROOTTOWN)==TRUE) {
         msgbox(format("Remember, don't let the Slowbro's see you.\pThe bag is in the back.\pMove like a ghost, kid."),MSGBOX_AUTOCLOSE)
         waitmessage
         release

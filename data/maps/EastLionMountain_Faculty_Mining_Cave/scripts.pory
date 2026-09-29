@@ -11,7 +11,7 @@ script MiningCave_WakeUp {
     msgbox(format("...Ugh."), MSGBOX_DEFAULT)
     msgbox(format("Where am I...\pEverything's pitch black.\pMy head is pounding."), MSGBOX_DEFAULT)
     msgbox(format("...Wait.\pThe crevice. BARRY pushed me in."), MSGBOX_DEFAULT)
-    msgbox(format("He's heading to Lionsarch...\pthe Steel Factory.\pI have to get out of here."), MSGBOX_DEFAULT)    
+    msgbox(format("They've taken REGICE to the steel factory in Lionsarch.\pI have to get out of here."), MSGBOX_DEFAULT)
     waitmessage
     release
     

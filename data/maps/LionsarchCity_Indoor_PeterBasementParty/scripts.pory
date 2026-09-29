@@ -39,10 +39,10 @@ script DiscoBasement_DJ_Peter {
                 msgbox(format("...\pThey pushed you into a CREVASSE?!\pI always knew the Faculty played dirty.\pBut throwing someone into a pit..."))
                 waitmessage
                 setspeaker("DJ PETER")
-                msgbox(format("And they've already moved everything to the factory.\pThis is escalating faster than I thought."))
+                msgbox(format("REGICE? A living POKéMON in that sealed transport?\pI saw them bring it into the steelworks. They cleared the whole loading yard for it.\pI thought it was another machine."))
                 waitmessage
                 setspeaker("DJ PETER")
-                msgbox(format("I've been watching those people dig into those mountains for months.\pEvery week the shipments get bigger.\pEvery week the tremors get worse."))
+                msgbox(format("I've watched their ore shipments for months.\pThis one was different. Cables running into the load, guards on every side.\pI don't know what they're doing to it. But I know a way into that building."))
                 waitmessage
                 setspeaker("DJ PETER")
                 msgbox(format("I can't sit on this anymore.\pYou need to get into that factory.\pLuckely I know a way in that the Faculty doesn't."))
@@ -91,7 +91,7 @@ script DiscoBasement_DJ_Peter {
         giveitem(ITEM_CLIMBING_ROPE)
         setflag(FLAG_RECEIVED_CLIMBING_ROPE)
         setspeaker("DJ PETER")
-        msgbox(format("Come back sometime, yeah?\pThere's more down here than just good music.\pYou talk to the right people... you'd be surprised what doors open."))
+        msgbox(format("Come back sometime, yeah?\pLionsarch City has been in a tough spot lately, since The Facutly took over the steel plant there has been to much steel on steel and to few disco music.\pBut there's more down here than just good music.\pYou talk to the right people... you'd be surprised what doors open."))
         waitmessage
         setspeaker("DJ PETER")
         msgbox(format("Now get out there.\pAnd remember... stay funky!"))
@@ -238,9 +238,20 @@ script DiscoBasement_Giel {
     waitmovement
     if(var(VAR_TEMP_0) == 16 && var(VAR_TEMP_1) == 8){
         applymovement(LOCALID_PLAYER, moves(walk_down walk_right face_left))
+        waitmovement
+    }
+    if(var(VAR_TEMP_0) == 17 && var(VAR_TEMP_1) == 7){
+        applymovement(LOCALID_PLAYER, moves(walk_right walk_down*2 walk_left face_left))
+        waitmovement
+    }
+    if(var(VAR_TEMP_0) == 18 && var(VAR_TEMP_1) == 8){
+        applymovement(LOCALID_PLAYER, moves(walk_down walk_left face_left))
+        waitmovement
     }
     
     delay(30)
+    applymovement(LOCALID_PLAYER, moves(face_left))
+    waitmovement
     setspeaker("GIEL")
     msgbox(format("See those lovely ladies over there?\pI've been trying to impress them with my knowledge.\pWatch this!"), MSGBOX_AUTOCLOSE)
     waitmessage
@@ -267,6 +278,7 @@ script DiscoBasement_Giel {
     waitmovement
     msgbox(format("Security! Can someone get this weirdo away from us?!"), MSGBOX_AUTOCLOSE)
     waitmessage
+    applymovement(LOCALID_PLAYER, moves(face_up))
     applymovement(7, moves(walk_right face_player))
     waitmovement    
     getplayerxy(VAR_TEMP_0, VAR_TEMP_1)    
@@ -277,7 +289,7 @@ script DiscoBasement_Giel {
     msgbox(format("Women just don't appreciate a man who understands history!\pI try to share my knowledge and THIS is the thanks I get?!"))
     waitmessage
     setspeaker("GIEL")
-    msgbox(format("I'm done with this city!\pThe disco scene here is TERRIBLE anyway!\pI'm going back to Hezik City where people actually have CULTURE!"),MSGBOX_AUTOCLOSE)
+    msgbox(format("I'm done with this city!\pThe disco scene here is TERRIBLE anyway!\pI'm going back to HEZIK TOWN where people actually have CULTURE!"),MSGBOX_AUTOCLOSE)
     waitmessage
     // Giel storms out
     if(var(VAR_TEMP_0) == 17 && var(VAR_TEMP_1) == 9){

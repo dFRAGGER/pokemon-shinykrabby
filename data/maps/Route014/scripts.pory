@@ -9,48 +9,48 @@ script Route014_Broken_Bridge_Ari {
     waitmessage
     if (var(VAR_TEMP_0) == 89 && var(VAR_TEMP_1) == 19) {
         applymovement(LOCALID_PLAYER, moves(walk_up walk_left face_right))
-        applymovement(17, moves(face_right))
+        applymovement(LOCALID_ROUTE014_ARI, moves(face_right))
         waitmovement
         delay(90)
         applymovement(LOCALID_PLAYER, moves(face_down))
-        applymovement(17, moves(face_up))
+        applymovement(LOCALID_ROUTE014_ARI, moves(face_up))
         waitmovement
     }
     if (var(VAR_TEMP_0) == 87 && var(VAR_TEMP_1) == 19) {
-        applymovement(17, moves(face_right))
+        applymovement(LOCALID_ROUTE014_ARI, moves(face_right))
         applymovement(LOCALID_PLAYER, moves(walk_down walk_right))
         waitmovement
         delay(90)
         applymovement(LOCALID_PLAYER, moves(face_up))
-        applymovement(17, moves(face_down))
+        applymovement(LOCALID_ROUTE014_ARI, moves(face_down))
         waitmovement
     }
     if(var(VAR_TEMP_0) == 88 && var(VAR_TEMP_1) == 18) {
-        applymovement(17, moves(face_right))
+        applymovement(LOCALID_ROUTE014_ARI, moves(face_right))
         applymovement(LOCALID_PLAYER, moves(face_right))
         waitmovement
         delay(90)
         applymovement(LOCALID_PLAYER, moves(face_down))
-        applymovement(17, moves(face_up))
+        applymovement(LOCALID_ROUTE014_ARI, moves(face_up))
         waitmovement
     }
     if(var(VAR_TEMP_0) == 88 && var(VAR_TEMP_1) == 20) {
-        applymovement(17, moves(face_right))
+        applymovement(LOCALID_ROUTE014_ARI, moves(face_right))
         applymovement(LOCALID_PLAYER, moves(face_right))
         waitmovement
         delay(90)
         applymovement(LOCALID_PLAYER, moves(face_up))
-        applymovement(17, moves(face_down))
+        applymovement(LOCALID_ROUTE014_ARI, moves(face_down))
         waitmovement
     }
     setspeaker("ARI")
     msgbox(format("Nobody gets across that standing still. You have to RUN at it.\pHere's the whole secret, and people pay me for this: don't speed up at the edge.\pSpeed up EARLY. Then just... keep going.\pRight. On three. Try to keep up."), MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(17, moves(face_right))
+    applymovement(LOCALID_ROUTE014_ARI, moves(face_right))
     waitmovement
     delay(60)
     applymovement(LOCALID_PLAYER, moves(face_right))
-    applymovement(17, moves(walk_fast_right*3 jump_2_right walk_fast_right face_left))
+    applymovement(LOCALID_ROUTE014_ARI, moves(walk_fast_right*3 jump_2_right walk_fast_right face_left))
     waitmovement
     delay(60)
     getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
@@ -59,7 +59,7 @@ script Route014_Broken_Bridge_Ari {
     waitmessage
     hidefollower
     setflag(FLAG_TEMP_HIDE_FOLLOWER)
-    applymovement(17, moves(walk_up face_down))
+    applymovement(LOCALID_ROUTE014_ARI, moves(walk_up face_down))
     waitmovement
     if (var(VAR_TEMP_0) == 88 && var(VAR_TEMP_1) == 18) {
         applymovement(LOCALID_PLAYER, moves(walk_down face_right))
@@ -82,7 +82,7 @@ script Route014_Broken_Bridge_Ari {
     msgbox(format("Well well, you made it. I guess you can call yourself a runner now.\pI don't know if you can beat me, but at least you can keep up.\pI'm making my daily trip towards the Breeze Tower, got some trainer dates setup.\pI'm basicly their biggest investor at the moment.\pWithout me the Breeze Tower would have gone bankrupt a long time ago.\pI guess I can do a sprint battle along the way though, meet me at the large bridge up ahead."), MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(LOCALID_PLAYER, moves(face_right))
-    applymovement(17, moves(walk_right walk_down face_right))
+    applymovement(LOCALID_ROUTE014_ARI, moves(walk_right walk_down face_right))
     waitmovement
     delay(60)
     msgbox(format("Ready, set ... GO!"), MSGBOX_AUTOCLOSE)
@@ -90,9 +90,9 @@ script Route014_Broken_Bridge_Ari {
     setflag(FLAG_ARI_HIDE_JUMP_CHALLENGE)
     playse((SE_PIN))
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark))
-    applymovement(17, moves(walk_faster_right*4 walk_faster_down*8 walk_fast_right*6))
+    applymovement(LOCALID_ROUTE014_ARI, moves(walk_faster_right*4 walk_faster_down*8 walk_fast_right*6))
     waitmovement
-    removeobject(17)
+    removeobject(LOCALID_ROUTE014_ARI)
     clearflag(FLAG_TEMP_HIDE_FOLLOWER)
     release
     end
@@ -138,4 +138,263 @@ script Route014_Broken_Bridge_Trigger_West {
     end
 }
 
+// Staging rows: reposition in Porymap before playtesting.
 
+script Route014_Trainer_Derk {
+    trainerbattle_single(TRAINER_DELTA_DERK_SK, Route014_Trainer_Derk_Intro, Route014_Trainer_Derk_Defeat)
+    msgbox(Route014_Trainer_Derk_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route014_Trainer_Derk_Intro {
+    format("I've had enough waiting for a bite!")
+}
+
+text Route014_Trainer_Derk_Defeat {
+    format("Back to fishing, then!")
+}
+
+text Route014_Trainer_Derk_After {
+    format("I promised to be home by lunchtime if nothing was biting. That was yesterday.")
+}
+
+script Route014_Trainer_Evi {
+    trainerbattle_single(TRAINER_DELTA_EVI_SK, Route014_Trainer_Evi_Intro, Route014_Trainer_Evi_Defeat)
+    msgbox(Route014_Trainer_Evi_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route014_Trainer_Evi_Intro {
+    format("Help me wear these two out!")
+}
+
+text Route014_Trainer_Evi_Defeat {
+    format("I'm the one who's worn out!")
+}
+
+text Route014_Trainer_Evi_After {
+    format("AIPOM stole the route sign and SNUBBULL won't let me put it back. Sorry if you got lost.")
+}
+
+script Route014_Trainer_Hugo {
+    trainerbattle_single(TRAINER_DELTA_HUGO_SK, Route014_Trainer_Hugo_Intro, Route014_Trainer_Hugo_Defeat)
+    msgbox(Route014_Trainer_Hugo_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route014_Trainer_Hugo_Intro {
+    format("CROCONAW's been itching for a battle!")
+}
+
+text Route014_Trainer_Hugo_Defeat {
+    format("Careful with those teeth!")
+}
+
+text Route014_Trainer_Hugo_After {
+    format("CROCONAW always wants to swim across, but I'm keeping my socks dry today.")
+}
+
+script Route014_Trainer_Fenna {
+    trainerbattle_single(TRAINER_DELTA_FENNA_SK, Route014_Trainer_Fenna_Intro, Route014_Trainer_Fenna_Defeat)
+    msgbox(Route014_Trainer_Fenna_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route014_Trainer_Fenna_Intro {
+    format("Up for a battle with a ranger?")
+}
+
+text Route014_Trainer_Fenna_Defeat {
+    format("I wasn't expecting that!")
+}
+
+text Route014_Trainer_Fenna_After {
+    format("I let PSYDUCK lead the patrol once and we ended up at my house. Might try that again on Friday.")
+}
+
+script Route014_Trainer_Teun {
+    trainerbattle_single(TRAINER_DELTA_TEUN_SK, Route014_Trainer_Teun_Intro, Route014_Trainer_Teun_Defeat)
+    msgbox(Route014_Trainer_Teun_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route014_Trainer_Teun_Intro {
+    format("You look tougher than these rotten boards!")
+}
+
+text Route014_Trainer_Teun_Defeat {
+    format("You're a lot tougher!")
+}
+
+text Route014_Trainer_Teun_After {
+    format("MACHOP helped me carry timber all morning and still wants to train. I wish I had that much energy.")
+}
+
+script Route014_Trainer_Roos {
+    trainerbattle_single(TRAINER_DELTA_ROOS_SK, Route014_Trainer_Roos_Intro, Route014_Trainer_Roos_Defeat)
+    msgbox(Route014_Trainer_Roos_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route014_Trainer_Roos_Intro {
+    format("You don't mind GLOOM's smell, do you?")
+}
+
+text Route014_Trainer_Roos_Defeat {
+    format("GLOOM, don't sulk!")
+}
+
+text Route014_Trainer_Roos_After {
+    format("I can't really smell GLOOM anymore, but Mum still makes us use the back door.")
+}
+
+script Route014_Trainer_Milo {
+    trainerbattle_single(TRAINER_DELTA_MILO_SK, Route014_Trainer_Milo_Intro, Route014_Trainer_Milo_Defeat)
+    msgbox(Route014_Trainer_Milo_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route014_Trainer_Milo_Intro {
+    format("I'll find my way after one more battle!")
+}
+
+text Route014_Trainer_Milo_Defeat {
+    format("I'm even more confused now!")
+}
+
+text Route014_Trainer_Milo_After {
+    format("WARTORTLE sat down when we passed this bend again. It won't budge until I put the map away.")
+}
+
+script Route014_Trainer_Kira {
+    trainerbattle_single(TRAINER_DELTA_KIRA_SK, Route014_Trainer_Kira_Intro, Route014_Trainer_Kira_Defeat)
+    msgbox(Route014_Trainer_Kira_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route014_Trainer_Kira_Intro {
+    format("Come on, I've been warming up for ages!")
+}
+
+text Route014_Trainer_Kira_Defeat {
+    format("I need a breather!")
+}
+
+text Route014_Trainer_Kira_After {
+    format("I tried taking QUAGSIRE running with me. We got as far as the first puddle.")
+}
+
+script Route014_Trainer_Pim {
+    trainerbattle_single(TRAINER_DELTA_PIM_SK, Route014_Trainer_Pim_Intro, Route014_Trainer_Pim_Defeat)
+    msgbox(Route014_Trainer_Pim_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route014_Trainer_Pim_Intro {
+    format("Mind the equipment while we battle!")
+}
+
+text Route014_Trainer_Pim_Defeat {
+    format("At least nothing exploded!")
+}
+
+text Route014_Trainer_Pim_After {
+    format("I need to move the water gauge closer to the river. VOLTORB is absolutely no help with lifting.")
+}
+
+script Route014_Trainer_Lotte {
+    trainerbattle_single(TRAINER_DELTA_LOTTE_SK, Route014_Trainer_Lotte_Intro, Route014_Trainer_Lotte_Defeat)
+    msgbox(Route014_Trainer_Lotte_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route014_Trainer_Lotte_Intro {
+    format("You'll have to get past my picnic champion!")
+}
+
+text Route014_Trainer_Lotte_Defeat {
+    format("Our winning streak is over!")
+}
+
+text Route014_Trainer_Lotte_After {
+    format("AZUMARILL rescued my picnic when it fell in the water, but ate the cake before bringing it back.")
+}
+
+script Route014_Trainer_Ward {
+    trainerbattle_single(TRAINER_DELTA_WARD_SK, Route014_Trainer_Ward_Intro, Route014_Trainer_Ward_Defeat)
+    msgbox(Route014_Trainer_Ward_After, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route014_Trainer_Ward_Intro {
+    format("Fancy a battle before I head back?")
+}
+
+text Route014_Trainer_Ward_Defeat {
+    format("That was a good one!")
+}
+
+text Route014_Trainer_Ward_After {
+    format("I've watched this stretch for years and still spot things I can't name. Bring binoculars if you come back.")
+}
+
+script Route014_NPC_BridgeCarpenter {
+    lock
+    faceplayer
+    msgbox(format("Ari looks at a gap and sees a sporting opportunity. I look at it and see three days of work.\pHe has never offered to race me carrying the timber."))
+    release
+    end
+}
+
+script Route014_NPC_OldRoad {
+    lock
+    faceplayer
+    msgbox(format("The road used to run closer to the bank.\pMy knees still try to take the old turning."))
+    release
+    end
+}
+
+
+script Route014_NPC_RiverNotebook {
+    lock
+    faceplayer
+    msgbox(format("I'm comparing the side channels. Some carry less water than the old surveys show.\pWhy? That's the next part of the job."))
+    release
+    end
+}
+
+script Route014_NPC_RangerDirections {
+    lock
+    faceplayer
+    msgbox(format("There are some huts in the estuary belonging to the rangers.\pEach looks over a different stretch of the floodplain."))
+    release
+    end
+}
+
+script Route014_NPC_YoungRunner {
+    lock
+    faceplayer
+    msgbox(format("Ari told me good shoes make you fast.\pI'm saving up for a good pair."))
+    release
+    end
+}
+
+script Route014_NPC_Sketchbook {
+    lock
+    faceplayer
+    msgbox(format("I drew every angle of the city but I forgot to draw the water.\pVery detailed picture of a thing floating in absolutely nothing."))
+    release
+    end
+}
+
+script Route014_NPC_PatientAngler {
+    lock
+    faceplayer
+    if (flag(FLAG_MARSHDUKE_CATHEDRAL_TOUR)) {
+        msgbox(format("One fish today.\pYou saw old fishing records in the city? Bring the dates next time. I'd like to compare them with mine."))
+    } else {
+        msgbox(format("One fish today. I wrote it down, same as always."))
+    }
+    release
+    end
+}

@@ -86,9 +86,10 @@ script SteelFactory_1F_OnTransition {
 // ─── ARON INTERACTION ───
 
 script SteelFactory_1F_Aron_Interact {
-    
-    call(SteelFactory_1F_CellPanel)
-    end
+    lock
+    faceplayer
+    msgbox(SteelFactory_Aron_Interact_Text, MSGBOX_AUTOCLOSE)
+    release
 }
 
 // ─── ARON INTRO TRIGGER ───
@@ -116,8 +117,9 @@ script SteelFactory_1F_AronIntro {
     playse(SE_PIN)
     applymovement(18, moves(emote_question_mark))    
     waitmovement(0)
+    // Establish the two independent networks before presenting the rescue choice.
+    msgbox(SteelFactory_WorkerNetwork_Text, MSGBOX_AUTOCLOSE)
     msgbox(SteelFactory_AronIntro_Text, MSGBOX_YESNO)
-    msgbox(format("The Aron scuttled away!"), MSGBOX_AUTOCLOSE)
     if (var(VAR_RESULT) == YES) {
         setflag(FLAG_STEEL_FACTORY_ARON_GUIDING)
         if(var(VAR_TEMP_0) == 1){
@@ -474,12 +476,6 @@ script SteelFactory_CheckAllWires {
 
 script SteelFactory_1F_CellPanel {
     lockall
-    faceplayer
-    playse(SE_PIN)
-    applymovement(25, moves(emote_question_mark jump_in_place_down))
-    waitmovement(25)
-    delay(120)
-    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
     if (flag(FLAG_STEEL_FACTORY_FREED_POKEMON) == TRUE) {
         msgbox(SteelFactory_1F_CellPanel_AlreadyFreed)
         releaseall
@@ -490,6 +486,14 @@ script SteelFactory_1F_CellPanel {
         releaseall
         end
     }
+    // The cell Aron is hidden until the lockout is disabled. Do not move
+    // or wait on it on an early interaction or after the family has left.
+    faceplayer
+    playse(SE_PIN)
+    applymovement(25, moves(emote_question_mark jump_in_place_down))
+    waitmovement(25)
+    delay(120)
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
     applymovement(25, moves(face_up))
     waitmovement(25)
     playse(SE_PIN)
@@ -636,18 +640,35 @@ script SteelFactory_1F_CellPanel_PostBattle {
 
 script SteelFactory_1F_ControlPanel {
     lock
+    msgbox(SteelFactory_ControllerEvidence_Text)
     msgbox(SteelFactory_1F_ControlPanel_Text)
+    release
+}
+
+// Map handoff: attach this to the terminal OUTSIDE the new Regice bay.
+// It remains readable after transport and never changes the Scanner item.
+script SteelFactory_1F_RegiceEvidence {
+    lock
+    msgbox(SteelFactory_ControllerEvidence_Text)
     release
 }
 
 // ─── TEXT ───
 
 text SteelFactory_1F_ControlPanel_Text {
-    format("SPECIMEN MANAGEMENT REPORT - LAIRON UNIT\p- Lairon specimens are bred on-site across three generation cycles.\pPrimary function: consumption of impurity-heavy ore.\pDigestive processing yields a refined iron output that exceeds all known industrial alternatives.\pSpecimens are housed in sealed containment bays.\pDeployment to the work floor occurs in scheduled intervals only.\pExtended unsupervised contact with personnel is not permitted.\p- Compliance protocol: Magnemite units are stationed at the main entrance.\pSpecimens that resist handling or refuse to process ore are subject to low-voltage deterrent discharge.\pRate of non-compliance has decreased significantly since protocol implementation.\pNote: specimens show elevated stress indicators during transition periods.\pThis is expected and does not affect output quality.-")
+    format("SPECIMEN MANAGEMENT REPORT - LAIRON UNIT\pLairon process impurity-heavy ore for the steelworks. Selected output is reserved for portable containment frames.\pSpecimens are bred and housed on-site. Deployment to the work floor occurs in scheduled intervals only.\pFive relay machines broadcast the work commands and maintain the cell-panel lockout. Magnemite units supply the network.\pSpecimens resisting commands are subjected to deterrent discharge.\pReported effects: worn teeth, stress fractures, exhaustion.\pSupervisor's note: maintain production until dispatch. Do not retire specimens without authorization.")
+}
+
+text SteelFactory_ControllerEvidence_Text {
+    format("FACULTY CONTROLLER DEVELOPMENT\pCoastal transmitter: early broadcast model. Crabhill field trial interrupted by an unidentified signal disturbance.\pWork-floor model: five fixed relays synchronize commands and maintain the worker-cell lockout.\pLegendary model: reinforced portable frame, isolated controller, independent power supply.\pREGICE transfer from the Lion Mountain ice chamber: complete. Shipping authorization: THE RECTOR.\pDisconnecting the work-floor relays does not disable the portable frame.\pThe transmitter housing in the diagram matches the damaged device Jacob recovered.\pThe Scanner is evidence of the same technology. It cannot send commands to these controllers.")
+}
+
+text SteelFactory_WorkerNetwork_Text {
+    format("A maintenance notice is fixed to the machine:\pWORKER-CELL NETWORK: five relay connections. Isolate all five before using the release panel.\pREGICE TRANSPORT: independent controller and power supply. Unaffected by work-floor shutdown.\pThe small ARON keeps looking from the cables toward the cells.")
 }
 
 text SteelFactory_1F_Scientist_Lore1_Text {
-    format("The Regi-Metal alloy is our greatest achievement.\pBy replicating the elemental forging process Regigigas used in Lions Mountains, we create a material that channels legendary energy.\pThe Faculty will bring true order to Tessera. Diversity has had its chance. Now it is structure's turn.")
+    format("The steelworks still fills ordinary orders. Rails, beams, machinery.\pA small part of the output goes into our containment frames.\pYou would be amazed how much research you can hide inside a perfectly respectable production schedule.")
 }
 
 text SteelFactory_1F_Scientist_Lore2_Text {
@@ -655,15 +676,15 @@ text SteelFactory_1F_Scientist_Lore2_Text {
 }
 
 text SteelFactory_1F_Scientist_Lore3_Text {
-    format("The ore from Lions Mountains is unlike anything we've catalogued.\pDense with ancient energy.\pThe Pokemon here can sense it - it makes them... compliant.\pThat's what The Rector calls it. Compliant.")
+    format("The workers move when the relays pulse. Stop when they pulse again.\pThe Rector calls that compliance.\pIt's the controller doing it. The ore doesn't make them want to work here.")
 }
 
 text SteelFactory_1F_Scientist_Lore4_Text {
-    format("Registeel is just a small piece of the puzzle.\pHowever, it does help us build metal structures that can bring order to even the most chaotic places.\pThe Rector seems to have found a way to incentivize it.\pI try not to think about the details.")
+    format("REGISTEEL taught our researchers a great deal about containing a legendary POKéMON.\pNow they've brought REGICE down from the mountain for the next tests.\pThe frame limits its movement. The controller forces a few simple responses.\pThey call each response a success. I try not to look at the specimen when they say it.")
 }
 
 text SteelFactory_1F_Scientist_Lore5_Text {
-    format("The electro-magnetic resonance from the Magnemite cluster amplifies the metal's conductivity tenfold.\pAdd the origin of the ore to the equation and we're making something the Regis would recognize as their own.")
+    format("That MAGNEMITE cluster supplies the work-floor relays. Five machines, one command network.\pThe portable frames have separate power supplies.\pA shipping controller must keep running even when this building is switched off. That's the specification.")
 }
 
 text SteelFactory_1F_Official_Lore1_Text {
@@ -740,11 +761,11 @@ text SteelFactory_1F_Official3_PostBattle {
 
 
 text SteelFactory_1F_Panel_Prompt {
-    format("POKEMON CONTAINMENT OVERRIDE - EMERGENCY RELEASE -\pDecades of Pokemon are held in these bays, forced to power the facility. Machop, Aron, Magnemite... and something much larger.\pDo you release them?")
+    format("WORKER-CELL OVERRIDE - EMERGENCY RELEASE\pThe ARON and LAIRON held in these bays are forced to process ore for containment frames.\pThis panel controls the worker cells only.\pDo you release them?")
 }
 
 text SteelFactory_1F_Panel_FreeSequence {
-    format("You engage the override.\pA deep rumble moves through the floor.\pThe bay doors grind open.\pOne by one, the Pokemon stir - confused, then alert.\pThey look at you.\pThen they scatter into the vents and corridors, gone in seconds.\pThe machines fall silent.")
+    format("You engage the override.\pThe worker-cell doors grind open.\pOne by one, the POKéMON stir - confused, then alert.\pThey scatter into the corridors.\pThe relay machines remain silent. This production line has lost its captive workers.")
 }
 
 text SteelFactory_1F_Panel_MewFree {
@@ -768,7 +789,7 @@ text SteelFactory_1F_Panel_AlreadyLeft {
 }
 
 text SteelFactory_Wire_Prompt {
-    format("A thick cable runs from this machine into the wall.\pIt looks like it keeps something running.\pDisconnect the wire?")
+    format("A thick cable links this relay to the worker-control network.\pDisconnect the wire?")
 }
 
 text SteelFactory_Wire_AlreadyPulled {
@@ -792,15 +813,15 @@ text SteelFactory_Wire3_PulledText {
 }
 
 text SteelFactory_Wire4_PulledText {
-    format("The thick cable pulls free with a hollow click.\pSomewhere above, a light flickers out.")
+    format("The thick cable pulls free with a hollow click.\pAnother worker-control relay goes dark.")
 }
 
 text SteelFactory_Wire5_PulledText {
-    format("The last cable.\pYou pull it free. Click.\pA deep silence falls over the machines around you.")
+    format("The last cable.\pYou pull it free. Click.\pThe work commands stop. The five relay machines are silent.")
 }
 
 text SteelFactory_AllWires_Text {
-    format("A low groan of shifting metal...\pDeep in the factory, something heavy has moved.")
+    format("A low groan of shifting metal...\pThe worker-cell lockout disengages. The release panel can now be reached.")
 }
 
 text SteelFactory_Aron_Interact_Text {
@@ -808,7 +829,7 @@ text SteelFactory_Aron_Interact_Text {
 }
 
 text SteelFactory_AronIntro_Text {
-    format("... the small Aron seems stressed.\pIt seems desperate to show you something.\pFollow it? The Rector might escape...")
+    format("The small ARON trembles. It keeps glancing toward the cells.\pIt seems desperate to show you something.\pFollow it?")
 }
 
 text SteelFactory_AronFollow_Text {
@@ -832,7 +853,7 @@ text SteelFactory_1F_CellPanel_AlreadyFreed {
 }
 
 text SteelFactory_1F_CellPanel_NotReady {
-    format("A reinforced control panel.\pIt's on lockdown. The internal power must still be running.")
+    format("A reinforced control panel.\pThe worker-network lockout is active. All five relay connections must be disconnected first.")
 }
 
 text SteelFactory_1F_CellPanel_Prompt {

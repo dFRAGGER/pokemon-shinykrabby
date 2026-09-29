@@ -110,8 +110,11 @@ SteelFactory_1F_OnTransition_40:
 
 
 SteelFactory_1F_Aron_Interact::
-	call SteelFactory_1F_CellPanel
-	end
+	lock
+	faceplayer
+	msgbox SteelFactory_Aron_Interact_Text, MSGBOX_AUTOCLOSE
+	release
+	return
 
 
 SteelFactory_1F_AronIntro::
@@ -129,8 +132,8 @@ SteelFactory_1F_AronIntro_7:
 	playse SE_PIN
 	applymovement 18, SteelFactory_1F_AronIntro_Movement_4
 	waitmovement 0
+	msgbox SteelFactory_WorkerNetwork_Text, MSGBOX_AUTOCLOSE
 	msgbox SteelFactory_AronIntro_Text, MSGBOX_YESNO
-	msgbox SteelFactory_1F_AronIntro_Text_0, MSGBOX_AUTOCLOSE
 	compare VAR_RESULT, YES
 	goto_if_eq SteelFactory_1F_AronIntro_11
 	applymovement 18, SteelFactory_1F_AronIntro_Movement_9
@@ -570,14 +573,14 @@ SteelFactory_CheckAllWires_17:
 
 SteelFactory_1F_CellPanel::
 	lockall
+	goto_if_set FLAG_STEEL_FACTORY_FREED_POKEMON, SteelFactory_1F_CellPanel_2
+	goto_if_unset FLAG_STEEL_FACTORY_ALL_WIRES_PULLED, SteelFactory_1F_CellPanel_5
 	faceplayer
 	playse SE_PIN
 	applymovement 25, SteelFactory_1F_CellPanel_Movement_0
 	waitmovement 25
 	delay 120
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-	goto_if_set FLAG_STEEL_FACTORY_FREED_POKEMON, SteelFactory_1F_CellPanel_2
-	goto_if_unset FLAG_STEEL_FACTORY_ALL_WIRES_PULLED, SteelFactory_1F_CellPanel_5
 	applymovement 25, SteelFactory_1F_CellPanel_Movement_1
 	waitmovement 25
 	playse SE_PIN
@@ -754,7 +757,15 @@ SteelFactory_1F_CellPanel_PostBattle::
 
 SteelFactory_1F_ControlPanel::
 	lock
+	msgbox SteelFactory_ControllerEvidence_Text
 	msgbox SteelFactory_1F_ControlPanel_Text
+	release
+	return
+
+
+SteelFactory_1F_RegiceEvidence::
+	lock
+	msgbox SteelFactory_ControllerEvidence_Text
 	release
 	return
 
@@ -1235,51 +1246,74 @@ SteelFactory_1F_CellPanel_PostBattle_Movement_17:
 	walk_fast_up
 	step_end
 
-SteelFactory_1F_AronIntro_Text_0:
-	.string "The Aron scuttled away!$"
-
 SteelFactory_1F_CellPanel_PostBattle_Text_0:
 	.string "I'm telling you, don't do it!$"
 
 SteelFactory_1F_ControlPanel_Text::
 	.string "SPECIMEN MANAGEMENT REPORT - LAIRON\n"
 	.string "UNIT\p"
-	.string "- Lairon specimens are bred on-site\n"
-	.string "across three generation cycles.\p"
-	.string "Primary function: consumption of\n"
-	.string "impurity-heavy ore.\p"
-	.string "Digestive processing yields a refined\n"
-	.string "iron output that exceeds all known\l"
-	.string "industrial alternatives.\p"
-	.string "Specimens are housed in sealed\n"
-	.string "containment bays.\p"
-	.string "Deployment to the work floor occurs in\n"
+	.string "Lairon process impurity-heavy ore for\n"
+	.string "the steelworks. Selected output is\l"
+	.string "reserved for portable containment\l"
+	.string "frames.\p"
+	.string "Specimens are bred and housed on-site.\n"
+	.string "Deployment to the work floor occurs in\l"
 	.string "scheduled intervals only.\p"
-	.string "Extended unsupervised contact with\n"
-	.string "personnel is not permitted.\p"
-	.string "- Compliance protocol: Magnemite units\n"
-	.string "are stationed at the main entrance.\p"
-	.string "Specimens that resist handling or\n"
-	.string "refuse to process ore are subject to\l"
-	.string "low-voltage deterrent discharge.\p"
-	.string "Rate of non-compliance has decreased\n"
-	.string "significantly since protocol\l"
-	.string "implementation.\p"
-	.string "Note: specimens show elevated stress\n"
-	.string "indicators during transition periods.\p"
-	.string "This is expected and does not affect\n"
-	.string "output quality.-$"
+	.string "Five relay machines broadcast the work\n"
+	.string "commands and maintain the cell-panel\l"
+	.string "lockout. Magnemite units supply the\l"
+	.string "network.\p"
+	.string "Specimens resisting commands are\n"
+	.string "subjected to deterrent discharge.\p"
+	.string "Reported effects: worn teeth, stress\n"
+	.string "fractures, exhaustion.\p"
+	.string "Supervisor's note: maintain production\n"
+	.string "until dispatch. Do not retire specimens\l"
+	.string "without authorization.$"
+
+SteelFactory_ControllerEvidence_Text::
+	.string "FACULTY CONTROLLER DEVELOPMENT\p"
+	.string "Coastal transmitter: early broadcast\n"
+	.string "model. Crabhill field trial interrupted\l"
+	.string "by an unidentified signal disturbance.\p"
+	.string "Work-floor model: five fixed relays\n"
+	.string "synchronize commands and maintain the\l"
+	.string "worker-cell lockout.\p"
+	.string "Legendary model: reinforced portable\n"
+	.string "frame, isolated controller, independent\l"
+	.string "power supply.\p"
+	.string "REGICE transfer from the Lion Mountain\n"
+	.string "ice chamber: complete. Shipping\l"
+	.string "authorization: THE RECTOR.\p"
+	.string "Disconnecting the work-floor relays\n"
+	.string "does not disable the portable frame.\p"
+	.string "The transmitter housing in the diagram\n"
+	.string "matches the damaged device Jacob\l"
+	.string "recovered.\p"
+	.string "The Scanner is evidence of the same\n"
+	.string "technology. It cannot send commands to\l"
+	.string "these controllers.$"
+
+SteelFactory_WorkerNetwork_Text::
+	.string "A maintenance notice is fixed to the\n"
+	.string "machine:\p"
+	.string "WORKER-CELL NETWORK: five relay\n"
+	.string "connections. Isolate all five before\l"
+	.string "using the release panel.\p"
+	.string "REGICE TRANSPORT: independent\n"
+	.string "controller and power supply.\l"
+	.string "Unaffected by work-floor shutdown.\p"
+	.string "The small ARON keeps looking from the\n"
+	.string "cables toward the cells.$"
 
 SteelFactory_1F_Scientist_Lore1_Text::
-	.string "The Regi-Metal alloy is our greatest\n"
-	.string "achievement.\p"
-	.string "By replicating the elemental forging\n"
-	.string "process Regigigas used in Lions\l"
-	.string "Mountains, we create a material that\l"
-	.string "channels legendary energy.\p"
-	.string "The Faculty will bring true order to\n"
-	.string "Tessera. Diversity has had its chance.\l"
-	.string "Now it is structure's turn.$"
+	.string "The steelworks still fills ordinary\n"
+	.string "orders. Rails, beams, machinery.\p"
+	.string "A small part of the output goes into our\n"
+	.string "containment frames.\p"
+	.string "You would be amazed how much research\n"
+	.string "you can hide inside a perfectly\l"
+	.string "respectable production schedule.$"
 
 SteelFactory_1F_Scientist_Lore2_Text::
 	.string "This is a restricted area!\p"
@@ -1287,31 +1321,34 @@ SteelFactory_1F_Scientist_Lore2_Text::
 	.string "security!$"
 
 SteelFactory_1F_Scientist_Lore3_Text::
-	.string "The ore from Lions Mountains is unlike\n"
-	.string "anything we've catalogued.\p"
-	.string "Dense with ancient energy.\p"
-	.string "The Pokemon here can sense it - it\n"
-	.string "makes them... compliant.\p"
-	.string "That's what The Rector calls it.\n"
-	.string "Compliant.$"
+	.string "The workers move when the relays pulse.\n"
+	.string "Stop when they pulse again.\p"
+	.string "The Rector calls that compliance.\p"
+	.string "It's the controller doing it. The ore\n"
+	.string "doesn't make them want to work here.$"
 
 SteelFactory_1F_Scientist_Lore4_Text::
-	.string "Registeel is just a small piece of the\n"
-	.string "puzzle.\p"
-	.string "However, it does help us build metal\n"
-	.string "structures that can bring order to\l"
-	.string "even the most chaotic places.\p"
-	.string "The Rector seems to have found a way\n"
-	.string "to incentivize it.\p"
-	.string "I try not to think about the details.$"
+	.string "REGISTEEL taught our researchers a\n"
+	.string "great deal about containing a\l"
+	.string "legendary POKéMON.\p"
+	.string "Now they've brought REGICE down from\n"
+	.string "the mountain for the next tests.\p"
+	.string "The frame limits its movement. The\n"
+	.string "controller forces a few simple\l"
+	.string "responses.\p"
+	.string "They call each response a success. I\n"
+	.string "try not to look at the specimen when\l"
+	.string "they say it.$"
 
 SteelFactory_1F_Scientist_Lore5_Text::
-	.string "The electro-magnetic resonance from\n"
-	.string "the Magnemite cluster amplifies the\l"
-	.string "metal's conductivity tenfold.\p"
-	.string "Add the origin of the ore to the\n"
-	.string "equation and we're making something\l"
-	.string "the Regis would recognize as their own.$"
+	.string "That MAGNEMITE cluster supplies the\n"
+	.string "work-floor relays. Five machines, one\l"
+	.string "command network.\p"
+	.string "The portable frames have separate\n"
+	.string "power supplies.\p"
+	.string "A shipping controller must keep running\n"
+	.string "even when this building is switched off.\l"
+	.string "That's the specification.$"
 
 SteelFactory_1F_Official_Lore1_Text::
 	.string "Teserra is a beautiful region.\p"
@@ -1405,24 +1442,24 @@ SteelFactory_1F_Official3_PostBattle::
 	.string "him, if you dare.$"
 
 SteelFactory_1F_Panel_Prompt::
-	.string "POKEMON CONTAINMENT OVERRIDE -\n"
-	.string "EMERGENCY RELEASE -\p"
-	.string "Decades of Pokemon are held in these\n"
-	.string "bays, forced to power the facility.\l"
-	.string "Machop, Aron, Magnemite... and something\l"
-	.string "much larger.\p"
+	.string "WORKER-CELL OVERRIDE - EMERGENCY\n"
+	.string "RELEASE\p"
+	.string "The ARON and LAIRON held in these bays\n"
+	.string "are forced to process ore for\l"
+	.string "containment frames.\p"
+	.string "This panel controls the worker cells\n"
+	.string "only.\p"
 	.string "Do you release them?$"
 
 SteelFactory_1F_Panel_FreeSequence::
 	.string "You engage the override.\p"
-	.string "A deep rumble moves through the floor.\p"
-	.string "The bay doors grind open.\p"
-	.string "One by one, the Pokemon stir -\n"
+	.string "The worker-cell doors grind open.\p"
+	.string "One by one, the POKéMON stir -\n"
 	.string "confused, then alert.\p"
-	.string "They look at you.\p"
-	.string "Then they scatter into the vents and\n"
-	.string "corridors, gone in seconds.\p"
-	.string "The machines fall silent.$"
+	.string "They scatter into the corridors.\p"
+	.string "The relay machines remain silent. This\n"
+	.string "production line has lost its captive\l"
+	.string "workers.$"
 
 SteelFactory_1F_Panel_MewFree::
 	.string "A soft cry echoes from somewhere deep\n"
@@ -1450,10 +1487,8 @@ SteelFactory_1F_Panel_AlreadyLeft::
 	.string "The Pokemon continue their labor.$"
 
 SteelFactory_Wire_Prompt::
-	.string "A thick cable runs from this machine\n"
-	.string "into the wall.\p"
-	.string "It looks like it keeps something\n"
-	.string "running.\p"
+	.string "A thick cable links this relay to the\n"
+	.string "worker-control network.\p"
 	.string "Disconnect the wire?$"
 
 SteelFactory_Wire_AlreadyPulled::
@@ -1484,28 +1519,30 @@ SteelFactory_Wire3_PulledText::
 SteelFactory_Wire4_PulledText::
 	.string "The thick cable pulls free with a hollow\n"
 	.string "click.\p"
-	.string "Somewhere above, a light flickers out.$"
+	.string "Another worker-control relay goes\n"
+	.string "dark.$"
 
 SteelFactory_Wire5_PulledText::
 	.string "The last cable.\p"
 	.string "You pull it free. Click.\p"
-	.string "A deep silence falls over the machines\n"
-	.string "around you.$"
+	.string "The work commands stop. The five relay\n"
+	.string "machines are silent.$"
 
 SteelFactory_AllWires_Text::
 	.string "A low groan of shifting metal...\p"
-	.string "Deep in the factory, something heavy\n"
-	.string "has moved.$"
+	.string "The worker-cell lockout disengages.\n"
+	.string "The release panel can now be reached.$"
 
 SteelFactory_Aron_Interact_Text::
 	.string "The Aron glances up at you, then turns\n"
 	.string "back to the machine.$"
 
 SteelFactory_AronIntro_Text::
-	.string "... the small Aron seems stressed.\p"
+	.string "The small ARON trembles. It keeps\n"
+	.string "glancing toward the cells.\p"
 	.string "It seems desperate to show you\n"
 	.string "something.\p"
-	.string "Follow it? The Rector might escape...$"
+	.string "Follow it?$"
 
 SteelFactory_AronFollow_Text::
 	.string "Hmm... must be something with the\n"
@@ -1536,8 +1573,9 @@ SteelFactory_1F_CellPanel_AlreadyFreed::
 
 SteelFactory_1F_CellPanel_NotReady::
 	.string "A reinforced control panel.\p"
-	.string "It's on lockdown. The internal power\n"
-	.string "must still be running.$"
+	.string "The worker-network lockout is active.\n"
+	.string "All five relay connections must be\l"
+	.string "disconnected first.$"
 
 SteelFactory_1F_CellPanel_Prompt::
 	.string "The Aron stares at the release panel,\n"

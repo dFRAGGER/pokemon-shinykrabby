@@ -312,32 +312,41 @@ DiscoBasement_Giel::
 	compare VAR_TEMP_0, 16
 	goto_if_eq DiscoBasement_Giel_6
 DiscoBasement_Giel_4:
+	compare VAR_TEMP_0, 17
+	goto_if_eq DiscoBasement_Giel_11
+DiscoBasement_Giel_9:
+	compare VAR_TEMP_0, 18
+	goto_if_eq DiscoBasement_Giel_16
+DiscoBasement_Giel_14:
 	delay 30
+	applymovement LOCALID_PLAYER, DiscoBasement_Giel_Movement_0
+	waitmovement
 	setspeaker DiscoBasement_Giel_Text_0
 	msgbox DiscoBasement_Giel_Text_3, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement 7, DiscoBasement_Giel_Movement_2
+	applymovement 7, DiscoBasement_Giel_Movement_4
 	waitmovement
 	setspeaker DiscoBasement_Giel_Text_0
 	msgbox DiscoBasement_Giel_Text_4, MSGBOX_AUTOCLOSE
 	waitmessage
 	playse SE_PIN
-	applymovement 4, DiscoBasement_Giel_Movement_3
+	applymovement 4, DiscoBasement_Giel_Movement_5
 	waitmovement
 	setspeaker NULL
 	msgbox DiscoBasement_Giel_Text_5
 	waitmessage
 	playse SE_PIN
-	applymovement 5, DiscoBasement_Giel_Movement_3
+	applymovement 5, DiscoBasement_Giel_Movement_5
 	waitmovement
 	msgbox DiscoBasement_Giel_Text_6
 	waitmessage
 	playse SE_PIN
-	applymovement 6, DiscoBasement_Giel_Movement_3
+	applymovement 6, DiscoBasement_Giel_Movement_5
 	waitmovement
 	msgbox DiscoBasement_Giel_Text_7, MSGBOX_AUTOCLOSE
 	waitmessage
-	applymovement 7, DiscoBasement_Giel_Movement_4
+	applymovement LOCALID_PLAYER, DiscoBasement_Giel_Movement_6
+	applymovement 7, DiscoBasement_Giel_Movement_7
 	waitmovement
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	setspeaker DiscoBasement_Giel_Text_0
@@ -350,16 +359,16 @@ DiscoBasement_Giel_4:
 	msgbox DiscoBasement_Giel_Text_10, MSGBOX_AUTOCLOSE
 	waitmessage
 	compare VAR_TEMP_0, 17
-	goto_if_eq DiscoBasement_Giel_11
-DiscoBasement_Giel_9:
-	applymovement LOCALID_PLAYER, DiscoBasement_Giel_Movement_6
-	applymovement 7, DiscoBasement_Giel_Movement_7
+	goto_if_eq DiscoBasement_Giel_21
+DiscoBasement_Giel_19:
+	applymovement LOCALID_PLAYER, DiscoBasement_Giel_Movement_9
+	applymovement 7, DiscoBasement_Giel_Movement_10
 	waitmovement
 	setflag FLAG_GIEL_LEFT_BASEMENT
 	removeobject 7
-	applymovement 4, DiscoBasement_Giel_Movement_8
-	applymovement 5, DiscoBasement_Giel_Movement_8
-	applymovement 6, DiscoBasement_Giel_Movement_8
+	applymovement 4, DiscoBasement_Giel_Movement_6
+	applymovement 5, DiscoBasement_Giel_Movement_6
+	applymovement 6, DiscoBasement_Giel_Movement_6
 	waitmovement
 	release
 	return
@@ -370,6 +379,7 @@ DiscoBasement_Giel_2:
 
 DiscoBasement_Giel_5:
 	applymovement LOCALID_PLAYER, DiscoBasement_Giel_Movement_1
+	waitmovement
 	goto DiscoBasement_Giel_4
 
 DiscoBasement_Giel_6:
@@ -378,13 +388,33 @@ DiscoBasement_Giel_6:
 	goto DiscoBasement_Giel_4
 
 DiscoBasement_Giel_10:
-	applymovement LOCALID_PLAYER, DiscoBasement_Giel_Movement_5
+	applymovement LOCALID_PLAYER, DiscoBasement_Giel_Movement_2
+	waitmovement
 	goto DiscoBasement_Giel_9
 
 DiscoBasement_Giel_11:
-	compare VAR_TEMP_1, 9
+	compare VAR_TEMP_1, 7
 	goto_if_eq DiscoBasement_Giel_10
 	goto DiscoBasement_Giel_9
+
+DiscoBasement_Giel_15:
+	applymovement LOCALID_PLAYER, DiscoBasement_Giel_Movement_3
+	waitmovement
+	goto DiscoBasement_Giel_14
+
+DiscoBasement_Giel_16:
+	compare VAR_TEMP_1, 8
+	goto_if_eq DiscoBasement_Giel_15
+	goto DiscoBasement_Giel_14
+
+DiscoBasement_Giel_20:
+	applymovement LOCALID_PLAYER, DiscoBasement_Giel_Movement_8
+	goto DiscoBasement_Giel_19
+
+DiscoBasement_Giel_21:
+	compare VAR_TEMP_1, 9
+	goto_if_eq DiscoBasement_Giel_20
+	goto DiscoBasement_Giel_19
 
 
 DiscoBasement_Dancer_1::
@@ -516,39 +546,53 @@ DiscoBasement_Giel_Movement_1:
 	step_end
 
 DiscoBasement_Giel_Movement_2:
+	walk_right
+	walk_down
+	walk_down
 	walk_left
+	face_left
 	step_end
 
 DiscoBasement_Giel_Movement_3:
+	walk_down
+	walk_left
+	face_left
+	step_end
+
+DiscoBasement_Giel_Movement_4:
+	walk_left
+	step_end
+
+DiscoBasement_Giel_Movement_5:
 	emote_exclamation_mark
 	face_right
 	step_end
 
-DiscoBasement_Giel_Movement_4:
+DiscoBasement_Giel_Movement_6:
+	face_up
+	step_end
+
+DiscoBasement_Giel_Movement_7:
 	walk_right
 	face_player
 	step_end
 
-DiscoBasement_Giel_Movement_5:
+DiscoBasement_Giel_Movement_8:
 	jump_right
 	face_down
 	step_end
 
-DiscoBasement_Giel_Movement_6:
+DiscoBasement_Giel_Movement_9:
 	face_down
 	step_end
 
-DiscoBasement_Giel_Movement_7:
+DiscoBasement_Giel_Movement_10:
 	walk_down
 	walk_down
 	walk_down
 	walk_down
 	walk_down
 	walk_down
-	step_end
-
-DiscoBasement_Giel_Movement_8:
-	face_up
 	step_end
 
 DiscoBasement_TunnelEntrance_Check_Movement_0:
@@ -633,16 +677,20 @@ DiscoBasement_DJ_Peter_Text_9:
 	.string "But throwing someone into a pit...$"
 
 DiscoBasement_DJ_Peter_Text_10:
-	.string "And they've already moved everything\n"
-	.string "to the factory.\p"
-	.string "This is escalating faster than I\n"
-	.string "thought.$"
+	.string "REGICE? A living POKéMON in that sealed\n"
+	.string "transport?\p"
+	.string "I saw them bring it into the steelworks.\n"
+	.string "They cleared the whole loading yard for\l"
+	.string "it.\p"
+	.string "I thought it was another machine.$"
 
 DiscoBasement_DJ_Peter_Text_11:
-	.string "I've been watching those people dig\n"
-	.string "into those mountains for months.\p"
-	.string "Every week the shipments get bigger.\p"
-	.string "Every week the tremors get worse.$"
+	.string "I've watched their ore shipments for\n"
+	.string "months.\p"
+	.string "This one was different. Cables running\n"
+	.string "into the load, guards on every side.\p"
+	.string "I don't know what they're doing to it.\n"
+	.string "But I know a way into that building.$"
 
 DiscoBasement_DJ_Peter_Text_12:
 	.string "I can't sit on this anymore.\p"
@@ -729,8 +777,12 @@ DiscoBasement_DJ_Peter_Text_23:
 
 DiscoBasement_DJ_Peter_Text_24:
 	.string "Come back sometime, yeah?\p"
-	.string "There's more down here than just good\n"
-	.string "music.\p"
+	.string "Lionsarch City has been in a tough spot\n"
+	.string "lately, since The Facutly took over the\l"
+	.string "steel plant there has been to much\l"
+	.string "steel on steel and to few disco music.\p"
+	.string "But there's more down here than just\n"
+	.string "good music.\p"
 	.string "You talk to the right people... you'd be\n"
 	.string "surprised what doors open.$"
 
@@ -902,7 +954,7 @@ DiscoBasement_Giel_Text_10:
 	.string "I'm done with this city!\p"
 	.string "The disco scene here is TERRIBLE\n"
 	.string "anyway!\p"
-	.string "I'm going back to Hezik City where\n"
+	.string "I'm going back to HEZIK TOWN where\n"
 	.string "people actually have CULTURE!$"
 
 DiscoBasement_Dancer_1_Text_0:

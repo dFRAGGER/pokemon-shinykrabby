@@ -21,7 +21,7 @@ text EastLionMountain_Text_AlbertDefeated {
 }
 
 text EastLionMountain_Text_AlbertPostBattle {
-    format("Fine, you've beaten me, but it won't matter.\pThese mountains hold a secret older than civilization itself.\pRegigigas, the Colossal Pokemon, created its servants here!\pThe metals we need to control those ancient Golems are nearly ours!")
+    format("Our permits say mineral extraction.\pThey don't say you can wander into the sealed ice chambers.\pThe freight has already gone down to the steelworks. You're interfering with the cleanup.")
 }
 
 // FACULTY MEMBER 2 - Patrols the area
@@ -40,7 +40,7 @@ text EastLionMountain_Text_SamuelDefeated {
 }
 
 text EastLionMountain_Text_SamuelPostBattle {
-    format("You don't understand what's at stake!\pThe Lion Mountains contain hard rock, eternal ice, and hidden magma...\pThe same primordial materials Regigigas used to forge its Golems!\pWith the right apparatus, we can bend Regirock, Regice, and Registeel to our will!")
+    format("The oldest ice in this mountain never thawed. Something was resting inside it.\pWe needed a containment frame, not an ore cart.\pThat's all I'm authorized to tell you.")
 }
 
 // REGULAR TRAINER - A hiker who witnessed the Faculty
@@ -63,7 +63,7 @@ text EastLionMountain_Text_VitoDefeated {
 }
 
 text EastLionMountain_Text_VitoPostBattle {
-    format("Those people in the suits... they've been drilling day and night.\pThe tremors are getting worse.\pI overheard them talking about 'Regigigas' and 'controlling the Golems'...\pSomething about this mountain being where the Golems were created long ago.")
+    format("Those people in the suits have been drilling through ancient ice, day and night.\pThe tremors get worse every time they start the machines.\pYesterday a sealed load came down the trail. No loose stone. No ore dust.\pWhy does a mining company need guards around a single piece of freight?")
 }
 
 text EastLionMountain_Text_VitoPostBattle_After {
@@ -78,7 +78,7 @@ script EastLionMountain_Worried_Hiker_Convo {
     lock
     faceplayer
     if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
-        msgbox(format("Those suited folks left empty-handed, it seems.\pWhatever they were searching for in these mountains...\pthe mountain kept its secrets.\pMy grandfather would be relieved to hear it."), MSGBOX_AUTOCLOSE)
+        msgbox(format("The drilling crews have left.\pBut a sealed transport went down to the factory before they packed up.\pMy grandfather told me a guardian slept in the old ice.\pI wish I knew whether it was still there."), MSGBOX_AUTOCLOSE)
     } else {
         msgbox(format("I've lived near these mountains my whole life.\pMy grandfather told me stories about Regigigas creating guardians here.\pIt shaped them from the mountain's stone, ice, and volcanic iron...\pIf those suited folks really found a way to control those ancient beings..."), MSGBOX_AUTOCLOSE)
     }
@@ -92,7 +92,7 @@ script EastLionMountain_Scared_Woman_Convo {
     if(flag(FLAG_HIDE_FACULTY_AT_WESTLION_MINE)){
         msgbox(format("The tremors stopped!\pNot a single one since those researchers packed up and left.\pI actually slept through the night for the first time in weeks.\pThank you, whoever you are!"), MSGBOX_AUTOCLOSE)
     } else {
-        msgbox(format("My house down in the valley has been shaking every few hours!\pThe tremors started when those 'researchers' showed up.\pThey say they're studying the 'birthplace of the Golems'...\pPlease, if you're going in there, make them stop!"), MSGBOX_AUTOCLOSE)
+        msgbox(format("My house down in the valley has been shaking every few hours!\pThe tremors started when those 'researchers' began drilling through the old ice.\pThey say their mining permit covers it.\pDoes it cover bringing the mountain down on us too?"), MSGBOX_AUTOCLOSE)
     }
     release
     end

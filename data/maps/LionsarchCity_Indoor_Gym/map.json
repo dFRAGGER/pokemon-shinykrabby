@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_SKIER_F_HNS",
       "x": 15,
       "y": 14,
       "elevation": 0,
@@ -28,7 +28,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_SKIER_M_DP",
       "x": 5,
       "y": 16,
       "elevation": 0,
@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_SKIER_M_DP",
       "x": 17,
       "y": 11,
       "elevation": 0,
@@ -54,7 +54,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_SKIER_M_DP",
       "x": 23,
       "y": 23,
       "elevation": 0,
@@ -67,7 +67,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_SKIER_F_HNS",
       "x": 10,
       "y": 22,
       "elevation": 0,
@@ -80,7 +80,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GRETA",
+      "graphics_id": "OBJ_EVENT_GFX_WINONA",
       "x": 6,
       "y": 5,
       "elevation": 0,
@@ -93,7 +93,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GRETA",
+      "graphics_id": "OBJ_EVENT_GFX_WINONA",
       "x": 19,
       "y": 6,
       "elevation": 0,
@@ -155,28 +155,28 @@
       "x": 6,
       "y": 25,
       "elevation": 0,
-      "weather": "COORD_EVENT_WEATHER_SNOW_BLIZZARD"
+      "weather": "COORD_EVENT_WEATHER_SNOW_HEAVY"
     },
     {
       "type": "weather",
       "x": 10,
       "y": 24,
       "elevation": 0,
-      "weather": "COORD_EVENT_WEATHER_SNOW_BLIZZARD"
+      "weather": "COORD_EVENT_WEATHER_SNOW_HEAVY"
     },
     {
       "type": "weather",
       "x": 16,
       "y": 23,
       "elevation": 0,
-      "weather": "COORD_EVENT_WEATHER_SNOW_BLIZZARD"
+      "weather": "COORD_EVENT_WEATHER_SNOW_HEAVY"
     },
     {
       "type": "weather",
       "x": 21,
       "y": 24,
       "elevation": 0,
-      "weather": "COORD_EVENT_WEATHER_SNOW_BLIZZARD"
+      "weather": "COORD_EVENT_WEATHER_SNOW_HEAVY"
     }
   ],
   "bg_events": [],

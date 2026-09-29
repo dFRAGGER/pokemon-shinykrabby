@@ -7,3 +7,163 @@ script Marshduke_Library_Sign{
     release
     end
 }
+
+// Staging rows: reposition in Porymap before playtesting.
+
+script MarshDukeCity_NPC_RangerHuts {
+    lock
+    faceplayer
+    msgbox(format("There are some little huts in the estuary to spy on wild Pokémon!\pEvery hut looks out on something different. Trees, reeds, ponds...\pI checked every single one and still missed the Pokémon I came for!"))
+    release
+    end
+}
+
+script MarshDukeCity_NPC_ResearchDirections {
+    lock
+    faceplayer
+    msgbox(format("Our research centre studies the Mega Alakazam in the cathedral. And the six altars, too!\pThe monks help us out. They taught us how to sit still for hours.\pWe taught them how to label their jars.\p...They're still working on that part."))
+    release
+    end
+}
+
+script MarshDukeCity_NPC_LibraryVisitor {
+    lock
+    faceplayer
+    msgbox(format("I went to the library to read up on the history of my street.\pTurns out it used to be a river!\pThat explains why my basement is always wet..."))
+    release
+    end
+}
+
+script MarshDukeCity_NPC_Pilgrim {
+    lock
+    faceplayer
+    if (flag(FLAG_MARSHDUKE_CATHEDRAL_TOUR)) {
+        msgbox(format("The scholars say one thing. The monks say another. Even my own notes changed their mind twice!\pWell, at least the Rememberer hasn't tried to sell me a book yet."))
+    } else {
+        msgbox(format("I came all this way to find out what the Rememberer sees.\pEvery scholar I ask gives me a different answer! And none of them can make this line move any faster..."))
+    }
+    release
+    end
+}
+
+script MarshDukeCity_NPC_DeltaResident {
+    lock
+    faceplayer
+    msgbox(format("My dad always said Marshduke is a city built on islands. My mom said it's a city built on repairs!\pThey met on the bridge committee. I guess they were both right!"))
+    release
+    end
+}
+
+script MarshDukeCity_NPC_CemeteryDirections {
+    lock
+    faceplayer
+    msgbox(format("The cathedral gardens have a little graveyard, right here in the city.\pThere's an old fellow there who knows everything about plants.\pAsk him what time it is, and he'll tell you which flower is blooming!"))
+    release
+    end
+}
+
+script MarshDukeCity_NPC_OldFisherman {
+    lock
+    faceplayer
+    msgbox(format("When I was a boy, this river had so many fish you couldn't even see the bottom!\pNow I can see the bottom just fine. I can see my old boot down there, too."))
+    release
+    end
+}
+
+script MarshDukeCity_NPC_BirdCounter {
+    lock
+    faceplayer
+    msgbox(format("I'm counting bird Pokémon for my school project! So far I've seen three Pidgey!\pGrandpa says that's nothing. He says the sky used to be so full of birds it looked like it was moving.\pI think Grandpa just forgot his glasses."))
+    release
+    end
+}
+
+script MarshDukeCity_NPC_MonkErrand {
+    lock
+    faceplayer
+    msgbox(format("Brother Andre sent me into town to buy a new mop.\pHe says a clean floor makes for a clear mind.\pHe's mopped the same spot every morning for twenty years. That spot must be super wise by now."))
+    release
+    end
+}
+
+script MarshDukeCity_NPC_BridgeWorker {
+    lock
+    faceplayer
+    msgbox(format("Every spring, the river moves the islands a little bit. So every spring, we move the bridges a little bit!\pIt's the slowest race in all of Tessera. And the river's winning!"))
+    release
+    end
+}
+
+script MarshDukeCity_NPC_Tourist {
+    lock
+    faceplayer
+    msgbox(format("I came all this way to see the Rememberer! They say it's been sitting in the same spot for 10,000 years.\pI can't even sit still through a whole lunch!"))
+    release
+    end
+}
+
+script MarshDukeCity_NPC_WooperGirl {
+    lock
+    faceplayer
+    msgbox(format("This is my Wooper! It loves the mud in the delta more than anything.\pI've given it a bath every day this week. It has never once stayed clean for more than a minute."))
+    applymovement(LOCALID_MARSHDUKE_WOOPER, moves(emote_heart jump_in_place_down))
+    waitmovement(0)
+    msgbox(format("See? It's proud of it!"))
+    release
+    end
+}
+
+script MarshDukeCity_Wooper {
+    lock
+    faceplayer
+    playmoncry(SPECIES_WOOPER, CRY_MODE_NORMAL)
+    msgbox(format("Wooper: Woo? Wooooo!\pIt's covered in mud from head to tail. It looks very happy about it."))
+    waitmoncry
+    release
+    end
+}
+
+script MarshDukeCity_NPC_BarboachBoy {
+    lock
+    faceplayer
+    msgbox(format("My Barboach can sense earthquakes! It starts wiggling like crazy whenever one is coming.\pIt also wiggles when it's hungry. And when it's bored. And when it sees a Magikarp.\pSo... we've had a lot of false alarms."))
+    applymovement(LOCALID_MARSHDUKE_BARBOACH, moves(emote_exclamation_mark jump_in_place_down jump_in_place_down))
+    waitmovement(0)
+    msgbox(format("Uh-oh, it's wiggling again! Earthquake or lunch? Only one way to find out..."))
+    release
+    end
+}
+
+script MarshDukeCity_Barboach {
+    lock
+    faceplayer
+    playmoncry(SPECIES_BARBOACH, CRY_MODE_NORMAL)
+    msgbox(format("Barboach: Bar-bar!\pIts whiskers are twitching. It's either sensing a tremor or smelling snacks."))
+    waitmoncry
+    release
+    end
+}
+
+script MarshDukeCity_NPC_NatuWatcher {
+    lock
+    faceplayer
+    msgbox(format("My Natu has been staring at the cathedral since breakfast.\pThe monks say Natu can see the past. Maybe it's watching the Rememberer!\pOr maybe it's asleep with its eyes open. I honestly can't tell."))
+    applymovement(LOCALID_MARSHDUKE_NATU, moves(emote_exclamation_mark face_up))
+    waitmovement(0)
+    msgbox(format("Oh! It blinked! That's the first time today!"))
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, moves(face_up))
+    waitmovement(0)
+    release
+    end
+}
+
+script MarshDukeCity_Natu {
+    lock
+    faceplayer
+    playmoncry(SPECIES_NATU, CRY_MODE_NORMAL)
+    msgbox(format("Natu: ...Tu.\pNatu is staring right through you. It still hasn't blinked."))
+    waitmoncry
+    release
+    end
+}

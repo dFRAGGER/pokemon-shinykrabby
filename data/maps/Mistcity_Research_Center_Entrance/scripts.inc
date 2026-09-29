@@ -488,8 +488,8 @@ Mistcity_Research_Center_Entrance_Rangers_Paras_Text_1:
 	.string "triggered by heavy seismic activity.$"
 
 Mistcity_Research_Center_Entrance_Rangers_Tropius_Text_0:
-	.string "It is happily munching on some Nanab\n"
-	.string "berries now.\p"
+	.string "It is happily munching on some LA White\n"
+	.string "Widow now.\p"
 	.string "That metallic grinding sound must have\n"
 	.string "ceased, because this big guy is totally\l"
 	.string "relaxed again.$"

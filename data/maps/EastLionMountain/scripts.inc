@@ -62,13 +62,12 @@ EastLionMountain_Sign_MiningCave::
 
 
 EastLionMountain_Worried_Hiker_Convo_Text_0:
-	.string "Those suited folks left empty-handed,\n"
-	.string "it seems.\p"
-	.string "Whatever they were searching for in\n"
-	.string "these mountains...\p"
-	.string "the mountain kept its secrets.\p"
-	.string "My grandfather would be relieved to\n"
-	.string "hear it.$"
+	.string "The drilling crews have left.\p"
+	.string "But a sealed transport went down to\n"
+	.string "the factory before they packed up.\p"
+	.string "My grandfather told me a guardian slept\n"
+	.string "in the old ice.\p"
+	.string "I wish I knew whether it was still there.$"
 
 EastLionMountain_Worried_Hiker_Convo_Text_1:
 	.string "I've lived near these mountains my\n"
@@ -92,11 +91,11 @@ EastLionMountain_Scared_Woman_Convo_Text_1:
 	.string "My house down in the valley has been\n"
 	.string "shaking every few hours!\p"
 	.string "The tremors started when those\n"
-	.string "'researchers' showed up.\p"
-	.string "They say they're studying the\n"
-	.string "'birthplace of the Golems'...\p"
-	.string "Please, if you're going in there, make\n"
-	.string "them stop!$"
+	.string "'researchers' began drilling through\l"
+	.string "the old ice.\p"
+	.string "They say their mining permit covers it.\p"
+	.string "Does it cover bringing the mountain\n"
+	.string "down on us too?$"
 
 EastLionMountain_Sign_MiningCave_Text_0:
 	.string "Faculty Excavation Site\n"
@@ -114,14 +113,12 @@ EastLionMountain_Text_AlbertDefeated::
 	.string "you're interfering with!$"
 
 EastLionMountain_Text_AlbertPostBattle::
-	.string "Fine, you've beaten me, but it won't\n"
-	.string "matter.\p"
-	.string "These mountains hold a secret older\n"
-	.string "than civilization itself.\p"
-	.string "Regigigas, the Colossal Pokemon,\n"
-	.string "created its servants here!\p"
-	.string "The metals we need to control those\n"
-	.string "ancient Golems are nearly ours!$"
+	.string "Our permits say mineral extraction.\p"
+	.string "They don't say you can wander into the\n"
+	.string "sealed ice chambers.\p"
+	.string "The freight has already gone down to\n"
+	.string "the steelworks. You're interfering with\l"
+	.string "the cleanup.$"
 
 EastLionMountain_Text_SamuelIntro::
 	.string "Another intruder?\p"
@@ -133,14 +130,11 @@ EastLionMountain_Text_SamuelDefeated::
 	.string "perfect!$"
 
 EastLionMountain_Text_SamuelPostBattle::
-	.string "You don't understand what's at stake!\p"
-	.string "The Lion Mountains contain hard rock,\n"
-	.string "eternal ice, and hidden magma...\p"
-	.string "The same primordial materials Regigigas\n"
-	.string "used to forge its Golems!\p"
-	.string "With the right apparatus, we can bend\n"
-	.string "Regirock, Regice, and Registeel to our\l"
-	.string "will!$"
+	.string "The oldest ice in this mountain never\n"
+	.string "thawed. Something was resting inside it.\p"
+	.string "We needed a containment frame, not an\n"
+	.string "ore cart.\p"
+	.string "That's all I'm authorized to tell you.$"
 
 EastLionMountain_Text_VitoIntro::
 	.string "Hey, you look like someone who can\n"
@@ -153,14 +147,15 @@ EastLionMountain_Text_VitoDefeated::
 	.string "Wow, you're the real deal!$"
 
 EastLionMountain_Text_VitoPostBattle::
-	.string "Those people in the suits... they've\n"
-	.string "been drilling day and night.\p"
-	.string "The tremors are getting worse.\p"
-	.string "I overheard them talking about\n"
-	.string "'Regigigas' and 'controlling the\l"
-	.string "Golems'...\p"
-	.string "Something about this mountain being\n"
-	.string "where the Golems were created long ago.$"
+	.string "Those people in the suits have been\n"
+	.string "drilling through ancient ice, day and\l"
+	.string "night.\p"
+	.string "The tremors get worse every time they\n"
+	.string "start the machines.\p"
+	.string "Yesterday a sealed load came down the\n"
+	.string "trail. No loose stone. No ore dust.\p"
+	.string "Why does a mining company need guards\n"
+	.string "around a single piece of freight?$"
 
 EastLionMountain_Text_VitoPostBattle_After::
 	.string "Those brown-suited folks are gone!\p"

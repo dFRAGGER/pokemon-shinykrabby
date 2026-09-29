@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_SK",
       "x": 3,
       "y": 11,
       "elevation": 0,
@@ -28,7 +28,7 @@
       "flag": "FLAG_STEEL_FACTORY_COMPLETE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_SK",
       "x": 6,
       "y": 26,
       "elevation": 0,

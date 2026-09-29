@@ -95,10 +95,10 @@ LionsarchCity_MarketStand_ExoticBerries::
 
 	.align 2
 LionsarchCity_Mart_ExoticBerries:
-	.2byte ITEM_LUM_BERRY
-	.2byte ITEM_POMEG_BERRY
-	.2byte ITEM_KELPSY_BERRY
-	.2byte ITEM_QUALOT_BERRY
+	.2byte ITEM_RAZZ_BERRY
+	.2byte ITEM_BLUK_BERRY
+	.2byte ITEM_NANAB_BERRY
+	.2byte ITEM_WEPEAR_BERRY
 	.2byte ITEM_NONE
 
 LionsarchCity_MarketStand_EasternSpices::
@@ -133,11 +133,10 @@ LionsarchCity_MarketStand_MountainGear::
 	.align 2
 LionsarchCity_Mart_MountainGear:
 	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_HYPER_POTION
-	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_REVIVE
+	.2byte ITEM_ICE_HEAL
+	.2byte ITEM_ESCAPE_ROPE
+	.2byte ITEM_REPEL
 	.2byte ITEM_SUPER_REPEL
-	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_NONE
 
 LionsarchCity_MarketStand_RareStones::
@@ -153,11 +152,9 @@ LionsarchCity_MarketStand_RareStones::
 
 	.align 2
 LionsarchCity_Mart_RareStones:
-	.2byte ITEM_FIRE_STONE
-	.2byte ITEM_WATER_STONE
-	.2byte ITEM_THUNDER_STONE
-	.2byte ITEM_LEAF_STONE
-	.2byte ITEM_MOON_STONE
+	.2byte ITEM_HARD_STONE
+	.2byte ITEM_EVERSTONE
+	.2byte ITEM_ICE_STONE
 	.2byte ITEM_NONE
 
 LionsarchCity_MarketStand_ImportedPokeBalls::
@@ -174,7 +171,6 @@ LionsarchCity_MarketStand_ImportedPokeBalls::
 	.align 2
 LionsarchCity_Mart_SpecialtyBalls:
 	.2byte ITEM_GREAT_BALL
-	.2byte ITEM_ULTRA_BALL
 	.2byte ITEM_NET_BALL
 	.2byte ITEM_NEST_BALL
 	.2byte ITEM_TIMER_BALL
@@ -193,10 +189,8 @@ LionsarchCity_MarketStand_SeaDelicacies::
 
 	.align 2
 LionsarchCity_Mart_Delicacies:
-	.2byte ITEM_LAVA_COOKIE
+	.2byte ITEM_FRESH_WATER
 	.2byte ITEM_SODA_POP
-	.2byte ITEM_LEMONADE
-	.2byte ITEM_MOOMOO_MILK
 	.2byte ITEM_NONE
 
 LionsarchCity_MarketStand_TreasureHunter::
@@ -212,10 +206,9 @@ LionsarchCity_MarketStand_TreasureHunter::
 
 	.align 2
 LionsarchCity_Mart_Treasures:
-	.2byte ITEM_STAR_PIECE
-	.2byte ITEM_NUGGET
+	.2byte ITEM_STARDUST
 	.2byte ITEM_PEARL
-	.2byte ITEM_BIG_PEARL
+	.2byte ITEM_PRETTY_FEATHER
 	.2byte ITEM_NONE
 
 LionsarchCity_FacultyGrunt_1::
@@ -523,36 +516,38 @@ LionsarchCity_RectorSendoff::
 	msgbox LionsarchCity_RectorSendoff_Text_9, MSGBOX_AUTOCLOSE
 	waitmessage
 	playmoncry SPECIES_SKARMORY, CRY_MODE_NORMAL
-	applymovement 37, LionsarchCity_RectorSendoff_Movement_18
+	applymovement 37, LionsarchCity_RectorSendoff_Movement_13
 	waitmovement
 	removeobject 37
-	applymovement 36, LionsarchCity_RectorSendoff_Movement_19
+	applymovement 36, LionsarchCity_RectorSendoff_Movement_18
 	waitmovement
 	removeobject 36
 	delay 60
 	addobject 40
 	playse SE_PIN
-	applymovement LOCALID_PLAYER, LionsarchCity_RectorSendoff_Movement_20
-	applymovement 40, LionsarchCity_RectorSendoff_Movement_21
+	applymovement LOCALID_PLAYER, LionsarchCity_RectorSendoff_Movement_19
+	applymovement 40, LionsarchCity_RectorSendoff_Movement_20
 	waitmovement
-	applymovement 40, LionsarchCity_RectorSendoff_Movement_22
+	applymovement 40, LionsarchCity_RectorSendoff_Movement_21
 	waitmovement
 	applymovement LOCALID_PLAYER, LionsarchCity_RectorSendoff_Movement_17
 	waitmovement
-	goto_if_set FLAG_STEEL_FACTORY_POKEMON_CAGED, LionsarchCity_RectorSendoff_2
+	goto_if_set FLAG_STEEL_FACTORY_FREED_POKEMON, LionsarchCity_RectorSendoff_2
 LionsarchCity_RectorSendoff_1:
-	goto_if_unset FLAG_STEEL_FACTORY_POKEMON_CAGED, LionsarchCity_RectorSendoff_5
+	goto_if_unset FLAG_STEEL_FACTORY_FREED_POKEMON, LionsarchCity_RectorSendoff_5
 LionsarchCity_RectorSendoff_4:
 	delay 90
 	playse SE_PIN
-	applymovement LOCALID_PLAYER, LionsarchCity_RectorSendoff_Movement_20
-	applymovement 40, LionsarchCity_RectorSendoff_Movement_25
+	applymovement LOCALID_PLAYER, LionsarchCity_RectorSendoff_Movement_19
+	applymovement 40, LionsarchCity_RectorSendoff_Movement_24
 	waitmovement
 	removeobject 40
 	delay 60
 	setflag FLAG_HIDE_LIONSARCH_RECTOR_SENDOFF
 	delay 60
-	pokenavcall LionsarchCity_RectorSendoff_Text_12
+	goto_if_set FLAG_STEEL_FACTORY_FREED_POKEMON, LionsarchCity_RectorSendoff_8
+	pokenavcall LionsarchCity_DaanFactoryNotRescued
+LionsarchCity_RectorSendoff_7:
 	waitmessage
 	setspeaker NULL
 	releaseall
@@ -561,7 +556,7 @@ LionsarchCity_RectorSendoff_4:
 LionsarchCity_RectorSendoff_2:
 	playmoncry SPECIES_MEW, CRY_MODE_NORMAL
 	waitmoncry
-	applymovement 40, LionsarchCity_RectorSendoff_Movement_23
+	applymovement 40, LionsarchCity_RectorSendoff_Movement_22
 	waitmovement
 	setspeaker NULL
 	msgbox LionsarchCity_RectorSendoff_Text_10, MSGBOX_AUTOCLOSE
@@ -571,12 +566,16 @@ LionsarchCity_RectorSendoff_2:
 LionsarchCity_RectorSendoff_5:
 	playmoncry SPECIES_MEW, CRY_MODE_NORMAL
 	waitmoncry
-	applymovement 40, LionsarchCity_RectorSendoff_Movement_24
+	applymovement 40, LionsarchCity_RectorSendoff_Movement_23
 	waitmovement
 	setspeaker NULL
 	msgbox LionsarchCity_RectorSendoff_Text_11, MSGBOX_AUTOCLOSE
 	waitmessage
 	goto LionsarchCity_RectorSendoff_4
+
+LionsarchCity_RectorSendoff_8:
+	pokenavcall LionsarchCity_DaanFactoryRescued
+	goto LionsarchCity_RectorSendoff_7
 
 
 LionsarchCity_FacultyGrunt_1_Movement_0:
@@ -694,6 +693,7 @@ LionsarchCity_RectorSendoff_Movement_12:
 	step_end
 
 LionsarchCity_RectorSendoff_Movement_13:
+	jump_down
 	jump_2_down
 	step_end
 
@@ -724,19 +724,14 @@ LionsarchCity_RectorSendoff_Movement_17:
 	step_end
 
 LionsarchCity_RectorSendoff_Movement_18:
-	jump_down
-	jump_2_down
-	step_end
-
-LionsarchCity_RectorSendoff_Movement_19:
 	fly_up
 	step_end
 
-LionsarchCity_RectorSendoff_Movement_20:
+LionsarchCity_RectorSendoff_Movement_19:
 	emote_question_mark
 	step_end
 
-LionsarchCity_RectorSendoff_Movement_21:
+LionsarchCity_RectorSendoff_Movement_20:
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
@@ -746,7 +741,7 @@ LionsarchCity_RectorSendoff_Movement_21:
 	walk_diag_southeast
 	step_end
 
-LionsarchCity_RectorSendoff_Movement_22:
+LionsarchCity_RectorSendoff_Movement_21:
 	face_up
 	lock_facing_direction
 	walk_right
@@ -756,15 +751,15 @@ LionsarchCity_RectorSendoff_Movement_22:
 	unlock_facing_direction
 	step_end
 
-LionsarchCity_RectorSendoff_Movement_23:
+LionsarchCity_RectorSendoff_Movement_22:
 	emote_heart
 	step_end
 
-LionsarchCity_RectorSendoff_Movement_24:
+LionsarchCity_RectorSendoff_Movement_23:
 	emote_x
 	step_end
 
-LionsarchCity_RectorSendoff_Movement_25:
+LionsarchCity_RectorSendoff_Movement_24:
 	walk_faster_down
 	walk_faster_down
 	walk_faster_down
@@ -830,7 +825,7 @@ LionsarchCity_DiscoPamphlet_3_Text_0:
 
 LionsarchCity_MarketStand_ExoticBerries_Text_0:
 	.string "Welcome to my humble stand!\p"
-	.string "I import the finest strands from the\n"
+	.string "I import the finest strains from the\n"
 	.string "tropical islands far to the south.\p"
 	.string "You won't find these in Siltroot Town!$"
 
@@ -851,10 +846,11 @@ LionsarchCity_MarketStand_MountainGear_Text_0:
 
 LionsarchCity_MarketStand_RareStones_Text_0:
 	.string "These stones came in on the morning\n"
-	.string "shipment from deep caves across the\l"
-	.string "region.\p"
-	.string "Perfect for trainers looking to evolve\n"
-	.string "their partners!$"
+	.string "shipment from caves across the region.\p"
+	.string "Most are useful for training or\n"
+	.string "collecting.\p"
+	.string "That Ice Stone is a local specialty from\n"
+	.string "the Lion Mountains!$"
 
 LionsarchCity_MarketStand_ImportedPokeBalls_Text_0:
 	.string "Fresh shipment just arrived from Silph\n"
@@ -864,16 +860,17 @@ LionsarchCity_MarketStand_ImportedPokeBalls_Text_0:
 
 LionsarchCity_MarketStand_SeaDelicacies_Text_0:
 	.string "Fresh from the harbor this morning!\p"
-	.string "Our Lava Cookies are baked using a\n"
-	.string "recipe from sailors who've traveled the\l"
-	.string "world.\p"
-	.string "Perfect for curing any ailment!$"
+	.string "Cold drinks and provisions brought in\n"
+	.string "by sailors from across the region.\p"
+	.string "Just the thing before a mountain\n"
+	.string "crossing!$"
 
 LionsarchCity_MarketStand_TreasureHunter_Text_0:
-	.string "I deal in rarities, kid.\p"
+	.string "I deal in curios, kid.\p"
 	.string "Things that wash up on distant shores\n"
-	.string "or get dug out of ancient ruins.\p"
-	.string "You got the cash, I got the goods.$"
+	.string "or turn up in old cargo holds.\p"
+	.string "Nothing priceless - just honest harbor\n"
+	.string "treasures.$"
 
 LionsarchCity_FacultyGrunt_1_Text_0:
 	.string "...if this ore shipment is late again the\n"
@@ -910,9 +907,11 @@ LionsarchCity_FacultyGrunt_3_Text_1:
 	.string "you'll regret!$"
 
 LionsarchCity_FacultyGrunt_4_Text_0:
-	.string "...dampening alloy, check... containment\n"
-	.string "frames, check... boss is gonna love this\l"
-	.string "batch...$"
+	.string "...containment frames, check...\n"
+	.string "independent supply, check...\p"
+	.string "Keep that priority load powered. The\n"
+	.string "mountain crew didn't bring it down here\l"
+	.string "to have it wake up on the dock.$"
 
 LionsarchCity_FacultyGrunt_4_Text_1:
 	.string "What in the - get OUT! Right NOW!\p"
@@ -1035,12 +1034,14 @@ LionsarchCity_NPC_NewsReporter_Text_0:
 	.string "had a story pulled that fast.$"
 
 LionsarchCity_NPC_NewsReporter_Text_1:
-	.string "I'm investigating the Faculty's\n"
-	.string "activities for the regional news\l"
-	.string "network.\p"
-	.string "They claim to be mining rare metals, but\n"
-	.string "their security is unusually tight.\p"
-	.string "What are they really doing in there?$"
+	.string "I'm investigating the Faculty for the\n"
+	.string "regional news network.\p"
+	.string "The steelworks has real customers. Real\n"
+	.string "jobs. But their latest excavation\l"
+	.string "follows ancient ice, not an ore seam.\p"
+	.string "And one sealed shipment got more\n"
+	.string "guards than a month's steel exports.\p"
+	.string "What came down from that mountain?$"
 
 LionsarchCity_NPC_GymTrainer_Text_0:
 	.string "You're heading into the Ice Gym?\p"
@@ -1092,15 +1093,19 @@ LionsarchCity_RectorSendoff_Text_1:
 	.string "You fought hard in there.\p"
 	.string "You are lucky my strongest pokemon are\n"
 	.string "on another mission...\p"
-	.string "But it looks like I stalled you long\n"
-	.string "enough for the ships to depart.$"
+	.string "REGICE's transfer began before our\n"
+	.string "meeting. Its portable controller never\l"
+	.string "needed the factory's relays.\p"
+	.string "You've stopped our work here. You\n"
+	.string "haven't stopped that shipment.$"
 
 LionsarchCity_RectorSendoff_Text_2:
 	.string "BARRY$"
 
 LionsarchCity_RectorSendoff_Text_3:
-	.string "YOU THERE, WE HAVE ENOUGH MATERIALS,\n"
-	.string "LETS MOVE!$"
+	.string "REGICE'S CONTAINMENT UNIT IS ABOARD!\p"
+	.string "KEEP THE CONTROLLER POWERED! WE'RE\n"
+	.string "LEAVING!$"
 
 LionsarchCity_RectorSendoff_Text_4:
 	.string "AND YOU TWO, LETS KEEP THOSE MUSCLES\n"
@@ -1139,50 +1144,58 @@ LionsarchCity_RectorSendoff_Text_11:
 	.string "...what are you...?\n"
 	.string "You look angry...$"
 
-LionsarchCity_RectorSendoff_Text_12:
-	.string "… … … … … …\n"
-	.string "… … … … … Beep!\p"
-	.string "Daan: {PLAYER}.\n"
-	.string "You're in Lionsarch?\p"
-	.string "Good. Talk to me.\n"
-	.string "What is happening there?\p"
+LionsarchCity_DaanFactoryRescued::
+	.string "Daan: {PLAYER}. You're safe? Tell me\n"
+	.string "what happened.\p"
 	.string "...\p"
+	.string "REGICE. Taken from the mountain\n"
+	.string "and shipped through the\l"
+	.string "steelworks.\p"
+	.string "And the controllers match Jacob's\n"
+	.string "damaged device? That's evidence\l"
+	.string "we can use.\p"
+	.string "The permits hid the extraction. The\n"
+	.string "factory built their restraints.\p"
+	.string "You freed the workers too? ARON\n"
+	.string "found its family? Good. Those lives\l"
+	.string "matter.\p"
+	.string "Helping them didn't cause the\n"
+	.string "shipment to leave. The portable\l"
+	.string "controller had its own power.\p"
+	.string "We need to interrupt its commands,\n"
+	.string "not just shut down a building.\p"
+	.string "You've stopped production there.\n"
+	.string "Jacob, Ali and I will examine the\l"
+	.string "design and trace the shipping\l"
+	.string "records.\p"
+	.string "Head east to Marshduke for now.\n"
+	.string "Your next Gym is there.\p"
+	.string "We'll be in touch. Stay safe.$"
+
+LionsarchCity_DaanFactoryNotRescued::
+	.string "Daan: {PLAYER}. You're safe? Tell me\n"
+	.string "what happened.\p"
 	.string "...\p"
-	.string "...\p"
-	.string "They just LEFT?\n"
-	.string "With all of it?\p"
-	.string "...\p"
-	.string "Okay. Okay okay okay.\n"
-	.string "I'm not panicking.\p"
-	.string "...I might be panicking\n"
-	.string "a little.\p"
-	.string "We had no idea they were\n"
-	.string "even making these things.\p"
-	.string "The materials are gone and we\n"
-	.string "don't even know what they\l"
-	.string "are for.\p"
-	.string "Did you see where that Skarmory was\n"
-	.string "headed?\p"
-	.string "North? East? Out to sea?\p"
-	.string "...\p"
-	.string "Allright...\n"
-	.string "then we have nothing to go on.\p"
-	.string "...\p"
-	.string "You're right. You're right.\n"
-	.string "There's nothing left to do\l"
-	.string "there.\p"
-	.string "You stopped them using that\n"
-	.string "factory. That matters.\p"
-	.string "Head east for now.\n"
-	.string "Marshduke City. Your next\l"
-	.string "gym is there.\p"
-	.string "Keep moving. Jacob, Ali and I\n"
-	.string "are going to go through\l"
-	.string "everything you've told us.\p"
-	.string "Shipping routes, contacts,\n"
-	.string "the Rector's name...\l"
-	.string "there has to be something.\p"
-	.string "We'll be in touch,\n"
-	.string "{PLAYER}. Stay safe.\p"
-	.string "… … … … … …\n"
-	.string "… … … … … Click!$"
+	.string "REGICE. Taken from the mountain\n"
+	.string "and shipped through the\l"
+	.string "steelworks.\p"
+	.string "And the controllers match Jacob's\n"
+	.string "damaged device? That's evidence\l"
+	.string "we can use.\p"
+	.string "The permits hid the extraction. The\n"
+	.string "factory built their restraints.\p"
+	.string "The workers were still in their\n"
+	.string "cells? We'll include them in the\l"
+	.string "search. REGICE isn't the only life\l"
+	.string "they're carrying away.\p"
+	.string "The portable controller had its own\n"
+	.string "power. We need to interrupt its\l"
+	.string "commands, not just shut down a\l"
+	.string "building.\p"
+	.string "You've stopped production there.\n"
+	.string "Jacob, Ali and I will examine the\l"
+	.string "design and trace the shipping\l"
+	.string "records.\p"
+	.string "Head east to Marshduke for now.\n"
+	.string "Your next Gym is there.\p"
+	.string "We'll be in touch. Stay safe.$"

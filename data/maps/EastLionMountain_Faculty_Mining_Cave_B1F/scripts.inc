@@ -95,6 +95,7 @@ MiningCaveB1F_Barry_PostBattle::
 	setvar VAR_MINING_CAVE_STATE, 1
 	delay 120
 	warpsilent MAP_EAST_LION_MOUNTAIN_FACULTY_MINING_CAVE, 9, 10
+	waitstate
 	release
 	end
 
@@ -200,58 +201,79 @@ MiningCaveB1F_Barry_Battle_Text_1:
 	.string "YOU again?!\p"
 	.string "Don't you ever know when to quit?\p"
 	.string "...\p"
-	.string "It doesn't matter. We've already found\n"
-	.string "what we came for.\p"
-	.string "You're too late to change anything.$"
+	.string "It doesn't matter. I just got promoted\n"
+	.string "from intern to ADMINISTRATOR.\p"
+	.string "And you are still a little intern right?\p"
+	.string "HAHAHAHA!$"
 
 MiningCaveB1F_Barry_PostBattle_Text_0:
-	.string "Gah! This entire section is\n"
-	.string "destabilizing!\p"
-	.string "We might have digged to deep...$"
+	.string "Gah! The drilling cracked the ice\n"
+	.string "supports!\p"
+	.string "This entire section is destabilizing!$"
 
 MiningCaveB1F_Barry_PostBattle_Text_1:
 	.string "We gotta go!\p"
-	.string "Gather the others and move the\n"
-	.string "materials to the factory!$"
+	.string "REGICE is already at the factory. Get\n"
+	.string "the remaining equipment and transfer\l"
+	.string "records out!\p"
+	.string "Gather the others. Nobody stays down\n"
+	.string "here!$"
 
 MiningCaveB1F_Barry_PostBattle_Text_2:
 	.string "You honestely think I would let you\n"
-	.string "leave and try to ruin our plans again?\p"
+	.string "leave and try to ruin our plans for the\l"
+	.string "3rd time?\p"
 	.string "Take this, stupid intern!$"
 
 MiningCaveB1F_Worker1_Convo_Text_0:
-	.string "These rock formations are\n"
-	.string "extraordinary...\p"
-	.string "The crystalline density here is off the\n"
-	.string "charts.\p"
-	.string "I've never seen anything like it in my\n"
-	.string "career.$"
+	.string "That chamber was sealed in ancient ice.\p"
+	.string "Our permit was for ore, but the orders\n"
+	.string "were very clear: preserve the specimen,\l"
+	.string "remove everything around it.\p"
+	.string "The support ice didn't survive the\n"
+	.string "drilling nearly as well.$"
 
 MiningCaveB1F_Worker2_Convo_Text_0:
-	.string "Something incredible passed through\n"
-	.string "this place long ago.\p"
-	.string "The deeper we excavate, the stronger\n"
-	.string "the energy readings become.\p"
-	.string "...I can't explain it. The instruments\n"
-	.string "just go wild.$"
+	.string "REGICE was intact when we uncovered it.\p"
+	.string "The containment crew took it to the\n"
+	.string "Lionsarch steelworks before this shift\l"
+	.string "started.\p"
+	.string "My job is to record what remains of the\n"
+	.string "chamber.\p"
+	.string "The instruments keep picking up the\n"
+	.string "drills. Or the ice cracking. It's getting\l"
+	.string "hard to tell.$"
 
 MiningCaveB1F_Worker3_Convo_Text_0:
-	.string "There are markings on the walls in this\n"
-	.string "deepest section.\p"
-	.string "Not writing exactly... more like\n"
-	.string "impressions.\p"
-	.string "As if something enormous pressed\n"
-	.string "against the rock itself.$"
+	.string "The hollow in the ice is where the\n"
+	.string "specimen rested.\p"
+	.string "Those newer scars are from the\n"
+	.string "transport frame.\p"
+	.string "We widened the passage to get it out.\n"
+	.string "The Administrator refused to wait for a\l"
+	.string "stability survey.$"
 
 MiningCaveB1F_Sign_DeepMine_Text_0:
-	.string "RESTRICTED - LEVEL B1\n"
-	.string "Administrator Access Only\n"
-	.string "- The sign bears a fresh Faculty emblem.$"
+	.string "FACULTY EXTRACTION RECORD\p"
+	.string "Specimen: REGICE. Recovered intact\n"
+	.string "from the sealed ice chamber.\p"
+	.string "Transfer completed: LIONSARCH STEEL\n"
+	.string "FACTORY, containment bay.\p"
+	.string "Portable controller must remain\n"
+	.string "powered throughout transport.\p"
+	.string "Public freight declaration: mineral\n"
+	.string "samples.\p"
+	.string "Remaining crew: recover equipment and\n"
+	.string "records. Excavation supports are\l"
+	.string "unstable.$"
 
 MiningCave_Sign_Danger_Text_0:
-	.string "CAUTION: Active Excavation\n"
-	.string "Hard hats mandatory past this point\n"
-	.string "Report tremors immediately$"
+	.string "CAUTION: ICE EXCAVATION\p"
+	.string "Drilling has weakened the chamber\n"
+	.string "supports.\p"
+	.string "Report new cracks or tremors\n"
+	.string "immediately. Keep the freight passage\l"
+	.string "clear.$"
 
 MiningCaveB1F_Text_MadsIntro::
 	.string "You don't belong down here.\p"
@@ -299,10 +321,12 @@ MiningCave_Text_WarrenDefeated::
 	.string "Tch... Underestimated you.$"
 
 MiningCave_Text_WarrenPostBattle::
-	.string "The ore we've found down here...\p"
-	.string "it's unlike anything from surface\n"
-	.string "deposits.\p"
-	.string "That's all you need to know.$"
+	.string "Ore samples? That's what the public\n"
+	.string "paperwork calls them.\p"
+	.string "The sealed transport needed its own\n"
+	.string "power supply.\p"
+	.string "I've never guarded a rock that needed\n"
+	.string "batteries before.$"
 
 MiningCaveB1F_Text_BarryDefeated::
-	.string "NO! Not again!$"
+	.string "How could a little intern defeat me?!$"

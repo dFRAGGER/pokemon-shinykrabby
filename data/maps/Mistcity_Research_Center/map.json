@@ -2,7 +2,7 @@
   "id": "MAP_MISTCITY_RESEARCH_CENTER",
   "name": "Mistcity_Research_Center",
   "layout": "LAYOUT_MISTCITY_RESEARCH_CENTER",
-  "music": "MUS_FORTREE",
+  "music": "MUS_RG_POKE_MANSION",
   "region_map_section": "MAPSEC_MIST_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

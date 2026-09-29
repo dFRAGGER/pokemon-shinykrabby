@@ -81,7 +81,7 @@ script LionsarchCity_DiscoPamphlet_3 {
 script LionsarchCity_MarketStand_ExoticBerries {
     lockall
     faceplayer
-    msgbox(format("Welcome to my humble stand!\pI import the finest strands from the tropical islands far to the south.\pYou won't find these in Siltroot Town!"))
+    msgbox(format("Welcome to my humble stand!\pI import the finest strains from the tropical islands far to the south.\pYou won't find these in Siltroot Town!"))
     waitmessage
     pokemart(LionsarchCity_Mart_ExoticBerries)
     msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
@@ -89,10 +89,10 @@ script LionsarchCity_MarketStand_ExoticBerries {
 }
 
 mart LionsarchCity_Mart_ExoticBerries {
-    ITEM_LUM_BERRY
-    ITEM_POMEG_BERRY
-    ITEM_KELPSY_BERRY
-    ITEM_QUALOT_BERRY
+    ITEM_RAZZ_BERRY
+    ITEM_BLUK_BERRY
+    ITEM_NANAB_BERRY
+    ITEM_WEPEAR_BERRY
 }
 
 script LionsarchCity_MarketStand_EasternSpices {
@@ -123,17 +123,16 @@ script LionsarchCity_MarketStand_MountainGear {
 
 mart LionsarchCity_Mart_MountainGear {
     ITEM_SUPER_POTION
-    ITEM_HYPER_POTION
-    ITEM_FULL_HEAL
-    ITEM_REVIVE
+    ITEM_ICE_HEAL
+    ITEM_ESCAPE_ROPE
+    ITEM_REPEL
     ITEM_SUPER_REPEL
-    ITEM_MAX_REPEL
 }
 
 script LionsarchCity_MarketStand_RareStones {
     lockall
     faceplayer
-    msgbox(format("These stones came in on the morning shipment from deep caves across the region.\pPerfect for trainers looking to evolve their partners!"))
+    msgbox(format("These stones came in on the morning shipment from caves across the region.\pMost are useful for training or collecting.\pThat Ice Stone is a local specialty from the Lion Mountains!"))
     waitmessage
     pokemart(LionsarchCity_Mart_RareStones)
     msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
@@ -141,11 +140,9 @@ script LionsarchCity_MarketStand_RareStones {
 }
 
 mart LionsarchCity_Mart_RareStones {
-    ITEM_FIRE_STONE
-    ITEM_WATER_STONE
-    ITEM_THUNDER_STONE
-    ITEM_LEAF_STONE
-    ITEM_MOON_STONE
+    ITEM_HARD_STONE
+    ITEM_EVERSTONE
+    ITEM_ICE_STONE
 }
 
 script LionsarchCity_MarketStand_ImportedPokeBalls {
@@ -160,7 +157,6 @@ script LionsarchCity_MarketStand_ImportedPokeBalls {
 
 mart LionsarchCity_Mart_SpecialtyBalls {
     ITEM_GREAT_BALL
-    ITEM_ULTRA_BALL
     ITEM_NET_BALL
     ITEM_NEST_BALL
     ITEM_TIMER_BALL
@@ -169,7 +165,7 @@ mart LionsarchCity_Mart_SpecialtyBalls {
 script LionsarchCity_MarketStand_SeaDelicacies {
     lockall
     faceplayer
-    msgbox(format("Fresh from the harbor this morning!\pOur Lava Cookies are baked using a recipe from sailors who've traveled the world.\pPerfect for curing any ailment!"))
+    msgbox(format("Fresh from the harbor this morning!\pCold drinks and provisions brought in by sailors from across the region.\pJust the thing before a mountain crossing!"))
     waitmessage
     pokemart(LionsarchCity_Mart_Delicacies)
     msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
@@ -177,16 +173,14 @@ script LionsarchCity_MarketStand_SeaDelicacies {
 }
 
 mart LionsarchCity_Mart_Delicacies {
-    ITEM_LAVA_COOKIE
+    ITEM_FRESH_WATER
     ITEM_SODA_POP
-    ITEM_LEMONADE
-    ITEM_MOOMOO_MILK
 }
 
 script LionsarchCity_MarketStand_TreasureHunter {
     lockall
     faceplayer
-    msgbox(format("I deal in rarities, kid.\pThings that wash up on distant shores or get dug out of ancient ruins.\pYou got the cash, I got the goods."))
+    msgbox(format("I deal in curios, kid.\pThings that wash up on distant shores or turn up in old cargo holds.\pNothing priceless - just honest harbor treasures."))
     waitmessage
     pokemart(LionsarchCity_Mart_Treasures)
     msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
@@ -194,10 +188,9 @@ script LionsarchCity_MarketStand_TreasureHunter {
 }
 
 mart LionsarchCity_Mart_Treasures {
-    ITEM_STAR_PIECE
-    ITEM_NUGGET
+    ITEM_STARDUST
     ITEM_PEARL
-    ITEM_BIG_PEARL
+    ITEM_PRETTY_FEATHER
 }
 
 // ========================================
@@ -245,7 +238,7 @@ script LionsarchCity_FacultyGrunt_3 {
 
 script LionsarchCity_FacultyGrunt_4 {
     lockall
-    msgbox(format("...dampening alloy, check... containment frames, check... boss is gonna love this batch..."), MSGBOX_AUTOCLOSE)
+    msgbox(format("...containment frames, check... independent supply, check...\pKeep that priority load powered. The mountain crew didn't bring it down here to have it wake up on the dock."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(20)
     playse(SE_PIN)
@@ -366,7 +359,7 @@ script LionsarchCity_NPC_NewsReporter {
         releaseall
         end
     }
-    msgbox(format("I'm investigating the Faculty's activities for the regional news network.\pThey claim to be mining rare metals, but their security is unusually tight.\pWhat are they really doing in there?"))
+    msgbox(format("I'm investigating the Faculty for the regional news network.\pThe steelworks has real customers. Real jobs. But their latest excavation follows ancient ice, not an ore seam.\pAnd one sealed shipment got more guards than a month's steel exports.\pWhat came down from that mountain?"))
     releaseall
 }
 
@@ -426,7 +419,7 @@ script LionsarchCity_RectorSendoff {
     delay(30)
 
     setspeaker("THE RECTOR")
-    msgbox(format("You fought hard in there.\pYou are lucky my strongest pokemon are on another mission...\pBut it looks like I stalled you long enough for the ships to depart."), MSGBOX_AUTOCLOSE)
+    msgbox(format("You fought hard in there.\pYou are lucky my strongest pokemon are on another mission...\pREGICE's transfer began before our meeting. Its portable controller never needed the factory's relays.\pYou've stopped our work here. You haven't stopped that shipment."), MSGBOX_AUTOCLOSE)
     waitmessage
 
     special(SpawnCameraObject)
@@ -438,7 +431,7 @@ script LionsarchCity_RectorSendoff {
     playse(SE_PIN)
     applymovement(16, moves(walk_fast_up walk_fast_right face_down emote_exclamation_mark))
     setspeaker("BARRY")
-    msgbox(format("YOU THERE, WE HAVE ENOUGH MATERIALS, LETS MOVE!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("REGICE'S CONTAINMENT UNIT IS ABOARD!\pKEEP THE CONTROLLER POWERED! WE'RE LEAVING!"), MSGBOX_AUTOCLOSE)
     waitmessage
     applymovement(16, moves(walk_fast_right*4 walk_fast_down*3))
     waitmovement
@@ -481,7 +474,7 @@ script LionsarchCity_RectorSendoff {
     applymovement(41, moves(emote_exclamation_mark))
     waitmovement
     delay(30)
-    applymovement(41, moves(jump_2_down))
+    applymovement(41, moves(jump_down jump_2_down))
     waitmovement(41)
     removeobject(41)
 
@@ -520,7 +513,7 @@ script LionsarchCity_RectorSendoff {
     waitmovement
     applymovement(LOCALID_PLAYER, moves(face_down))
     waitmovement
-    if(flag(FLAG_STEEL_FACTORY_POKEMON_CAGED)) {
+    if(flag(FLAG_STEEL_FACTORY_FREED_POKEMON)) {
         playmoncry(SPECIES_MEW, CRY_MODE_NORMAL)
         waitmoncry
         applymovement(40, moves(emote_heart))
@@ -529,7 +522,7 @@ script LionsarchCity_RectorSendoff {
         msgbox(format("...what are you...?\nYou look happy!"),MSGBOX_AUTOCLOSE)
         waitmessage
     }
-    if(!flag(FLAG_STEEL_FACTORY_POKEMON_CAGED)) {
+    if(!flag(FLAG_STEEL_FACTORY_FREED_POKEMON)) {
         playmoncry(SPECIES_MEW, CRY_MODE_NORMAL)
         waitmoncry
         applymovement(40, moves(emote_x))
@@ -547,9 +540,20 @@ script LionsarchCity_RectorSendoff {
     delay(60)
     setflag(FLAG_HIDE_LIONSARCH_RECTOR_SENDOFF)
     delay(60)
-    pokenavcall(format("… … … … … …\n… … … … … Beep!\pDaan: {PLAYER}.\nYou're in Lionsarch?\pGood. Talk to me.\nWhat is happening there?\p...\p...\p...\pThey just LEFT?\nWith all of it?\p...\pOkay. Okay okay okay.\nI'm not panicking.\p...I might be panicking\na little.\pWe had no idea they were\neven making these things.\pThe materials are gone and we\ndon't even know what they\l are for.\pDid you see where that Skarmory was headed?\pNorth? East? Out to sea?\p...\pAllright...\nthen we have nothing to go on.\p...\pYou're right. You're right.\nThere's nothing left to do\lthere.\pYou stopped them using that\nfactory. That matters.\pHead east for now.\nMarshduke City. Your next\lgym is there.\pKeep moving. Jacob, Ali and I\nare going to go through\leverything you've told us.\pShipping routes, contacts,\nthe Rector's name...\lthere has to be something.\pWe'll be in touch,\n{PLAYER}. Stay safe.\p… … … … … …\n… … … … … Click!"))
+    if (flag(FLAG_STEEL_FACTORY_FREED_POKEMON)) {
+        pokenavcall(LionsarchCity_DaanFactoryRescued)
+    } else {
+        pokenavcall(LionsarchCity_DaanFactoryNotRescued)
+    }
     waitmessage
     setspeaker(NULL)
     releaseall
 }
 
+text LionsarchCity_DaanFactoryRescued {
+    format("Daan: {PLAYER}. You're safe? Tell me what happened.\p...\pREGICE. Taken from the mountain and shipped through the steelworks.\pAnd the controllers match Jacob's damaged device? That's evidence we can use.\pThe permits hid the extraction. The factory built their restraints.\pYou freed the workers too? ARON found its family? Good. Those lives matter.\pHelping them didn't cause the shipment to leave. The portable controller had its own power.\pWe need to interrupt its commands, not just shut down a building.\pYou've stopped production there. Jacob, Ali and I will examine the design and trace the shipping records.\pHead east to Marshduke for now. Your next Gym is there.\pWe'll be in touch. Stay safe.", maxLineLength=184)
+}
+
+text LionsarchCity_DaanFactoryNotRescued {
+    format("Daan: {PLAYER}. You're safe? Tell me what happened.\p...\pREGICE. Taken from the mountain and shipped through the steelworks.\pAnd the controllers match Jacob's damaged device? That's evidence we can use.\pThe permits hid the extraction. The factory built their restraints.\pThe workers were still in their cells? We'll include them in the search. REGICE isn't the only life they're carrying away.\pThe portable controller had its own power. We need to interrupt its commands, not just shut down a building.\pYou've stopped production there. Jacob, Ali and I will examine the design and trace the shipping records.\pHead east to Marshduke for now. Your next Gym is there.\pWe'll be in touch. Stay safe.", maxLineLength=184)
+}

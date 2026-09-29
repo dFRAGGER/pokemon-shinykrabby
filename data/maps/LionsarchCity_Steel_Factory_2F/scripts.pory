@@ -131,7 +131,7 @@ script SteelFactory_2F_OverhearCutscene {
     msgbox(SteelFactory_2F_Rector_OpensMeeting)
     waitmessage
 
-    // ── ConRector: iron ore / Lairon report ──
+    // ── Conrector: controller production / worker rescue report ──
     applymovement(8, moves(walk_up))
     if (flag(FLAG_STEEL_FACTORY_FREED_POKEMON) == TRUE) {
         setspeaker("THE CONRECTOR")
@@ -187,7 +187,11 @@ script SteelFactory_2F_OverhearCutscene {
     applymovement(1, moves(face_down emote_x))
     applymovement(8, moves(face_up emote_exclamation_mark))
     setspeaker("THE RECTOR")
-    msgbox(SteelFactory_2F_Rector_TurnsOnConrector,MSGBOX_AUTOCLOSE)
+    if (flag(FLAG_STEEL_FACTORY_FREED_POKEMON) == TRUE) {
+        msgbox(SteelFactory_2F_Rector_TurnsOnConrector,MSGBOX_AUTOCLOSE)
+    } else {
+        msgbox(SteelFactory_2F_Rector_OrdersWorkerTransfer,MSGBOX_AUTOCLOSE)
+    }
     waitmessage
     applymovement(2,moves(face_up))
     setspeaker("THE RECTOR")
@@ -211,11 +215,11 @@ script SteelFactory_2F_OverhearCutscene {
     removeobject(2)
     removeobject(8)
     removeobject(10)
-    applymovement(7, moves(walk_down*2 walk_right walk_down walk_right))
-    applymovement(1, moves(walk_left*3 walk_down*3 walk_right*2))
+    applymovement(7, moves(walk_down walk_right*2 walk_down*2 face_right))
+    applymovement(1, moves(walk_left*3 walk_down*2 walk_right*2 walk_down face_right))
     applymovement(LOCALID_PLAYER, moves(face_left))
     delay(60)
-    applymovement(LOCALID_PLAYER, moves(walk_down*2 walk_left*3))
+    applymovement(LOCALID_PLAYER, moves(walk_down walk_left*3 walk_down face_left))
     waitmovement
 
     // ── Rector addresses player ──
@@ -240,16 +244,16 @@ script SteelFactory_2F_Rector_Defeated {
     waitmessage
     setspeaker(NULL)
     applymovement(7, moves(enter_pokeball))
-    applymovement(12, moves(enter_pokeball))
+    applymovement(13, moves(enter_pokeball))
     waitmovement(7)
-    waitmovement(12)
+    waitmovement(13)
     setflag(FLAG_HIDE_RECTOR_ELECTABUZZ_AFTER_BATTLE)
     applymovement(11, moves(walk_down*2))
     applymovement(1, moves(walk_down*2))
     waitmovement(11)
     waitmovement(1)
     removeobject(11)
-    removeobject(12)
+    removeobject(13)
     removeobject(7)
     removeobject(1)
     setflag(FLAG_STEEL_FACTORY_RECTOR_DEFEATED)
@@ -263,6 +267,7 @@ script SteelFactory_2F_Rector_Defeated {
     playse(SE_SLIDING_DOOR)
     setvar(VAR_LIONSARCH_CITY_STATE, 1)
     warpsilent(MAP_LIONSARCH_CITY,10)
+    waitstate
     releaseall
     end
 }
@@ -278,15 +283,15 @@ text SteelFactory_2F_Rector_After {
 }
 
 text SteelFactory_2F_Rector_OpensMeeting {
-    format("Looks like the iron processing is ahead of schedule.\pYou've both performed adequately this quarter, the yield figures are impressive.\p To make a long story short: Order wins, chaos loses.")
+    format("REGICE recovered intact. Containment tests complete. Its scheduled transfer to the harbor is underway.\pThe coastal transmitter needed improvement. The independent controller has performed adequately.\pA legendary POKéMON, responding to our commands. Limited commands, for now.\pOrder wins, chaos loses.")
 }
 
 text SteelFactory_2F_Conrector_LaironsFreed {
-    format("Indeed, the processing yield was exceptional, sir.\pThere was one small hiccup with the Lairon containment unit this morning, but I managed the issue, no problems at all sir.\pYou see, the specimens had become unreliable. Diminishing returns. Worn teeth. Stress fractures.\pI made the executive call to release them before the voyage.\pNot worth shipping livestock that can't perform. Absolutely nothing to worry about, sir.")
+    format("The containment frames are finished, sir. REGICE's portable controller is unaffected by the work-floor shutdown.\pAs for the LAIRON unit... diminishing returns. Worn teeth. Stress fractures.\pI made the executive call to release them before the voyage.\pNot worth shipping livestock that can't perform. Absolutely nothing to worry about, sir.")
 }
 
 text SteelFactory_2F_Conrector_LaironsGood {
-    format("Processing is complete, sir. Excellent yield.\pThe Lairon unit consumed all impurity-heavy ore as intended.\pOnly the highest-grade iron remains.\pOne little Aron escaped this morning, but we managed to contain it.\pI've arranged for the specimens to be loaded onto the transport vessels in any moment.")
+    format("The containment frames are finished, sir. REGICE's portable controller is ready for the voyage.\pThe LAIRON unit processed the ore as intended. The workers remain in their cells, ready for transport.\pOne small ARON escaped this morning. It hasn't affected dispatch.\pThe work-floor relays are separate from the portable controller, as ordered.")
 }
 
 text SteelFactory_2F_Rector_ShockSuggestion {
@@ -298,7 +303,7 @@ text SteelFactory_2F_Barry_ShockDecline {
 }
 
 text SteelFactory_2F_Barry_MiningReport {
-    format("The mining operation hit every target,  sir.\pWe did have a brief evacuation. A civilian wandered into the tunnels.\pI handled it personally. Pushed them into a deep dark crevice.\pHazard of the mine, really. Nothing special.")
+    format("REGICE reached the factory before the ice supports failed, sir.\pThe cleanup crew recovered the remaining equipment. The public records still say mineral extraction.\pA civilian wandered into the tunnels. I handled it personally. Pushed them into a deep dark crevice.\pHazard of the mine, really. Nothing special.")
 }
 
 text SteelFactory_2F_Rector_Recognises {
@@ -309,8 +314,12 @@ text SteelFactory_2F_Rector_TurnsOnConrector {
     format("And the Lairon.\p'Stress fractures'\p'Diminishing returns.'\pHow convenient.")
 }
 
+text SteelFactory_2F_Rector_OrdersWorkerTransfer {
+    format("The workers are still secured? Good. Complete their transfer.\pAnd explain to me later how this intruder reached my floor.")
+}
+
 text SteelFactory_2F_Rector_AngryOrders {
-    format("Load the boats.\pBoth of you. NOW.  I want neither of you on this floor when I am finished.")
+    format("Get to the boats. Both of you. NOW.\pKeep REGICE's controller powered. Secure the frames and the research records.\pI will deal with our visitor.")
 }
 
 text SteelFactory_2F_Rector_BattleChallenge {
@@ -330,7 +339,7 @@ text SteelFactory_2F_Rector_DefeatedText1 {
 }
 
 text SteelFactory_2F_Rector_DefeatedText2 {
-    format("This changes nothing.\pThe Faculty's reach goes further than this building.\pFar further.\pFollow me.")
+    format("You've cost us this production site. I won't pretend otherwise.\pBut REGICE's transfer was already scheduled. Its controller needs nothing from these machines.\pThe Faculty's reach goes further than this building.\pFollow me.")
 }
 
 text SteelFactory_2F_Barry_After {
@@ -370,11 +379,11 @@ script SteelFactory_2F_Blueprint_Assembly {
 }
 
 text SteelFactory_2F_PC_Research_Text {
-    format("FACULTY INTERNAL - CYCLE 14 SUMMARY\p- Output targets exceeded by 12%%.\pSpecimen endurance remains within acceptable range.\pNote: biological variance in batch 7 requires monitoring.\pRector review pending. -")
+    format("FACULTY INTERNAL - REGICE TRIAL\pOrigin: sealed ice chamber, Lion Mountains. Specimen recovered intact.\pPortable frame restricts movement. Controller induces a limited repeated response.\pIndependent supply maintained throughout testing. Disconnecting the worker relays does not interrupt containment.\pCoastal broadcast prototype: superseded after the Crabhill field failure.\pFurther command training authorized by THE RECTOR.")
 }
 
 text SteelFactory_2F_PC_Logistics_Text {
-    format("TRANSPORT MANIFEST - PENDING DISPATCH\p- Three shipments awaiting clearance.\pContents: processed material, grade A.\pDestination: redacted.\pEstimated transit: 4 days by sea.\pAll documentation has been filed under Rector authorization. -")
+    format("TRANSPORT MANIFEST - SCHEDULED DISPATCH\pPriority load: REGICE in a powered portable containment frame.\pAdditional cargo: completed frames, controller components, research records.\pPublic declaration: processed steel and mineral samples. Destination: redacted.\pInternal instruction: transfer priority load to harbor before staff evacuation. Never disconnect its controller.")
 }
 
 text SteelFactory_2F_PC_Locked_Text {
@@ -382,11 +391,11 @@ text SteelFactory_2F_PC_Locked_Text {
 }
 
 text SteelFactory_2F_Blueprint_Materials_Text {
-    format("COMPONENT SPECIFICATION - DRAFT 9\p- Primary substrate: high-density ore, origin Lions Mountains.\pSecondary binding agent: unspecified biological compound, sourced on-site.\pAlloy stability under sustained resonance: 94%%.\pWarning: do not substitute substrate without Rector approval. -")
+    format("CONTAINMENT FRAME - MATERIALS\pReinforced steel produced on-site. LAIRON processing removes impurities from the ore.\pFrame anchors restrict specimen movement. Insulated mounts protect the controller.\pLegendary units require their own controller and power supply. Do not connect them to the worker-cell network.")
 }
 
 text SteelFactory_2F_Blueprint_Assembly_Text {
-    format("ASSEMBLY PHASE - STRUCTURAL OVERVIEW\p- Layer configuration classified. See Rector annex.\pCore channel dimensions have been adjusted per Cycle 11 findings.\pNote from lead researcher: the material responds differently than anticipated.\pFurther testing required before full production begins. -")
+    format("CONTROLLER ASSEMBLY - DEVELOPMENT RECORD\pCoastal model: short-range broadcast transmitter.\pWork-floor model: five fixed relays controlling labour commands and cell lockout.\pPortable model: reinforced frame, isolated command unit, independent supply.\pThe transmitter housing matches the damaged device Jacob gave you. This is the same technology, developed further.\pA note warns that damaged transmitters cannot be used to issue release commands.")
 }
 
 script SteelFactory_2F_Blueprint_RockSmash {

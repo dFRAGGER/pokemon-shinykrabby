@@ -1,7 +1,7 @@
 {
   "id": "MAP_SILTROOT_TOWN_INDOOR_ALI_APOTHECARY",
   "name": "SiltrootTown_Indoor_Ali_Apothecary",
-  "layout": "LAYOUT_ROUTE104_PRETTY_PETAL_FLOWER_SHOP",
+  "layout": "LAYOUT_SILTROOT_TOWN_INDOOR_ALI_APOTHECARY",
   "music": "MUS_B_PALACE",
   "region_map_section": "MAPSEC_SILTROOT_TOWN",
   "requires_flash": false,
@@ -28,7 +28,7 @@
       "flag": "FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "graphics_id": "OBJ_EVENT_GFX_MAN4_SK",
       "x": 6,
       "y": 7,
       "elevation": 0,
@@ -55,12 +55,12 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SLOWBRO)",
-      "x": 10,
-      "y": 8,
+      "x": 3,
+      "y": 5,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
@@ -68,21 +68,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SLOWBRO)",
-      "x": 2,
-      "y": 3,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_SILTROOTTOWN_ALI_GIEL_CONVO1"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SLOWBRO)",
-      "x": 6,
-      "y": 3,
+      "x": 9,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 2,
@@ -93,20 +80,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
-      "x": 10,
-      "y": 5,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "SiltrootTown_RollingTable",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BARD",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2_FRLG",
       "x": 3,
       "y": 2,
       "elevation": 0,
@@ -121,9 +95,9 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
       "x": 12,
-      "y": 8,
+      "y": 9,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -133,8 +107,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
-      "x": 1,
-      "y": 6,
+      "x": 2,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -146,7 +120,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN",
-      "x": 9,
+      "x": 8,
       "y": 2,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -155,6 +129,19 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SiltrootTown_HerbGuide",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AARON_DP",
+      "x": 9,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SiltrootTown_RollingTable",
       "flag": "0"
     }
   ],

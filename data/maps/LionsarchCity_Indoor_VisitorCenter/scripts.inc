@@ -187,10 +187,12 @@ VisitorCenter_Ranger_Text_1:
 
 VisitorCenter_Ranger_Text_2:
 	.string "I'm a ranger stationed in the mountains.\p"
-	.string "We've noticed increased activity from\n"
-	.string "the Faculty lately.\p"
-	.string "They claim to have mining permits, but\n"
-	.string "something feels... off.\p"
+	.string "The Faculty has mining permits, but\n"
+	.string "their new drills went straight through\l"
+	.string "the oldest ice.\p"
+	.string "Then a sealed transport came down\n"
+	.string "under guard. Why all that security for\l"
+	.string "ore?\p"
 	.string "Here, take this before you head up.$"
 
 VisitorCenter_Ranger_Text_3:

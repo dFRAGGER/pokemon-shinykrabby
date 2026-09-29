@@ -15,8 +15,13 @@
   "connections": [
     {
       "map": "MAP_ISLAND_OHIANA",
-      "offset": -22,
+      "offset": -9,
       "direction": "down"
+    },
+    {
+      "map": "MAP_ISLAND_OHIANA_CRATER",
+      "offset": 0,
+      "direction": "up"
     }
   ],
   "object_events": [],

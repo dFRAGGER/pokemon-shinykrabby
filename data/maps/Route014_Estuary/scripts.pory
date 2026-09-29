@@ -1,1 +1,35 @@
 mapscripts Route014_Estuary_MapScripts {}
+
+// Staging rows: reposition in Porymap before playtesting.
+
+script Route014_Estuary_NPC_HutCoordinator {
+    lock
+    faceplayer
+    msgbox(format("All four huts are ranger posts. Each watches a different habitat.\pLeave a note about where and when you saw something. 'Big. Over there.' is our least useful entry."))
+    release
+    end
+}
+
+script Route014_Estuary_NPC_BoatWarden {
+    lock
+    faceplayer
+    msgbox(format("The boat carries patrol supplies between the posts.\pHalf the cargo is notebooks. The other half is things to keep the notebooks dry."))
+    release
+    end
+}
+
+script Route014_Estuary_NPC_Visitor {
+    lock
+    faceplayer
+    msgbox(format("I thought the huts were holiday cottages.\pThe ranger handed me binoculars. Best disappointing holiday of my life."))
+    release
+    end
+}
+
+script Route014_Estuary_NPC_FootprintReader {
+    lock
+    faceplayer
+    msgbox(format("Two sets of prints can belong to one Pokemon making a return trip.\pI once reported a herd. It was a very indecisive individual."))
+    release
+    end
+}
