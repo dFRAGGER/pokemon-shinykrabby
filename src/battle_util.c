@@ -5725,25 +5725,25 @@ enum Obedience GetAttackerObedienceForAction(void)
         return OBEYS;
     if (B_OBEDIENCE_MECHANICS < GEN_8 && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
         return OBEYS;
-    if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
+    if (FlagGet(FLAG_BADGE08_GET)) // The final badge removes obedience restrictions.
         return OBEYS;
 
-    obedienceLevel = 20;
+    obedienceLevel = 10;
 
-    if (FlagGet(FLAG_BADGE01_GET)) // Stone Badge
+    if (FlagGet(FLAG_BADGE01_GET)) // Tide Badge
+        obedienceLevel = 20;
+    if (FlagGet(FLAG_BADGE02_GET)) // Forest Badge
         obedienceLevel = 30;
-    if (FlagGet(FLAG_BADGE02_GET)) // Knuckle Badge
+    if (FlagGet(FLAG_BADGE03_GET)) // Peak Badge
         obedienceLevel = 40;
-    if (FlagGet(FLAG_BADGE03_GET)) // Dynamo Badge
+    if (FlagGet(FLAG_BADGE04_GET))
         obedienceLevel = 50;
-    if (FlagGet(FLAG_BADGE04_GET)) // Heat Badge
+    if (FlagGet(FLAG_BADGE05_GET))
         obedienceLevel = 60;
-    if (FlagGet(FLAG_BADGE05_GET)) // Balance Badge
+    if (FlagGet(FLAG_BADGE06_GET))
         obedienceLevel = 70;
-    if (FlagGet(FLAG_BADGE06_GET)) // Feather Badge
+    if (FlagGet(FLAG_BADGE07_GET))
         obedienceLevel = 80;
-    if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
-        obedienceLevel = 90;
 
     if (B_OBEDIENCE_MECHANICS >= GEN_8
      && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))

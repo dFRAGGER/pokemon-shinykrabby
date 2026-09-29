@@ -18,9 +18,9 @@ static u8 GetCurrentBadgeCount(void)
 
 static const u8 sLevelCapTable_Normal[] =
 {
-    [0] = 11,  // no badges
-    [1] = 16,  // badge 1
-    [2] = 21,  // badge 2
+    [0] = 15,  // no badges: Pete's highest-level Pokemon
+    [1] = 19,  // badge 1: David's highest-level Pokemon
+    [2] = 24,  // badge 2: Tanya and Tara's highest-level Pokemon
     [3] = 25,  // badge 3
     [4] = 31,  // badge 4
     [5] = 36,  // badge 5
@@ -31,8 +31,8 @@ static const u8 sLevelCapTable_Normal[] =
 
 static const u8 sLevelCapTable_Hard[] =
 {
-    [0] = 8,
-    [1] = 15,
+    [0] = 12,  // no badges: Pete's lowest-level Pokemon
+    [1] = 16,  // badge 1: David's lowest-level Pokemon
     [2] = 20,
     [3] = 23,
     [4] = 29,

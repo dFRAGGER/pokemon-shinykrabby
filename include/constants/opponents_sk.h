@@ -5,7 +5,7 @@
 // from SK_TRAINERS_END, so growing NUM_SK_TRAINERS is the only thing needed to add
 // more trainers here - no need to touch opponents_hns.h.
 #define SK_TRAINERS_START                              619
-#define NUM_SK_TRAINERS                               128
+#define NUM_SK_TRAINERS                               158
 #define SK_TRAINERS_END                                (SK_TRAINERS_START + NUM_SK_TRAINERS - 1)
 
 // ShinyKrabby custom trainers (ported from custom maps)
@@ -141,5 +141,37 @@
 #define TRAINER_LEROY_WEST_LION_SK                  (SK_TRAINERS_START + 125)
 #define TRAINER_WILTON_WEST_LION_SK                 (SK_TRAINERS_START + 126)
 #define TRAINER_EDGAR_WEST_LION_SK                  (SK_TRAINERS_START + 127)
+
+// Marshduke delta additions. Existing trainer ids remain stable.
+#define TRAINER_DELTA_FENNER_SK                         (SK_TRAINERS_START + 128)
+#define TRAINER_DELTA_MIEKE_SK                          (SK_TRAINERS_START + 129)
+#define TRAINER_DELTA_OTIS_SK                           (SK_TRAINERS_START + 130)
+#define TRAINER_DELTA_JORI_SK                           (SK_TRAINERS_START + 131)
+#define TRAINER_DELTA_ELLIS_SK                          (SK_TRAINERS_START + 132)
+#define TRAINER_DELTA_LEN_SK                            (SK_TRAINERS_START + 133)
+#define TRAINER_DELTA_RUNA_SK                           (SK_TRAINERS_START + 134)
+#define TRAINER_DELTA_BO_SK                             (SK_TRAINERS_START + 135)
+#define TRAINER_DELTA_TESSA_SK                          (SK_TRAINERS_START + 136)
+#define TRAINER_DELTA_NIELS_SK                          (SK_TRAINERS_START + 137)
+#define TRAINER_DELTA_SANNE_SK                          (SK_TRAINERS_START + 138)
+#define TRAINER_DELTA_KOEN_SK                           (SK_TRAINERS_START + 139)
+#define TRAINER_DELTA_IRIS_SK                           (SK_TRAINERS_START + 140)
+#define TRAINER_DELTA_PIM_SK                            (SK_TRAINERS_START + 141)
+#define TRAINER_DELTA_LOTTE_SK                          (SK_TRAINERS_START + 142)
+#define TRAINER_DELTA_WARD_SK                           (SK_TRAINERS_START + 143)
+#define TRAINER_DELTA_DERK_SK                           (SK_TRAINERS_START + 144)
+#define TRAINER_DELTA_EVI_SK                            (SK_TRAINERS_START + 145)
+#define TRAINER_DELTA_HUGO_SK                           (SK_TRAINERS_START + 146)
+#define TRAINER_DELTA_FENNA_SK                          (SK_TRAINERS_START + 147)
+#define TRAINER_DELTA_TEUN_SK                           (SK_TRAINERS_START + 148)
+#define TRAINER_DELTA_ROOS_SK                           (SK_TRAINERS_START + 149)
+#define TRAINER_DELTA_MILO_SK                           (SK_TRAINERS_START + 150)
+#define TRAINER_DELTA_KIRA_SK                           (SK_TRAINERS_START + 151)
+#define TRAINER_DELTA_SELMA_SK                          (SK_TRAINERS_START + 152)
+#define TRAINER_DELTA_CAS_SK                            (SK_TRAINERS_START + 153)
+#define TRAINER_DELTA_MARA_SK                           (SK_TRAINERS_START + 154)
+#define TRAINER_DELTA_BERT_SK                           (SK_TRAINERS_START + 155)
+#define TRAINER_DELTA_NOOR_SK                           (SK_TRAINERS_START + 156)
+#define TRAINER_DELTA_IVO_SK                            (SK_TRAINERS_START + 157)
 
 #endif // GUARD_CONSTANTS_OPPONENTS_SK_H
