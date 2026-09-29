@@ -162,7 +162,11 @@ const u8 gText_GoBackPrevMenu[] = _("Go back to the\nprevious menu.");
 const u8 gText_WhatWouldYouLike[] = _("What would you like to do?");
 const u8 gMenuText_Give2[] = _("GIVE");
 const u8 gText_xVar1[] = _("×{STR_VAR_1}");
+#if IS_SK
+const u8 gText_Berry2[] = _(" STRAIN"); // Unused
+#else
 const u8 gText_Berry2[] = _(" BERRY"); // Unused
+#endif
 const u8 gText_Coins[] = _("{STR_VAR_1} COINS");
 const u8 gText_CloseBag[] = _("CLOSE BAG");
 const u8 gText_Var1IsSelected[] = _("{STR_VAR_1}\nis selected.");
@@ -222,7 +226,11 @@ const u8 *const gPocketNamesStringsTable[] =
     [POCKET_ITEMS] =        COMPOUND_STRING("ITEMS"),
     [POCKET_POKE_BALLS] =   COMPOUND_STRING("POKé BALLS"),
     [POCKET_TM_HM]  =       COMPOUND_STRING("TMs & HMs"),
+#if IS_SK
+    [POCKET_BERRIES] =      COMPOUND_STRING("STASH"),
+#else
     [POCKET_BERRIES] =      COMPOUND_STRING("BERRIES"),
+#endif
     [POCKET_KEY_ITEMS] =    COMPOUND_STRING("KEY ITEMS"),
     [POCKET_MEDICINE] =     COMPOUND_STRING("MEDICINE"),
 #if I_COMBINE_BAG_POCKETS == FALSE
@@ -536,7 +544,11 @@ const u8 gText_Items[] = _("OTHER ITEMS");
 const u8 gText_Key_Items[] = _("KEY ITEMS");
 const u8 gText_Poke_Balls[] = _("POKé BALLS");
 const u8 gText_TMs_Hms[] = _("TMs & HMs");
+#if IS_SK
+const u8 gText_Berries2[] = _("STASH");
+#else
 const u8 gText_Berries2[] = _("BERRIES");
+#endif
 const u8 gText_Medicine[] = _("MEDICINE");
 #if I_COMBINE_BAG_POCKETS == FALSE
 const u8 gText_BattleItems[] = _("BATTLE ITEMS");
@@ -579,7 +591,11 @@ const u8 gText_ExpertTagMatch[] = _("EXPERT TAG MATCH");
 const u8 gText_TradeCenter[] = _("TRADE CENTER");
 const u8 gText_Colosseum[] = _("COLOSSEUM");
 const u8 gText_RecordCorner[] = _("RECORD CORNER");
+#if IS_SK
+const u8 gText_BerryCrush3[] = _("WEED GRINDER");
+#else
 const u8 gText_BerryCrush3[] = _("BERRY CRUSH");
+#endif
 const u8 gText_BattleRules[] = _("BATTLE RULES");
 const u8 gText_JudgeMind[] = _("JUDGE: MIND");
 const u8 gText_JudgeSkill[] = _("JUDGE: SKILL");
@@ -772,7 +788,11 @@ const u8 gText_LinkCableBattles[] = _("LINK CABLE BATTLES");
 const u8 gText_WinsLosses[] = _("W:{COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}  L:{COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}");
 const u8 gText_PokemonTrades[] = _("POKéMON TRADES");
 const u8 gText_UnionTradesAndBattles[] = _("UNION TRADES & BATTLES");
+#if IS_SK
+const u8 gText_BerryCrush[] = _("WEED GRINDER");
+#else
 const u8 gText_BerryCrush[] = _("BERRY CRUSH");
+#endif
 const u8 gText_WaitingTrainerFinishReading[] = _("Waiting for the other TRAINER to\nfinish reading your TRAINER CARD.");
 const u8 gText_PokeblocksWithFriends[] = _("{POKEBLOCK}S W/FRIENDS");
 const u8 gText_NumPokeblocks[] = _("{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}");
@@ -842,20 +862,39 @@ const u8 gText_ThankYou[] = _("THANK YOU");
 const u8 gText_ByeBye[] = _("BYE-BYE!");
 const u8 gText_HatchedFromEgg[] = _("{STR_VAR_1} hatched from the EGG!");
 const u8 gText_NicknameHatchPrompt[] = _("Would you like to nickname the newly\nhatched {STR_VAR_1}?");
+#if IS_SK
+ALIGNED(4) const u8 gText_ReadyPickBerry[] = _("Are you ready to WEED-CRUSH?\nPlease pick a STRAIN for use.\p");
+ALIGNED(4) const u8 gText_WaitForAllChooseBerry[] = _("Please wait while each member\nchooses a STRAIN.");
+ALIGNED(4) const u8 gText_EndedWithXUnitsPowder[] = _("{PAUSE_MUSIC}{PLAY_BGM MUS_LEVEL_UP}You ended up with {STR_VAR_1} units of\nsilky-smooth THC POWDER.{RESUME_MUSIC}\pYour total amount of WEED POWDER\nis {STR_VAR_2}.\p");
+#else
 ALIGNED(4) const u8 gText_ReadyPickBerry[] = _("Are you ready to BERRY-CRUSH?\nPlease pick a BERRY for use.\p");
 ALIGNED(4) const u8 gText_WaitForAllChooseBerry[] = _("Please wait while each member\nchooses a BERRY.");
 ALIGNED(4) const u8 gText_EndedWithXUnitsPowder[] = _("{PAUSE_MUSIC}{PLAY_BGM MUS_LEVEL_UP}You ended up with {STR_VAR_1} units of\nsilky-smooth BERRY POWDER.{RESUME_MUSIC}\pYour total amount of BERRY POWDER\nis {STR_VAR_2}.\p");
+#endif
 ALIGNED(4) const u8 gText_RecordingGameResults[] = _("Recording your game results in the\nsave file.\lPlease wait.");
+#if IS_SK
+ALIGNED(4) const u8 gText_PlayBerryCrushAgain[] = _("Want to use the WEED GRINDER again?");
+ALIGNED(4) const u8 gText_YouHaveNoBerries[] = _("You have no STRAINS.\nThe session will be canceled.");
+#else
 ALIGNED(4) const u8 gText_PlayBerryCrushAgain[] = _("Want to play BERRY CRUSH again?");
 ALIGNED(4) const u8 gText_YouHaveNoBerries[] = _("You have no BERRIES.\nThe game will be canceled.");
+#endif
 ALIGNED(4) const u8 gText_MemberDroppedOut[] = _("A member dropped out.\nThe game will be canceled.");
+#if IS_SK
+ALIGNED(4) const u8 gText_TimesUpNoGoodPowder[] = _("Time's up.\pGood THC POWDER could not be\nmade…\p");
+#else
 ALIGNED(4) const u8 gText_TimesUpNoGoodPowder[] = _("Time's up.\pGood BERRY POWDER could not be\nmade…\p");
+#endif
 ALIGNED(4) const u8 gText_CommunicationStandby2[] = _("Communication standby…");
 ALIGNED(4) const u8 gText_1DotBlueF700[] = _("1. {COLOR BLUE}{SHADOW LIGHT_BLUE}{DYNAMIC 0}");
 ALIGNED(4) const u8 gText_1DotF700[] = _("1. {DYNAMIC 0}");
 ALIGNED(4) const u8 gText_SpaceTimes2[] = _(" time(s)");
 ALIGNED(4) const u8 gText_XDotY[] = _("{STR_VAR_1}.{STR_VAR_2}");
+#if IS_SK
+ALIGNED(4) const u8 gText_Var1Berry[] = _("{STR_VAR_1} STRAIN");
+#else
 ALIGNED(4) const u8 gText_Var1Berry[] = _("{STR_VAR_1} BERRY");
+#endif
 ALIGNED(4) const u8 gText_TimeColon[] = _("Time:");
 ALIGNED(4) const u8 gText_PressingSpeed[] = _("Pressing Speed:");
 ALIGNED(4) const u8 gText_Silkiness[] = _("Silkiness:");
@@ -871,7 +910,11 @@ ALIGNED(4) const u8 gText_CrushingResults[] = _("Crushing Results");
 ALIGNED(4) const u8 gText_NeatnessRankings[] = _("Neatness Rankings");
 ALIGNED(4) const u8 gText_CoopRankings[] = _("Cooperative Rankings");
 ALIGNED(4) const u8 gText_PressingPowerRankings[] = _("Pressing-Power Rankings");
+#if IS_SK
+const u8 gText_BerryCrush2[] = _("WEED GRINDER");
+#else
 const u8 gText_BerryCrush2[] = _("BERRY CRUSH");
+#endif
 const u8 gText_PressingSpeedRankings[] = _("Pressing-Speed Rankings");
 const u8 gText_Var1Players[] = _("{STR_VAR_1} PLAYERS");
 const u8 gText_SymbolsEarned[] = _("Symbols Earned");
@@ -908,11 +951,21 @@ const u8 gText_BattleFactoryDesc[] = _("Aim for victory using rental POKéMON!\n
 const u8 gText_BattlePikeDesc[] = _("Select one of three paths to battle!\nYour luck will be tested.");
 const u8 gText_BattlePyramidDesc[] = _("Aim for the top with exploration!\nYour bravery will be tested.");
 const u8 gText_Powder[] = _("POWDER");
+#if IS_SK
+const u8 gText_BerryPickingRecords[] = _("DODRIO STRAIN-PICKING RECORDS");
+const u8 gText_BerriesPicked[] = _("STRAINS picked:");
+#else
 const u8 gText_BerryPickingRecords[] = _("DODRIO BERRY-PICKING RECORDS");
 const u8 gText_BerriesPicked[] = _("BERRIES picked:");
+#endif
 const u8 gText_BestScore[] = _("Best score:");
+#if IS_SK
+const u8 gText_BerriesInRowFivePlayers[] = _("STRAINS picked in a row with\nfive players:");
+const u8 gText_BerryPickingResults[] = _("Announcing STRAIN-PICKING results!");
+#else
 const u8 gText_BerriesInRowFivePlayers[] = _("BERRIES picked in a row with\nfive players:");
 const u8 gText_BerryPickingResults[] = _("Announcing BERRY-PICKING results!");
+#endif
 const u8 gText_10P30P50P50P[] = _("{CLEAR_TO 0x03}10P{CLEAR_TO 0x2B}30P{CLEAR_TO 0x53}50P{CLEAR_TO 0x77}{EMOJI_MINUS}50P");
 const u8 gText_AnnouncingRankings[] = _("Announcing rankings!");
 const u8 gText_AnnouncingPrizes[] = _("Announcing prizes!");
@@ -1262,8 +1315,13 @@ const u8 gText_Ok2[] = _("OK");
 const u8 gText_Quiz[] = _("QUIZ");
 const u8 gText_Answer[] = _("ANSWER");
 const u8 gText_PokeBalls[] = _("POKé BALLS");
+#if IS_SK
+const u8 gText_Berry[] = _("STRAIN");
+const u8 gText_Berries[] = _("STRAINS");
+#else
 const u8 gText_Berry[] = _("BERRY");
 const u8 gText_Berries[] = _("BERRIES");
+#endif
 const u8 gText_Obtained999RareCandies[] = _("You obtained 999 RARE\nCANDIES!{PAUSE_UNTIL_PRESS}");
 const u8 gText_ExpShareOn[] = _("The Exp. Share has been turned on.{PAUSE_UNTIL_PRESS}");
 const u8 gText_ExpShareOff[] = _("The Exp. Share has been turned off.{PAUSE_UNTIL_PRESS}");

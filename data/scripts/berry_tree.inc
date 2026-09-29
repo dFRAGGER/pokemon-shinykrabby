@@ -63,18 +63,31 @@ BerryTree_EventScript_ItemUseWailmerPail::
 	end
 
 BerryTree_Text_Hns_NotRipe:
+#if IS_SK
+	.string "It's a STRAIN plant!\n"
+	.string "These STRAINS aren't ready yet.$"
+#else
 	.string "It's a BERRY tree!\n"
 	.string "These BERRIES aren't ripe yet.$"
+#endif
 
 BerryTree_Text_Hns_Picked:
 	.string "{PLAYER} picked the {STR_VAR_2} {STR_VAR_1}.$"
 
 BerryTree_Text_Hns_BagFull:
+#if IS_SK
+	.string "The BAG's STASH is full.\p"
+#else
 	.string "The BAG's BERRIES POCKET is full.\p"
+#endif
 	.string "The {STR_VAR_1} couldn't be taken.$"
 
 BerryTree_Text_Hns_Sprouted:
+#if IS_SK
+	.string "The strain plant suddenly sprouted!$"
+#else
 	.string "The berry tree suddenly sprouted!$"
+#endif
 
 #else
 
