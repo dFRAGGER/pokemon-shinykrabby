@@ -85,6 +85,9 @@
 #define FLDEFF_PHOTO_FLASH               80
 #define FLDEFF_DEEP_MUD_FOOTPRINTS       81
 #define FLDEFF_MUD_PILE                  82
+#define FLDEFF_DEEP_SNOW_FOOTPRINTS      83
+#define FLDEFF_SNOW_PILE                 84
+#define FLDEFF_SNOW_FOOTPRINTS           85
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1
@@ -133,6 +136,9 @@
 #define FLDEFFOBJ_ORAS_DOWSE_MAY        44
 #define FLDEFFOBJ_DEEP_MUD_FOOTPRINTS   45
 #define FLDEFFOBJ_MUD_PILE              46
+#define FLDEFFOBJ_DEEP_SNOW_FOOTPRINTS  47
+#define FLDEFFOBJ_SNOW_PILE             48
+#define FLDEFFOBJ_SNOW_FOOTPRINTS       49
 
 #define FLDEFF_PAL_TAG_CUT_GRASS          0x1000
 #define FLDEFF_PAL_TAG_SECRET_POWER_TREE  0x1003
@@ -151,6 +157,7 @@
 #define FLDEFF_PAL_TAG_ORAS_DOWSE         0x1014
 #define FLDEFF_PAL_TAG_ALOLA_TALL_GRASS   0x1015
 #define FLDEFF_PAL_TAG_MUD                0x1016
+#define FLDEFF_PAL_TAG_SNOW               0x1017
 #define FLDEFF_PAL_TAG_FIELD_MOVE_MON     0x8400
 
 // tile tags, for field effects that may have many copies on screen at once

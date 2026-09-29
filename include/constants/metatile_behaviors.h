@@ -7,7 +7,8 @@ enum {
     MB_TALL_GRASS,
     MB_LONG_GRASS,
     MB_UNUSED_04,
-    MB_UNUSED_05,
+    // Reuses the otherwise-unused behavior ID 5; metatile behaviors are limited to one byte.
+    MB_DEEP_SNOW,
     MB_DEEP_SAND,
     MB_SHORT_GRASS,
     MB_CAVE,
@@ -252,7 +253,7 @@ enum {
     MB_RED_CAVE,
     MB_SNOW_CAVE,
     MB_DARKGREY_CAVE,
-    MB_SNOW_GRASS,
+    MB_SNOW,
     MB_CYCLING_ROAD_PULL_RIGHT,
     MB_CYCLING_ROAD_PULL_RIGHT_GRASS,
 

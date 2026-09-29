@@ -1,6 +1,7 @@
 const struct SpritePalette gSpritePalette_GeneralFieldEffect0 = {gFieldEffectObjectPalette0, FLDEFF_PAL_TAG_GENERAL_0};
 const struct SpritePalette gSpritePalette_GeneralFieldEffect1 = {gFieldEffectObjectPalette1, FLDEFF_PAL_TAG_GENERAL_1};
 const struct SpritePalette gSpritePalette_Mud = {gFieldEffectObjectPaletteMud, FLDEFF_PAL_TAG_MUD};
+const struct SpritePalette gSpritePalette_Snow = {gFieldEffectObjectPaletteSnow, FLDEFF_PAL_TAG_SNOW};
 
 static const union AnimCmd sAnim_Shadow[] =
 {
@@ -500,6 +501,16 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_SandFootprints = {
     .callback = UpdateFootprintsTireTracksFieldEffect,
 };
 
+// Uses the normal sand footprint shape with the blue-white snow palette.
+const struct SpriteTemplate gFieldEffectObjectTemplate_SnowFootprints = {
+    .tileTag = TAG_NONE,
+    .paletteTag = FLDEFF_PAL_TAG_SNOW,
+    .oam = &gObjectEventBaseOam_16x16,
+    .anims = sAnimTable_SandFootprints,
+    .images = sPicTable_SandFootprints,
+    .callback = UpdateFootprintsTireTracksFieldEffect,
+};
+
 static const struct SpriteFrameImage sPicTable_DeepSandFootprints[] = {
     overworld_frame(gFieldEffectObjectPic_DeepSandFootprints, 2, 2, 0),
     overworld_frame(gFieldEffectObjectPic_DeepSandFootprints, 2, 2, 1),
@@ -551,6 +562,16 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_DeepSandFootprints = {
 const struct SpriteTemplate gFieldEffectObjectTemplate_DeepMudFootprints = {
     .tileTag = TAG_NONE,
     .paletteTag = FLDEFF_PAL_TAG_MUD,
+    .oam = &gObjectEventBaseOam_16x16,
+    .anims = sAnimTable_DeepSandFootprints,
+    .images = sPicTable_DeepSandFootprints,
+    .callback = UpdateFootprintsTireTracksFieldEffect,
+};
+
+// Reuses the deep sand footprints art with a dedicated blue-white snow palette.
+const struct SpriteTemplate gFieldEffectObjectTemplate_DeepSnowFootprints = {
+    .tileTag = TAG_NONE,
+    .paletteTag = FLDEFF_PAL_TAG_SNOW,
     .oam = &gObjectEventBaseOam_16x16,
     .anims = sAnimTable_DeepSandFootprints,
     .images = sPicTable_DeepSandFootprints,
@@ -983,6 +1004,16 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_MudPile = {
     .anims = sAnimTable_SandPile,
     .images = sPicTable_SandPile,
     .callback = UpdateMudPileFieldEffect,
+};
+
+// Reuses the sand pile art with the snow palette for the deep-snow sinking effect.
+const struct SpriteTemplate gFieldEffectObjectTemplate_SnowPile = {
+    .tileTag = TAG_NONE,
+    .paletteTag = FLDEFF_PAL_TAG_SNOW,
+    .oam = &gObjectEventBaseOam_16x8,
+    .anims = sAnimTable_SandPile,
+    .images = sPicTable_SandPile,
+    .callback = UpdateSnowPileFieldEffect,
 };
 
 static const struct SpriteFrameImage sPicTable_WaterSurfacing[] = {

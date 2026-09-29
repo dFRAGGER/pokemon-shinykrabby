@@ -606,6 +606,13 @@ EventScript_UseDefog::
 
 EventScript_UseRockClimb::
 	lockall
+#if IS_SK
+	checkitem ITEM_CLIMBING_ROPE, 1
+	goto_if_eq VAR_RESULT, 0, EventScript_CantRockClimb
+	msgbox Text_WantToRockClimb, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_EndRockClimb
+	closemessage
+#else
 	checkfieldmove FIELD_MOVE_ROCK_CLIMB
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantRockClimb
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -614,6 +621,7 @@ EventScript_UseRockClimb::
 	goto_if_eq VAR_RESULT, NO, EventScript_EndRockClimb
 	msgbox Text_MonUsedRockClimb, MSGBOX_DEFAULT
 	closemessage
+#endif
 	dofieldeffect FLDEFF_USE_ROCK_CLIMB
 	waitstate
 	goto EventScript_EndRockClimb
@@ -627,15 +635,25 @@ EventScript_EndRockClimb::
 	end
 
 Text_WantToRockClimb:
+#if IS_SK
+	.string "The cliff is steep.\p"
+	.string "Use your Dancing Boots?$"
+#else
 	.string "The cliff is steep.\n"
 	.string "Would you like to use Rock Climb?$"
+#endif
 
 Text_MonUsedRockClimb:
 	.string "{STR_VAR_1} used Rock Climb!$"
 
 Text_CantRockClimb:
+#if IS_SK
+	.string "The cliff is steep.\n"
+	.string "You need the Dancing Boots.$"
+#else
 	.string "The cliff is steep.\n"
 	.string "A Pokémon may be able to climb it.$"
+#endif
 
 SetTimeEncounters::
 	callnative SetTimeBasedEncounters

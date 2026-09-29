@@ -29,6 +29,7 @@
 #include "constants/item.h"
 #include "constants/items.h"
 #include "constants/layouts.h"
+#include "constants/metatile_behaviors.h"
 #include "constants/songs.h"
 #include "constants/weather.h"
 #include "pokenav.h"
@@ -87,6 +88,32 @@ static const u16 sRoute119WaterTileData[] =
 void DisableWildEncounters(bool8 disabled)
 {
     sWildEncountersDisabled = disabled;
+}
+
+bool8 IsLandEncounterTileForCurrentMap(u8 metatileBehavior)
+{
+#if IS_SK
+    // Route 04 reserves land encounters for its deep-sand patches. Keep this
+    // before the generic check so grass and other encounter behaviors do not
+    // enable encounters elsewhere on the map.
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE04)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE04))
+        return metatileBehavior == MB_DEEP_SAND;
+#endif
+
+    if (MetatileBehavior_IsLandWildEncounter(metatileBehavior))
+        return TRUE;
+
+#if IS_SK
+    // Ordinary sand and shallow shoreline gradients are encounter-free
+    // elsewhere. Maasje uses its existing land encounter table on these tiles.
+    if ((metatileBehavior == MB_SAND || metatileBehavior == MB_SHALLOW_WATER)
+     && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MAASJE)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MAASJE))
+        return TRUE;
+#endif
+
+    return FALSE;
 }
 
 // Each fishing spot on Route 119 is given a number between 1 and NUM_FISHING_SPOTS inclusive.
@@ -720,7 +747,7 @@ bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)
     }
     else
     {
-        if (MetatileBehavior_IsLandWildEncounter(curMetatileBehavior) == TRUE)
+        if (IsLandEncounterTileForCurrentMap(curMetatileBehavior) == TRUE)
         {
             timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
 
@@ -897,7 +924,7 @@ bool8 SweetScentWildEncounter(void)
     }
     else
     {
-        if (MetatileBehavior_IsLandWildEncounter(MapGridGetMetatileBehaviorAt(x, y)) == TRUE)
+        if (IsLandEncounterTileForCurrentMap(MapGridGetMetatileBehaviorAt(x, y)) == TRUE)
         {
             timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
 

@@ -89,6 +89,9 @@ gFieldEffectScriptPointers::
 	.4byte gFldEffScript_PhotoFlash      		        @ FLDEFF_PHOTO_FLASH
 	.4byte gFieldEffectScript_DeepMudFootprints        @ FLDEFF_DEEP_MUD_FOOTPRINTS
 	.4byte gFieldEffectScript_MudPile                  @ FLDEFF_MUD_PILE
+	.4byte gFieldEffectScript_DeepSnowFootprints       @ FLDEFF_DEEP_SNOW_FOOTPRINTS
+	.4byte gFieldEffectScript_SnowPile                 @ FLDEFF_SNOW_PILE
+	.4byte gFieldEffectScript_SnowFootprints           @ FLDEFF_SNOW_FOOTPRINTS
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -424,4 +427,16 @@ gFieldEffectScript_DeepMudFootprints::
 
 gFieldEffectScript_MudPile::
 	field_eff_loadfadedpal_callnative gSpritePalette_Mud, FldEff_MudPile
+	field_eff_end
+
+gFieldEffectScript_DeepSnowFootprints::
+	field_eff_loadfadedpal_callnative gSpritePalette_Snow, FldEff_DeepSnowFootprints
+	field_eff_end
+
+gFieldEffectScript_SnowPile::
+	field_eff_loadfadedpal_callnative gSpritePalette_Snow, FldEff_SnowPile
+	field_eff_end
+
+gFieldEffectScript_SnowFootprints::
+	field_eff_loadfadedpal_callnative gSpritePalette_Snow, FldEff_SnowFootprints
 	field_eff_end

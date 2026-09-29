@@ -960,6 +960,7 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
     else if (gMudSlowLevel >= 2
           || (FlagGet(DN_FLAG_SEARCHING) && (heldKeys & A_BUTTON))
           || MetatileBehavior_IsDeepMud(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior)
+          || MetatileBehavior_IsDeepSnow(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior)
           || MetatileBehavior_IsDeepSand(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
     {
         gPlayerAvatar.creeping = (FlagGet(DN_FLAG_SEARCHING) != 0);

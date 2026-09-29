@@ -694,6 +694,13 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .secretPowerEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
         .camouflageType = TYPE_ICE,
         .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
+        // Snow is a terrain-only environment in the expansion by default.
+        // SK assigns it directly to snowy maps, so it also needs a complete
+        // graphics set rather than leaving NULL pointers for battle startup.
+        .entry = ENVIRONMENT_ENTRY(RockSnow),
+        .background = ENVIRONMENT_BACKGROUND(RockSnow),
+        .palette = gBattleEnvironmentPalette_RockSnow,
+        .battleIntroSlide = BattleIntroSlide1,
     },
 
     [BATTLE_ENVIRONMENT_ICE] =
@@ -1002,5 +1009,13 @@ static const struct ModernBattleGfx sModernBattleGfx[BATTLE_ENVIRONMENT_COUNT] =
         .background = MODERN_BACKGROUND(SnowCaveModern),
         .entry = MODERN_ENTRY(SnowCaveModern),
         .palette = gBattleEnvironmentPalette_SnowCaveModern,
+    },
+    [BATTLE_ENVIRONMENT_SNOW] =
+    {
+        .background = MODERN_BACKGROUND(RockSnowModern),
+        .entry = MODERN_ENTRY(RockSnowModern),
+        .palette = gBattleEnvironmentPalette_RockSnowModern,
+        .paletteTwilight = gBattleEnvironmentPalette_RockSnowModernMorning,
+        .paletteNight = gBattleEnvironmentPalette_RockSnowModernNight,
     },
 };

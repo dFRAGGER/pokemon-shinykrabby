@@ -951,7 +951,7 @@ static const struct {
     {MAP_DEEP_CLOUD_FOREST_FACULTY_GORGE_RESTORED, BATTLE_ENVIRONMENT_LONG_GRASS},
     {MAP_EAST_LION_MOUNTAIN, BATTLE_ENVIRONMENT_SNOW},
     {MAP_EAST_LION_MOUNTAIN_FACULTY_MINING_CAVE, BATTLE_ENVIRONMENT_RED_CAVE},
-    {MAP_EAST_LION_MOUNTAIN_FACULTY_MINING_CAVE_B1F, BATTLE_ENVIRONMENT_RED_CAVE},
+    {MAP_EAST_LION_MOUNTAIN_FACULTY_MINING_CAVE_B1F, BATTLE_ENVIRONMENT_CAVE},
     {MAP_ERP_CITY, BATTLE_ENVIRONMENT_GRASS},
     {MAP_ERPUS_CITY_BARRY_HOUSE_1F, BATTLE_ENVIRONMENT_BUILDING},
     {MAP_ERPUS_CITY_BARRY_HOUSE_2F, BATTLE_ENVIRONMENT_BUILDING},
@@ -1142,8 +1142,15 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     if (gMapHeader.mapType == MAP_TYPE_UNDERWATER)
         return BATTLE_ENVIRONMENT_UNDERWATER;
 
-    // Per-map default: if this map is in the table, use its environment
     currentMap = (gSaveBlock1Ptr->location.mapGroup << 8) | gSaveBlock1Ptr->location.mapNum;
+
+    // Route 04 and Maasje use map-wide forest/grass defaults, but battles
+    // started on their beaches and shoreline gradients use the sand environment.
+    if ((currentMap == MAP_ROUTE04 || currentMap == MAP_MAASJE)
+     && (MetatileBehavior_IsSandOrDeepSand(tileBehavior) || tileBehavior == MB_SHALLOW_WATER))
+        return BATTLE_ENVIRONMENT_SAND;
+
+    // Per-map default: if this map is in the table, use its environment
     mapDefault = GetMapDefaultEnvironment(currentMap);
     if (mapDefault >= 0)
         return mapDefault;
@@ -2581,4 +2588,3 @@ void SetMultiTrainerBattle(struct ScriptContext *ctx)
     TRAINER_BATTLE_PARAM.defeatTextB = (u8*)ScriptReadWord(ctx);
     gPartnerTrainerId = TRAINER_PARTNER(ScriptReadHalfword(ctx));
 };
-

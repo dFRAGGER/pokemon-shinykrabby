@@ -11,7 +11,7 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_NORMAL]                             = TILE_FLAG_UNUSED,
     [MB_TALL_GRASS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_LONG_GRASS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_UNUSED_05]                          = TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_DEEP_SNOW]                          = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_DEEP_SAND]                          = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_SHORT_GRASS]                        = TILE_FLAG_UNUSED,
     [MB_CAVE]                               = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
@@ -146,7 +146,7 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_RED_CAVE]                           = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_SNOW_CAVE]                          = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_DARKGREY_CAVE]                      = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_SNOW_GRASS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_SNOW]                               = TILE_FLAG_UNUSED,
     [MB_CYCLING_ROAD_PULL_RIGHT_GRASS]      = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
 };
 
@@ -236,6 +236,14 @@ bool8 MetatileBehavior_IsDeepMud(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsDeepSnow(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_DEEP_SNOW)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 bool8 MetatileBehavior_IsRedCave(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_RED_CAVE)
@@ -260,9 +268,9 @@ bool8 MetatileBehavior_IsDarkgreyCave(u8 metatileBehavior)
         return FALSE;
 }
 
-bool8 MetatileBehavior_IsSnowGrass(u8 metatileBehavior)
+bool8 MetatileBehavior_IsSnow(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_SNOW_GRASS)
+    if (metatileBehavior == MB_SNOW)
         return TRUE;
     else
         return FALSE;
@@ -443,14 +451,6 @@ bool8 MetatileBehavior_IsIce_2(u8 metatileBehavior)
 bool8 MetatileBehavior_IsTrickHouseSlipperyFloor(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_TRICK_HOUSE_PUZZLE_8_FLOOR)
-        return TRUE;
-    else
-        return FALSE;
-}
-
-bool8 Unref_MetatileBehavior_IsUnused05(u8 metatileBehavior)
-{
-    if (metatileBehavior == MB_UNUSED_05)
         return TRUE;
     else
         return FALSE;
@@ -818,7 +818,7 @@ bool8 MetatileBehavior_IsPuddle(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsTallGrass(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_TALL_GRASS || metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN_GRASS || metatileBehavior == MB_TALL_GRASS_IMPASSABLE_NORTH || metatileBehavior == MB_CYCLING_ROAD_PULL_RIGHT_GRASS || metatileBehavior == MB_SNOW_GRASS)
+    if (metatileBehavior == MB_TALL_GRASS || metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN_GRASS || metatileBehavior == MB_TALL_GRASS_IMPASSABLE_NORTH || metatileBehavior == MB_CYCLING_ROAD_PULL_RIGHT_GRASS)
         return TRUE;
     else
         return FALSE;
@@ -1383,6 +1383,7 @@ bool8 MetatileBehavior_IsRunningDisallowed(u8 metatileBehavior)
      || metatileBehavior == MB_LONG_GRASS
      || metatileBehavior == MB_HOT_SPRINGS
      || metatileBehavior == MB_DEEP_MUD
+     || metatileBehavior == MB_DEEP_SNOW
      || metatileBehavior == MB_DEEP_SAND
      || MetatileBehavior_IsPacifidlogLog(metatileBehavior) != FALSE)
         return TRUE;
@@ -1909,4 +1910,3 @@ bool8 MetatileBehavior_IsTrainerTowerMonitor(u8 metatileBehavior)
     else
         return FALSE;
 }
-

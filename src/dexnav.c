@@ -633,7 +633,7 @@ static bool8 DexNavPickTile(enum EncounterType environment, u8 areaX, u8 areaY, 
             switch (environment)
             {
             case ENCOUNTER_TYPE_LAND:
-                if (MetatileBehavior_IsLandWildEncounter(tileBehaviour))
+                if (IsLandEncounterTileForCurrentMap(tileBehaviour))
                 {
                     if (currMapType == MAP_TYPE_UNDERGROUND)
                     {

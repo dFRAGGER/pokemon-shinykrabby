@@ -36,6 +36,7 @@ void UpdateSplashFieldEffect(struct Sprite *sprite);
 void UpdateLongGrassFieldEffect(struct Sprite *sprite);
 void UpdateSandPileFieldEffect(struct Sprite *sprite);
 void UpdateMudPileFieldEffect(struct Sprite *sprite);
+void UpdateSnowPileFieldEffect(struct Sprite *sprite);
 void UpdateDisguiseFieldEffect(struct Sprite *sprite);
 void UpdateShortGrassFieldEffect(struct Sprite *sprite);
 void UpdateHotSpringsWaterFieldEffect(struct Sprite *sprite);
