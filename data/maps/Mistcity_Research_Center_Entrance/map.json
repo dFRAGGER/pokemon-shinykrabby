@@ -106,7 +106,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PARASECT)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BRELOOM)",
       "x": 17,
       "y": 12,
       "elevation": 0,
@@ -132,7 +132,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PARAS)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SHROOMISH)",
       "x": 19,
       "y": 14,
       "elevation": 0,

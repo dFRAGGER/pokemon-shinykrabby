@@ -1,1 +1,10 @@
 mapscripts Marshduke_Indoor_Cathedral_Garden_Gatehouse_MapScripts {}
+
+script Marshduke_Indoor_Cathedral_Garden_Gatehouse_EventScript_GardenVisitor {
+    lock
+    faceplayer
+    msgbox(format("Oh, are you heading into the botanical garden too?\pI come here every week. They used to grow plants from all over TESSERA in there, and even a few from overseas.\pBut over the last couple of years, things have changed.\pI think it's because there are fewer pollinators around these days.\pThe old gardener used a lot of pesticides, but the new one is trying a different approach.\pThey're planting more native species, hoping to bring the pollinators back.\pI really hope it works out."))
+    waitmessage
+    release
+    end
+}

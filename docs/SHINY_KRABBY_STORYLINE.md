@@ -168,7 +168,7 @@ Primary maps: `Route02`, `Route02_Indoor_Ranger_House`, `Route03`.
 
 Mist City is a conservation and ranger centre beside Deep Cloud Forest. The Gym is not operating normally because rangers have been deployed after distress calls. Town dialogue describes unusual rain, agitated wildlife, ranger trucks, and blocked access to the forest.
 
-At the Research Center, rescued Slaking, Shiftry, Parasect, and Tropius show evidence of precise artificial disturbance rather than an ordinary storm or natural migration. Reports mention seismic pulses, metallic grinding, magnetic interference, a low-frequency hum, and rapid loss of moisture.
+At the Research Center, rescued Slaking, Shiftry, Shroomish and Breloom, and Tropius show evidence of precise artificial disturbance rather than an ordinary storm or natural migration. Reports mention seismic pulses, metallic grinding, magnetic interference, a low-frequency hum, and rapid loss of moisture.
 
 Daan disappeared after responding to illegal deforestation at Whisperwood Grove. The player joins Nash and David Heartfield in the ranger truck. David's instruments and pattern recognition are crucial even though he is nervous about the field mission and particularly afraid of Beedrill.
 

@@ -155,11 +155,11 @@ Route014_Broken_Bridge_Ari_28:
 
 
 Route014_Broken_Bridge_Trigger_East::
-	setvar VAR_TEMP_3, 1
+	goto_if_unset FLAG_ARI_HIDE_JUMP_CHALLENGE, Route014_Broken_Bridge_Trigger_East_2
 	lockall
 	msgbox Route014_Broken_Bridge_Trigger_East_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, NO
-	goto_if_eq Route014_Broken_Bridge_Trigger_East_2
+	goto_if_eq Route014_Broken_Bridge_Trigger_East_5
 	hidefollower
 	applymovement LOCALID_PLAYER, Route014_Broken_Bridge_Trigger_East_Movement_0
 	waitmovement
@@ -171,6 +171,9 @@ Route014_Broken_Bridge_Trigger_East::
 	end
 
 Route014_Broken_Bridge_Trigger_East_2:
+	end
+
+Route014_Broken_Bridge_Trigger_East_5:
 	setvar VAR_TEMP_3, 0
 	releaseall
 	end

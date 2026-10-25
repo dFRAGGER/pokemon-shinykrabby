@@ -53,7 +53,7 @@ text Marshduke_Indoor_Garden_Trainer_Noor_Defeat {
 }
 
 text Marshduke_Indoor_Garden_Trainer_Noor_After {
-    format("I watch Alakazam for hours, but my own KADABRA won't sit still for five minutes.")
+    format("I can watch MEGA Alakazam for hours, but my own KADABRA won't sit still for five minutes.")
 }
 
 script Marshduke_Indoor_Garden_Trainer_Ivo {
@@ -82,18 +82,28 @@ script Marshduke_Indoor_Garden_NPC_DollChild {
     end
 }
 
-script Marshduke_Indoor_Garden_NPC_StoneCaretaker {
-    lock
-    faceplayer
-    msgbox(format("I clean the lettering with a soft brush. The little plants between the stones can stay.\pTidy doesn't have to mean nothing is allowed to grow."))
-    release
-    end
-}
+
 
 script Marshduke_Indoor_Garden_NPC_QuietVisitor {
     lock
     faceplayer
     msgbox(format("The city sounds different here. Water, leaves, a distant bell.\pI came to remember someone. It's a good place to sit for a while."))
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Sign_GardenerHouse {
+    lock
+    msgbox(format("- Gardener's House -"), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Sign_Cemetery {
+    lock
+    msgbox(format("- Marshduke Cemetery -"), MSGBOX_SIGN)
+    waitmessage
     release
     end
 }

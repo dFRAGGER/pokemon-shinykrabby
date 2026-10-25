@@ -99,7 +99,9 @@ script Route014_Broken_Bridge_Ari {
 }
 
 script Route014_Broken_Bridge_Trigger_East {
-    setvar(VAR_TEMP_3, 1)
+    if(!flag(FLAG_ARI_HIDE_JUMP_CHALLENGE)) {
+        end
+    }
     lockall
     msgbox(format("Try to jump?"), MSGBOX_YESNO)
     if (var(VAR_RESULT) == NO) {

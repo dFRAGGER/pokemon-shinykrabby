@@ -15,6 +15,7 @@ Marshduke_Indoor_House4_Ari::
 	compare VAR_TEMP_0, 5
 	goto_if_eq Marshduke_Indoor_House4_Ari_8
 	applymovement 3, Marshduke_Indoor_House4_Ari_Movement_1
+	waitmovement 3
 Marshduke_Indoor_House4_Ari_7:
 	removeobject 3
 	waitmessage
@@ -38,12 +39,12 @@ Marshduke_Indoor_House4_Ari_5:
 
 Marshduke_Indoor_House4_Ari_8:
 	applymovement 3, Marshduke_Indoor_House4_Ari_Movement_0
+	waitmovement 3
 	goto Marshduke_Indoor_House4_Ari_7
 
 
 Marshduke_Indoor_House4_KimonoGirl::
 	lock
-	faceplayer
 	msgbox Marshduke_Indoor_House4_KimonoGirl_Text_0
 	waitmessage
 	release
@@ -54,6 +55,24 @@ Marshduke_Indoor_House4_WatchVisitor::
 	lock
 	faceplayer
 	msgbox Marshduke_Indoor_House4_WatchVisitor_Text_0
+	waitmessage
+	release
+	end
+
+
+Marshduke_Indoor_House4_SneakerVisitor::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_House4_SneakerVisitor_Text_0
+	waitmessage
+	release
+	end
+
+
+Marshduke_Indoor_House4_Guard::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_House4_Guard_Text_0
 	waitmessage
 	release
 	end
@@ -124,7 +143,6 @@ Marshduke_Indoor_House4_Ari_Movement_0:
 	walk_fast_down
 	walk_fast_down
 	walk_fast_right
-	walk_fast_right
 	walk_fast_down
 	walk_fast_down
 	walk_fast_down
@@ -139,7 +157,6 @@ Marshduke_Indoor_House4_Ari_Movement_1:
 	walk_fast_down
 	walk_fast_down
 	walk_fast_down
-	walk_fast_right
 	walk_fast_right
 	walk_fast_down
 	walk_fast_down
@@ -227,6 +244,26 @@ Marshduke_Indoor_House4_WatchVisitor_Text_0:
 	.string "...\p"
 	.string "Then again, I've got sneakers at home\n"
 	.string "still in the box, so who am I to talk.$"
+
+Marshduke_Indoor_House4_SneakerVisitor_Text_0:
+	.string "See that price tag? Crossed out twice.\p"
+	.string "When I first came in, it was the first\n"
+	.string "number. Last week, the second.\p"
+	.string "If I keep waiting, I'll never be able to\n"
+	.string "afford them.\p"
+	.string "...Or maybe that's exactly what Ari\n"
+	.string "wants me to think.$"
+
+Marshduke_Indoor_House4_Guard_Text_0:
+	.string "Look, don't touch. That's the whole job\n"
+	.string "description.\p"
+	.string "Ari pays me to stand here and make sure\n"
+	.string "nobody breathes on the glass.\p"
+	.string "The sneakers and watches I don't really\n"
+	.string "get. But that burnt beam over there...\p"
+	.string "People come in asking about it. Never to\n"
+	.string "buy it. Just to ask.\p"
+	.string "That's the one I keep my eye on.$"
 
 Marshduke_Indoor_House4_Sign_BrassTowerBeam_Text_0:
 	.string "A blackened length of timber, cut clean\n"

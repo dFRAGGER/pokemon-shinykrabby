@@ -1,1 +1,33 @@
 mapscripts Marshduke_Indoor_Tower1_1F_MapScripts {}
+
+// Tower of the Balanced Sky. 2F holds a three-trainer gauntlet with no healing
+// in between; 3F holds the prize. See Marshduke_Indoor_Tower1_2F.
+
+script Marshduke_Indoor_Tower1_1F_Steward {
+    lock
+    faceplayer
+    if (defeated(TRAINER_TOWER1_EDWIN_SK)) {
+        msgbox(format("You beat all three keepers? Wow. Edwin doesn't lose very often.\pDid he show you the view? He shows everyone the view."), MSGBOX_AUTOCLOSE)
+    }
+    else {
+        msgbox(format("Welcome to the Tower of the Balanced Sky!\pThe Order built a tower for four of the Rememberer's visions. This one is for Lugia. The best one, if you ask me.\pThe keepers are upstairs. You'll face three of them in a row, without a break to heal.\pSo if your Pokémon need a rest, now's the time."), MSGBOX_AUTOCLOSE)
+    }
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower1_1F_Pilgrim {
+    lock
+    faceplayer
+    msgbox(format("Have you seen the Lugia vision? It's the best one. It's not even close.\pThe moment Lugia spreads its wings and the storm just stops... I get goosebumps every time."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower1_1F_Visitor {
+    lock
+    faceplayer
+    msgbox(format("I made it past the first keeper once. His Pidgeotto blew my hat right off the tower.\pThe second one? Let's not talk about the second one."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}

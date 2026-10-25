@@ -32,6 +32,11 @@
       "map": "MAP_AUTUMN_RUINS",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_HEZIK_TOWN_SECRET_GARDEN",
+      "offset": 80,
+      "direction": "right"
     }
   ],
   "object_events": [],

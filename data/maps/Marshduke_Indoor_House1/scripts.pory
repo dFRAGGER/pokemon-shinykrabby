@@ -9,10 +9,19 @@ script Marshduke_Indoor_House1_Receptionist {
     end
 }
 
+script Marshduke_Indoor_House1_Meowth {
+    lock
+    faceplayer
+    msgbox(format("Meeeeee..... oooowwthhh..."))
+    waitmessage
+    release
+    end
+}
+
 script Marshduke_Indoor_House1_Scribe {
     lock
     faceplayer
-    msgbox(format("Wet ink, mind your sleeves!\pI'm copying out a copy of a copy of a copy.\pBy now the hero's name has changed twice and the dragon's grown an extra head.\pHe'll have three by the time my apprentice is done."))
+    msgbox(format("Wet ink, mind your sleeves!\pI'm copying out a copy of a copy of a copy.\pI think the hero's name has changed twice and the dragon's grown an extra head.\pHe'll have three by the time my apprentice is done."))
     waitmessage
     release
     end
@@ -57,7 +66,7 @@ script Marshduke_Indoor_House1_Kid {
 
 script Marshduke_Indoor_House1_Sign_LegendShelf {
     lock
-    msgbox(format("Nine accounts of one burning tower, shelved shoulder to shoulder.\pThey have not resolved their differences."), MSGBOX_SIGN)
+    msgbox(format("Nine accounts of one burning tower, shelved shoulder to shoulder.\pThe stories are all different."), MSGBOX_SIGN)
     waitmessage
     release
     end
@@ -65,7 +74,7 @@ script Marshduke_Indoor_House1_Sign_LegendShelf {
 
 script Marshduke_Indoor_House1_Sign_PilgrimDiaries {
     lock
-    msgbox(format("Hundreds of little books.\pThey all describe the same five memories, but they all differ slightly it seems."), MSGBOX_SIGN)
+    msgbox(format("Hundreds of little books.\pAll describing the memories of The Rememberer by pilgrims who have visited the cathedral."), MSGBOX_SIGN)
     waitmessage
     release
     end
@@ -81,7 +90,7 @@ script Marshduke_Indoor_House1_Sign_NaturalHistoryCase {
 
 script Marshduke_Indoor_House1_Sign_DeltaSurveyVolumes {
     lock
-    msgbox(format("Charts of the delta over eight centuries.\pThe channels wander all over the place.\pEvery single one of them goes around a hill."), MSGBOX_SIGN)
+    msgbox(format("Charts of the delta over eight centuries.\pThe channels wander all over the place.\pEvery single one of them goes around the hill the cathedral was build on."), MSGBOX_SIGN)
     waitmessage
     release
     end
@@ -97,7 +106,7 @@ script Marshduke_Indoor_House1_Sign_WaterDamagedManuscript {
 
 script Marshduke_Indoor_House1_Sign_LedgerOfDonations {
     lock
-    msgbox(format("Every book here came in somebody's coat.\pEntry one is a soup recipe, donated by accident."), MSGBOX_SIGN)
+    msgbox(format("Every book in this shelf was donated by a different person.\pSubjects range from the mundane to the mystical."), MSGBOX_SIGN)
     waitmessage
     release
     end
@@ -113,7 +122,7 @@ script Marshduke_Indoor_House1_Sign_ForeignLanguageShelf {
 
 script Marshduke_Indoor_House1_Sign_ChildrensShelf {
     lock
-    msgbox(format("Very well-worn books.\pThe tower burns in all of them, but most have HO OH in a different color."), MSGBOX_SIGN)
+    msgbox(format("Very well-worn books.\pA tower burns in all of them, but most depict HO OH in a different color."), MSGBOX_SIGN)
     waitmessage
     release
     end

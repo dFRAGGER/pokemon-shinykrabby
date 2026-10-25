@@ -3608,3 +3608,69 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 .endif
 
 	.include "data/maps/Island_Ohiana_Crater/scripts.inc"
+
+	.include "data/maps/Islands_Mokupuni/scripts.inc"
+
+	.include "data/maps/Route024/scripts.inc"
+
+	.include "data/maps/Islands_Mokupuni_2/scripts.inc"
+
+	.include "data/maps/Route024_2/scripts.inc"
+
+	.include "data/maps/Route025/scripts.inc"
+
+	.include "data/maps/Route026/scripts.inc"
+
+	.include "data/maps/Veghel/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Tower2_2F/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Tower2_1F/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Tower2_3F/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Tower3_1F/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Tower3_2F/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Tower3_3F/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Tower4_1F/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Tower4_2F/scripts.inc"
+
+	.include "data/maps/Marshduke_Indoor_Tower4_3F/scripts.inc"
+
+	.include "data/maps/Route017_CaveEntrance/scripts.inc"
+
+	.include "data/maps/Route018_Cave2/scripts.inc"
+
+	.include "data/maps/Route018_Cave1/scripts.inc"
+
+	.include "data/maps/BalkumTown_Indoor_House1/scripts.inc"
+
+	.include "data/maps/BalkumTown_Indoor_House2/scripts.inc"
+
+	.include "data/maps/BalkumTown_Indoor_House3/scripts.inc"
+
+	.include "data/maps/BalkumTown_Indoor_Gym/scripts.inc"
+
+	.include "data/maps/Balkum_Indoor_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/Balkum_Indoor_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/Route017_Indoor_House1/scripts.inc"
+
+	.include "data/maps/TrainerHill_Entrance_SK/scripts.inc"
+
+	.include "data/maps/TrainerHill_1F_SK/scripts.inc"
+
+	.include "data/maps/TrainerHill_2F_SK/scripts.inc"
+
+	.include "data/maps/TrainerHill_3F_SK/scripts.inc"
+
+	.include "data/maps/TrainerHill_4F_SK/scripts.inc"
+
+	.include "data/maps/TrainerHill_Roof_SK/scripts.inc"
+
+	.include "data/maps/TrainerHill_Elevator_SK/scripts.inc"

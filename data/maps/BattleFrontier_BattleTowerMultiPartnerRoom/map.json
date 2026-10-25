@@ -1,7 +1,6 @@
 {
   "id": "MAP_BATTLE_FRONTIER_BATTLE_TOWER_MULTI_PARTNER_ROOM",
   "name": "BattleFrontier_BattleTowerMultiPartnerRoom",
-  "game_version": "emerald",
   "layout": "LAYOUT_BATTLE_FRONTIER_BATTLE_TOWER_MULTI_PARTNER_ROOM",
   "music": "MUS_B_TOWER",
   "region_map_section": "MAPSEC_BATTLE_FRONTIER",
@@ -136,5 +135,6 @@
   ],
   "warp_events": [],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [],
+  "game_version": "emerald"
 }

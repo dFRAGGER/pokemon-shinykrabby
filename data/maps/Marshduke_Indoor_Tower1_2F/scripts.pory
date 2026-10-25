@@ -1,1 +1,83 @@
-mapscripts Marshduke_Indoor_Tower1_2F_MapScripts {}
+mapscripts Marshduke_Indoor_Tower1_2F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_HIDE_MARSHDUKE_TOWER_CHALLENGERS)
+        if (defeated(TRAINER_TOWER1_EDWIN_SK)) {
+            setvar(VAR_TEMP_1, 1)
+        }
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1, 0: Marshduke_Indoor_Tower1_2F_Gauntlet
+    ]
+}
+
+// Gauntlet: arriving on this floor (frame-table script, which runs once the
+// automatic stair-exit step has finished) starts three battles in one locked
+// script, so the player can't heal in between. Each challenger spawns on the
+// up-stairs (addobject ignores the shared hide flag), walks over, battles, then
+// walks back up and is removed. Losing whites out; the tower only counts as
+// cleared once the last keeper (Edwin) is defeated, so the run restarts in full.
+
+script Marshduke_Indoor_Tower1_2F_Gauntlet {
+    lockall
+    setvar(VAR_TEMP_1, 1)
+    cleartrainerflag(TRAINER_TOWER1_ROBIN_SK)
+    cleartrainerflag(TRAINER_TOWER1_OWEN_SK)
+    playse(SE_PIN)
+    
+    msgbox(format("A voice calls from the stairs above:\p'Hey, a challenger! Three keepers, one after the other. No breaks!\pReady or not, here we come!'"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark walk_down*2 face_right))
+    waitmovement(LOCALID_PLAYER)
+    addobject(LOCALID_TOWER1_ROBIN)
+    applymovement(LOCALID_TOWER1_ROBIN, moves(walk_down*3 face_left))
+    waitmovement(LOCALID_TOWER1_ROBIN)
+    playse(SE_PIN)
+    applymovement(LOCALID_TOWER1_ROBIN, moves(emote_exclamation_mark))
+    waitmovement(LOCALID_TOWER1_ROBIN)
+    msgbox(format("First keeper, ROBIN! Lugia is my favorite Pokémon in the whole world!\pMy birds and I are going to blow you away!"))
+    trainerbattle_no_intro(TRAINER_TOWER1_ROBIN_SK, Marshduke_Indoor_Tower1_2F_Text_JoopDefeat)
+    msgbox(format("Okay, you can stay right there. The next one is already on his way down."))
+    applymovement(LOCALID_TOWER1_ROBIN, moves(walk_up*3))
+    waitmovement(LOCALID_TOWER1_ROBIN)
+    removeobject(LOCALID_TOWER1_ROBIN)
+    delay(60)
+    addobject(LOCALID_TOWER1_OWEN)
+    applymovement(LOCALID_TOWER1_OWEN, moves(walk_down*3 face_left))
+    waitmovement(LOCALID_TOWER1_OWEN)
+    playse(SE_PIN)
+    applymovement(LOCALID_TOWER1_OWEN, moves(emote_exclamation_mark))
+    waitmovement(LOCALID_TOWER1_OWEN)
+    msgbox(format("Second keeper, Brother OWEN.\pI've watched the Lugia vision forty-two times, and I still notice something new every time.\pLet's see what you notice."))
+    trainerbattle_no_intro(TRAINER_TOWER1_OWEN_SK, Marshduke_Indoor_Tower1_2F_Text_TeoDefeat)
+    msgbox(format("One more. Brother Edwin has been waiting all week for a challenger."))
+    applymovement(LOCALID_TOWER1_OWEN, moves(walk_up*3))
+    waitmovement(LOCALID_TOWER1_OWEN)
+    removeobject(LOCALID_TOWER1_OWEN)
+    delay(60)
+    addobject(LOCALID_TOWER1_EDWIN)
+    applymovement(LOCALID_TOWER1_EDWIN, moves(walk_down*3 face_left))
+    waitmovement(LOCALID_TOWER1_EDWIN)
+    playse(SE_PIN)
+    applymovement(LOCALID_TOWER1_EDWIN, moves(emote_exclamation_mark))
+    waitmovement(LOCALID_TOWER1_EDWIN)
+    msgbox(format("I am EDWIN, Keeper of the Balanced Sky.\pFire, frost and lightning tear the sky apart, and Lugia calms all three with a single cry.\pThe other towers can keep their visions. This is the one that matters."))
+    trainerbattle_no_intro(TRAINER_TOWER1_EDWIN_SK, Marshduke_Indoor_Tower1_2F_Text_ArentDefeat)
+    msgbox(format("Well done. Come up to the top, I have something for you."))
+    applymovement(LOCALID_TOWER1_EDWIN, moves(walk_up*3))
+    waitmovement(LOCALID_TOWER1_EDWIN)
+    removeobject(LOCALID_TOWER1_EDWIN)
+    releaseall
+    end
+}
+
+text Marshduke_Indoor_Tower1_2F_Text_JoopDefeat {
+    format("Feathers everywhere!")
+}
+
+text Marshduke_Indoor_Tower1_2F_Text_TeoDefeat {
+    format("I didn't see that coming.")
+}
+
+text Marshduke_Indoor_Tower1_2F_Text_ArentDefeat {
+    format("Lugia would be proud of you.")
+}

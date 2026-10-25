@@ -17,6 +17,16 @@
       "map": "MAP_UJE_TOWN",
       "offset": 9,
       "direction": "up"
+    },
+    {
+      "map": "MAP_ISLANDS_MOKUPUNI_2",
+      "offset": -38,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE025",
+      "offset": -109,
+      "direction": "left"
     }
   ],
   "object_events": [],

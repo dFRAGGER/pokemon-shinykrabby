@@ -158,6 +158,7 @@
 #define FLDEFF_PAL_TAG_ALOLA_TALL_GRASS   0x1015
 #define FLDEFF_PAL_TAG_MUD                0x1016
 #define FLDEFF_PAL_TAG_SNOW               0x1017
+#define FLDEFF_PAL_TAG_REED_LONG_GRASS    0x1018
 #define FLDEFF_PAL_TAG_FIELD_MOVE_MON     0x8400
 
 // tile tags, for field effects that may have many copies on screen at once

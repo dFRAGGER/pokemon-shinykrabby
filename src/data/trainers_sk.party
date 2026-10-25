@@ -13,8 +13,8 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_ALFRED ===
 Name: ALFRED
-Class: Pkmn Breeder
-Pic: Pokemon Breeder M
+Class: School Kid
+Pic: School Kid M
 Gender: Male
 Music: Male
 Double Battle: No
@@ -74,7 +74,7 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 === TRAINER_BATTLE_GIRL_SERA ===
 Name: SERA
 Class: Battle Girl
-Pic: Battle Girl
+Pic: Crush Girl Frlg
 Gender: Female
 Music: Female
 Double Battle: No
@@ -321,7 +321,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_EDGARD ===
 Name: Edgard
 Class: Sailor
-Pic: Sailor
+Pic: DP Waiter
 Gender: Male
 Music: Male
 Double Battle: No
@@ -714,8 +714,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HIKER_DANE ===
 Name: DANE
-Class: Hiker FRLG
-Pic: Hiker FRLG
+Class: Cooltrainer
+Pic: Cooltrainer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -795,7 +795,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_KINDLER_OPAL ===
 Name: OPAL
-Class: Kindler
+Class: Expert
 Pic: Expert F
 Gender: Female
 Music: Female
@@ -808,8 +808,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LASS_ELENA ===
 Name: ELENA
-Class: Lass
-Pic: Lass
+Class: Picnicker Frlg
+Pic: Picnicker Frlg
 Gender: Female
 Music: Female
 Double Battle: No
@@ -821,8 +821,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LASS_QUINN ===
 Name: QUINN
-Class: Lass
-Pic: Lass
+Class: Picnicker
+Pic: Picnicker
 Gender: Female
 Music: Female
 Double Battle: No
@@ -918,7 +918,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 === TRAINER_LIONSARCH_HIKER_3 ===
 Name: GLEN
 Class: Skier Hns
-Pic: Skier M Hns
+Pic: DP Skier M
 Gender: Male
 Music: Suspicious
 Double Battle: No
@@ -934,7 +934,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 === TRAINER_LIONSARCH_HIKER_4 ===
 Name: ANDERS
 Class: Skier Hns
-Pic: Skier M Hns
+Pic: DP Skier M
 Gender: Male
 Music: Suspicious
 Double Battle: No
@@ -946,7 +946,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 === TRAINER_LIONSARCH_HIKER_5 ===
 Name: DUNN
 Class: Skier Hns
-Pic: Skier M Hns
+Pic: DP Skier M
 Gender: Male
 Music: Suspicious
 Double Battle: No
@@ -1147,7 +1147,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_ROB ===
 Name: ROB
 Class: Sailor
-Pic: Sailor
+Pic: DP Waiter
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -1381,8 +1381,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LYLE_SK ===
 Name: LYLE
-Class: Bug Catcher
-Pic: Bug Catcher
+Class: Fisherman
+Pic: Fisherman
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1445,7 +1445,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Kirlia
-Level: 36
+Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BLAKE_SK ===
@@ -1458,7 +1458,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Girafarig
-Level: 36
+Level: 24
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAURA_SK ===
@@ -1471,7 +1471,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Kadabra
-Level: 36
+Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_SAMANTHA_SK ===
@@ -1483,8 +1483,8 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Xatu
-Level: 36
+Natu
+Level: 24
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_VIRGIL_SK ===
@@ -1497,7 +1497,11 @@ Double Battle: No
 AI: Check Bad Move
 
 Ralts
-Level: 36
+Level: 24
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Kirlia
+Level: 24
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_HANNAH_SK ===
@@ -1510,20 +1514,20 @@ Double Battle: No
 AI: Check Bad Move
 
 Kirlia
-Level: 36
+Level: 24
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_NATE_SK ===
 Name: NATE
-Class: Gentleman
-Pic: Gentleman
+Class: Psychic
+Pic: DP Psychic M
 Gender: Male
 Music: Rich
 Double Battle: No
 AI: Check Bad Move
 
 Spoink
-Level: 36
+Level: 24
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_SYLVIA_SK ===
@@ -1536,21 +1540,25 @@ Double Battle: No
 AI: Check Bad Move
 
 Meditite
-Level: 36
+Level: 24
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_CLIFFORD_SK ===
 Name: CLIFFORD
-Class: Gentleman
-Pic: Gentleman
+Class: Psychic
+Pic: DP Psychic M
 Gender: Male
 Music: Rich
 Double Battle: No
 AI: Check Bad Move
 
 Girafarig
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 24
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Drowzee
+Level: 24
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MACEY_SK ===
 Name: MACEY
@@ -1562,8 +1570,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Natu
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 24
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Natu
+Level: 24
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_KATHLEEN_SK ===
 Name: KATHLEEN
@@ -1575,7 +1587,11 @@ Double Battle: No
 AI: Check Bad Move
 
 Kadabra
-Level: 36
+Level: 25
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Misdreavus
+Level: 25
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_NICHOLAS_SK ===
@@ -1588,8 +1604,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Wobbuffet
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 25
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Slowpoke
+Level: 25
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_RICK_MAASJE_SK ===
 Name: RICK
@@ -1943,8 +1963,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_RANDALL_ROUTE05_SK ===
 Name: RACHEL
-Class: Beauty Frlg
-Pic: Beauty Frlg
+Class: Picnicker Frlg
+Pic: Picnicker Frlg
 Gender: Female
 Music: Female
 Double Battle: No
@@ -1978,7 +1998,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_GEORGE_ROUTE05_SK ===
 Name: GEORGE
 Class: Hiker
-Pic: Hiker
+Pic: Hiker Frlg
 Gender: Male
 Music: Cool
 Double Battle: No
@@ -2092,7 +2112,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_WILTON_WEST_LION_SK ===
 Name: WILTON
 Class: Hiker
-Pic: Hiker
+Pic: Hiker Frlg
 Gender: Male
 Music: Cool
 Double Battle: No
@@ -2296,7 +2316,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_DELTA_SANNE_SK ===
 Name: SANNE
 Class: Pkmn Ranger
-Pic: Pokemon Ranger F
+Pic: DP Pokemon Ranger F
 Gender: Female
 Music: Female
 Double Battle: No
@@ -2309,7 +2329,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_DELTA_KOEN_SK ===
 Name: KOEN
 Class: Pkmn Ranger
-Pic: Pokemon Ranger M
+Pic: DP Pokemon Ranger M
 Gender: Male
 Music: Male
 Double Battle: No
@@ -2330,7 +2350,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_DELTA_IRIS_SK ===
 Name: IRIS
 Class: Lass
-Pic: Lass
+Pic: Lass Frlg
 Gender: Female
 Music: Female
 Double Battle: No
@@ -2377,7 +2397,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_DELTA_WARD_SK ===
 Name: WARD
 Class: Pkmn Ranger
-Pic: Pokemon Ranger M
+Pic: DP Pokemon Ranger M
 Gender: Male
 Music: Male
 Double Battle: No
@@ -2445,7 +2465,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_DELTA_FENNA_SK ===
 Name: FENNA
 Class: Pkmn Ranger
-Pic: Pokemon Ranger F
+Pic: DP Pokemon Ranger F
 Gender: Female
 Music: Female
 Double Battle: No
@@ -2513,7 +2533,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_DELTA_KIRA_SK ===
 Name: KIRA
 Class: Battle Girl
-Pic: Battle Girl
+Pic: Crush Girl Frlg
 Gender: Female
 Music: Female
 Double Battle: No
@@ -2567,8 +2587,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DELTA_MARA_SK ===
 Name: MARA
-Class: Hex Maniac
-Pic: Hex Maniac
+Class: Camper
+Pic: Camper
 Gender: Female
 Music: Female
 Double Battle: No
@@ -2602,9 +2622,9 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_DELTA_NOOR_SK ===
 Name: NOOR
 Class: Psychic
-Pic: Psychic F
-Gender: Female
-Music: Female
+Pic: Psychic M
+Gender: Male
+Music: Male
 Double Battle: No
 AI: Basic Trainer
 
@@ -2618,8 +2638,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DELTA_IVO_SK ===
 Name: IVO
-Class: Expert
-Pic: Expert M
+Class: Pokemaniac
+Pic: Pokemaniac
 Gender: Male
 Music: Male
 Double Battle: No
@@ -2632,3 +2652,281 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ariados
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_TOWER1_ROBIN_SK ===
+Name: ROBIN
+Class: Bird Keeper Hns
+Pic: Bird Keeper
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Basic Trainer
+
+Pidgeotto
+Level: 21
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Spearow
+Level: 21
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_TOWER1_OWEN_SK ===
+Name: OWEN
+Class: Sage Hns
+Pic: Sage Hns
+Gender: Male
+Music: Hg Sage
+Double Battle: No
+AI: Basic Trainer
+
+Hoothoot
+Level: 22
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Natu
+Level: 22
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Murkrow
+Level: 22
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_TOWER1_EDWIN_SK ===
+Name: EDWIN
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Hg Sage
+Double Battle: No
+AI: Basic Trainer
+
+Fearow
+Level: 23
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Delibird
+Level: 23
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Noctowl
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_TOWER2_OSCAR_SK ===
+Name: OSCAR
+Class: Firebreather Hns
+Pic: Firebreather Hns
+Gender: Male
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Basic Trainer
+
+Growlithe
+Level: 21
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Slugma
+Level: 21
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_TOWER2_GORDON_SK ===
+Name: GORDON
+Class: Super Nerd Hns
+Pic: Super Nerd Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+
+Flaaffy
+Level: 22
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Elekid
+Level: 22
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Voltorb
+Level: 22
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_TOWER2_CLARA_SK ===
+Name: CLARA
+Class: Kimono Girl Hns
+Pic: Kimono Girl Hns
+Gender: Female
+Music: Hg Girl 2
+Double Battle: No
+AI: Basic Trainer
+
+Poliwhirl
+Level: 23
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Chinchou
+Level: 23
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Azumarill
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_TOWER3_HAROLD_SK ===
+Name: HAROLD
+Class: Hiker Hns
+Pic: Hiker
+Gender: Male
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Basic Trainer
+
+Sandshrew
+Level: 21
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Phanpy
+Level: 21
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_TOWER3_FINN_SK ===
+Name: FINN
+Class: Sailor Hns
+Pic: Sailor
+Gender: Male
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Basic Trainer
+
+Tentacool
+Level: 22
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Shellder
+Level: 22
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Krabby
+Level: 22
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_TOWER3_ARTHUR_SK ===
+Name: ARTHUR
+Class: Dragon Tamer Hns
+Pic: Dragon Tamer
+Gender: Male
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Basic Trainer
+
+Gligar
+Level: 23
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Quagsire
+Level: 23
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Dratini
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_TOWER4_LIA_ROSE_SK ===
+Name: LIA & ROSE
+Class: Twins Hns
+Pic: Twins Hns
+Gender: Female
+Music: Hg Girl 1
+Double Battle: Yes
+AI: Basic Trainer
+
+Nidorina
+Level: 21
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Nidorino
+Level: 21
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_TOWER4_TOM_ANNA_SK ===
+Name: TOM & ANNA
+Class: Young Couple Hns
+Pic: Young Couple
+Gender: Female
+Music: Hg Girl 1
+Double Battle: Yes
+AI: Basic Trainer
+
+Miltank
+Level: 22
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Tauros
+Level: 22
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_TOWER4_AL_EDITH_SK ===
+Name: AL & EDITH
+Class: Old Couple
+Pic: Old Couple
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer
+
+Clefairy
+Level: 23
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Jigglypuff
+Level: 23
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Togetic
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Chansey
+Level: 24
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_MARSHDUKE_LEADER_VERA ===
+Name: VERA
+Class: Leader
+Pic: Channeler Frlg
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Smart Trainer
+
+Girafarig
+Level: 27
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+Hypno
+Level: 28
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+Xatu
+Level: 30
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+=== TRAINER_MARSHDUKE_LEADER_HOLT ===
+Name: HOLT
+Class: Leader
+Pic: DP Scientist
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Smart Trainer
+
+Exeggcute
+Level: 27
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+Slowpoke
+Level: 28
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+Kadabra
+Level: 30
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe

@@ -260,24 +260,29 @@ Route013_2_NPC_MarshGuide_Text_0:
 	.string "firm platforms and study the next\l"
 	.string "stretch before heading out.\p"
 	.string "Those dark patches will take your boots\n"
-	.string "if you dawdle. I know because they\l"
-	.string "already own mine.$"
+	.string "if you dawdle.\p"
+	.string "How do I know?\p"
+	.string "Well let's just say I love the marsh, but\n"
+	.string "I don't love it enough to be a permanent\l"
+	.string "resident.$"
 
 Route013_2_NPC_BootCollector_Text_0:
-	.string "I came here to train my legs. I've\n"
-	.string "trained one leg, lost one shoe and\l"
-	.string "developed a powerful respect for\l"
-	.string "benches.$"
+	.string "I came here to train my legs.\p"
+	.string "So far I've trained one leg, lost one\n"
+	.string "shoe and developed a powerful respect\l"
+	.string "for nature.$"
 
 Route013_2_NPC_RootWatcher_Text_0:
 	.string "Look under the roots before you call a\n"
 	.string "patch empty.\p"
 	.string "I found three kinds of tiny Pokemon\n"
-	.string "there. And somebody's wedding ring. The\l"
-	.string "Pokemon were less grateful to be found.$"
+	.string "there.\p"
+	.string "One of them I only saw for a moment, he\n"
+	.string "had these cute orange cheeks.\p"
+	.string "I guess I got lucky!$"
 
 Route013_2_NPC_PicnicCook_Text_0:
-	.string "Hot soup, dry socks, hot soup again.\n"
+	.string "Hot soup, dry socks, and a good time.\n"
 	.string "That's the marsh menu.\p"
 	.string "No, I don't cook anything I find\n"
 	.string "wriggling in a puddle. I have a supplier\l"
@@ -285,17 +290,19 @@ Route013_2_NPC_PicnicCook_Text_0:
 
 Route013_2_NPC_Reporter_Text_0:
 	.string "Our segment was called 'Untouched\n"
-	.string "Wilderness.' Then a ranger pointed out\l"
-	.string "the old drainage ditch behind me.\p"
-	.string "Now it's called 'A Closer Look.' Much\n"
-	.string "harder to film.$"
+	.string "Wilderness.' untill we realized we were\l"
+	.string "filming with the city in the background.\p"
+	.string "Now we call it 'The Natural Reality' It's\n"
+	.string "a lot more accurate.$"
 
 Route013_2_NPC_Cameraman_Text_0:
 	.string "My camera caught something moving in\n"
 	.string "the reeds.\p"
-	.string "Could be a rare Pokemon. Could be my\n"
-	.string "colleague retrieving her microphone.\l"
-	.string "Both are being equally uncooperative.$"
+	.string "They say bears roam these marshes\n"
+	.string "looking for food.\p"
+	.string "Hopefully they have already eaten\n"
+	.string "breakfast. I don't want to be the next\l"
+	.string "meal!$"
 
 Route013_2_NPC_BicycleVisitor_Text_0:
 	.string "The bike handles the park beautifully.\n"

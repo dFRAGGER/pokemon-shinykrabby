@@ -25,11 +25,13 @@ script Marshduke_Indoor_House4_Ari {
     msgbox(format("Well, look who finally moved something that didn't want to move.\pAlright, you've earned that race.\pJust don't expect me to go easy on you, not in these shoes.\pOut past the platforms, east, where the boards are broken.\pMeet me there. \pWear something you don't mind losing, like those ugly shoes."), MSGBOX_AUTOCLOSE)
     setflag(FLAG_ARI_SPRINT_CHALLENGE)
     if(var(VAR_TEMP_0) == 5) {
-        applymovement(3, moves(walk_fast_left walk_fast_down*2 walk_fast_left walk_fast_down*3 walk_fast_right*2 walk_fast_down*4))
+        applymovement(3, moves(walk_fast_left walk_fast_down*2 walk_fast_left walk_fast_down*3 walk_fast_right walk_fast_down*4))
+        waitmovement(3)
 
     }
     else {
-        applymovement(3, moves(walk_fast_down*2 walk_fast_left*2 walk_fast_down*3 walk_fast_right*2 walk_fast_down*4))
+        applymovement(3, moves(walk_fast_down*2 walk_fast_left*2 walk_fast_down*3 walk_fast_right walk_fast_down*4))
+        waitmovement(3)
     }
     removeobject(3)
     waitmessage
@@ -39,7 +41,6 @@ script Marshduke_Indoor_House4_Ari {
 
 script Marshduke_Indoor_House4_KimonoGirl {
     lock
-    faceplayer
     msgbox(format("Oh. So this is where she ended up.\pI always pictured her somewhere quieter. A shrine, maybe. Not behind glass with a price tag.\pIt's strange, seeing centuries of my sisters' dancing reduced to a museum piece for sale.\pBut... the glass is spotless, and the case is dust-free.\pAri may sell everything he loves, but he does take care of it first. I suppose that's worth something."))
     waitmessage
     release
@@ -50,6 +51,24 @@ script Marshduke_Indoor_House4_WatchVisitor {
     lock
     faceplayer
     msgbox(format("Look at this thing. Wound, polished, never once worn out the door.\pWhy buy something you're not even going to use?\p...\pThen again, I've got sneakers at home still in the box, so who am I to talk."))
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House4_SneakerVisitor {
+    lock
+    faceplayer
+    msgbox(format("See that price tag? Crossed out twice.\pWhen I first came in, it was the first number. Last week, the second.\pIf I keep waiting, I'll never be able to afford them.\p...Or maybe that's exactly what Ari wants me to think."))
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House4_Guard {
+    lock
+    faceplayer
+    msgbox(format("Look, don't touch. That's the whole job description.\pAri pays me to stand here and make sure nobody breathes on the glass.\pThe sneakers and watches I don't really get. But that burnt beam over there...\pPeople come in asking about it. Never to buy it. Just to ask.\pThat's the one I keep my eye on."))
     waitmessage
     release
     end
@@ -110,4 +129,6 @@ script Marshduke_Indoor_House4_Sign_Watch3 {
     release
     end
 }
+
+
 

@@ -3026,3 +3026,14 @@ const struct Tileset gTileset_ShadyForest =
     .metatileAttributes = gMetatileAttributes_ShadyForest,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_DojoExterior =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_DojoExterior,
+    .palettes = gTilesetPalettes_DojoExterior,
+    .metatiles = gMetatiles_DojoExterior,
+    .metatileAttributes = gMetatileAttributes_DojoExterior,
+    .callback = NULL,
+};

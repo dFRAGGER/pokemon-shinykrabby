@@ -1,0 +1,26 @@
+{
+  "id": "MAP_ROUTE026",
+  "name": "Route026",
+  "layout": "LAYOUT_ROUTE026",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_ALTERING_CAVE",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY_CLOUDS",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE025",
+      "offset": 132,
+      "direction": "down"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

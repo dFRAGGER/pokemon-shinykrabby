@@ -1,0 +1,33 @@
+mapscripts Marshduke_Indoor_Tower2_1F_MapScripts {}
+
+// Tower of the Rekindled. 2F holds a three-trainer gauntlet with no healing
+// in between; 3F holds the prize. See Marshduke_Indoor_Tower2_2F.
+
+script Marshduke_Indoor_Tower2_1F_Steward {
+    lock
+    faceplayer
+    if (defeated(TRAINER_TOWER2_CLARA_SK)) {
+        msgbox(format("You beat Clara? Then you have to admit it. Ho-Oh beats Lugia, any day."), MSGBOX_AUTOCLOSE)
+    }
+    else {
+        msgbox(format("Welcome to the Tower of the Rekindled!\pThis tower is for Ho-Oh and the three Pokémon it brought back to life. Easily the most beautiful vision in the cathedral.\pThe keepers are upstairs. You'll face three of them in a row, without a break to heal.\pSo if your Pokémon need a rest, now's the time."), MSGBOX_AUTOCLOSE)
+    }
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower2_1F_Pilgrim {
+    lock
+    faceplayer
+    msgbox(format("When Ho-Oh flies over the burning tower in the vision, the whole cathedral turns gold.\pI've cried every single time. My friends have stopped coming with me."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower2_1F_Visitor {
+    lock
+    faceplayer
+    msgbox(format("I lasted two rounds against the firebreather once.\pMy eyebrows are still growing back."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}

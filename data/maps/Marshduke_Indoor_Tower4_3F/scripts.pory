@@ -1,0 +1,62 @@
+mapscripts Marshduke_Indoor_Tower4_3F_MapScripts {}
+
+// Top of the Tower of the Two Hearts; only reachable after the 2F gauntlet.
+
+script Marshduke_Indoor_Tower4_3F_Al {
+    lock
+    faceplayer
+    if (!flag(FLAG_ITEM_MARSHDUKE_TOWER4_REWARD)) {
+        msgbox(format("There you are! Edith wanted to make you tea, but I told her you'd be busy.\pThe other towers keep fighting about which vision is the most important.\pBut every one of those legends had someone to care about. That's what our vision is about. So really, we win.\pHere, take this. Give it to a Pokémon you're close to."))
+        waitmessage
+        giveitem(ITEM_SOOTHE_BELL)
+        waitmessage
+        setflag(FLAG_ITEM_MARSHDUKE_TOWER4_REWARD)
+    }
+    else {
+        msgbox(format("We still walk along the dike every evening, just like when we were young.\pThe Nidoran used to come out to say hello. They're a bit shy these days."), MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower4_3F_Edith {
+    lock
+    faceplayer
+    msgbox(format("Don't let Al tell you he's won fifty years of arguments.\pHe's won about three. I let him have those."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower4_3F_Sign_Window {
+    msgbox(format("You can see the dike running along the fields.\pTwo Pidgey are sitting side by side on a fence."), MSGBOX_SIGN)
+    end
+}
+
+script Marshduke_Indoor_Tower4_3F_Twins {
+    lock
+    faceplayer
+    msgbox(format("LIA: Latias is my favorite!\pROSE: Latios is MY favorite!\pLIA: We've been arguing about this since we were five."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower4_3F_Tom {
+    lock
+    faceplayer
+    msgbox(format("Anna and I come here every Sunday to watch the vision.\pWe always sit in the same spot. Third row, left side. Best view in the cathedral."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower4_3F_Anna {
+    lock
+    faceplayer
+    msgbox(format("Don't tell Tom, but I peeked at the Ho-Oh vision once.\pIt was nice. Not as nice as ours, though."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}

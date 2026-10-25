@@ -548,13 +548,51 @@ u8 FindTallGrassFieldEffectSpriteId(u8 localId, u8 mapNum, u8 mapGroup, s16 x, s
     return MAX_SPRITES;
 }
 
+// The reeds in gTileset_Rustboro reuse the General long-grass tiles with one of
+// Rustboro's own palettes (11). The long-grass sprite uses the same color
+// indices as those tiles, so drawing it with that tileset palette makes it
+// match the reeds. Returns NULL for ordinary long grass.
+static const u16 *GetRecoloredLongGrassPalette(s16 x, s16 y)
+{
+    const struct MapLayout *layout = gMapHeader.mapLayout;
+    u32 metatileId = MapGridGetMetatileIdAt(x, y);
+    u32 numPrimaryMetatiles = GetNumMetatilesInPrimary(layout);
+    u32 paletteNum;
+
+    if (layout->secondaryTileset != &gTileset_Rustboro || metatileId < numPrimaryMetatiles)
+        return NULL;
+
+    // Top layer's first tile; the reed metatiles use one palette for all of it.
+    paletteNum = layout->secondaryTileset->metatiles[(metatileId - numPrimaryMetatiles) * NUM_TILES_PER_METATILE + 4] >> 12;
+    if (paletteNum < GetNumPalsInPrimary(layout))
+        return NULL;
+
+    return layout->secondaryTileset->palettes[paletteNum];
+}
+
 u32 FldEff_LongGrass(void)
 {
     u8 spriteId;
+    const struct SpriteTemplate *template = gFieldEffectObjectTemplatePointers[FLDEFFOBJ_LONG_GRASS];
+    const u16 *reedPalette = GetRecoloredLongGrassPalette(gFieldEffectArguments[0], gFieldEffectArguments[1]);
     s16 x = gFieldEffectArguments[0];
     s16 y = gFieldEffectArguments[1];
+
+    if (reedPalette != NULL)
+    {
+        u8 paletteSlot = IndexOfSpritePaletteTag(FLDEFF_PAL_TAG_REED_LONG_GRASS);
+        if (paletteSlot == 0xFF)
+        {
+            struct SpritePalette spritePalette = {reedPalette, FLDEFF_PAL_TAG_REED_LONG_GRASS};
+            paletteSlot = LoadSpritePalette(&spritePalette);
+            SetPaletteColorMapType(paletteSlot + 16, COLOR_MAP_DARK_CONTRAST);
+            UpdateSpritePaletteWithWeather(paletteSlot, FALSE);
+        }
+        template = &gFieldEffectObjectTemplate_LongGrassReeds;
+    }
+
     SetSpritePosToOffsetMapCoords(&x, &y, 8, 8);
-    spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_LONG_GRASS], x, y, 0);
+    spriteId = CreateSpriteAtEnd(template, x, y, 0);
     if (spriteId != MAX_SPRITES)
     {
         struct Sprite *sprite = &gSprites[spriteId];

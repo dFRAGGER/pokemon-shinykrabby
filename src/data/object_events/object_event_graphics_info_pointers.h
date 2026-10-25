@@ -390,6 +390,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysA;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysN;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSAnne;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FacultyBoat;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MegaAlakazam;
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -1077,6 +1078,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_DEOXYS_N]                 = &gObjectEventGraphicsInfo_DeoxysN,
     [OBJ_EVENT_GFX_SS_ANNE]                  = &gObjectEventGraphicsInfo_SSAnne,
     [OBJ_EVENT_GFX_FACULTY_BOAT]             = &gObjectEventGraphicsInfo_FacultyBoat,
+    [OBJ_EVENT_GFX_MEGA_ALAKAZAM]            = &gObjectEventGraphicsInfo_MegaAlakazam,
 #if IS_HNS
     [OBJ_EVENT_GFX_BLAINE_SK] = &gObjectEventGraphicsInfo_Blaine_sk,
     [OBJ_EVENT_GFX_BLUE_SK] = &gObjectEventGraphicsInfo_Blue_sk,

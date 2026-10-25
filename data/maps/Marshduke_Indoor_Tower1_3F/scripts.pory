@@ -1,1 +1,44 @@
 mapscripts Marshduke_Indoor_Tower1_3F_MapScripts {}
+
+// Top of the Tower of the Balanced Sky; only reachable after the 2F gauntlet.
+
+script Marshduke_Indoor_Tower1_3F_SkyKeeper {
+    lock
+    faceplayer
+    if (!flag(FLAG_ITEM_MARSHDUKE_TOWER1_REWARD)) {
+        msgbox(format("Ah, there you are. Not many pilgrims make it up here.\pSome people say the Two Hearts vision is the most important one. Or the Groudon one.\pThey're wrong, of course. Lugia doesn't fight anybody. It just brings the sky back into balance. That's real strength.\pHere, you've earned this. Even the strongest flyer needs to land and rest sometimes."))
+        waitmessage
+        giveitem(ITEM_TM_ROOST)
+        waitmessage
+        setflag(FLAG_ITEM_MARSHDUKE_TOWER1_REWARD)
+    }
+    else {
+        msgbox(format("I come up here every morning to look at the sky. It's a lot quieter than in the vision.\pBut Lugia is still out there somewhere. I'm sure of it."), MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower1_3F_Sign_Window {
+    msgbox(format("You can see the whole city from up here.\pA Pidgey is sitting on the rooftop across the street."), MSGBOX_SIGN)
+    end
+}
+
+script Marshduke_Indoor_Tower1_3F_Robin {
+    lock
+    faceplayer
+    msgbox(format("You won! My Pidgeotto is still sulking about it.\pHey, which vision do you like best? It's Lugia, right? Say it's Lugia."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower1_3F_Owen {
+    lock
+    faceplayer
+    msgbox(format("I watched the Lugia vision again this morning. That makes forty-three.\pThere are so many birds flying behind Lugia in that vision. I've never managed to count them all."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}

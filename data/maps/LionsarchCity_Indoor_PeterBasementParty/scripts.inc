@@ -635,7 +635,7 @@ DiscoBasement_DJ_Peter_Text_3:
 
 DiscoBasement_DJ_Peter_Text_4:
 	.string "Point is, I learned a thing or two about\n"
-	.string "Overheat.\p"
+	.string "Fire Blast.\p"
 	.string "Not the kind you want to experience\n"
 	.string "personally, trust me.\p"
 	.string "But the kind your Pokemon can actually\n"

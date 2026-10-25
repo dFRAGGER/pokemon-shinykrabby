@@ -2168,6 +2168,10 @@ bool8 UsedPokemonCenterWarp(void)
 
 bool32 PlayerNotAtTrainerHillEntrance(void)
 {
+#if IS_SK
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_TRAINER_HILL_ENTRANCE_SK) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_TRAINER_HILL_ENTRANCE_SK))
+        return FALSE;
+#endif
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_TRAINER_HILL_ENTRANCE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_TRAINER_HILL_ENTRANCE))
         return FALSE;
 
@@ -5861,8 +5865,9 @@ bool8 CheckAddCoins(void)
         return TRUE;
 }
 
-// ShinyKrabby custom specials (ported from custom maps)
-#define LOCALID_MARSHDUKE_CATHEDRAL_CASTFORM 33
+// ShinyKrabby custom specials (ported from custom maps).
+// LOCALID_MARSHDUKE_CATHEDRAL_CASTFORM is the named local id from the
+// cathedral map.json, so reordering that map's objects can't break it.
 
 void SetCastformSunnyForm(void)
 {

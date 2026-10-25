@@ -1,0 +1,44 @@
+mapscripts Marshduke_Indoor_Tower3_3F_MapScripts {}
+
+// Top of the Tower of the Divided World; only reachable after the 2F gauntlet.
+
+script Marshduke_Indoor_Tower3_3F_Arthur {
+    lock
+    faceplayer
+    if (!flag(FLAG_ITEM_MARSHDUKE_TOWER3_REWARD)) {
+        msgbox(format("You made it! Harold owes me lunch. He bet you'd lose to Finn.\pThe Lugia tower calms the sky. The Ho-Oh tower brings things back to life. Fine.\pBut our vision has three legends at once. Three! It's not even a contest.\pHere, take this. It's the closest you'll get to Rayquaza's roar."))
+        waitmessage
+        giveitem(ITEM_TM_DRAGON_PULSE)
+        waitmessage
+        setflag(FLAG_ITEM_MARSHDUKE_TOWER3_REWARD)
+    }
+    else {
+        msgbox(format("When the land and sea crash together in the vision, the whole beach is covered in Krabby running for cover.\pI laugh every time. Poor little things."), MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower3_3F_Sign_Window {
+    msgbox(format("You can see where the delta meets the sea.\pA single Krabby is scuttling along the beach."), MSGBOX_SIGN)
+    end
+}
+
+script Marshduke_Indoor_Tower3_3F_Harold {
+    lock
+    faceplayer
+    msgbox(format("Good battle! My Phanpy wants a rematch, but it's napping.\pDid you know Groudon's footprint in the vision is bigger than this whole tower? I measured it. Sort of."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower3_3F_Finn {
+    lock
+    faceplayer
+    msgbox(format("Kyogre. Best. Legend. That's all I've got to say.\p...Okay, Rayquaza is pretty cool too. Don't tell Arthur."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}

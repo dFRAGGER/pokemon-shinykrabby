@@ -1,0 +1,33 @@
+mapscripts Marshduke_Indoor_Tower3_1F_MapScripts {}
+
+// Tower of the Divided World. 2F holds a three-trainer gauntlet with no
+// healing in between; 3F holds the prize. See Marshduke_Indoor_Tower3_2F.
+
+script Marshduke_Indoor_Tower3_1F_Steward {
+    lock
+    faceplayer
+    if (defeated(TRAINER_TOWER3_ARTHUR_SK)) {
+        msgbox(format("You beat Arthur? Then you've earned the right to say it. Three legends beat one bird!"), MSGBOX_AUTOCLOSE)
+    }
+    else {
+        msgbox(format("Welcome to the Tower of the Divided World!\pThis tower is for Groudon, Kyogre and Rayquaza. Three legends in one vision. No other tower can say that.\pThe keepers are upstairs. You'll face three of them in a row, without a break to heal.\pSo if your Pokémon need a rest, now's the time."), MSGBOX_AUTOCLOSE)
+    }
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower3_1F_Pilgrim {
+    lock
+    faceplayer
+    msgbox(format("Ms. Stone says Rayquaza brought balance. Brother Andre says it just won the fight.\pHonestly, I don't care who's right. Rayquaza coming down out of the clouds is the coolest thing I've ever seen."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower3_1F_Visitor {
+    lock
+    faceplayer
+    msgbox(format("I used to bring my fishing rod up here, just in case Kyogre showed up.\pIt never did. I still bring the rod, though."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}

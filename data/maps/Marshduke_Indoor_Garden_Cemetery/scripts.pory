@@ -38,22 +38,157 @@ text Marshduke_Indoor_Garden_Cemetery_Trainer_Mara_After {
     format("MURKROW keeps pinching ribbon off the bouquets. If you see any in its beak, that's mine to put back.")
 }
 
-script Marshduke_Indoor_Garden_Cemetery_NPC_PlantKeeper {
-    lock
-    faceplayer
-    if (flag(FLAG_MARSHDUKE_CATHEDRAL_TOUR)) {
-        msgbox(format("Back again? I remembered another one. A blue flower, no bigger than your thumbnail, beside the old ditch.\pPeople keep asking me about the grand visions. I'd be pleased just to find that little flower again."))
-    } else {
-        msgbox(format("Oh, stand still. There's a little fern beside your shoe.\pI used to see those all along the river. And a white flower that shut before rain. Haven't seen that one in years.\pNames on the stones? You'll have to lean closer. My eyes mostly find the leaves these days."))
-    }
-    release
-    end
-}
-
 script Marshduke_Indoor_Garden_Cemetery_NPC_BouquetVisitor {
     lock
     faceplayer
     msgbox(format("I bring the flowers my partner liked. The plant keeper tells me their names every visit.\pSometimes I already know. I let him tell me anyway."))
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_NPC_StoneCaretaker {
+    lock
+    faceplayer
+    msgbox(format("This cemetery is greener than the usual cemeteries.\pThe little plants between the stones are not cut down by the gardener.\pTidy doesn't have to mean nothing is allowed to grow."))
+    release
+    end
+}
+
+
+// Grave signs (left to right, top to bottom), the old tomb and its locked door.
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_Grave01 {
+    lock
+    msgbox(format("HERE LIES GRANDPA WALT.\nHE CAUGHT THE BIG ONE. EVENTUALLY."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_Grave02 {
+    lock
+    msgbox(format("IN LOVING MEMORY OF ROSE BAXTER.\nMOTHER, BAKER, BEST PIE IN THE DELTA."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_Grave03 {
+    lock
+    msgbox(format("SIR FLUFFINGTON\nBELOVED FURRET. ALWAYS FOUND THE WAY HOME."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_Grave04 {
+    lock
+    msgbox(format("HENRY WALLACE\nHE SAID IT WAS ONLY A SMALL STORM."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_Grave05 {
+    lock
+    msgbox(format("A grave covered in moss. The name has worn away completely.\pSomeone has left a fresh flower on it anyway."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_Grave06 {
+    lock
+    msgbox(format("MARGARET AND JOE\nTOGETHER AGAIN."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_Grave07 {
+    lock
+    msgbox(format("HERE LIES MAYOR DAWSON.\nHE PROMISED US A NEW BRIDGE. WE'RE STILL WAITING."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_Grave08 {
+    lock
+    msgbox(format("TINY\nA SKITTY WHO WAS NOT TINY AT ALL."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_Grave09 {
+    lock
+    msgbox(format("CAPTAIN ELIAS FOSTER\nTHE SEA KEPT HIS SHIP. WE KEPT HIS NAME."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_Grave10 {
+    lock
+    msgbox(format("LOTTIE, AGE 7\nSHE LOVED THE MARILL IN THE CANAL."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_Grave11 {
+    lock
+    msgbox(format("A plain stone with only a date carved into it.\pA tiny Poké Ball is engraved underneath."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_Grave12 {
+    lock
+    msgbox(format("DR. ANTON LUZAC\nFOUNDER OF THE INSTITUTE. HE WANTED TO KNOW."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_Grave13 {
+    lock
+    msgbox(format("BROTHER PETER\nHE SWEPT THESE PATHS FOR FORTY YEARS."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_Grave14 {
+    lock
+    msgbox(format("GERALD\nTHE MOST AVERAGE FISHERMAN IN MARSHDUKE."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_Grave15 {
+    lock
+    msgbox(format("THE YOUNG FAMILY\nSIX GENERATIONS, ONE WINDOW, THE SAME RIVER VIEW."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_Tomb {
+    lock
+    msgbox(format("An old stone sign. The text is worn away, unreadable."), MSGBOX_SIGN)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Garden_Cemetery_Sign_TombDoor {
+    lock
+    msgbox(format("Locked. I don't think I should open it."), MSGBOX_SIGN)
+    waitmessage
     release
     end
 }

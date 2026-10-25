@@ -21,7 +21,7 @@ script DiscoBasement_DJ_Peter {
                     msgbox(format("Look, I owe you.\pI had this stashed away for a while.\pGot it the hard way, if you know what I mean.\pThere was a period in my life where I ran a little... HOT.\pToo hot.\pLike, everything-on-fire-including-myself hot.\pNot my proudest chapter."))
                     waitmessage
                     setspeaker("DJ PETER")
-                    msgbox(format("Point is, I learned a thing or two about Overheat.\pNot the kind you want to experience personally, trust me.\pBut the kind your Pokemon can actually USE?\pThat's a different story.\pHere. Take the TM.\pYou'll do more good with it than I ever did."))
+                    msgbox(format("Point is, I learned a thing or two about Fire Blast.\pNot the kind you want to experience personally, trust me.\pBut the kind your Pokemon can actually USE?\pThat's a different story.\pHere. Take the TM.\pYou'll do more good with it than I ever did."))
                     waitmessage
                     giveitem(ITEM_TM38)
                     setflag(FLAG_PETER_GAVE_FACTORY_REWARD)

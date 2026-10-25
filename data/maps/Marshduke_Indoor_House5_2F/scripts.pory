@@ -1,1 +1,52 @@
 mapscripts Marshduke_Indoor_House5_2F_MapScripts {}
+
+// Delta count quest: after the cathedral tour, Merel asks to see a Psyduck in
+// the player's Pokedex, then compares her "good year" with her grandmother's
+// first logbook (Marshduke_Indoor_House5).
+
+script Marshduke_Indoor_House5_2F_Merel {
+    lock
+    faceplayer
+    if (flag(FLAG_DELTA_COUNT_COMPLETED)) {
+        msgbox(format("I started a new page today.\pAt the top I copied what Grandma saw, so I never forget what we're counting towards."), MSGBOX_AUTOCLOSE)
+        release
+        end
+    }
+    if (!flag(FLAG_MARSHDUKE_CATHEDRAL_TOUR)) {
+        msgbox(format("Oh, hi! I'm ILONA. I count the delta's Pokémon, just like my grandma used to.\pAnd guess what? This is a really good year!\pFourteen Psyduck in the reeds along the river. Last year it was only eleven!\pGrandma just shakes her head when I tell her. I don't get why."), MSGBOX_AUTOCLOSE)
+        release
+        end
+    }
+    if (!flag(FLAG_DELTA_COUNT_STARTED)) {
+        msgbox(format("Oh, hi! I'm ILONA. I count the delta's Pokémon, just like my grandma used to.\pFourteen Psyduck this spring! A really good year.\pBut Grandma says I need a second pair of eyes. Someone who isn't from here.\pHave you seen any Psyduck out there? Let me have a look at your Pokédex!"))
+        setflag(FLAG_DELTA_COUNT_STARTED)
+    }
+    else {
+        msgbox(format("Did you spot a Psyduck yet? Let me see your Pokédex!"))
+    }
+    getseenmon(SPECIES_PSYDUCK)
+    if (var(VAR_RESULT) == FALSE) {
+        msgbox(format("No Psyduck yet...\pThey swim in the waters along Route 013 and Route 014. Come back once you've seen one!"), MSGBOX_AUTOCLOSE)
+        release
+        end
+    }
+    msgbox(format("There it is! One more Psyduck for the log.\pGrandma gave me her very first logbook to study. I never actually read it... Let's compare!\p'Psyduck: the waters looked yellow with them. Stopped counting at three hundred.'\p...\p"))
+    waitmessage
+    playse(SE_PIN)
+    applymovement(1, moves(emote_exclamation_mark))
+    waitmovement
+    msgbox(format("Three hundred??\pAnd I was so happy with fourteen.\pI thought this was a good year...\pI suppose I just never knew what a good year looked like.\pThank you. I think I needed someone from outside the delta to see it with me.\pHere, these wash up in the reeds sometimes. The old man who helps Pokémon remember their moves loves them."))
+    giveitem(ITEM_HEART_SCALE, 2)
+    setflag(FLAG_DELTA_COUNT_COMPLETED)
+    msgbox(format("I'm going to keep counting."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(1, moves(face_left))
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_House5_2F_Sign_Notebook {
+    msgbox(format("A bright notebook with stickers on the cover.\p'PSYDUCK: 14. A good year!' A little smiley face is drawn next to it."), MSGBOX_SIGN)
+    end
+}

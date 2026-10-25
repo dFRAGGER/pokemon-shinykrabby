@@ -1,1 +1,10 @@
 mapscripts Marshduke_Indoor_Garden_House1_MapScripts {}
+
+script Marshduke_Indoor_Garden_House1_EventScript_Gardener {
+    lock
+    faceplayer
+    msgbox(format("Ah, a visitor. My name is Paul, the gardener here.\pMost botanical gardens are filled with plants from faraway lands. I think that's a mistake.\pExotic flowers are pretty, but they don't feed much of anything around here.\pNative plants grew up alongside the Bug Pokémon and birds of this delta.\pPlant what belongs here, and life finds its way back.\pThe gardener before me sprayed everything. He meant well, but the soil went quiet.\pNow I'm healing what he left behind. Compost, fallen leaves, and letting the roots be.\pOne day this will be a wild place again. Wild, but peaceful."))
+    waitmessage
+    release
+    end
+}

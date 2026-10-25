@@ -344,7 +344,7 @@ text Route013_2_Trainer_Iris_After {
 script Route013_2_NPC_MarshGuide {
     lock
     faceplayer
-    msgbox(format("The marsh is crossed in stages. Stop on firm platforms and study the next stretch before heading out.\pThose dark patches will take your boots if you dawdle. I know because they already own mine."))
+    msgbox(format("The marsh is crossed in stages. Stop on firm platforms and study the next stretch before heading out.\pThose dark patches will take your boots if you dawdle.\pHow do I know?\pWell let's just say I love the marsh, but I don't love it enough to be a permanent resident."))
     release
     end
 }
@@ -352,7 +352,7 @@ script Route013_2_NPC_MarshGuide {
 script Route013_2_NPC_BootCollector {
     lock
     faceplayer
-    msgbox(format("I came here to train my legs. I've trained one leg, lost one shoe and developed a powerful respect for benches."))
+    msgbox(format("I came here to train my legs.\pSo far I've trained one leg, lost one shoe and developed a powerful respect for nature."))
     release
     end
 }
@@ -360,7 +360,7 @@ script Route013_2_NPC_BootCollector {
 script Route013_2_NPC_RootWatcher {
     lock
     faceplayer
-    msgbox(format("Look under the roots before you call a patch empty.\pI found three kinds of tiny Pokemon there. And somebody's wedding ring. The Pokemon were less grateful to be found."))
+    msgbox(format("Look under the roots before you call a patch empty.\pI found three kinds of tiny Pokemon there.\pOne of them I only saw for a moment, he had these cute orange cheeks.\pI guess I got lucky!"))
     release
     end
 }
@@ -368,7 +368,7 @@ script Route013_2_NPC_RootWatcher {
 script Route013_2_NPC_PicnicCook {
     lock
     faceplayer
-    msgbox(format("Hot soup, dry socks, hot soup again. That's the marsh menu.\pNo, I don't cook anything I find wriggling in a puddle. I have a supplier and a very serious apron."))
+    msgbox(format("Hot soup, dry socks, and a good time. That's the marsh menu.\pNo, I don't cook anything I find wriggling in a puddle. I have a supplier and a very serious apron."))
     release
     end
 }
@@ -376,7 +376,7 @@ script Route013_2_NPC_PicnicCook {
 script Route013_2_NPC_Reporter {
     lock
     faceplayer
-    msgbox(format("Our segment was called 'Untouched Wilderness.' Then a ranger pointed out the old drainage ditch behind me.\pNow it's called 'A Closer Look.' Much harder to film."))
+    msgbox(format("Our segment was called 'Untouched Wilderness.' untill we realized we were filming with the city in the background.\pNow we call it 'The Natural Reality' It's a lot more accurate."))
     release
     end
 }
@@ -384,7 +384,7 @@ script Route013_2_NPC_Reporter {
 script Route013_2_NPC_Cameraman {
     lock
     faceplayer
-    msgbox(format("My camera caught something moving in the reeds.\pCould be a rare Pokemon. Could be my colleague retrieving her microphone. Both are being equally uncooperative."))
+    msgbox(format("My camera caught something moving in the reeds.\pThey say bears roam these marshes looking for food.\pHopefully they have already eaten breakfast. I don't want to be the next meal!"))
     release
     end
 }

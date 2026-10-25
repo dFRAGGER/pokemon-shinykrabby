@@ -6,6 +6,7 @@ extern const struct SpriteTemplate gNewGameBirchObjectTemplate;
 extern const struct OamData gNewGameBirchOamAttributes;
 extern const struct SpritePalette gSpritePalette_AlolaTallGrass;
 extern const struct SpriteTemplate gFieldEffectObjectTemplate_AlolaTallGrass;
+extern const struct SpriteTemplate gFieldEffectObjectTemplate_LongGrassReeds;
 
 extern s32 gFieldEffectArguments[8];
 extern void (*gPostMenuFieldCallback)(void);

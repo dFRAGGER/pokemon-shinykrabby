@@ -1,1 +1,26 @@
 mapscripts Marshduke_Indoor_House5_MapScripts {}
+
+// Mrs. Visser counted the delta's Pokemon for the research centre next door
+// until the Alakazam studies took over. Her granddaughter Merel (2F) runs the
+// delta count quest (FLAG_DELTA_COUNT_*), unlocked by the cathedral tour.
+
+script Marshduke_Indoor_House5_MrsVisser {
+    lock
+    faceplayer
+    if (flag(FLAG_DELTA_COUNT_COMPLETED)) {
+        msgbox(format("My granddaughter came down with your report and read my oldest logbook for an hour.\pShe didn't say a word. Then she asked me what the reeds used to look like.\pThat's how it starts, you know. Someone has to remember, so the rest of us can want it back."), MSGBOX_AUTOCLOSE)
+    }
+    elif (flag(FLAG_MARSHDUKE_CATHEDRAL_TOUR)) {
+        msgbox(format("You've been on Ms. STONE's tour. I can see it on your face.\pWaters too full of fish to see through... She told you that, did she?\pSixty years it took her to notice...\pI could have shown her in an afternoon. It's all written down, right here.\pMy granddaughter does the counts now. She's upstairs.\pGo say hello. She could use a second pair of eyes."), MSGBOX_AUTOCLOSE)
+    }
+    else {
+        msgbox(format("The book in front of me is an old log book.\pI counted the delta's Pokémon for the research centre next door. Every spring, every autumn.\pI recently stopped counting, nobody seemed to care.\pI think they're counting dreams over there now."), MSGBOX_AUTOCLOSE)
+    }
+    release
+    end
+}
+
+script Marshduke_Indoor_House5_Sign_OldLogbook {
+    msgbox(format("A logbook with a cracked leather cover. The first page, in neat handwriting:\p'PSYDUCK: the reeds yellow with them. Stopped counting at three hundred.'\p'YANMA: clouds of them over the water. Too many to count.'\p'SURSKIT: on every pool, every puddle.'"), MSGBOX_SIGN)
+    end
+}

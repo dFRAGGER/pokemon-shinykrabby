@@ -1,0 +1,115 @@
+mapscripts Marshduke_Indoor_Tower4_2F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_HIDE_MARSHDUKE_TOWER_CHALLENGERS)
+        if (defeated(TRAINER_TOWER4_AL_EDITH_SK)) {
+            setvar(VAR_TEMP_1, 1)
+        }
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1, 0: Marshduke_Indoor_Tower4_2F_Gauntlet
+    ]
+}
+
+// Same gauntlet as Marshduke_Indoor_Tower1_2F, but every keeper is a pair:
+// the parties are double battles, so each trainer has two objects. The first
+// of a pair stops at (5,5), the second at (5,4) in line with the player, and
+// they leave in reverse order. Without two usable party Pokemon the player is
+// sent back down before any battle starts.
+
+script Marshduke_Indoor_Tower4_2F_Gauntlet {
+    lockall
+    setvar(VAR_TEMP_1, 1)
+    setvar(VAR_0x8004, PARTY_SIZE)
+    specialvar(VAR_RESULT, CountPartyAliveNonEggMons_IgnoreVar0x8004Slot)
+    if (var(VAR_RESULT) < 2) {
+        playse(SE_PIN)
+        msgbox(format("A voice calls from the stairs above:\p'Sorry, only pairs can take this challenge!\pCome back with at least two Pokémon that can still fight.'"), MSGBOX_AUTOCLOSE)
+        warp(MAP_MARSHDUKE_INDOOR_TOWER4_1F, 2)
+        waitstate
+        end
+    }
+    cleartrainerflag(TRAINER_TOWER4_LIA_ROSE_SK)
+    cleartrainerflag(TRAINER_TOWER4_TOM_ANNA_SK)
+    playse(SE_PIN)
+
+    msgbox(format("A voice calls from the stairs above:\p'Hey, a challenger! Three pairs of keepers, one after the other. No breaks!\pTwo hearts against two hearts!'"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark walk_down*2 face_right))
+    waitmovement(LOCALID_PLAYER)
+
+    addobject(LOCALID_TOWER4_LIA)
+    applymovement(LOCALID_TOWER4_LIA, moves(walk_down*4 face_left))
+    waitmovement(LOCALID_TOWER4_LIA)
+    addobject(LOCALID_TOWER4_ROSE)
+    applymovement(LOCALID_TOWER4_ROSE, moves(walk_down*3 face_left))
+    waitmovement(LOCALID_TOWER4_ROSE)
+    playse(SE_PIN)
+    applymovement(LOCALID_TOWER4_ROSE, moves(emote_exclamation_mark))
+    applymovement(LOCALID_TOWER4_LIA, moves(emote_exclamation_mark))
+    waitmovement(LOCALID_TOWER4_LIA)
+    msgbox(format("LIA: First keepers, LIA and ROSE!\pROSE: We're twins, just like Latios and Latias!\pLIA: They're not twins.\pROSE: They're basically twins!"))
+    trainerbattle_no_intro(TRAINER_TOWER4_LIA_ROSE_SK, Marshduke_Indoor_Tower4_2F_Text_LiaRoseDefeat)
+    msgbox(format("ROSE: The next pair is all lovey-dovey. Gross. Good luck!"))
+    applymovement(LOCALID_TOWER4_ROSE, moves(walk_up*3))
+    waitmovement(LOCALID_TOWER4_ROSE)
+    removeobject(LOCALID_TOWER4_ROSE)
+    applymovement(LOCALID_TOWER4_LIA, moves(walk_up*4))
+    waitmovement(LOCALID_TOWER4_LIA)
+    removeobject(LOCALID_TOWER4_LIA)
+    delay(60)
+
+    addobject(LOCALID_TOWER4_TOM)
+    applymovement(LOCALID_TOWER4_TOM, moves(walk_down*4 face_left))
+    waitmovement(LOCALID_TOWER4_TOM)
+    addobject(LOCALID_TOWER4_ANNA)
+    applymovement(LOCALID_TOWER4_ANNA, moves(walk_down*3 face_left))
+    waitmovement(LOCALID_TOWER4_ANNA)
+    playse(SE_PIN)
+    applymovement(LOCALID_TOWER4_ANNA, moves(emote_exclamation_mark))
+    applymovement(LOCALID_TOWER4_TOM, moves(emote_exclamation_mark))
+    waitmovement(LOCALID_TOWER4_TOM)
+    msgbox(format("TOM: Second keepers, TOM and ANNA.\pANNA: We had our first date at the Two Hearts vision. Tom cried.\pTOM: So did you! Let's battle!"))
+    trainerbattle_no_intro(TRAINER_TOWER4_TOM_ANNA_SK, Marshduke_Indoor_Tower4_2F_Text_TomAnnaDefeat)
+    msgbox(format("ANNA: The last pair has been married for fifty years. Good luck with that."))
+    applymovement(LOCALID_TOWER4_ANNA, moves(walk_up*3))
+    waitmovement(LOCALID_TOWER4_ANNA)
+    removeobject(LOCALID_TOWER4_ANNA)
+    applymovement(LOCALID_TOWER4_TOM, moves(walk_up*4))
+    waitmovement(LOCALID_TOWER4_TOM)
+    removeobject(LOCALID_TOWER4_TOM)
+    delay(60)
+
+    addobject(LOCALID_TOWER4_AL)
+    applymovement(LOCALID_TOWER4_AL, moves(walk_down*4 face_left))
+    waitmovement(LOCALID_TOWER4_AL)
+    addobject(LOCALID_TOWER4_EDITH)
+    applymovement(LOCALID_TOWER4_EDITH, moves(walk_down*3 face_left))
+    waitmovement(LOCALID_TOWER4_EDITH)
+    playse(SE_PIN)
+    applymovement(LOCALID_TOWER4_EDITH, moves(emote_exclamation_mark))
+    applymovement(LOCALID_TOWER4_AL, moves(emote_exclamation_mark))
+    waitmovement(LOCALID_TOWER4_AL)
+    msgbox(format("AL: We are AL and EDITH, Keepers of the Two Hearts.\pEDITH: We've watched the Latios and Latias vision on every anniversary since we were twenty.\pAL: Fifty times now. And she still squeezes my hand at the same part. Let's battle!"))
+    trainerbattle_no_intro(TRAINER_TOWER4_AL_EDITH_SK, Marshduke_Indoor_Tower4_2F_Text_AlEdithDefeat)
+    msgbox(format("AL: Come up to the top. We have something for you."))
+    applymovement(LOCALID_TOWER4_EDITH, moves(walk_up*3))
+    waitmovement(LOCALID_TOWER4_EDITH)
+    removeobject(LOCALID_TOWER4_EDITH)
+    applymovement(LOCALID_TOWER4_AL, moves(walk_up*4))
+    waitmovement(LOCALID_TOWER4_AL)
+    removeobject(LOCALID_TOWER4_AL)
+    releaseall
+    end
+}
+
+text Marshduke_Indoor_Tower4_2F_Text_LiaRoseDefeat {
+    format("We lost... but we lost together!")
+}
+
+text Marshduke_Indoor_Tower4_2F_Text_TomAnnaDefeat {
+    format("At least we lost as a team.")
+}
+
+text Marshduke_Indoor_Tower4_2F_Text_AlEdithDefeat {
+    format("Well, dear, I suppose we're getting old.")
+}

@@ -716,7 +716,8 @@
 #define OBJ_EVENT_GFX_TRUCK_BLACK                733
 #define OBJ_EVENT_GFX_FACULTY_BOAT               734
 #define OBJ_EVENT_GFX_PHILDY                     735
-#define NUM_OBJ_EVENT_GFX                        736
+#define OBJ_EVENT_GFX_MEGA_ALAKAZAM              736
+#define NUM_OBJ_EVENT_GFX                        737
 
 
 // These are dynamic object gfx ids.
@@ -1098,6 +1099,7 @@
 #define OBJ_EVENT_PAL_TAG_FACULTY_BOAT            0x12b7
 #define OBJ_EVENT_PAL_TAG_ARCHIE_SK                0x12b8
 #define OBJ_EVENT_PAL_TAG_PHILDY                   0x12b9
+#define OBJ_EVENT_PAL_TAG_MEGA_ALAKAZAM            0x12ba
 
 // This + localId is used as the tileTag
 // for compressed graphicsInfos

@@ -1,1 +1,28 @@
 mapscripts Marshduke_Indoor_House3_MapScripts {}
+
+script Marshduke_Indoor_House3_Psychic {
+    lock
+    faceplayer
+    if (flag(FLAG_ITEM_MARSHDUKE_HOUSE3_TM_HIDDEN_POWER) == FALSE) {
+        msgbox(format("Ah. I felt you coming up the street.\pI've spent the last twenty years studying psychic powers.\pI'm convinced everyone has a little psychic ability in them, whether they know it or not.\pPokémon are no different. Each one carries a hidden power it never shows.\pIts type is written somewhere deep inside, where even its trainer can't see.\pHere. Let your Pokémon find out for themselves."))
+        waitmessage
+        giveitem(ITEM_TM_HIDDEN_POWER)
+        waitmessage
+        setflag(FLAG_ITEM_MARSHDUKE_HOUSE3_TM_HIDDEN_POWER)
+    }
+    else {
+        msgbox(format("Hidden Power never looks the same twice. Every Pokémon has something of its own.\p...My son, for example, is very good at hiding his thoughts from me.\pI'm told that's normal."), MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    release
+    end
+}
+
+script Marshduke_Indoor_House3_PsychicChild {
+    lock
+    faceplayer
+    msgbox(format("Shh! I'm thinking about nothing.\pDad can read minds, so I hide my thoughts behind a really big picture of a Snorlax.\pIt works every time!\p...I think it works."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}

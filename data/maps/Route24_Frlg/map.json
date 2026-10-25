@@ -1,10 +1,8 @@
 {
   "id": "MAP_ROUTE24",
   "name": "Route24_Frlg",
-  "game_version": "frlg",
   "layout": "LAYOUT_ROUTE24",
   "music": "MUS_RG_ROUTE24",
-  "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_ROUTE_24",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -13,7 +11,6 @@
   "allow_escaping": false,
   "allow_running": true,
   "show_map_name": true,
-  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
@@ -30,7 +27,6 @@
   "object_events": [
     {
       "local_id": "LOCALID_ROUTE24_ROCKET",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN",
       "x": 12,
       "y": 15,
@@ -44,7 +40,6 @@
       "flag": "FLAG_HIDE_NUGGET_BRIDGE_ROCKET"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CAMPER_FRLG",
       "x": 12,
       "y": 19,
@@ -58,7 +53,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS_FRLG",
       "x": 10,
       "y": 22,
@@ -72,7 +66,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
       "x": 12,
       "y": 25,
@@ -86,7 +79,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS_FRLG",
       "x": 10,
       "y": 28,
@@ -100,7 +92,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER_FRLG",
       "x": 12,
       "y": 31,
@@ -114,7 +105,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CAMPER_FRLG",
       "x": 5,
       "y": 21,
@@ -128,7 +118,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 11,
       "y": 4,
@@ -174,5 +163,8 @@
       "quantity": 1,
       "underfoot": false
     }
-  ]
+  ],
+  "floor_number": 0,
+  "game_version": "frlg",
+  "region": "REGION_KANTO"
 }

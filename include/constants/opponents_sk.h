@@ -5,7 +5,7 @@
 // from SK_TRAINERS_END, so growing NUM_SK_TRAINERS is the only thing needed to add
 // more trainers here - no need to touch opponents_hns.h.
 #define SK_TRAINERS_START                              619
-#define NUM_SK_TRAINERS                               158
+#define NUM_SK_TRAINERS                               172
 #define SK_TRAINERS_END                                (SK_TRAINERS_START + NUM_SK_TRAINERS - 1)
 
 // ShinyKrabby custom trainers (ported from custom maps)
@@ -173,5 +173,29 @@
 #define TRAINER_DELTA_BERT_SK                           (SK_TRAINERS_START + 155)
 #define TRAINER_DELTA_NOOR_SK                           (SK_TRAINERS_START + 156)
 #define TRAINER_DELTA_IVO_SK                            (SK_TRAINERS_START + 157)
+
+// Marshduke Tower 1 (Balanced Sky) 2F gauntlet
+#define TRAINER_TOWER1_ROBIN_SK                          (SK_TRAINERS_START + 158)
+#define TRAINER_TOWER1_OWEN_SK                           (SK_TRAINERS_START + 159)
+#define TRAINER_TOWER1_EDWIN_SK                         (SK_TRAINERS_START + 160)
+
+// Marshduke Tower 2 (Rekindled) 2F gauntlet
+#define TRAINER_TOWER2_OSCAR_SK                         (SK_TRAINERS_START + 161)
+#define TRAINER_TOWER2_GORDON_SK                        (SK_TRAINERS_START + 162)
+#define TRAINER_TOWER2_CLARA_SK                         (SK_TRAINERS_START + 163)
+
+// Marshduke Tower 3 (Divided World) 2F gauntlet
+#define TRAINER_TOWER3_HAROLD_SK                        (SK_TRAINERS_START + 164)
+#define TRAINER_TOWER3_FINN_SK                          (SK_TRAINERS_START + 165)
+#define TRAINER_TOWER3_ARTHUR_SK                        (SK_TRAINERS_START + 166)
+
+// Marshduke Tower 4 (Two Hearts) 2F gauntlet
+#define TRAINER_TOWER4_LIA_ROSE_SK                      (SK_TRAINERS_START + 167)
+#define TRAINER_TOWER4_TOM_ANNA_SK                      (SK_TRAINERS_START + 168)
+#define TRAINER_TOWER4_AL_EDITH_SK                      (SK_TRAINERS_START + 169)
+
+// Marshduke Gym (Gym 4) leaders, fought together in one double battle
+#define TRAINER_MARSHDUKE_LEADER_VERA                   (SK_TRAINERS_START + 170)
+#define TRAINER_MARSHDUKE_LEADER_HOLT                   (SK_TRAINERS_START + 171)
 
 #endif // GUARD_CONSTANTS_OPPONENTS_SK_H

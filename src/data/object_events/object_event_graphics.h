@@ -644,6 +644,9 @@ const u16 gObjectEventPal_SSAnne[] = INCBIN_U16("graphics/object_events/palettes
 const u16 gObjectEventPal_FacultyBoat[] = INCBIN_U16("graphics/object_events/palettes/faculty_boat.gbapal");
 const u16 gObjectEventPic_SSAnne[] = INCBIN_U16("graphics/object_events/pics/misc/ss_anne.4bpp");
 const u16 gObjectEventPic_FacultyBoat[] = INCBIN_U16("graphics/object_events/pics/misc/faculty_boat.4bpp");
+// Cathedral scenery: available even when Mega Evolution species are disabled.
+const u32 gObjectEventPic_MegaAlakazam[] = INCBIN_U32("graphics/pokemon/alakazam/mega/overworld.4bpp");
+const u16 gObjectEventPal_MegaAlakazam[] = INCBIN_U16("graphics/pokemon/alakazam/mega/overworld_normal.gbapal");
 const u16 gObjectEventPic_SurfBlob[] = INCBIN_U16("graphics/object_events/pics/misc/surf_blob.4bpp");
 
 const u16 gObjectEventPic_LaprasOld[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/lapras.4bpp");

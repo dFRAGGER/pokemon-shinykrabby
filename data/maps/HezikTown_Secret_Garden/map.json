@@ -15,13 +15,23 @@
   "connections": [
     {
       "map": "MAP_HEZIK_TOWN",
-      "offset": 0,
+      "offset": 19,
       "direction": "down"
     },
     {
       "map": "MAP_ROUTE020",
-      "offset": 40,
+      "offset": -76,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE019",
+      "offset": -80,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE024_2",
+      "offset": 11,
+      "direction": "right"
     }
   ],
   "object_events": [],

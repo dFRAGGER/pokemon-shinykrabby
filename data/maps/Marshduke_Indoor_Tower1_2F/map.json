@@ -13,20 +13,63 @@
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_INDOOR",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_TOWER1_ROBIN",
+      "graphics_id": "OBJ_EVENT_GFX_ROCKER_HNS",
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_MARSHDUKE_TOWER_CHALLENGERS"
+    },
+    {
+      "local_id": "LOCALID_TOWER1_OWEN",
+      "graphics_id": "OBJ_EVENT_GFX_SAGE_HNS",
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_MARSHDUKE_TOWER_CHALLENGERS"
+    },
+    {
+      "local_id": "LOCALID_TOWER1_EDWIN",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_HNS",
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_MARSHDUKE_TOWER_CHALLENGERS"
+    }
+  ],
   "warp_events": [
     {
       "x": 2,
       "y": 1,
       "elevation": 0,
-      "dest_map": "MAP_MARSHDUKE_INDOOR_TOWER1_2F",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_MARSHDUKE_INDOOR_TOWER1_1F",
+      "dest_warp_id": "2"
     },
     {
       "x": 5,
       "y": 1,
       "elevation": 0,
-      "dest_map": "MAP_MARSHDUKE_INDOOR_TOWER1_2F",
+      "dest_map": "MAP_MARSHDUKE_INDOOR_TOWER1_3F",
       "dest_warp_id": "0"
     }
   ],

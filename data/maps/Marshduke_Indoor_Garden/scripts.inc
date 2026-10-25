@@ -34,18 +34,26 @@ Marshduke_Indoor_Garden_NPC_DollChild::
 	end
 
 
-Marshduke_Indoor_Garden_NPC_StoneCaretaker::
-	lock
-	faceplayer
-	msgbox Marshduke_Indoor_Garden_NPC_StoneCaretaker_Text_0
-	release
-	end
-
-
 Marshduke_Indoor_Garden_NPC_QuietVisitor::
 	lock
 	faceplayer
 	msgbox Marshduke_Indoor_Garden_NPC_QuietVisitor_Text_0
+	release
+	end
+
+
+Marshduke_Indoor_Garden_Sign_GardenerHouse::
+	lock
+	msgbox Marshduke_Indoor_Garden_Sign_GardenerHouse_Text_0, MSGBOX_SIGN
+	waitmessage
+	release
+	end
+
+
+Marshduke_Indoor_Garden_Sign_Cemetery::
+	lock
+	msgbox Marshduke_Indoor_Garden_Sign_Cemetery_Text_0, MSGBOX_SIGN
+	waitmessage
 	release
 	end
 
@@ -55,18 +63,17 @@ Marshduke_Indoor_Garden_NPC_DollChild_Text_0:
 	.string "I know it can't play with it. I still\n"
 	.string "thought it should have one.$"
 
-Marshduke_Indoor_Garden_NPC_StoneCaretaker_Text_0:
-	.string "I clean the lettering with a soft brush.\n"
-	.string "The little plants between the stones\l"
-	.string "can stay.\p"
-	.string "Tidy doesn't have to mean nothing is\n"
-	.string "allowed to grow.$"
-
 Marshduke_Indoor_Garden_NPC_QuietVisitor_Text_0:
 	.string "The city sounds different here. Water,\n"
 	.string "leaves, a distant bell.\p"
 	.string "I came to remember someone. It's a good\n"
 	.string "place to sit for a while.$"
+
+Marshduke_Indoor_Garden_Sign_GardenerHouse_Text_0:
+	.string "- Gardener's House -$"
+
+Marshduke_Indoor_Garden_Sign_Cemetery_Text_0:
+	.string "- Marshduke Cemetery -$"
 
 Marshduke_Indoor_Garden_Trainer_Cas_Intro::
 	.string "Try battling without saying a word!$"
@@ -95,9 +102,9 @@ Marshduke_Indoor_Garden_Trainer_Noor_Defeat::
 	.string "I need more practice!$"
 
 Marshduke_Indoor_Garden_Trainer_Noor_After::
-	.string "I watch Alakazam for hours, but my own\n"
-	.string "KADABRA won't sit still for five\l"
-	.string "minutes.$"
+	.string "I can watch MEGA Alakazam for hours,\n"
+	.string "but my own KADABRA won't sit still for\l"
+	.string "five minutes.$"
 
 Marshduke_Indoor_Garden_Trainer_Ivo_Intro::
 	.string "One last battle before we head home?$"

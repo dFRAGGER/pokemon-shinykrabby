@@ -31,11 +31,11 @@ script Mistcity_Research_Center_Entrance_Rangers_Paras {
     faceplayer
     if (flag(FLAG_RESCUED_DAAN)){
 
-        msgbox(format("The air is finally clear.\pThe defensive spore release has stopped.\pIt seems the 'seismic activity' it was sensing has calmed down."))
+        msgbox(format("The air is finally clear.\pShroomish has stopped puffing out spores.\pWhatever it was sensing in the ground seems to have calmed down."))
     }
     if(!flag(FLAG_RESCUED_DAAN)) {
 
-        msgbox(format("The mushroom on this Parasect's back has been releasing defensive spores all morning, a reaction usually only triggered by heavy seismic activity."))
+        msgbox(format("This Shroomish has been puffing spores out of the top of its head all morning.\pShroomish usually only do that when the ground starts shaking."))
     }
     waitmessage
     release
@@ -94,11 +94,11 @@ script Mistcity_Research_Center_Entrance_Scientist_Paras {
     faceplayer
     if (flag(FLAG_RESCUED_DAAN)){
 
-        msgbox(format("Incredible.\pThe bioluminescence on the Tochukaso mushroom is fading rapidly.\pIt has returned to its natural, dull color.\pThat 'sonar' signal that was irritating the fungus seems to have been cut off completely.\pWhatever you did down there silenced the noise."))
+        msgbox(format("Incredible.\pThe glow on Breloom's cap is fading fast. It's back to its normal color.\pThat 'sonar' signal that was bothering the fungus seems to have stopped completely.\pWhatever you did down there, you silenced the noise."))
     }
     if(!flag(FLAG_RESCUED_DAAN)) {
 
-    msgbox(format("Now, this is the most alarming case.\pThe tochukaso mushroom that controls the Parasect is a fungus, right?\pIt's incredibly sensitive to geological changes.\pLately, we've rescued several Parasect from the deep woods whose mushrooms have developed a faint, unnatural bio-luminescence.\pIt's a defensive reaction.\pOur hypothesis is that something is emitting powerful, systematic waves of energy into the ground-like a sonar.\pThe fungus is reacting to being 'scanned.'\pSomeone isn't just exploring the forest; they're X-raying it."))
+    msgbox(format("Now, this is the most worrying case.\pShroomish and Breloom are part fungus, and fungi are incredibly sensitive to changes in the ground.\pLately, we've rescued several of them from the deep woods. The caps on their heads have started to give off a faint, unnatural glow.\pIt's a defensive reaction.\pOur theory is that something is sending powerful, regular waves of energy into the ground, like sonar.\pThe fungus is reacting to being 'scanned.'\pSomeone isn't just exploring the forest. They're X-raying it."))
     }
     waitmessage
     applymovement(3,moves(face_right))
@@ -220,7 +220,7 @@ script Mistcity_Research_Center_Entrance_Daan_RescueMission {
     applymovement(18, moves(walk_down walk_right face_down))
     waitmovement
     setspeaker("DAVID")
-    msgbox(format("I'm DAVID HEARTFIELD.\pI'm...\pI'm not a great battler.\pNASH is for the fighting.\pI'm here to find the wrongness.\pThe scientists... they said the Parasect's mushroom was glowing.\pA stress reaction to a high-frequency energy pulse.\pI built a scanner to detect that specific frequency.\pIt won't find Pokémon... but it will find the source of what's hurting them."),MSGBOX_AUTOCLOSE)
+    msgbox(format("I'm DAVID HEARTFIELD.\pI'm...\pI'm not a great battler.\pNASH is for the fighting.\pI'm here to find the wrongness.\pThe scientists... they said the caps of the Shroomish and Breloom were glowing.\pA stress reaction to a high-frequency energy pulse.\pI built a scanner to detect that specific frequency.\pIt won't find Pokémon... but it will find the source of what's hurting them."),MSGBOX_AUTOCLOSE)
     waitmessage
     delay(40)
     applymovement(18,moves(face_right))

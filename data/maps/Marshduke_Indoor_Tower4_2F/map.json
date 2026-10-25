@@ -1,0 +1,121 @@
+{
+  "id": "MAP_MARSHDUKE_INDOOR_TOWER4_2F",
+  "name": "Marshduke_Indoor_Tower4_2F",
+  "layout": "LAYOUT_MARSHDUKE_INDOOR_TOWER4_2F",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_MARSHDUKE_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_INDOOR",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_TOWER4_LIA",
+      "graphics_id": "OBJ_EVENT_GFX_TWIN_HNS",
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_MARSHDUKE_TOWER_CHALLENGERS"
+    },
+    {
+      "local_id": "LOCALID_TOWER4_ROSE",
+      "graphics_id": "OBJ_EVENT_GFX_TWIN_HNS",
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_MARSHDUKE_TOWER_CHALLENGERS"
+    },
+    {
+      "local_id": "LOCALID_TOWER4_TOM",
+      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M_HNS",
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_MARSHDUKE_TOWER_CHALLENGERS"
+    },
+    {
+      "local_id": "LOCALID_TOWER4_ANNA",
+      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F_HNS",
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_MARSHDUKE_TOWER_CHALLENGERS"
+    },
+    {
+      "local_id": "LOCALID_TOWER4_AL",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_HNS",
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_MARSHDUKE_TOWER_CHALLENGERS"
+    },
+    {
+      "local_id": "LOCALID_TOWER4_EDITH",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN_HNS",
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_MARSHDUKE_TOWER_CHALLENGERS"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 2,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_MARSHDUKE_INDOOR_TOWER4_1F",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_MARSHDUKE_INDOOR_TOWER4_3F",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [],
+  "game_version": "sk"
+}

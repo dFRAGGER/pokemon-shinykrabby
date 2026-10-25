@@ -111,7 +111,7 @@ script Marshduke_Indoor_Chatedral_EventScript_Andre_Trashcan {
     delay(60)
     msgbox(format("...I really should empty this before Ms. STONE finds out I've been talking to it instead of emptying it."), MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(30, moves(face_left))
+    applymovement(28, moves(face_left))
     waitmovement
     release
 }
@@ -244,11 +244,11 @@ script Marshduke_Indoor_Chatedral_EventScript_NPC_Mother_TwoHearts {
     delay(60)
     faceplayer
     playse(SE_PIN)
-    applymovement(38, moves(emote_exclamation_mark))
+    applymovement(37, moves(emote_exclamation_mark))
     waitmovement
     msgbox(format("Oh, sorry. Were we in your way?\pWe just come here sometimes, to look at the two of them."), MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(38, moves(face_left))
+    applymovement(37, moves(face_left))
     waitmovement
     release
 }
@@ -268,11 +268,11 @@ script Marshduke_Indoor_Chatedral_EventScript_NPC_Child_TwoHearts {
     faceplayer
     delay(60)
     playse(SE_PIN)
-    applymovement(37, moves(emote_exclamation_mark))
+    applymovement(36, moves(emote_exclamation_mark))
     waitmovement
     msgbox(format("Oh! Hi. Have you seen the two dragons yet? They're my favorite."), MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(37, moves(face_right))
+    applymovement(36, moves(face_right))
     waitmovement
     release
 }
@@ -344,40 +344,40 @@ script Marshduke_Indoor_Chatedral_EventScript_NPC_GroundonKyogreRayquaza{
     lock
     faceplayer
     playse(SE_PIN)
-    applymovement(15, moves(emote_exclamation_mark))
+    applymovement(LOCALID_MARSHDUKE_CATHEDRAL_FERRAN, moves(emote_exclamation_mark))
     waitmovement
     setspeaker("Dr. FERRAN")
     msgbox(format("Careful, don't stand too close.\pMy castform is trying to register some temperature differences."), MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(15, moves(face_right))
+    applymovement(LOCALID_MARSHDUKE_CATHEDRAL_FERRAN, moves(face_right))
     waitmovement
     setspeaker("Dr. FERRAN")
     msgbox(format("Well, go on."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
-    applymovement(33, moves(walk_right*3))
+    applymovement(LOCALID_MARSHDUKE_CATHEDRAL_CASTFORM, moves(walk_right*3))
     waitmovement
     playse(SE_M_MINIMIZE)
     callnative(SetCastformSunnyForm)
-    applymovement(33, moves(walk_right face_down))
+    applymovement(LOCALID_MARSHDUKE_CATHEDRAL_CASTFORM, moves(walk_right face_down))
     delay(60)
     playse(SE_PIN)
-    applymovement(33, moves(emote_exclamation_mark jump_in_place_down jump_in_place_down))
+    applymovement(LOCALID_MARSHDUKE_CATHEDRAL_CASTFORM, moves(emote_exclamation_mark jump_in_place_down jump_in_place_down))
     waitmovement
-    applymovement(33, moves(walk_fast_left*2))
+    applymovement(LOCALID_MARSHDUKE_CATHEDRAL_CASTFORM, moves(walk_fast_left*2))
     waitmovement
     playse(SE_M_MINIMIZE)
     callnative(SetCastformSnowyForm)
-    applymovement(33, moves(walk_fast_left*2))
+    applymovement(LOCALID_MARSHDUKE_CATHEDRAL_CASTFORM, moves(walk_fast_left*2))
     waitmovement
     playse(SE_PIN)
-    applymovement(15, moves(emote_question_mark))
+    applymovement(LOCALID_MARSHDUKE_CATHEDRAL_FERRAN, moves(emote_question_mark))
     waitmovement
     setspeaker("Dr. FERRAN")
     msgbox(format("What do you mean?\pOver 9000 degrees?! By Arceus!"), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
-    applymovement(33, moves(face_down))
+    applymovement(LOCALID_MARSHDUKE_CATHEDRAL_CASTFORM, moves(face_down))
     faceplayer
     waitmovement
     setspeaker("Dr. FERRAN")
@@ -403,42 +403,42 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark))
     waitmovement
-    applymovement(14, moves(walk_down*4))
+    applymovement(13, moves(walk_down*4))
 
     waitmovement
     setspeaker("Ms. STONE")
     msgbox(format("Ah, a new face! Wonderful.\pI'm the curator and caretaker of this cathedral, Head of the Order of the Open Eye, and chief remover of Pidgey.\pBut please, call me Ms. STONE.\pYou have the look of someone who wandered in.\pWould you like a tour? It's free, and I'm very good at it."), MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(17, moves(walk_down*4))
+    applymovement(16, moves(walk_down*4))
      waitmovement
     playse(SE_PIN)
-    applymovement(14, moves(emote_question_mark face_up))
+    applymovement(13, moves(emote_question_mark face_up))
     waitmovement
     setspeaker("BROTHER ANDRÉ")
     msgbox(format("...The seeker arrives at the hour of arriving.\pAs they always do. As they always have."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(30)
-    applymovement(14, moves(face_down))
+    applymovement(13, moves(face_down))
     waitmovement
     setspeaker("Ms. STONE")
     msgbox(format("That's BROTHER ANDRÉ..."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(30)
     playse(SE_PIN)
-    applymovement(17, moves(emote_exclamation_mark))
+    applymovement(16, moves(emote_exclamation_mark))
     waitmovement
-    applymovement(14, moves(face_up))
+    applymovement(13, moves(face_up))
     setspeaker("BROTHER ANDRÉ")
     msgbox(format("...I am but a JANITOR!"), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
-    applymovement(14, moves(face_down))
+    applymovement(13, moves(face_down))
     waitmovement
     setspeaker("Ms. STONE")
     msgbox(format("He is but a janitor.\pAt the moment, there's no one here but the priests of the Order of the Open Eye, and us.\pA rare opportunity, let's make the most of it.\pCome along, both of you."), MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(14, moves(walk_up*6 walk_left walk_up))
-    applymovement(17, moves(walk_up*6))
+    applymovement(13, moves(walk_up*6 walk_left walk_up))
+    applymovement(16, moves(walk_up*6))
     applymovement(LOCALID_PLAYER, moves(walk_up*9))
     waitmovement
     setspeaker("Ms. STONE")
@@ -446,39 +446,39 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     waitmessage
     delay(60)
     playse(SE_PIN)
-    applymovement(17, moves(emote_exclamation_mark))
+    applymovement(16, moves(emote_exclamation_mark))
     waitmovement
     setspeaker("BROTHER ANDRÉ")
     msgbox(format("It does not sit. It is held.\pTime flows around it as water flows around a stone that has decided not to be moved..."))
     waitmessage
-    applymovement(14, moves(emote_x face_right))
+    applymovement(13, moves(emote_x face_right))
     setspeaker("Ms. STONE")
     msgbox(format("It's sitting, André."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
-    applymovement(17, moves(face_left))
+    applymovement(16, moves(face_left))
     setspeaker("BROTHER ANDRÉ")
     msgbox(format("...It is sitting in a transcendent manner."), MSGBOX_AUTOCLOSE)
     delay(60)
-    applymovement(14, moves(face_up))
-    applymovement(17, moves(face_up))
+    applymovement(13, moves(face_up))
+    applymovement(16, moves(face_up))
     setspeaker("Ms. STONE")
     msgbox(format("An ALAKAZAM forgets nothing. Not one moment of its whole life.\pNow imagine thousands of years of that, all at once, all still there.\pSo it stopped moving. Stopped living forward. And started, we think, sorting.\pAnd what it finds worth keeping, it shows us.\pAbove the altars. Five memories. Come see."), MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(14, moves(walk_down*5 walk_left*6 walk_down*3 walk_left*7 face_up))
+    applymovement(13, moves(walk_down*5 walk_left*6 walk_down*3 walk_left*7 face_up))
     applymovement(LOCALID_PLAYER, moves(walk_left walk_down*6 walk_left*6 walk_down*3 walk_left*6 walk_up))
-    applymovement(17, moves(walk_up walk_left*2 walk_down*6 walk_left*6 walk_down*3 walk_left*5 face_up))
+    applymovement(16, moves(walk_up walk_left*2 walk_down*6 walk_left*6 walk_down*3 walk_left*5 face_up))
     waitmovement
     setspeaker("Ms. STONE")
     msgbox(format("The REKINDLED. A tower burned, far from here.\pThree Pokémon died in the fire.\pAnd something came down through the smoke and gave them back, not as they were, but as three completely different things.\pStorm. Flame. Clean water.\pAnd then they ran, and they've never stopped running."), MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
-    applymovement(17, moves(emote_exclamation_mark))
+    applymovement(16, moves(emote_exclamation_mark))
     waitmovement
     setspeaker("BROTHER ANDRÉ")
     msgbox(format("Three flames of one flame!\pThree faces of one face!\pThe many that is secretly the ONE..."))
-    applymovement(14, moves(emote_x face_right))
-    applymovement(17, moves(face_left))
+    applymovement(13, moves(emote_x face_right))
+    applymovement(16, moves(face_left))
     waitmovement
     setspeaker("Ms. STONE")
     msgbox(format("They're not one, André, that's rather the point. That's the whole point."), MSGBOX_AUTOCLOSE)
@@ -492,55 +492,55 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     msgbox(format("...\pBetter."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(30)
-    applymovement(14, moves(face_up))
-    applymovement(17, moves(face_up))
+    applymovement(13, moves(face_up))
+    applymovement(16, moves(face_up))
     setspeaker("Ms. STONE")
     msgbox(format("The lesson here is: A second life is not a gift; it is an assignment."), MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(14, moves(walk_down walk_right*4 walk_up))
+    applymovement(13, moves(walk_down walk_right*4 walk_up))
     waitmovement
-    applymovement(14, moves(walk_right*3 walk_up walk_right*14 walk_down*2 walk_right*7 walk_up))
-    applymovement(17, moves(walk_right*5 walk_up walk_right*14 walk_down*2 walk_right*5 walk_up))
+    applymovement(13, moves(walk_right*3 walk_up walk_right*14 walk_down*2 walk_right*7 walk_up))
+    applymovement(16, moves(walk_right*5 walk_up walk_right*14 walk_down*2 walk_right*5 walk_up))
     applymovement(LOCALID_PLAYER, moves(walk_down walk_right*6 walk_up walk_right*14 walk_down*2 walk_right*6 walk_up*2))
     waitmovement
     setspeaker("Ms. STONE")
     msgbox(format("The BALANCED SKY. Three great birds over a foreign ocean: fire, frost, and lightning.\pWhen one of them grows stronger than the other two, the sky comes apart.\pSo the silver one rises from the sea, tunes them back to balance, and simply leaves.\pIt shows us that power great enough to remake the world is sometimes wisest left alone."))
     waitmessage
     playse(SE_PIN)
-    applymovement(17, moves(emote_exclamation_mark))
+    applymovement(16, moves(emote_exclamation_mark))
     waitmovement
     setspeaker("BROTHER ANDRÉ")
     msgbox(format("The silver one is the SILENCE BETWEEN THE NOTES.\pThe pause in which the chord discovers what it truly..."), MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
-    applymovement(14, moves(emote_exclamation_mark face_left))
+    applymovement(13, moves(emote_exclamation_mark face_left))
     waitmovement
     setspeaker("Ms. STONE")
     msgbox(format("That's... actually not bad."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
-    applymovement(17, moves(face_right))
+    applymovement(16, moves(face_right))
     setspeaker("BROTHER ANDRÉ")
     msgbox(format("...the pause in which the chord discovers what it truly... dreams."), MSGBOX_AUTOCLOSE)
     playse(SE_PIN)
-    applymovement(14, moves(emote_question_mark))
+    applymovement(13, moves(emote_question_mark))
     waitmovement
     delay(60)
     setspeaker("Ms. STONE")
     msgbox(format("...Nevermind."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
-    applymovement(14, moves(face_up))
-    applymovement(17, moves(face_up))
+    applymovement(13, moves(face_up))
+    applymovement(16, moves(face_up))
     waitmovement
     setspeaker("Ms. STONE") 
     msgbox(format("The old records call this the Divided Sky.\pPersonally I see it differently.\pNobody divided that sky. It was only ever meant to be balanced and maintained."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
-    applymovement(14, moves(walk_down walk_left*4 walk_up ))
+    applymovement(13, moves(walk_down walk_left*4 walk_up ))
     waitmovement
-    applymovement(14, moves(walk_left*3 walk_up*9 walk_right*9 walk_up ))
-    applymovement(17, moves(walk_left*5 walk_up*9 walk_right*7 walk_up ))
+    applymovement(13, moves(walk_left*3 walk_up*9 walk_right*9 walk_up ))
+    applymovement(16, moves(walk_left*5 walk_up*9 walk_right*7 walk_up ))
     applymovement(LOCALID_PLAYER, moves(walk_down walk_left*6 walk_up*9 walk_right*8 walk_up*2 ))
     waitmovement
     setspeaker("Ms. STONE")
@@ -548,19 +548,19 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     waitmessage
     delay(60)
     playse(SE_PIN)
-    applymovement(17, moves(emote_exclamation_mark))
+    applymovement(16, moves(emote_exclamation_mark))
     waitmovement
     setspeaker("BROTHER ANDRÉ")
     msgbox(format("And from that first small ripple, the great ocean of all..."))
     waitmessage
-    applymovement(14, moves(face_left))
+    applymovement(13, moves(face_left))
     waitmovement
     delay(60)
     setspeaker("Ms. STONE")
     msgbox(format("André."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(30)
-    applymovement(17, moves(face_right))
+    applymovement(16, moves(face_right))
     setspeaker("BROTHER ANDRÉ")
     msgbox(format("I was going to say something about the ocean."), MSGBOX_AUTOCLOSE)
     waitmessage
@@ -569,8 +569,8 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     msgbox(format("I know."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
-    applymovement(14, moves(face_up))
-    applymovement(17, moves(face_up))
+    applymovement(13, moves(face_up))
+    applymovement(16, moves(face_up))
     waitmovement
     setspeaker("Ms. STONE")
     msgbox(format("Watch that one to the end, by the way. It returns to MEW, still there among all that life.\pThen it seems to look straight at you.\pAn odd feeling, being noticed by something in a memory."))
@@ -580,17 +580,17 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     waitmovement
     delay(60)
     playse(SE_PIN)
-    applymovement(14, moves(emote_question_mark walk_up face_left))
+    applymovement(13, moves(emote_question_mark walk_up face_left))
     applymovement(LOCALID_PLAYER, moves(face_right))
     waitmovement
     delay(60)
     setspeaker("Ms. STONE")
-    msgbox(format("...\p...\pYou've seen MEW? Outside this vision?\p...\pNot possible. There hasn't been a confirmed wild sighting for decades.\pAre you certain it wasn't something else?\p...\pLet's go to the next altar."), MSGBOX_AUTOCLOSE)
+    msgbox(format("...\p...\pYou've seen MEW? Outside this vision?\p...\pNot possible. There hasn't been a confirmed wild sighting for decades.\pAre you certain it wasn't something else?\p...\pMust have been a LICKITUNG...\pLet's go to the next altar."), MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(14, moves(walk_down*2 walk_left*4 walk_up))
+    applymovement(13, moves(walk_down*2 walk_left*4 walk_up))
     waitmovement
-    applymovement(14, moves(walk_left*3 walk_up*9 walk_right*3 walk_up ))
-    applymovement(17, moves(walk_left*5 walk_up*9 walk_right walk_up ))
+    applymovement(13, moves(walk_left*3 walk_up*9 walk_right*3 walk_up ))
+    applymovement(16, moves(walk_left*5 walk_up*9 walk_right walk_up ))
     applymovement(LOCALID_PLAYER, moves(walk_down walk_left*6 walk_up*9 walk_right*2 walk_up*2 ))
     waitmovement
     setspeaker("Ms. STONE")
@@ -598,13 +598,13 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     waitmessage
     delay(60)
     playse(SE_PIN)
-    applymovement(17, moves(emote_exclamation_mark))
+    applymovement(16, moves(emote_exclamation_mark))
     waitmovement
     setspeaker("BROTHER ANDRÉ")
     msgbox(format("AH. Now here I have thoughts..."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(30)
-    applymovement(14, moves(face_left))
+    applymovement(13, moves(face_left))
     setspeaker("Ms. STONE")
     msgbox(format("I'm sure."), MSGBOX_AUTOCLOSE)
     waitmessage
@@ -613,28 +613,28 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     msgbox(format("...for is not the serpent the AXIS? The thread through the bead? The high still point about which the war..."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(30)
-    applymovement(14, moves(face_left))
+    applymovement(13, moves(face_left))
     waitmovement
     setspeaker("Ms. STONE")
     msgbox(format("André..."), MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(17, moves(face_right))
+    applymovement(16, moves(face_right))
     waitmovement
     delay(60)
-    applymovement(14, moves(face_up))
+    applymovement(13, moves(face_up))
     setspeaker("Ms. STONE")
     msgbox(format("We send feuding families here, you know. Merchant guilds. In-laws. They shake hands under the arch and it counts."))
     waitmessage
-    applymovement(17, moves(face_up))
+    applymovement(16, moves(face_up))
     waitmovement
     setspeaker("Ms. STONE")
     msgbox(format("It works about half the time. Which for in-laws is remarkable."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
-    applymovement(14, moves(walk_down walk_left*3))
+    applymovement(13, moves(walk_down walk_left*3))
     waitmovement
-    applymovement(14, moves(walk_left*17 walk_down*9 walk_left*8 face_up))
-    applymovement(17, moves(walk_down walk_left*18 walk_down*9 walk_left*6 face_up))
+    applymovement(13, moves(walk_left*17 walk_down*9 walk_left*8 face_up))
+    applymovement(16, moves(walk_down walk_left*18 walk_down*9 walk_left*6 face_up))
     applymovement(LOCALID_PLAYER, moves(walk_down*2 walk_left*19 walk_down*9 walk_left*5 walk_down walk_left*2 walk_up*2))
     waitmovement
     setspeaker("Ms. STONE")
@@ -645,17 +645,17 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     msgbox(format("...This is the one I come to. When it's late. When nobody is watching."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
-    applymovement(14, moves(face_right))
+    applymovement(13, moves(face_right))
     setspeaker("Ms. STONE")
     msgbox(format("...\pYes. Well. Me too."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
-    applymovement(14, moves(face_up))
+    applymovement(13, moves(face_up))
     delay(60)
-    applymovement(14, moves(walk_down walk_right*4 walk_up))
+    applymovement(13, moves(walk_down walk_right*4 walk_up))
     waitmovement
-    applymovement(14, moves(walk_right*3 walk_up*9 walk_left*3 walk_up))
-    applymovement(17, moves(walk_right*5 walk_up*10 walk_left face_up))
+    applymovement(13, moves(walk_right*3 walk_up*9 walk_left*3 walk_up))
+    applymovement(16, moves(walk_right*5 walk_up*10 walk_left face_up))
     applymovement(LOCALID_PLAYER, moves(walk_down walk_right*6 walk_up*9 walk_left*2 walk_up*2))
     waitmovement
     setspeaker("Ms. STONE")
@@ -663,18 +663,18 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     waitmessage
     delay(60)
     playse(SE_PIN)
-    applymovement(17, moves(emote_exclamation_mark))
+    applymovement(16, moves(emote_exclamation_mark))
     waitmovement
     setspeaker("BROTHER ANDRÉ")
     msgbox(format("The unmanifest! The not-yet! The pregnant silence in which all possible altars are simultaneously..."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(30)
-    applymovement(14, moves(face_right))
+    applymovement(13, moves(face_right))
     setspeaker("Ms. STONE")
     msgbox(format("For once, André, that is very close to the Order's actual position."), MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
-    applymovement(17, moves(face_left emote_exclamation_mark))
+    applymovement(16, moves(face_left emote_exclamation_mark))
     waitmovement
     setspeaker("BROTHER ANDRÉ")
     msgbox(format("Is it?"), MSGBOX_AUTOCLOSE)
@@ -684,15 +684,15 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     msgbox(format("Don't let it go to your head."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
-    applymovement(14, moves(face_up))
-    applymovement(17, moves(face_up))
+    applymovement(13, moves(face_up))
+    applymovement(16, moves(face_up))
     waitmovement
     setspeaker("Ms. STONE")
     msgbox(format("Somebody left a plaque here. We've never taken it down.\pIt reads:\pFIVE MEMORIES OF WHAT WAS.\pONE SPACE FOR WHAT COULD BE.\pTHE DIFFERENCE BETWEEN THEM IS US."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
-    applymovement(14, moves(face_right))
-    applymovement(17, moves(face_left))
+    applymovement(13, moves(face_right))
+    applymovement(16, moves(face_left))
     applymovement(LOCALID_PLAYER, moves(face_down))
     waitmovement
     setspeaker("Ms. STONE")
@@ -703,7 +703,7 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     msgbox(format("May the seeker find what the seeker seeks."), MSGBOX_AUTOCLOSE)
     waitmessage
     playse(SE_PIN)
-    applymovement(14, moves(emote_question_mark))
+    applymovement(13, moves(emote_question_mark))
     waitmovement
     delay(60)
     setspeaker("Ms. STONE")
@@ -711,7 +711,7 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     waitmessage
     delay(30)
     playse(SE_PIN)
-    applymovement(17, moves(emote_exclamation_mark))
+    applymovement(16, moves(emote_exclamation_mark))
     waitmovement
     setspeaker("BROTHER ANDRÉ")
     msgbox(format("Or, and this is important, may they find what they were NOT seeking."), MSGBOX_AUTOCLOSE)
@@ -729,42 +729,41 @@ script Marshduke_Indoor_Cathedral_Introduction_Ms_Stone {
     msgbox(format("André."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(60)
-    applymovement(17, moves(walk_right*2 walk_down*9))
+    applymovement(16, moves(walk_right*2 walk_down*9))
     waitmovement
-    applymovement(14, moves(walk_right face_up))
+    applymovement(13, moves(walk_right face_up))
     waitmovement
     setspeaker("Ms. STONE")
     msgbox(format("...May I tell you something I don't put in the tour?\pEveryone watches the gods.\pNine hundred years, and every single person who has stood where you're standing... ...has watched the gods.\pBut there's a world behind them. In every memory.\pWater so full of fish you can't see through it.\pCountless birds species in the skies so you can't see the sun.\pThey're gone now. All of them.\pBut nobody seems to notice. Including me. For sixty years."), MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(14, moves(face_right))
+    applymovement(13, moves(face_right))
     waitmovement
     delay(60)
     setspeaker("Ms. STONE")
     msgbox(format("I don't think it's showing us old stories at all, child.\pI think it's showing us what's happening right now."), MSGBOX_AUTOCLOSE)
     waitmessage
     delay(120)
-    applymovement(14, moves(face_up))
+    applymovement(13, moves(face_up))
     setspeaker("Ms. STONE")
     msgbox(format("...Anyway. Looks like a few visitors have trickled in.\pI'd best go scare off the Pidgey. That bloody open roof.\pEnjoy the altars."), MSGBOX_AUTOCLOSE)
     waitmessage
-    applymovement(14, moves(walk_right*3 walk_down walk_right*7))
+    applymovement(13, moves(walk_right*3 walk_down walk_right*7))
     waitmovement
     setflag(FLAG_MARSHDUKE_CATHEDRAL_TOUR)
     clearflag(FLAG_MARSHDUKE_CATHEDRAL_HIDE_BEFORE_TOUR)
-    removeobject(14)
-    removeobject(17)
-    addobject(15)
-    addobject(16)
-    addobject(22)
-    addobject(23)
-    addobject(21)
-    addobject(32)
-    addobject(37)
-    addobject(38)
-    addobject(35)
-    addobject(34)
+    removeobject(13)
+    removeobject(16)
     addobject(33)
+    addobject(34)
     addobject(28)
-    addobject(29)
+    addobject(20)
+    addobject(31)
+    addobject(36)
+    addobject(37)
+    addobject(27)
+    addobject(14)
+    addobject(32)
+    addobject(15)
+    addobject(21)
     release
 }

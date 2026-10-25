@@ -1,4 +1,19 @@
-mapscripts Marshduke_Indoor_Gym_MapScripts {}
+mapscripts Marshduke_Indoor_Gym_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        // Same as Mossdeep: a follower can collide with the rotating statues.
+        setflag(FLAG_TEMP_HIDE_FOLLOWER)
+    }
+}
+
+// The layout is identical to Mossdeep's, so (7,30) is the same entrance tile;
+// Mossdeep's own warp script sends the player to MAP_MOSSDEEP_CITY_GYM instead.
+script Marshduke_Indoor_Gym_EventScript_WarpToEntrance {
+    lockall
+    warpmossdeepgym(MAP_MARSHDUKE_INDOOR_GYM, 7, 30)
+    waitstate
+    releaseall
+    end
+}
 
 // These NPCs use Tessera-owned trainer ids. Their dialogue is intentionally
 // retained from the inherited Mossdeep gym until Marshduke-specific copy is
@@ -73,4 +88,141 @@ script Marshduke_Indoor_Gym_EventScript_Kathleen {
     trainerbattle_single(TRAINER_KATHLEEN_SK, MossdeepCity_Gym_Text_KathleenIntro, MossdeepCity_Gym_Text_KathleenDefeat)
     msgbox(MossdeepCity_Gym_Text_KathleenPostBattle, MSGBOX_AUTOCLOSE)
     end
+}
+
+// Gym 4 leaders: Sister Vera (Order of the Open Eye) and Dr. Holt (research
+// centre), fought together in one double battle with both battle pics. Both
+// leader objects run this script. Badge 4 unlocks Strength (src/field_move.c)
+// and FLAG_STRENGTH_UNLOCKED opens Ari's sprint challenge in House 4.
+script Marshduke_Indoor_Gym_EventScript_Leaders {
+    lock
+    faceplayer
+    if (flag(FLAG_BADGE04_GET)) {
+        setspeaker("SISTER VERA")
+        msgbox(format("Have you seen the visions in the cathedral yet? I've watched the Latios and Latias one more than three hundred times."))
+        setspeaker("DR. HOLT")
+        msgbox(format("And I've recorded it more than three hundred times. So we've basically done the same thing."), MSGBOX_AUTOCLOSE)
+        setspeaker(NULL)
+        release
+        end
+    }
+    playse(SE_PIN)
+    applymovement(9, moves(emote_exclamation_mark))
+    waitmovement(9)
+    setspeaker("SISTER VERA")
+    msgbox(format("Welcome! I'm SISTER VERA of the Order of the Open Eye."))
+    playse(SE_PIN)
+    applymovement(1, moves(emote_exclamation_mark))
+    waitmovement(1)
+    setspeaker("DR. HOLT")
+    msgbox(format("And I'm DR. HOLT, from the research centre next door. We run this Gym together."))
+    playse(SE_PIN)
+    applymovement(9, moves(face_left))
+    waitmovement(9)
+    setspeaker("SISTER VERA")
+    msgbox(format("Together is a big word. Holt thinks the Rememberer's visions are just brainwaves he can put on a graph."))
+    playse(SE_PIN)
+    applymovement(1, moves(emote_question_mark face_right))
+    waitmovement(1)
+    setspeaker("DR. HOLT")
+    msgbox(format("Because they are! And SISTER VERA thinks an Alakazam has been meditating on that hill for ten thousand years."))
+    playse(SE_PIN)
+    applymovement(9, moves(emote_question_mark face_left))
+    waitmovement(9)
+    setspeaker("SISTER VERA")
+    msgbox(format("Because it has!"))
+    applymovement(1, moves(face_down))
+    waitmovement(1)
+    applymovement(9, moves(face_down))
+    waitmovement(9)
+    setspeaker("DR. HOLT")
+    msgbox(format("...Anyway. We do agree on one thing. Psychic Pokémon are the most fascinating Pokémon there are."))
+    setvar(VAR_0x8004, PARTY_SIZE)
+    specialvar(VAR_RESULT, CountPartyAliveNonEggMons_IgnoreVar0x8004Slot)
+    if (var(VAR_RESULT) < 2) {
+        msgbox(format("Hold on, you only have one Pokémon that can still fight.\pWe battle two against two here. Come back with at least two!"), MSGBOX_AUTOCLOSE)
+        setspeaker(NULL)
+        release
+        end
+    }
+    setspeaker("SISTER VERA")
+    msgbox(format("Two of us, two of yours. Let's see what you've got!"))
+    setspeaker(NULL)
+    trainerbattle_two_trainers(TRAINER_MARSHDUKE_LEADER_VERA, Marshduke_Indoor_Gym_Text_VeraDefeat, TRAINER_MARSHDUKE_LEADER_HOLT, Marshduke_Indoor_Gym_Text_HoltDefeat)
+    setspeaker("SISTER VERA")
+    msgbox(format("Well. I didn't see that coming, and seeing things coming is kind of my whole job."))
+    setspeaker("DR. HOLT")
+    msgbox(format("Statistically, we should have won. I'll have to check my numbers."))
+    waitmessage
+    call(Common_EventScript_PlayGymBadgeFanfare)
+    setflag(FLAG_BADGE04_GET)
+    setflag(FLAG_DEFEATED_LAVARIDGE_GYM)
+    setflag(FLAG_STRENGTH_UNLOCKED)
+    setspeaker(NULL)
+    msgbox(format("You received the MEMORY BADGE!"))
+    waitmessage
+    setspeaker("SISTER VERA")
+    msgbox(format("With the MEMORY BADGE, Pokémon up to level 50 will listen to you.\pAnd you can use STRENGTH outside of battle now."))
+    setspeaker("DR. HOLT")
+    msgbox(format("Which is why you'll need this."))
+    waitmessage
+    giveitem(ITEM_HM04)
+    waitmessage
+    setspeaker("DR. HOLT")
+    msgbox(format("That's HM STRENGTH. Teach it to a strong Pokémon and it can push big boulders out of your way."))
+    setspeaker("SISTER VERA")
+    msgbox(format("And this one's from me."))
+    waitmessage
+    giveitem(ITEM_TM_TRICK_ROOM)
+    waitmessage
+    setspeaker("SISTER VERA")
+    msgbox(format("TRICK ROOM twists the space around the battle for five turns, so the slowest Pokémon get to move first.\pHolt says it's physics but I think it's just a small miracle."))
+    playse(SE_PIN)
+    applymovement(1, moves(face_right emote_exclamation_mark))
+    waitmovement(1)
+    setspeaker("DR. HOLT")
+    msgbox(format("It's physics."), MSGBOX_AUTOCLOSE)
+    setspeaker(NULL)
+    call(Marshduke_Indoor_Gym_SetTrainerFlags)
+    applymovement(1, moves(face_down))
+    waitmovement(1)
+    release
+    end
+}
+
+script Marshduke_Indoor_Gym_SetTrainerFlags {
+    settrainerflag(TRAINER_PRESTON_SK)
+    settrainerflag(TRAINER_VIRGIL_SK)
+    settrainerflag(TRAINER_BLAKE_SK)
+    settrainerflag(TRAINER_HANNAH_SK)
+    settrainerflag(TRAINER_SAMANTHA_SK)
+    settrainerflag(TRAINER_MAURA_SK)
+    settrainerflag(TRAINER_SYLVIA_SK)
+    settrainerflag(TRAINER_NATE_SK)
+    settrainerflag(TRAINER_MACEY_SK)
+    settrainerflag(TRAINER_CLIFFORD_SK)
+    settrainerflag(TRAINER_NICHOLAS_SK)
+    settrainerflag(TRAINER_KATHLEEN_SK)
+    return
+}
+
+script Marshduke_Indoor_Gym_EventScript_GymGuide {
+    lock
+    faceplayer
+    if (flag(FLAG_BADGE04_GET)) {
+        msgbox(format("You beat Vera and Holt at the same time? I've never seen them both speechless before!"), MSGBOX_AUTOCLOSE)
+    }
+    else {
+        msgbox(format("Hey there, challenger! This Gym uses Psychic-type Pokémon.\pDark-, Bug- and Ghost-type moves will help you out a lot here.\pAnd watch out: the two Gym Leaders battle together, two against two.\pBring at least two strong Pokémon!"), MSGBOX_AUTOCLOSE)
+    }
+    release
+    end
+}
+
+text Marshduke_Indoor_Gym_Text_VeraDefeat {
+    format("I should have seen this coming!")
+}
+
+text Marshduke_Indoor_Gym_Text_HoltDefeat {
+    format("That's not what my data said!")
 }

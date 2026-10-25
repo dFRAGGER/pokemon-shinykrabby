@@ -1,10 +1,8 @@
 {
   "id": "MAP_ROUTE25",
   "name": "Route25_Frlg",
-  "game_version": "frlg",
   "layout": "LAYOUT_ROUTE25",
   "music": "MUS_RG_ROUTE24",
-  "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_ROUTE_25",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -13,7 +11,6 @@
   "allow_escaping": false,
   "allow_running": true,
   "show_map_name": true,
-  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
@@ -24,7 +21,6 @@
   ],
   "object_events": [
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_HIKER_FRLG",
       "x": 11,
       "y": 4,
@@ -38,7 +34,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
       "x": 18,
       "y": 2,
@@ -52,7 +47,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_HIKER_FRLG",
       "x": 17,
       "y": 7,
@@ -66,7 +60,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
       "x": 22,
       "y": 4,
@@ -80,7 +73,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER_FRLG",
       "x": 22,
       "y": 8,
@@ -94,7 +86,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_HIKER_FRLG",
       "x": 27,
       "y": 9,
@@ -108,7 +99,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CAMPER_FRLG",
       "x": 28,
       "y": 4,
@@ -122,7 +112,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
       "x": 36,
       "y": 4,
@@ -136,7 +125,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS_FRLG",
       "x": 42,
       "y": 5,
@@ -150,7 +138,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 26,
       "y": 2,
@@ -164,7 +151,6 @@
       "flag": "FLAG_HIDE_ROUTE25_TM43"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG",
       "x": 30,
       "y": 3,
@@ -178,7 +164,6 @@
       "flag": "FLAG_TEMP_12"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY_FRLG",
       "x": 49,
       "y": 10,
@@ -192,7 +177,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN",
       "x": 49,
       "y": 11,
@@ -265,5 +249,8 @@
       "quantity": 1,
       "underfoot": false
     }
-  ]
+  ],
+  "floor_number": 0,
+  "game_version": "frlg",
+  "region": "REGION_KANTO"
 }

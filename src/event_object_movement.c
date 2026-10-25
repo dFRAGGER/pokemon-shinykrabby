@@ -546,6 +546,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Meteorite,             OBJ_EVENT_PAL_TAG_METEORITE},
     {gObjectEventPal_SSAnne,                OBJ_EVENT_PAL_TAG_SS_ANNE},
     {gObjectEventPal_FacultyBoat,           OBJ_EVENT_PAL_TAG_FACULTY_BOAT},
+    {gObjectEventPal_MegaAlakazam,          OBJ_EVENT_PAL_TAG_MEGA_ALAKAZAM},
     {gObjectEventPal_Seagallop,             OBJ_EVENT_PAL_TAG_SEAGALLOP},
 #if IS_HNS
 #if IS_SK

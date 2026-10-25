@@ -289,3 +289,54 @@ scripts plus battle picture/palette assets. Emulator checks follow final placeme
 | 7 | (14, 2) | `Marshduke_Indoor_ResearchCenter_2F_NPC_TranceCoordinator` |
 | 8 | (16, 2) | `Marshduke_Indoor_ResearchCenter_2F_NPC_RecordingAssistant` |
 | 9 | (1, 9) | `NULL` |
+
+## Towers of the Memories
+
+Marshduke's four tower doors (city warps 12-15) each lead to a three-floor pilgrim tower of
+the Order of the Open Eye, dedicated to one cathedral memory. The trainers use the ordinary
+Johto Pokemon behind that legend, not the legendaries themselves.
+
+| Tower | Door | Memory | Theme | Prize | Status |
+| --- | --- | --- | --- | --- | --- |
+| 1 | warp 14 (6,27) | Balanced Sky | ordinary birds | TM Roost | implemented |
+| 2 | warp 15 (42,12) | Rekindled | fire / electric / water commoners | TM Will-O-Wisp | implemented |
+| 3 | warp 13 (9,68) | Divided World | land / sea / sky, Dratini last | TM Dragon Pulse | implemented |
+| 4 | warp 12 (72,64) | Two Hearts | double battles, paired keepers | Soothe Bell | implemented |
+
+Floor pattern (Tower 1 is the reference):
+
+- **1F:** steward explains the rules: heal before climbing, no rest upstairs.
+- **2F gauntlet:** a `MAP_SCRIPT_ON_FRAME_TABLE` entry on `VAR_TEMP_1 == 0` (fires on arrival, after
+  the automatic stair-exit step; a coord trigger would miss that scripted step)
+  runs one `lockall` script with three `trainerbattle_no_intro` battles. Each challenger
+  object stands on the up-stairs, is spawned with `addobject`, walks to the player, battles,
+  walks back up and is removed. All challengers in all towers share
+  `FLAG_HIDE_MARSHDUKE_TOWER_CHALLENGERS`: it is set in ON_TRANSITION and never cleared,
+  because `addobject` ignores hide flags. Losing whites out; the first two trainer flags are
+  cleared at the start of every run, and only the last trainer's defeat marks the tower as
+  cleared (ON_TRANSITION then sets `VAR_TEMP_1` so the trigger stops firing).
+- **3F:** the last keeper as an NPC gives the prize once (one `FLAG_ITEM_MARSHDUKE_TOWERn_REWARD`
+  per tower), plus a window sign.
+
+Tower 1 trainers (`SK_TRAINERS_START + 158..160`): Bird Keeper Robin (Pidgeotto 21,
+Spearow 21), Sage Owen (Hoothoot 22, Natu 22, Murkrow 22), Sky Keeper Edwin (Fearow 23,
+Delibird 23, Noctowl 24). Walk paths assume the Tower 1 stair positions (down-stairs (2,1),
+up-stairs (5,1)); adjust the `moves(...)` paths if another tower's stairs differ. The 3F
+window sign sits at (2,1) as a placeholder; move it onto the actual window tile.
+
+Towers 2-4 trainers (`SK_TRAINERS_START + 161..169`), same levels as Tower 1:
+
+- Tower 2: Firebreather Oscar (Growlithe 21, Slugma 21), Super Nerd Gordon (Flaaffy 22,
+  Elekid 22, Voltorb 22), Kimono Girl Clara (Poliwhirl 23, Chinchou 23, Azumarill 24).
+- Tower 3: Hiker Harold (Sandshrew 21, Phanpy 21), Sailor Finn (Tentacool 22, Shellder 22,
+  Krabby 22), Dragon Tamer Arthur (Gligar 23, Quagsire 23, Dratini 24).
+- Tower 4 (all `Double Battle: Yes`): Twins Lia & Rose (Nidorina 21, Nidorino 21), Young Couple
+  Tom & Anna (Miltank 22, Tauros 22), Old Couple Al & Edith (Clefairy 23, Jigglypuff 23,
+  Togetic 24, Chansey 24). Each pair is two objects: the first stops at (5,5), the second at
+  (5,4). The gauntlet first counts usable party Pokemon
+  (`CountPartyAliveNonEggMons_IgnoreVar0x8004Slot` with `VAR_0x8004 = PARTY_SIZE`); with fewer
+  than two the player is warped back to 1F.
+
+Towers 3 and 4 were created by copying the Tower 2 maps and layouts (registered in
+`layouts.json`, `map_groups.json` and appended to `data/event_scripts.s`), so they share its
+8x7 rooms. Prize flags: `FLAG_ITEM_MARSHDUKE_TOWER1..4_REWARD` (`SK_FLAGS_START + 191..194`).

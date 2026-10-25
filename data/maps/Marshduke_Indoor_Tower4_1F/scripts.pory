@@ -1,0 +1,33 @@
+mapscripts Marshduke_Indoor_Tower4_1F_MapScripts {}
+
+// Tower of the Two Hearts. 2F holds a three-pair double-battle gauntlet with
+// no healing in between; 3F holds the prize. See Marshduke_Indoor_Tower4_2F.
+
+script Marshduke_Indoor_Tower4_1F_Steward {
+    lock
+    faceplayer
+    if (defeated(TRAINER_TOWER4_AL_EDITH_SK)) {
+        msgbox(format("You beat Al and Edith? Incredible. They've been undefeated since spring!"), MSGBOX_AUTOCLOSE)
+    }
+    else {
+        msgbox(format("Welcome to the Tower of the Two Hearts!\pThis tower is for Latios and Latias. The other visions are about power. Ours is about love, and that's what matters most.\pThe keepers upstairs always battle in pairs, so every battle is two against two.\pBring at least two Pokémon that can still fight.\pYou'll face three pairs in a row, without a break to heal.\pSo if your Pokémon need a rest, now's the time."), MSGBOX_AUTOCLOSE)
+    }
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower4_1F_Pilgrim {
+    lock
+    faceplayer
+    msgbox(format("In the vision, Latias waits for Latios at the edge of the sea. I always hold my breath at that part.\pThe other towers can keep their storms and fire. Give me a love story."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower4_1F_Visitor {
+    lock
+    faceplayer
+    msgbox(format("My wife and I tried the challenge together. We lost to the twins.\pWe're still arguing about whose fault it was. It was hers."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}

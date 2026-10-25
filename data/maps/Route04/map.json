@@ -212,7 +212,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(YANMA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
       "x": 41,
       "y": 82,
       "elevation": 6,
@@ -225,7 +225,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(YANMA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
       "x": 30,
       "y": 83,
       "elevation": 5,

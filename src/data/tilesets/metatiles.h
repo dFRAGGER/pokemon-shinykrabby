@@ -816,3 +816,6 @@ const u16 gMetatileAttributes_Slateport[] = INCBIN_U16("data/tilesets/secondary/
 
 const u16 gMetatiles_SootopolisGym[] = INCBIN_U16("data/tilesets/secondary/sootopolis_gym/metatiles.bin");
 const u16 gMetatileAttributes_SootopolisGym[] = INCBIN_U16("data/tilesets/secondary/sootopolis_gym/metatile_attributes.bin");
+
+const u16 gMetatiles_DojoExterior[] = INCBIN_U16("data/tilesets/secondary/dojo_exterior/metatiles.bin");
+const u16 gMetatileAttributes_DojoExterior[] = INCBIN_U16("data/tilesets/secondary/dojo_exterior/metatile_attributes.bin");

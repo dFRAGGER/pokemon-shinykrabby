@@ -832,6 +832,17 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_LongGrass = {
     .callback = UpdateLongGrassFieldEffect,
 };
 
+// Same sprite, drawn with the palette of a recolored long-grass metatile
+// (e.g. the reeds in gTileset_Rustboro); see FldEff_LongGrass.
+const struct SpriteTemplate gFieldEffectObjectTemplate_LongGrassReeds = {
+    .tileTag = TAG_NONE,
+    .paletteTag = FLDEFF_PAL_TAG_REED_LONG_GRASS,
+    .oam = &gObjectEventBaseOam_16x16,
+    .anims = sAnimTable_LongGrass,
+    .images = sPicTable_LongGrass,
+    .callback = UpdateLongGrassFieldEffect,
+};
+
 static const struct SpriteFrameImage sPicTable_JumpLongGrass[] = {
     overworld_frame(gFieldEffectObjectPic_JumpLongGrass, 2, 2, 0),
     overworld_frame(gFieldEffectObjectPic_JumpLongGrass, 2, 2, 1),

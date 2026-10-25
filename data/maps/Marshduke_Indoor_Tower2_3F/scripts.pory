@@ -1,0 +1,44 @@
+mapscripts Marshduke_Indoor_Tower2_3F_MapScripts {}
+
+// Top of the Tower of the Rekindled; only reachable after the 2F gauntlet.
+
+script Marshduke_Indoor_Tower2_3F_Clara {
+    lock
+    faceplayer
+    if (!flag(FLAG_ITEM_MARSHDUKE_TOWER2_REWARD)) {
+        msgbox(format("You made it! Not many get past Gordon. He's annoyingly well prepared.\pThe Lugia people say their vision is about balance. Ours is about getting a second chance, and doing something with it.\pThat's why the Rekindled is the most important memory. Don't tell Edwin I said that.\pHere, take this. Use it wisely."))
+        waitmessage
+        giveitem(ITEM_TM_WILL_O_WISP)
+        waitmessage
+        setflag(FLAG_ITEM_MARSHDUKE_TOWER2_REWARD)
+    }
+    else {
+        msgbox(format("In the vision, Suicune runs across the river and you can see straight down to the bottom.\pEvery time, I want to jump in after it."), MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower2_3F_Sign_Window {
+    msgbox(format("You can see the river winding through the city.\pThe water is a muddy brown today."), MSGBOX_SIGN)
+    end
+}
+
+script Marshduke_Indoor_Tower2_3F_Oscar {
+    lock
+    faceplayer
+    msgbox(format("You won! That was awesome!\pI'm going to watch the Entei part of the vision again tonight. You should come! ...Oh, wait. Keepers only. Sorry."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}
+
+script Marshduke_Indoor_Tower2_3F_Gordon {
+    lock
+    faceplayer
+    msgbox(format("I keep a notebook on every vision. The Rekindled one has the most pages, obviously.\pThe Two Hearts people tried to borrow it once. I said no."), MSGBOX_AUTOCLOSE)
+    waitmessage
+    release
+    end
+}

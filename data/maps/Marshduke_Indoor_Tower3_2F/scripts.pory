@@ -1,0 +1,80 @@
+mapscripts Marshduke_Indoor_Tower3_2F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_HIDE_MARSHDUKE_TOWER_CHALLENGERS)
+        if (defeated(TRAINER_TOWER3_ARTHUR_SK)) {
+            setvar(VAR_TEMP_1, 1)
+        }
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1, 0: Marshduke_Indoor_Tower3_2F_Gauntlet
+    ]
+}
+
+// Same gauntlet as Marshduke_Indoor_Tower1_2F: three battles in one locked
+// script on arrival, no healing in between; the tower only counts as cleared
+// once the last keeper (Arthur) is defeated.
+
+script Marshduke_Indoor_Tower3_2F_Gauntlet {
+    lockall
+    setvar(VAR_TEMP_1, 1)
+    cleartrainerflag(TRAINER_TOWER3_HAROLD_SK)
+    cleartrainerflag(TRAINER_TOWER3_FINN_SK)
+    playse(SE_PIN)
+
+    msgbox(format("A voice calls from the stairs above:\p'Hey, a challenger! Three keepers: land, sea and sky. No breaks!\pTry to keep your feet on the ground!'"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark walk_down*2 face_right))
+    waitmovement(LOCALID_PLAYER)
+    addobject(LOCALID_TOWER3_HAROLD)
+    applymovement(LOCALID_TOWER3_HAROLD, moves(walk_down*3 face_left))
+    waitmovement(LOCALID_TOWER3_HAROLD)
+    playse(SE_PIN)
+    applymovement(LOCALID_TOWER3_HAROLD, moves(emote_exclamation_mark))
+    waitmovement(LOCALID_TOWER3_HAROLD)
+    msgbox(format("First keeper, HAROLD! When Groudon raises the land in the vision, I swear the whole cathedral shakes!\pLet's see if you've got solid footing!"))
+    trainerbattle_no_intro(TRAINER_TOWER3_HAROLD_SK, Marshduke_Indoor_Tower3_2F_Text_HaroldDefeat)
+    msgbox(format("Next up is Finn. Watch out, he gets splashy."))
+    applymovement(LOCALID_TOWER3_HAROLD, moves(walk_up*3))
+    waitmovement(LOCALID_TOWER3_HAROLD)
+    removeobject(LOCALID_TOWER3_HAROLD)
+    delay(60)
+    addobject(LOCALID_TOWER3_FINN)
+    applymovement(LOCALID_TOWER3_FINN, moves(walk_down*3 face_left))
+    waitmovement(LOCALID_TOWER3_FINN)
+    playse(SE_PIN)
+    applymovement(LOCALID_TOWER3_FINN, moves(emote_exclamation_mark))
+    waitmovement(LOCALID_TOWER3_FINN)
+    msgbox(format("Second keeper, FINN! Kyogre is the real star of that vision, and I'll battle anyone who says otherwise.\pStarting with you!"))
+    trainerbattle_no_intro(TRAINER_TOWER3_FINN_SK, Marshduke_Indoor_Tower3_2F_Text_FinnDefeat)
+    msgbox(format("Arthur's last. He thinks Rayquaza is the star. He's wrong, but he's strong."))
+    applymovement(LOCALID_TOWER3_FINN, moves(walk_up*3))
+    waitmovement(LOCALID_TOWER3_FINN)
+    removeobject(LOCALID_TOWER3_FINN)
+    delay(60)
+    addobject(LOCALID_TOWER3_ARTHUR)
+    applymovement(LOCALID_TOWER3_ARTHUR, moves(walk_down*3 face_left))
+    waitmovement(LOCALID_TOWER3_ARTHUR)
+    playse(SE_PIN)
+    applymovement(LOCALID_TOWER3_ARTHUR, moves(emote_exclamation_mark))
+    waitmovement(LOCALID_TOWER3_ARTHUR)
+    msgbox(format("I am ARTHUR, Keeper of the Divided World.\pThe land and the sea at war, and Rayquaza coming down to end it. No other vision comes close.\pLet's see if you can stand your ground."))
+    trainerbattle_no_intro(TRAINER_TOWER3_ARTHUR_SK, Marshduke_Indoor_Tower3_2F_Text_ArthurDefeat)
+    msgbox(format("Come up to the top. I have something for you."))
+    applymovement(LOCALID_TOWER3_ARTHUR, moves(walk_up*3))
+    waitmovement(LOCALID_TOWER3_ARTHUR)
+    removeobject(LOCALID_TOWER3_ARTHUR)
+    releaseall
+    end
+}
+
+text Marshduke_Indoor_Tower3_2F_Text_HaroldDefeat {
+    format("Knocked clean off my feet!")
+}
+
+text Marshduke_Indoor_Tower3_2F_Text_FinnDefeat {
+    format("Washed ashore...")
+}
+
+text Marshduke_Indoor_Tower3_2F_Text_ArthurDefeat {
+    format("Rayquaza would approve.")
+}

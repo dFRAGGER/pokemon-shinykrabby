@@ -2556,6 +2556,10 @@ static const struct SpriteFrameImage sPicTable_SSAnne[] = {
     overworld_frame(gObjectEventPic_SSAnne, 8, 16, 0),
 };
 
+static const struct SpriteFrameImage sPicTable_MegaAlakazam[] = {
+    overworld_ascending_frames(gObjectEventPic_MegaAlakazam, 4, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_FacultyBoat[] = {
     overworld_frame(gObjectEventPic_FacultyBoat, 8, 16, 0),
     overworld_frame(gObjectEventPic_FacultyBoat, 8, 16, 0),

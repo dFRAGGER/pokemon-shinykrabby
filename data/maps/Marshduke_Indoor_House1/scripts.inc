@@ -11,6 +11,15 @@ Marshduke_Indoor_House1_Receptionist::
 	end
 
 
+Marshduke_Indoor_House1_Meowth::
+	lock
+	faceplayer
+	msgbox Marshduke_Indoor_House1_Meowth_Text_0
+	waitmessage
+	release
+	end
+
+
 Marshduke_Indoor_House1_Scribe::
 	lock
 	faceplayer
@@ -180,11 +189,14 @@ Marshduke_Indoor_House1_Receptionist_Text_0:
 	.string "section, he lives here now and we've all\l"
 	.string "made peace with it.$"
 
+Marshduke_Indoor_House1_Meowth_Text_0:
+	.string "Meeeeee..... oooowwthhh...$"
+
 Marshduke_Indoor_House1_Scribe_Text_0:
 	.string "Wet ink, mind your sleeves!\p"
 	.string "I'm copying out a copy of a copy of a\n"
 	.string "copy.\p"
-	.string "By now the hero's name has changed\n"
+	.string "I think the hero's name has changed\n"
 	.string "twice and the dragon's grown an extra\l"
 	.string "head.\p"
 	.string "He'll have three by the time my\n"
@@ -213,14 +225,13 @@ Marshduke_Indoor_House1_Kid_Text_0:
 Marshduke_Indoor_House1_Sign_LegendShelf_Text_0:
 	.string "Nine accounts of one burning tower,\n"
 	.string "shelved shoulder to shoulder.\p"
-	.string "They have not resolved their\n"
-	.string "differences.$"
+	.string "The stories are all different.$"
 
 Marshduke_Indoor_House1_Sign_PilgrimDiaries_Text_0:
 	.string "Hundreds of little books.\p"
-	.string "They all describe the same five\n"
-	.string "memories, but they all differ slightly it\l"
-	.string "seems.$"
+	.string "All describing the memories of The\n"
+	.string "Rememberer by pilgrims who have visited\l"
+	.string "the cathedral.$"
 
 Marshduke_Indoor_House1_Sign_NaturalHistoryCase_Text_0:
 	.string "A pinned note: 'RE-CATALOGUED -\n"
@@ -232,8 +243,8 @@ Marshduke_Indoor_House1_Sign_DeltaSurveyVolumes_Text_0:
 	.string "Charts of the delta over eight\n"
 	.string "centuries.\p"
 	.string "The channels wander all over the place.\p"
-	.string "Every single one of them goes around a\n"
-	.string "hill.$"
+	.string "Every single one of them goes around\n"
+	.string "the hill the cathedral was build on.$"
 
 Marshduke_Indoor_House1_Sign_WaterDamagedManuscript_Text_0:
 	.string "Half a page survives:\p"
@@ -242,10 +253,10 @@ Marshduke_Indoor_House1_Sign_WaterDamagedManuscript_Text_0:
 	.string "complained of it...'$"
 
 Marshduke_Indoor_House1_Sign_LedgerOfDonations_Text_0:
-	.string "Every book here came in somebody's\n"
-	.string "coat.\p"
-	.string "Entry one is a soup recipe, donated by\n"
-	.string "accident.$"
+	.string "Every book in this shelf was donated by\n"
+	.string "a different person.\p"
+	.string "Subjects range from the mundane to the\n"
+	.string "mystical.$"
 
 Marshduke_Indoor_House1_Sign_ForeignLanguageShelf_Text_0:
 	.string "Thirty different languages about the\n"
@@ -253,8 +264,8 @@ Marshduke_Indoor_House1_Sign_ForeignLanguageShelf_Text_0:
 
 Marshduke_Indoor_House1_Sign_ChildrensShelf_Text_0:
 	.string "Very well-worn books.\p"
-	.string "The tower burns in all of them, but most\n"
-	.string "have HO OH in a different color.$"
+	.string "A tower burns in all of them, but most\n"
+	.string "depict HO OH in a different color.$"
 
 Marshduke_Indoor_House1_Sign_EmptyShelf_Text_0:
 	.string "A shelf half empty. The label reads:\n"

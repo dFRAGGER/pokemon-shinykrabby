@@ -75,7 +75,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_RANGER_F_SK",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_RANGER_F_DP",
       "x": 7,
       "y": 11,
       "elevation": 0,
@@ -140,19 +140,6 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WORKER_DP",
-      "x": 97,
-      "y": 18,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route014_NPC_BridgeCarpenter",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
       "x": 71,
       "y": 9,
@@ -206,10 +193,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARTIST",
-      "x": 11,
+      "x": 12,
       "y": 3,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -232,7 +219,7 @@
     },
     {
       "local_id": "LOCALID_ROUTE014_ARI",
-      "graphics_id": "OBJ_EVENT_GFX_WORKER_M",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNG_COUPLE_M_DP",
       "x": 88,
       "y": 19,
       "elevation": 0,

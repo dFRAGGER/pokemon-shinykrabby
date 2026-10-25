@@ -1,0 +1,80 @@
+mapscripts Marshduke_Indoor_Tower2_2F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_HIDE_MARSHDUKE_TOWER_CHALLENGERS)
+        if (defeated(TRAINER_TOWER2_CLARA_SK)) {
+            setvar(VAR_TEMP_1, 1)
+        }
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1, 0: Marshduke_Indoor_Tower2_2F_Gauntlet
+    ]
+}
+
+// Same gauntlet as Marshduke_Indoor_Tower1_2F: three battles in one locked
+// script on arrival, no healing in between; the tower only counts as cleared
+// once the last keeper (Clara) is defeated.
+
+script Marshduke_Indoor_Tower2_2F_Gauntlet {
+    lockall
+    setvar(VAR_TEMP_1, 1)
+    cleartrainerflag(TRAINER_TOWER2_OSCAR_SK)
+    cleartrainerflag(TRAINER_TOWER2_GORDON_SK)
+    playse(SE_PIN)
+
+    msgbox(format("A voice calls from the stairs above:\p'Hey, a challenger! Three keepers: fire, lightning and water. No breaks!\pLet's see if you've got some fire in you!'"), MSGBOX_AUTOCLOSE)
+    waitmessage
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark walk_down*2 face_right))
+    waitmovement(LOCALID_PLAYER)
+    addobject(LOCALID_TOWER2_OSCAR)
+    applymovement(LOCALID_TOWER2_OSCAR, moves(walk_down*3 face_left))
+    waitmovement(LOCALID_TOWER2_OSCAR)
+    playse(SE_PIN)
+    applymovement(LOCALID_TOWER2_OSCAR, moves(emote_exclamation_mark))
+    waitmovement(LOCALID_TOWER2_OSCAR)
+    msgbox(format("First keeper, OSCAR! Entei is my hero! Fire, fury and a second chance!\pLet's turn up the heat!"))
+    trainerbattle_no_intro(TRAINER_TOWER2_OSCAR_SK, Marshduke_Indoor_Tower2_2F_Text_OscarDefeat)
+    msgbox(format("Phew! Okay, next one. He's been charging up all day."))
+    applymovement(LOCALID_TOWER2_OSCAR, moves(walk_up*3))
+    waitmovement(LOCALID_TOWER2_OSCAR)
+    removeobject(LOCALID_TOWER2_OSCAR)
+    delay(60)
+    addobject(LOCALID_TOWER2_GORDON)
+    applymovement(LOCALID_TOWER2_GORDON, moves(walk_down*3 face_left))
+    waitmovement(LOCALID_TOWER2_GORDON)
+    playse(SE_PIN)
+    applymovement(LOCALID_TOWER2_GORDON, moves(emote_exclamation_mark))
+    waitmovement(LOCALID_TOWER2_GORDON)
+    msgbox(format("Second keeper, GORDON. I've timed the Raikou part of the vision. Exactly 4.2 seconds of pure lightning.\pThe best 4.2 seconds of my life. Let's battle!"))
+    trainerbattle_no_intro(TRAINER_TOWER2_GORDON_SK, Marshduke_Indoor_Tower2_2F_Text_GordonDefeat)
+    msgbox(format("Last one. Clara is very serious about Suicune. Very serious."))
+    applymovement(LOCALID_TOWER2_GORDON, moves(walk_up*3))
+    waitmovement(LOCALID_TOWER2_GORDON)
+    removeobject(LOCALID_TOWER2_GORDON)
+    delay(60)
+    addobject(LOCALID_TOWER2_CLARA)
+    applymovement(LOCALID_TOWER2_CLARA, moves(walk_down*3 face_left))
+    waitmovement(LOCALID_TOWER2_CLARA)
+    playse(SE_PIN)
+    applymovement(LOCALID_TOWER2_CLARA, moves(emote_exclamation_mark))
+    waitmovement(LOCALID_TOWER2_CLARA)
+    msgbox(format("I am CLARA, Keeper of the Rekindled.\pSuicune rose from the ashes and went straight to the water to heal it. It didn't even stop to look back.\pThe other towers argue about balance and love. We know which vision is the true one."))
+    trainerbattle_no_intro(TRAINER_TOWER2_CLARA_SK, Marshduke_Indoor_Tower2_2F_Text_ClaraDefeat)
+    msgbox(format("Come up to the top. I'd like to give you something."))
+    applymovement(LOCALID_TOWER2_CLARA, moves(walk_up*3))
+    waitmovement(LOCALID_TOWER2_CLARA)
+    removeobject(LOCALID_TOWER2_CLARA)
+    releaseall
+    end
+}
+
+text Marshduke_Indoor_Tower2_2F_Text_OscarDefeat {
+    format("I'm all burnt out!")
+}
+
+text Marshduke_Indoor_Tower2_2F_Text_GordonDefeat {
+    format("That wasn't in my calculations!")
+}
+
+text Marshduke_Indoor_Tower2_2F_Text_ClaraDefeat {
+    format("Ho-Oh smiles on you today.")
+}
